@@ -499,6 +499,41 @@ footer {
   color: #222;
 }
 
+/* cut off table ke liye hai ye posts yani kitne vacancy aye hai */
+
+.vacancy-box{
+  max-width: 900px;
+  margin: 20px auto;
+  border:1px solid #333;
+  margin-top:15px;
+}
+
+.vacancy-title{
+  background:#340670;
+  color:#fff;
+  padding:8px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.vacancy-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.vacancy-table th,
+.vacancy-table td{
+  border:1px solid #333;
+  padding:8px;
+  text-align:center;
+}
+
+.vacancy-table th{
+  background:#f2f2f2;
+  font-weight:bold;
+}
+
+
 /* LIVE LINE */
 .live-line {
     background: #ffffff;
@@ -816,3 +851,4 @@ body {
   margin:6px 0;
   line-height:1.5;
 }
+
