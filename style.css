@@ -136,7 +136,7 @@ nav a:hover::after,
     width: 90%;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
@@ -249,7 +249,7 @@ footer {
 
 /* ===== JOB CARDS SECTION (centered fixed width) ===== */
 .job-cards {
-  max-width: 1200px;         /* same width as your main content — change to 850px agar zarurat ho */
+  max-width: 1000px;         /* same width as your main content — change to 850px agar zarurat ho */
   width: 100%;
   margin: 18px auto;        /* center the whole block */
   display: grid;
@@ -262,7 +262,7 @@ footer {
 /* On larger screens show two columns side-by-side (optional) */
 @media (min-width: 1100px) {
   .job-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on wide screens */
+    grid-template-columns: repeat(4, 1fr); /* 2 columns on wide screens */
   }
 }
 
@@ -850,5 +850,6 @@ body {
   margin:6px 0;
   line-height:1.5;
 }
+
 
 
