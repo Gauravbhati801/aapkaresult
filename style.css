@@ -891,6 +891,21 @@ body {
   display: block;
 }
 
+/* 📱 MOBILE FIX — Important Links */
+@media (max-width: 768px){
+
+  .important-links{
+    grid-template-columns: 1fr;     /* 👉 Mobile par ek column */
+  }
+
+  .link-box{
+    width: 100%;
+    margin: 0 auto 10px;            /* 👉 Center + spacing */
+    box-sizing: border-box;
+  }
+}
+
+
 
 
 
