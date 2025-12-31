@@ -851,5 +851,46 @@ body {
   line-height:1.5;
 }
 
+/* important links aadhar card ke liye hai  */
+
+.important-links{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.link-box{
+  background: #000;
+  color: #fff;
+  padding: 30px 110px;
+  border-radius: 15px;
+  font-weight: 1000;
+
+ /* 🔥 NEON RED GLOW */
+  box-shadow:
+    0 0 10px rgba(10, 10, 10, 0.7),
+    0 0 20px rgba(19, 18, 18, 0.6),
+    0 0 35px rgba(19, 18, 18, 0.5);
+
+  transition: .25s;
+  cursor: pointer;
+}
+
+.link-box:hover{
+  background-color: #ff1100;
+  transform: translateY(-2px);
+   box-shadow:
+    0 0 5px rgba(24, 24, 23, 0.9),
+    0 0 5px rgba(22, 22, 22, 0.8),
+    0 0 10px rgba(17, 17, 17, 0.877);
+}
+
+.link-box{
+  text-decoration: none;
+  display: block;
+}
+
+
 
 
