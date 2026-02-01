@@ -977,62 +977,6 @@ body {
   }
 }
 
-/* ===== SEARCH BUTTON ===== */
-.search-btn {
-  float: right;
-  cursor: pointer;
-  font-size: 18px;
-  color: white;
-  margin-left: 10px;
-}
-
-/* ===== SEARCH BOX ===== */
-.search-box {
-  display: none;
-  padding: 10px;
-  background: #f5f5f5;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* ===== DESKTOP SEARCH ===== */
-.desktop-search {
-  display: none;
-  float: right;
-  margin-left: 15px;
-}
-
-.desktop-search input {
-  padding: 6px 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* SHOW SEARCH ONLY ON DESKTOP */
-@media (min-width: 769px) {
-  .desktop-search {
-    display: inline-block;
-  }
-}
-
-.breaking,
-.breaking-news,
-.marquee,
-.yellow-bar {
-  position: relative;
-  z-index: 1;
-}
-
-
-
-
 
 
 
