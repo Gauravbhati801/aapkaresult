@@ -296,14 +296,14 @@ footer {
 }
 
 /* Colors (name same rakhe hain: red, orange, purple, blue, etc.) */
-.lightred       { background: #c0392b; }
-.lightorange    { background: #e67e22; }
-.lightpurple    { background: #d252d2; }   /* ← yahan PURPLE add kiya */
-.darkblue      { background: #2962ff; }
+.lightred       { background: #ff1c02; }
+.lightorange    { background: #eb6e02;  }
+.lightpurple    { background: #d300d3;}   /* ← yahan PURPLE add kiya */
+.darkblue      { background: #0a3dca; }
 .darkgreen    { background: #3d3f2b; }
 .lightsky       { background: #3498db; }
 .darkmaroon    { background: #4a0d0d; }
-.darkgreen { background: #1e8449; }
+.darkgreen { background: #12cf00; }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -1029,6 +1029,7 @@ body {
   position: relative;
   z-index: 1;
 }
+
 
 
 
