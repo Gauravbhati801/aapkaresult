@@ -18,6 +18,21 @@
         <h1>AAPKA RESULT</h1>
         <p>MAKE YOUR DREAMS </p>
     </header>
+    
+     <!-- MOBILE MENU BAR -->
+<div class="mobile-bar">
+  <span class="menu-btn" onclick="toggleMenu()">☰ Menu</span>
+  <span class="search-btn" onclick="toggleSearch()">🔍</span>
+</div>
+<!-- SEARCH BOX -->
+<div id="searchBox" class="search-box">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Job / Result / Admit Card"
+    onkeyup="searchContent()"
+  />
+</div>
 
     <!-- NAVIGATION BAR -->
     <nav class="menu">
@@ -38,6 +53,16 @@
       <a href="about-us.html">About Us</a>  
     </div>
   </div>
+
+        <!-- DESKTOP SEARCH -->
+<div class="desktop-search">
+  <input
+    type="text"
+    id="desktop-search"
+    placeholder="Search Jobs / Results"
+    onkeyup="searchContent()"
+  />
+</div>
 
     </nav>
 
@@ -80,8 +105,8 @@
     UP Police Constable Form (32,679 Posts)
   </a>
 
-  <a href="ssc-gd-constable.html" target="_blank" class="job-card lightpurple">
-    SSC GD Constable Form (25487 Posts)
+  <a href="indian-post.html" target="_blank" class="job-card lightpurple">
+   India Post GDS Online Form 2026 (28000+ Posts)
   </a>
 
   <a href="https://www.rrbapply.gov.in/#/auth/home" target="_blank" class="job-card darkblue">
@@ -112,6 +137,7 @@
         <div class="box red">
             <h2>Latest Jobs</h2>
             <ul>
+                <li class="search-item"><a href="indian-post.html">India Post GDS Online Form 2026 (28000+ Posts)</a></li>
                 <li><a href="up-police.html">UP Police Constable Online Form 2026 (32,679 Post) – Start</a></li>
                 <li><a href="rrb-group-level1.html">Railway RRB Group-D (Level-1) Recruitment 2026</a></li>
                 <li><a href="upsssc-lekhpal.html">UPSSSC Lekhpal Online Form 2025 (7994 Post) </a></li>
@@ -219,7 +245,45 @@
 </footer>
 
 </body>
+    <script>
+function toggleMenu() {
+  const menu = document.getElementById("mainMenu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+function searchContent() {
+  var mobileInput = document.getElementById("searchInput");
+  var desktopInput = document.getElementById("desktopSearch");
+
+  var query = "";
+
+  if (desktopInput && desktopInput.value.trim() !== "") {
+    query = desktopInput.value.toLowerCase();
+  } else if (mobileInput) {
+    query = mobileInput.value.toLowerCase();
+  }
+
+  var items = document.querySelectorAll(".search-item");
+
+  items.forEach(function (item) {
+    var text = item.textContent.toLowerCase();
+
+    if (text.includes(query)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+</script>
+
 </html>
+
 
 
 
