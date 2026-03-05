@@ -119,8 +119,8 @@ header p{
 /* CONTAINER */
 .main-container{
   max-width:1200px;
-  margin:40px auto;
-  padding:0 20px;
+  margin:20px auto;
+  padding:0 10px;
 }
 
 /* IMPORTANT LINKS */
@@ -376,7 +376,7 @@ header p{
 .job-box{
   background:#f8fafc;
   padding:18px;
-  border-radius:15px;
+  border-radius:13px;
   border-left:6px solid #2563eb;
   border-right:6px solid #2563eb;
   transition:0.3s;
