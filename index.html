@@ -334,11 +334,19 @@ Sarkari job updates.
 </body>
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("mainMenu");
-  menu.classList.toggle("show");
+
+let menu = document.getElementById("navMenu");
+
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
+
 }
 </script>
 
 </html>
+
 
 
