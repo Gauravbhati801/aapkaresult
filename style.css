@@ -153,7 +153,7 @@ header p{
 /* JOB CARDS */
 .job-cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(2,1fr);
   gap:25px;
   margin-bottom:40px;
 }
@@ -325,13 +325,13 @@ header p{
 
 /* FOOTER */
 .site-footer{
-  background:#060708;
-  color:rgb(250, 239, 239);
+  background:#e8eaec;
+  color:rgb(0, 0, 0);
   text-align:center;
 }
 
 .footer-links a{
-  color:#10a0dd;
+  color:#f31000;
   margin:0 8px;
   text-decoration:none;
 }
@@ -789,4 +789,5 @@ background:#0974aa;
 .youtube{
 background:#ff0000;
 }
+
 
