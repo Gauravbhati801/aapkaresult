@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aapka Result 2025 - Sarkari Result,Latest jobs,Admit Card</title>
+    <title>dsssb notification</title>
     <link rel="stylesheet" href="style.css">
-
-     <!-- FAVICON FOR GOOGLE SEARCH -->
-  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-  <div class="main-container">
-    <!-- HEADER -->
-    <header>
-       
-      <h1>AAPKA RESULTs</h1>
-      <p>MAKE YOUR DREAMS</p>
-    
-    </header>
+   <div class="main-container">
+    <header class="header">
 
-    <!-- MOBILE MENU BAR -->
-<div class="mobile-bar">
-  <span class="menu-btn" onclick="toggleMenu()">☰ Menu</span>
-</div>
+<div class="logo">Aapka result.in<span></span></div>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="menu" id="mainMenu">
-       
-        <a href="index.html">Home</a>
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+ <a href="index.html">Home</a>
         <a href="latest-jobs.html">Latest Jobs</a>
         <a href="results.html">Results</a>
         <a href="admit-cards.html">Admit Card</a>
@@ -45,7 +33,15 @@
     </div>
   </div>
 
-    </nav>
+</nav>
+
+</header>
+
+    <h1>
+Welcome to Aapka Result <br>
+<span class="gradient">Sarkari Jobs</span>, <br>
+<span class="gradient">check your result</span>
+</h1>
 
     
     <div class="live-line">
@@ -200,4 +196,18 @@
 </footer>
     </div>
 </body>
+<script>
+function toggleMenu() {
+
+let menu = document.getElementById("navMenu");
+
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
+
+}
+</script>
+
 </html>
