@@ -20,7 +20,6 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 20px;
-background:linear-gradient(135deg,#f1f5f9,#e2e8f0);
 }
 
 .menu{
@@ -74,7 +73,6 @@ font-weight:700;
 
 .stats{
 padding:40px 20px;
-background:linear-gradient(#ffffff,#f4eaff);
 }
 
 .stat-box{
@@ -787,6 +785,7 @@ background:#0974aa;
 .youtube{
 background:#ff0000;
 }
+
 
 
 
