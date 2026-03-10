@@ -786,6 +786,17 @@ background:#0974aa;
 background:#ff0000;
 }
 
+.post-image{
+  width:100%;
+  max-height: 400px;
+  max-width:900px;
+  height:auto;
+  display:block;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
 
 
 
