@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aapka Result 2026 - Latest Result,Latest jobs,Latest Admit Card</title>
+    <title>latest notification 2026 </title>
     <link rel="stylesheet" href="style.css">
-
-     <!-- FAVICON FOR GOOGLE SEARCH -->
-  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-  <div class="main-container">
-    <!-- HEADER -->
-    <header>
-      
-        <h1>AAPKA RESULT</h1>
-        <p>MAKE YOUR DREAMS </p>
-       
-    </header>
+   <div class="main-container">
+    <header class="header">
 
-    <!-- MOBILE MENU BAR -->
-<div class="mobile-bar">
-  <span class="menu-btn" onclick="toggleMenu()">☰ Menu</span>
-</div>
+<div class="logo">Aapka result.in<span></span></div>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="menu" id="mainMenu">
-       
-        <a href="index.html">Home</a>
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+ <a href="index.html">Home</a>
         <a href="latest-jobs.html">Latest Jobs</a>
         <a href="results.html">Results</a>
         <a href="admit-cards.html">Admit Card</a>
@@ -45,7 +33,15 @@
     </div>
   </div>
 
-    </nav>
+</nav>
+
+</header>
+
+    <h1>
+Welcome to Aapka Result <br>
+<span class="gradient">Sarkari Jobs</span>, <br>
+<span class="gradient">check your result</span>
+</h1>
 
     
     <div class="live-line">
@@ -113,6 +109,7 @@
         <div class="box red">
             <h2>Latest Jobs</h2>
             <ul> 
+                <li><a href="indian-airforce.html">Indian Airforce Agniveer 01/2027 Online Form </a></li>
                 <li><a href="army-agniveer.html">Indian Army Agniveer Rally Recruitment Online Form 2026</a></li>            
                 <li><a href="indian-post.html">India Post GDS Online Form 2026 (28000+ Posts)</a></li>
                 <li><a href="up-police.html">UP Police Constable Online Form 2026 (32,679 Post) – Start</a></li>
@@ -122,13 +119,7 @@
                 <li><a href="up-home-guard.html">Up Home Guard Form (41,424 posts)</a></li>
                 <li><a href="">RRB Junior Engineer Form (2569 posts)</a></li>
                 <li><a href="ssc-gd-constable.html">SSC GD Constable Online Form 2025</a></li>
-                <li><a href="#">Railway Group D Vacancy 2025</a></li>
-                <li><a href="#">UP Police SI 2025</a></li>
-                <li><a href="#">IB ACIO Recruitment 2025</a></li>
-                <li><a href="#">UP Police Assistant operator Online 2025 - start </a></li>
-                <li><a href="#">UP Anganwadi Bharti online Form 2025 (53,289 post)</a></li>
-                <li><a href="#">Intelligence Bureau(IB) MTS Online Form 2025 - start</a></li>
-                <li><a href="#">BPSC BSSC Inter Level Online Form 2025 Re-Open </a></li>
+         
             </ul>
         </div>
 
@@ -147,7 +138,7 @@
 
     <div class="footer-text">
       <p>
-        © 2026 AapkaResult.in | All Rights Reserved
+        © 2025 AapkaResult.in | All Rights Reserved
       </p>
     </div>
 
@@ -157,11 +148,16 @@
 </body>
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("mainMenu");
-  menu.classList.toggle("show");
+
+let menu = document.getElementById("navMenu");
+
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
+
 }
 </script>
 
 </html>
-
-
