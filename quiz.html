@@ -85,7 +85,7 @@
     <div class="question-meta">
         <div class="q-number" id="q-no">1</div>
         <div style="font-weight: bold; color: #555; margin-right: 15px;" id="q-section-name">General Knowledge</div>
-        <div class="q-marks">+2.00 <span class="negative">-0.50</span></div>
+        <div class="q-marks">+2.00 <span class="negative">0.00</span></div>
     </div>
 
     <main class="question-area">
@@ -291,8 +291,8 @@
                 resultData.correct++; resultData.score += 2;
                 resultData.sections[q.subject].c++; resultData.sections[q.subject].s += 2;
             } else { 
-                resultData.incorrect++; resultData.score -= 0.5;
-                resultData.sections[q.subject].i++; resultData.sections[q.subject].s -= 0.5;
+                resultData.incorrect++; 
+                resultData.sections[q.subject].i++;
             }
         });
 
@@ -346,4 +346,5 @@
 </body>
 
 </html>
+
 
