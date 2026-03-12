@@ -7,182 +7,341 @@
     <style>
         /* --- CSS (डिज़ाइन) --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #f4f6f9; }
-        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
-        .top-header { background-color: #1a233a; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .time { font-size: 1.2rem; font-weight: bold; display: block; }
-        .test-name { font-size: 0.8rem; color: #b0b5c1; }
+        body { background-color: #f4f6f9; overflow-x: hidden;}
+        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; display: flex; flex-direction: column; position: relative;}
+        
+        .top-header { background: #1a233a; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .time-box { display: flex; flex-direction: column;}
+        .time { font-size: 1.2rem; font-weight: bold; color: #ffeb3b; }
+        .menu-icon { font-size: 1.8rem; cursor: pointer; color: white; }
+        
         .tabs { display: flex; overflow-x: auto; background: #fff; border-bottom: 1px solid #ddd; }
         .tab { padding: 12px 15px; white-space: nowrap; color: #666; font-weight: bold; cursor: pointer; }
-        .tab.active { color: #1a233a; border-bottom: 3px solid #1a233a; }
-        .question-meta { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #555; }
-        .q-number { background: #888; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
-        .q-marks { margin-left: 15px; flex-grow: 1; color: #28a745; }
-        .q-marks .negative { color: #888; margin-left: 5px; }
+        .tab.active { color: #1a233a; border-bottom: 3px solid #1a233a; background: #f8f9fa; }
+        
+        .question-meta { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .q-number { background: #888; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 0.9rem;}
+        .q-marks { flex-grow: 1; color: #28a745; font-weight:bold;}
+        .q-marks .negative { color: #d9534f; margin-left: 5px; }
+        
         .question-area { padding: 20px 15px; flex-grow: 1; background: #f4f6f9; }
-        .question-text { font-size: 1.1rem; margin-bottom: 20px; color: #222; }
-        .options-container { display: flex; flex-direction: column; gap: 10px; }
-        .option-card { background: #fff; border: 1px solid #fff; border-radius: 8px; padding: 15px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .option-card input[type="radio"] { display: none; }
+        .question-text { font-size: 1.1rem; margin-bottom: 20px; color: #222; line-height: 1.5;}
+        .option-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; align-items: center; cursor: pointer; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);}
+        .option-card input { display: none; }
         .option-card.selected { border-color: #2b82c9; background-color: #eaf4fc; }
-        .opt-label { margin-right: 15px; color: #555; font-weight:bold; }
-        .bottom-actions { background: #fff; border-top: 1px solid #ddd; padding: 10px; }
-        .action-buttons { display: flex; gap: 5px; }
-        .btn { padding: 12px 10px; border-radius: 5px; font-weight: bold; cursor: pointer; flex: 1; font-size: 0.8rem; border: none; }
+        .opt-label { margin-right: 15px; font-weight: bold; color: #555; }
+        
+        .bottom-actions { background: #fff; border-top: 1px solid #ddd; padding: 10px; display: flex; gap: 5px; flex-wrap: wrap;}
+        .btn { padding: 12px 10px; border-radius: 5px; font-weight: bold; cursor: pointer; flex: 1; border: none; font-size: 0.8rem; min-width: 70px; }
         .btn-submit { background: #ff4d4d; color: white; }
         .btn-clear { background: #fff; color: #333; border: 1px solid #ccc; }
+        .btn-prev { background: #6c757d; color: white; }
         .btn-save { background: #2b82c9; color: white; }
+
+        /* =========================================
+           Question Palette (साइड पैनल) का डिज़ाइन
+           ========================================= */
+        .palette-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 99; display: none; }
+        .palette-overlay.open { display: block; }
+        
+        .palette-drawer { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: #fff; z-index: 100; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s ease; display: flex; flex-direction: column;}
+        .palette-drawer.open { right: 0; }
+        
+        .palette-header { padding: 15px; background: #1a233a; color: white; display: flex; justify-content: space-between; align-items: center; font-weight: bold;}
+        .close-btn { cursor: pointer; font-size: 1.2rem; }
+        
+        .palette-legend { display: flex; justify-content: space-around; padding: 10px; background: #f8f9fa; font-size: 0.8rem; border-bottom: 1px solid #ddd; font-weight: bold;}
+        .legend-item { display: flex; align-items: center; gap: 5px; color: #555;}
+        .legend-bubble { width: 15px; height: 15px; border-radius: 50%; }
+        
+        .palette-content { padding: 15px; overflow-y: auto; flex-grow: 1; }
+        .palette-section { margin-bottom: 20px; }
+        .palette-section h4 { margin-bottom: 10px; font-size: 0.95rem; color: #1a233a; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        
+        .q-bubble { width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: #fff; border: 1px solid #ccc; cursor: pointer; font-weight: bold; font-size: 0.85rem; color: #555;}
+        .q-bubble.answered { background: #4caf50; color: white; border-color: #4caf50; }
+        .q-bubble.current { border: 2px solid #007bff; background: #eaf4fc; color: #007bff;}
     </style>
 </head>
 <body>
-
 <div class="app-container">
+    
     <header class="top-header">
-        <div>
-            <span id="timer" class="time">59:56</span>
-            <span class="test-name">05 Army GD TDN WMP...</span>
+        <div class="time-box">
+            <span id="timer" class="time">60:00</span> 
+            <span style="font-size:0.8rem; color:#b0b5c1;">Army GD Test</span>
         </div>
+        <div class="menu-icon" onclick="togglePalette()">☰</div>
     </header>
 
     <nav class="tabs">
-        <div class="tab active">General Knowledge</div>
+        <div class="tab" id="tab-GK" onclick="goToSection('General Knowledge')">Gen. Knowledge</div>
+        <div class="tab" id="tab-GS" onclick="goToSection('General Science')">Gen. Science</div>
+        <div class="tab" id="tab-Maths" onclick="goToSection('Maths')">Maths</div>
+        <div class="tab" id="tab-Reasoning" onclick="goToSection('Reasoning')">Reasoning</div>
     </nav>
 
     <div class="question-meta">
         <div class="q-number" id="q-no">1</div>
-        <div class="q-marks">+2.00 <span class="negative">-0.00</span></div>
+        <div style="font-weight: bold; color: #555; margin-right: 15px;" id="q-section-name">General Knowledge</div>
+        <div class="q-marks">+2.00 <span class="negative">-0.50</span></div>
     </div>
 
     <main class="question-area">
-        <h3 id="question-text" class="question-text">प्रश्न लोड हो रहा है...</h3>
-        
-        <div class="options-container">
-            <label class="option-card" onclick="selectOption(0)">
-                <input type="radio" name="option" value="0">
-                <span class="opt-label">a.</span>
-                <span class="opt-text" id="opt-0">विकल्प 1</span>
-            </label>
-            <label class="option-card" onclick="selectOption(1)">
-                <input type="radio" name="option" value="1">
-                <span class="opt-label">b.</span>
-                <span class="opt-text" id="opt-1">विकल्प 2</span>
-            </label>
-            <label class="option-card" onclick="selectOption(2)">
-                <input type="radio" name="option" value="2">
-                <span class="opt-label">c.</span>
-                <span class="opt-text" id="opt-2">विकल्प 3</span>
-            </label>
-            <label class="option-card" onclick="selectOption(3)">
-                <input type="radio" name="option" value="3">
-                <span class="opt-label">d.</span>
-                <span class="opt-text" id="opt-3">विकल्प 4</span>
-            </label>
-        </div>
+        <h3 id="question-text" class="question-text">Loading...</h3>
+        <div id="options-container"></div>
     </main>
 
     <footer class="bottom-actions">
-        <div class="action-buttons">
-            <button class="btn btn-submit" onclick="submitTest()">Submit Quiz</button>
-            <button class="btn btn-clear" onclick="clearResponse()">Clear Response</button>
-            <button class="btn btn-save" onclick="saveAndNext()">Save & Next</button>
-        </div>
+        <button class="btn btn-submit" onclick="submitTest()">Submit</button>
+        <button class="btn btn-clear" onclick="clearResponse()">Clear</button>
+        <button class="btn btn-prev" id="prev-btn" onclick="prevQuestion()">Previous</button>
+        <button class="btn btn-save" onclick="saveAndNext()">Save & Next</button>
     </footer>
+
+    <div id="palette-overlay" class="palette-overlay" onclick="togglePalette()"></div>
+    <div id="palette-drawer" class="palette-drawer">
+        <div class="palette-header">
+            <span>Question Palette</span>
+            <span class="close-btn" onclick="togglePalette()">✕</span>
+        </div>
+        <div class="palette-legend">
+            <span class="legend-item"><div class="legend-bubble" style="background:#4caf50;"></div> Answered</span>
+            <span class="legend-item"><div class="legend-bubble" style="background:#fff; border:1px solid #ccc;"></div> Pending</span>
+        </div>
+        <div id="palette-content" class="palette-content">
+            </div>
+    </div>
+
 </div>
 
 <script>
-    // --- JavaScript (लॉजिक) ---
+    // आपके पूरे 50 सवाल
     const questions = [
-        {
-            question: "मार्च 2026 के अनुसार लद्दाख के उपराज्यपाल कौन हैं?",
-            options: ["तरनजीत संधू", "आरएन रवि", "जिष्णु देव वर्मा", "विनय कुमार सक्सेना"],
-            correct: 2 
-        },
-        {
-            question: "भारत की राजधानी क्या है?",
-            options: ["मुंबई", "नई दिल्ली", "कोलकाता", "चेन्नई"],
-            correct: 1
-        },
-        {
-            question: "सूर्य किस दिशा से उगता है?",
-            options: ["पश्चिम", "उत्तर", "दक्षिण", "पूर्व"],
-            correct: 3
-        }
+        // 15 GK Questions
+        { subject: "General Knowledge", tabId: "tab-GK", q: "भारत के प्रथम राष्ट्रपति कौन थे?", options: ["पं. जवाहरलाल नेहरू", "डॉ. राजेंद्र प्रसाद", "महात्मा गांधी", "सरदार पटेल"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "कारगिल युद्ध किस वर्ष हुआ था?", options: ["1971", "1965", "1999", "1947"], correct: 2 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व का सबसे बड़ा महाद्वीप कौन सा है?", options: ["अफ्रीका", "यूरोप", "एशिया", "उत्तरी अमेरिका"], correct: 2 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "'गेटवे ऑफ इंडिया' कहाँ स्थित है?", options: ["दिल्ली", "मुंबई", "चेन्नई", "कोलकाता"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई थी?", options: ["1885", "1905", "1919", "1947"], correct: 0 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व स्वास्थ्य संगठन (WHO) का मुख्यालय कहाँ है?", options: ["न्यूयॉर्क", "पेरिस", "जिनेवा", "लंदन"], correct: 2 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का राष्ट्रीय खेल कौन सा है?", options: ["क्रिकेट", "हॉकी", "कबड्डी", "फुटबॉल"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "'डिस्कवरी ऑफ इंडिया' पुस्तक के लेखक कौन हैं?", options: ["महात्मा गांधी", "सुभाष चंद्र बोस", "जवाहरलाल नेहरू", "भगत सिंह"], correct: 2 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "चंद्रमा पर कदम रखने वाले पहले व्यक्ति कौन थे?", options: ["यूरी गागरिन", "नील आर्मस्ट्रांग", "एडविन एल्ड्रिन", "राकेश शर्मा"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "कुतुब मीनार कहाँ स्थित है?", options: ["आगरा", "दिल्ली", "हैदराबाद", "लखनऊ"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "'मसालों का बगीचा' किस राज्य को कहा जाता है?", options: ["असम", "कर्नाटक", "आंध्र प्रदेश", "केरल"], correct: 3 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "भारत की सबसे लंबी नदी कौन सी है?", options: ["यमुना", "गोदावरी", "गंगा", "ब्रह्मपुत्र"], correct: 2 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "नोबेल पुरस्कार जीतने वाले पहले भारतीय कौन थे?", options: ["सी.वी. रमन", "रवींद्रनाथ टैगोर", "मदर टेरेसा", "अमर्त्य सेन"], correct: 1 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "शिक्षक दिवस (Teachers' Day) कब मनाया जाता है?", options: ["5 सितंबर", "2 अक्टूबर", "14 नवंबर", "26 जनवरी"], correct: 0 },
+        { subject: "General Knowledge", tabId: "tab-GK", q: "स्वतंत्र भारत के पहले गृह मंत्री कौन थे?", options: ["लाल बहादुर शास्त्री", "डॉ. बी.आर. अंबेडकर", "सरदार वल्लभभाई पटेल", "मोरारजी देसाई"], correct: 2 },
+
+        // 15 GS Questions
+        { subject: "General Science", tabId: "tab-GS", q: "मानव शरीर में कुल कितनी हड्डियां होती हैं?", options: ["202", "206", "208", "212"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "सूर्य के प्रकाश से कौन सा विटामिन मिलता है?", options: ["विटामिन A", "विटामिन B", "विटामिन C", "विटामिन D"], correct: 3 },
+        { subject: "General Science", tabId: "tab-GS", q: "जल का रासायनिक सूत्र क्या है?", options: ["HO2", "H2O", "CO2", "NaCl"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "हवा में सबसे अधिक मात्रा में कौन सी गैस पाई जाती है?", options: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"], correct: 2 },
+        { subject: "General Science", tabId: "tab-GS", q: "बल (Force) का SI मात्रक क्या है?", options: ["जूल", "वाट", "न्यूटन", "पास्कल"], correct: 2 },
+        { subject: "General Science", tabId: "tab-GS", q: "रक्त (Blood) का लाल रंग किसके कारण होता है?", options: ["प्लाज्मा", "हीमोग्लोबिन", "WBC", "प्लेटलेट्स"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "विद्युत धारा (Electric Current) को मापने का यंत्र कौन सा है?", options: ["वोल्टमीटर", "बैरोमीटर", "गैल्वेनोमीटर", "एमीटर"], correct: 3 },
+        { subject: "General Science", tabId: "tab-GS", q: "बर्फ का पिघलना कौन सा परिवर्तन है?", options: ["रासायनिक परिवर्तन", "भौतिक परिवर्तन", "जैविक परिवर्तन", "इनमें से कोई नहीं"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "ध्वनि की गति सबसे अधिक किसमें होती है?", options: ["हवा में", "पानी में", "निर्वात में", "ठोस (स्टील) में"], correct: 3 },
+        { subject: "General Science", tabId: "tab-GS", q: "पेनिसिलिन की खोज किसने की थी?", options: ["लुई पाश्चर", "अलेक्जेंडर फ्लेमिंग", "एडवर्ड जेनर", "रॉबर्ट हुक"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "सबसे हल्की गैस कौन सी है?", options: ["ऑक्सीजन", "हीलियम", "नाइट्रोजन", "हाइड्रोजन"], correct: 3 },
+        { subject: "General Science", tabId: "tab-GS", q: "टेलीफोन का आविष्कार किसने किया था?", options: ["थॉमस एडिसन", "ग्राहम बेल", "गैलीलियो", "मारकोनी"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "मानव शरीर की सबसे बड़ी ग्रंथि (Gland) कौन सी है?", options: ["थायराइड", "यकृत (Liver)", "अग्न्याशय (Pancreas)", "पीयूष ग्रंथि"], correct: 1 },
+        { subject: "General Science", tabId: "tab-GS", q: "विटामिन C की कमी से कौन सा रोग होता है?", options: ["रतौंधी", "बेरी-बेरी", "स्कर्वी", "रिकेट्स"], correct: 2 },
+        { subject: "General Science", tabId: "tab-GS", q: "पृथ्वी पर सबसे कठोर पदार्थ कौन सा है?", options: ["लोहा", "सोना", "हीरा", "प्लैटिनम"], correct: 2 },
+
+        // 15 Maths Questions
+        { subject: "Maths", tabId: "tab-Maths", q: "15 और 25 का LCM क्या होगा?", options: ["50", "75", "100", "125"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "एक त्रिभुज के तीनों कोणों का योग कितना होता है?", options: ["90°", "180°", "360°", "270°"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "120 का 40% कितना होगा?", options: ["40", "48", "50", "52"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "यदि x + 5 = 12 है, तो x का मान क्या है?", options: ["5", "6", "7", "8"], correct: 2 },
+        { subject: "Maths", tabId: "tab-Maths", q: "एक वर्ग (Square) की भुजा 5 मीटर है, तो उसका क्षेत्रफल क्या होगा?", options: ["20 वर्ग मीटर", "25 वर्ग मीटर", "30 वर्ग मीटर", "15 वर्ग मीटर"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "8, 12, और 16 का HCF क्या है?", options: ["2", "4", "6", "8"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "500 रुपये की वस्तु को 600 रुपये में बेचने पर कितने प्रतिशत का लाभ होगा?", options: ["10%", "15%", "20%", "25%"], correct: 2 },
+        { subject: "Maths", tabId: "tab-Maths", q: "2, 4, 6, 8, 10 का औसत (Average) क्या होगा?", options: ["4", "5", "6", "8"], correct: 2 },
+        { subject: "Maths", tabId: "tab-Maths", q: "1 किलोमीटर में कितने मीटर होते हैं?", options: ["100", "1000", "10000", "10"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "एक वृत्त की त्रिज्या 7 सेमी है, तो उसकी परिधि क्या होगी? (π = 22/7)", options: ["22 सेमी", "44 सेमी", "154 सेमी", "88 सेमी"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "15 का वर्ग (Square) क्या होता है?", options: ["225", "250", "125", "150"], correct: 0 },
+        { subject: "Maths", tabId: "tab-Maths", q: "3/4 को प्रतिशत (Percentage) में कैसे लिखेंगे?", options: ["50%", "60%", "75%", "80%"], correct: 2 },
+        { subject: "Maths", tabId: "tab-Maths", q: "एक काम को 5 आदमी 10 दिन में करते हैं, तो 10 आदमी उसी काम को कितने दिन में करेंगे?", options: ["2 दिन", "5 दिन", "10 दिन", "20 दिन"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "9 का घन (Cube) क्या होता है?", options: ["81", "729", "343", "512"], correct: 1 },
+        { subject: "Maths", tabId: "tab-Maths", q: "साधारण ब्याज ज्ञात करें: मूलधन 1000 रु, दर 5%, समय 2 वर्ष।", options: ["50 रु", "100 रु", "150 रु", "200 रु"], correct: 1 },
+
+        // 5 Reasoning Questions
+        { subject: "Reasoning", tabId: "tab-Reasoning", q: "श्रृंखला पूरी करें: 2, 4, 8, 16, ?", options: ["24", "30", "32", "64"], correct: 2 },
+        { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 'CAT' को 24 लिखा जाता है, तो 'DOG' को क्या लिखा जाएगा? (A=1, B=2...)", options: ["25", "26", "27", "28"], correct: 1 },
+        { subject: "Reasoning", tabId: "tab-Reasoning", q: "दिन का संबंध रात से है, तो सफेद का संबंध किससे होगा?", options: ["लाल", "पीला", "काला", "नीला"], correct: 2 },
+        { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक आदमी उत्तर की ओर 5 किमी चलता है, फिर दाईं ओर मुड़कर 3 किमी चलता है। वह अब किस दिशा की ओर जा रहा है?", options: ["उत्तर", "दक्षिण", "पूर्व", "पश्चिम"], correct: 2 },
+        { subject: "Reasoning", tabId: "tab-Reasoning", q: "इनमें से विषम (Odd one out) चुनें:", options: ["सेब", "केला", "आम", "आलू"], correct: 3 }
     ];
 
-    let currentQuestionIndex = 0;
+    let currentIndex = 0;
     let userAnswers = {}; 
+    let timeInSeconds = 60 * 60; 
+    let timerInterval;
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) { clearInterval(timerInterval); submitTest(); return; }
+            timeInSeconds--;
+            document.getElementById('timer').innerText = 
+                Math.floor(timeInSeconds / 60).toString().padStart(2, '0') + ":" + (timeInSeconds % 60).toString().padStart(2, '0');
+        }, 1000);
+    }
 
     function loadQuestion() {
-        const q = questions[currentQuestionIndex];
-        document.getElementById("q-no").innerText = currentQuestionIndex + 1;
-        document.getElementById("question-text").innerText = q.question;
-        for(let i=0; i<4; i++) {
-            document.getElementById(`opt-${i}`).innerText = q.options[i];
-        }
-        clearSelectionUI();
-        if(userAnswers[currentQuestionIndex] !== undefined) {
-            let cards = document.querySelectorAll(".option-card");
-            cards[userAnswers[currentQuestionIndex]].classList.add("selected");
+        const q = questions[currentIndex];
+        document.getElementById("q-no").innerText = currentIndex + 1;
+        document.getElementById("q-section-name").innerText = q.subject; // विषय का नाम दिखाएं
+        document.getElementById("question-text").innerText = q.q;
+        
+        let optionsHTML = "";
+        let labels = ["A", "B", "C", "D"];
+        q.options.forEach((opt, i) => {
+            let isSelected = (userAnswers[currentIndex] === i) ? "selected" : "";
+            let isChecked = (userAnswers[currentIndex] === i) ? "checked" : "";
+            optionsHTML += `
+                <label class="option-card ${isSelected}" onclick="selectOption(${i})">
+                    <input type="radio" name="option" value="${i}" ${isChecked}>
+                    <span class="opt-label">${labels[i]}.</span><span class="opt-text">${opt}</span>
+                </label>`;
+        });
+        document.getElementById("options-container").innerHTML = optionsHTML;
+
+        document.getElementById("prev-btn").style.display = (currentIndex === 0) ? "none" : "block";
+        
+        // टैब हाईलाइट करना
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(q.tabId).classList.add('active');
+
+        // चार्ट (Palette) अपडेट करना
+        renderPalette();
+    }
+
+    function goToSection(subject) {
+        let index = questions.findIndex(q => q.subject === subject);
+        if(index !== -1) { 
+            // अगर कोई ऑप्शन टिक किया था तो उसे सेव कर लें
+            let selected = document.querySelector('input[name="option"]:checked');
+            if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+            
+            currentIndex = index; 
+            loadQuestion(); 
         }
     }
 
     function selectOption(index) {
-        clearSelectionUI();
+        document.querySelectorAll(".option-card").forEach(c => c.classList.remove("selected"));
+        document.querySelectorAll('input[name="option"]').forEach(i => i.checked = false);
         document.querySelectorAll(".option-card")[index].classList.add("selected");
         document.querySelectorAll('input[name="option"]')[index].checked = true;
     }
 
-    function clearSelectionUI() {
-        document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
-        document.querySelectorAll('input[name="option"]').forEach(input => input.checked = false);
+    function clearResponse() {
+        document.querySelectorAll(".option-card").forEach(c => c.classList.remove("selected"));
+        document.querySelectorAll('input[name="option"]').forEach(i => i.checked = false);
+        delete userAnswers[currentIndex];
+        renderPalette(); // चार्ट अपडेट
     }
 
-    function clearResponse() {
-        clearSelectionUI();
-        delete userAnswers[currentQuestionIndex];
+    function prevQuestion() {
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        if(currentIndex > 0) { currentIndex--; loadQuestion(); }
     }
 
     function saveAndNext() {
-        let selectedOption = document.querySelector('input[name="option"]:checked');
-        if(selectedOption) {
-            userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
-        }
-        if(currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            loadQuestion();
-        } else {
-            alert("यह आखिरी प्रश्न था! अब 'Submit Quiz' पर क्लिक करें।");
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        
+        if(currentIndex < questions.length - 1) { 
+            currentIndex++; 
+            loadQuestion(); 
+        } else { 
+            alert("यह आखिरी प्रश्न है! अब 'Submit' पर क्लिक करें।"); 
+            renderPalette();
         }
     }
 
     function submitTest() {
-        let correctCount = 0, incorrectCount = 0, unattemptedCount = 0, totalScore = 0;
-        
-        questions.forEach((q, index) => {
-            if (userAnswers[index] === undefined) { unattemptedCount++; }
-            else if (userAnswers[index] === q.correct) { correctCount++; totalScore += 2; }
-            else { incorrectCount++; }
-        });
+        clearInterval(timerInterval);
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value); 
 
-        let totalAttempted = correctCount + incorrectCount;
-        let accuracy = totalAttempted > 0 ? ((correctCount / totalAttempted) * 100).toFixed(2) : 0;
-
-        const finalResult = {
-            totalQuestions: questions.length,
-            correct: correctCount,
-            incorrect: incorrectCount,
-            unattempted: unattemptedCount,
-            score: totalScore,
-            accuracy: accuracy
+        let resultData = {
+            total: questions.length, score: 0, correct: 0, incorrect: 0, unattempted: 0,
+            sections: {
+                "General Knowledge": { c: 0, i: 0, u: 0, s: 0 },
+                "General Science": { c: 0, i: 0, u: 0, s: 0 },
+                "Maths": { c: 0, i: 0, u: 0, s: 0 },
+                "Reasoning": { c: 0, i: 0, u: 0, s: 0 }
+            },
+            questionsData: questions, 
+            answersData: userAnswers
         };
 
-        // डेटा सेव करें और रिज़ल्ट पेज पर जाएँ
-        localStorage.setItem("myMockTestResult", JSON.stringify(finalResult));
-        window.location.href = "mock-result.html";
+        questions.forEach((q, index) => {
+            let ans = userAnswers[index];
+            if (ans === undefined) { 
+                resultData.unattempted++; resultData.sections[q.subject].u++; 
+            } else if (ans === q.correct) { 
+                resultData.correct++; resultData.score += 2;
+                resultData.sections[q.subject].c++; resultData.sections[q.subject].s += 2;
+            } else { 
+                resultData.incorrect++; resultData.score -= 0.5;
+                resultData.sections[q.subject].i++; resultData.sections[q.subject].s -= 0.5;
+            }
+        });
+
+        resultData.accuracy = resultData.correct + resultData.incorrect > 0 ? ((resultData.correct / (resultData.correct + resultData.incorrect)) * 100).toFixed(2) : 0;
+        
+        localStorage.setItem("myMockTestResult", JSON.stringify(resultData));
+        window.location.href = "result.html";
     }
 
-    window.onload = loadQuestion;
-</script>
+    // ==========================================
+    // Question Palette Logic
+    // ==========================================
+    function togglePalette() {
+        document.getElementById('palette-drawer').classList.toggle('open');
+        document.getElementById('palette-overlay').classList.toggle('open');
+    }
 
+    function renderPalette() {
+        const subjects = ["General Knowledge", "General Science", "Maths", "Reasoning"];
+        let html = "";
+        
+        subjects.forEach(sub => {
+            html += `<div class="palette-section"><h4>${sub}</h4><div class="palette-grid">`;
+            questions.forEach((q, i) => {
+                if(q.subject === sub) {
+                    let stateClass = "";
+                    if(userAnswers[i] !== undefined) stateClass = "answered";
+                    if(i === currentIndex) stateClass = "current";
+                    
+                    // जब कोई गोले पर क्लिक करे तो सीधा उस सवाल पर जाए
+                    html += `<div class="q-bubble ${stateClass}" onclick="jumpToQuestion(${i})">${i+1}</div>`;
+                }
+            });
+            html += `</div></div>`;
+        });
+        document.getElementById('palette-content').innerHTML = html;
+    }
+
+    function jumpToQuestion(index) {
+        // जाने से पहले मौजूदा सवाल सेव कर लें
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        
+        currentIndex = index;
+        loadQuestion();
+        togglePalette(); // क्लिक करने के बाद पैनल बंद कर दें
+    }
+
+    window.onload = function() { loadQuestion(); startTimer(); };
+</script>
 </body>
 </html>
