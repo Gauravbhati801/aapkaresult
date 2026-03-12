@@ -299,7 +299,7 @@
         resultData.accuracy = resultData.correct + resultData.incorrect > 0 ? ((resultData.correct / (resultData.correct + resultData.incorrect)) * 100).toFixed(2) : 0;
         
         localStorage.setItem("myMockTestResult", JSON.stringify(resultData));
-        window.location.href = "mock-result.html";
+        window.location.replace("mock-result.html");
     }
 
     // ==========================================
@@ -346,3 +346,4 @@
 </body>
 
 </html>
+
