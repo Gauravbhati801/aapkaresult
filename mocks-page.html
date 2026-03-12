@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Series Dashboard</title>
+    <style>
+        /* --- CSS (डिज़ाइन) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f6f9; }
+        
+        .app-container { max-width: 600px; margin: 0 auto; background-color: #f4f6f9; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Header */
+        .top-header { background-color: #fff; color: #333; padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
+        .back-btn { font-size: 1.5rem; margin-right: 15px; cursor: pointer; color: #555; }
+        .page-title { font-size: 1.1rem; font-weight: bold; color: #444; }
+
+        /* Test List */
+        .test-list { padding: 15px; display: flex; flex-direction: column; gap: 15px; }
+        
+        /* Test Card */
+        .test-card { background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .test-title { font-weight: bold; font-size: 1rem; color: #333; margin-bottom: 15px; line-height: 1.4; }
+        
+        /* Stats Info */
+        .test-stats { display: flex; justify-content: space-around; margin-bottom: 20px; }
+        .stat-item { display: flex; flex-direction: column; align-items: center; font-size: 0.75rem; color: #777; font-weight: bold; text-align: center; }
+        .stat-icon { background: #eef2ff; color: #3b82f6; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 8px; font-size: 1.2rem; }
+        
+        /* Buttons */
+        .test-actions { display: flex; gap: 10px; }
+        .btn { padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; border: none; font-size: 0.9rem; transition: 0.2s; }
+        .btn-attempt { background: #2563eb; color: #fff; width: 100px; }
+        .btn-view { background: #2563eb; color: #fff; }
+        .btn-reattempt { background: #dbeafe; color: #1e3a8a; }
+        
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header class="top-header">
+        <div class="back-btn">←</div>
+        <div class="page-title">All India Army GD, TDN, WMP Free...</div>
+    </header>
+
+    <main class="test-list">
+        
+        <div class="test-card">
+            <div class="test-title">05 Army GD TDN WMP Ranking Test (08 March 2026)</div>
+            <div class="test-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">🕒</div>
+                    60<br>Minutes
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📋</div>
+                    50<br>Questions
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💯</div>
+                    100<br>Marks
+                </div>
+            </div>
+            <div class="test-actions">
+                <button class="btn btn-view" onclick="window.location.href='result.html'">View Result</button>
+                <button class="btn btn-reattempt" onclick="window.location.href='quiz.html'">Re Attempt</button>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">04 Army GD TDN WMP Ranking Test (01 March 2026)</div>
+            <div class="test-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">🕒</div>
+                    60<br>Minutes
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📋</div>
+                    50<br>Questions
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💯</div>
+                    100<br>Marks
+                </div>
+            </div>
+            <div class="test-actions">
+                <button class="btn btn-attempt" onclick="window.location.href='quiz.html'">Attempt</button>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">03 Army GD TDN WMP Ranking Test (22 Feb. 2026)</div>
+            <div class="test-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">🕒</div>
+                    60<br>Minutes
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📋</div>
+                    50<br>Questions
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💯</div>
+                    100<br>Marks
+                </div>
+            </div>
+            <div class="test-actions">
+                <button class="btn btn-attempt" onclick="window.location.href='quiz.html'">Attempt</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
