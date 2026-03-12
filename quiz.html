@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test</title>
+    <style>
+        /* --- CSS (डिज़ाइन) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f6f9; }
+        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
+        .top-header { background-color: #1a233a; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .time { font-size: 1.2rem; font-weight: bold; display: block; }
+        .test-name { font-size: 0.8rem; color: #b0b5c1; }
+        .tabs { display: flex; overflow-x: auto; background: #fff; border-bottom: 1px solid #ddd; }
+        .tab { padding: 12px 15px; white-space: nowrap; color: #666; font-weight: bold; cursor: pointer; }
+        .tab.active { color: #1a233a; border-bottom: 3px solid #1a233a; }
+        .question-meta { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #555; }
+        .q-number { background: #888; color: white; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
+        .q-marks { margin-left: 15px; flex-grow: 1; color: #28a745; }
+        .q-marks .negative { color: #888; margin-left: 5px; }
+        .question-area { padding: 20px 15px; flex-grow: 1; background: #f4f6f9; }
+        .question-text { font-size: 1.1rem; margin-bottom: 20px; color: #222; }
+        .options-container { display: flex; flex-direction: column; gap: 10px; }
+        .option-card { background: #fff; border: 1px solid #fff; border-radius: 8px; padding: 15px; display: flex; align-items: center; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .option-card input[type="radio"] { display: none; }
+        .option-card.selected { border-color: #2b82c9; background-color: #eaf4fc; }
+        .opt-label { margin-right: 15px; color: #555; font-weight:bold; }
+        .bottom-actions { background: #fff; border-top: 1px solid #ddd; padding: 10px; }
+        .action-buttons { display: flex; gap: 5px; }
+        .btn { padding: 12px 10px; border-radius: 5px; font-weight: bold; cursor: pointer; flex: 1; font-size: 0.8rem; border: none; }
+        .btn-submit { background: #ff4d4d; color: white; }
+        .btn-clear { background: #fff; color: #333; border: 1px solid #ccc; }
+        .btn-save { background: #2b82c9; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header class="top-header">
+        <div>
+            <span id="timer" class="time">59:56</span>
+            <span class="test-name">05 Army GD TDN WMP...</span>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <div class="tab active">General Knowledge</div>
+    </nav>
+
+    <div class="question-meta">
+        <div class="q-number" id="q-no">1</div>
+        <div class="q-marks">+2.00 <span class="negative">-0.00</span></div>
+    </div>
+
+    <main class="question-area">
+        <h3 id="question-text" class="question-text">प्रश्न लोड हो रहा है...</h3>
+        
+        <div class="options-container">
+            <label class="option-card" onclick="selectOption(0)">
+                <input type="radio" name="option" value="0">
+                <span class="opt-label">a.</span>
+                <span class="opt-text" id="opt-0">विकल्प 1</span>
+            </label>
+            <label class="option-card" onclick="selectOption(1)">
+                <input type="radio" name="option" value="1">
+                <span class="opt-label">b.</span>
+                <span class="opt-text" id="opt-1">विकल्प 2</span>
+            </label>
+            <label class="option-card" onclick="selectOption(2)">
+                <input type="radio" name="option" value="2">
+                <span class="opt-label">c.</span>
+                <span class="opt-text" id="opt-2">विकल्प 3</span>
+            </label>
+            <label class="option-card" onclick="selectOption(3)">
+                <input type="radio" name="option" value="3">
+                <span class="opt-label">d.</span>
+                <span class="opt-text" id="opt-3">विकल्प 4</span>
+            </label>
+        </div>
+    </main>
+
+    <footer class="bottom-actions">
+        <div class="action-buttons">
+            <button class="btn btn-submit" onclick="submitTest()">Submit Quiz</button>
+            <button class="btn btn-clear" onclick="clearResponse()">Clear Response</button>
+            <button class="btn btn-save" onclick="saveAndNext()">Save & Next</button>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // --- JavaScript (लॉजिक) ---
+    const questions = [
+        {
+            question: "मार्च 2026 के अनुसार लद्दाख के उपराज्यपाल कौन हैं?",
+            options: ["तरनजीत संधू", "आरएन रवि", "जिष्णु देव वर्मा", "विनय कुमार सक्सेना"],
+            correct: 2 
+        },
+        {
+            question: "भारत की राजधानी क्या है?",
+            options: ["मुंबई", "नई दिल्ली", "कोलकाता", "चेन्नई"],
+            correct: 1
+        },
+        {
+            question: "सूर्य किस दिशा से उगता है?",
+            options: ["पश्चिम", "उत्तर", "दक्षिण", "पूर्व"],
+            correct: 3
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {}; 
+
+    function loadQuestion() {
+        const q = questions[currentQuestionIndex];
+        document.getElementById("q-no").innerText = currentQuestionIndex + 1;
+        document.getElementById("question-text").innerText = q.question;
+        for(let i=0; i<4; i++) {
+            document.getElementById(`opt-${i}`).innerText = q.options[i];
+        }
+        clearSelectionUI();
+        if(userAnswers[currentQuestionIndex] !== undefined) {
+            let cards = document.querySelectorAll(".option-card");
+            cards[userAnswers[currentQuestionIndex]].classList.add("selected");
+        }
+    }
+
+    function selectOption(index) {
+        clearSelectionUI();
+        document.querySelectorAll(".option-card")[index].classList.add("selected");
+        document.querySelectorAll('input[name="option"]')[index].checked = true;
+    }
+
+    function clearSelectionUI() {
+        document.querySelectorAll(".option-card").forEach(card => card.classList.remove("selected"));
+        document.querySelectorAll('input[name="option"]').forEach(input => input.checked = false);
+    }
+
+    function clearResponse() {
+        clearSelectionUI();
+        delete userAnswers[currentQuestionIndex];
+    }
+
+    function saveAndNext() {
+        let selectedOption = document.querySelector('input[name="option"]:checked');
+        if(selectedOption) {
+            userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+        }
+        if(currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            loadQuestion();
+        } else {
+            alert("यह आखिरी प्रश्न था! अब 'Submit Quiz' पर क्लिक करें।");
+        }
+    }
+
+    function submitTest() {
+        let correctCount = 0, incorrectCount = 0, unattemptedCount = 0, totalScore = 0;
+        
+        questions.forEach((q, index) => {
+            if (userAnswers[index] === undefined) { unattemptedCount++; }
+            else if (userAnswers[index] === q.correct) { correctCount++; totalScore += 2; }
+            else { incorrectCount++; }
+        });
+
+        let totalAttempted = correctCount + incorrectCount;
+        let accuracy = totalAttempted > 0 ? ((correctCount / totalAttempted) * 100).toFixed(2) : 0;
+
+        const finalResult = {
+            totalQuestions: questions.length,
+            correct: correctCount,
+            incorrect: incorrectCount,
+            unattempted: unattemptedCount,
+            score: totalScore,
+            accuracy: accuracy
+        };
+
+        // डेटा सेव करें और रिज़ल्ट पेज पर जाएँ
+        localStorage.setItem("myMockTestResult", JSON.stringify(finalResult));
+        window.location.href = "mock-result.html";
+    }
+
+    window.onload = loadQuestion;
+</script>
+
+</body>
+</html>
