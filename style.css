@@ -797,6 +797,19 @@ background:#ff0000;
 }
 
 
+ /* Mock test Button */
+        .cta-container { text-align: center; margin: 30px 0; padding: 0 20px; }
+        .btn-start { background: #e60000; color: rgb(255, 255, 255); border: none; padding: 16px 20px; width: 100%; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3); transition: 0.3s; animation: pulse 2s infinite; }
+        .btn-start:hover { background: #e60000; transform: translateY(-2px); }
+
+        /* Button Animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+        }
+
+
 
 
 
