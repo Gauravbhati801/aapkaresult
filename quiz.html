@@ -117,8 +117,15 @@
 </div>
 
 <script>
-    // आपके पूरे 50 सवाल
-    const questions = [
+   // 1. URL से टेस्ट का नंबर निकालेगा
+    const urlParams = new URLSearchParams(window.location.search);
+    const testNumber = urlParams.get('test') || '1';
+
+    // 2. सारे टेस्ट का डेटाबेस
+    const allTestDatabase = {
+        
+        // ================= TEST 5 (आपके जो 50 सवाल अभी थे, वो यहाँ पेस्ट कर दें) =================
+        "5": [
         // 15 GK Questions
         { subject: "General Knowledge", tabId: "tab-GK", q: "भारत के प्रथम राष्ट्रपति कौन थे?", options: ["पं. जवाहरलाल नेहरू", "डॉ. राजेंद्र प्रसाद", "महात्मा गांधी", "सरदार पटेल"], correct: 1 },
         { subject: "General Knowledge", tabId: "tab-GK", q: "कारगिल युद्ध किस वर्ष हुआ था?", options: ["1971", "1965", "1999", "1947"], correct: 2 },
@@ -176,8 +183,258 @@
         { subject: "Reasoning", tabId: "tab-Reasoning", q: "दिन का संबंध रात से है, तो सफेद का संबंध किससे होगा?", options: ["लाल", "पीला", "काला", "नीला"], correct: 2 },
         { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक आदमी उत्तर की ओर 5 किमी चलता है, फिर दाईं ओर मुड़कर 3 किमी चलता है। वह अब किस दिशा की ओर जा रहा है?", options: ["उत्तर", "दक्षिण", "पूर्व", "पश्चिम"], correct: 2 },
         { subject: "Reasoning", tabId: "tab-Reasoning", q: "इनमें से विषम (Odd one out) चुनें:", options: ["सेब", "केला", "आम", "आलू"], correct: 3 }
-    ];
+        ],
 
+        // ================= TEST 4 के सवाल =================
+       // ================= TEST 4 (Hard Level) =================
+        "4": [
+            // 15 General Knowledge
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय संविधान का अनुच्छेद 32 किससे संबंधित है?", options: ["समानता का अधिकार", "संवैधानिक उपचारों का अधिकार", "धार्मिक स्वतंत्रता", "शिक्षा का अधिकार"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "पानीपत का प्रथम युद्ध सटीक किस तिथि को लड़ा गया था?", options: ["21 अप्रैल 1526", "15 मई 1526", "18 जून 1576", "14 जनवरी 1761"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व का सबसे गहरा गर्त 'मारियाना ट्रेंच' किस महासागर में है?", options: ["हिंद महासागर", "अटलांटिक महासागर", "प्रशांत महासागर", "आर्कटिक महासागर"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व व्यापार संगठन (WTO) का मुख्यालय कहाँ स्थित है?", options: ["न्यूयॉर्क", "जिनेवा", "पेरिस", "लंदन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "ओलंपिक पदक जीतने वाली प्रथम भारतीय महिला कौन थीं?", options: ["पी.टी. उषा", "मैरी कॉम", "साइना नेहवाल", "कर्णम मल्लेश्वरी"], correct: 3 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "प्रसिद्ध पुस्तक 'मुद्राराक्षस' के लेखक कौन हैं?", options: ["कालिदास", "विशाखदत्त", "बाणभट्ट", "कौटिल्य"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "इनमें से कौन सी नदी भारत में उत्पन्न नहीं होती है?", options: ["गंगा", "यमुना", "ब्रह्मपुत्र", "गोदावरी"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "स्वतंत्र भारत के प्रथम गवर्नर-जनरल कौन थे?", options: ["लॉर्ड माउंटबेटन", "सी. राजगोपालाचारी", "डॉ. राजेंद्र प्रसाद", "लॉर्ड डलहौज़ी"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत में मतदान की आयु 21 वर्ष से घटाकर 18 वर्ष किस संविधान संशोधन द्वारा की गई?", options: ["42वें", "44वें", "61वें", "86वें"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "दुनिया की सबसे लंबी तटरेखा (Coastline) किस देश की है?", options: ["रूस", "कनाडा", "ऑस्ट्रेलिया", "भारत"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "नर्मदा नदी का उद्गम स्थल क्या है?", options: ["महाबलेश्वर", "अमरकंटक", "त्र्यंबकेश्वर", "ब्रह्मगिरि"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत द्वारा प्रक्षेपित प्रथम कृत्रिम उपग्रह कौन सा था?", options: ["भास्कर", "रोहिणी", "आर्यभट्ट", "एप्पल"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "ऑस्ट्रेलिया की राजधानी क्या है?", options: ["सिडनी", "मेलबर्न", "कैनबरा", "पर्थ"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "संयुक्त राष्ट्र संघ (UNO) की स्थापना कब हुई थी?", options: ["24 अक्टूबर 1945", "15 अगस्त 1947", "26 जनवरी 1950", "1 मई 1940"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत में सबसे बड़ा बाघ अभयारण्य (Tiger Reserve) कौन सा है?", options: ["जिम कॉर्बेट", "सुंदरबन", "नागार्जुनसागर-श्रीशैलम", "रणथंभौर"], correct: 2 },
+
+            // 15 General Science
+            { subject: "General Science", tabId: "tab-GS", q: "ज्योति तीव्रता (Luminous Intensity) का SI मात्रक क्या है?", options: ["ल्यूमेन", "कैंडेला", "लक्ष", "वाट"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "ब्लीचिंग पाउडर का रासायनिक सूत्र क्या है?", options: ["CaCO3", "Ca(OH)2", "CaOCl2", "CaCl2"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "मानव रक्त का pH मान लगभग कितना होता है?", options: ["6.4", "7.0", "7.4", "8.2"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "पृथ्वी के लिए पलायन वेग (Escape Velocity) कितना है?", options: ["9.8 km/s", "11.2 km/s", "11.2 m/s", "8.0 km/s"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "लार (Saliva) में कौन सा एंजाइम पाया जाता है?", options: ["पेप्सिन", "रेनिन", "टायलिन", "लाइपेस"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "विद्युत बल्ब में आमतौर पर कौन सी गैस भरी जाती है?", options: ["ऑक्सीजन", "हाइड्रोजन", "आर्गन और नाइट्रोजन", "हीलियम"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "किस विटामिन में कोबाल्ट पाया जाता है?", options: ["विटामिन B1", "विटामिन B6", "विटामिन B12", "विटामिन K"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "वायुमंडल की आर्द्रता (Humidity) मापने वाला यंत्र है:", options: ["बैरोमीटर", "हाइग्रोमीटर", "हाइड्रोमीटर", "लैक्टोमीटर"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "कैंसर के उपचार में किस समस्थानिक (Isotope) का प्रयोग होता है?", options: ["यूरेनियम-235", "आयोडीन-131", "कोबाल्ट-60", "कार्बन-14"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "एल्यूमीनियम का मुख्य अयस्क (Ore) कौन सा है?", options: ["हेमेटाइट", "बॉक्साइट", "गैलेना", "सिनेबार"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "चींटी के डंक में कौन सा अम्ल होता है?", options: ["एसिटिक अम्ल", "साइट्रिक अम्ल", "फॉर्मिक अम्ल (मेथेनोइक)", "लैक्टिक अम्ल"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "आनुवंशिकी (Genetics) का जनक किसे कहा जाता है?", options: ["चार्ल्स डार्विन", "ग्रेगर मेंडल", "रॉबर्ट हुक", "लुई पाश्चर"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "ध्वनि तरंगें (Sound waves) किस प्रकार की तरंगें हैं?", options: ["अनुप्रस्थ (Transverse)", "अनुदैर्ध्य (Longitudinal)", "विद्युत चुम्बकीय", "इनमें से कोई नहीं"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "एक अश्व शक्ति (Horsepower) कितने वाट के बराबर होती है?", options: ["746 W", "1000 W", "500 W", "786 W"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "शुष्क बर्फ (Dry Ice) किसे कहते हैं?", options: ["ठोस जल", "ठोस कार्बन डाइऑक्साइड", "ठोस नाइट्रोजन", "ठोस अमोनिया"], correct: 1 },
+
+            // 15 Maths
+            { subject: "Maths", tabId: "tab-Maths", q: "समीकरण x² - 5x + 6 = 0 के मूल (Roots) क्या होंगे?", options: ["2, 3", "-2, -3", "1, 6", "-1, -6"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक शंकु (Cone) की त्रिज्या 7 सेमी और ऊंचाई 15 सेमी है। उसका आयतन क्या होगा? (π = 22/7)", options: ["770 घन सेमी", "1540 घन सेमी", "2310 घन सेमी", "385 घन सेमी"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "5000 रु पर 10% वार्षिक दर से 2 वर्ष के साधारण ब्याज और चक्रवृद्धि ब्याज का अंतर क्या होगा?", options: ["50 रु", "100 रु", "25 रु", "20 रु"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक 200 मी लंबी ट्रेन 72 किमी/घंटा की गति से चल रही है। वह 300 मी लंबे प्लेटफॉर्म को कितने समय में पार करेगी?", options: ["20 सेकंड", "25 सेकंड", "15 सेकंड", "10 सेकंड"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "sin 30° + cos 60° का मान क्या होगा?", options: ["0", "1", "1/2", "√3/2"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक पासा (Dice) फेंकने पर अभाज्य संख्या (Prime number) आने की प्रायिकता क्या है?", options: ["1/6", "1/3", "1/2", "2/3"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "0.36, 1.2 और 4.8 का LCM क्या होगा?", options: ["14.4", "1.44", "0.144", "144"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "A किसी काम को 12 दिन में और B उसी काम को 15 दिन में कर सकता है। दोनों मिलकर उस काम को कितने दिन में करेंगे?", options: ["6 सही 2/3 दिन", "8 दिन", "9 दिन", "7 सही 1/2 दिन"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वस्तु का अंकित मूल्य 800 रु है। 15% की छूट देने के बाद भी 2% का लाभ होता है। क्रय मूल्य क्या है?", options: ["600 रु", "650 रु", "666.6 रु", "700 रु"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "पिता की आयु पुत्र की आयु की 3 गुनी है। 10 वर्ष बाद पिता की आयु पुत्र की आयु की दोगुनी होगी। पिता की वर्तमान आयु क्या है?", options: ["30 वर्ष", "45 वर्ष", "40 वर्ष", "50 वर्ष"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक समबाहु त्रिभुज (Equilateral triangle) की भुजा 4√3 सेमी है, उसका क्षेत्रफल क्या होगा?", options: ["12√3 वर्ग सेमी", "16√3 वर्ग सेमी", "24 वर्ग सेमी", "18 वर्ग सेमी"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक नाव धारा की दिशा में 15 किमी/घंटा और धारा के विपरीत 9 किमी/घंटा की गति से चलती है। शांत जल में नाव की गति क्या है?", options: ["3 किमी/घंटा", "12 किमी/घंटा", "24 किमी/घंटा", "6 किमी/घंटा"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "x + 1/x = 4 है, तो x² + 1/x² का मान क्या होगा?", options: ["14", "16", "12", "18"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "प्रथम 50 प्राकृत संख्याओं (Natural numbers) का योग क्या होगा?", options: ["1250", "1275", "1300", "2500"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "दो संख्याओं का अनुपात 3:4 है और उनका HCF 5 है। उनका LCM क्या होगा?", options: ["12", "20", "60", "15"], correct: 2 },
+
+            // 5 Reasoning
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "श्रृंखला पूरी करें: 2, 6, 12, 20, 30, ?", options: ["40", "42", "44", "48"], correct: 1 }, // 1x2, 2x3, 3x4...
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक तस्वीर की ओर इशारा करते हुए राम ने कहा, 'वह मेरे पिता के इकलौते बेटे की बेटी है'। तस्वीर वाली लड़की राम की क्या लगती है?", options: ["बहन", "भतीजी", "बेटी", "चचेरी बहन"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि MACHINE को 19-7-9-14-15-20-11 लिखा जाता है, तो DANGER को क्या लिखा जाएगा?", options: ["10-7-20-13-11-24", "11-7-20-16-11-24", "10-7-20-16-11-24", "10-8-20-16-11-24"], correct: 0 }, // Letter pos + 6
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "रोहन उत्तर की ओर 10 किमी चला, फिर बाएँ मुड़कर 20 किमी चला, फिर बाएँ मुड़कर 10 किमी चला। वह अपने शुरुआती बिंदु से कितनी दूर है?", options: ["10 किमी", "20 किमी", "30 किमी", "40 किमी"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "विषम चुनें (Odd One Out):", options: ["लोहा", "तांबा", "पीतल", "एल्यूमीनियम"], correct: 2 } // Brass is an alloy
+        ],
+
+        // ================= TEST 3 (Hard Level) =================
+        // ================= TEST 3 के सवाल =================
+       "3": [
+            // 15 General Knowledge
+            { subject: "General Knowledge", tabId: "tab-GK", q: "द्वितीय बौद्ध संगीति कहाँ आयोजित की गई थी?", options: ["राजगृह", "वैशाली", "पाटलिपुत्र", "कुंडलवन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "संविधान का अनुच्छेद 356 किससे संबंधित है?", options: ["राष्ट्रीय आपातकाल", "वित्तीय आपातकाल", "राष्ट्रपति शासन", "संविधान संशोधन"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "दक्षिण भारत की सबसे ऊँची चोटी कौन सी है?", options: ["डोडाबेट्टा", "अनामुडी", "महेंद्रगिरि", "गुरुशिखर"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "साहित्य का नोबेल पुरस्कार जीतने वाले प्रथम एशियाई कौन थे?", options: ["सी.वी. रमन", "रवींद्रनाथ टैगोर", "मदर टेरेसा", "अमर्त्य सेन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "जापान की मुद्रा (Currency) क्या है?", options: ["युआन", "येन", "रूबेल", "वॉन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "बक्सर का युद्ध (Battle of Buxar) किस वर्ष लड़ा गया था?", options: ["1757", "1761", "1764", "1857"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "यूनेस्को (UNESCO) का मुख्यालय कहाँ है?", options: ["पेरिस", "जिनेवा", "न्यूयॉर्क", "रोम"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "स्वतंत्र भारत के प्रथम भारतीय गवर्नर-जनरल कौन थे?", options: ["लॉर्ड माउंटबेटन", "डॉ. राजेंद्र प्रसाद", "सी. राजगोपालाचारी", "जवाहरलाल नेहरू"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "कर्क रेखा (Tropic of Cancer) भारत के कितने राज्यों से होकर गुजरती है?", options: ["6", "7", "8", "9"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व का सबसे बड़ा द्वीप (Island) कौन सा है?", options: ["मेडागास्कर", "बोर्नियो", "ग्रीनलैंड", "सुमात्रा"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का प्रथम परमाणु रिएक्टर कौन सा है?", options: ["अप्सरा", "ध्रुव", "सायरस", "पूर्णिमा"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "डेविस कप का संबंध किस खेल से है?", options: ["क्रिकेट", "फुटबॉल", "लॉन टेनिस", "बैडमिंटन"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय राष्ट्रीय कांग्रेस की प्रथम महिला अध्यक्ष कौन थीं?", options: ["सरोजिनी नायडू", "एनी बेसेंट", "इंदिरा गांधी", "सोनिया गांधी"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "सौरमंडल में सबसे अधिक उपग्रह (Moons) किस ग्रह के हैं?", options: ["बृहस्पति (Jupiter)", "शनि (Saturn)", "यूरेनस", "नेप्च्यून"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "हड़प्पा सभ्यता की खोज किसने की थी?", options: ["राखलदास बनर्जी", "दयाराम साहनी", "सर जॉन मार्शल", "ए. कनिंघम"], correct: 1 },
+
+            // 15 General Science
+            { subject: "General Science", tabId: "tab-GS", q: "ठोस कोण (Solid Angle) की इकाई क्या है?", options: ["रेडियन", "स्टेरेडियन", "डिग्री", "कैंडेला"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "बेकिंग सोडा (खाने का सोडा) का रासायनिक नाम क्या है?", options: ["सोडियम कार्बोनेट", "सोडियम बाइकार्बोनेट", "कैल्शियम कार्बोनेट", "पोटेशियम नाइट्रेट"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "ऑप्टिकल फाइबर (Optical Fibre) किस सिद्धांत पर कार्य करता है?", options: ["प्रकीर्णन (Scattering)", "परावर्तन (Reflection)", "पूर्ण आंतरिक परावर्तन (TIR)", "अपवर्तन (Refraction)"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "रक्त का थक्का (Blood Clotting) जमने में कौन सा विटामिन सहायक है?", options: ["विटामिन A", "विटामिन C", "विटामिन D", "विटामिन K"], correct: 3 },
+            { subject: "General Science", tabId: "tab-GS", q: "सबसे भारी प्राकृतिक तत्व (Heaviest naturally occurring element) कौन सा है?", options: ["यूरेनियम", "प्लूटोनियम", "सोना", "ऑस्मियम"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "प्राकृतिक गैस (Natural Gas) का मुख्य घटक क्या है?", options: ["इथेन", "ब्यूटेन", "मीथेन", "प्रोपेन"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "इलेक्ट्रॉन की खोज किसने की थी?", options: ["रदरफोर्ड", "जेम्स चैडविक", "जे.जे. थॉमसन", "नील्स बोर"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "मनुष्य के हृदय में कितने कक्ष (Chambers) होते हैं?", options: ["2", "3", "4", "5"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "अमाशय (Stomach) में कौन सा अम्ल स्रावित होता है?", options: ["सल्फ्यूरिक अम्ल", "नाइट्रिक अम्ल", "हाइड्रोक्लोरिक अम्ल (HCl)", "लैक्टिक अम्ल"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "लेंस की क्षमता (Power of Lens) का मात्रक क्या है?", options: ["वाट", "डायोप्टर", "लक्स", "ल्यूमेन"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "मलेरिया रोग किसके कारण होता है?", options: ["जीवाणु (Bacteria)", "विषाणु (Virus)", "कवक (Fungi)", "परजीवी (Protozoa)"], correct: 3 },
+            { subject: "General Science", tabId: "tab-GS", q: "कमरे के तापमान पर द्रव अवस्था में पाई जाने वाली धातु है:", options: ["ब्रोमीन", "पारा (Mercury)", "गैलियम", "सीज़ियम"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "हड्डियों और दाँतों के निर्माण में मुख्य तत्व कौन से हैं?", options: ["कैल्शियम और लोहा", "कैल्शियम और फास्फोरस", "सोडियम और पोटेशियम", "मैग्नीशियम और जिंक"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "हीटर का तार किसका बना होता है?", options: ["तांबा", "टंगस्टन", "नाइक्रोम", "एल्यूमीनियम"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "ऊतकों (Tissues) के अध्ययन को क्या कहा जाता है?", options: ["साइटोलॉजी", "हिस्टोलॉजी", "माइकोलॉजी", "डर्मेटोलॉजी"], correct: 1 },
+
+            // 15 Maths
+            { subject: "Maths", tabId: "tab-Maths", q: "एक बेलन (Cylinder) की त्रिज्या 14 सेमी और ऊंचाई 10 सेमी है। इसका संपूर्ण पृष्ठीय क्षेत्रफल क्या होगा?", options: ["1056 वर्ग सेमी", "1496 वर्ग सेमी", "2112 वर्ग सेमी", "1232 वर्ग सेमी"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "दो पाइप A और B किसी टंकी को क्रमशः 20 मिनट और 30 मिनट में भर सकते हैं। दोनों एक साथ खोल दिए जाएं तो टंकी कितने समय में भरेगी?", options: ["12 मिनट", "15 मिनट", "25 मिनट", "10 मिनट"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक चुनाव में दो उम्मीदवार थे। हारने वाले को 40% वोट मिले और वह 2000 वोटों से हार गया। कुल कितने वोट पड़े?", options: ["8000", "10000", "12000", "5000"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "कोई धनराशि साधारण ब्याज पर 5 वर्षों में दोगुनी हो जाती है। ब्याज की दर क्या है?", options: ["10%", "15%", "20%", "25%"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "√12 + √12 + √12... अनन्त तक का मान क्या होगा?", options: ["3", "4", "6", "12"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक थैले में 1 रु, 50 पैसे और 25 पैसे के सिक्के 2:3:4 के अनुपात में हैं। यदि कुल राशि 180 रु है, तो 50 पैसे के सिक्कों की संख्या क्या है?", options: ["80", "120", "160", "200"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "10%, 20% और 30% की क्रमिक छूटों (Successive discounts) के समतुल्य एकल छूट क्या होगी?", options: ["60%", "50.4%", "49.6%", "55%"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक व्यक्ति 10 किमी/घंटा की गति से जाता है और 15 किमी/घंटा की गति से वापस आता है। उसकी औसत गति क्या है?", options: ["12.5 किमी/घंटा", "12 किमी/घंटा", "13 किमी/घंटा", "14 किमी/घंटा"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि संख्या 48327*8, 11 से पूर्णतः विभाज्य है, तो * के स्थान पर क्या अंक आएगा?", options: ["1", "3", "5", "7"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक बंदूक से गोली चलाई जाती है। यदि ध्वनि 10 सेकंड बाद सुनाई देती है और ध्वनि की गति 330 मी/से है, तो दूरी कितनी है?", options: ["330 मी", "3300 मी", "1650 मी", "3.3 मी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "11 छात्रों का औसत वजन 40 किलो है। यदि शिक्षक का वजन मिला लिया जाए तो औसत 1 किलो बढ़ जाता है। शिक्षक का वजन क्या है?", options: ["51 किलो", "52 किलो", "50 किलो", "45 किलो"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक पेड़ की छाया उसकी ऊंचाई के बराबर है। सूर्य का उन्नयन कोण (Angle of Elevation) क्या होगा?", options: ["30°", "45°", "60°", "90°"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "x:y = 3:4 और y:z = 8:9 है, तो x:z का मान क्या होगा?", options: ["3:9", "2:3", "3:2", "1:3"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "2/3, 4/9 और 5/6 का LCM क्या होगा?", options: ["20/3", "20/27", "10/3", "40/9"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि a² - b² = 19 है और a, b प्राकृत संख्याएं हैं, तो a का मान क्या होगा?", options: ["9", "10", "19", "20"], correct: 1 },
+
+            // 5 Reasoning
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 1 जनवरी 2024 को सोमवार था, तो 1 जनवरी 2025 को कौन सा दिन होगा?", options: ["सोमवार", "मंगलवार", "बुधवार", "बृहस्पतिवार"], correct: 2 }, // 2024 is leap year, +2 days
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "घड़ी में 3:30 बजे घंटे और मिनट की सुई के बीच कितने डिग्री का कोण बनेगा?", options: ["90°", "75°", "105°", "60°"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "दिए गए विकल्पों में लुप्त संख्या ज्ञात करें: 4, 9, 25, 49, ?", options: ["64", "81", "100", "121"], correct: 3 }, // Squares of primes
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "40 छात्रों की एक कक्षा में राम का स्थान ऊपर से 15वां है। नीचे से उसका स्थान कौन सा होगा?", options: ["25वां", "26वां", "27वां", "24वां"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "कथन: सभी कुत्ते बिल्ली हैं। कुछ बिल्ली चूहे हैं। \nनिष्कर्ष: कुछ कुत्ते चूहे हैं।", options: ["सत्य है", "असत्य है", "तय नहीं कर सकते", "इनमें से कोई नहीं"], correct: 1 }
+        ],
+
+       // ================= TEST 2 के सवाल =================
+        "2": [
+            // 15 General Knowledge Questions
+            { subject: "General Knowledge", tabId: "tab-GK", q: "रामायण के रचयिता कौन हैं?", options: ["तुलसीदास", "वाल्मीकि", "वेदव्यास", "कबीरदास"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का सर्वोच्च नागरिक सम्मान कौन सा है?", options: ["पद्म भूषण", "परमवीर चक्र", "भारत रत्न", "शौर्य चक्र"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'स्वराज मेरा जन्मसिद्ध अधिकार है' किसने कहा था?", options: ["भगत सिंह", "लाला लाजपत राय", "बाल गंगाधर तिलक", "सुभाष चंद्र बोस"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व की सबसे गहरी झील कौन सी है?", options: ["सुपीरियर झील", "विक्टोरिया झील", "बैकाल झील", "चिल्का झील"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'पिंक सिटी' (गुलाबी शहर) के नाम से किसे जाना जाता है?", options: ["उदयपुर", "जयपुर", "जोधपुर", "बीकानेर"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय संविधान के निर्माता कौन माने जाते हैं?", options: ["महात्मा गांधी", "जवाहरलाल नेहरू", "डॉ. राजेंद्र प्रसाद", "डॉ. बी.आर. अंबेडकर"], correct: 3 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "पृथ्वी दिवस कब मनाया जाता है?", options: ["22 मार्च", "22 अप्रैल", "5 जून", "11 जुलाई"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'आजाद हिंद फौज' की स्थापना किसने की थी?", options: ["चंद्रशेखर आजाद", "भगत सिंह", "सुभाष चंद्र बोस", "राजगुरु"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "सबसे छोटा महासागर कौन सा है?", options: ["प्रशांत महासागर", "हिंद महासागर", "आर्कटिक महासागर", "अटलांटिक महासागर"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'मैकमोहन रेखा' किन दो देशों के बीच स्थित है?", options: ["भारत और पाकिस्तान", "भारत और नेपाल", "भारत और चीन", "पाकिस्तान और अफगानिस्तान"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "अर्जुन पुरस्कार किस क्षेत्र में दिया जाता है?", options: ["सिनेमा", "साहित्य", "खेल", "विज्ञान"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "राष्ट्रीय गान 'जन गण मन' के रचयिता कौन हैं?", options: ["बंकिम चंद्र चटर्जी", "रवींद्रनाथ टैगोर", "शरद चंद्र चट्टोपाध्याय", "मुंशी प्रेमचंद"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत के पहले उप-प्रधानमंत्री कौन थे?", options: ["मोरारजी देसाई", "सरदार वल्लभभाई पटेल", "लाल कृष्ण आडवाणी", "चौधरी चरण सिंह"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'पंचतंत्र' के लेखक कौन हैं?", options: ["विष्णु शर्मा", "कालिदास", "तुलसीदास", "चाणक्य"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "काजीरंगा राष्ट्रीय उद्यान किस राज्य में है?", options: ["पश्चिम बंगाल", "मध्य प्रदेश", "असम", "उत्तराखंड"], correct: 2 },
+
+            // 15 General Science Questions
+            { subject: "General Science", tabId: "tab-GS", q: "प्रकाश वर्ष (Light Year) किसकी इकाई है?", options: ["समय की", "दूरी की", "प्रकाश की गति की", "ऊर्जा की"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "विटामिन ए की कमी से कौन सा रोग होता है?", options: ["स्कर्वी", "बेरी-बेरी", "रतौंधी", "रिकेट्स"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "ध्वनि की तीव्रता मापने की इकाई क्या है?", options: ["हर्ट्ज़", "डेसिबल", "मीटर", "जूल"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "कौन सा रक्त समूह 'सर्वदाता' (Universal Donor) कहलाता है?", options: ["A", "B", "AB", "O"], correct: 3 },
+            { subject: "General Science", tabId: "tab-GS", q: "दूध को दही में बदलने वाला जीवाणु कौन सा है?", options: ["ई. कोलाई", "लैक्टोबैसिलस", "राइज़ोबियम", "यीस्ट"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "मनुष्य के शरीर में पसलियों (Ribs) की संख्या कितनी होती है?", options: ["20", "22", "24", "26"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "खाने के नमक का रासायनिक नाम क्या है?", options: ["सोडियम क्लोराइड", "पोटेशियम क्लोराइड", "कैल्शियम कार्बोनेट", "सोडियम बाइकार्बोनेट"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "बायोगैस का मुख्य घटक क्या है?", options: ["ऑक्सीजन", "मीथेन", "ब्यूटेन", "प्रोपेन"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "टेलीविज़न का आविष्कार किसने किया था?", options: ["जे.एल. बेयर्ड", "थॉमस एडिसन", "मारकोनी", "ग्राहम बेल"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "लोहे पर जंग लगना किसका उदाहरण है?", options: ["भौतिक परिवर्तन", "ऑक्सीकरण", "उर्ध्वपातन", "अपचयन"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "पत्तियों का हरा रंग किसके कारण होता है?", options: ["जाइलम", "फ्लोएम", "क्लोरोफिल", "स्टोमेटा"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "सबसे भारी धातु कौन सी है?", options: ["सोना", "सीसा", "ऑस्मियम", "पारा"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "इंसुलिन की कमी से कौन सी बीमारी होती है?", options: ["कैंसर", "टीबी", "मधुमेह (Diabetes)", "मलेरिया"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "मानव नेत्र में प्रतिबिंब (Image) कहाँ बनता है?", options: ["कॉर्निया पर", "पुतली पर", "रेटिना पर", "आइरिस पर"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "सूर्य में ऊर्जा का मुख्य स्रोत क्या है?", options: ["नाभिकीय विखंडन", "नाभिकीय संलयन", "रासायनिक अभिक्रिया", "घर्षण"], correct: 1 },
+
+            // 15 Maths Questions
+            { subject: "Maths", tabId: "tab-Maths", q: "10, 15 और 30 का LCM (लघुत्तम समापवर्त्य) क्या होगा?", options: ["15", "30", "60", "90"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "1200 का 25% कितना होगा?", options: ["250", "300", "400", "500"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक आयत की लंबाई 10 मी और चौड़ाई 8 मी है, तो उसका क्षेत्रफल क्या होगा?", options: ["18 वर्ग मी", "36 वर्ग मी", "80 वर्ग मी", "100 वर्ग मी"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "50 + 10 × 2 का मान क्या होगा? (BODMAS नियम)", options: ["120", "100", "70", "80"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि x/5 = 10 है, तो x का मान क्या है?", options: ["2", "15", "50", "100"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वस्तु को 200 रुपये में खरीदकर 250 रुपये में बेचा गया, लाभ प्रतिशत क्या है?", options: ["20%", "25%", "30%", "50%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "1, 3, 5, 7, 9 का औसत (Average) क्या है?", options: ["4", "5", "6", "7"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "64 का वर्गमूल (Square root) क्या है?", options: ["6", "8", "12", "16"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "2 घंटे में कितने मिनट होते हैं?", options: ["60", "100", "120", "240"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वृत्त का व्यास 14 सेमी है, तो उसकी त्रिज्या (Radius) कितनी होगी?", options: ["7 सेमी", "14 सेमी", "21 सेमी", "28 सेमी"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "3/5 को प्रतिशत में कैसे लिखेंगे?", options: ["40%", "50%", "60%", "75%"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "18, 24 और 36 का HCF (महत्तम समापवर्तक) क्या होगा?", options: ["3", "4", "6", "12"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "साधारण ब्याज ज्ञात करें: मूलधन 2000 रु, दर 10%, समय 3 वर्ष।", options: ["300 रु", "500 रु", "600 रु", "900 रु"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "5 का घन (Cube) क्या होगा?", options: ["25", "100", "125", "150"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि 5 पेन की कीमत 25 रुपये है, तो 8 पेन की कीमत क्या होगी?", options: ["30 रुपये", "35 रुपये", "40 रुपये", "45 रुपये"], correct: 2 },
+
+            // 5 Reasoning Questions
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "श्रृंखला पूरी करें: 5, 10, 15, 20, ?", options: ["22", "25", "30", "35"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 'APPLE' को 'BQQMF' लिखा जाता है, तो 'BOY' को क्या लिखा जाएगा?", options: ["APX", "CPZ", "CNX", "BPY"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "गाय का संबंध बछड़े से है, तो कुत्ते का संबंध किससे होगा?", options: ["बिल्ली", "शेर", "पिल्ला", "मेमना"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक लड़की पश्चिम की ओर 4 किमी चलती है, फिर दाईं ओर मुड़कर 3 किमी चलती है। अब वह किस दिशा में देख रही है?", options: ["पूर्व", "उत्तर", "दक्षिण", "पश्चिम"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "इनमें से विषम (Odd one out) चुनें:", options: ["कार", "बस", "साइकिल", "हवाई जहाज"], correct: 3 }
+        ],
+
+        // ================= TEST 1 के सवाल =================
+        "1": [
+            // 15 General Knowledge
+            { subject: "General Knowledge", tabId: "tab-GK", q: "मौर्य साम्राज्य के संस्थापक कौन थे?", options: ["बिंदुसार", "अशोक", "चंद्रगुप्त मौर्य", "घनानंद"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "संविधान का अनुच्छेद 17 किससे संबंधित है?", options: ["उपाधियों का अंत", "अस्पृश्यता (छुआछूत) का अंत", "प्रेस की स्वतंत्रता", "समान कार्य के लिए समान वेतन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का सबसे लंबा बाँध कौन सा है?", options: ["भाखड़ा नांगल बाँध", "हीराकुंड बाँध", "टिहरी बाँध", "सरदार सरोवर बाँध"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "कनाडा की राजधानी क्या है?", options: ["टोरंटो", "ओटावा", "वैंकूवर", "मॉन्ट्रियल"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "गांधीजी की आत्मकथा 'माई एक्सपेरिमेंट्स विद ट्रुथ' मूल रूप से किस भाषा में लिखी गई थी?", options: ["अंग्रेजी", "हिन्दी", "गुजराती", "मराठी"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व का सबसे बड़ा मरुस्थल (Desert) कौन सा है?", options: ["थार", "सहारा", "गोबी", "अटाकामा"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत और चीन के बीच की सीमा रेखा को क्या कहते हैं?", options: ["रेडक्लिफ रेखा", "मैकमोहन रेखा", "डूरंड रेखा", "मैगीनॉट रेखा"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत के राष्ट्रपति पद के लिए न्यूनतम आयु कितनी होनी चाहिए?", options: ["25 वर्ष", "30 वर्ष", "35 वर्ष", "40 वर्ष"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "फ्रांस का सर्वोच्च नागरिक सम्मान कौन सा है?", options: ["लीजन ऑफ ऑनर", "प्रेसिडेंशियल मेडल ऑफ फ्रीडम", "निशान-ए-पाकिस्तान", "ऑर्डर ऑफ द ब्रिटिश एम्पायर"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "तराइन का प्रथम युद्ध (1191 ई.) में पृथ्वीराज चौहान ने किसे हराया था?", options: ["महमूद गजनवी", "मुहम्मद गोरी", "कुतुबुद्दीन ऐबक", "बाबर"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का राष्ट्रीय गीत 'वंदे मातरम' किस उपन्यास से लिया गया है?", options: ["गीतांजलि", "आनंदमठ", "गोदान", "देवदास"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) का मुख्यालय कहाँ है?", options: ["श्रीहरिकोटा", "बेंगलुरु", "तिरुवनंतपुरम", "हैदराबाद"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "प्लासी का युद्ध कब हुआ था?", options: ["1757", "1764", "1857", "1526"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व जनसंख्या दिवस कब मनाया जाता है?", options: ["5 जून", "11 जुलाई", "1 दिसंबर", "10 दिसंबर"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "नोबेल पुरस्कार किनती श्रेणियों (Categories) में दिया जाता है?", options: ["4", "5", "6", "7"], correct: 2 },
+
+            // 15 General Science
+            { subject: "General Science", tabId: "tab-GS", q: "सापेक्षता का सिद्धांत (Theory of Relativity) किसने दिया था?", options: ["न्यूटन", "गैलीलियो", "अल्बर्ट आइंस्टीन", "नील्स बोर"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "दाब (Pressure) का SI मात्रक क्या है?", options: ["न्यूटन", "जूल", "पास्कल", "वाट"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "लाफिंग गैस (हंसाने वाली गैस) किसे कहा जाता है?", options: ["नाइट्रिक ऑक्साइड", "नाइट्रस ऑक्साइड (N2O)", "नाइट्रोजन डाइऑक्साइड", "अमोनिया"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "कमरे के तापमान पर द्रव अवस्था में पाई जाने वाली अधातु (Non-metal) कौन सी है?", options: ["ब्रोमीन", "क्लोरीन", "पारा", "आयोडीन"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "मानव शरीर की 'मास्टर ग्रंथि' किसे कहा जाता है?", options: ["थायराइड", "यकृत", "पीयूष ग्रंथि (Pituitary)", "अग्न्याशय"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "पृथ्वी के सबसे निकट का ग्रह कौन सा है?", options: ["मंगल", "शुक्र (Venus)", "बुध", "बृहस्पति"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "भूकंप की तीव्रता मापने वाला यंत्र कौन सा है?", options: ["बैरोमीटर", "सीस्मोग्राफ", "लैक्टोमीटर", "एनीमोमीटर"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "भारी जल (Heavy Water) का रासायनिक सूत्र क्या है?", options: ["H2O2", "H2O", "D2O", "DHO"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "विटामिन E का रासायनिक नाम क्या है?", options: ["रेटिनॉल", "कैल्सीफेरोल", "टोकोफेरोल", "एस्कॉर्बिक एसिड"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "क्लोरोफिल में कौन सी धातु मौजूद होती है?", options: ["लोहा", "मैग्नीशियम", "जस्ता", "कैल्शियम"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "एक स्वस्थ मनुष्य का सामान्य रक्तचाप (Blood Pressure) कितना होता है?", options: ["120/80 mmHg", "140/90 mmHg", "80/120 mmHg", "100/60 mmHg"], correct: 0 },
+            { subject: "General Science", tabId: "tab-GS", q: "ओजोन परत के क्षरण के लिए मुख्य रूप से कौन सी गैस जिम्मेदार है?", options: ["CO2", "SO2", "CFC (क्लोरोफ्लोरोकार्बन)", "CH4"], correct: 2 },
+            { subject: "General Science", tabId: "tab-GS", q: "मानव शरीर में लाल रक्त कणिकाओं (RBC) का जीवनकाल कितना होता है?", options: ["20-30 दिन", "100-120 दिन", "5-7 दिन", "150 दिन"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "रेडियोधर्मिता (Radioactivity) की खोज किसने की थी?", options: ["मैडम क्यूरी", "हेनरी बेकरेल", "जे.जे. थॉमसन", "रदरफोर्ड"], correct: 1 },
+            { subject: "General Science", tabId: "tab-GS", q: "जल में घुलनशील विटामिन कौन से हैं?", options: ["A और D", "E और K", "B और C", "A और C"], correct: 2 },
+
+            // 15 Maths
+            { subject: "Maths", tabId: "tab-Maths", q: "एक गोले (Sphere) का आयतन का सूत्र क्या है?", options: ["4/3 πr³", "4πr²", "1/3 πr³", "2/3 πr³"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "50 लीटर के दूध और पानी के मिश्रण में 10% पानी है। इसमें कितना पानी और मिलाया जाए कि पानी 20% हो जाए?", options: ["5 लीटर", "6.25 लीटर", "10 लीटर", "12.5 लीटर"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि A की आय B की आय से 25% अधिक है, तो B की आय A की आय से कितने प्रतिशत कम है?", options: ["20%", "25%", "15%", "30%"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक समचतुर्भुज (Rhombus) के विकर्ण 16 सेमी और 12 सेमी हैं। इसका क्षेत्रफल क्या होगा?", options: ["192 वर्ग सेमी", "96 वर्ग सेमी", "48 वर्ग सेमी", "144 वर्ग सेमी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "3 आदमियों या 4 औरतों की प्रतिदिन की मजदूरी 480 रु है। 5 आदमी और 6 औरतों की एक दिन की मजदूरी कितनी होगी?", options: ["1200 रु", "1400 रु", "1520 रु", "1600 रु"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "10 भुजाओं वाले बहुभुज (Decagon) में विकर्णों (Diagonals) की संख्या कितनी होती है?", options: ["20", "35", "40", "45"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि दो संख्याओं का गुणनफल 324 है और उनका HCF 3 है, तो उनका LCM क्या होगा?", options: ["108", "972", "327", "105"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "6, 8, 10, 12, 14 का प्रसरण (Variance) क्या है? (औसत = 10)", options: ["8", "10", "6", "12"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "x³ - y³ का गुणनखंड (Factor) क्या होता है?", options: ["(x-y)(x²+xy+y²)", "(x-y)(x²-xy+y²)", "(x+y)(x²-xy+y²)", "(x-y)³"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक 150 मीटर लंबी ट्रेन 50 किमी/घंटा की गति से चल रही है। 40 किमी/घंटा की गति से विपरीत दिशा में आ रही 100 मीटर लंबी ट्रेन को पार करने में उसे कितना समय लगेगा?", options: ["10 सेकंड", "15 सेकंड", "20 सेकंड", "25 सेकंड"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "5 क्रमिक विषम संख्याओं का औसत 25 है। सबसे बड़ी संख्या क्या है?", options: ["27", "29", "31", "33"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "कोई धन चक्रवृद्धि ब्याज पर 3 वर्ष में अपने का 8 गुना हो जाता है। दर ज्ञात करें।", options: ["50%", "100%", "200%", "300%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वृत्त की परिधि 88 सेमी है। उसका क्षेत्रफल क्या होगा? (π = 22/7)", options: ["154 वर्ग सेमी", "616 वर्ग सेमी", "308 वर्ग सेमी", "1232 वर्ग सेमी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "400 का 15% + 200 का 20% = ?", options: ["80", "100", "120", "140"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "12, 21, और 8 का चतुर्थानुपाती (Fourth Proportional) क्या होगा?", options: ["12", "14", "16", "18"], correct: 1 },
+
+            // 5 Reasoning
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि A + B का अर्थ 'A, B की बहन है' और A × B का अर्थ 'A, B का पति है', तो P + Q × R में P का R से क्या संबंध है?", options: ["सास", "ननद/भाभी (Sister-in-law)", "बहन", "चाची"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "दी गई श्रृंखला को पूरा करें: A, C, F, J, O, ?", options: ["S", "T", "U", "V"], correct: 2 }, // +2, +3, +4, +5, +6
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शब्द 'DICTIONARY' के अक्षरों से कौन सा शब्द नहीं बनाया जा सकता?", options: ["NATION", "RADIO", "DIARY", "DAIRY"], correct: 3 }, // E is missing
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक व्यक्ति दक्षिण की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 3 किमी चलता है, फिर दाएँ मुड़कर 5 किमी चलता है। वह प्रारंभिक बिंदु से किस दिशा में है?", options: ["उत्तर", "दक्षिण", "पूर्व", "पश्चिम"], correct: 3 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "असंगत चुनें (Find the odd one out):", options: ["कानपुर", "इलाहाबाद (प्रयागराज)", "वाराणसी", "मथुरा"], correct: 3 } // Mathura is on Yamuna, rest on Ganga
+        ],
+    };
+
+    // 3. जो टेस्ट नंबर है, उसी के सवाल लोड करो 
+    const questions = allTestDatabase[testNumber] || allTestDatabase["1"];
+    
     let currentIndex = 0;
     let userAnswers = {}; 
     let timeInSeconds = 60 * 60; 
@@ -346,5 +603,6 @@
 </body>
 
 </html>
+
 
 
