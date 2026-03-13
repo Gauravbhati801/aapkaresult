@@ -101,13 +101,7 @@
         <div style="font-size: 1.1rem; font-weight: bold;">05 Army GD TDN WMP Ranking...</div>
     </header>
 
-    <div class="result-tabs">
-        <button class="tab-btn active" onclick="switchTab('overall', this)">Overall Stats</button>
-        <button class="tab-btn" onclick="switchTab('sections', this)">Section Wise</button>
-        <button class="tab-btn" onclick="switchTab('solutions', this)">Solutions</button>
-    </div>
-
-    <div id="overall" class="tab-content active">
+    <div id="overall">
         <div class="card">
             <h3>Question Stats</h3>
             <div class="stats-grid">
@@ -124,15 +118,14 @@
         </div>
     </div>
 
-    <div id="sections" class="tab-content">
+    <div id="sections" style="margin-bottom: 40px;">
         <div id="sections-container"></div>
     </div>
 
-    <div id="solutions" class="tab-content" style="background: #fff;">
+    <div id="solutions" style="background: #fff; margin-bottom: 40px;">
         <h3 style="margin-bottom: 15px; color: #222;">Solutions</h3>
         <div class="filter-container">
-            <button class="filter-btn active all" onclick="filterSolutions('all', this)">All</button>
-            <button class="filter-btn" onclick="filterSolutions('correct', this)">Correct</button>
+            <button class="filter-btn active" onclick="filterSolutions('correct', this)">Correct</button>
             <button class="filter-btn" onclick="filterSolutions('incorrect', this)">Incorrect</button>
             <button class="filter-btn" onclick="filterSolutions('unattempted', this)">Unattempted</button>
         </div>
@@ -246,18 +239,35 @@
             </div>`;
         });
         document.getElementById("solutions-container").innerHTML = solHTML;
+         filterSolutions('incorrect', document.querySelector('.filter-btn.active'));
+        // पेज लोड होते ही अपने आप Correct सवाल दिखाने के लिए
+setTimeout(() => {
+    let defaultBtn = document.querySelector('.filter-btn.active');
+    filterSolutions('correct', defaultBtn); // यहाँ 'correct' कर दिया
+}, 100);
     };
 
-    function filterSolutions(type, btnElement) {
-        document.querySelectorAll('.filter-container .filter-btn').forEach(btn => {
-            btn.classList.remove('active', 'all', 'correct', 'incorrect', 'unattempted');
-        });
-        btnElement.classList.add('active', type);
+     function filterSolutions(type, btnElement) {
+    // 1. सारे बटनों से 'active' क्लास हटाओ
+    document.querySelectorAll('.filter-container .filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
 
-        document.querySelectorAll('.sol-item').forEach(item => {
-            item.style.display = (type === 'all' || item.classList.contains(type)) ? 'block' : 'none';
-        });
+    // 2. जिस बटन पर क्लिक किया है, उसे 'active' कर दो
+    if (btnElement) {
+        btnElement.classList.add('active');
     }
+
+    // 3. सारे सवालों (sol-item) को पकड़ो और चेक करो
+    document.querySelectorAll('.sol-item').forEach(item => {
+        // अगर सवाल में वो क्लास (जैसे 'incorrect') है, तो दिखाओ, वरना छुपा दो
+        if (item.classList.contains(type)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
 
     // ==========================================
     // Full Solution Modal Logic with Smart Percentage
@@ -321,14 +331,38 @@
     }
 
     function nextFullSolution() {
-        if (currentSolutionIndex < globalResultData.questionsData.length - 1) {
-            currentSolutionIndex++;
-            populateFullSolution(currentSolutionIndex);
-            document.getElementById('fs-modal').scrollTop = 0; 
+        // चेक करो कि अभी कौन सा बटन एक्टिव है (जैसे 'incorrect')
+        let activeFilter = document.querySelector('.filter-btn.active').innerText.toLowerCase().trim();
+        let cards = document.querySelectorAll('.sol-item'); 
+
+        // आगे के सवालों में ढूँढो कि अगला 'Incorrect' सवाल कौन से नंबर पर है
+        for (let i = currentSolutionIndex + 1; i < cards.length; i++) {
+            if (cards[i].classList.contains(activeFilter)) {
+                currentSolutionIndex = i;
+                populateFullSolution(currentSolutionIndex); // ये आपकी ही पुरानी लाइन है
+                document.getElementById('fs-modal').scrollTop = 0;
+                return; // जैसे ही मिल जाए, आगे ढूँढना बंद कर दो
+            }
+        }
+    }
+
+    function prevFullSolution() {
+        let activeFilter = document.querySelector('.filter-btn.active').innerText.toLowerCase().trim();
+        let cards = document.querySelectorAll('.sol-item');
+
+        // पीछे के सवालों में ढूँढो कि पिछला 'Incorrect' सवाल कौन से नंबर पर है
+        for (let i = currentSolutionIndex - 1; i >= 0; i--) {
+            if (cards[i].classList.contains(activeFilter)) {
+                currentSolutionIndex = i;
+                populateFullSolution(currentSolutionIndex);
+                document.getElementById('fs-modal').scrollTop = 0;
+                return; 
+            }
         }
     }
 </script>
 </body>
 
 </html>
+
 
