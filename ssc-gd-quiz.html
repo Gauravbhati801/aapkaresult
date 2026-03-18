@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC GD Mock Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f6f9; overflow-x: hidden;}
+        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; display: flex; flex-direction: column; position: relative;}
+        
+        .top-header { background: #28a745; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 20; }
+        .time-box { display: flex; flex-direction: column;}
+        .time { font-size: 1.2rem; font-weight: bold; color: #fff; }
+        .menu-icon { font-size: 1.8rem; cursor: pointer; color: white; }
+        
+        .tabs { display: flex; overflow-x: auto; background: #fff; border-bottom: 1px solid #ddd; scrollbar-width: none; }
+        .tab { padding: 12px 15px; white-space: nowrap; color: #666; font-weight: bold; cursor: pointer; }
+        .tab.active { color: #28a745; border-bottom: 3px solid #28a745; background: #f8f9fa; }
+        
+        .question-meta { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .q-number { background: #888; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 0.9rem;}
+        .q-marks { flex-grow: 1; color: #28a745; font-weight:bold;}
+        .q-marks .negative { color: #d9534f; margin-left: 5px; }
+        
+        .question-area { padding: 20px 15px; flex-grow: 1; background: #f4f6f9; }
+        .question-text { font-size: 1.1rem; margin-bottom: 20px; color: #222; line-height: 1.5;}
+        .option-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; align-items: center; cursor: pointer; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);}
+        .option-card input { display: none; }
+        .option-card.selected { border-color: #28a745; background-color: #e8f5e9; }
+        .opt-label { margin-right: 15px; font-weight: bold; color: #555; }
+        
+        .bottom-actions { background: #fff; border-top: 1px solid #ddd; padding: 10px; display: flex; gap: 5px; flex-wrap: wrap; position: sticky; bottom: 0; z-index: 20; box-shadow: 0 -2px 10px rgba(0,0,0,0.05);}
+        .btn { padding: 12px 10px; border-radius: 5px; font-weight: bold; cursor: pointer; flex: 1; border: none; font-size: 0.8rem; min-width: 70px; }
+        .btn-submit { background: #ff4d4d; color: white; }
+        .btn-clear { background: #fff; color: #333; border: 1px solid #ccc; }
+        .btn-prev, .btn-next { background: #6c757d; color: white; }
+        .btn-save { background: #28a745; color: white; }
+
+        /* Palette */
+        .palette-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 99; display: none; }
+        .palette-overlay.open { display: block; }
+        .palette-drawer { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: #fff; z-index: 100; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s ease; display: flex; flex-direction: column;}
+        .palette-drawer.open { right: 0; }
+        .palette-header { padding: 15px; background: #28a745; color: white; display: flex; justify-content: space-between; align-items: center; font-weight: bold;}
+        .close-btn { cursor: pointer; font-size: 1.2rem; }
+        .palette-legend { display: flex; justify-content: space-around; padding: 10px; background: #f8f9fa; font-size: 0.8rem; border-bottom: 1px solid #ddd; font-weight: bold;}
+        .legend-item { display: flex; align-items: center; gap: 5px; color: #555;}
+        .legend-bubble { width: 15px; height: 15px; border-radius: 50%; }
+        .palette-content { padding: 15px; overflow-y: auto; flex-grow: 1; }
+        .palette-section { margin-bottom: 20px; }
+        .palette-section h4 { margin-bottom: 10px; font-size: 0.95rem; color: #28a745; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .q-bubble { width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: #fff; border: 1px solid #ccc; cursor: pointer; font-weight: bold; font-size: 0.85rem; color: #555;}
+        .q-bubble.answered { background: #28a745; color: white; border-color: #28a745; }
+        .q-bubble.current { border: 2px solid #007bff; background: #eaf4fc; color: #007bff;}
+    </style>
+</head>
+<body>
+<div class="app-container">
+    <header class="top-header">
+        <div class="time-box">
+            <span id="timer" class="time">60:00</span> 
+            <span style="font-size:0.8rem; color:#e8f5e9;">SSC GD Test</span>
+        </div>
+        <div class="menu-icon" onclick="togglePalette()">☰</div>
+    </header>
+
+    <nav class="tabs">
+        <div class="tab" id="tab-Reasoning" onclick="goToSection('Reasoning')">Reasoning (20)</div>
+        <div class="tab" id="tab-GK" onclick="goToSection('General Knowledge')">GK/GS (20)</div>
+        <div class="tab" id="tab-Maths" onclick="goToSection('Maths')">Maths (20)</div>
+        <div class="tab" id="tab-Hindi" onclick="goToSection('Hindi')">Hindi (20)</div>
+    </nav>
+
+    <div class="question-meta">
+        <div class="q-number" id="q-no">1</div>
+        <div style="font-weight: bold; color: #555; margin-right: 15px;" id="q-section-name">Reasoning</div>
+        <!-- SSC GD में 2 अंक का 1 प्रश्न और 1/8 यानी 0.25 की नेगेटिव मार्किंग -->
+        <div class="q-marks">+2.00 <span class="negative">-0.25</span></div>
+    </div>
+
+    <main class="question-area">
+        <h3 id="question-text" class="question-text">Loading...</h3>
+        <div id="options-container"></div>
+    </main>
+
+    <footer class="bottom-actions">
+        <button class="btn btn-submit" onclick="submitTest()">Submit</button>
+        <button class="btn btn-clear" onclick="clearResponse()">Clear</button>
+        <button class="btn btn-prev" id="prev-btn" onclick="prevQuestion()">◄ Back</button>
+        <button class="btn btn-next" id="next-btn" onclick="nextQuestion()">Next ►</button>
+        <button class="btn btn-save" onclick="saveAndNext()">Save & Next</button>
+    </footer>
+
+    <div id="palette-overlay" class="palette-overlay" onclick="togglePalette()"></div>
+    <div id="palette-drawer" class="palette-drawer">
+        <div class="palette-header">
+            <span>Question Palette</span>
+            <span class="close-btn" onclick="togglePalette()">✕</span>
+        </div>
+        <div class="palette-legend">
+            <span class="legend-item"><div class="legend-bubble" style="background:#28a745;"></div> Answered</span>
+            <span class="legend-item"><div class="legend-bubble" style="background:#fff; border:1px solid #ccc;"></div> Pending</span>
+        </div>
+        <div id="palette-content" class="palette-content"></div>
+    </div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const testNumber = urlParams.get('test') || '1';
+
+    // SSC GD Mock Test Database (80 Questions)
+    const allTestDatabase = {
+        "1": [
+            // 20 Reasoning
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "उस विकल्प का चयन करें जो तीसरे पद से उसी प्रकार संबंधित है जैसे दूसरा पद पहले पद से:\nसुई : सिलाई :: चाकू : ?", options: ["कटना", "काटना", "धार", "नुकीला"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "दी गई शृंखला में अगला पद ज्ञात करें: 5, 11, 24, 51, ?", options: ["106", "102", "108", "104"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक निश्चित कूट भाषा में 'WATER' को 'YCVGT' लिखा जाता है, तो 'FIRE' को क्या लिखा जाएगा?", options: ["HKTG", "HKSG", "GLTG", "HKTF"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "बेजोड़ (Odd one out) ज्ञात करें:", options: ["टमाटर", "आलू", "गाजर", "प्याज"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि '+' का अर्थ '-', '-' का अर्थ 'x', 'x' का अर्थ '÷' और '÷' का अर्थ '+' है, तो 10 x 2 ÷ 5 - 3 + 4 = ?", options: ["15", "16", "18", "20"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "राम उत्तर की ओर 10 किमी चलता है, फिर दाएँ मुड़कर 5 किमी चलता है। अब वह प्रारंभिक बिंदु से किस दिशा में है?", options: ["उत्तर-पूर्व", "उत्तर-पश्चिम", "दक्षिण-पूर्व", "दक्षिण-पश्चिम"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "A, B की बहन है। C, B की माता है। D, C का पिता है। A का D से क्या संबंध है?", options: ["पोती/नातिन", "बेटी", "दादी", "भतीजी"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "कथन: सभी सेब संतरे हैं। कुछ संतरे केले हैं।\nनिष्कर्ष: I. कुछ सेब केले हैं। II. कुछ संतरे सेब हैं।", options: ["केवल I सही है", "केवल II सही है", "दोनों सही हैं", "कोई सही नहीं है"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शब्द 'NATURE' के अक्षरों से कौन सा शब्द नहीं बनाया जा सकता?", options: ["RATE", "TRUE", "TURN", "TENT"], correct: 3 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "5 छात्र एक पंक्ति में बैठे हैं। A, B और C के बीच में है। D, C के दाएँ है। E पंक्ति के बाएँ छोर पर है। बाएँ से दूसरा कौन है?", options: ["E", "B", "A", "C"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "लुप्त संख्या ज्ञात करें: 4, 9, 16, 25, ?", options: ["36", "49", "30", "40"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 'P' का अर्थ जोड़ है, 'Q' का अर्थ गुणा है, तो 5 Q 4 P 2 = ?", options: ["20", "22", "10", "24"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शृंखला पूरी करें: A, C, F, J, ?", options: ["O", "P", "M", "N"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि एक दर्पण को दाईं ओर रखा जाए, तो 'WATER' का दर्पण प्रतिबिंब कैसा होगा?", options: ["RETAW", "RETAW (उल्टा)", "ЯETAW", "WAЯET"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक पंक्ति में राहुल का स्थान बाएँ से 15वाँ और दाएँ से 20वाँ है। पंक्ति में कुल कितने व्यक्ति हैं?", options: ["34", "35", "36", "33"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एनालॉजी: 8 : 64 :: 11 : ?", options: ["111", "121", "131", "141"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "विषम चुनें:", options: ["जुलाई", "अगस्त", "सितंबर", "अक्टूबर"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शब्दों को डिक्शनरी के क्रम में व्यवस्थित करें: 1. Apple 2. Apply 3. Apology 4. Ape", options: ["4, 3, 1, 2", "4, 3, 2, 1", "3, 4, 1, 2", "3, 4, 2, 1"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "वेन आरेख में कौन सा संबंध सही है: 'पुरुष, पिता, डॉक्टर'", options: ["सभी पिता पुरुष हैं, कुछ पिता डॉक्टर हो सकते हैं", "सभी पुरुष पिता हैं", "सभी डॉक्टर पुरुष हैं", "कोई संबंध नहीं"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "दिए गए विकल्पों में से संबंधित अक्षर समूह चुनें: BCD : EFG :: LMN : ?", options: ["OPQ", "PQR", "QRS", "RST"], correct: 0 },
+            
+            // 20 GK/GS
+            { subject: "General Knowledge", tabId: "tab-GK", q: "सिंधु घाटी सभ्यता का प्रमुख बंदरगाह शहर कौन सा था?", options: ["हड़प्पा", "कालीबंगा", "लोथल", "मोहनजोदड़ो"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारतीय संविधान में 'मौलिक कर्तव्य' किस देश के संविधान से लिए गए हैं?", options: ["अमेरिका", "रूस (USSR)", "ब्रिटेन", "आयरलैंड"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'नीली क्रांति' (Blue Revolution) का संबंध किससे है?", options: ["दुग्ध उत्पादन", "मत्स्य उत्पादन", "कृषि उत्पादन", "अंडा उत्पादन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "रिज़र्व बैंक ऑफ इंडिया (RBI) की स्थापना कब हुई थी?", options: ["1935", "1947", "1950", "1955"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत की सबसे बड़ी मीठे पानी की झील कौन सी है?", options: ["चिल्का झील", "वुलर झील", "डल झील", "लोकटक झील"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "रक्त का थक्का (Blood Clotting) जमने में कौन सा विटामिन मदद करता है?", options: ["विटामिन A", "विटामिन C", "विटामिन K", "विटामिन D"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "वायुमंडल में नाइट्रोजन गैस की मात्रा लगभग कितने प्रतिशत है?", options: ["21%", "78%", "0.03%", "71%"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "नीति आयोग (NITI Aayog) के वर्तमान अध्यक्ष कौन होते हैं?", options: ["अमिताभ कांत", "प्रधानमंत्री", "राष्ट्रपति", "वित्त मंत्री"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "तराइन का प्रथम युद्ध किस वर्ष लड़ा गया था?", options: ["1191", "1192", "1526", "1761"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "ओजोन परत वायुमंडल की किस परत में पाई जाती है?", options: ["क्षोभमंडल", "समताप मंडल", "मध्यमंडल", "आयनमंडल"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'आर्य समाज' की स्थापना किसने की थी?", options: ["स्वामी विवेकानंद", "राजा राममोहन राय", "स्वामी दयानंद सरस्वती", "केशव चंद्र सेन"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "लोकसभा का सदस्य बनने के लिए न्यूनतम आयु क्या है?", options: ["21 वर्ष", "25 वर्ष", "30 वर्ष", "35 वर्ष"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "मानव शरीर की सबसे बड़ी ग्रंथि (Gland) कौन सी है?", options: ["अग्न्याशय", "यकृत (Liver)", "पीयूष ग्रंथि", "थायराइड"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "प्रकाश वर्ष (Light Year) किसकी इकाई है?", options: ["समय", "दूरी", "प्रकाश की गति", "द्रव्यमान"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'कुचिपुड़ी' किस राज्य का शास्त्रीय नृत्य है?", options: ["केरल", "तमिलनाडु", "आंध्र प्रदेश", "कर्नाटक"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विश्व पर्यावरण दिवस कब मनाया जाता है?", options: ["5 जून", "11 जुलाई", "22 अप्रैल", "1 दिसंबर"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'गदर पार्टी' की स्थापना किसने की थी?", options: ["लाला हरदयाल", "भगत सिंह", "सुभाष चंद्र बोस", "चंद्रशेखर आजाद"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का सबसे ऊँचा जलप्रपात (Waterfall) कौन सा है?", options: ["जोग प्रपात", "कुंचिकल जलप्रपात", "धुआंधार", "शिवसमुद्रम"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "असहयोग आंदोलन (Non-Cooperation Movement) कब शुरू हुआ था?", options: ["1919", "1920", "1922", "1930"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "सौरमंडल में किस ग्रह को 'लाल ग्रह' कहा जाता है?", options: ["शुक्र", "बृहस्पति", "मंगल", "शनि"], correct: 2 },
+            
+            // 20 Maths
+            { subject: "Maths", tabId: "tab-Maths", q: "2500 का 20% कितना होगा?", options: ["400", "500", "600", "750"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि एक वस्तु को 400 रुपये में खरीदकर 500 रुपये में बेचा जाता है, तो लाभ प्रतिशत क्या होगा?", options: ["20%", "25%", "30%", "40%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "A किसी काम को 10 दिन में कर सकता है और B उसी काम को 15 दिन में कर सकता है। दोनों मिलकर उस काम को कितने दिन में करेंगे?", options: ["5 दिन", "6 दिन", "8 दिन", "12 दिन"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "दो संख्याओं का अनुपात 3:4 है। यदि उनका HCF 5 है, तो उनका LCM क्या होगा?", options: ["15", "20", "60", "120"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक कार 72 किमी/घंटा की गति से चल रही है। उसकी गति मी/से (m/s) में क्या होगी?", options: ["15 मी/से", "20 मी/से", "25 मी/से", "30 मी/से"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "10, 12, 15 और 20 का औसत (Average) क्या होगा?", options: ["12.5", "14", "14.25", "15"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "8000 रुपये पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज (Compound Interest) क्या होगा?", options: ["1600", "1680", "1720", "1800"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि x : y = 2 : 3 और y : z = 4 : 5 है, तो x : z क्या होगा?", options: ["8 : 15", "15 : 8", "2 : 5", "8 : 12"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक आयत की लंबाई 20% बढ़ाई जाती है और चौड़ाई 10% घटाई जाती है। उसके क्षेत्रफल पर क्या प्रभाव पड़ेगा?", options: ["8% वृद्धि", "10% वृद्धि", "8% कमी", "12% वृद्धि"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "36 और 64 का मध्यानुपाती (Mean proportional) क्या होगा?", options: ["48", "50", "42", "54"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "15 वस्तुओं का क्रय मूल्य 12 वस्तुओं के विक्रय मूल्य के बराबर है। लाभ प्रतिशत ज्ञात करें।", options: ["20%", "25%", "30%", "33.33%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "120 मीटर लंबी ट्रेन एक खंभे को 6 सेकंड में पार करती है। ट्रेन की गति किमी/घंटा में ज्ञात करें।", options: ["60", "72", "80", "90"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "2/3, 4/5 और 6/7 का HCF क्या होगा?", options: ["2/105", "12/105", "2/35", "12/35"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वृत्त की त्रिज्या 7 सेमी है। उसकी परिधि (Circumference) क्या होगी? (π = 22/7)", options: ["44 सेमी", "22 सेमी", "88 सेमी", "154 सेमी"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "1 से 50 तक की सभी प्राकृत संख्याओं का योग क्या होगा?", options: ["1275", "1225", "1250", "1300"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक चुनाव में जीतने वाले उम्मीदवार को 60% वोट मिले और वह 400 वोटों से जीत गया। कुल कितने वोट पड़े?", options: ["1500", "2000", "2500", "3000"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "₹500 की वस्तु पर 10% और 20% की दो क्रमिक छूट (Successive discounts) दी जाती हैं। अंतिम विक्रय मूल्य क्या होगा?", options: ["360", "380", "400", "350"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि 5 आदमी किसी काम को 8 दिन में कर सकते हैं, तो 4 आदमी उसी काम को कितने दिन में करेंगे?", options: ["10 दिन", "12 दिन", "15 दिन", "20 दिन"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक समबाहु त्रिभुज (Equilateral triangle) की भुजा 6 सेमी है। उसका क्षेत्रफल क्या होगा?", options: ["9√3", "12√3", "18√3", "36√3"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "0.04 x 0.5 = ?", options: ["0.2", "0.02", "0.002", "0.0002"], correct: 1 },
+            
+            // 20 Hindi
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'आकाश' का पर्यायवाची शब्द कौन सा नहीं है?", options: ["गगन", "नभ", "अंबर", "पावक"], correct: 3 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अमृत' का विलोम शब्द क्या होगा?", options: ["सुधा", "विष", "पियूष", "जल"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'आँखों का तारा होना' मुहावरे का सही अर्थ है:", options: ["बहुत प्यारा होना", "आँखों में दर्द होना", "तारा दिखना", "अंधा होना"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जो उपकार को मानता हो, वाक्यांश के लिए एक शब्द है:", options: ["कृतघ्न", "कृतज्ञ", "परोपकारी", "दयालु"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अग्नि' का पर्यायवाची शब्द है:", options: ["अनल", "अनिल", "जलद", "वारि"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "सही वर्तनी (Spelling) वाले शब्द का चयन करें:", options: ["आशिर्वाद", "आसीर्वाद", "आशीर्वाद", "आशिर्बाद"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'गणेश' का पर्यायवाची शब्द है:", options: ["गजानन", "दिनकर", "भानु", "सुधाकर"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'स्थावर' का विलोम शब्द क्या है?", options: ["जंगम", "चेतन", "चंचल", "स्थिर"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'नौ दो ग्यारह होना' मुहावरे का अर्थ है:", options: ["गणित पढ़ना", "भाग जाना", "ग्यारह गिनना", "छिप जाना"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जिसे जाना न जा सके, उसे क्या कहते हैं?", options: ["अज्ञेय", "अज्ञान", "अनजान", "अगम्य"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'कमल' का पर्यायवाची शब्द कौन सा है?", options: ["जलज", "जलद", "वारिद", "नीरद"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'उत्तीर्ण' का विलोम शब्द है:", options: ["सफल", "अनुत्तीर्ण", "फेल", "पास"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'दाँत खट्टे करना' मुहावरे का अर्थ है:", options: ["खट्टी चीज़ खाना", "हरा देना (पराजित करना)", "दाँत दर्द होना", "हँसना"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "शुद्ध वाक्य का चयन करें:", options: ["राम ने रोटी खाया।", "राम ने रोटी खाई।", "राम रोटी खाया।", "राम ने रोटी खाए।"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जो ईश्वर में विश्वास रखता हो:", options: ["नास्तिक", "आस्तिक", "साधु", "संत"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अंधकार' का विलोम शब्द क्या है?", options: ["प्रकाश", "उजेला", "रोशनी", "कष्ट"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'हाथ मलना' मुहावरे का अर्थ है:", options: ["हाथ धोना", "सर्दी लगना", "पछताना", "हाथ मिलाना"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'जंगल' का पर्यायवाची है:", options: ["कानन", "सदन", "उपवन", "भवन"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "सही वर्तनी चुनें:", options: ["उज्जवल", "उज्वल", "उज्ज्वल", "उजवल"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जानने की इच्छा रखने वाला:", options: ["जिज्ञासु", "ज्ञानी", "वैज्ञानिक", "अज्ञानी"], correct: 0 }
+        ],
+        "2": [
+            // 20 Reasoning
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शृंखला में अगला पद ज्ञात करें: 3, 4, 12, 45, 196, ?", options: ["1005", "995", "985", "1025"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शृंखला: 5, 16, 51, 158, ?", options: ["481", "474", "471", "485"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 'MACHINE' को '19-7-9-14-15-20-11' लिखा जाता है, तो 'DANGER' को क्या लिखा जाएगा?", options: ["10-7-20-13-11-24", "11-7-20-16-11-24", "13-7-20-9-11-25", "10-8-20-13-11-24"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि 'GO' = 32, 'SHE' = 49, तो 'SOME' = ?", options: ["56", "58", "62", "64"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "P, Q का भाई है। R, Q की माँ है। S, R का पिता है। T, S की माँ है। P का T से क्या संबंध है?", options: ["पोता", "परपोता", "बेटा", "भतीजा"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक तस्वीर की ओर इशारा करते हुए एक व्यक्ति ने कहा, 'मेरा कोई भाई या बहन नहीं है, लेकिन उस आदमी का पिता मेरे पिता का बेटा है।' यह किसकी तस्वीर थी?", options: ["उसके पिता की", "उसके बेटे की", "उसके चचेरे भाई की", "स्वयं की"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "कथन: केवल कुछ कुर्सियाँ मेज हैं। कोई मेज बेड नहीं है।\nनिष्कर्ष: 1. कुछ कुर्सियाँ बेड नहीं हैं। 2. सभी कुर्सियाँ कभी मेज চিহ্নিত नहीं हो सकतीं।", options: ["केवल 1 सही है", "केवल 2 सही है", "दोनों सही हैं", "कोई सही नहीं है"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक व्यक्ति पश्चिम की ओर 5 किमी चलता है, दाएँ मुड़ता है और 12 किमी चलता है, फिर दाएँ मुड़ता है और 14 किमी चलता है। वह प्रारंभिक बिंदु से कितनी दूर है?", options: ["13 किमी", "15 किमी", "17 किमी", "20 किमी"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक घड़ी में 4:30 बज रहे हैं। यदि मिनट की सुई पूर्व दिशा में है, तो घंटे की सुई किस दिशा में होगी?", options: ["उत्तर-पूर्व", "उत्तर-पश्चिम", "दक्षिण-पूर्व", "दक्षिण-पश्चिम"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "6 व्यक्ति एक वृत्ताकार घेरे में केंद्र की ओर मुख करके बैठे हैं। A, B के बाएँ से दूसरे स्थान पर है। C, A के दाएँ से तीसरे स्थान पर है। D, B का पड़ोसी नहीं है। E, D के दाएँ से दूसरे स्थान पर है। A के पड़ोसी कौन हैं?", options: ["E और D", "B और C", "F और D", "E और F"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक पासे की दो स्थितियों में 1,2,3 और 1,5,6 दिखाई देते हैं। '1' के विपरीत कौन सा अंक होगा?", options: ["4", "2", "3", "6"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "वेन आरेख चुनें: 'संगीतकार, वाद्ययंत्र वादक, वायलिन वादक'", options: ["तीन अलग वृत्त", "एक के अंदर एक (तीन)", "दो एक के अंदर और एक बाहर", "तीनों एक दूसरे को काटते हैं"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "5 डिब्बे एक के ऊपर एक रखे हैं। डिब्बा A, B के ठीक ऊपर है। C, D के ठीक नीचे है। E, A के ऊपर है लेकिन सबसे ऊपर नहीं है। सबसे नीचे कौन सा है?", options: ["A", "B", "C", "D"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "विषम चुनें: 1331, 2197, 3375, 4913", options: ["1331", "2197", "3375", "4913"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "43 x 2 + 6 ÷ 3 - 5 = ?", options: ["83", "84", "85", "86"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एक वर्गाकार ग्रिड जिसमें क्षैतिज और ऊर्ध्वाधर मध्य रेखाएं और दोनों विकर्ण हैं, उसमें कुल कितने त्रिभुज हैं?", options: ["12", "14", "16", "18"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "एनालॉजी: 42 : 56 :: 72 : ?", options: ["81", "90", "100", "110"], correct: 1 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "अक्षर शृंखला: BZA, DYC, FXE, ?", options: ["HWG", "HVF", "GVF", "HWH"], correct: 0 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "यदि A=1, AND=19, तो BAT = ?", options: ["20", "21", "22", "23"], correct: 2 },
+            { subject: "Reasoning", tabId: "tab-Reasoning", q: "शब्द 'COMPREHENSION' में अक्षरों के ऐसे कितने जोड़े हैं जिनके बीच उतने ही अक्षर हैं जितने अंग्रेजी वर्णमाला में होते हैं?", options: ["1", "2", "3", "4 से अधिक"], correct: 3 },
+
+            // 20 GK/GS
+            { subject: "General Knowledge", tabId: "tab-GK", q: "किस अनुच्छेद के तहत राष्ट्रपति सर्वोच्च न्यायालय से परामर्श मांग सकता है?", options: ["अनुच्छेद 123", "अनुच्छेद 143", "अनुच्छेद 152", "अनुच्छेद 161"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'दिवाने-ए-अमीर-कोही' (कृषि विभाग) की स्थापना किस दिल्ली सुल्तान ने की थी?", options: ["अलाउद्दीन खिलजी", "मुहम्मद बिन तुगलक", "फिरोज शाह तुगलक", "सिकंदर लोदी"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'सतोपंथ ग्लेशियर' से कौन सी नदी निकलती है?", options: ["भागीरथी", "मंदाकिनी", "अलकनंदा", "यमुना"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "प्रकाश संश्लेषण में ऑक्सीजन गैस कहाँ से प्राप्त होती है?", options: ["CO2 से", "जल के विघटन से", "पर्णहरित से", "सूर्य के प्रकाश से"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'प्रोजेक्ट टाइगर' किस वर्ष शुरू किया गया था?", options: ["1971", "1972", "1973", "1974"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत में 'रेपो रेट' कौन तय करता है?", options: ["वित्त मंत्रालय", "मौद्रिक नीति समिति (MPC)", "नीति आयोग", "एसबीआई"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'तत्वबोधिनि सभा' की स्थापना किसने की थी?", options: ["राजा राममोहन राय", "देवेंद्रनाथ टैगोर", "केशव चंद्र सेन", "स्वामी विवेकानंद"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "कौन सा एंजाइम प्रोटीन को पेप्टाइड में बदलता है?", options: ["पेप्सिन", "एमिलेज", "लाइपेज", "टायलिन"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "1857 के विद्रोह के समय भारत का गवर्नर जनरल कौन था?", options: ["लॉर्ड डलहौजी", "लॉर्ड कैनिंग", "लॉर्ड कर्जन", "लॉर्ड मेयो"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'एलिफेंटा की गुफाएं' मुख्य रूप से किस हिंदू देवता को समर्पित हैं?", options: ["भगवान विष्णु", "भगवान शिव", "भगवान ब्रह्मा", "भगवान राम"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "संविधान की किस अनुसूची में 'दल-बदल विरोधी कानून' है?", options: ["आठवीं", "नौवीं", "दसवीं", "ग्यारहवीं"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "कौन सा रक्त समूह 'सार्वभौमिक प्राप्तकर्ता' है?", options: ["O पॉजिटिव", "O नेगेटिव", "AB पॉजिटिव", "AB नेगेटिव"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'माजुली द्वीप' किस नदी पर स्थित है?", options: ["गंगा", "गोदावरी", "ब्रह्मपुत्र", "कावेरी"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "कौन सा देश 'तांबे' का सबसे बड़ा उत्पादक है?", options: ["चीन", "चिली", "पेरू", "ऑस्ट्रेलिया"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'ग्रेमी पुरस्कार' किस क्षेत्र में दिया जाता है?", options: ["साहित्य", "पत्रकारिता", "संगीत", "खेल"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'बॉक्साइट' किसका अयस्क है?", options: ["लोहा", "तांबा", "एल्युमीनियम", "सोना"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "विटामिन B12 का रासायनिक नाम क्या है?", options: ["थायमिन", "राइबोफ्लेविन", "साइनोकोबालामिन", "नियासिन"], correct: 2 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'इब्न बतूता' किस देश का यात्री था?", options: ["मोरक्को", "पुर्तगाल", "मिस्र", "चीन"], correct: 0 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "'ऑपरेशन फ्लड' का संबंध किससे है?", options: ["बाढ़ नियंत्रण", "दुग्ध उत्पादन", "जल संरक्षण", "मत्स्य पालन"], correct: 1 },
+            { subject: "General Knowledge", tabId: "tab-GK", q: "भारत का सबसे दक्षिणी बिंदु 'इंदिरा पॉइंट' कहाँ स्थित है?", options: ["कन्याकुमारी", "अंडमान द्वीप", "ग्रेट निकोबार", "लक्षद्वीप"], correct: 2 },
+
+            // 20 Maths
+            { subject: "Maths", tabId: "tab-Maths", q: "A, B और C मिलकर एक काम को 10 दिन में कर सकते हैं। A और B मिलकर उसे 15 दिन में कर सकते हैं। C अकेला उसे कितने दिन में करेगा?", options: ["20 दिन", "25 दिन", "30 दिन", "40 दिन"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "दो पाइप A और B एक टैंक को 20 और 30 मिनट में भर सकते हैं। दोनों को एक साथ खोला गया, 8 मिनट बाद A को बंद कर दिया। टैंक को भरने में कुल कितना समय लगा?", options: ["16 मिनट", "18 मिनट", "20 मिनट", "24 मिनट"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक व्यक्ति अपनी आय का 75% खर्च करता है। आय 20% बढ़ जाती है और खर्च 10% बढ़ जाता है। उसकी बचत में कितने प्रतिशत वृद्धि होगी?", options: ["30%", "40%", "50%", "60%"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक बेईमान दुकानदार अपनी वस्तुओं को क्रय मूल्य पर बेचने का दावा करता है, लेकिन 1 किलो के स्थान पर 800 ग्राम तौलता है। उसका लाभ प्रतिशत क्या है?", options: ["20%", "25%", "30%", "33.33%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "साधारण ब्याज पर कोई धनराशि 8 वर्ष में दोगुनी हो जाती है। ब्याज की दर क्या है?", options: ["10%", "12.5%", "15%", "20%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "चक्रवृद्धि ब्याज पर कोई धनराशि 3 वर्ष में अपने आप की 8 गुनी हो जाती है। ब्याज की वार्षिक दर ज्ञात करें。", options: ["50%", "100%", "150%", "200%"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक ट्रेन 800 मी और 400 मी लंबे दो पुलों को क्रमशः 100 सेकंड और 60 सेकंड में पार करती है। ट्रेन की लंबाई ज्ञात करें।", options: ["150 मी", "200 मी", "250 मी", "300 मी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक नाव धारा की दिशा में 15 किमी/घंटा और धारा के विपरीत 9 किमी/घंटा चलती है। शांत जल में नाव की गति क्या होगी?", options: ["10 किमी/घंटा", "12 किमी/घंटा", "14 किमी/घंटा", "16 किमी/घंटा"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक शंकु की त्रिज्या 7 सेमी और तिर्यक ऊंचाई 25 सेमी है। इसका कुल पृष्ठीय क्षेत्रफल क्या होगा?", options: ["650 वर्ग सेमी", "704 वर्ग सेमी", "750 वर्ग सेमी", "800 वर्ग सेमी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "यदि x + 1/x = 5 है, तो x³ + 1/x³ का मान क्या होगा?", options: ["110", "115", "120", "125"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "300 और 500 के बीच कितनी संख्याएँ 7 से पूरी तरह विभाज्य हैं?", options: ["26", "27", "28", "29"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "12 संख्याओं का औसत 15 है। यदि एक संख्या 41 को निकाल दिया जाए, तो नया औसत क्या होगा?", options: ["12", "12.63", "13.5", "14.2"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक समबाहु त्रिभुज की अंतःत्रिज्या (Inradius) 3 सेमी है। इसकी परिधि क्या होगी?", options: ["18√3", "20√3", "24√3", "30√3"], correct: 0 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक वस्तु का क्रय मूल्य ₹2500 है। इसे 20% की छूट देने के बाद भी 20% का लाभ होता है। अंकित मूल्य क्या था?", options: ["₹3500", "₹3750", "₹4000", "₹4250"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "A किसी काम को 12 दिन में, B 15 दिन में कर सकता है। वे 3 दिन साथ काम करते हैं फिर A छोड़ देता है। B शेष काम कितने दिन में करेगा?", options: ["7.5 दिन", "8 दिन", "8.25 दिन", "9 दिन"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "दो संख्याओं का LCM 495 और HCF 5 है। यदि उन संख्याओं का योग 100 है, तो उनका अंतर क्या होगा?", options: ["8", "10", "12", "15"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "3 वर्ष पहले A, B, C की औसत आयु 27 वर्ष थी। 5 वर्ष पहले B और C की औसत आयु 20 वर्ष थी। A की वर्तमान आयु क्या है?", options: ["35 वर्ष", "38 वर्ष", "40 वर्ष", "45 वर्ष"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक चुनाव में 10% ने वोट नहीं डाला, 10% वोट अवैध हो गए। जीतने वाले को वैध वोटों का 60% मिला और वह 1620 वोटों से जीता। कुल मतदाता कितने थे?", options: ["8000", "9000", "10000", "12000"], correct: 2 },
+            { subject: "Maths", tabId: "tab-Maths", q: "1000 मी की दौड़ में, A, B को 100 मी से हराता है और B, C को 100 मी से हराता है। A, C को कितने मी से हराएगा?", options: ["180 मी", "190 मी", "200 मी", "210 मी"], correct: 1 },
+            { subject: "Maths", tabId: "tab-Maths", q: "एक गोले के आयतन और उसके परिगत बेलन (circumscribing cylinder) के आयतन का अनुपात क्या है?", options: ["1:2", "2:3", "3:4", "4:5"], correct: 1 },
+
+            // 20 Hindi
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'जिजीविषा' का क्या अर्थ है?", options: ["जानने की इच्छा", "जीतने की इच्छा", "जीने की प्रबल इच्छा", "ग्रहण करने की इच्छा"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अज्ञ' का विलोम शब्द क्या होगा?", options: ["विज्ञ", "मूर्ख", "अल्पज्ञ", "बहुज्ञ"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'तुरंग' किसका पर्यायवाची है?", options: ["हाथी", "शेर", "घोड़ा", "मोर"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'गंगा गए गंगादास, जमुना गए जमुनादास' लोकोक्ति का अर्थ है:", options: ["तीर्थयात्रा करना", "जिसका कोई दृढ़ सिद्धांत न हो", "अच्छे काम करना", "सबके साथ अच्छा व्यवहार"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'कूपमंडूक होना' मुहावरे का अर्थ है:", options: ["कुएं में गिरना", "मूर्ख होना", "सीमित ज्ञान होना", "बहादुर होना"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "इनमें से कौन सा 'तत्सम' शब्द है?", options: ["आग", "कान", "अश्रु", "हाथ"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अत्याचार' में कौन सी संधि है?", options: ["दीर्घ संधि", "गुण संधि", "यण संधि", "अयादि संधि"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'नीलकंठ' में कौन सा समास है?", options: ["तत्पुरुष", "कर्मधारय", "बहुव्रीहि", "द्वंद्व"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "शुद्ध वर्तनी का चयन करें:", options: ["शृंगार", "श्रृंगार", "श्रिंगार", "सिंगार"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जो हमेशा रहने वाला हो:", options: ["नश्वर", "शाश्वत", "अस्थायी", "क्षणिक"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'कृत्रिम' का विलोम शब्द है:", options: ["बनावटी", "असली", "नैसर्गिक", "कठोर"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'कानन' का पर्यायवाची नहीं है:", options: ["अरण्य", "विपिन", "वन", "रश्मि"], correct: 3 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'तेजस्वी' का विलोम शब्द क्या है?", options: ["मेधावी", "निस्तेज", "कांतिहीन", "अज्ञानी"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'हथेली पर सरसों जमाना' मुहावरे का अर्थ है:", options: ["खेती करना", "असंभव कार्य को कर दिखाना", "जल्दबाजी करना", "मूर्खतापूर्ण काम करना"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'चंद्रशेखर' शब्द में कौन सा समास है?", options: ["तत्पुरुष", "द्विगु", "बहुव्रीहि", "कर्मधारय"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'पावक' का संधि विच्छेद क्या होगा?", options: ["पो + अक", "पौ + अक", "पा + वक", "पाव + अक"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "जो सब कुछ जानता हो:", options: ["अल्पज्ञ", "बहुज्ञ", "सर्वज्ञ", "अज्ञ"], correct: 2 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'आविर्भाव' का सही विलोम क्या है?", options: ["तिरोभाव", "प्रादुर्भाव", "सम्भाव", "अभाव"], correct: 0 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "'अनल' और 'अनिल' शब्द युग्म का सही अर्थ है:", options: ["हवा और आग", "आग और हवा", "जल और हवा", "आग और जल"], correct: 1 },
+            { subject: "Hindi", tabId: "tab-Hindi", q: "शुद्ध वाक्य का चयन करें:", options: ["मैंने यह काम करना है।", "मुझे यह काम करना है।", "मेरे को यह काम करना है।", "अपुन को यह काम करना है।"], correct: 1 }
+        ]
+    };
+
+    const questions = allTestDatabase[testNumber] || allTestDatabase["1"];
+    let currentIndex = 0;
+    let userAnswers = {}; 
+    let timeInSeconds = 60 * 60; // 60 Minutes
+    let timerInterval;
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) { clearInterval(timerInterval); submitTest(); return; }
+            timeInSeconds--;
+            document.getElementById('timer').innerText = 
+                Math.floor(timeInSeconds / 60).toString().padStart(2, '0') + ":" + (timeInSeconds % 60).toString().padStart(2, '0');
+        }, 1000);
+    }
+
+    function loadQuestion() {
+        const q = questions[currentIndex];
+        document.getElementById("q-no").innerText = currentIndex + 1;
+        document.getElementById("q-section-name").innerText = q.subject; 
+        document.getElementById("question-text").innerText = q.q;
+        
+        let optionsHTML = "";
+        let labels = ["A", "B", "C", "D"];
+        q.options.forEach((opt, i) => {
+            let isSelected = (userAnswers[currentIndex] === i) ? "selected" : "";
+            let isChecked = (userAnswers[currentIndex] === i) ? "checked" : "";
+            optionsHTML += `
+                <label class="option-card ${isSelected}" onclick="selectOption(${i})">
+                    <input type="radio" name="option" value="${i}" ${isChecked}>
+                    <span class="opt-label">${labels[i]}.</span><span class="opt-text">${opt}</span>
+                </label>`;
+        });
+        document.getElementById("options-container").innerHTML = optionsHTML;
+        document.getElementById("prev-btn").style.display = (currentIndex === 0) ? "none" : "block";
+        document.getElementById("next-btn").style.display = (currentIndex === questions.length - 1) ? "none" : "block";
+        
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(q.tabId).classList.add('active');
+        renderPalette();
+    }
+
+    function goToSection(subject) {
+        let index = questions.findIndex(q => q.subject === subject);
+        if(index !== -1) { 
+            let selected = document.querySelector('input[name="option"]:checked');
+            if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+            currentIndex = index; 
+            loadQuestion(); 
+        }
+    }
+
+    function selectOption(index) {
+        document.querySelectorAll(".option-card").forEach(c => c.classList.remove("selected"));
+        document.querySelectorAll('input[name="option"]').forEach(i => i.checked = false);
+        document.querySelectorAll(".option-card")[index].classList.add("selected");
+        document.querySelectorAll('input[name="option"]')[index].checked = true;
+    }
+
+    function clearResponse() {
+        document.querySelectorAll(".option-card").forEach(c => c.classList.remove("selected"));
+        document.querySelectorAll('input[name="option"]').forEach(i => i.checked = false);
+        delete userAnswers[currentIndex];
+        renderPalette(); 
+    }
+
+    function prevQuestion() {
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        if(currentIndex > 0) { currentIndex--; loadQuestion(); }
+    }
+
+    function nextQuestion() {
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        if(currentIndex < questions.length - 1) { 
+            currentIndex++; loadQuestion(); 
+        }
+    }
+
+    function saveAndNext() {
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        
+        if(currentIndex < questions.length - 1) { 
+            currentIndex++; 
+            loadQuestion(); 
+        } else { 
+            alert("यह आखिरी प्रश्न है! अब 'Submit' पर क्लिक करें।"); 
+            renderPalette();
+        }
+    }
+
+    function submitTest() {
+        clearInterval(timerInterval);
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value); 
+
+        let resultData = {
+            testId: testNumber,
+            total: questions.length, score: 0, correct: 0, incorrect: 0, unattempted: 0,
+            sections: {
+                "Reasoning": { c: 0, i: 0, u: 0, s: 0 },
+                "General Knowledge": { c: 0, i: 0, u: 0, s: 0 },
+                "Maths": { c: 0, i: 0, u: 0, s: 0 },
+                "Hindi": { c: 0, i: 0, u: 0, s: 0 }
+            },
+            questionsData: questions, 
+            answersData: userAnswers
+        };
+
+        questions.forEach((q, index) => {
+            let ans = userAnswers[index];
+            if (ans === undefined) { 
+                resultData.unattempted++; resultData.sections[q.subject].u++; 
+            } else if (ans === q.correct) { 
+                resultData.correct++; 
+                resultData.score += 2; // +2 Marks
+                resultData.sections[q.subject].c++; 
+                resultData.sections[q.subject].s += 2;
+            } else { 
+                resultData.incorrect++; 
+                resultData.score -= 0.25; // -0.25 Negative Marking (1/8 of 2)
+                resultData.sections[q.subject].i++;
+                resultData.sections[q.subject].s -= 0.25;
+            }
+        });
+
+        resultData.accuracy = resultData.correct + resultData.incorrect > 0 ? ((resultData.correct / (resultData.correct + resultData.incorrect)) * 100).toFixed(2) : 0;
+        
+        // हर टेस्ट का डेटा अलग सेव करने के लिए "testNumber" को key में जोड़ें
+        localStorage.setItem("mySscGdMockTestResult_" + testNumber, JSON.stringify(resultData));
+        window.location.replace("ssc-gd-mock-result.html?test=" + testNumber);
+    }
+
+    function togglePalette() {
+        document.getElementById('palette-drawer').classList.toggle('open');
+        document.getElementById('palette-overlay').classList.toggle('open');
+    }
+
+    function renderPalette() {
+        const subjects = ["Reasoning", "General Knowledge", "Maths", "Hindi"];
+        let html = "";
+        subjects.forEach(sub => {
+            html += `<div class="palette-section"><h4>${sub}</h4><div class="palette-grid">`;
+            questions.forEach((q, i) => {
+                if(q.subject === sub) {
+                    let stateClass = "";
+                    if(userAnswers[i] !== undefined) stateClass = "answered";
+                    if(i === currentIndex) stateClass = "current";
+                    html += `<div class="q-bubble ${stateClass}" onclick="jumpToQuestion(${i})">${i+1}</div>`;
+                }
+            });
+            html += `</div></div>`;
+        });
+        document.getElementById('palette-content').innerHTML = html;
+    }
+
+    function jumpToQuestion(index) {
+        let selected = document.querySelector('input[name="option"]:checked');
+        if(selected) userAnswers[currentIndex] = parseInt(selected.value);
+        currentIndex = index;
+        loadQuestion();
+        togglePalette();
+    }
+
+    window.onload = function() { loadQuestion(); startTimer(); };
+</script>
+</body>
+</html>
