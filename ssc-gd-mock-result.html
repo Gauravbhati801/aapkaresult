@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC GD Result Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f6f9; }
+        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; position: relative; }
+        
+        .top-header { background: #28a745; color: white; padding: 15px; display: flex; align-items: center; position: sticky; top: 0; z-index: 10;}
+        .back-btn { font-size: 1.5rem; margin-right: 15px; cursor: pointer; }
+        
+        .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: center;}
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .stat-box { display: flex; flex-direction: column; align-items: center; }
+        .icon { width: 40px; height: 40px; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; margin-bottom: 8px; }
+        .icon.blue { background: #e3f2fd; color: #1976d2; } .icon.green { background: #e8f5e9; color: #388e3c; } .icon.red { background: #ffebee; color: #d32f2f; } .icon.light-blue { background: #e0f7fa; color: #0097a7; }
+        
+        .chart-container { margin-top: 30px; display: flex; flex-direction: column; align-items: center; }
+        .donut-chart { width: 200px; height: 200px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: #ddd; }
+        .donut-chart::before { content: ""; width: 130px; height: 130px; background: white; border-radius: 50%; }
+        
+        .section-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;}
+        .marks-circle { background: #28a745; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.9rem; font-weight: bold;}
+        .section-stats { display: flex; justify-content: space-around; text-align: center; font-size: 0.9rem;}
+        
+        .retake-btn { padding: 12px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; font-weight:bold; margin-top:20px;}
+
+        .filter-container { display: flex; gap: 10px; margin-bottom: 25px; background: #fff; padding: 10px; border-radius: 12px; justify-content: space-between;}
+        .filter-btn { flex: 1; padding: 10px 5px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; background: #f4f6f9; color: #999; font-size: 0.85rem;}
+        .filter-btn.active.correct { background: #e8f5e9; color: #4caf50; }
+        .filter-btn.active.incorrect { background: #ffebee; color: #f44336; }
+        .filter-btn.active.unattempted { background: #f4f6f9; color: #555; border: 1px solid #ddd;}
+
+        .sol-wrapper { margin-bottom: 25px; }
+        .sol-top-row { display: flex; align-items: center; margin-bottom: 15px; padding: 0 5px;}
+        .sol-q-no { font-size: 1.1rem; color: #333; display: flex; align-items: center; gap: 10px; font-weight: bold;}
+        .status-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 0.8rem; font-weight: bold;}
+        .status-icon.correct { background-color: #4caf50; }
+        .status-icon.incorrect { background-color: #f44336; }
+        .status-icon.unattempted { background-color: #999; }
+        .sol-line { flex-grow: 1; height: 1px; background-color: #ddd; margin: 0 15px; }
+        .sol-save { color: #28a745; font-weight: bold; font-size: 0.85rem; cursor: pointer;}
+
+        .solution-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #eee; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .subject-badge { background: #eaf4fc; color: #28a745; padding: 8px 25px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 25px; }
+        .question-text-sol { font-size: 1.1rem; color: #222; margin-bottom: 25px; line-height: 1.5;}
+        .btn-full-sol { background: #28a745; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
+        
+        /* =========================================================
+           Full Solution Modal 
+           ========================================================= */
+        .fs-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 100; overflow-y: auto; flex-direction: column;}
+        .fs-header { background: #fff; color: #1a233a; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10;}
+        .fs-back-btn { font-size: 1.5rem; cursor: pointer; color: #28a745; }
+        .fs-title { font-size: 1.2rem; font-weight: bold; color: #1a233a; }
+        .fs-warning { color: #888; font-size: 1.2rem; }
+
+        .fs-content { padding: 20px; padding-bottom: 80px; } 
+        .fs-q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
+        .fs-q-badge { background: #f0f2f5; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; color: #333;}
+        .fs-save { color: #28a745; font-weight: bold; font-size: 0.9rem;}
+        .fs-question { font-size: 1.1rem; color: #222; line-height: 1.6; margin-bottom: 25px;}
+        .fs-option { border: 1px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 12px; display: flex; align-items: center; font-size: 1rem; color: #333; position: relative;}
+        .fs-opt-label { margin-right: 15px; color: #555; }
+        .fs-option.correct { border: 2px solid #4caf50; background-color: #f6fdf6; }
+        .fs-option.incorrect { border: 2px solid #f44336; background-color: #fffafa; }
+        .fs-correct-badge { position: absolute; right: 15px; bottom: 10px; font-size: 0.75rem; color: #4caf50; font-weight: bold;}
+        .fs-incorrect-badge { position: absolute; right: 15px; bottom: 10px; font-size: 0.75rem; color: #f44336; font-weight: bold;}
+        .fs-sol-heading { font-size: 1.1rem; font-weight: bold; color: #1a233a; margin: 30px 0 15px 0;}
+        .fs-sol-detail { font-size: 1rem; color: #333; line-height: 1.6;}
+        .fs-next-btn { position: fixed; bottom: 20px; right: 20px; background: #28a745; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+    </style>
+</head>
+<body>
+<div class="app-container">
+    
+    <header class="top-header">
+        <div class="back-btn" onclick="window.location.href='ssc-gd-mocks-page.html'">←</div>
+        <div id="result-test-title" style="font-size: 1.1rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">SSC GD Result Analysis</div>
+    </header>
+
+    <div id="overall">
+        <div class="card">
+            <h3>Question Stats (SSC GD Pattern)</h3>
+            <div class="stats-grid">
+                <div class="stat-box"><div class="icon blue">🏆</div><h4 id="score-display">0</h4><p>Score</p></div>
+                <div class="stat-box"><div class="icon green">✓</div><h4 id="correct-count">0</h4><p>Correct</p></div>
+                <div class="stat-box"><div class="icon red">✕</div><h4 id="incorrect-count">0</h4><p>Incorrect</p></div>
+                <div class="stat-box"><div class="icon light-blue">−</div><h4 id="unattempted-count">0</h4><p>Unattempted</p></div>
+            </div>
+            <div style="margin-top: 20px;"><h4 id="accuracy-display" style="font-size: 1.5rem;">0%</h4><p style="color: #888; font-size: 0.9rem;">Accuracy</p></div>
+            <div class="chart-container">
+                <div class="donut-chart" id="myChart"></div>
+            </div>
+            <button class="retake-btn" onclick="window.location.href='free-test-weekly.html'">Go to Dashboard</button>
+        </div>
+    </div>
+
+    <div id="sections" style="margin-bottom: 40px;">
+        <div id="sections-container"></div>
+    </div>
+
+    <div id="solutions" style="background: #fff; margin-bottom: 40px; padding: 10px;">
+        <h3 style="margin-bottom: 15px; color: #222;">Solutions</h3>
+        <div class="filter-container">
+            <button class="filter-btn active correct" onclick="filterSolutions('correct', this)">Correct</button>
+            <button class="filter-btn incorrect" onclick="filterSolutions('incorrect', this)">Incorrect</button>
+            <button class="filter-btn unattempted" onclick="filterSolutions('unattempted', this)">Unattempted</button>
+        </div>
+        <div id="solutions-container"></div>
+    </div>
+
+    <div id="fs-modal" class="fs-modal">
+        <header class="fs-header">
+            <div class="fs-back-btn" onclick="closeFullSolution()">←</div>
+            <div class="fs-title">Full Solution</div>
+            <div class="fs-warning">⚠️</div>
+        </header>
+        
+        <div class="fs-content">
+            <div class="fs-q-meta">
+                <span class="fs-q-badge" id="fs-q-num">Question 1</span>
+                <span class="fs-save">🔖 SAVE</span>
+            </div>
+            <div class="fs-question" id="fs-q-text">प्रश्न यहाँ आएगा...</div>
+            <div id="fs-options-container"></div>
+            
+            <h4 class="fs-sol-heading">Full Solution</h4>
+            <div class="fs-sol-detail" id="fs-sol-text"></div>
+        </div>
+        <button class="fs-next-btn" id="fs-next-btn" onclick="nextFullSolution()">Next</button>
+    </div>
+</div>
+
+<script>
+    let globalResultData = null; 
+    let currentSolutionIndex = 0;
+
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const testIdParam = urlParams.get('test') || '1';
+
+        const savedData = localStorage.getItem("mySscGdMockTestResult_" + testIdParam) || localStorage.getItem("mySscGdMockTestResult");
+        if (!savedData) { window.location.href = "ssc-gd-mocks-page.html"; return; }
+        
+        globalResultData = JSON.parse(savedData);
+        const result = globalResultData;
+
+        const testTitles = {
+            "1": "01 SSC GD Constable Full Mock Test (New Pattern)",
+            "2": "02 SSC GD Constable Full Mock Test",
+        };
+
+        const testId = result.testId || '1'; 
+        document.getElementById("result-test-title").innerText = testTitles[testId] || "SSC GD Result";
+
+        // Overall Stats (Out of 160)
+        // Using toFixed(2) to show decimal negative marking properly
+        document.getElementById("score-display").innerText = result.score.toFixed(2) +"/160";
+        document.getElementById("correct-count").innerText = result.correct;
+        document.getElementById("incorrect-count").innerText = result.incorrect;
+        document.getElementById("unattempted-count").innerText = result.unattempted;
+        document.getElementById("accuracy-display").innerText = result.accuracy + "%";
+
+        const total = result.total;
+        const correctPerc = (result.correct / total) * 100;
+        const incorrectPerc = correctPerc + ((result.incorrect / total) * 100);
+        document.getElementById("myChart").style.background = `conic-gradient(#4caf50 0% ${correctPerc}%, #f44336 ${correctPerc}% ${incorrectPerc}%, #00bcd4 ${incorrectPerc}% 100%)`;
+
+        // Section Wise Stats
+        let sectionHTML = "";
+        for (const [subject, data] of Object.entries(result.sections)) {
+            sectionHTML += `
+            <div class="card" style="text-align: left; padding: 15px;">
+                <div class="section-header">
+                    <h4>${subject}</h4>
+                    <div class="marks-circle">${data.s.toFixed(2)}</div>
+                </div>
+                <div class="section-stats">
+                    <div><span style="color:#4caf50; font-weight:bold;">${data.c}</span><br>Correct</div>
+                    <div><span style="color:#f44336; font-weight:bold;">${data.i}</span><br>Incorrect</div>
+                    <div><span style="color:#00bcd4; font-weight:bold;">${data.u}</span><br>Unattempted</div>
+                </div>
+            </div>`;
+        }
+        document.getElementById("sections-container").innerHTML = sectionHTML;
+
+        // Solutions List
+        let solHTML = "";
+        result.questionsData.forEach((q, i) => {
+            let userAns = result.answersData[i];
+            let status = "";
+            let iconHtml = "";
+
+            if (userAns === undefined) { 
+                status = "unattempted";
+                iconHtml = `<div class="status-icon unattempted">-</div>`;
+            } else if (userAns === q.correct) { 
+                status = "correct";
+                iconHtml = `<div class="status-icon correct">✓</div>`;
+            } else { 
+                status = "incorrect";
+                iconHtml = `<div class="status-icon incorrect">✕</div>`;
+            }
+
+            let correctOptText = q.options[q.correct];
+            
+            solHTML += `
+            <div class="sol-wrapper sol-item ${status}">
+                <div class="sol-top-row">
+                    <div class="sol-q-no">${i + 1} ${iconHtml}</div>
+                    <div class="sol-line"></div>
+                    <div class="sol-save">🔖 SAVE</div>
+                </div>
+                <div class="solution-card">
+                    <div class="subject-badge">${q.subject}</div>
+                    <p class="question-text-sol">${q.q}</p>
+                    <button class="btn-full-sol" onclick="openFullSolution(${i})">See Full Solution</button>
+                </div>
+            </div>`;
+        });
+        document.getElementById("solutions-container").innerHTML = solHTML;
+        
+        setTimeout(() => {
+            filterSolutions('correct', document.querySelector('.filter-btn.correct'));
+        }, 100);
+    };
+
+    function filterSolutions(type, btnElement) {
+        document.querySelectorAll('.filter-container .filter-btn').forEach(btn => btn.classList.remove('active'));
+        if (btnElement) { btnElement.classList.add('active'); }
+        document.querySelectorAll('.sol-item').forEach(item => {
+            item.style.display = item.classList.contains(type) ? 'block' : 'none';
+        });
+    }
+
+    // ==========================================
+    // Full Solution Modal Logic
+    // ==========================================
+    function openFullSolution(index) {
+        currentSolutionIndex = index;
+        populateFullSolution(index);
+        document.getElementById('fs-modal').style.display = 'flex'; 
+    }
+
+    function closeFullSolution() {
+        document.getElementById('fs-modal').style.display = 'none'; 
+    }
+
+    function populateFullSolution(index) {
+        const qData = globalResultData.questionsData[index];
+        const userAns = globalResultData.answersData[index];
+        const correctAns = qData.correct;
+        document.getElementById('fs-q-num').innerText = "Question " + (index + 1);
+        document.getElementById('fs-q-text').innerText = qData.q;
+
+        let correctPercent = Math.floor(Math.random() * (85 - 45 + 1)) + 45; // 45% to 85% random dummy stat
+        let optionsHTML = "";
+        let labels = ["A", "B", "C", "D"];
+        
+        qData.options.forEach((opt, i) => {
+            let optClass = "fs-option";
+            let badgeHTML = "";
+            if (i === correctAns) { optClass += " correct"; badgeHTML = `<span class="fs-correct-badge">Correct: ${correctPercent}%</span>`; } 
+            else if (i === userAns) { optClass += " incorrect"; badgeHTML = `<span class="fs-incorrect-badge">Incorrect</span>`; }
+            optionsHTML += `<div class="${optClass}"><span class="fs-opt-label">${labels[i]}.</span><span>${opt}</span>${badgeHTML}</div>`;
+        });
+        document.getElementById('fs-options-container').innerHTML = optionsHTML;
+
+        let detailText = `<b>सही उत्तर – ${qData.options[correctAns]}</b><br><br>यह प्रश्न <b>${qData.subject}</b> विषय से संबंधित है।<br><br>*(नोट: असली डेटाबेस होने पर यहाँ पूरी व्याख्या दिखेगी)*`;
+        document.getElementById('fs-sol-text').innerHTML = detailText;
+
+        let nextBtn = document.getElementById('fs-next-btn');
+        nextBtn.style.display = (index < globalResultData.questionsData.length - 1) ? 'block' : 'none';
+    }
+
+    function nextFullSolution() {
+        let activeFilter = document.querySelector('.filter-btn.active').innerText.toLowerCase().trim();
+        let cards = document.querySelectorAll('.sol-item'); 
+        for (let i = currentSolutionIndex + 1; i < cards.length; i++) {
+            if (cards[i].classList.contains(activeFilter)) {
+                currentSolutionIndex = i; populateFullSolution(currentSolutionIndex); 
+                document.getElementById('fs-modal').scrollTop = 0; return; 
+            }
+        }
+    }
+</script>
+</body>
+</html>
