@@ -18,7 +18,8 @@
 body{
   font-family:'Segoe UI',sans-serif;
   background:linear-gradient(135deg,#f1f5f9,#e2e8f0);
-  color: var(--text-dark);
+  color: var(--text-dark);
+
 }
 
 /* HEADER */
@@ -35,7 +36,7 @@ cursor:pointer;
 }
 
 #navMenu{
-position:absolute;
+position:fixed; /* Absolute को Fixed से बदलें, यह 100% काम करेगा */
 top:65px;
 right:0;
 background:rgb(255, 255, 255);
@@ -46,6 +47,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
   visibility: hidden;
   transition: transform 0.3s ease-out, visibility 0.3s;
   display: flex;
+  z-index: 1000; /* मेनू को हमेशा कंटेंट के ऊपर दिखाने के लिए */
 }
 
 #navMenu a{
