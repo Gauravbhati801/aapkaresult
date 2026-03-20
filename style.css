@@ -758,10 +758,10 @@ margin-bottom:20px;
 .social-buttons a{
 display:inline-block;
 padding:12px 25px;
-color:white;
+color:#ffffff;
 text-decoration:none;
 border-radius:6px;
-font-weight:bold;
+font-weight:600;
 min-width: 140px;
 transition: transform 0.3s, box-shadow 0.3s;
 }
