@@ -78,6 +78,7 @@
         <div id="result-test-title" style="font-size: 1.1rem; font-weight: bold;">UP Police Result</div>
     </header>
 
+<main>
     <div id="overall">
         <div class="card">
             <h3>Overall Stats (UP Police Pattern)</h3>
@@ -108,6 +109,7 @@
         </div>
         <div id="solutions-container"></div>
     </div>
+</main>
 
     <div id="fs-modal" class="fs-modal">
         <header class="fs-header">
@@ -248,7 +250,8 @@
         });
         document.getElementById('fs-options-container').innerHTML = optionsHTML;
 
-        let detailText = `<b>सही उत्तर – ${qData.options[correctAns]}</b><br><br>यह प्रश्न <b>${qData.subject}</b> विषय से संबंधित है।`;
+        let explanation = qData.solution ? qData.solution : "इस प्रश्न की विस्तृत व्याख्या (Solution) अभी जोड़ी नहीं गई है।";
+        let detailText = `<b>सही उत्तर – ${qData.options[correctAns]}</b><br><br><span style="color:#2563eb; font-weight:bold;">व्याख्या (Explanation):</span><br><span style="line-height:1.6;">${explanation}</span>`;
         document.getElementById('fs-sol-text').innerHTML = detailText;
 
         let nextBtn = document.getElementById('fs-next-btn');
