@@ -26,5 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       }
+
+      // मोबाइल मेनू (Side Menu) के बाहर क्लिक करने पर उसे बंद करने का कोड
+      const navMenu = document.getElementById("navMenu");
+      const menuBtn = document.querySelector(".menu");
+      if (navMenu && navMenu.classList.contains('open')) {
+          if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+              navMenu.classList.remove('open');
+          }
+      }
   });
 });
