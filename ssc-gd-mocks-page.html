@@ -48,7 +48,30 @@
 
         <div class="test-card">
             <div class="test-header">
-                <div class="test-title">01 SSC GD Constable Full Mock Test (New Pattern)</div>
+                <div class="test-title">03 SSC GD Constable Full Mock Test (Hard Level)</div>
+                <button class="share-btn" onclick="shareTest('03 SSC GD Constable Full Mock Test (Hard Level)')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="test-stats">
+                <div><div class="stat-icon">🕒</div>60 Mins</div>
+                <div><div class="stat-icon">📋</div>80 Qs</div>
+                <div><div class="stat-icon">💯</div>160 Marks</div>
+            </div>
+            <div class="test-actions" id="action-box-3">
+                <button class="btn btn-attempt" onclick="window.location.href='ssc-gd-quiz.html?test=3'">Attempt</button>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <div class="test-header">
+                <div class="test-title">02 SSC GD Constable Full Mock Test (New Pattern)</div>
                 <button class="share-btn" onclick="shareTest('01 SSC GD Constable Full Mock Test')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="18" cy="5" r="3"></circle>
@@ -65,13 +88,13 @@
                 <div><div class="stat-icon">💯</div>160 Marks</div>
             </div>
             <div class="test-actions" id="action-box-1">
-                <button class="btn btn-attempt" onclick="window.location.href='ssc-gd-quiz.html?test=1'">Attempt</button>
+                <button class="btn btn-attempt" onclick="window.location.href='ssc-gd-quiz.html?test=2'">Attempt</button>
             </div>
         </div>
 
         <div class="test-card">
             <div class="test-header">
-                <div class="test-title">02 SSC GD Constable Full Mock Test</div>
+                <div class="test-title">01 SSC GD Constable Full Mock Test</div>
                 <button class="share-btn" onclick="shareTest('02 SSC GD Constable Full Mock Test')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="18" cy="5" r="3"></circle>
@@ -88,7 +111,7 @@
                 <div><div class="stat-icon">💯</div>160 Marks</div>
             </div>
             <div class="test-actions" id="action-box-2">
-                <button class="btn btn-attempt" onclick="window.location.href='ssc-gd-quiz.html?test=2'">Attempt</button>
+                <button class="btn btn-attempt" onclick="window.location.href='ssc-gd-quiz.html?test=1'">Attempt</button>
             </div>
         </div>
 
@@ -134,7 +157,6 @@
     };
 
     function startReattempt(testId) {
-        localStorage.removeItem("mySscGdMockTestResult_" + testId); 
         window.location.href = 'ssc-gd-quiz.html?test=' + testId; 
     }
 </script>
