@@ -977,11 +977,6 @@ table, th, td {
 </style>
 
 .no-dot {
-  list-style: none;
-  padding: 0;
-}
-
-.no-dot li {
-  margin: 8px 0;
-  font-weight: 500;
+  list-style: none !important;
+  padding-left: 0;
 }
