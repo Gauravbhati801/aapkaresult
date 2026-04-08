@@ -975,3 +975,13 @@ table, th, td {
   margin-bottom: 10px;
 }
 </style>
+
+.no-dot {
+  list-style: none;
+  padding: 0;
+}
+
+.no-dot li {
+  margin: 8px 0;
+  font-weight: 500;
+}
