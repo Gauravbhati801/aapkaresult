@@ -948,3 +948,30 @@ background:#cc0000; /* Darker YouTube red to pass 4.5:1 contrast */
 .n-science { background: linear-gradient(135deg, #10b981, #059669); }
 .n-polity { background: linear-gradient(135deg, #3b82f6, #2563eb); }
 .n-geography { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+<style>
+section {
+  background: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #2b6cb0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+</style>
