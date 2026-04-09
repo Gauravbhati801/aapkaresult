@@ -1007,21 +1007,19 @@ section:hover {
   transition: 0.3s;
 }
 
-.related-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.related-links li {
-  margin: 8px 0;
-}
-
 .related-links a {
+  display: block;
   text-decoration: none;
+  background: #f1f5ff;
   color: #2b6cb0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .related-links a:hover {
-  color: #ff6600;
+  background: #2b6cb0;
+  color: #fff;
 }
