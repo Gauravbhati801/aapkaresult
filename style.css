@@ -1023,3 +1023,66 @@ section:hover {
   background: #2b6cb0;
   color: #fff;
 }
+
+body {
+  background-color: #0f1014; /* Dark background like Hotstar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hotstar-btn {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  outline: none;
+}
+
+/* Hover Effect */
+.hotstar-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05); /* Thoda bada hoga */
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Click (Active) Effect */
+.hotstar-btn:active {
+  transform: scale(0.95); /* Click karne par thoda dabega */
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Light Glow Animation (Jo button ke upar move hoti hai) */
+.hotstar-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.hotstar-btn:hover::before {
+  left: 100%;
+}
+
+.play-icon {
+  margin-right: 8px;
+}
