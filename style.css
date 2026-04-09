@@ -1024,14 +1024,6 @@ section:hover {
   color: #fff;
 }
 
-body {
-  background-color: #0f1014; /* Dark background like Hotstar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .hotstar-btn {
   position: relative;
   padding: 12px 30px;
