@@ -974,3 +974,35 @@ table, th, td {
   margin-bottom: 10px;
 }
 
+section {
+  background: #ffffff;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+h2 {
+  color: #2b6cb0;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+li::before {
+  content: "✔ ";
+  color: green;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
