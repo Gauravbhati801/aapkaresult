@@ -46,10 +46,6 @@ Welcome to Aapka Result <br>
 <span class="gradient">check your result</span>
 </h1>
 
-<button class="hs-btn">
-  <span>Subscribe Now</span>
-</button>
-
  <!-- 👇8 boxes top notification YE ADD KARO -->
    <div class="job-cards">
 
@@ -156,28 +152,6 @@ Welcome to Aapka Result <br>
     <a href="disclaimer.html">Disclaimer</a>
 </footer>
   <script src="main.js"></script>
-
-<script>
-document.querySelectorAll(".hs-btn").forEach(button => {
-  button.addEventListener("click", function(e) {
-
-    const rect = button.getBoundingClientRect();
-    const circle = document.createElement("span");
-
-    const size = Math.max(button.clientWidth, button.clientHeight);
-
-    circle.style.width = circle.style.height = size + "px";
-    circle.style.left = e.clientX - rect.left - size / 2 + "px";
-    circle.style.top = e.clientY - rect.top - size / 2 + "px";
-
-    circle.classList.add("ripple");
-
-    button.appendChild(circle);
-
-    setTimeout(() => circle.remove(), 600);
-  });
-});
-</script>
 </body>
 
 </html>
