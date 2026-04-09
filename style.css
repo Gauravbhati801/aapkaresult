@@ -1034,18 +1034,21 @@ section:hover {
   cursor: pointer;
   overflow: hidden;
 
-  /* Gradient */
-  background: linear-gradient(120deg, #00c6ff, #0072ff, #00c6ff);
-  background-size: 200% 200%;
-  animation: hs-gradient 3s linear infinite;
+  /* HOTSTAR gradient */
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00c6ff, #ff00cc);
+  background-size: 300% 300%;
+  animation: gradientMove 4s linear infinite;
 
-  transition: transform 0.2s ease;
+  /* Glow */
+  box-shadow: 0 0 15px rgba(255,0,200,0.6),
+              0 0 30px rgba(0,198,255,0.5);
+
+  transition: 0.3s;
 }
 
-/* Gradient move */
-@keyframes hs-gradient {
+@keyframes gradientMove {
   0% { background-position: 0% }
-  100% { background-position: 200% }
+  100% { background-position: 300% }
 }
 
 /* Shine effect */
@@ -1065,23 +1068,8 @@ section:hover {
   transition: 0.6s;
 }
 
-/* Click press */
-.hs-btn:active {
-  transform: scale(0.95);
-}
-
-/* Ripple */
-.hs-btn .ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  background: rgba(255,255,255,0.7);
-  animation: hs-ripple 0.6s linear;
-}
-
-@keyframes hs-ripple {
-  to {
-    transform: scale(12);
-    opacity: 0;
-  }
+/* Hover glow boost */
+.hs-btn:hover {
+  box-shadow: 0 0 25px rgba(255,0,200,0.9),
+              0 0 50px rgba(0,198,255,0.9);
 }
