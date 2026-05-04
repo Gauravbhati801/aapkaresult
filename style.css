@@ -1023,3 +1023,59 @@ section:hover {
   background: #2b6cb0;
   color: #fff;
 }
+
+/* --- Admit Card Notice Banner CSS --- */
+.admit-card-notice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0fdf4; /* Light green success background */
+    border: 1px solid #bbf7d0; /* Subtle green border */
+    border-radius: 12px; /* Aapke dusre cards ke rounded corners se match karne ke liye */
+    padding: 12px 16px;
+    margin: 20px auto; /* Upar aur niche se spacing */
+    width: 90%; /* Mobile layout ke hisaab se width */
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.notice-icon {
+    font-size: 24px;
+    animation: alert-blink 1.5s infinite; /* Attention grab karne ke liye */
+}
+
+.notice-text {
+    font-size: 13px;
+    color: #1f2937;
+    flex: 1;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+}
+
+.notice-text strong {
+    color: #dc2626; /* "Update" text in red */
+}
+
+.notice-btn {
+    background-color: #2563eb; /* Aapke 'See Answer' button se match karta hua blue */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.notice-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Blinking Animation for Icon */
+@keyframes alert-blink {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
