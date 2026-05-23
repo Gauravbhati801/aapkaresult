@@ -5,220 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agniveer Test Dashboard - AapkaResult.in</title>
     <link rel="canonical" href="https://aapkaresult.in/agniveer-mocks-page.html">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #f4f6f9; }
-        .app-container { max-width: 600px; margin: 0 auto; background-color: #f4f6f9; min-height: 100vh; }
-        .top-header { background: #fff; padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
-        .back-btn { font-size: 1.5rem; margin-right: 15px; cursor: pointer; color: #555;}
-        .page-title { font-weight: bold; color: #333; font-size: 1.1rem; }
+        .app-container { max-width: 600px; margin: 0 auto; background: rgba(30, 27, 75, 0.4); min-height: 100vh; backdrop-filter: blur(12px); border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);}
+        .top-header { background: rgba(15, 23, 42, 0.8); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 10; }
+        .back-btn { font-size: 1.5rem; margin-right: 15px; cursor: pointer; color: #38bdf8;}
+        .page-title { font-weight: bold; color: #fff; font-size: 1.1rem; }
         .test-list { padding: 15px; }
-        
-        .test-card { background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e0e0e0; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
-        .test-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .test-title { font-weight: bold; color: #222; line-height: 1.4; font-size: 0.95rem; padding-right: 10px; margin-bottom: 0;}
-        
-        .share-btn { 
-            background: #d1fae5; border: none; border-radius: 10px; width: 38px; height: 38px; 
-            display: flex; justify-content: center; align-items: center; cursor: pointer; 
-            color: #065f46; flex-shrink: 0; transition: 0.2s;
-        }
-        
-        .test-stats { display: flex; justify-content: space-around; margin-bottom: 20px; font-size: 0.8rem; color: #555; font-weight: bold; text-align: center;}
-        .stat-icon { background: #ecfdf5; color: #10b981; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 5px; font-size: 1.1rem; margin: 0 auto 5px auto;}
-        
+        .test-card { background: rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 15px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
+        .test-title { font-size: 1.05rem; font-weight: bold; color: #fff; margin-bottom: 5px; }
+        .test-meta { font-size: 0.85rem; color: #cbd5e1; margin-bottom: 12px; }
         .test-actions { display: flex; gap: 10px; }
-        .btn { padding: 10px 15px; border-radius: 8px; font-weight: bold; cursor: pointer; border: none; font-size: 0.9rem; flex: 1; transition: 0.2s;}
-        .btn-attempt { background: #059669; color: #fff; } 
-        .btn-view { background: #059669; color: #fff; }
-        .btn-reattempt { background: #ecfdf5; color: #059669; border: 1px solid #059669; }
+        .btn { flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: bold; font-size: 0.9rem; cursor: pointer; text-align: center; text-decoration: none;}
+        .btn-start { background: #38bdf8; color: #0f172a; }
+        .btn-view { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+        .btn-reattempt { background: #22c55e; color: white; }
+        .share-banner { background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(34, 197, 94, 0.2)); border-radius: 12px; padding: 15px; margin: 15px; border: 1px solid rgba(255,255,255,0.15); text-align: center;}
+        .share-title { font-weight: bold; color: #fff; margin-bottom: 5px; font-size: 1rem;}
+        .share-desc { color: #cbd5e1; font-size: 0.85rem; margin-bottom: 12px;}
+        .btn-share { background: #25d366; color: white; display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 10px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer;}
     </style>
 </head>
 <body>
-<div class="app-container">
-    <header class="top-header">
-        <div class="back-btn" onclick="window.location.href='agniveer-mock-button.html'">←</div>
-        <div class="page-title">Army Agniveer Free Mock Tests</div>
-    </header>
-
-    <main class="test-list">
-         <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">08 Army Agniveer GD Full Mock Test</div>
-                <button class="share-btn" onclick="shareTest('08 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-8">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=8'">Attempt</button>
-            </div>
-        </div>
-        
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">07 Army Agniveer GD Full Mock Test (Hard Level)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('07 Army Agniveer GD Full Mock Test (Hard Level)')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-7">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=7'">Attempt</button>
-            </div>
+   <div class="main-container">
+    <div class="app-container">
+        <div class="top-header">
+            <span class="back-btn" onclick="window.location.href='index.html'">←</span>
+            <span class="page-title">Army Agniveer Free Test Series</span>
         </div>
 
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">06 Army Agniveer GD Full Mock Test (Hard Level)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('06 Army Agniveer GD Full Mock Test (Hard Level)')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-6">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=6'">Attempt</button>
-            </div>
+        <div class="share-banner">
+            <div class="share-title">🚀 दोस्तों के साथ शेयर करें!</div>
+            <div class="share-desc">अगर आपको हमारे फ्री टेस्ट पसंद आ रहे हैं, तो अपने फौजी भाइयों की मदद के लिए इसे WhatsApp ग्रुप्स में ज़रूर शेयर करें।</div>
+            <button class="btn-share" onclick="shareDashboard()">Share on WhatsApp</button>
         </div>
 
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">05 Army Agniveer GD Full Mock Test (No Negative Marking)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('05 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
+        <div class="test-list">
+            <div class="test-card">
+                <div class="test-title">Army Agniveer GD - Practice Set 01</div>
+                <div class="test-meta">50 Qs • 100 Marks • 60 Mins</div>
+                <div class="test-actions" id="action-box-1">
+                    <button class="btn btn-start" onclick="window.location.href='agniveer-mock-button.html?test=1'">Start Test</button>
+                </div>
             </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
             </div>
-            <div class="test-actions" id="action-box-5">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=5'">Attempt</button>
-            </div>
-        </div>
-
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">04 Army Agniveer GD Full Mock Test (No Negative Marking)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('04 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-4">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=4'">Attempt</button>
-            </div>
-        </div>
-
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">03 Army Agniveer GD Full Mock Test (No Negative Marking)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('03 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-3">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=3'">Attempt</button>
-            </div>
-        </div>
-
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">02 Army Agniveer GD Full Mock Test (No Negative Marking)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('02 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-2">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=2'">Attempt</button>
-            </div>
-        </div>
-
-        <div class="test-card">
-            <div class="test-header">
-                <div class="test-title">01 Army Agniveer GD Full Mock Test (No Negative Marking)</div>
-                <button class="share-btn"aria-label="Share this test" onclick="shareTest('01 Army Agniveer GD Full Mock Test')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </button>
-            </div>
-            <div class="test-stats">
-                <div><div class="stat-icon">🕒</div>60 Mins</div>
-                <div><div class="stat-icon">📋</div>50 Qs</div>
-                <div><div class="stat-icon">💯</div>100 Marks</div>
-            </div>
-            <div class="test-actions" id="action-box-1">
-                <button class="btn btn-attempt" onclick="window.location.href='agniveer-quiz.html?test=1'">Attempt</button>
-            </div>
-        </div>
-
-    </main>
-</div>
+    </div>
+   </div>
 
 <script>
-    function shareTest(testName) {
-        const shareText = `🔥 फ्री Agniveer मॉक टेस्ट!\n\nAapkaResult.in पर '${testName}' अटेम्प्ट करें और अपना स्कोर चेक करें। अभी लिंक पर क्लिक करें:`;
-        const shareUrl = window.location.href; 
-        if (navigator.share) {
-            navigator.share({ title: 'Agniveer Mock Test', text: shareText, url: shareUrl }).catch(console.error);
-        } else {
-            navigator.clipboard.writeText(shareText + " " + shareUrl);
-            alert("लिंक कॉपी हो गया है! अब आप इसे अपने दोस्तों को WhatsApp पर भेज सकते हैं।");
-        }
-    }
-
-    window.onload = function() {
-        // पुराने डेटा को नए फॉर्मेट में बदलें
-        const oldResult = localStorage.getItem("myAgniveerMockTestResult");
-        if (oldResult) {
-            try {
-                const parsed = JSON.parse(oldResult);
-                const tid = parsed.testId || '1';
-                localStorage.setItem("myAgniveerMockTestResult_" + tid, oldResult);
-                localStorage.removeItem("myAgniveerMockTestResult");
-            } catch(e) {}
-        }
-
-        // सभी टेस्ट्स (1 से 10 तक) के लिए चेक करें
-        for (let i = 1; i <= 10; i++) {
-            const savedResult = localStorage.getItem("myAgniveerMockTestResult_" + i);
-            const actionBox = document.getElementById("action-box-" + i);
-            if (savedResult && actionBox) {
-                actionBox.innerHTML = `
-                    <button class="btn btn-view" onclick="window.location.href='agniveer-mock-result.html?test=${i}'">View Result</button>
-                    <button class="btn btn-reattempt" onclick="startReattempt('${i}')">Re Attempt</button>
-                `;
-            }
-        }
-    };
-    function startReattempt(testId) {
-        window.location.href = 'agniveer-quiz.html?test=' + testId; 
+    function shareDashboard() {
+        const shareText = "जय हिंद भाइयों! 🇮🇳 अगर आप भी Army Agniveer 2026 लिखित परीक्षा की तैयारी कर रहे हैं, तो AapkaResult.in पर 100% फ्री ऑनलाइन मॉक टेस्ट (विस्तृत हल के साथ) ज़रूर दें। अभी टेस्ट शुरू करें:";
+        const shareUrl = window.location.href;
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText + " " + shareUrl));
     }
 </script>
 </body>
