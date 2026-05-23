@@ -501,15 +501,26 @@ table tr:hover td { background: rgba(255,255,255,0.02) !important; }
 .footer a { color: #64748b; text-decoration: none; }
 .footer a:hover { color: var(--primary-color); text-decoration: underline; }
 
-/* --- SECTION TEXT READABILITY FIX --- */
-section p, .job-notice-extra, .home-content p, .about-section p, .whatsapp-container p {
-    color: var(--text-muted) !important; /* Soft white/grey color */
-    font-weight: 500;
-    line-height: 1.7;
+/* ==========================================================
+   🔥 ULTIMATE TEXT COLOR & READABILITY FIX (EVERYWHERE) 🔥
+============================================================ */
+
+/* 1. Saare boxes, sections aur text containers ke andar ke normal text ko white karega */
+.box, section, .job-notice-extra, .home-content, .about-section, .social-follow, .job-top-content, .job-detail-container, .vacancy-box {
+    color: #cbd5e1 !important; /* Soft white color */
 }
 
-/* Agar koi specific paragraph card ke andar bina p tag ke hai */
-.admit-card-notice .notice-text, section div {
-    color: var(--text-muted);
+/* 2. Agar bina kisi tag ke direct text likha hai toh use bhi force karke white karega */
+.box, section, div {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
+/* 3. Jo headings cards ke andar hain unko aur bright karega */
+.box h2, section h2, .vacancy-title, .job-box-title {
+    color: #38bdf8 !important; /* Neon Sky Blue headings */
+}
+
+/* 4. Kisi bhi list ya bullet point ke andar ka text text-muted karega */
+.box ul li, .job-list li, ul li {
+    color: #cbd5e1 !important;
+}
