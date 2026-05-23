@@ -6,36 +6,92 @@
     <title>Agniveer Mock Test Engine</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .app-container { max-width: 600px; margin: 0 auto; background: rgba(15, 23, 42, 0.95); min-height: 100vh; color: #fff; }
-        .top-header { background: #1e1b4b; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .time { font-size: 1.2rem; font-weight: bold; color: #38bdf8; }
-        .q-container { padding: 20px; }
-        .question-text { font-size: 1.15rem; font-weight: bold; color: #fff; margin-bottom: 20px; line-height: 1.6; }
-        .option-wrapper { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; cursor: pointer; }
-        .option-wrapper input { margin-right: 12px; accent-color: #38bdf8; }
-        .option-text { color: #cbd5e1 !important; font-size: 1.05rem; }
-        .nav-actions { display: flex; justify-content: space-between; padding: 20px; }
-        .btn-nav { padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-        .btn-next { background: #38bdf8; color: #0f172a; }
+        .app-container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: rgba(15, 23, 42, 0.9) !important; 
+            min-height: 100vh; 
+            backdrop-filter: blur(16px);
+            border-left: 1px solid rgba(255,255,255,0.1); 
+            border-right: 1px solid rgba(255,255,255,0.1); 
+            color: #ffffff !important; 
+        }
+        .top-header { 
+            background: rgba(30, 27, 75, 0.9) !important; 
+            padding: 16px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        .time { font-size: 1.25rem; font-weight: bold; color: #38bdf8 !important; text-shadow: 0 0 8px rgba(56,189,248,0.4); }
+        .q-container { padding: 25px 20px; }
+        .question-text { font-size: 1.2rem; font-weight: 700; color: #ffffff !important; margin-bottom: 25px; line-height: 1.6; }
+        
+        /* Options Radio Box Glow Edit */
+        .option-wrapper { 
+            background: rgba(255, 255, 255, 0.04) !important; 
+            padding: 14px 18px; 
+            border-radius: 10px; 
+            margin-bottom: 14px; 
+            border: 1px solid rgba(255,255,255,0.08) !important; 
+            display: flex; 
+            align-items: center; 
+            cursor: pointer; 
+            transition: 0.2s;
+        }
+        .option-wrapper:hover { 
+            background: rgba(255, 255, 255, 0.08) !important; 
+            border-color: #38bdf8 !important; 
+        }
+        .option-wrapper input[type="radio"] { 
+            margin-right: 14px; 
+            width: 18px; 
+            height: 18px; 
+            accent-color: #38bdf8; 
+            cursor: pointer;
+        }
+        .option-text { color: #cbd5e1 !important; font-size: 1.05rem; font-weight: 600; }
+        
+        .nav-actions { display: flex; justify-content: space-between; padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .btn-nav { padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.2s; }
+        .btn-next { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #0f172a; }
+        .btn-next:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(56,189,248,0.3); }
     </style>
 </head>
 <body>
    <div class="main-container">
     <div class="app-container">
         <div class="top-header">
-            <div><span style="color: #94a3b8;">Test Mode:</span> <span style="color:#fff; font-weight:bold;">Agniveer GD</span></div>
+            <div><span style="color: #94a3b8; font-weight: 600;">Subject:</span> <span style="color:#fff; font-weight:700;">Agniveer Full CEE</span></div>
             <div class="time" id="timer">60:00</div>
         </div>
 
         <div class="q-container">
-            <div class="question-text" id="q-text">प्रश्न लोड हो रहा है...</div>
+            <div class="question-text" id="q-text">Q.1 भारत का सबसे बड़ा राज्य (क्षेत्रफल के हिसाब से) कौन सा है?</div>
             <div id="options-block">
-                </div>
+                <label class="option-wrapper">
+                    <input type="radio" name="agniveer-q" value="A">
+                    <span class="option-text">A) उत्तर प्रदेश</span>
+                </label>
+                <label class="option-wrapper">
+                    <input type="radio" name="agniveer-q" value="B">
+                    <span class="option-text">B) मध्य प्रदेश</span>
+                </label>
+                <label class="option-wrapper">
+                    <input type="radio" name="agniveer-q" value="C">
+                    <span class="option-text">C) राजस्थान</span>
+                </label>
+                <label class="option-wrapper">
+                    <input type="radio" name="agniveer-q" value="D">
+                    <span class="option-text">D) महाराष्ट्र</span>
+                </label>
+            </div>
         </div>
 
         <div class="nav-actions">
-            <button class="btn-nav" style="background:rgba(255,255,255,0.1); color:#fff;" onclick="prevQuestion()">Previous</button>
-            <button class="btn-nav btn-next" onclick="nextQuestion()">Save & Next</button>
+            <button class="btn-nav" style="background:rgba(255,255,255,0.08); color:#fff;" onclick="prevQuestion()">Previous</button>
+            <button class="btn-nav btn-next" onclick="nextQuestion()">Save & Next ➔</button>
         </div>
     </div>
    </div>
