@@ -7,17 +7,58 @@
     <meta name="description" content="Indian Army Agniveer GD Free Mock Test 2026. Practice latest CEE exam pattern mock test online.">
     <link rel="stylesheet" href="style.css">
     <style>
-        .app-container { max-width: 600px; margin: 0 auto; background: rgba(15, 23, 42, 0.6); min-height: 100vh; backdrop-filter: blur(12px); border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); color: #cbd5e1 !important; }
-        .hero-section { background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(21, 128, 61, 0.2) 100%); padding: 30px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .hero-title { font-size: 1.5rem; font-weight: bold; color: #fff; margin-bottom: 8px; }
-        .hero-subtitle { font-size: 0.95rem; color: #38bdf8; }
-        .info-card { background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .info-card h3 { color: #38bdf8 !important; font-size: 1.2rem; margin-bottom: 15px; }
+        .app-container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: rgba(15, 23, 42, 0.85) !important; 
+            min-height: 100vh; 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-left: 1px solid rgba(255,255,255,0.08); 
+            border-right: 1px solid rgba(255,255,255,0.08); 
+            color: #cbd5e1 !important; 
+            padding-bottom: 30px;
+        }
+        .hero-section { 
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(21, 128, 61, 0.2) 100%); 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        .hero-title { font-size: 1.6rem; font-weight: bold; color: #fff; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero-subtitle { font-size: 1rem; color: #38bdf8; font-weight: 600; }
+        
+        .info-card { 
+            background: rgba(255, 255, 255, 0.04) !important; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin: 20px; 
+            border: 1px solid rgba(255,255,255,0.08) !important; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .info-card h3 { color: #38bdf8 !important; font-size: 1.25rem; margin-bottom: 15px; font-weight: 700; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;}
         .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
-        .info-item { background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-        .info-label { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; }
-        .info-value { font-size: 1.1rem; font-weight: bold; color: #fff; }
-        .btn-launch { display: block; background: #22c55e; color: #fff; text-align: center; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; text-decoration: none; margin-top: 20px; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3); }
+        .info-item { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .info-label { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; font-weight: 600; }
+        .info-value { font-size: 1.15rem; font-weight: bold; color: #22c55e; }
+        
+        .rules-list { padding-left: 20px; margin-bottom: 20px; }
+        .rules-list li { color: #cbd5e1 !important; margin: 8px 0; font-size: 0.95rem; font-weight: 500; }
+        
+        .btn-launch { 
+            display: block; 
+            background: linear-gradient(135deg, #22c55e, #16a34a); 
+            color: #fff !important; 
+            text-align: center; 
+            padding: 14px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            text-decoration: none; 
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3); 
+            transition: 0.2s;
+        }
+        .btn-launch:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5); }
     </style>
 </head>
 <body>
@@ -29,17 +70,22 @@
         </div>
 
         <div class="info-card">
-            <h3>Test Structure & Instructions</h3>
+            <h3>Test Overview & Blueprint</h3>
             <div class="info-grid">
-                <div class="info-item"><div class="info-label">Questions</div><div class="info-value">50</div></div>
-                <div class="info-item"><div class="info-label">Total Marks</div><div class="info-value">100</div></div>
-                <div class="info-item"><div class="info-label">Duration</div><div class="info-value">60 Mins</div></div>
-                <div class="info-item"><div class="info-label">Negative Mark</div><div class="info-value">0.5 Mark</div></div>
+                <div class="info-item"><div class="info-label">Total Questions</div><div class="info-value" style="color:#fff;">50</div></div>
+                <div class="info-item"><div class="info-label">Total Marks</div><div class="info-value" style="color:#38bdf8;">100</div></div>
+                <div class="info-item"><div class="info-label">Duration Time</div><div class="info-value" style="color:#eab308;">60 Mins</div></div>
+                <div class="info-item"><div class="info-label">Negative Marks</div><div class="info-value" style="color:#ef4444;">-0.50</div></div>
             </div>
             
-            <p style="color: #cbd5e1 !important; line-height: 1.6; font-size: 10.5pt; margin-bottom: 15px;">
-                यह मॉक टेस्ट पूरी तरह से भारतीय सेना द्वारा आयोजित की जाने वाली कंप्यूटर आधारित परीक्षा (CEE) के नवीनतम सिलेबस और मार्किंग स्कीम पर आधारित है। टेस्ट शुरू होने के बाद ऊपर टाइमर चालू हो जाएगा, इसलिए समय प्रबंधन का विशेष ध्यान रखें।
-            </p>
+            <h3 style="color: #38bdf8 !important; font-size: 1.1rem;">महत्वपूर्ण परीक्षा निर्देश (Instructions):</h3>
+            <ul class="rules-list">
+                <li>यह टेस्ट भारतीय सेना CEE (Common Entrance Exam) के नए सिलेबस के आधार पर तैयार किया गया है।</li>
+                <li>पेपर में 4 सेक्शन होंगे: सामान्य ज्ञान (GK), सामान्य विज्ञान (Science), गणित (Maths), और रीजनिंग।</li>
+                <li>प्रत्येक सही उत्तर के लिए <b>+2 अंक</b> दिए जाएंगे और गलत उत्तर के लिए <b>0.50 अंक</b> काटे जाएंगे।</li>
+                <li>कृपया टेस्ट शुरू करने से पहले अपना इंटरनेट कनेक्शन अच्छी तरह से जांच लें।</li>
+            </ul>
+            
             <a href="agniveer-quiz.html?test=1" class="btn-launch">Start Test Online</a>
         </div>
     </div>
