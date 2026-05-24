@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (visitCounterElement) {
       const counterNamespace = 'aapkaresult-in';
-      const counterKey = 'homepage-visits';
+      const counterKey = 'website-total-visits';
 
       fetch(`https://api.countapi.xyz/hit/${counterNamespace}/${counterKey}`)
           .then((response) => {

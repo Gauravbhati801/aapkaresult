@@ -18,11 +18,11 @@
   box-sizing:border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 
 html,
 body{
-  font-family:'Inter', sans-serif;
+  font-family:'Inter', 'Noto Sans Devanagari', sans-serif;
   /* Deep Premium Space Gradient जो कांच के पीछे से चमकेगा */
   background: linear-gradient(135deg, #090d16 0%, #0f172a 40%, #1e1b4b 75%, #2e1065 100%);
   background-attachment: fixed;
