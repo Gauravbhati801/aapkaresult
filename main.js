@@ -85,4 +85,27 @@ document.addEventListener('DOMContentLoaded', function() {
           renderSearchResults(this.value);
       });
   }
+
+  // Homepage total visit counter
+  const visitCounterElement = document.getElementById('homeVisitCounter');
+
+  if (visitCounterElement) {
+      const counterNamespace = 'aapkaresult-in';
+      const counterKey = 'homepage-visits';
+
+      fetch(`https://api.countapi.xyz/hit/${counterNamespace}/${counterKey}`)
+          .then((response) => {
+              if (!response.ok) {
+                  throw new Error('Counter API request failed');
+              }
+              return response.json();
+          })
+          .then((data) => {
+              visitCounterElement.textContent = Number(data.value || 0).toLocaleString('en-IN');
+          })
+          .catch(() => {
+              visitCounterElement.textContent = 'Counter unavailable';
+          });
+  }
+
 });

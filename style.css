@@ -248,6 +248,34 @@ h1{
   color: #fff;
 }
 
+
+.visitor-counter {
+  max-width: 850px;
+  margin: 16px auto 14px auto;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(56, 189, 248, 0.07);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  text-align: center;
+}
+
+.visitor-counter h2 {
+  margin: 0;
+  color: #bae6fd;
+}
+
+.visit-count {
+  margin: 10px 0 4px 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+}
+
+.visit-note {
+  color: #bfdbfe;
+}
+
 .main-container{
   max-width:1200px;
   margin:10px auto;
