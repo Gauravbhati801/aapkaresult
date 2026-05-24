@@ -31,6 +31,17 @@ body{
   width: 100%;
   max-width: 100vw;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(56, 189, 248, 0.14), transparent 32%),
+    radial-gradient(circle at 85% 6%, rgba(244, 63, 94, 0.13), transparent 30%),
+    radial-gradient(circle at 50% 88%, rgba(147, 51, 234, 0.16), transparent 34%);
+  z-index: 0;
+}
 
 /* Accessibility Focus */
 a:focus-visible, button:focus-visible {
@@ -100,6 +111,42 @@ a:focus-visible, button:focus-visible {
   color: var(--primary-color);
 }
 
+@media (min-width: 992px) {
+  .menu { display: none; }
+  #navMenu{
+    position: static;
+    top: auto;
+    right: auto;
+    width: auto;
+    transform: none;
+    visibility: visible;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #navMenu a{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .dropdown { position: relative; }
+  .dropdown-content {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 210px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+}
+
 .logo{
     font-size: 35px;
     font-weight: bold;
@@ -135,10 +182,78 @@ h1{
   color: var(--text-light);
 }
 
+.search-panel {
+  max-width: 850px;
+  margin: 24px auto 16px auto;
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.search-panel h2 {
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.search-panel p {
+  margin: 0 0 12px 0;
+  color: var(--text-muted);
+}
+
+.site-search-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  font-size: 15px;
+}
+
+.site-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.site-search-status {
+  margin-top: 10px;
+  color: #93c5fd;
+  font-size: 14px;
+}
+
+.site-search-results {
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.site-search-results li a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.site-search-results li a:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.42);
+  color: #fff;
+}
+
 .main-container{
   max-width:1200px;
   margin:10px auto;
   padding:0 10px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===============================
@@ -419,6 +534,23 @@ h1{
 .job-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 @media(max-width: 768px) { .job-detail-grid { grid-template-columns: 1fr; } }
 
+.results-intro-box {
+  border-left: 5px solid #2563eb;
+  background: rgba(15, 23, 42, 0.5) !important;
+}
+.results-intro-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--text-light) !important;
+}
+.results-intro-box p,
+.box p {
+  color: var(--text-muted) !important;
+  line-height: 1.7;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
 .job-box { background: rgba(255,255,255,0.02); padding: 25px; border-radius: 15px; border: 1px solid var(--glass-border); }
 .job-box-title { font-weight: 700; font-size: 20px; color: var(--primary-color); display: flex; align-items: center; gap: 10px; }
 .job-box-title::before { content: ''; display: inline-block; width: 8px; height: 24px; background: linear-gradient(180deg, #38bdf8, #c084fc); border-radius: 10px; }
@@ -500,6 +632,10 @@ table tr:hover td { background: rgba(255,255,255,0.02) !important; }
 }
 .footer a { color: #64748b; text-decoration: none; }
 .footer a:hover { color: var(--primary-color); text-decoration: underline; }
+.visitor-count-wrap {
+  color: #cbd5e1;
+  font-weight: 600;
+}
 
 /* ==========================================================
    🔥 ULTIMATE TEXT COLOR & READABILITY FIX (EVERYWHERE) 🔥
@@ -510,17 +646,12 @@ table tr:hover td { background: rgba(255,255,255,0.02) !important; }
     color: #cbd5e1 !important; /* Soft white color */
 }
 
-/* 2. Agar bina kisi tag ke direct text likha hai toh use bhi force karke white karega */
-.box, section, div {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-/* 3. Jo headings cards ke andar hain unko aur bright karega */
+/* 2. Jo headings cards ke andar hain unko aur bright karega */
 .box h2, section h2, .vacancy-title, .job-box-title {
     color: #38bdf8 !important; /* Neon Sky Blue headings */
 }
 
-/* 4. Kisi bhi list ya bullet point ke andar ka text text-muted karega */
-.box ul li, .job-list li, ul li {
+/* 3. Kisi bhi list ya bullet point ke andar ka text text-muted karega */
+.box ul li, .job-list li, .job-detail-container ul li, section ul li {
     color: #cbd5e1 !important;
 }

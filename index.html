@@ -38,9 +38,23 @@
             <span class="gradient">check your result</span>
         </h1>
 
+        <section class="search-panel">
+            <h2>🔎 Quick Search</h2>
+            <p>Job, result, admit card ya notes ka naam type karo.</p>
+            <input
+                id="siteSearchInput"
+                class="site-search-input"
+                type="search"
+                placeholder="Example: SSC GD, UP Police, Agniveer..."
+                autocomplete="off"
+            >
+            <div id="siteSearchStatus" class="site-search-status">Popular: SSC GD, UP Police, Agniveer, DSSSB</div>
+            <ul id="siteSearchResults" class="site-search-results"></ul>
+        </section>
+
         <div class="admit-card-notice">
             <div class="notice-icon">🚨</div>
-            <div class="notice-text"><strong>Update:</strong> Indian Army Agniveer aur Navy MR Online applications notifications link active ho chuke hain!</div>
+            <div class="notice-text"><strong>Update:</strong> Indian Army Agniveer aur Navy MR ka result 25 May se 5 June 2026 ke beech aa sakta hai!</div>
             <a href="latest-jobs.html" class="notice-btn">Check Now</a>
         </div>
 
@@ -107,6 +121,23 @@
                 </a>
             </div>
         </div>
+
+
+        <section class="home-content" style="margin-top:10px;">
+            <h2 style="color:#38bdf8;">Why This Website is Different</h2>
+            <p>Hum sirf link list nahi dete. Har major exam update ko simple Hindi me explain karte hain: kaun apply kare, fees kitni hai, age relaxation kya hai, aur last date miss na ho iske liye quick checklist provide karte hain.</p>
+            <p><b>Editorial Promise:</b> official source verify karke hi update publish hota hai. Agar information expected hai to clearly expected label ke saath mention kiya jata hai.</p>
+        </section>
+
+        <section class="home-content" style="margin-top:10px;">
+            <h2 style="color:#38bdf8;">Student Help Checklist</h2>
+            <ul style="padding-left:20px; list-style-type: disc;">
+                <li>Form bharne se pehle official notification PDF जरूर पढ़ें.</li>
+                <li>Photo/signature size aur format upload rules check karein.</li>
+                <li>Application final submit ke baad print/save copy rakhein.</li>
+                <li>Admit card release se pehle registered mobile/email active rakhein.</li>
+            </ul>
+        </section>
     </main>
 </div>
 
@@ -115,7 +146,8 @@
     <a href="about-us.html">About Us</a> | 
     <a href="contact-us.html">Contact Us</a> | 
     <a href="privacy-policy.html">Privacy Policy</a> | 
-    <a href="disclaimer.html">Disclaimer</a>
+    <a href="disclaimer.html">Disclaimer</a> |
+    <span class="visitor-count-wrap">👥 Visitors: <b id="visitorCount">Loading...</b></span>
 </footer>
 <script src="main.js"></script>
 </body>
