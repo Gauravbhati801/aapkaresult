@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AapkaResult.in - Latest Sarkari Jobs, Results, Admit Cards 2026</title>
     <meta name="description" content="Get fastest updates on Sarkari Results, Latest Government Jobs, Admit Cards, Answer Keys, and Free Mock Tests for SSC, UP Police, and Agniveer.">
+    <meta name="keywords" content="Sarkari Result, Latest Jobs, Admit Card, India News, Government Jobs, Exam Result">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://aapkaresult.in/">
+    <meta property="og:title" content="AapkaResult.in - Sarkari Result + India News Live Updates">
+    <meta property="og:description" content="Premium AI-powered portal for latest jobs, results, admit cards, answer keys and India news live updates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aapkaresult.in/">
+    <meta property="og:image" content="https://aapkaresult.in/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <div class="main-container">
     <header class="header">
         <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Aapka result.in</a></div>
+        <button id="themeToggleBtn" class="menu" type="button">☀️ Light</button>
         <button class="menu" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
         <nav id="navMenu">
             <a href="index.html">Home</a>
@@ -26,6 +36,10 @@
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="disclaimer.html">Disclaimer</a>
                     <a href="about-us.html">About Us</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                    <a href="editorial-policy.html">Editorial Policy</a>
+                    <a href="fact-verification-policy.html">Fact Verification</a>
+                    <a href="content-ownership-policy.html">Content Ownership</a>
                 </div>
             </div>
         </nav>
@@ -48,11 +62,37 @@
                 placeholder="Example: SSC GD, UP Police, Agniveer..."
                 autocomplete="off"
             >
+            <div id="aiSuggestions" class="ai-suggestions"></div>
+            <button id="voiceSearchBtn" class="notice-btn" type="button" style="margin-top:10px;">🎙️ Voice Search</button>
             <div id="siteSearchStatus" class="site-search-status">Popular: SSC GD, UP Police, Agniveer, DSSSB</div>
             <ul id="siteSearchResults" class="site-search-results"></ul>
         </section>
 
+        <section class="breaking-ticker" aria-label="Breaking updates">
+            <strong>⚡ Breaking:</strong>
+            <div class="breaking-track" id="breakingTickerTrack"></div>
+        </section>
 
+        <section class="home-content">
+            <h2>🛰️ Live Updates Hub</h2>
+            <p id="liveUpdateStatus">Fetching latest jobs, results, admit cards and India news...</p>
+            <div id="liveUpdatesGrid" class="grid"></div>
+        </section>
+
+        <section class="home-content">
+            <h2>🤖 AI Trending Updates</h2>
+            <ul id="aiTrendingList" class="job-list"></ul>
+        </section>
+
+        <section class="home-content">
+            <h2>💬 AI Assistant</h2>
+            <p>Question poochiye: result, admit card, eligibility, fees, apply dates, etc.</p>
+            <form id="aiChatForm">
+                <input id="aiChatInput" class="site-search-input" type="text" placeholder="Ask your query..." required>
+                <button type="submit" class="notice-btn" style="margin-top:12px;">Ask AI</button>
+            </form>
+            <div id="aiChatOutput" style="margin-top:12px;"></div>
+        </section>
 
         <section class="visitor-counter" aria-live="polite">
             <h2>👥 Total Website Visits</h2>
