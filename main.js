@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     const navMenu = document.getElementById('navMenu');
-    const menuBtn = document.querySelector('.menu');
+    const menuBtn = document.getElementById('menuToggleBtn');
     if (navMenu && menuBtn && navMenu.classList.contains('open')) {
       if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('open');
     }
