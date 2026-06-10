@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const chips = document.getElementById('aiSuggestions');
       if (!chips) return;
       const q = query.toLowerCase().trim();
-      const suggestions = ['UP Police', 'SSC GD', 'Railway', 'Admit Card', 'Result', 'Scholarship'].filter((x) => x.toLowerCase().includes(q) || q === '').slice(0, 4);
+      const suggestions = ['SSC CGL', 'UP Police', 'SSC GD', 'Railway', 'Admit Card', 'Result', 'Scholarship'].filter((x) => x.toLowerCase().includes(q) || q === '').slice(0, 4);
       chips.innerHTML = suggestions.map((s) => `<button type="button" class="ai-chip">${s}</button>`).join('');
       chips.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { searchInput.value = b.textContent; renderSearchResults(b.textContent); }));
     }
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const q = query.trim().toLowerCase();
       searchResults.innerHTML = '';
       suggestTerms(query);
-      if (!q) { searchStatus.textContent = 'Popular: SSC GD, UP Police, Agniveer, DSSSB'; return; }
+      if (!q) { searchStatus.textContent = 'Popular: SSC CGL, SSC GD, UP Police, Agniveer'; return; }
       const filtered = unique.filter((item) => item.title.toLowerCase().includes(q)).slice(0, 8);
       if (!filtered.length) { searchStatus.textContent = `No result found for "${query}"`; return; }
       searchStatus.textContent = `${filtered.length} smart matches found`;
