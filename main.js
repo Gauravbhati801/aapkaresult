@@ -73,11 +73,6 @@ function loadFeedCache() {
   }
 }
 
-function renderBreakingTicker(items) {
-  const ticker = document.getElementById('breakingTickerTrack');
-  if (!ticker) return;
-  ticker.innerHTML = items.slice(0, 8).map((i) => `<a href="${i.link}" target="_blank" rel="noopener">${i.title}</a>`).join('<span>•</span>');
-}
 
 function renderFeedCards(items) {
   const wrap = document.getElementById('liveUpdatesGrid');
@@ -101,7 +96,6 @@ async function loadLiveContent() {
   const status = document.getElementById('liveUpdateStatus');
   const cached = loadFeedCache();
   if (cached) {
-    renderBreakingTicker(cached.all);
     renderFeedCards(cached.all);
     renderTrending(cached.all);
     if (status) status.textContent = `Live cache loaded • ${timeAgo(cached.generatedAt)}`;
@@ -112,7 +106,6 @@ async function loadLiveContent() {
     const all = dedupeItems(feedResults.flat()).sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
     const payload = { generatedAt: new Date().toISOString(), all };
     saveFeedCache(payload);
-    renderBreakingTicker(all);
     renderFeedCards(all);
     renderTrending(all);
     if (status) status.textContent = `Auto-updated • ${timeAgo(payload.generatedAt)}`;

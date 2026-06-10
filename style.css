@@ -644,10 +644,6 @@ table tr:hover td { background: rgba(255,255,255,0.02) !important; }
 .footer a { color: #64748b; text-decoration: none; }
 .footer a:hover { color: var(--primary-color); text-decoration: underline; }
 
-.breaking-ticker { max-width: 1000px; margin: 18px auto; padding: 12px 16px; border-radius: 12px; background: rgba(244,63,94,.1); border: 1px solid rgba(244,63,94,.25); display: flex; gap: 10px; align-items: center; overflow: hidden; }
-.breaking-track { white-space: nowrap; overflow: hidden; display: inline-flex; gap: 12px; animation: tickerMove 36s linear infinite; }
-.breaking-track a { color: #fda4af; text-decoration: none; }
-.breaking-track span { color: #cbd5e1; }
 .ai-suggestions { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
 .ai-chip { border: 1px solid var(--glass-border); background: rgba(255,255,255,0.06); color: var(--text-muted); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
 .live-card { background: rgba(255,255,255,.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px; }
@@ -658,7 +654,6 @@ table tr:hover td { background: rgba(255,255,255,0.02) !important; }
 #aiTrendingList li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
 #aiTrendingList li span { color: #38bdf8; font-weight: 700; }
 #aiTrendingList li a { color: #cbd5e1; text-decoration: none; }
-@keyframes tickerMove { 0% { transform: translateX(0%); } 100% { transform: translateX(-55%); } }
 
 :root[data-theme="light"] body {
   background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
@@ -933,14 +928,6 @@ h1::before {
   padding: 8px 14px;
 }
 
-.breaking-ticker {
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(251, 52, 124, 0.20), rgba(34, 211, 238, 0.12));
-  border-color: rgba(251, 113, 133, 0.36);
-  box-shadow: 0 16px 50px rgba(251, 52, 124, 0.14);
-}
-
-.breaking-track a { color: #fecdd3; font-weight: 800; }
 
 .job-card {
   min-height: 104px;
