@@ -28,10 +28,12 @@ function toggleDropdown(e) {
 document.addEventListener("click", function(event) {
   const nav = document.querySelector(".site-nav");
   const toggleBtn = document.querySelector(".mobile-toggle");
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.getElementById("navLinks");
   
-  if (nav && toggleBtn && navLinks && navLinks.classList.contains("show-mobile")) {
-    if (!nav.contains(event.target) && !toggleBtn.contains(event.target)) {
+  if (nav && navLinks && navLinks.classList.contains("show-mobile")) {
+    const clickedInsideToggle = (toggleBtn && toggleBtn.contains(event.target)) || (mobileMenuBtn && mobileMenuBtn.contains(event.target));
+    if (!nav.contains(event.target) && !clickedInsideToggle) {
       navLinks.classList.remove("show-mobile");
     }
   }
