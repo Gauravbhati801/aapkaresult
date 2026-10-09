@@ -1516,7 +1516,19 @@ img, svg {
     color: #e2e8f0;
   }
   .trending-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .trend-card {
+    padding: 10px 12px;
+    min-height: 65px;
+  }
+  .trend-card .card-title {
+    font-size: 12.5px;
+  }
+  .trend-card .card-badge {
+    font-size: 10px;
+    margin-top: 4px;
   }
   .main-grid {
     grid-template-columns: 1fr;
@@ -1535,5 +1547,146 @@ img, svg {
   }
   .brand-title {
     font-size: 26px;
+  }
+}
+
+/* --- COMPACT MOCK TEST & NOTES STRIP --- */
+.mock-test-strip {
+  max-width: var(--max-width);
+  margin: 14px auto 18px;
+  padding: 0 15px;
+}
+
+.mock-strip-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.mock-strip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mock-strip-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mock-strip-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.mock-strip-link:hover {
+  text-decoration: underline;
+}
+
+.mock-cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.mock-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  transition: all 0.2s ease;
+}
+
+.mock-chip:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.mock-chip-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.mock-chip-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mock-chip-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mock-chip-meta {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .mock-test-strip {
+    margin: 8px auto 12px;
+    padding: 0 10px;
+  }
+  .mock-strip-container {
+    padding: 10px 10px;
+  }
+  .mock-strip-header {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+  }
+  .mock-strip-title {
+    font-size: 13px;
+  }
+  .mock-strip-link {
+    font-size: 11.5px;
+  }
+  .mock-cards-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 2px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mock-cards-row::-webkit-scrollbar {
+    display: none;
+  }
+  .mock-chip {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    padding: 6px 10px;
+  }
+  .mock-chip-icon {
+    font-size: 17px;
+  }
+  .mock-chip-name {
+    font-size: 12px;
+  }
+  .mock-chip-meta {
+    font-size: 10px;
   }
 }
