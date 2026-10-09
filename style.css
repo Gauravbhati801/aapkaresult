@@ -259,29 +259,6 @@ img, svg {
 }
 
 /* --- NAVIGATION BAR --- */
-.nav-drawer-header {
-  display: none;
-}
-.nav-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  z-index: 99998;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.nav-backdrop.show-backdrop {
-  opacity: 1;
-  visibility: visible;
-}
-
 .site-nav {
   background: var(--primary-navy);
   position: sticky;
@@ -1513,61 +1490,15 @@ img, svg {
   .site-nav {
     position: static;
   }
-  /* Modern Left-Side Slide-in Drawer */
-  .nav-drawer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-    background: #1e293b;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 6px;
-  }
-  .nav-drawer-title {
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-  }
-  .nav-drawer-close {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: #ffffff;
-    font-size: 22px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    transition: background 0.2s;
-  }
-  .nav-drawer-close:active {
-    background: #dc2626;
-  }
   .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 290px;
-    max-width: 82vw;
-    height: 100vh;
-    height: 100dvh;
-    background: #0f172a;
+    display: none;
     flex-direction: column;
-    padding: 0 0 40px 0;
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
-    z-index: 99999;
-    overflow-y: auto;
-    display: flex !important;
-    border-top: none;
+    width: 100%;
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   .nav-links.show-mobile {
-    transform: translateX(0);
+    display: flex;
   }
   .nav-links > li {
     width: 100%;

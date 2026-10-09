@@ -3,27 +3,11 @@
  * Provides Instant Search, Category Filtering, Mobile Nav, and Form Handling
  */
 
-// Mobile Left Slide-in Drawer Toggle with Backdrop
+// Mobile Navigation Toggle
 function toggleMobileNav() {
   const navLinks = document.getElementById("navLinks");
-  let backdrop = document.querySelector(".nav-backdrop");
-
-  if (!backdrop) {
-    backdrop = document.createElement("div");
-    backdrop.className = "nav-backdrop";
-    backdrop.onclick = toggleMobileNav;
-    document.body.appendChild(backdrop);
-  }
-
   if (navLinks) {
-    const isOpen = navLinks.classList.toggle("show-mobile");
-    if (isOpen) {
-      backdrop.classList.add("show-backdrop");
-      document.body.style.overflow = "hidden"; // lock background scrolling
-    } else {
-      backdrop.classList.remove("show-backdrop");
-      document.body.style.overflow = "";
-    }
+    navLinks.classList.toggle("show-mobile");
   }
 }
 
