@@ -809,6 +809,9 @@ img, svg {
 }
 
 .share-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   display: inline-flex;
   align-items: center;
   gap: 6px;

@@ -16,7 +16,7 @@
     ]
   },
   {
-    "url": "https://cuetug.ntaonline.in",
+    "url": "https://cuet.nta.nic.in/",
     "count": 2,
     "files": [
       "admission.html",
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "url": "https://onlinebssc.com",
+    "url": "https://bssc.bihar.gov.in/",
     "count": 6,
     "files": [
       "bihar-bssc.html",
@@ -282,14 +282,7 @@
     ]
   },
   {
-    "url": "https://api.whatsapp.com/send?text=AapkaResult",
-    "count": 1,
-    "files": [
-      "templete.html"
-    ]
-  },
-  {
-    "url": "https://upanganwadibharti.in",
+    "url": "https://balvikasup.gov.in/",
     "count": 4,
     "files": [
       "up-anganwadi-recruitment.html",
@@ -344,7 +337,7 @@
     ]
   },
   {
-    "url": "https://www.upprpb.in/#/auth/landing",
+    "url": "https://uppbpb.gov.in/",
     "count": 3,
     "files": [
       "up-police-constable-recruitment.html",
