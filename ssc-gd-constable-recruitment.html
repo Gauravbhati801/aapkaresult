@@ -24,6 +24,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+  <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Structured Data: JobPosting -->
@@ -196,7 +197,7 @@
         <li><a href="admission.html">Admissions</a></li>
         <li><a href="career-guide.html">Career Guides</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" onclick="toggleDropdown(event)">More &#9662;</a>
+          <button type="button" class="nav-dropdown-btn" onclick="toggleDropdown(event)" aria-expanded="false" aria-haspopup="true">More &#9662;</button>
           <div class="dropdown-menu">
             <a href="about-us.html">About Us</a>
             <a href="contact-us.html">Contact Us</a>
@@ -811,6 +812,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

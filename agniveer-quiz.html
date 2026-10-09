@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agniveer Mock Test Engine</title>
     <meta name="description" content="Free Indian Army Agniveer online quiz and practice questions with answers, explanations and live score calculation.">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css"> 
     <link rel="canonical" href="https://aapkaresult.in/agniveer-quiz.html">
     <style>
         .app-container { 
@@ -65,12 +66,12 @@
    <div class="main-container">
     <div class="app-container">
         <div class="top-header">
-            <div><span style="color: #94a3b8; font-weight: 600;">Subject:</span> <span style="color:#fff; font-weight:700;">Agniveer Full CEE</span></div>
+            <h1 style="font-size: 1rem; margin: 0; font-weight: 700; color: #fff;"><span style="color: #94a3b8; font-weight: 600;">Subject:</span> Agniveer Full CEE</h1>
             <div class="time" id="timer">60:00</div>
         </div>
 
         <div class="q-container">
-            <div class="question-text" id="q-text">Q.1 भारत का सबसे बड़ा राज्य (क्षेत्रफल के हिसाब से) कौन सा है?</div>
+            <h2 class="question-text" id="q-text">Q.1 भारत का सबसे बड़ा राज्य (क्षेत्रफल के हिसाब से) कौन सा है?</h2>
             <div id="options-block">
                 <label class="option-wrapper">
                     <input type="radio" name="agniveer-q" value="A">

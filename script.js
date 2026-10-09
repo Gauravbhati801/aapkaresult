@@ -20,7 +20,9 @@ function toggleDropdown(e) {
   const el = (e && (e.currentTarget || e.target)) ? (e.currentTarget || e.target) : null;
   const dropdown = el ? el.closest(".dropdown") : document.querySelector(".dropdown");
   if (dropdown) {
-    dropdown.classList.toggle("open-mobile");
+    const isOpen = dropdown.classList.toggle("open-mobile");
+    const btn = dropdown.querySelector(".nav-dropdown-btn, button, a");
+    if (btn) btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 }
 
@@ -35,6 +37,7 @@ document.addEventListener("click", function(event) {
     const clickedInsideToggle = (toggleBtn && toggleBtn.contains(event.target)) || (mobileMenuBtn && mobileMenuBtn.contains(event.target));
     if (!nav.contains(event.target) && !clickedInsideToggle) {
       navLinks.classList.remove("show-mobile");
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "false");
     }
   }
 
@@ -42,15 +45,17 @@ document.addEventListener("click", function(event) {
   if (!event.target.closest(".dropdown")) {
     document.querySelectorAll(".dropdown.open-mobile").forEach(function(d) {
       d.classList.remove("open-mobile");
+      const btn = d.querySelector(".nav-dropdown-btn, button, a");
+      if (btn) btn.setAttribute("aria-expanded", "false");
     });
   }
 });
 
-// Auto-bind toggleDropdown to any dropdown links that do not have inline onclick
+// Auto-bind toggleDropdown to any dropdown triggers that do not have inline onclick
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll(".dropdown > a").forEach(function(anchor) {
-    if (!anchor.getAttribute("onclick")) {
-      anchor.addEventListener("click", toggleDropdown);
+  document.querySelectorAll(".dropdown > a, .dropdown > button").forEach(function(btn) {
+    if (!btn.getAttribute("onclick")) {
+      btn.addEventListener("click", toggleDropdown);
     }
   });
 });

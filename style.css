@@ -20,7 +20,7 @@
   --bg-card-subtle: #f8fafc;
   
   --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569; /* WCAG AA 5.9:1 on #f1f5f9, 7:1 on #ffffff */
   --text-light: #94a3b8;
   
   --border-light: #e2e8f0;
@@ -239,7 +239,7 @@ img, svg {
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
-  color: #64748b;
+  color: #475569;
   pointer-events: none;
 }
 
@@ -251,7 +251,7 @@ img, svg {
 }
 
 .btn-telegram {
-  background: #0088cc;
+  background: #0077b5; /* WCAG AA 4.88:1 contrast with white */
   color: #ffffff !important;
   font-weight: 700;
   font-size: 13px;
@@ -260,12 +260,12 @@ img, svg {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 2px 6px rgba(0, 136, 204, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 119, 181, 0.4);
   transition: all 0.2s ease;
 }
 
 .btn-telegram:hover {
-  background: #0077b5;
+  background: #006fa6;
   transform: translateY(-1px);
 }
 
@@ -293,7 +293,8 @@ img, svg {
   flex-wrap: wrap;
 }
 
-.nav-links > li > a {
+.nav-links > li > a,
+.nav-links > li > .nav-dropdown-btn {
   display: block;
   color: #ffffff;
   font-weight: 600;
@@ -301,10 +302,18 @@ img, svg {
   padding: 13px 18px;
   transition: background 0.15s ease, color 0.15s ease;
   position: relative;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  line-height: inherit;
+  text-decoration: none;
 }
 
 .nav-links > li > a:hover,
-.nav-links > li > a.active {
+.nav-links > li > a.active,
+.nav-links > li > .nav-dropdown-btn:hover,
+.dropdown:hover .nav-dropdown-btn {
   background: var(--primary-red);
   color: #ffffff;
 }
@@ -546,7 +555,7 @@ img, svg {
 
 .ad-placeholder-text {
   font-size: 13px;
-  color: #64748b;
+  color: #475569;
   font-weight: 500;
 }
 
@@ -637,7 +646,7 @@ img, svg {
 }
 
 .badge-new {
-  background: #ef4444;
+  background: #b91c1c;
   color: #ffffff;
   font-size: 9.5px;
   font-weight: 800;
@@ -649,7 +658,7 @@ img, svg {
 }
 
 .badge-active {
-  background: #16a34a;
+  background: #15803d;
   color: #ffffff;
   font-size: 9.5px;
   font-weight: 800;
@@ -812,7 +821,7 @@ img, svg {
 }
 
 .share-btn.whatsapp { background: #25d366; }
-.share-btn.telegram { background: #0088cc; }
+.share-btn.telegram { background: #0077b5; }
 .share-btn:hover { opacity: 0.9; }
 
 .job-summary-lead {
@@ -1235,7 +1244,7 @@ img, svg {
   margin: 0 auto 12px;
   font-size: 12px;
   line-height: 1.6;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .footer-copy {
@@ -1273,7 +1282,7 @@ img, svg {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 700;
-  color: #64748b;
+  color: #475569;
 }
 
 .overview-val {
@@ -1360,7 +1369,7 @@ img, svg {
 .btn-status-pending {
   display: inline-block;
   background: #f1f5f9;
-  color: #64748b !important;
+  color: #475569 !important;
   border: 1px dashed #cbd5e1;
   font-weight: 600;
   font-size: 12.5px;
@@ -1639,7 +1648,7 @@ img, svg {
   }
 
   .header-search input::placeholder {
-    color: #64748b !important;
+    color: #475569 !important;
     font-size: 10.5px !important;
   }
 
@@ -1759,7 +1768,8 @@ img, svg {
     width: 100%;
   }
 
-  .nav-links > li > a {
+  .nav-links > li > a,
+  .nav-links > li > .nav-dropdown-btn {
     padding: 11px 20px;
     font-size: 14px;
     color: #e2e8f0;
@@ -1768,10 +1778,20 @@ img, svg {
     align-items: center;
     justify-content: space-between;
     transition: all 0.15s ease;
+    width: 100%;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
   }
 
   .nav-links > li > a:hover,
-  .nav-links > li > a.active {
+  .nav-links > li > a.active,
+  .nav-links > li > .nav-dropdown-btn:hover,
+  .nav-links > li > .nav-dropdown-btn:active {
     background: rgba(220, 38, 38, 0.2);
     color: #fca5a5;
     padding-left: 24px;
@@ -1939,7 +1959,7 @@ img, svg {
 
 .mock-chip-meta {
   font-size: 10.5px;
-  color: #64748b;
+  color: #475569;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;

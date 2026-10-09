@@ -10,7 +10,8 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -91,7 +92,7 @@
         <li><a href="admission.html">Admissions</a></li>
         <li><a href="career-guide.html">Career Guides</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" onclick="toggleDropdown(event)">More &#9662;</a>
+          <button type="button" class="nav-dropdown-btn" onclick="toggleDropdown(event)" aria-expanded="false" aria-haspopup="true">More &#9662;</button>
           <div class="dropdown-menu">
             <a href="about-us.html">About Us</a>
             <a href="contact-us.html">Contact Us</a>
@@ -132,8 +133,8 @@
             <!-- SOCIAL SHARE BAR -->
             <div class="share-bar">
                 <span>Share:</span>
-                <a href="#" class="share-btn share-whatsapp">WhatsApp</a>
-                <a href="#" class="share-btn share-telegram">Telegram</a>
+                <a href="https://api.whatsapp.com/send?text=AapkaResult" class="share-btn share-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="https://t.me/share/url?url=https://aapkaresult.in" class="share-btn share-telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
             </div>
 
             <div class="job-desc">
@@ -207,15 +208,15 @@
                     <tbody>
                         <tr>
                             <th>Apply Online Portal</th>
-                            <td><a href="#" class="click-btn" target="_blank" rel="noopener noreferrer">Click Here to Apply</a></td>
+                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Click Here to Apply</a></td>
                         </tr>
                         <tr>
                             <th>Download Official Notification PDF</th>
-                            <td><a href="#" class="click-btn" target="_blank" rel="noopener noreferrer">Download PDF Notification</a></td>
+                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Download PDF Notification</a></td>
                         </tr>
                         <tr>
                             <th>Official Website</th>
-                            <td><a href="#" class="click-btn" target="_blank" rel="noopener noreferrer">Visit Official Website</a></td>
+                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Visit Official Website</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -281,7 +282,7 @@
     </div>
   </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
 
