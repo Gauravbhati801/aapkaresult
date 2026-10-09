@@ -1491,31 +1491,32 @@ img, svg {
     display: none !important;
   }
 
-  /* Clean White Mobile Header (Strictly matching reference design) */
+  /* Compact Low-Height Mobile Header (Single Row: Left Brand, Center Search, Right Menu) */
   .site-header {
     background: #ffffff !important;
     color: #0f172a !important;
-    padding: 8px 10px 10px 10px !important;
+    padding: 6px 10px !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    position: relative !important;
+    position: sticky !important;
+    top: 0 !important;
     z-index: 1001 !important;
   }
 
   .header-container, .header-inner {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 0 !important;
+    gap: 8px !important;
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Row 1 Left: Brand Logo & Typography */
+  /* 1. Left: Brand Logo & Website Name */
   .brand {
     order: 1 !important;
     display: flex !important;
@@ -1523,7 +1524,7 @@ img, svg {
     gap: 6px !important;
     text-decoration: none !important;
     min-width: 0 !important;
-    flex: 0 1 auto !important;
+    flex: 0 0 auto !important;
   }
 
   .brand a, .brand-link {
@@ -1534,10 +1535,10 @@ img, svg {
   }
 
   .brand-icon {
-    width: 35px !important;
-    height: 35px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12) !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 7px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     flex-shrink: 0 !important;
   }
 
@@ -1549,7 +1550,7 @@ img, svg {
   }
 
   .brand-title {
-    font-size: 14.5px !important;
+    font-size: 13.5px !important;
     font-weight: 800 !important;
     letter-spacing: -0.2px !important;
     line-height: 1 !important;
@@ -1560,17 +1561,17 @@ img, svg {
   }
 
   .brand-title .accent {
-    color: #0f172a !important; /* Uniform Navy as shown in reference */
+    color: #0f172a !important;
     margin-left: 0 !important;
   }
 
   .brand-title .domain-tld {
-    font-size: 10px !important;
-    background: #e11d48 !important; /* Vibrant Red Badge */
+    font-size: 9px !important;
+    background: #e11d48 !important;
     color: #ffffff !important;
-    padding: 2px 4.5px !important;
+    padding: 1.5px 3.5px !important;
     border-radius: 3px !important;
-    margin-left: 3px !important;
+    margin-left: 2px !important;
     font-weight: 800 !important;
     letter-spacing: 0.2px !important;
     line-height: 1 !important;
@@ -1578,58 +1579,121 @@ img, svg {
   }
 
   .brand-tagline {
-    font-size: 7.2px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.3px !important;
-    color: #64748b !important; /* Slate Gray tagline */
-    text-transform: uppercase !important;
-    margin-top: 2.5px !important;
-    white-space: nowrap !important;
+    display: none !important; /* Low height requirement */
   }
 
-  /* Row 1 Right: Telegram Pill + 3-Bar Navy Hamburger */
-  .header-actions {
+  /* 2. Middle: Search with Search Icon (Where search takes place) */
+  .header-search {
     order: 2 !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    position: relative !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    margin: 0 !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 20px !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+    padding: 2px 4px 2px 8px !important;
+    height: 32px !important;
+    box-sizing: border-box !important;
+    transition: background 0.15s ease, border-color 0.15s ease !important;
+  }
+
+  .header-search:focus-within {
+    background: #ffffff !important;
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+  }
+
+  .header-search .search-icon {
+    position: static !important;
+    transform: none !important;
+    margin-right: 4px !important;
+    display: flex !important;
+    align-items: center !important;
     flex-shrink: 0 !important;
-    flex-grow: 0 !important;
+  }
+
+  .header-search .search-icon-svg {
+    stroke: #0284c7 !important; /* Blue Search Icon */
+    width: 14px !important;
+    height: 14px !important;
+    display: block !important;
+  }
+
+  .header-search input {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 3px !important;
+    font-size: 11px !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+  }
+
+  .header-search input::placeholder {
+    color: #64748b !important;
+    font-size: 10.5px !important;
+  }
+
+  .search-submit-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 1px 3px rgba(225, 29, 72, 0.3) !important;
+    padding: 0 !important;
+    margin-left: 2px !important;
+  }
+
+  .search-submit-btn:active {
+    transform: scale(0.92) !important;
+    background: #be123c !important;
+  }
+
+  .search-submit-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.5 !important;
+  }
+
+  /* 3. Right Corner: Menu Button */
+  .header-actions {
+    order: 3 !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    gap: 0 !important;
   }
 
   .btn-telegram {
-    background: #0284c7 !important; /* Vibrant Telegram Blue */
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 11px !important;
-    padding: 5.5px 10px !important;
-    border-radius: 20px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    box-shadow: 0 2px 5px rgba(2, 132, 199, 0.32) !important;
-    white-space: nowrap !important;
-    text-decoration: none !important;
-    line-height: 1 !important;
+    display: none !important; /* Hidden on mobile header to preserve low height */
   }
 
-  .btn-telegram .telegram-icon {
-    width: 13px !important;
-    height: 13px !important;
-    fill: #ffffff !important;
-    display: inline-block !important;
-  }
-
-  /* 3-Bar Navy Hamburger Menu */
   .mobile-menu-btn {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 3.5px !important;
-    width: 28px !important;
-    height: 28px !important;
+    width: 32px !important;
+    height: 32px !important;
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
@@ -1646,95 +1710,10 @@ img, svg {
   .mobile-menu-btn .bar {
     width: 20px !important;
     height: 2.2px !important;
-    background: #0f172a !important; /* Thick Navy Lines */
+    background: #0f172a !important;
     border-radius: 2px !important;
     display: block !important;
     transition: transform 0.2s ease, opacity 0.2s ease !important;
-  }
-
-  /* Row 2: Full-Width White Pill Search Bar */
-  .header-search {
-    order: 3 !important;
-    width: 100% !important;
-    flex-basis: 100% !important;
-    max-width: 100% !important;
-    margin-top: 8px !important;
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    background: #ffffff !important;
-    border: 1.5px solid #e2e8f0 !important;
-    border-radius: 30px !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
-    padding: 3px 4px 3px 12px !important;
-    height: 42px !important;
-    box-sizing: border-box !important;
-  }
-
-  .header-search .search-icon {
-    position: static !important;
-    transform: none !important;
-    margin-right: 6px !important;
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-  }
-
-  .header-search .search-icon-svg {
-    stroke: #0284c7 !important; /* Blue Search Icon */
-    width: 17px !important;
-    height: 17px !important;
-    display: block !important;
-  }
-
-  .header-search input {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    height: 100% !important;
-    padding: 0 4px !important;
-    font-size: 11.5px !important;
-    border: none !important;
-    outline: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    color: #0f172a !important;
-    min-width: 0 !important;
-  }
-
-  .header-search input::placeholder {
-    color: #64748b !important;
-    font-size: 11px !important;
-  }
-
-  /* Red Rounded Search Button on Right */
-  .search-submit-btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 34px !important;
-    height: 34px !important;
-    background: #e11d48 !important; /* Red Button */
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 12px !important;
-    cursor: pointer !important;
-    flex-shrink: 0 !important;
-    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.35) !important;
-    transition: background 0.15s ease, transform 0.1s ease !important;
-    padding: 0 !important;
-    margin-left: 4px !important;
-  }
-
-  .search-submit-btn:active {
-    transform: scale(0.95) !important;
-    background: #be123c !important;
-  }
-
-  .search-submit-btn svg {
-    width: 16px !important;
-    height: 16px !important;
-    stroke: #ffffff !important;
-    stroke-width: 2.5 !important;
   }
 
   /* Modern Mobile Navigation (Hidden trigger, opened by header hamburger) */
@@ -2015,61 +1994,55 @@ img, svg {
   /* Extra Compact Sizing for 320px - 360px Screens */
   @media (max-width: 360px) {
     .site-header {
-      padding: 7px 8px 8px 8px !important;
+      padding: 5px 6px !important;
     }
-    .brand {
+    .header-container, .header-inner {
       gap: 5px !important;
     }
-    .brand-icon {
-      width: 30px !important;
-      height: 30px !important;
-      border-radius: 7px !important;
-    }
-    .brand-title {
-      font-size: 13px !important;
-    }
-    .brand-title .domain-tld {
-      font-size: 9px !important;
-      padding: 1.5px 3.5px !important;
-      margin-left: 2.5px !important;
-    }
-    .brand-tagline {
-      font-size: 6.8px !important;
-      letter-spacing: 0.2px !important;
-    }
-    .header-actions {
+    .brand {
       gap: 4px !important;
     }
-    .btn-telegram {
-      font-size: 10px !important;
-      padding: 4px 7px !important;
-      gap: 3px !important;
-    }
-    .btn-telegram .telegram-icon {
-      width: 11px !important;
-      height: 11px !important;
-    }
-    .mobile-menu-btn {
+    .brand-icon {
       width: 26px !important;
       height: 26px !important;
+      border-radius: 6px !important;
+    }
+    .brand-title {
+      font-size: 11.5px !important;
+    }
+    .brand-title .domain-tld {
+      font-size: 8px !important;
+      padding: 1px 3px !important;
+      margin-left: 1.5px !important;
+    }
+    .header-search {
+      height: 30px !important;
+      padding: 1px 3px 1px 6px !important;
+    }
+    .header-search .search-icon {
+      margin-right: 3px !important;
+    }
+    .header-search .search-icon-svg {
+      width: 13px !important;
+      height: 13px !important;
+    }
+    .header-search input {
+      font-size: 10px !important;
+    }
+    .header-search input::placeholder {
+      font-size: 9.5px !important;
+    }
+    .search-submit-btn {
+      width: 22px !important;
+      height: 22px !important;
+      border-radius: 6px !important;
+    }
+    .mobile-menu-btn {
+      width: 28px !important;
+      height: 28px !important;
     }
     .mobile-menu-btn .bar {
       width: 17px !important;
       height: 2px !important;
-    }
-    .header-search {
-      height: 38px !important;
-      padding: 2px 3px 2px 10px !important;
-    }
-    .header-search input {
-      font-size: 10.5px !important;
-    }
-    .header-search input::placeholder {
-      font-size: 10px !important;
-    }
-    .search-submit-btn {
-      width: 30px !important;
-      height: 30px !important;
-      border-radius: 10px !important;
     }
   }
