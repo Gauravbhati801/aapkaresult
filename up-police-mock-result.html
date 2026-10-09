@@ -1,284 +1,700 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UP Police Result Analysis</title>
-    <meta name="description" content="UP Police Constable online mock test scorecard. Review your test analysis, correct options, and marks achieved.">
-    <link rel="canonical" href="https://aapkaresult.in/up-police-mock-result.html">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #f4f6f9; }
-        .app-container { max-width: 600px; margin: 0 auto; background-color: #fff; min-height: 100vh; position: relative; }
-        
-        .top-header { background: #1e3a8a; color: white; padding: 15px; display: flex; align-items: center; position: sticky; top: 0; z-index: 10;}
-        .back-btn { font-size: 1.5rem; margin-right: 15px; cursor: pointer; }
-        
-        .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: center;}
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-        .stat-box { display: flex; flex-direction: column; align-items: center; }
-        .icon { width: 40px; height: 40px; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; margin-bottom: 8px; }
-        .icon.blue { background: #e3f2fd; color: #1976d2; } .icon.green { background: #e8f5e9; color: #388e3c; } .icon.red { background: #ffebee; color: #d32f2f; } .icon.light-blue { background: #e0f7fa; color: #0097a7; }
-        
-        .chart-container { margin-top: 30px; display: flex; flex-direction: column; align-items: center; }
-        .donut-chart { width: 200px; height: 200px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: #ddd; }
-        .donut-chart::before { content: ""; width: 130px; height: 130px; background: white; border-radius: 50%; }
-        
-        .section-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px;}
-        .marks-circle { background: #2563eb; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1rem; font-weight: bold;}
-        .section-stats { display: flex; justify-content: space-around; text-align: center; font-size: 0.9rem;}
-        
-        .retake-btn { padding: 12px; background: #2563eb; color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; font-weight:bold; margin-top:20px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UP Police Constable Mock Test Result & Scorecard 2026 - AapkaResult.in</title>
+  <meta name="description" content="Detailed scorecard, accuracy evaluation, sectional breakdown, and bilingual solutions for UP Police Constable mock test.">
+  <link rel="canonical" href="https://aapkaresult.in/up-police-mock-result.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .result-container {
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+      padding: 0 16px;
+    }
 
-        .filter-container { display: flex; gap: 10px; margin-bottom: 25px; background: #fff; padding: 10px; border-radius: 12px; justify-content: space-between;}
-        .filter-btn { flex: 1; padding: 10px 5px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; background: #f4f6f9; color: #999; font-size: 0.85rem;}
-        .filter-btn.active.correct { background: #e8f5e9; color: #4caf50; }
-        .filter-btn.active.incorrect { background: #ffebee; color: #f44336; }
-        .filter-btn.active.unattempted { background: #f4f6f9; color: #555; border: 1px solid #ddd;}
+    /* Scorecard Hero */
+    .score-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+      text-align: center;
+    }
+    .score-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #93c5fd;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .score-hero h1 {
+      font-size: 1.85rem;
+      margin: 0 0 16px 0;
+      color: #ffffff;
+    }
+    .score-main-display {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #38bdf8;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .score-total-denom {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
 
-        .sol-wrapper { margin-bottom: 25px; }
-        .sol-top-row { display: flex; align-items: center; margin-bottom: 15px; padding: 0 5px;}
-        .sol-q-no { font-size: 1.1rem; color: #333; display: flex; align-items: center; gap: 10px; font-weight: bold;}
-        .status-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 0.8rem; font-weight: bold;}
-        .status-icon.correct { background-color: #4caf50; }
-        .status-icon.incorrect { background-color: #f44336; }
-        .status-icon.unattempted { background-color: #999; }
-        .sol-line { flex-grow: 1; height: 1px; background-color: #ddd; margin: 0 15px; }
-        .sol-save { color: #2563eb; font-weight: bold; font-size: 0.85rem; cursor: pointer;}
+    /* 4 Stat Tiles */
+    .stats-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .stat-tile {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .stat-tile-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .stat-tile-lbl {
+      font-size: 12px;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
 
-        .solution-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #eee; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-        .subject-badge { background: #eff6ff; color: #2563eb; padding: 8px 25px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .question-text-sol { font-size: 1.1rem; color: #222; margin-bottom: 25px; line-height: 1.5;}
-        .btn-full-sol { background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.9rem; margin-top: 15px; }
+    /* Sectional Table */
+    .sec-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .sec-card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-table-wrap { overflow-x: auto; }
+    .sec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+    .sec-table th {
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 10px 14px;
+      font-weight: 700;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .sec-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+    .sec-table tr:hover td { background: #f8fafc; }
 
-        /* Full Solution Modal */
-        .fs-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 100; overflow-y: auto; flex-direction: column;}
-        .fs-header { background: #fff; color: #1a233a; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10;}
-        .fs-back-btn { font-size: 1.5rem; cursor: pointer; color: #2563eb; }
-        .fs-title { font-size: 1.2rem; font-weight: bold; color: #1a233a; }
-        .fs-warning { color: #888; font-size: 1.2rem; }
-        .fs-content { padding: 20px; padding-bottom: 80px; } 
-        .fs-q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
-        .fs-q-badge { background: #f0f2f5; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; color: #333;}
-        .fs-save { color: #2563eb; font-weight: bold; font-size: 0.9rem;}
-        .fs-question { font-size: 1.1rem; color: #222; line-height: 1.6; margin-bottom: 25px;}
-        .fs-option { border: 1px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 12px; display: flex; align-items: center; font-size: 1rem; color: #333; position: relative;}
-        .fs-opt-label { margin-right: 15px; color: #555; }
-        .fs-option.correct { border: 2px solid #4caf50; background-color: #f6fdf6; }
-        .fs-option.incorrect { border: 2px solid #f44336; background-color: #fffafa; }
-        .fs-correct-badge { position: absolute; right: 15px; bottom: 10px; font-size: 0.75rem; color: #4caf50; font-weight: bold;}
-        .fs-incorrect-badge { position: absolute; right: 15px; bottom: 10px; font-size: 0.75rem; color: #f44336; font-weight: bold;}
-        .fs-sol-heading { font-size: 1.1rem; font-weight: bold; color: #1a233a; margin: 30px 0 15px 0;}
-        .fs-sol-detail { font-size: 1rem; color: #333; line-height: 1.6;}
-        .fs-next-btn { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
-    </style>
+    /* Action Buttons Bar */
+    .result-actions-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-act {
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-act-retake { background: #2563eb; color: #ffffff; }
+    .btn-act-retake:hover { background: #1d4ed8; }
+    .btn-act-dash { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .btn-act-dash:hover { background: #e2e8f0; }
+    .btn-act-share { background: #16a34a; color: #ffffff; }
+    .btn-act-share:hover { background: #15803d; }
+
+    /* Solutions Section */
+    .sol-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .sol-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .sol-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+    .sol-filter-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .sol-pill {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .sol-pill.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    /* Question Solution Item */
+    .sol-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: border-color 0.15s;
+    }
+    .sol-item.border-c { border-left: 5px solid #16a34a; }
+    .sol-item.border-i { border-left: 5px solid #dc2626; }
+    .sol-item.border-u { border-left: 5px solid #94a3b8; }
+
+    .sol-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .sol-item-qnum {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .sol-item-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .badge-c { background: #dcfce7; color: #166534; }
+    .badge-i { background: #fee2e2; color: #991b1b; }
+    .badge-u { background: #f1f5f9; color: #475569; }
+
+    .sol-q-text {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      white-space: pre-line;
+    }
+    .sol-opts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .sol-opt-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 14px;
+      color: #334155;
+    }
+    .sol-opt-row.is-correct {
+      background: #f0fdf4;
+      border-color: #86efac;
+      color: #166534;
+      font-weight: 600;
+    }
+    .sol-opt-row.is-wrong-picked {
+      background: #fef2f2;
+      border-color: #fca5a5;
+      color: #991b1b;
+      font-weight: 600;
+    }
+    .sol-opt-letter {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11.5px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .sol-explain-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: #1e3a8a;
+      line-height: 1.6;
+    }
+    .sol-explain-box strong {
+      display: block;
+      color: #1d4ed8;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 767px) {
+      .score-hero { padding: 24px 16px; border-radius: 12px; }
+      .score-hero h1 { font-size: 1.5rem; }
+      .score-main-display { font-size: 2.4rem; }
+      .stats-tiles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
-<div class="app-container">
-    <header class="top-header">
-        <div class="back-btn" onclick="window.location.href='up-police-mocks-page.html'">←</div>
-        <h1 id="result-test-title" style="font-size: 1.1rem; font-weight: bold; margin: 0;">UP Police Result</h1>
-    </header>
 
-<main>
-    <div id="overall">
-        <div class="card">
-            <h2 style="font-size: 1.2rem; color: #222;">Overall Stats (UP Police Pattern)</h2>
-            <div class="stats-grid">
-                <div class="stat-box"><div class="icon blue">🏆</div><h4 id="score-display">0</h4><p>Score</p></div>
-                <div class="stat-box"><div class="icon green">✓</div><h4 id="correct-count">0</h4><p>Correct</p></div>
-                <div class="stat-box"><div class="icon red">✕</div><h4 id="incorrect-count">0</h4><p>Incorrect</p></div>
-                <div class="stat-box"><div class="icon light-blue">−</div><h4 id="unattempted-count">0</h4><p>Unattempted</p></div>
-            </div>
-            <div style="margin-top: 20px;"><h4 id="accuracy-display" style="font-size: 1.5rem;">0%</h4><p style="color: #888; font-size: 0.9rem;">Accuracy</p></div>
-            <div class="chart-container">
-                <div class="donut-chart" id="myChart"></div>
-            </div>
-            <button class="retake-btn" onclick="window.location.href='free-test-weekly.html'">Go to Dashboard</button>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div>
+        <span class="top-bar-badge">LATEST ALERTS</span>
+        <span>AapkaResult.in &bull; India's Trusted Career &amp; Examination Update Portal</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="about-us.html">About Portal</a>
+        <a href="contact-us.html">Help Desk</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <a href="/" class="brand-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="favicon.svg" alt="AapkaResult.in Logo" class="brand-icon" width="44" height="44">
+          <div class="brand-info">
+            <span class="brand-title">AAPKA<span class="accent">RESULT</span><span class="domain-tld">.IN</span></span>
+            <span class="brand-tagline">Make Your Dreams Come True</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Live Search -->
+      <div class="header-search">
+        <span class="search-icon">
+          <svg class="search-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" id="liveSearchInput" placeholder="Search by Exam, Post, Board, or Qualification..." onkeyup="liveSearch(this.value)">
+        <button type="button" class="search-submit-btn" onclick="liveSearch(document.getElementById('liveSearchInput').value)" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="btn-telegram">
+          <svg class="telegram-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Join Telegram</span>
+        </a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle Navigation">&#9776; Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="latest-jobs.html">Latest Jobs</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="free-test-weekly.html" class="active">Mock Test</a></li>
+        <li><a href="short-notes-hub.html">Short Notes</a></li>
+        <li><a href="admit-cards.html">Admit Card</a></li>
+        <li><a href="answer-key.html">Answer Key</a></li>
+        <li><a href="syllabus.html">Syllabus</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="career-guide.html">Career Guides</a></li>
+        <li class="dropdown">
+          <button type="button" class="nav-dropdown-btn" onclick="toggleDropdown(event)" aria-expanded="false" aria-haspopup="true">More &#9662;</button>
+          <div class="dropdown-menu">
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-bar">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="free-test-weekly.html">Mock Tests Hub</a></li>
+      <li><a href="up-police-mocks-page.html">UP Police Constable Dashboard</a></li>
+      <li>Scorecard Analysis</li>
+    </ul>
+  </div>
+
+  <!-- MAIN RESULT CONTENT -->
+  <main class="result-container">
+
+    <!-- SCORECARD HERO -->
+    <div class="score-hero">
+      <div class="score-hero-badge">🏆 Performance Scorecard</div>
+      <h1 id="resTestTitle">UP Police Constable Full Mock Test 2026</h1>
+      
+      <div>
+        <span class="score-main-display" id="resScore">0.00</span>
+        <span class="score-total-denom" id="resTotalMarks">/ 300</span>
+      </div>
+
+      <div class="stats-tiles-grid">
+        <div class="stat-tile">
+          <span class="stat-tile-val" id="resAccuracy" style="color:#38bdf8;">0%</span>
+          <span class="stat-tile-lbl">Accuracy</span>
         </div>
-    </div>
-
-    <div id="sections" style="margin-bottom: 40px;">
-        <div id="sections-container"></div>
-    </div>
-
-    <div id="solutions" style="background: #fff; margin-bottom: 40px; padding: 10px;">
-        <h2 style="margin-bottom: 15px; color: #222; font-size: 1.2rem;">Solutions & Answers</h2>
-        <div class="filter-container">
-            <button class="filter-btn active correct" onclick="filterSolutions('correct', this)">Correct</button>
-            <button class="filter-btn incorrect" onclick="filterSolutions('incorrect', this)">Incorrect</button>
-            <button class="filter-btn unattempted" onclick="filterSolutions('unattempted', this)">Unattempted</button>
+        <div class="stat-tile">
+          <span class="stat-tile-val" id="resCorrect" style="color:#4ade80;">0</span>
+          <span class="stat-tile-lbl">Correct (✓)</span>
         </div>
-        <div id="solutions-container"></div>
-    </div>
-</main>
-
-    <div id="fs-modal" class="fs-modal">
-        <header class="fs-header">
-            <div class="fs-back-btn" onclick="closeFullSolution()">←</div>
-            <div class="fs-title">Full Solution</div>
-            <div class="fs-warning">⚠️</div>
-        </header>
-        <div class="fs-content">
-            <div class="fs-q-meta">
-                <span class="fs-q-badge" id="fs-q-num">Question 1</span>
-                <span class="fs-save">🔖 SAVE</span>
-            </div>
-            <div class="fs-question" id="fs-q-text">प्रश्न यहाँ आएगा...</div>
-            <div id="fs-options-container"></div>
-            
-            <h4 class="fs-sol-heading">Full Solution</h4>
-            <div class="fs-sol-detail" id="fs-sol-text"></div>
+        <div class="stat-tile">
+          <span class="stat-tile-val" id="resIncorrect" style="color:#f87171;">0</span>
+          <span class="stat-tile-lbl">Incorrect (✕)</span>
         </div>
-        <button class="fs-next-btn" id="fs-next-btn" onclick="nextFullSolution()">Next</button>
+        <div class="stat-tile">
+          <span class="stat-tile-val" id="resUnattempted" style="color:#cbd5e1;">0</span>
+          <span class="stat-tile-lbl">Unattempted (−)</span>
+        </div>
+      </div>
     </div>
-</div>
 
-<script>
-    let globalResultData = null; 
-    let currentSolutionIndex = 0;
+    <!-- ACTION BUTTONS -->
+    <div class="result-actions-strip">
+      <button type="button" class="btn-act btn-act-retake" onclick="reattemptTest()">🔄 Re-attempt Mock Test</button>
+      <a href="up-police-mocks-page.html" class="btn-act btn-act-dash">📋 More Practice Tests</a>
+      <button type="button" class="btn-act btn-act-share" onclick="shareScore()">📢 Share on WhatsApp</button>
+    </div>
 
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const testIdParam = urlParams.get('test') || '1';
+    <!-- SECTIONAL PERFORMANCE BREAKDOWN -->
+    <div class="sec-card">
+      <div class="sec-card-title">📊 Subject-wise Performance Breakdown</div>
+      <div class="sec-table-wrap">
+        <table class="sec-table">
+          <thead>
+            <tr>
+              <th>Subject / Section</th>
+              <th>Correct (✓)</th>
+              <th>Incorrect (✕)</th>
+              <th>Unattempted (−)</th>
+              <th>Net Marks</th>
+            </tr>
+          </thead>
+          <tbody id="secTableBody">
+            <tr><td colspan="5" style="text-align:center;">Loading sectional performance...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-        const savedData = localStorage.getItem("myUpPoliceMockTestResult_" + testIdParam);
-        if (!savedData) { window.location.href = "up-police-mocks-page.html"; return; }
-        
-        globalResultData = JSON.parse(savedData);
-        const result = globalResultData;
+    <!-- SOLUTIONS REVIEW SECTION -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <h2 class="sol-title">💡 Detailed Solutions &amp; Answer Key</h2>
+        <div class="sol-filter-pills">
+          <button type="button" class="sol-pill active" onclick="filterSol('all', this)">All Qs (<span id="countAll">0</span>)</button>
+          <button type="button" class="sol-pill" onclick="filterSol('c', this)">Correct (<span id="countC">0</span>)</button>
+          <button type="button" class="sol-pill" onclick="filterSol('i', this)">Incorrect (<span id="countI">0</span>)</button>
+          <button type="button" class="sol-pill" onclick="filterSol('u', this)">Unattempted (<span id="countU">0</span>)</button>
+        </div>
+      </div>
 
-        const testTitles = {
-            "1": "01 UP Police Constable Full Mock Test",
-            "2": "02 UP Police Constable Full Mock Test",
-        };
-        const testId = result.testId || '1'; 
-        document.getElementById("result-test-title").innerText = testTitles[testId] || "UP Police Result";
+      <div id="solutionsContainer">
+        <p style="text-align: center; color: #64748b;">Loading questions and answers...</p>
+      </div>
+    </div>
 
-        // Display score (Max possible from your test questions * 2)
-        const maxScore = result.total * 2;
-        document.getElementById("score-display").innerText = result.score.toFixed(2) + "/" + maxScore;
-        document.getElementById("correct-count").innerText = result.correct;
-        document.getElementById("incorrect-count").innerText = result.incorrect;
-        document.getElementById("unattempted-count").innerText = result.unattempted;
-        document.getElementById("accuracy-display").innerText = result.accuracy + "%";
+  </main>
 
-        const total = result.total;
-        const correctPerc = (result.correct / total) * 100;
-        const incorrectPerc = correctPerc + ((result.incorrect / total) * 100);
-        document.getElementById("myChart").style.background = `conic-gradient(#4caf50 0% ${correctPerc}%, #f44336 ${correctPerc}% ${incorrectPerc}%, #00bcd4 ${incorrectPerc}% 100%)`;
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>About AapkaResult.in</h4>
+        <p>
+          AapkaResult.in is an independent educational news and employment alert portal. We aggregate publicly available recruitment notices to provide fast, authentic, and easy-to-understand information to students across India.
+        </p>
+        <p class="footer-copy">&copy; 2026 AapkaResult.in. All Rights Reserved.</p>
+      </div>
 
-        // Sections
-        let sectionHTML = "";
-        for (const [subject, data] of Object.entries(result.sections)) {
-            sectionHTML += `
-            <div class="card" style="text-align: left; padding: 15px;">
-                <div class="section-header">
-                    <h4>${subject}</h4>
-                    <div class="marks-circle">${data.s.toFixed(2)}</div>
-                </div>
-                <div class="section-stats">
-                    <div><span style="color:#4caf50; font-weight:bold;">${data.c}</span><br>Correct</div>
-                    <div><span style="color:#f44336; font-weight:bold;">${data.i}</span><br>Incorrect</div>
-                    <div><span style="color:#00bcd4; font-weight:bold;">${data.u}</span><br>Unattempted</div>
-                </div>
-            </div>`;
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="latest-jobs.html">Latest Jobs 2026</a></li>
+          <li><a href="results.html">Exam Results</a></li>
+          <li><a href="free-test-weekly.html">Mock Tests</a></li>
+          <li><a href="short-notes-hub.html">Short Notes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Top Recruitments</h4>
+        <ul>
+          <li><a href="up-police-constable.html">UP Police Constable</a></li>
+          <li><a href="ssc-gd-constable.html">SSC GD Constable</a></li>
+          <li><a href="rrb-group-d.html">Railway RRB Group D</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compliance &amp; Legal</h4>
+        <ul>
+          <li><a href="about-us.html">About Our Portal</a></li>
+          <li><a href="contact-us.html">Contact &amp; Grievance</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="disclaimer.html">Official Disclaimer</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-disclaimer-text">
+        <strong>Non-Government Affiliation Disclaimer:</strong> AapkaResult.in is NOT an official government website and has no association with any central or state government agency, department, commission, or recruitment board.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const testId = urlParams.get('test') || '1';
+    const storageKey = "myUpPoliceMockTestResult_" + testId;
+
+    let resData = null;
+    let currentFilter = 'all';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) {
+        document.getElementById('solutionsContainer').innerHTML = `
+          <div style="text-align: center; padding: 40px 10px;">
+            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 16px;">⚠️ No result record found for this test session.</p>
+            <a href="up-police-quiz.html?test=${testId}" class="btn-act btn-act-retake" style="display:inline-flex;">Attempt Test Now &rarr;</a>
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        resData = JSON.parse(raw);
+        renderScorecard();
+        renderSectionalTable();
+        renderSolutions();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    function renderScorecard() {
+      document.getElementById('resScore').innerText = resData.score;
+      document.getElementById('resAccuracy').innerText = resData.accuracy + "%";
+      document.getElementById('resCorrect').innerText = resData.correct;
+      document.getElementById('resIncorrect').innerText = resData.incorrect;
+      document.getElementById('resUnattempted').innerText = resData.unattempted;
+
+      document.getElementById('countAll').innerText = resData.total;
+      document.getElementById('countC').innerText = resData.correct;
+      document.getElementById('countI').innerText = resData.incorrect;
+      document.getElementById('countU').innerText = resData.unattempted;
+    }
+
+    function renderSectionalTable() {
+      const tb = document.getElementById('secTableBody');
+      if (!tb || !resData.sections) return;
+
+      let html = '';
+      for (const [sec, stats] of Object.entries(resData.sections)) {
+        html += `
+          <tr>
+            <td><strong>${sec}</strong></td>
+            <td><span style="color:#16a34a; font-weight:700;">${stats.c}</span></td>
+            <td><span style="color:#dc2626; font-weight:700;">${stats.i}</span></td>
+            <td><span style="color:#64748b; font-weight:700;">${stats.u}</span></td>
+            <td><strong>${Number(stats.s.toFixed(2))} Marks</strong></td>
+          </tr>
+        `;
+      }
+      tb.innerHTML = html;
+    }
+
+    function renderSolutions() {
+      const container = document.getElementById('solutionsContainer');
+      if (!container || !resData.questionsData) return;
+
+      let html = '';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      resData.questionsData.forEach((q, idx) => {
+        const userAns = resData.answersData ? resData.answersData[idx] : undefined;
+        let statusType = 'u';
+        let badgeHtml = '<span class="sol-item-badge badge-u">Unattempted (0.00)</span>';
+
+        if (userAns !== undefined) {
+          if (userAns === q.correct) {
+            statusType = 'c';
+            badgeHtml = '<span class="sol-item-badge badge-c">✓ Correct (+2.00)</span>';
+          } else {
+            statusType = 'i';
+            badgeHtml = '<span class="sol-item-badge badge-i">✕ Incorrect (-0.50)</span>';
+          }
         }
-        document.getElementById("sections-container").innerHTML = sectionHTML;
 
-        // Solutions inline rendering
-        let solHTML = "";
-        result.questionsData.forEach((q, i) => {
-            let userAns = result.answersData[i];
-            let status = "", iconHtml = "";
+        let optsHtml = '';
+        q.options.forEach((opt, oIdx) => {
+          let optClass = 'sol-opt-row';
+          if (oIdx === q.correct) {
+            optClass += ' is-correct';
+          } else if (oIdx === userAns) {
+            optClass += ' is-wrong-picked';
+          }
 
-            if (userAns === undefined) { status = "unattempted"; iconHtml = `<div class="status-icon unattempted">-</div>`; } 
-            else if (userAns === q.correct) { status = "correct"; iconHtml = `<div class="status-icon correct">✓</div>`; } 
-            else { status = "incorrect"; iconHtml = `<div class="status-icon incorrect">✕</div>`; }
-
-            solHTML += `
-            <div class="sol-wrapper sol-item ${status}">
-                <div class="sol-top-row">
-                    <div class="sol-q-no">${i + 1} ${iconHtml}</div>
-                    <div class="sol-line"></div>
-                    <div class="sol-save">🔖 SAVE</div>
-                </div>
-                <div class="solution-card">
-                    <div class="subject-badge">${q.subject}</div>
-                    <p class="question-text-sol">${q.q}</p>
-                    <button class="btn-full-sol" onclick="openFullSolution(${i})">See Full Solution</button>
-                </div>
-            </div>`;
+          optsHtml += `
+            <div class="${optClass}">
+              <span class="sol-opt-letter">${letters[oIdx]}</span>
+              <span>${opt}</span>
+              ${oIdx === q.correct ? '<span style="margin-left:auto; font-size:12px; font-weight:700;">(Correct Answer)</span>' : ''}
+              ${oIdx === userAns && userAns !== q.correct ? '<span style="margin-left:auto; font-size:12px; font-weight:700;">(Your Choice)</span>' : ''}
+            </div>
+          `;
         });
-        document.getElementById("solutions-container").innerHTML = solHTML;
-        filterSolutions('correct', document.querySelector('.filter-btn.correct'));
-    };
 
-    function filterSolutions(type, btnElement) {
-        document.querySelectorAll('.filter-container .filter-btn').forEach(btn => btn.classList.remove('active'));
-        if (btnElement) btnElement.classList.add('active');
-        document.querySelectorAll('.sol-item').forEach(item => {
-            item.style.display = item.classList.contains(type) ? 'block' : 'none';
-        });
+        html += `
+          <div class="sol-item border-${statusType}" data-type="${statusType}">
+            <div class="sol-item-top">
+              <span class="sol-item-qnum">Question ${idx + 1} &bull; <span style="font-size:12px; color:#64748b; font-weight:normal;">${q.subject}</span></span>
+              ${badgeHtml}
+            </div>
+            <div class="sol-q-text">${q.q}</div>
+            <div class="sol-opts-grid">${optsHtml}</div>
+            ${q.solution ? `<div class="sol-explain-box"><strong>💡 Explanation / हल:</strong>${q.solution}</div>` : ''}
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
     }
 
-    function openFullSolution(index) {
-        currentSolutionIndex = index;
-        populateFullSolution(index);
-        document.getElementById('fs-modal').style.display = 'flex'; 
-    }
+    function filterSol(type, btn) {
+      currentFilter = type;
+      document.querySelectorAll('.sol-pill').forEach(p => p.classList.remove('active'));
+      if (btn) btn.classList.add('active');
 
-    function closeFullSolution() {
-        document.getElementById('fs-modal').style.display = 'none'; 
-    }
-
-    function populateFullSolution(index) {
-        const qData = globalResultData.questionsData[index];
-        const userAns = globalResultData.answersData[index];
-        const correctAns = qData.correct;
-        document.getElementById('fs-q-num').innerText = "Question " + (index + 1);
-        document.getElementById('fs-q-text').innerText = qData.q;
-
-        let correctPercent = Math.floor(Math.random() * (85 - 45 + 1)) + 45; 
-        let optionsHTML = "";
-        let labels = ["A", "B", "C", "D"];
-        
-        qData.options.forEach((opt, i) => {
-            let optClass = "fs-option";
-            let badgeHTML = "";
-            if (i === correctAns) { optClass += " correct"; badgeHTML = `<span class="fs-correct-badge">Correct: ${correctPercent}%</span>`; } 
-            else if (i === userAns) { optClass += " incorrect"; badgeHTML = `<span class="fs-incorrect-badge">Incorrect</span>`; }
-            optionsHTML += `<div class="${optClass}"><span class="fs-opt-label">${labels[i]}.</span><span>${opt}</span>${badgeHTML}</div>`;
-        });
-        document.getElementById('fs-options-container').innerHTML = optionsHTML;
-
-        let explanation = qData.solution ? qData.solution : "इस प्रश्न की विस्तृत व्याख्या (Solution) अभी जोड़ी नहीं गई है।";
-        let detailText = `<b>सही उत्तर – ${qData.options[correctAns]}</b><br><br><span style="color:#2563eb; font-weight:bold;">व्याख्या (Explanation):</span><br><span style="line-height:1.6;">${explanation}</span>`;
-        document.getElementById('fs-sol-text').innerHTML = detailText;
-
-        let nextBtn = document.getElementById('fs-next-btn');
-        nextBtn.style.display = (index < globalResultData.questionsData.length - 1) ? 'block' : 'none';
-    }
-
-    function nextFullSolution() {
-        let activeFilter = document.querySelector('.filter-btn.active').innerText.toLowerCase().trim();
-        let cards = document.querySelectorAll('.sol-item'); 
-        for (let i = currentSolutionIndex + 1; i < cards.length; i++) {
-            if (cards[i].classList.contains(activeFilter)) {
-                currentSolutionIndex = i; populateFullSolution(currentSolutionIndex); 
-                document.getElementById('fs-modal').scrollTop = 0; return; 
-            }
+      document.querySelectorAll('.sol-item').forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        if (type === 'all' || itemType === type) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
         }
+      });
     }
-</script>
 
-<footer class="footer">
-    © 2026 AapkaResult.in - All Rights Reserved. | 
-    <a href="about-us.html">About Us</a> | 
-    <a href="contact-us.html">Contact Us</a> | 
-    <a href="privacy-policy.html">Privacy Policy</a> | 
-    <a href="disclaimer.html">Disclaimer</a>
-</footer>
+    function reattemptTest() {
+      window.location.href = "up-police-quiz.html?test=" + testId;
+    }
 
+    function shareScore() {
+      if (!resData) return;
+      const text = "🎯 AapkaResult.in Mock Test Scorecard!\n\n" +
+                   "Exam: UP Police Constable\n" +
+                   "Score: " + resData.score + " / 300\n" +
+                   "Accuracy: " + resData.accuracy + "%\n" +
+                   "Correct: " + resData.correct + " | Incorrect: " + resData.incorrect + "\n\n" +
+                   "Attempt free mock tests here: " + window.location.href;
+      
+      if (navigator.share) {
+        navigator.share({ title: 'My Mock Test Result', text: text, url: window.location.href }).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(text);
+        alert("आपका स्कोरकार्ड कॉपी हो गया है! अब इसे WhatsApp पर शेयर करें।");
+      }
+    }
+  </script>
 </body>
 </html>

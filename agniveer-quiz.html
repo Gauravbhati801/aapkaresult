@@ -1,111 +1,2193 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agniveer Mock Test Engine</title>
-    <meta name="description" content="Free Indian Army Agniveer online quiz and practice questions with answers, explanations and live score calculation.">
-    <link rel="preload" href="style.css" as="style">
-  <link rel="stylesheet" href="style.css"> 
-    <link rel="canonical" href="https://aapkaresult.in/agniveer-quiz.html">
-    <style>
-        .app-container { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            background: rgba(15, 23, 42, 0.9) !important; 
-            min-height: 100vh; 
-            backdrop-filter: blur(16px);
-            border-left: 1px solid rgba(255,255,255,0.1); 
-            border-right: 1px solid rgba(255,255,255,0.1); 
-            color: #ffffff !important; 
-        }
-        .top-header { 
-            background: rgba(30, 27, 75, 0.9) !important; 
-            padding: 16px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
-        }
-        .time { font-size: 1.25rem; font-weight: bold; color: #38bdf8 !important; text-shadow: 0 0 8px rgba(56,189,248,0.4); }
-        .q-container { padding: 25px 20px; }
-        .question-text { font-size: 1.2rem; font-weight: 700; color: #ffffff !important; margin-bottom: 25px; line-height: 1.6; }
-        
-        /* Options Radio Box Glow Edit */
-        .option-wrapper { 
-            background: rgba(255, 255, 255, 0.04) !important; 
-            padding: 14px 18px; 
-            border-radius: 10px; 
-            margin-bottom: 14px; 
-            border: 1px solid rgba(255,255,255,0.08) !important; 
-            display: flex; 
-            align-items: center; 
-            cursor: pointer; 
-            transition: 0.2s;
-        }
-        .option-wrapper:hover { 
-            background: rgba(255, 255, 255, 0.08) !important; 
-            border-color: #38bdf8 !important; 
-        }
-        .option-wrapper input[type="radio"] { 
-            margin-right: 14px; 
-            width: 18px; 
-            height: 18px; 
-            accent-color: #38bdf8; 
-            cursor: pointer;
-        }
-        .option-text { color: #cbd5e1 !important; font-size: 1.05rem; font-weight: 600; }
-        
-        .nav-actions { display: flex; justify-content: space-between; padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .btn-nav { padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.2s; }
-        .btn-next { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #0f172a; }
-        .btn-next:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(56,189,248,0.3); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Army Agniveer GD Online CBT Mock Test 2026 - AapkaResult.in</title>
+  <meta name="description" content="Indian Army Agniveer GD online CEE mock test with countdown timer, negative marking, bilingual questions and scorecard.">
+  <link rel="canonical" href="https://aapkaresult.in/agniveer-quiz.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.png" type="image/png">
+  <style>
+    :root {
+      --cbt-navy: #0f172a;
+      --cbt-blue: #16a34a;
+      --cbt-blue-dark: #1d4ed8;
+      --cbt-green: #16a34a;
+      --cbt-red: #dc2626;
+      --cbt-purple: #7c3aed;
+      --cbt-gray-bg: #f8fafc;
+      --cbt-border: #e2e8f0;
+      --cbt-text: #0f172a;
+      --cbt-text-muted: #64748b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: var(--cbt-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* CBT Header */
+    .cbt-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #1e293b;
+      flex-shrink: 0;
+    }
+    .cbt-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cbt-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+    .cbt-brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .cbt-brand-sub {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .cbt-timer-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .cbt-timer-icon {
+      font-size: 14px;
+      color: #38bdf8;
+    }
+    .cbt-timer-label {
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .cbt-timer-val {
+      font-size: 18px;
+      font-weight: 800;
+      font-family: monospace, monospace;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+    .cbt-timer-val.warning {
+      color: #ef4444;
+      animation: blinkWarn 1s infinite;
+    }
+    @keyframes blinkWarn { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .cbt-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-cbt-palette-toggle {
+      display: none;
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-cbt-submit {
+      background: #dc2626;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-cbt-submit:hover { background: #b91c1c; }
+
+    /* Subject Tabs */
+    .cbt-tabs-bar {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex-shrink: 0;
+      padding: 0 16px;
+    }
+    .cbt-tabs-bar::-webkit-scrollbar { display: none; }
+    .cbt-tab {
+      padding: 12px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cbt-tab:hover { color: #0f172a; }
+    .cbt-tab.active {
+      color: var(--cbt-blue);
+      border-bottom-color: var(--cbt-blue);
+      background: #f8fafc;
+    }
+    .cbt-tab-badge {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .cbt-tab.active .cbt-tab-badge {
+      background: #eff6ff;
+      color: var(--cbt-blue);
+    }
+
+    /* Workspace */
+    .cbt-workspace {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Left panel: Question area */
+    .cbt-main-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: #f8fafc;
+    }
+    .cbt-question-header {
+      background: #ffffff;
+      padding: 12px 24px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .cbt-q-number-badge {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cbt-q-sec-name {
+      font-size: 12px;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .cbt-marking-scheme {
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .cbt-mark-pos { color: #16a34a; }
+    .cbt-mark-neg { color: #dc2626; margin-left: 6px; }
+
+    /* Question content */
+    .cbt-question-body {
+      padding: 24px;
+      flex: 1;
+      overflow-y: auto;
+      max-width: 920px;
+    }
+    .cbt-q-text {
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.65;
+      color: #0f172a;
+      margin-bottom: 24px;
+      white-space: pre-line;
+    }
+    .cbt-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cbt-opt-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .cbt-opt-card:hover {
+      border-color: #93c5fd;
+      background: #f8fafc;
+    }
+    .cbt-opt-card.selected {
+      border-color: var(--cbt-blue);
+      background: #eff6ff;
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+    }
+    .cbt-opt-card input { display: none; }
+    .cbt-opt-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+    .cbt-opt-card.selected .cbt-opt-badge {
+      background: var(--cbt-blue);
+      border-color: var(--cbt-blue);
+      color: #ffffff;
+    }
+    .cbt-opt-text {
+      font-size: 15px;
+      color: #1e293b;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .cbt-opt-card.selected .cbt-opt-text {
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    /* Bottom Toolbar */
+    .cbt-bottom-bar {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.04);
+    }
+    .cbt-actions-left { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cbt-actions-right { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cbt-btn {
+      padding: 10px 16px;
+      border-radius: 7px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-review {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+    }
+    .btn-review:hover { background: #ede9fe; }
+    .btn-review.marked { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+    .btn-clear {
+      background: #ffffff;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-clear:hover { background: #f1f5f9; color: #0f172a; }
+    .btn-nav-prev {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-nav-prev:hover { background: #e2e8f0; }
+    .btn-nav-save {
+      background: var(--cbt-blue);
+      color: #ffffff;
+    }
+    .btn-nav-save:hover { opacity: 0.9; }
+
+    /* Right Sidebar: Palette */
+    .cbt-sidebar {
+      width: 320px;
+      background: #ffffff;
+      border-left: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .cbt-palette-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+    }
+    .cbt-palette-close {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    .cbt-legend-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 12px 14px;
+      background: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 12px;
+      color: #475569;
+    }
+    .cbt-legend-item { display: flex; align-items: center; gap: 6px; }
+    .cbt-legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .dot-ans { background: #16a34a; }
+    .dot-unans { background: #ffffff; border: 1.5px solid #cbd5e1; }
+    .dot-review { background: #7c3aed; }
+    .dot-curr { background: #38bdf8; }
+
+    .cbt-palette-scroll {
+      padding: 14px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .cbt-palette-sec-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cbt-palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .cbt-q-bubble {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      transition: all 0.15s;
+    }
+    .cbt-q-bubble:hover { border-color: var(--cbt-blue); color: var(--cbt-blue); }
+    .cbt-q-bubble.ans { background: #16a34a; color: #ffffff; border-color: #16a34a; }
+    .cbt-q-bubble.review { background: #7c3aed; color: #ffffff; border-color: #7c3aed; }
+    .cbt-q-bubble.current {
+      border: 2px solid var(--cbt-blue);
+      background: #eff6ff;
+      color: var(--cbt-blue);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+    }
+
+    /* Modal */
+    .cbt-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .cbt-modal-overlay.active { display: flex; }
+    .cbt-modal-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .cbt-modal-card h3 { margin: 0 0 8px 0; color: #0f172a; font-size: 18px; }
+    .cbt-modal-card p { color: #64748b; font-size: 13.5px; margin: 0 0 18px 0; }
+    .cbt-summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+      text-align: left;
+    }
+    .cbt-summary-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+    .cbt-summary-table td strong { color: #0f172a; }
+    .cbt-modal-actions { display: flex; gap: 10px; }
+    .cbt-modal-btn {
+      flex: 1;
+      padding: 11px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-modal-resume { background: #f1f5f9; color: #334155; }
+    .btn-modal-submit { background: #dc2626; color: #ffffff; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .btn-cbt-palette-toggle { display: block; }
+      .cbt-palette-close { display: block; }
+      .cbt-sidebar {
+        position: fixed;
+        top: 0;
+        right: -340px;
+        width: 300px;
+        height: 100%;
+        z-index: 100;
+        box-shadow: -4px 0 25px rgba(0,0,0,0.15);
+        transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .cbt-sidebar.open { right: 0; }
+      .cbt-sidebar-backdrop {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 99;
+      }
+      .cbt-sidebar-backdrop.open { display: block; }
+    }
+
+    @media (max-width: 600px) {
+      .cbt-header { padding: 8px 12px; }
+      .cbt-brand-sub { display: none; }
+      .cbt-timer-box { padding: 4px 10px; }
+      .cbt-timer-val { font-size: 15px; }
+      .btn-cbt-submit { padding: 6px 12px; font-size: 12px; }
+      .cbt-question-header { padding: 10px 14px; }
+      .cbt-question-body { padding: 16px; }
+      .cbt-q-text { font-size: 15px; }
+      .cbt-opt-card { padding: 12px 14px; gap: 10px; }
+      .cbt-opt-badge { width: 28px; height: 28px; font-size: 12px; }
+      .cbt-opt-text { font-size: 14px; }
+      .cbt-bottom-bar { padding: 10px 14px; }
+      .cbt-btn { padding: 8px 12px; font-size: 12px; }
+    }
+  </style>
 </head>
 <body>
-   <div class="main-container">
-    <div class="app-container">
-        <div class="top-header">
-            <h1 style="font-size: 1rem; margin: 0; font-weight: 700; color: #fff;"><span style="color: #94a3b8; font-weight: 600;">Subject:</span> Agniveer Full CEE</h1>
-            <div class="time" id="timer">60:00</div>
-        </div>
 
-        <div class="q-container">
-            <h2 class="question-text" id="q-text">Q.1 भारत का सबसे बड़ा राज्य (क्षेत्रफल के हिसाब से) कौन सा है?</h2>
-            <div id="options-block">
-                <label class="option-wrapper">
-                    <input type="radio" name="agniveer-q" value="A">
-                    <span class="option-text">A) उत्तर प्रदेश</span>
-                </label>
-                <label class="option-wrapper">
-                    <input type="radio" name="agniveer-q" value="B">
-                    <span class="option-text">B) मध्य प्रदेश</span>
-                </label>
-                <label class="option-wrapper">
-                    <input type="radio" name="agniveer-q" value="C">
-                    <span class="option-text">C) राजस्थान</span>
-                </label>
-                <label class="option-wrapper">
-                    <input type="radio" name="agniveer-q" value="D">
-                    <span class="option-text">D) महाराष्ट्र</span>
-                </label>
-            </div>
-        </div>
-
-        <div class="nav-actions">
-            <button class="btn-nav" style="background:rgba(255,255,255,0.08); color:#fff;" onclick="prevQuestion()">Previous</button>
-            <button class="btn-nav btn-next" onclick="nextQuestion()">Save & Next ➔</button>
-        </div>
+  <!-- CBT TOP HEADER -->
+  <header class="cbt-header">
+    <div class="cbt-brand">
+      <img src="favicon.svg" alt="AapkaResult Logo">
+      <div>
+        <div class="cbt-brand-title">Army Agniveer GD Mock Test</div>
+        <div class="cbt-brand-sub">Indian Army CEE Pattern • 50 Qs • 100 Marks</div>
+      </div>
     </div>
-   </div>
 
-<footer class="footer">
-    © 2026 AapkaResult.in - All Rights Reserved. | 
-    <a href="about-us.html">About Us</a> | 
-    <a href="contact-us.html">Contact Us</a> | 
-    <a href="privacy-policy.html">Privacy Policy</a> | 
-    <a href="disclaimer.html">Disclaimer</a>
-</footer>
+    <div class="cbt-timer-box">
+      <span class="cbt-timer-icon">⏱️</span>
+      <span class="cbt-timer-label">Time:</span>
+      <span id="cbtTimer" class="cbt-timer-val">60:00</span>
+    </div>
 
+    <div class="cbt-header-actions">
+      <button type="button" class="btn-cbt-palette-toggle" onclick="togglePalette()" aria-label="Toggle Question Palette">☰ Palette</button>
+      <button type="button" class="btn-cbt-submit" onclick="promptSubmitTest()">Submit Test</button>
+    </div>
+  </header>
+
+  <!-- SUBJECT TABS BAR -->
+  <nav class="cbt-tabs-bar" id="cbtTabsBar">
+    
+    <div class="cbt-tab" id="tab-GK" onclick="goToSection('General Knowledge')">General Knowledge <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Science" onclick="goToSection('General Science')">General Science <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Maths" onclick="goToSection('Mathematics')">Mathematics <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Logic" onclick="goToSection('Logical Reasoning')">Logical Reasoning <span class="cbt-tab-badge">5</span></div>
+  
+  </nav>
+
+  <!-- WORKSPACE -->
+  <div class="cbt-workspace">
+    <!-- LEFT: QUESTION PANEL -->
+    <main class="cbt-main-panel">
+      <div class="cbt-question-header">
+        <div class="cbt-q-number-badge">
+          <span>Question <span id="cbtQNum">1</span></span>
+          <span class="cbt-q-sec-name" id="cbtQSecName">Section</span>
+        </div>
+        <div class="cbt-marking-scheme">
+          <span class="cbt-mark-pos">+2.00</span>
+          <span class="cbt-mark-neg">-0.50</span>
+        </div>
+      </div>
+
+      <div class="cbt-question-body">
+        <div class="cbt-q-text" id="cbtQText">Loading test questions...</div>
+        <div class="cbt-options-list" id="cbtOptionsList"></div>
+      </div>
+
+      <footer class="cbt-bottom-bar">
+        <div class="cbt-actions-left">
+          <button type="button" class="cbt-btn btn-review" id="btnReview" onclick="toggleReview()">🔖 Mark for Review</button>
+          <button type="button" class="cbt-btn btn-clear" onclick="clearCurrentResponse()">Clear Selection</button>
+        </div>
+        <div class="cbt-actions-right">
+          <button type="button" class="cbt-btn btn-nav-prev" id="btnPrev" onclick="navigatePrev()">◄ Previous</button>
+          <button type="button" class="cbt-btn btn-nav-save" id="btnSaveNext" onclick="saveAndProceed()">Save &amp; Next ►</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- RIGHT: QUESTION PALETTE SIDEBAR -->
+    <aside class="cbt-sidebar" id="cbtSidebar">
+      <div class="cbt-palette-header">
+        <span>Question Palette</span>
+        <button type="button" class="cbt-palette-close" onclick="togglePalette()" aria-label="Close Palette">&times;</button>
+      </div>
+
+      <div class="cbt-legend-strip">
+        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-ans"></div><span>Answered</span></div>
+        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-unans"></div><span>Not Answered</span></div>
+        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-review"></div><span>For Review</span></div>
+        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-curr"></div><span>Current</span></div>
+      </div>
+
+      <div class="cbt-palette-scroll" id="cbtPaletteScroll"></div>
+    </aside>
+
+    <div class="cbt-sidebar-backdrop" id="cbtBackdrop" onclick="togglePalette()"></div>
+  </div>
+
+  <!-- SUBMIT CONFIRMATION MODAL -->
+  <div class="cbt-modal-overlay" id="cbtSubmitModal">
+    <div class="cbt-modal-card">
+      <h3>Submit Online Test?</h3>
+      <p>Please review your test attempt summary before final submission.</p>
+
+      <table class="cbt-summary-table">
+        <tr><td>Total Questions:</td><td style="text-align: right;"><strong id="sumTotal">0</strong></td></tr>
+        <tr><td>Answered:</td><td style="text-align: right;"><strong id="sumAns" style="color:#16a34a;">0</strong></td></tr>
+        <tr><td>Marked for Review:</td><td style="text-align: right;"><strong id="sumReview" style="color:#7c3aed;">0</strong></td></tr>
+        <tr><td>Unattempted:</td><td style="text-align: right;"><strong id="sumUnans" style="color:#dc2626;">0</strong></td></tr>
+      </table>
+
+      <div class="cbt-modal-actions">
+        <button type="button" class="cbt-modal-btn btn-modal-resume" onclick="closeSubmitModal()">Resume Test</button>
+        <button type="button" class="cbt-modal-btn btn-modal-submit" onclick="executeFinalSubmit()">Yes, Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT CBT ENGINE -->
+  <script>
+    
+const allTestDatabase = {
+  "1": [
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का सबसे बड़ा राज्य (क्षेत्रफल की दृष्टि से) कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "मध्य प्रदेश",
+      "राजस्थान",
+      "महाराष्ट्र"
+    ],
+    "correct": 2,
+    "solution": "राजस्थान (3,42,239 वर्ग किमी) भारत का क्षेत्रफल की दृष्टि से सबसे बड़ा राज्य है, जबकि गोवा सबसे छोटा राज्य है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारतीय सेना (Indian Army) का सर्वोच्च कमांडर कौन होता है?",
+    "options": [
+      "चीफ ऑफ डिफेंस स्टाफ (CDS)",
+      "थल सेनाध्यक्ष",
+      "भारत का प्रधानमंत्री",
+      "भारत का राष्ट्रपति"
+    ],
+    "correct": 3,
+    "solution": "भारतीय संविधान के अनुच्छेद 53(2) के अनुसार भारत का राष्ट्रपति तीनों सेनाओं (थल, नौ एवं वायुसेना) का सर्वोच्च सेनापति होता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का राष्ट्रीय खेल दिवस (National Sports Day) कब मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "29 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर"
+    ],
+    "correct": 1,
+    "solution": "हॉकी के जादूगर मेजर ध्यानचंद के जन्मदिवस के उपलक्ष्य में हर वर्ष 29 अगस्त को राष्ट्रीय खेल दिवस मनाया जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "सूर्य मंदिर (Black Pagoda) भारत के किस राज्य में स्थित है?",
+    "options": [
+      "ओडिशा (कोणार्क)",
+      "तमिलनाडु",
+      "गुजरात",
+      "मध्य प्रदेश"
+    ],
+    "correct": 0,
+    "solution": "कोणार्क का प्रसिद्ध सूर्य मंदिर ओडिशा में स्थित है। इसे गंग वंश के राजा नरसिंहदेव प्रथम ने 13वीं शताब्दी में बनवाया था।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "पानीपत का तीसरा युद्ध (Third Battle of Panipat) किस वर्ष लड़ा गया था?",
+    "options": [
+      "1526",
+      "1556",
+      "1761",
+      "1764"
+    ],
+    "correct": 2,
+    "solution": "पानीपत का तीसरा युद्ध 14 जनवरी 1761 को मराठा सेनापति सदाशिवराव भाऊ और अहमद शाह अब्दाली (अफगान) के बीच हुआ था।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत में 'लौह पुरुष' (Iron Man of India) के नाम से किन्हें जाना जाता है?",
+    "options": [
+      "सुभाष चंद्र बोस",
+      "सरदार वल्लभभाई पटेल",
+      "भगत सिंह",
+      "लाल बहादुर शास्त्री"
+    ],
+    "correct": 1,
+    "solution": "सरदार वल्लभभाई पटेल ने 562 से अधिक देशी रियासतों का भारत में सफल एकीकरण किया, इसलिए उन्हें लौह पुरुष कहा जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "विश्व की सबसे ऊंची पर्वत चोटी 'माउंट एवरेस्ट' किस देश में स्थित है?",
+    "options": [
+      "भारत",
+      "नेपाल",
+      "चीन (तिब्बत)",
+      "भूटान"
+    ],
+    "correct": 1,
+    "solution": "माउंट एवरेस्ट (ऊंचाई 8848.86 मीटर) नेपाल में स्थित है, जहां इसे स्थानीय भाषा में 'सागरमाथा' कहा जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "कथकली (Kathakali) किस भारतीय राज्य का प्रसिद्ध शास्त्रीय नृत्य है?",
+    "options": [
+      "केरल",
+      "तमिलनाडु",
+      "आंध्र प्रदेश",
+      "असम"
+    ],
+    "correct": 0,
+    "solution": "कथकली केरल का प्रसिद्ध शास्त्रीय नृत्य है जिसमें कलाकार चेहरे पर विशेष मुखौटा और भाव-भंगिमाओं का प्रदर्शन करते हैं।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "जलियांवाला बाग नरसंहार (1919) किस शहर में हुआ था?",
+    "options": [
+      "लाहौर",
+      "अमृतसर",
+      "जालंधर",
+      "लुधियाना"
+    ],
+    "correct": 1,
+    "solution": "13 अप्रैल 1919 को बैसाखी के दिन अमृतसर के जलियांवाला बाग में जनरल डायर ने निहत्थी सभा पर गोलियां चलवाई थीं।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "स्वतंत्र भारत के प्रथम थल सेनाध्यक्ष (Commander-in-Chief) कौन थे?",
+    "options": [
+      "जनरल सैम मानेकशॉ",
+      "फील्ड मार्शल के.एम. करियप्पा",
+      "जनरल बिपिन रावत",
+      "जनरल मनोज पांडे"
+    ],
+    "correct": 1,
+    "solution": "फील्ड मार्शल के.एम. करियप्पा ने 15 जनवरी 1949 को कमान संभाली थी, इसी उपलक्ष्य में हर वर्ष 15 जनवरी को 'सेना दिवस' (Army Day) मनाया जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का सबसे बड़ा नागरिक सम्मान कौन सा है?",
+    "options": [
+      "परमवीर चक्र",
+      "भारत रत्न",
+      "पद्म विभूषण",
+      "अशोक चक्र"
+    ],
+    "correct": 1,
+    "solution": "भारत रत्न देश का सर्वोच्च नागरिक पुरस्कार है। युद्धकाल में वीरता का सर्वोच्च सैन्य पदक 'परमवीर चक्र' है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "हीराकुंड बांध (Hirakud Dam) किस नदी पर निर्मित है?",
+    "options": [
+      "महानदी",
+      "गोदावरी",
+      "नर्मदा",
+      "कृष्णा"
+    ],
+    "correct": 0,
+    "solution": "हीराकुंड बांध ओडिशा में महानदी पर बना भारत का सबसे लंबा बांध है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत के किस राज्य की तटरेखा (Coastline) सबसे लंबी है?",
+    "options": [
+      "महाराष्ट्र",
+      "गुजरात",
+      "आंध्र प्रदेश",
+      "तमिलनाडु"
+    ],
+    "correct": 1,
+    "solution": "गुजरात राज्य की समुद्री तटरेखा सबसे लंबी (लगभग 1,214 किमी) है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारतीय संविधान का 'अनुच्छेद 17' किससे संबंधित है?",
+    "options": [
+      "उपाधियों का अंत",
+      "अस्पृश्यता का उन्मूलन",
+      "विधि के समक्ष समता",
+      "वाक् स्वतंत्रता"
+    ],
+    "correct": 1,
+    "solution": "अनुच्छेद 17 अस्पृश्यता (Untouchability) को पूर्णतः समाप्त करता है और इसका किसी भी रूप में आचरण दंडनीय अपराध घोषित करता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "'करो या मरो' का प्रसिद्ध नारा महात्मा गांधी ने किस आंदोलन में दिया था?",
+    "options": [
+      "असहयोग आंदोलन",
+      "सविनय अवज्ञा आंदोलन",
+      "भारत छोड़ो आंदोलन (1942)",
+      "चंपारण सत्याग्रह"
+    ],
+    "correct": 2,
+    "solution": "8 अगस्त 1942 को मुंबई से भारत छोड़ो आंदोलन शुरू करते समय गांधीजी ने 'करो या मरो' (Do or Die) का मंत्र दिया था।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "मानव शरीर में रक्त का शुद्धिकरण (Purification of Blood) किस अंग में होता है?",
+    "options": [
+      "हृदय",
+      "फेफड़े",
+      "वृक्क (Kidney)",
+      "यकृत"
+    ],
+    "correct": 2,
+    "solution": "किडनी (गुर्दा) रक्त से अपशिष्ट और अतिरिक्त तरल को छानकर मूत्र के रूप में बाहर निकालती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "विटामिन C की कमी से कौन सा रोग होता है?",
+    "options": [
+      "रतौंधी",
+      "बेरी-बेरी",
+      "स्कर्वी",
+      "रिकेट्स"
+    ],
+    "correct": 2,
+    "solution": "विटामिन C (एस्कॉर्बिक एसिड) की कमी से स्कर्वी (मसूड़ों से खून आना) रोग होता है। यह खट्टे फलों में प्रचुर पाया जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "सामान्य जल (Water) का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "D2O",
+      "H2O2",
+      "CO2"
+    ],
+    "correct": 0,
+    "solution": "जल का रासायनिक सूत्र H2O है। भारी जल का सूत्र D2O (ड्यूटेरियम ऑक्साइड) होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "बल (Force) का SI मात्रक क्या होता है?",
+    "options": [
+      "जूल",
+      "पास्कल",
+      "न्यूटन (Newton)",
+      "वाट"
+    ],
+    "correct": 2,
+    "solution": "बल का SI मात्रक न्यूटन (N) होता है। F = m x a।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "वायुमंडल में सबसे अधिक मात्रा में कौन सी गैस पाई जाती है?",
+    "options": [
+      "ऑक्सीजन (~21%)",
+      "नाइट्रोजन (~78%)",
+      "कार्बन डाइऑक्साइड",
+      "आर्गन"
+    ],
+    "correct": 1,
+    "solution": "वायुमंडल में लगभग 78% नाइट्रोजन, 21% ऑक्सीजन और 0.03% कार्बन डाइऑक्साइड पाई जाती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "ध्वनि (Sound) की चाल किस माध्यम में सबसे अधिक होती है?",
+    "options": [
+      "ठोस (इस्पात/स्टील)",
+      "जल",
+      "हवा",
+      "निर्वात"
+    ],
+    "correct": 0,
+    "solution": "ध्वनि अनुदैर्ध्य यांत्रिक तरंग है। इसकी गति ठोस में सर्वाधिक (~5000 m/s) होती है और यह निर्वात में गमन नहीं कर सकती।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "सर्वदाता रक्त समूह (Universal Blood Donor) कौन सा है?",
+    "options": [
+      "A",
+      "B",
+      "AB",
+      "O"
+    ],
+    "correct": 3,
+    "solution": "ब्लड ग्रुप O (विशेष रूप से O-) में कोई एंटीजन नहीं होता, इसलिए यह सभी को दिया जा सकता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "बिजली के बल्ब का फिलामेंट (Tungsten Wire) किस धातु का बना होता है?",
+    "options": [
+      "तांबा",
+      "टंगस्टन",
+      "नाइक्रोम",
+      "लोहा"
+    ],
+    "correct": 1,
+    "solution": "टंगस्टन (W) का गलनांक (Melting Point ~3422°C) बहुत उच्च होता है, इसलिए बल्ब का तंतु टंगस्टन से बनाया जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "लोहे पर जंग लगना (Rusting of Iron) किस प्रकार का परिवर्तन है?",
+    "options": [
+      "भौतिक परिवर्तन",
+      "रासायनिक परिवर्तन",
+      "जैविक परिवर्तन",
+      "कोई नहीं"
+    ],
+    "correct": 1,
+    "solution": "लोहे पर नमी और ऑक्सीजन की क्रिया से फेरिक ऑक्साइड बनता है, जो एक अपरिवर्तनीय रासायनिक परिवर्तन है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "गाड़ियों के साइड मिरर (Rear View Mirror) में किस प्रकार का दर्पण उपयोग होता है?",
+    "options": [
+      "अवतल दर्पण",
+      "उत्तल दर्पण (Convex Mirror)",
+      "समतल दर्पण",
+      "लेंस"
+    ],
+    "correct": 1,
+    "solution": "उत्तल दर्पण हमेशा सीधा और छोटा प्रतिबिंब बनाता है तथा इसका दृष्टि क्षेत्र बहुत विस्तृत होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "शुद्ध जल का pH मान कितना होता है?",
+    "options": [
+      "0",
+      "7 (उदासीन)",
+      "14",
+      "5.6"
+    ],
+    "correct": 1,
+    "solution": "शुद्ध जल का pH मान 7 होता है जो पूर्णतः उदासीन (Neutral) माना जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "पौधों में हरा रंग किस वर्णक (Pigment) के कारण होता है?",
+    "options": [
+      "हीमोग्लोबिन",
+      "कैरोटीन",
+      "क्लोरोफिल (पर्णहरित)",
+      "जैंथोफिल"
+    ],
+    "correct": 2,
+    "solution": "क्लोरोफिल के कारण पौधों की पत्तियां हरी होती हैं। इसमें मैग्नीशियम (Mg) धातु पाई जाती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "मानव शरीर की सबसे बड़ी हड्डी कौन सी है?",
+    "options": [
+      "स्टेप्स (कान)",
+      "फीमर (जांघ)",
+      "टिबिया",
+      "ह्यूमरस"
+    ],
+    "correct": 1,
+    "solution": "फीमर (जांघ की हड्डी) मानव शरीर की सबसे लंबी और मजबूत हड्डी होती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "आकाश का नीला रंग प्रकाश की किस घटना के कारण दिखाई देता है?",
+    "options": [
+      "परावर्तन",
+      "अपवर्तन",
+      "प्रकीर्णन (Scattering)",
+      "ध्रुवण"
+    ],
+    "correct": 2,
+    "solution": "रैले के नियमानुसार कम तरंगदैर्ध्य (नीले प्रकाश) का वायुमंडल के कणों द्वारा सर्वाधिक प्रकीर्णन होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "हंसाने वाली गैस (Laughing Gas) का रासायनिक नाम क्या है?",
+    "options": [
+      "नाइट्रिक ऑक्साइड",
+      "नाइट्रस ऑक्साइड (N2O)",
+      "सल्फर डाइऑक्साइड",
+      "कार्बन मोनोऑक्साइड"
+    ],
+    "correct": 1,
+    "solution": "नाइट्रस ऑक्साइड (N2O) को सूंघने पर उत्तेजना और हंसी आती है, इसे लाफिंग गैस कहा जाता है।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि किसी संख्या का 20% मान 80 है, तो वह संख्या ज्ञात कीजिए?",
+    "options": [
+      "200",
+      "400",
+      "300",
+      "500"
+    ],
+    "correct": 1,
+    "solution": "माना संख्या x है। x * 20/100 = 80 => x = 80 * 5 = 400."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक रेलगाड़ी 72 किमी/घंटा की गति से चल रही है। उसकी चाल मीटर/सेकंड में क्या होगी?",
+    "options": [
+      "15 m/s",
+      "20 m/s",
+      "25 m/s",
+      "30 m/s"
+    ],
+    "correct": 1,
+    "solution": "किमी/घंटा को मी/सेकंड में बदलने के लिए 5/18 से गुणा करते हैं: 72 * (5/18) = 4 * 5 = 20 m/s."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "₹5000 की राशि पर 10% वार्षिक दर से 2 वर्ष का साधारण ब्याज (SI) कितना होगा?",
+    "options": [
+      "₹500",
+      "₹800",
+      "₹1000",
+      "₹1200"
+    ],
+    "correct": 2,
+    "solution": "SI = (P * R * T)/100 = (5000 * 10 * 2)/100 = ₹1,000."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक त्रिभुज के तीनों कोणों का अनुपात 2 : 3 : 5 है। सबसे बड़ा कोण ज्ञात करें:",
+    "options": [
+      "36°",
+      "54°",
+      "90°",
+      "100°"
+    ],
+    "correct": 2,
+    "solution": "त्रिभुज के तीनों कोणों का योग 180° होता है। 2x + 3x + 5x = 10x = 180° => x = 18°। सबसे बड़ा कोण = 5 * 18° = 90°."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "12, 18 और 24 का महत्तम समापवर्तक (HCF) क्या होगा?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "12"
+    ],
+    "correct": 2,
+    "solution": "12 = 6x2, 18 = 6x3, 24 = 6x4. सबसे बड़ा उभयनिष्ठ गुणनखंड (HCF) = 6."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक वस्तु को ₹450 में बेचने पर 10% की हानि होती है। उसका क्रय मूल्य (Cost Price) क्या था?",
+    "options": [
+      "₹480",
+      "₹500",
+      "₹520",
+      "₹550"
+    ],
+    "correct": 1,
+    "solution": "SP = CP * (90/100) => 450 = CP * 0.9 => CP = 450 / 0.9 = ₹500."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "प्रथम 5 अभाज्य संख्याओं (Prime Numbers) का औसत ज्ञात कीजिए:",
+    "options": [
+      "5.2",
+      "5.6",
+      "6.2",
+      "7.0"
+    ],
+    "correct": 1,
+    "solution": "प्रथम 5 अभाज्य संख्याएँ: 2, 3, 5, 7, 11. योग = 28. औसत = 28 / 5 = 5.6."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि A : B = 3 : 4 और B : C = 8 : 9 है, तो A : C का मान क्या होगा?",
+    "options": [
+      "1 : 2",
+      "2 : 3",
+      "3 : 5",
+      "4 : 5"
+    ],
+    "correct": 1,
+    "solution": "A/C = (A/B) * (B/C) = (3/4) * (8/9) = 2/3 => 2 : 3."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक आयताकार मैदान की लंबाई 20 मी और चौड़ाई 15 मी है। उसका क्षेत्रफल क्या होगा?",
+    "options": [
+      "300 वर्ग मी",
+      "350 वर्ग मी",
+      "70 वर्ग मी",
+      "150 वर्ग मी"
+    ],
+    "correct": 0,
+    "solution": "आयत का क्षेत्रफल = लंबाई x चौड़ाई = 20 x 15 = 300 वर्ग मीटर।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि 15 व्यक्ति किसी काम को 20 दिनों में पूरा करते हैं, तो 10 व्यक्ति उसी काम को कितने दिनों में पूरा करेंगे?",
+    "options": [
+      "25 दिन",
+      "30 दिन",
+      "35 दिन",
+      "40 दिन"
+    ],
+    "correct": 1,
+    "solution": "M1 * D1 = M2 * D2 => 15 * 20 = 10 * D2 => 300 = 10 * D2 => D2 = 30 दिन।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "मान ज्ञात कीजिए: √144 + √81 - √25",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "20"
+    ],
+    "correct": 1,
+    "solution": "√144 = 12, √81 = 9, √25 = 5. => 12 + 9 - 5 = 21 - 5 = 16."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक वृत्त की त्रिज्या 7 सेमी है। उसकी परिधि (Circumference) ज्ञात करें (π = 22/7):",
+    "options": [
+      "22 सेमी",
+      "44 सेमी",
+      "88 सेमी",
+      "154 सेमी"
+    ],
+    "correct": 1,
+    "solution": "परिधि = 2 * π * r = 2 * (22/7) * 7 = 44 सेमी।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि x + y = 15 और x - y = 5 है, तो x का मान क्या होगा?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "correct": 1,
+    "solution": "दोनों समीकरणों को जोड़ने पर: 2x = 20 => x = 10."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "₹1200 की वस्तु पर 20% की छूट (Discount) देने के बाद विक्रय मूल्य क्या होगा?",
+    "options": [
+      "₹960",
+      "₹1000",
+      "₹980",
+      "₹920"
+    ],
+    "correct": 0,
+    "solution": "छूट = 1200 * 20/100 = ₹240. विक्रय मूल्य = 1200 - 240 = ₹960."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "25 का 40% कितना होता है?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12"
+    ],
+    "correct": 2,
+    "solution": "25 * (40/100) = 1000 / 100 = 10."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "दिए गए विकल्पों में से विषम (Odd One Out) को चुनिए:",
+    "options": [
+      "दौड़ना",
+      "कूदना",
+      "सोना",
+      "चलना"
+    ],
+    "correct": 2,
+    "solution": "'सोना' एक निष्क्रिय अवस्था है जबकि दौड़ना, कूदना और चलना सभी शारीरिक गति से संबंधित क्रियाएं हैं।"
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "शृंखला को पूरा करें: 2, 5, 10, 17, 26, ?",
+    "options": [
+      "35",
+      "37",
+      "39",
+      "41"
+    ],
+    "correct": 1,
+    "solution": "पैटर्न: 1²+1=2, 2²+1=5, 3²+1=10, 4²+1=17, 5²+1=26, 6²+1=37."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "यदि किसी सांकेतिक भाषा में 'CAT' को '3120' लिखा जाता है, तो 'DOG' को क्या लिखा जाएगा?",
+    "options": [
+      "4157",
+      "4147",
+      "3157",
+      "4167"
+    ],
+    "correct": 0,
+    "solution": "अक्षरों के वर्णमाला क्रमांक: D = 4, O = 15, G = 7 => 4157."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "एक आदमी पूर्व की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 4 किमी चलता है। अब वह किस दिशा में आगे बढ़ रहा है?",
+    "options": [
+      "उत्तर",
+      "दक्षिण",
+      "पूर्व",
+      "पश्चिम"
+    ],
+    "correct": 1,
+    "solution": "पूर्व की ओर चलते हुए दाएँ मुड़ने पर व्यक्ति का मुख 'दक्षिण' (South) दिशा की ओर हो जाता है।"
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "A, B का भाई है। C, A की माता है। तो B का C से क्या संबंध है?",
+    "options": [
+      "पुत्र या पुत्री",
+      "भाई",
+      "पिता",
+      "चाचा"
+    ],
+    "correct": 0,
+    "solution": "चूँकि C, A की माता है और A, B का भाई है, इसलिए C, B की भी माता होगी। अतः B, C का पुत्र या पुत्री है।"
+  }
+],
+  "2": [
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का सबसे बड़ा राज्य (क्षेत्रफल की दृष्टि से) कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "मध्य प्रदेश",
+      "राजस्थान",
+      "महाराष्ट्र"
+    ],
+    "correct": 2,
+    "solution": "राजस्थान (3,42,239 वर्ग किमी) भारत का क्षेत्रफल की दृष्टि से सबसे बड़ा राज्य है, जबकि गोवा सबसे छोटा राज्य है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारतीय सेना (Indian Army) का सर्वोच्च कमांडर कौन होता है?",
+    "options": [
+      "चीफ ऑफ डिफेंस स्टाफ (CDS)",
+      "थल सेनाध्यक्ष",
+      "भारत का प्रधानमंत्री",
+      "भारत का राष्ट्रपति"
+    ],
+    "correct": 3,
+    "solution": "भारतीय संविधान के अनुच्छेद 53(2) के अनुसार भारत का राष्ट्रपति तीनों सेनाओं (थल, नौ एवं वायुसेना) का सर्वोच्च सेनापति होता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का राष्ट्रीय खेल दिवस (National Sports Day) कब मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "29 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर"
+    ],
+    "correct": 1,
+    "solution": "हॉकी के जादूगर मेजर ध्यानचंद के जन्मदिवस के उपलक्ष्य में हर वर्ष 29 अगस्त को राष्ट्रीय खेल दिवस मनाया जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "सूर्य मंदिर (Black Pagoda) भारत के किस राज्य में स्थित है?",
+    "options": [
+      "ओडिशा (कोणार्क)",
+      "तमिलनाडु",
+      "गुजरात",
+      "मध्य प्रदेश"
+    ],
+    "correct": 0,
+    "solution": "कोणार्क का प्रसिद्ध सूर्य मंदिर ओडिशा में स्थित है। इसे गंग वंश के राजा नरसिंहदेव प्रथम ने 13वीं शताब्दी में बनवाया था।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "पानीपत का तीसरा युद्ध (Third Battle of Panipat) किस वर्ष लड़ा गया था?",
+    "options": [
+      "1526",
+      "1556",
+      "1761",
+      "1764"
+    ],
+    "correct": 2,
+    "solution": "पानीपत का तीसरा युद्ध 14 जनवरी 1761 को मराठा सेनापति सदाशिवराव भाऊ और अहमद शाह अब्दाली (अफगान) के बीच हुआ था।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत में 'लौह पुरुष' (Iron Man of India) के नाम से किन्हें जाना जाता है?",
+    "options": [
+      "सुभाष चंद्र बोस",
+      "सरदार वल्लभभाई पटेल",
+      "भगत सिंह",
+      "लाल बहादुर शास्त्री"
+    ],
+    "correct": 1,
+    "solution": "सरदार वल्लभभाई पटेल ने 562 से अधिक देशी रियासतों का भारत में सफल एकीकरण किया, इसलिए उन्हें लौह पुरुष कहा जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "विश्व की सबसे ऊंची पर्वत चोटी 'माउंट एवरेस्ट' किस देश में स्थित है?",
+    "options": [
+      "भारत",
+      "नेपाल",
+      "चीन (तिब्बत)",
+      "भूटान"
+    ],
+    "correct": 1,
+    "solution": "माउंट एवरेस्ट (ऊंचाई 8848.86 मीटर) नेपाल में स्थित है, जहां इसे स्थानीय भाषा में 'सागरमाथा' कहा जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "कथकली (Kathakali) किस भारतीय राज्य का प्रसिद्ध शास्त्रीय नृत्य है?",
+    "options": [
+      "केरल",
+      "तमिलनाडु",
+      "आंध्र प्रदेश",
+      "असम"
+    ],
+    "correct": 0,
+    "solution": "कथकली केरल का प्रसिद्ध शास्त्रीय नृत्य है जिसमें कलाकार चेहरे पर विशेष मुखौटा और भाव-भंगिमाओं का प्रदर्शन करते हैं।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "जलियांवाला बाग नरसंहार (1919) किस शहर में हुआ था?",
+    "options": [
+      "लाहौर",
+      "अमृतसर",
+      "जालंधर",
+      "लुधियाना"
+    ],
+    "correct": 1,
+    "solution": "13 अप्रैल 1919 को बैसाखी के दिन अमृतसर के जलियांवाला बाग में जनरल डायर ने निहत्थी सभा पर गोलियां चलवाई थीं।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "स्वतंत्र भारत के प्रथम थल सेनाध्यक्ष (Commander-in-Chief) कौन थे?",
+    "options": [
+      "जनरल सैम मानेकशॉ",
+      "फील्ड मार्शल के.एम. करियप्पा",
+      "जनरल बिपिन रावत",
+      "जनरल मनोज पांडे"
+    ],
+    "correct": 1,
+    "solution": "फील्ड मार्शल के.एम. करियप्पा ने 15 जनवरी 1949 को कमान संभाली थी, इसी उपलक्ष्य में हर वर्ष 15 जनवरी को 'सेना दिवस' (Army Day) मनाया जाता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत का सबसे बड़ा नागरिक सम्मान कौन सा है?",
+    "options": [
+      "परमवीर चक्र",
+      "भारत रत्न",
+      "पद्म विभूषण",
+      "अशोक चक्र"
+    ],
+    "correct": 1,
+    "solution": "भारत रत्न देश का सर्वोच्च नागरिक पुरस्कार है। युद्धकाल में वीरता का सर्वोच्च सैन्य पदक 'परमवीर चक्र' है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "हीराकुंड बांध (Hirakud Dam) किस नदी पर निर्मित है?",
+    "options": [
+      "महानदी",
+      "गोदावरी",
+      "नर्मदा",
+      "कृष्णा"
+    ],
+    "correct": 0,
+    "solution": "हीराकुंड बांध ओडिशा में महानदी पर बना भारत का सबसे लंबा बांध है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारत के किस राज्य की तटरेखा (Coastline) सबसे लंबी है?",
+    "options": [
+      "महाराष्ट्र",
+      "गुजरात",
+      "आंध्र प्रदेश",
+      "तमिलनाडु"
+    ],
+    "correct": 1,
+    "solution": "गुजरात राज्य की समुद्री तटरेखा सबसे लंबी (लगभग 1,214 किमी) है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "भारतीय संविधान का 'अनुच्छेद 17' किससे संबंधित है?",
+    "options": [
+      "उपाधियों का अंत",
+      "अस्पृश्यता का उन्मूलन",
+      "विधि के समक्ष समता",
+      "वाक् स्वतंत्रता"
+    ],
+    "correct": 1,
+    "solution": "अनुच्छेद 17 अस्पृश्यता (Untouchability) को पूर्णतः समाप्त करता है और इसका किसी भी रूप में आचरण दंडनीय अपराध घोषित करता है।"
+  },
+  {
+    "subject": "General Knowledge",
+    "tabId": "tab-GK",
+    "q": "'करो या मरो' का प्रसिद्ध नारा महात्मा गांधी ने किस आंदोलन में दिया था?",
+    "options": [
+      "असहयोग आंदोलन",
+      "सविनय अवज्ञा आंदोलन",
+      "भारत छोड़ो आंदोलन (1942)",
+      "चंपारण सत्याग्रह"
+    ],
+    "correct": 2,
+    "solution": "8 अगस्त 1942 को मुंबई से भारत छोड़ो आंदोलन शुरू करते समय गांधीजी ने 'करो या मरो' (Do or Die) का मंत्र दिया था।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "मानव शरीर में रक्त का शुद्धिकरण (Purification of Blood) किस अंग में होता है?",
+    "options": [
+      "हृदय",
+      "फेफड़े",
+      "वृक्क (Kidney)",
+      "यकृत"
+    ],
+    "correct": 2,
+    "solution": "किडनी (गुर्दा) रक्त से अपशिष्ट और अतिरिक्त तरल को छानकर मूत्र के रूप में बाहर निकालती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "विटामिन C की कमी से कौन सा रोग होता है?",
+    "options": [
+      "रतौंधी",
+      "बेरी-बेरी",
+      "स्कर्वी",
+      "रिकेट्स"
+    ],
+    "correct": 2,
+    "solution": "विटामिन C (एस्कॉर्बिक एसिड) की कमी से स्कर्वी (मसूड़ों से खून आना) रोग होता है। यह खट्टे फलों में प्रचुर पाया जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "सामान्य जल (Water) का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "D2O",
+      "H2O2",
+      "CO2"
+    ],
+    "correct": 0,
+    "solution": "जल का रासायनिक सूत्र H2O है। भारी जल का सूत्र D2O (ड्यूटेरियम ऑक्साइड) होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "बल (Force) का SI मात्रक क्या होता है?",
+    "options": [
+      "जूल",
+      "पास्कल",
+      "न्यूटन (Newton)",
+      "वाट"
+    ],
+    "correct": 2,
+    "solution": "बल का SI मात्रक न्यूटन (N) होता है। F = m x a।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "वायुमंडल में सबसे अधिक मात्रा में कौन सी गैस पाई जाती है?",
+    "options": [
+      "ऑक्सीजन (~21%)",
+      "नाइट्रोजन (~78%)",
+      "कार्बन डाइऑक्साइड",
+      "आर्गन"
+    ],
+    "correct": 1,
+    "solution": "वायुमंडल में लगभग 78% नाइट्रोजन, 21% ऑक्सीजन और 0.03% कार्बन डाइऑक्साइड पाई जाती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "ध्वनि (Sound) की चाल किस माध्यम में सबसे अधिक होती है?",
+    "options": [
+      "ठोस (इस्पात/स्टील)",
+      "जल",
+      "हवा",
+      "निर्वात"
+    ],
+    "correct": 0,
+    "solution": "ध्वनि अनुदैर्ध्य यांत्रिक तरंग है। इसकी गति ठोस में सर्वाधिक (~5000 m/s) होती है और यह निर्वात में गमन नहीं कर सकती।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "सर्वदाता रक्त समूह (Universal Blood Donor) कौन सा है?",
+    "options": [
+      "A",
+      "B",
+      "AB",
+      "O"
+    ],
+    "correct": 3,
+    "solution": "ब्लड ग्रुप O (विशेष रूप से O-) में कोई एंटीजन नहीं होता, इसलिए यह सभी को दिया जा सकता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "बिजली के बल्ब का फिलामेंट (Tungsten Wire) किस धातु का बना होता है?",
+    "options": [
+      "तांबा",
+      "टंगस्टन",
+      "नाइक्रोम",
+      "लोहा"
+    ],
+    "correct": 1,
+    "solution": "टंगस्टन (W) का गलनांक (Melting Point ~3422°C) बहुत उच्च होता है, इसलिए बल्ब का तंतु टंगस्टन से बनाया जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "लोहे पर जंग लगना (Rusting of Iron) किस प्रकार का परिवर्तन है?",
+    "options": [
+      "भौतिक परिवर्तन",
+      "रासायनिक परिवर्तन",
+      "जैविक परिवर्तन",
+      "कोई नहीं"
+    ],
+    "correct": 1,
+    "solution": "लोहे पर नमी और ऑक्सीजन की क्रिया से फेरिक ऑक्साइड बनता है, जो एक अपरिवर्तनीय रासायनिक परिवर्तन है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "गाड़ियों के साइड मिरर (Rear View Mirror) में किस प्रकार का दर्पण उपयोग होता है?",
+    "options": [
+      "अवतल दर्पण",
+      "उत्तल दर्पण (Convex Mirror)",
+      "समतल दर्पण",
+      "लेंस"
+    ],
+    "correct": 1,
+    "solution": "उत्तल दर्पण हमेशा सीधा और छोटा प्रतिबिंब बनाता है तथा इसका दृष्टि क्षेत्र बहुत विस्तृत होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "शुद्ध जल का pH मान कितना होता है?",
+    "options": [
+      "0",
+      "7 (उदासीन)",
+      "14",
+      "5.6"
+    ],
+    "correct": 1,
+    "solution": "शुद्ध जल का pH मान 7 होता है जो पूर्णतः उदासीन (Neutral) माना जाता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "पौधों में हरा रंग किस वर्णक (Pigment) के कारण होता है?",
+    "options": [
+      "हीमोग्लोबिन",
+      "कैरोटीन",
+      "क्लोरोफिल (पर्णहरित)",
+      "जैंथोफिल"
+    ],
+    "correct": 2,
+    "solution": "क्लोरोफिल के कारण पौधों की पत्तियां हरी होती हैं। इसमें मैग्नीशियम (Mg) धातु पाई जाती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "मानव शरीर की सबसे बड़ी हड्डी कौन सी है?",
+    "options": [
+      "स्टेप्स (कान)",
+      "फीमर (जांघ)",
+      "टिबिया",
+      "ह्यूमरस"
+    ],
+    "correct": 1,
+    "solution": "फीमर (जांघ की हड्डी) मानव शरीर की सबसे लंबी और मजबूत हड्डी होती है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "आकाश का नीला रंग प्रकाश की किस घटना के कारण दिखाई देता है?",
+    "options": [
+      "परावर्तन",
+      "अपवर्तन",
+      "प्रकीर्णन (Scattering)",
+      "ध्रुवण"
+    ],
+    "correct": 2,
+    "solution": "रैले के नियमानुसार कम तरंगदैर्ध्य (नीले प्रकाश) का वायुमंडल के कणों द्वारा सर्वाधिक प्रकीर्णन होता है।"
+  },
+  {
+    "subject": "General Science",
+    "tabId": "tab-Science",
+    "q": "हंसाने वाली गैस (Laughing Gas) का रासायनिक नाम क्या है?",
+    "options": [
+      "नाइट्रिक ऑक्साइड",
+      "नाइट्रस ऑक्साइड (N2O)",
+      "सल्फर डाइऑक्साइड",
+      "कार्बन मोनोऑक्साइड"
+    ],
+    "correct": 1,
+    "solution": "नाइट्रस ऑक्साइड (N2O) को सूंघने पर उत्तेजना और हंसी आती है, इसे लाफिंग गैस कहा जाता है।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि किसी संख्या का 20% मान 80 है, तो वह संख्या ज्ञात कीजिए?",
+    "options": [
+      "200",
+      "400",
+      "300",
+      "500"
+    ],
+    "correct": 1,
+    "solution": "माना संख्या x है। x * 20/100 = 80 => x = 80 * 5 = 400."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक रेलगाड़ी 72 किमी/घंटा की गति से चल रही है। उसकी चाल मीटर/सेकंड में क्या होगी?",
+    "options": [
+      "15 m/s",
+      "20 m/s",
+      "25 m/s",
+      "30 m/s"
+    ],
+    "correct": 1,
+    "solution": "किमी/घंटा को मी/सेकंड में बदलने के लिए 5/18 से गुणा करते हैं: 72 * (5/18) = 4 * 5 = 20 m/s."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "₹5000 की राशि पर 10% वार्षिक दर से 2 वर्ष का साधारण ब्याज (SI) कितना होगा?",
+    "options": [
+      "₹500",
+      "₹800",
+      "₹1000",
+      "₹1200"
+    ],
+    "correct": 2,
+    "solution": "SI = (P * R * T)/100 = (5000 * 10 * 2)/100 = ₹1,000."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक त्रिभुज के तीनों कोणों का अनुपात 2 : 3 : 5 है। सबसे बड़ा कोण ज्ञात करें:",
+    "options": [
+      "36°",
+      "54°",
+      "90°",
+      "100°"
+    ],
+    "correct": 2,
+    "solution": "त्रिभुज के तीनों कोणों का योग 180° होता है। 2x + 3x + 5x = 10x = 180° => x = 18°। सबसे बड़ा कोण = 5 * 18° = 90°."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "12, 18 और 24 का महत्तम समापवर्तक (HCF) क्या होगा?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "12"
+    ],
+    "correct": 2,
+    "solution": "12 = 6x2, 18 = 6x3, 24 = 6x4. सबसे बड़ा उभयनिष्ठ गुणनखंड (HCF) = 6."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक वस्तु को ₹450 में बेचने पर 10% की हानि होती है। उसका क्रय मूल्य (Cost Price) क्या था?",
+    "options": [
+      "₹480",
+      "₹500",
+      "₹520",
+      "₹550"
+    ],
+    "correct": 1,
+    "solution": "SP = CP * (90/100) => 450 = CP * 0.9 => CP = 450 / 0.9 = ₹500."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "प्रथम 5 अभाज्य संख्याओं (Prime Numbers) का औसत ज्ञात कीजिए:",
+    "options": [
+      "5.2",
+      "5.6",
+      "6.2",
+      "7.0"
+    ],
+    "correct": 1,
+    "solution": "प्रथम 5 अभाज्य संख्याएँ: 2, 3, 5, 7, 11. योग = 28. औसत = 28 / 5 = 5.6."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि A : B = 3 : 4 और B : C = 8 : 9 है, तो A : C का मान क्या होगा?",
+    "options": [
+      "1 : 2",
+      "2 : 3",
+      "3 : 5",
+      "4 : 5"
+    ],
+    "correct": 1,
+    "solution": "A/C = (A/B) * (B/C) = (3/4) * (8/9) = 2/3 => 2 : 3."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक आयताकार मैदान की लंबाई 20 मी और चौड़ाई 15 मी है। उसका क्षेत्रफल क्या होगा?",
+    "options": [
+      "300 वर्ग मी",
+      "350 वर्ग मी",
+      "70 वर्ग मी",
+      "150 वर्ग मी"
+    ],
+    "correct": 0,
+    "solution": "आयत का क्षेत्रफल = लंबाई x चौड़ाई = 20 x 15 = 300 वर्ग मीटर।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि 15 व्यक्ति किसी काम को 20 दिनों में पूरा करते हैं, तो 10 व्यक्ति उसी काम को कितने दिनों में पूरा करेंगे?",
+    "options": [
+      "25 दिन",
+      "30 दिन",
+      "35 दिन",
+      "40 दिन"
+    ],
+    "correct": 1,
+    "solution": "M1 * D1 = M2 * D2 => 15 * 20 = 10 * D2 => 300 = 10 * D2 => D2 = 30 दिन।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "मान ज्ञात कीजिए: √144 + √81 - √25",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "20"
+    ],
+    "correct": 1,
+    "solution": "√144 = 12, √81 = 9, √25 = 5. => 12 + 9 - 5 = 21 - 5 = 16."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "एक वृत्त की त्रिज्या 7 सेमी है। उसकी परिधि (Circumference) ज्ञात करें (π = 22/7):",
+    "options": [
+      "22 सेमी",
+      "44 सेमी",
+      "88 सेमी",
+      "154 सेमी"
+    ],
+    "correct": 1,
+    "solution": "परिधि = 2 * π * r = 2 * (22/7) * 7 = 44 सेमी।"
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "यदि x + y = 15 और x - y = 5 है, तो x का मान क्या होगा?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "correct": 1,
+    "solution": "दोनों समीकरणों को जोड़ने पर: 2x = 20 => x = 10."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "₹1200 की वस्तु पर 20% की छूट (Discount) देने के बाद विक्रय मूल्य क्या होगा?",
+    "options": [
+      "₹960",
+      "₹1000",
+      "₹980",
+      "₹920"
+    ],
+    "correct": 0,
+    "solution": "छूट = 1200 * 20/100 = ₹240. विक्रय मूल्य = 1200 - 240 = ₹960."
+  },
+  {
+    "subject": "Mathematics",
+    "tabId": "tab-Maths",
+    "q": "25 का 40% कितना होता है?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12"
+    ],
+    "correct": 2,
+    "solution": "25 * (40/100) = 1000 / 100 = 10."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "दिए गए विकल्पों में से विषम (Odd One Out) को चुनिए:",
+    "options": [
+      "दौड़ना",
+      "कूदना",
+      "सोना",
+      "चलना"
+    ],
+    "correct": 2,
+    "solution": "'सोना' एक निष्क्रिय अवस्था है जबकि दौड़ना, कूदना और चलना सभी शारीरिक गति से संबंधित क्रियाएं हैं।"
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "शृंखला को पूरा करें: 2, 5, 10, 17, 26, ?",
+    "options": [
+      "35",
+      "37",
+      "39",
+      "41"
+    ],
+    "correct": 1,
+    "solution": "पैटर्न: 1²+1=2, 2²+1=5, 3²+1=10, 4²+1=17, 5²+1=26, 6²+1=37."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "यदि किसी सांकेतिक भाषा में 'CAT' को '3120' लिखा जाता है, तो 'DOG' को क्या लिखा जाएगा?",
+    "options": [
+      "4157",
+      "4147",
+      "3157",
+      "4167"
+    ],
+    "correct": 0,
+    "solution": "अक्षरों के वर्णमाला क्रमांक: D = 4, O = 15, G = 7 => 4157."
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "एक आदमी पूर्व की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 4 किमी चलता है। अब वह किस दिशा में आगे बढ़ रहा है?",
+    "options": [
+      "उत्तर",
+      "दक्षिण",
+      "पूर्व",
+      "पश्चिम"
+    ],
+    "correct": 1,
+    "solution": "पूर्व की ओर चलते हुए दाएँ मुड़ने पर व्यक्ति का मुख 'दक्षिण' (South) दिशा की ओर हो जाता है।"
+  },
+  {
+    "subject": "Logical Reasoning",
+    "tabId": "tab-Logic",
+    "q": "A, B का भाई है। C, A की माता है। तो B का C से क्या संबंध है?",
+    "options": [
+      "पुत्र या पुत्री",
+      "भाई",
+      "पिता",
+      "चाचा"
+    ],
+    "correct": 0,
+    "solution": "चूँकि C, A की माता है और A, B का भाई है, इसलिए C, B की भी माता होगी। अतः B, C का पुत्र या पुत्री है।"
+  }
+]
+};
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const testNumber = urlParams.get('test') || '1';
+
+    let questions = allTestDatabase[testNumber] || allTestDatabase["1"];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let reviewList = {};
+    let timeInSeconds = 3600;
+    let timerInterval = null;
+
+    const sectionsList = ["General Knowledge","General Science","Mathematics","Logical Reasoning"];
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        if (timeInSeconds <= 0) {
+          clearInterval(timerInterval);
+          executeFinalSubmit();
+          return;
+        }
+        timeInSeconds--;
+        const m = Math.floor(timeInSeconds / 60).toString().padStart(2, '0');
+        const s = (timeInSeconds % 60).toString().padStart(2, '0');
+        const el = document.getElementById('cbtTimer');
+        if (el) {
+          el.innerText = m + ":" + s;
+          if (timeInSeconds < 300) el.classList.add('warning');
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const q = questions[currentIndex];
+      if (!q) return;
+
+      document.getElementById('cbtQNum').innerText = (currentIndex + 1) + " of " + questions.length;
+      document.getElementById('cbtQSecName').innerText = q.subject;
+      document.getElementById('cbtQText').innerText = q.q;
+
+      let optsHtml = '';
+      const labels = ['A', 'B', 'C', 'D'];
+      q.options.forEach((opt, idx) => {
+        const isSelected = userAnswers[currentIndex] === idx ? 'selected' : '';
+        const isChecked = userAnswers[currentIndex] === idx ? 'checked' : '';
+        optsHtml += `
+          <label class="cbt-opt-card ${isSelected}" onclick="pickOption(${idx})">
+            <input type="radio" name="cbtOption" value="${idx}" ${isChecked}>
+            <span class="cbt-opt-badge">${labels[idx]}</span>
+            <span class="cbt-opt-text">${opt}</span>
+          </label>
+        `;
+      });
+      document.getElementById('cbtOptionsList').innerHTML = optsHtml;
+
+      // Review button state
+      const btnRev = document.getElementById('btnReview');
+      if (btnRev) {
+        if (reviewList[currentIndex]) {
+          btnRev.classList.add('marked');
+          btnRev.innerText = "🔖 Marked";
+        } else {
+          btnRev.classList.remove('marked');
+          btnRev.innerText = "🔖 Mark for Review";
+        }
+      }
+
+      // Prev / Next button state
+      document.getElementById('btnPrev').style.visibility = (currentIndex === 0) ? 'hidden' : 'visible';
+      document.getElementById('btnSaveNext').innerText = (currentIndex === questions.length - 1) ? 'Save & Review ➔' : 'Save & Next ►';
+
+      // Highlight active tab
+      document.querySelectorAll('.cbt-tab').forEach(t => t.classList.remove('active'));
+      const activeTabEl = document.getElementById(q.tabId);
+      if (activeTabEl) activeTabEl.classList.add('active');
+
+      renderPalette();
+    }
+
+    function pickOption(idx) {
+      userAnswers[currentIndex] = idx;
+      renderQuestion();
+    }
+
+    function clearCurrentResponse() {
+      delete userAnswers[currentIndex];
+      renderQuestion();
+    }
+
+    function toggleReview() {
+      if (reviewList[currentIndex]) {
+        delete reviewList[currentIndex];
+      } else {
+        reviewList[currentIndex] = true;
+      }
+      renderQuestion();
+    }
+
+    function navigatePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function saveAndProceed() {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      } else {
+        promptSubmitTest();
+      }
+    }
+
+    function goToSection(subject) {
+      const idx = questions.findIndex(q => q.subject === subject);
+      if (idx !== -1) {
+        currentIndex = idx;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQuestion(idx) {
+      currentIndex = idx;
+      renderQuestion();
+      closePaletteMobile();
+    }
+
+    function togglePalette() {
+      const sb = document.getElementById('cbtSidebar');
+      const bd = document.getElementById('cbtBackdrop');
+      if (sb) sb.classList.toggle('open');
+      if (bd) bd.classList.toggle('open');
+    }
+
+    function closePaletteMobile() {
+      const sb = document.getElementById('cbtSidebar');
+      const bd = document.getElementById('cbtBackdrop');
+      if (sb) sb.classList.remove('open');
+      if (bd) bd.classList.remove('open');
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('cbtPaletteScroll');
+      if (!container) return;
+
+      let html = '';
+      sectionsList.forEach(sub => {
+        const subQuestions = [];
+        questions.forEach((q, i) => {
+          if (q.subject === sub) subQuestions.push({ q, i });
+        });
+
+        html += `
+          <div class="cbt-palette-sec">
+            <div class="cbt-palette-sec-title">
+              <span>${sub}</span>
+              <span style="color:#64748b; font-weight:normal;">${subQuestions.length} Qs</span>
+            </div>
+            <div class="cbt-palette-grid">
+        `;
+
+        subQuestions.forEach(item => {
+          let cls = 'cbt-q-bubble';
+          if (userAnswers[item.i] !== undefined) cls += ' ans';
+          if (reviewList[item.i]) cls += ' review';
+          if (item.i === currentIndex) cls += ' current';
+          html += `<button type="button" class="${cls}" onclick="jumpToQuestion(${item.i})">${item.i + 1}</button>`;
+        });
+
+        html += `</div></div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    function promptSubmitTest() {
+      const total = questions.length;
+      let ans = 0;
+      let rev = 0;
+      questions.forEach((q, i) => {
+        if (userAnswers[i] !== undefined) ans++;
+        if (reviewList[i]) rev++;
+      });
+      const unans = total - ans;
+
+      document.getElementById('sumTotal').innerText = total;
+      document.getElementById('sumAns').innerText = ans;
+      document.getElementById('sumReview').innerText = rev;
+      document.getElementById('sumUnans').innerText = unans;
+
+      document.getElementById('cbtSubmitModal').classList.add('active');
+    }
+
+    function closeSubmitModal() {
+      document.getElementById('cbtSubmitModal').classList.remove('active');
+    }
+
+    function executeFinalSubmit() {
+      clearInterval(timerInterval);
+
+      let resultData = {
+        testId: testNumber,
+        total: questions.length,
+        score: 0,
+        correct: 0,
+        incorrect: 0,
+        unattempted: 0,
+        sections: {},
+        questionsData: questions,
+        answersData: userAnswers
+      };
+
+      sectionsList.forEach(s => {
+        resultData.sections[s] = { c: 0, i: 0, u: 0, s: 0 };
+      });
+
+      const posMarks = 2;
+      const negMarks = 0.5;
+
+      questions.forEach((q, index) => {
+        let ans = userAnswers[index];
+        if (ans === undefined) {
+          resultData.unattempted++;
+          if (resultData.sections[q.subject]) resultData.sections[q.subject].u++;
+        } else if (ans === q.correct) {
+          resultData.correct++;
+          resultData.score += posMarks;
+          if (resultData.sections[q.subject]) {
+            resultData.sections[q.subject].c++;
+            resultData.sections[q.subject].s += posMarks;
+          }
+        } else {
+          resultData.incorrect++;
+          resultData.score -= negMarks;
+          if (resultData.sections[q.subject]) {
+            resultData.sections[q.subject].i++;
+            resultData.sections[q.subject].s -= negMarks;
+          }
+        }
+      });
+
+      const totalAttempted = resultData.correct + resultData.incorrect;
+      resultData.accuracy = totalAttempted > 0 ? ((resultData.correct / totalAttempted) * 100).toFixed(2) : 0;
+      resultData.score = Number(resultData.score.toFixed(2));
+
+      localStorage.setItem("myAgniveerMockTestResult_" + testNumber, JSON.stringify(resultData));
+      window.location.replace("agniveer-mock-result.html?test=" + testNumber);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQuestion();
+      startTimer();
+    });
+  </script>
 </body>
 </html>
