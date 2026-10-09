@@ -78,11 +78,43 @@
     }
 
     /* Mock Cards Grid */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .job-page-container {
+      width: 100% !important;
+      max-width: 1200px !important;
+      box-sizing: border-box !important;
+      padding: 0 14px !important;
+      overflow-x: hidden !important;
+    }
     .mock-cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 18px;
       margin-bottom: 35px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .exam-matrix-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      box-sizing: border-box !important;
+    }
+    .exam-matrix-table {
+      min-width: 580px !important;
+    }
+    @media (max-width: 768px) {
+      .mock-cards-grid { grid-template-columns: 1fr !important; }
+      .test-stats-strip { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      .test-hero { padding: 22px 14px !important; }
+      .test-hero h1 { font-size: 1.45rem !important; }
+      .instructions-list { grid-template-columns: 1fr !important; }
+      .dir-grid { grid-template-columns: 1fr !important; }
     }
     .mock-card {
       background: #ffffff;
@@ -378,10 +410,28 @@
     }
 
     @media (max-width: 767px) {
-      .test-hero { padding: 24px 16px; border-radius: 12px; }
-      .test-hero h1 { font-size: 1.6rem; }
-      .mock-cards-grid { grid-template-columns: 1fr; }
-      .mock-specs-grid { grid-template-columns: repeat(3, 1fr); font-size: 12px; }
+      .test-hero { padding: 20px 14px; border-radius: 12px; }
+      .test-hero h1 { font-size: 1.45rem; }
+      .test-stats-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .stat-pill { padding: 8px 6px; }
+      .stat-pill strong { font-size: 15px; }
+      .stat-pill span { font-size: 10px; }
+      .mock-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+      .mock-card { padding: 16px; border-radius: 12px; }
+      .mock-title { font-size: 1.15rem; }
+      .mock-specs-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+      .spec-item { padding: 7px 4px; }
+      .spec-item span { font-size: 9.5px; }
+      .spec-item strong { font-size: 12.5px; }
+      .mock-actions { flex-direction: column; gap: 8px; }
+      .btn-attempt-main { width: 100%; box-sizing: border-box; }
+      .btn-mock-details { text-align: center; }
+      .exam-matrix-wrap { padding: 14px 10px; border-radius: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; box-sizing: border-box; }
+      .exam-matrix-table { font-size: 12px; min-width: 540px; }
+      .exam-matrix-table th, .exam-matrix-table td { padding: 8px 10px; }
+      .instructions-card { padding: 16px; border-radius: 10px; }
+      .portal-dir-box { padding: 16px; border-radius: 10px; }
+      .dir-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>

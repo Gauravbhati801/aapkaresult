@@ -25,7 +25,15 @@
     .dash-quick-link { background: rgba(255,255,255,0.12); color: #93c5fd; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; }
     .dash-quick-link:hover { background: rgba(255,255,255,0.2); color: #fff; }
 
-    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 30px; }
+    html, body { overflow-x: hidden !important; width: 100% !important; max-width: 100% !important; }
+    .job-page-container { width: 100% !important; max-width: 1100px !important; box-sizing: border-box !important; padding: 0 14px !important; overflow-x: hidden !important; }
+    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-bottom: 30px; width: 100%; box-sizing: border-box; }
+    @media (max-width: 768px) {
+      .dash-grid { grid-template-columns: 1fr !important; }
+      .dash-hero { padding: 20px 14px !important; border-radius: 10px !important; }
+      .dash-hero h1 { font-size: 1.4rem !important; }
+      .dash-specs-row { font-size: 11px !important; gap: 6px !important; }
+    }
     .dash-test-card {
       background: #fff;
       border: 1px solid #e2e8f0;

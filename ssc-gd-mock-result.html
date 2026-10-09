@@ -301,10 +301,18 @@
     }
 
     @media (max-width: 767px) {
-      .score-hero { padding: 24px 16px; border-radius: 12px; }
-      .score-hero h1 { font-size: 1.5rem; }
-      .score-main-display { font-size: 2.4rem; }
-      .stats-tiles-grid { grid-template-columns: repeat(2, 1fr); }
+      .result-container { padding: 0 10px; }
+      .score-hero { padding: 20px 14px; border-radius: 12px; }
+      .score-hero h1 { font-size: 1.4rem; }
+      .score-main-display { font-size: 2.3rem; }
+      .stats-tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .stat-tile { padding: 10px 8px; }
+      .stat-tile-val { font-size: 1.35rem; }
+      .result-actions-strip { flex-direction: column; gap: 8px; }
+      .btn-act { width: 100%; min-width: auto; box-sizing: border-box; }
+      .sec-card, .sol-card { padding: 16px 12px; border-radius: 10px; }
+      .sol-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .sol-item { padding: 14px 12px; border-radius: 10px; }
     }
   </style>
 </head>

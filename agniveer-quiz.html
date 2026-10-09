@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Indian Army Agniveer GD Online CBT Mock Test 2026 - AapkaResult.in</title>
   <meta name="description" content="Indian Army Agniveer GD online CEE mock test with countdown timer, negative marking, bilingual questions and scorecard.">
   <link rel="canonical" href="https://aapkaresult.in/agniveer-quiz.html">
@@ -21,20 +21,26 @@
       --cbt-text: #0f172a;
       --cbt-text-muted: #64748b;
     }
-    * { box-sizing: border-box; }
-    body {
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background-color: #f8fafc;
       color: var(--cbt-text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      height: 100vh;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
-    /* CBT Header */
+    /* CBT Desktop Header */
     .cbt-header {
       background: #0f172a;
       color: #ffffff;
@@ -44,36 +50,49 @@
       align-items: center;
       border-bottom: 2px solid #1e293b;
       flex-shrink: 0;
+      height: 56px;
     }
     .cbt-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      min-width: 0;
     }
     .cbt-brand img {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .cbt-brand-text {
+      min-width: 0;
     }
     .cbt-brand-title {
       font-size: 15px;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .cbt-brand-sub {
       font-size: 11px;
       color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .cbt-timer-box {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: #1e293b;
       border: 1px solid #334155;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
+      flex-shrink: 0;
     }
     .cbt-timer-icon {
       font-size: 14px;
@@ -86,11 +105,11 @@
       font-weight: 600;
     }
     .cbt-timer-val {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
       font-family: monospace, monospace;
       color: #38bdf8;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
     .cbt-timer-val.warning {
       color: #ef4444;
@@ -102,11 +121,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 0;
     }
     .btn-cbt-palette-toggle {
       display: none;
       background: #1e293b;
-      color: #fff;
+      color: #ffffff;
       border: 1px solid #475569;
       border-radius: 6px;
       padding: 6px 12px;
@@ -116,7 +136,7 @@
     }
     .btn-cbt-submit {
       background: #dc2626;
-      color: #fff;
+      color: #ffffff;
       border: none;
       border-radius: 6px;
       padding: 8px 16px;
@@ -134,13 +154,15 @@
       display: flex;
       overflow-x: auto;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
       flex-shrink: 0;
       padding: 0 16px;
+      height: 44px;
     }
     .cbt-tabs-bar::-webkit-scrollbar { display: none; }
     .cbt-tab {
-      padding: 12px 18px;
-      font-size: 13.5px;
+      padding: 0 16px;
+      font-size: 13px;
       font-weight: 600;
       color: #64748b;
       cursor: pointer;
@@ -150,6 +172,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      user-select: none;
     }
     .cbt-tab:hover { color: #0f172a; }
     .cbt-tab.active {
@@ -185,10 +208,11 @@
       flex-direction: column;
       overflow-y: auto;
       background: #f8fafc;
+      min-width: 0;
     }
     .cbt-question-header {
       background: #ffffff;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-bottom: 1px solid #e2e8f0;
       display: flex;
       justify-content: space-between;
@@ -196,7 +220,7 @@
       flex-shrink: 0;
     }
     .cbt-q-number-badge {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #0f172a;
       display: flex;
@@ -207,7 +231,7 @@
       font-size: 12px;
       background: #f1f5f9;
       color: #475569;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 4px;
       font-weight: 600;
     }
@@ -220,32 +244,35 @@
 
     /* Question content */
     .cbt-question-body {
-      padding: 24px;
+      padding: 20px;
       flex: 1;
       overflow-y: auto;
-      max-width: 920px;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
     }
     .cbt-q-text {
-      font-size: 16.5px;
+      font-size: 16px;
       font-weight: 600;
-      line-height: 1.65;
+      line-height: 1.6;
       color: #0f172a;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       white-space: pre-line;
+      word-break: break-word;
     }
     .cbt-options-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .cbt-opt-card {
       background: #ffffff;
       border: 1.5px solid #e2e8f0;
       border-radius: 10px;
-      padding: 14px 18px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       cursor: pointer;
       transition: all 0.15s ease;
       user-select: none;
@@ -262,8 +289,8 @@
     }
     .cbt-opt-card input { display: none; }
     .cbt-opt-badge {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
@@ -271,7 +298,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       flex-shrink: 0;
       transition: all 0.15s;
@@ -282,7 +309,7 @@
       color: #ffffff;
     }
     .cbt-opt-text {
-      font-size: 15px;
+      font-size: 14.5px;
       color: #1e293b;
       line-height: 1.5;
       font-weight: 500;
@@ -296,27 +323,31 @@
     .cbt-bottom-bar {
       background: #ffffff;
       border-top: 1px solid #e2e8f0;
-      padding: 12px 24px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-shrink: 0;
       gap: 10px;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.04);
+      height: 56px;
     }
-    .cbt-actions-left { display: flex; gap: 8px; flex-wrap: wrap; }
-    .cbt-actions-right { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cbt-actions-left { display: flex; gap: 8px; }
+    .cbt-actions-right { display: flex; gap: 8px; }
     .cbt-btn {
-      padding: 10px 16px;
+      padding: 9px 15px;
       border-radius: 7px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       border: none;
       transition: all 0.15s;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
+      white-space: nowrap;
+      user-select: none;
     }
     .btn-review {
       background: #f5f3ff;
@@ -324,7 +355,7 @@
       border: 1px solid #ddd6fe;
     }
     .btn-review:hover { background: #ede9fe; }
-    .btn-review.marked { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+    .btn-review.marked { background: #7c3aed; color: #ffffff; border-color: #7c3aed; }
     .btn-clear {
       background: #ffffff;
       color: #475569;
@@ -353,7 +384,7 @@
       flex-shrink: 0;
     }
     .cbt-palette-header {
-      padding: 14px 16px;
+      padding: 12px 16px;
       border-bottom: 1px solid #e2e8f0;
       font-size: 14px;
       font-weight: 700;
@@ -367,23 +398,25 @@
       display: none;
       background: none;
       border: none;
-      font-size: 18px;
+      font-size: 20px;
       cursor: pointer;
       color: #64748b;
+      line-height: 1;
+      padding: 4px;
     }
 
     .cbt-legend-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      padding: 12px 14px;
+      padding: 10px 14px;
       background: #ffffff;
       border-bottom: 1px solid #f1f5f9;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #475569;
     }
     .cbt-legend-item { display: flex; align-items: center; gap: 6px; }
-    .cbt-legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .cbt-legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
     .dot-ans { background: #16a34a; }
     .dot-unans { background: #ffffff; border: 1.5px solid #cbd5e1; }
     .dot-review { background: #7c3aed; }
@@ -395,18 +428,18 @@
       flex: 1;
     }
     .cbt-palette-sec-title {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       color: #0f172a;
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       display: flex;
       justify-content: space-between;
     }
     .cbt-palette-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin-bottom: 18px;
+      gap: 7px;
+      margin-bottom: 16px;
     }
     .cbt-q-bubble {
       aspect-ratio: 1;
@@ -414,7 +447,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       border: 1px solid #cbd5e1;
@@ -437,9 +470,9 @@
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(15, 23, 42, 0.6);
+      background: rgba(15, 23, 42, 0.65);
       backdrop-filter: blur(4px);
-      z-index: 999;
+      z-index: 2000;
       align-items: center;
       justify-content: center;
       padding: 16px;
@@ -448,18 +481,18 @@
     .cbt-modal-card {
       background: #ffffff;
       border-radius: 14px;
-      padding: 24px;
-      max-width: 440px;
+      padding: 22px;
+      max-width: 400px;
       width: 100%;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       text-align: center;
     }
     .cbt-modal-card h3 { margin: 0 0 8px 0; color: #0f172a; font-size: 18px; }
-    .cbt-modal-card p { color: #64748b; font-size: 13.5px; margin: 0 0 18px 0; }
+    .cbt-modal-card p { color: #64748b; font-size: 13px; margin: 0 0 16px 0; }
     .cbt-summary-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 13px;
       text-align: left;
     }
@@ -468,9 +501,9 @@
     .cbt-modal-actions { display: flex; gap: 10px; }
     .cbt-modal-btn {
       flex: 1;
-      padding: 11px;
+      padding: 10px;
       border-radius: 8px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       cursor: pointer;
       border: none;
@@ -478,18 +511,20 @@
     .btn-modal-resume { background: #f1f5f9; color: #334155; }
     .btn-modal-submit { background: #dc2626; color: #ffffff; }
 
-    /* Responsive */
+    /* =========================================================
+       ULTRA-CLEAN RESPONSIVE MOBILE ARCHITECTURE (320px - 768px)
+       ========================================================= */
     @media (max-width: 900px) {
-      .btn-cbt-palette-toggle { display: block; }
+      .btn-cbt-palette-toggle { display: inline-flex; }
       .cbt-palette-close { display: block; }
       .cbt-sidebar {
         position: fixed;
         top: 0;
         right: -340px;
-        width: 300px;
+        width: min(310px, 86vw);
         height: 100%;
-        z-index: 100;
-        box-shadow: -4px 0 25px rgba(0,0,0,0.15);
+        z-index: 1000;
+        box-shadow: -4px 0 25px rgba(0,0,0,0.25);
         transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .cbt-sidebar.open { right: 0; }
@@ -497,26 +532,181 @@
         display: none;
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.4);
-        z-index: 99;
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(2px);
+        z-index: 999;
       }
       .cbt-sidebar-backdrop.open { display: block; }
     }
 
-    @media (max-width: 600px) {
-      .cbt-header { padding: 8px 12px; }
-      .cbt-brand-sub { display: none; }
-      .cbt-timer-box { padding: 4px 10px; }
-      .cbt-timer-val { font-size: 15px; }
-      .btn-cbt-submit { padding: 6px 12px; font-size: 12px; }
-      .cbt-question-header { padding: 10px 14px; }
-      .cbt-question-body { padding: 16px; }
-      .cbt-q-text { font-size: 15px; }
-      .cbt-opt-card { padding: 12px 14px; gap: 10px; }
-      .cbt-opt-badge { width: 28px; height: 28px; font-size: 12px; }
-      .cbt-opt-text { font-size: 14px; }
-      .cbt-bottom-bar { padding: 10px 14px; }
-      .cbt-btn { padding: 8px 12px; font-size: 12px; }
+    @media (max-width: 768px) {
+      /* Single-Row Compact Mobile Header: Fits 320px - 430px perfectly */
+      .cbt-header {
+        padding: 6px 8px !important;
+        height: 50px !important;
+        gap: 6px !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .cbt-brand {
+        gap: 6px !important;
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+      }
+      .cbt-brand img {
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+      }
+      .cbt-brand-text {
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+      }
+      .cbt-brand-title {
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+      }
+      .cbt-brand-sub { display: none !important; }
+
+      .cbt-timer-box {
+        padding: 4px 6px !important;
+        gap: 3px !important;
+        flex: 0 0 auto !important;
+      }
+      .cbt-timer-icon { display: none !important; }
+      .cbt-timer-label { display: none !important; }
+      .cbt-timer-val {
+        font-size: 13.5px !important;
+        letter-spacing: 0 !important;
+      }
+
+      .cbt-header-actions {
+        gap: 4px !important;
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+      }
+      .btn-cbt-palette-toggle {
+        padding: 5px 8px !important;
+        font-size: 11.5px !important;
+      }
+      .btn-cbt-submit {
+        padding: 5px 10px !important;
+        font-size: 11.5px !important;
+      }
+
+      /* Compact Horizontal Tabs */
+      .cbt-tabs-bar {
+        height: 38px !important;
+        padding: 0 6px !important;
+      }
+      .cbt-tab {
+        padding: 0 10px !important;
+        font-size: 12px !important;
+      }
+      .cbt-tab-badge {
+        font-size: 10px !important;
+        padding: 1px 5px !important;
+      }
+
+      /* Compact Question Header */
+      .cbt-question-header {
+        padding: 8px 12px !important;
+      }
+      .cbt-q-number-badge {
+        font-size: 13px !important;
+        gap: 6px !important;
+      }
+      .cbt-q-sec-name {
+        font-size: 10.5px !important;
+        padding: 2px 5px !important;
+      }
+      .cbt-marking-scheme {
+        font-size: 11.5px !important;
+      }
+
+      /* Question Content on Mobile */
+      .cbt-question-body {
+        padding: 14px 10px !important;
+      }
+      .cbt-q-text {
+        font-size: 14.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 14px !important;
+      }
+      .cbt-options-list {
+        gap: 8px !important;
+      }
+      .cbt-opt-card {
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        border-radius: 8px !important;
+      }
+      .cbt-opt-badge {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 11.5px !important;
+      }
+      .cbt-opt-text {
+        font-size: 13.5px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Single-Row Flat CSS Grid Bottom Bar (NEVER WRAPS) */
+      .cbt-bottom-bar {
+        height: 50px !important;
+        padding: 6px 8px !important;
+        gap: 5px !important;
+        display: grid !important;
+        grid-template-columns: auto auto auto 1fr !important;
+      }
+      .cbt-actions-left, .cbt-actions-right {
+        display: contents !important;
+      }
+      .cbt-btn {
+        padding: 7px 8px !important;
+        font-size: 11px !important;
+        border-radius: 6px !important;
+      }
+      .btn-nav-prev {
+        grid-column: 1 !important;
+      }
+      .btn-review {
+        grid-column: 2 !important;
+      }
+      .btn-clear {
+        grid-column: 3 !important;
+      }
+      .btn-nav-save {
+        grid-column: 4 !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        padding: 7px 12px !important;
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .cbt-brand-title {
+        max-width: 75px !important;
+        font-size: 11px !important;
+      }
+      .cbt-bottom-bar {
+        grid-template-columns: auto auto 1fr !important;
+      }
+      .btn-clear {
+        display: none !important; /* Hide clear on ultra narrow 320px screens */
+      }
+      .btn-review {
+        padding: 7px 6px !important;
+      }
+      .btn-nav-prev {
+        padding: 7px 6px !important;
+      }
     }
   </style>
 </head>
@@ -525,10 +715,10 @@
   <!-- CBT TOP HEADER -->
   <header class="cbt-header">
     <div class="cbt-brand">
-      <img src="favicon.svg" alt="AapkaResult Logo">
-      <div>
-        <div class="cbt-brand-title">Army Agniveer GD Mock Test</div>
-        <div class="cbt-brand-sub">Indian Army CEE Pattern • 50 Qs • 100 Marks</div>
+      <img src="favicon.svg" alt="AapkaResult Logo" width="32" height="32">
+      <div class="cbt-brand-text">
+        <div class="cbt-brand-title">Army CEE</div>
+        <div class="cbt-brand-sub">Army CEE • 50 Qs • 100 Marks</div>
       </div>
     </div>
 
@@ -539,18 +729,18 @@
     </div>
 
     <div class="cbt-header-actions">
-      <button type="button" class="btn-cbt-palette-toggle" onclick="togglePalette()" aria-label="Toggle Question Palette">☰ Palette</button>
-      <button type="button" class="btn-cbt-submit" onclick="promptSubmitTest()">Submit Test</button>
+      <button type="button" class="btn-cbt-palette-toggle" onclick="togglePalette()" aria-label="Toggle Question Palette">📋 Qs</button>
+      <button type="button" class="btn-cbt-submit" onclick="promptSubmitTest()">Submit</button>
     </div>
   </header>
 
   <!-- SUBJECT TABS BAR -->
   <nav class="cbt-tabs-bar" id="cbtTabsBar">
     
-    <div class="cbt-tab" id="tab-GK" onclick="goToSection('General Knowledge')">General Knowledge <span class="cbt-tab-badge">15</span></div>
-    <div class="cbt-tab" id="tab-Science" onclick="goToSection('General Science')">General Science <span class="cbt-tab-badge">15</span></div>
-    <div class="cbt-tab" id="tab-Maths" onclick="goToSection('Mathematics')">Mathematics <span class="cbt-tab-badge">15</span></div>
-    <div class="cbt-tab" id="tab-Logic" onclick="goToSection('Logical Reasoning')">Logical Reasoning <span class="cbt-tab-badge">5</span></div>
+    <div class="cbt-tab" id="tab-GK" onclick="goToSection('General Knowledge')">GK <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Science" onclick="goToSection('General Science')">Science <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Maths" onclick="goToSection('Mathematics')">Maths <span class="cbt-tab-badge">15</span></div>
+    <div class="cbt-tab" id="tab-Logic" onclick="goToSection('Logical Reasoning')">Logic <span class="cbt-tab-badge">5</span></div>
   
   </nav>
 
@@ -576,11 +766,11 @@
 
       <footer class="cbt-bottom-bar">
         <div class="cbt-actions-left">
-          <button type="button" class="cbt-btn btn-review" id="btnReview" onclick="toggleReview()">🔖 Mark for Review</button>
-          <button type="button" class="cbt-btn btn-clear" onclick="clearCurrentResponse()">Clear Selection</button>
+          <button type="button" class="cbt-btn btn-nav-prev" id="btnPrev" onclick="navigatePrev()">◄ Prev</button>
+          <button type="button" class="cbt-btn btn-review" id="btnReview" onclick="toggleReview()">🔖 Review</button>
+          <button type="button" class="cbt-btn btn-clear" onclick="clearCurrentResponse()">Clear</button>
         </div>
         <div class="cbt-actions-right">
-          <button type="button" class="cbt-btn btn-nav-prev" id="btnPrev" onclick="navigatePrev()">◄ Previous</button>
           <button type="button" class="cbt-btn btn-nav-save" id="btnSaveNext" onclick="saveAndProceed()">Save &amp; Next ►</button>
         </div>
       </footer>
@@ -596,11 +786,15 @@
       <div class="cbt-legend-strip">
         <div class="cbt-legend-item"><div class="cbt-legend-dot dot-ans"></div><span>Answered</span></div>
         <div class="cbt-legend-item"><div class="cbt-legend-dot dot-unans"></div><span>Not Answered</span></div>
-        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-review"></div><span>For Review</span></div>
+        <div class="cbt-legend-item"><div class="cbt-legend-dot dot-review"></div><span>Review</span></div>
         <div class="cbt-legend-item"><div class="cbt-legend-dot dot-curr"></div><span>Current</span></div>
       </div>
 
       <div class="cbt-palette-scroll" id="cbtPaletteScroll"></div>
+      
+      <div style="padding: 12px; border-top: 1px solid #e2e8f0; background: #f8fafc;">
+        <button type="button" class="btn-cbt-submit" style="width: 100%; padding: 10px; font-size: 13px;" onclick="promptSubmitTest()">Submit Entire Exam</button>
+      </div>
     </aside>
 
     <div class="cbt-sidebar-backdrop" id="cbtBackdrop" onclick="togglePalette()"></div>
@@ -628,8 +822,7 @@
 
   <!-- JAVASCRIPT CBT ENGINE -->
   <script>
-    
-const allTestDatabase = {
+    const allTestDatabase = {
   "1": [
   {
     "subject": "General Knowledge",
@@ -1936,7 +2129,6 @@ const allTestDatabase = {
 ]
 };
 
-
     const urlParams = new URLSearchParams(window.location.search);
     const testNumber = urlParams.get('test') || '1';
 
@@ -1971,7 +2163,7 @@ const allTestDatabase = {
       const q = questions[currentIndex];
       if (!q) return;
 
-      document.getElementById('cbtQNum').innerText = (currentIndex + 1) + " of " + questions.length;
+      document.getElementById('cbtQNum').innerText = (currentIndex + 1) + " / " + questions.length;
       document.getElementById('cbtQSecName').innerText = q.subject;
       document.getElementById('cbtQText').innerText = q.q;
 
@@ -1998,7 +2190,7 @@ const allTestDatabase = {
           btnRev.innerText = "🔖 Marked";
         } else {
           btnRev.classList.remove('marked');
-          btnRev.innerText = "🔖 Mark for Review";
+          btnRev.innerText = "🔖 Review";
         }
       }
 
