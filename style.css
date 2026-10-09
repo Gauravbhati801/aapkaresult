@@ -333,8 +333,10 @@ img, svg {
   padding-left: 22px;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+@media (hover: hover) and (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 /* Mobile Toggle Button */
@@ -1655,9 +1657,14 @@ img, svg {
     padding-left: 24px;
   }
 
+  /* Explicit mobile dropdown handling without hover trap */
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
   .dropdown-menu {
     position: static;
-    display: none;
+    display: none !important;
     box-shadow: none;
     background: #070e1e;
     border: none;
@@ -1668,7 +1675,7 @@ img, svg {
   }
 
   .dropdown.open-mobile .dropdown-menu {
-    display: block;
+    display: block !important;
   }
 
   .dropdown-menu a {

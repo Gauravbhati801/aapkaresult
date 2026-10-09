@@ -11,11 +11,14 @@ function toggleMobileNav() {
   }
 }
 
-// Mobile Dropdown Click Handler
+// Mobile Dropdown Click Handler (Open on Click, Hide on Next Click)
 function toggleDropdown(e) {
-  if (window.innerWidth <= 768) {
+  if (e) {
     e.preventDefault();
-    const dropdown = e.currentTarget.parentElement;
+    e.stopPropagation();
+  }
+  const dropdown = e.currentTarget ? e.currentTarget.closest(".dropdown") : null;
+  if (dropdown) {
     dropdown.classList.toggle("open-mobile");
   }
 }
