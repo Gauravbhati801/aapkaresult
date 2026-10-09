@@ -1,4 +1,6 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://aapkaresult.in/sitemap.xml
+
