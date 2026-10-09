@@ -14,16 +14,17 @@ function toggleMobileNav() {
 // Mobile Dropdown Click Handler (Open on Click, Hide on Next Click)
 function toggleDropdown(e) {
   if (e) {
-    e.preventDefault();
-    e.stopPropagation();
+    if (typeof e.preventDefault === "function") e.preventDefault();
+    if (typeof e.stopPropagation === "function") e.stopPropagation();
   }
-  const dropdown = e.currentTarget ? e.currentTarget.closest(".dropdown") : null;
+  const el = (e && (e.currentTarget || e.target)) ? (e.currentTarget || e.target) : null;
+  const dropdown = el ? el.closest(".dropdown") : document.querySelector(".dropdown");
   if (dropdown) {
     dropdown.classList.toggle("open-mobile");
   }
 }
 
-// Close mobile navigation on click outside
+// Close mobile navigation or dropdown on click outside
 document.addEventListener("click", function(event) {
   const nav = document.querySelector(".site-nav");
   const toggleBtn = document.querySelector(".mobile-toggle");
@@ -34,6 +35,22 @@ document.addEventListener("click", function(event) {
       navLinks.classList.remove("show-mobile");
     }
   }
+
+  // Also close dropdown if tapped outside
+  if (!event.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown.open-mobile").forEach(function(d) {
+      d.classList.remove("open-mobile");
+    });
+  }
+});
+
+// Auto-bind toggleDropdown to any dropdown links that do not have inline onclick
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".dropdown > a").forEach(function(anchor) {
+    if (!anchor.getAttribute("onclick")) {
+      anchor.addEventListener("click", toggleDropdown);
+    }
+  });
 });
 
 // Instant Live Real-time Search
