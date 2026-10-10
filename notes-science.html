@@ -3,45 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>General Science (सामान्य विज्ञान) 1-Min Short Notes - AapkaResult.in</title>
-  <meta name="description" content="General Science everyday physics, biology and chemistry high-yield points for competitive exams.">
+  <title>General Science (सामान्य विज्ञान) 1-Minute Short Revision Notes (21 High-Yield Facts) - AapkaResult.in</title>
+  <meta name="description" content="Crisp General Science short notes for SSC GD, UP Police, Railway RRB & Agniveer. Biology, Physics, Chemistry, Vitamins, SI Units and Inventions.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-science.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* High Contrast Notes Typography */
-    .home-content, .job-article {
+    .notes-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 30px 24px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .notes-hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .notes-hero h1 {
+      font-size: 1.85rem;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .notes-hero p {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Sub Nav Pills */
+    .subject-pill-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .pill-link {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill-link:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .pill-link.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+    .pill-link.hub-link {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #dc2626;
+    }
+
+    /* Search & Stats Bar */
+    .notes-controls {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .search-box-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-box-wrapper input {
+      width: 100%;
+      padding: 12px 42px 12px 42px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box-wrapper input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    .search-icon-inside {
+      position: absolute;
+      left: 14px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #94a3b8;
+      cursor: pointer;
+      display: none;
+      padding: 4px 8px;
+    }
+    .notes-status-row {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Cards Grid */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .note-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+    }
+    .note-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      border-color: #cbd5e1;
+    }
+    .note-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .note-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-history { background: #fef3c7; color: #92400e; }
+    .badge-science { background: #dcfce7; color: #166534; }
+    .badge-polity { background: #dbeafe; color: #1e40af; }
+    .badge-geography { background: #f3e8ff; color: #6b21a8; }
+    .badge-static { background: #ffedd5; color: #9a3412; }
+    .badge-economics { background: #e0e7ff; color: #3730a3; }
+
+    .note-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .note-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .btn-copy-note {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #475569;
+      cursor: pointer;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .btn-copy-note:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .note-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a !important;
+      line-height: 1.4;
+      margin: 0 0 10px 0;
+    }
+    .note-content {
+      font-size: 14.5px;
       color: #1e293b !important;
+      line-height: 1.65;
+      flex-grow: 1;
     }
-    .home-content h2, .home-content h3, .home-content h4 {
-      color: #0f172a !important;
-      font-weight: 800 !important;
+    .exam-key {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border-bottom: 2px solid #bfdbfe;
     }
-    .home-content p, .home-content li {
-      color: #334155 !important;
-      line-height: 1.75 !important;
-      font-size: 15px !important;
+
+    /* Toast */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
     }
-    .home-content strong, .home-content b {
-      color: #0f172a !important;
-    }
-    .home-content .box {
-      background: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 4px solid #2563eb !important;
-      border-radius: 8px !important;
-      padding: 16px !important;
-      margin: 16px 0 !important;
-    }
-    .home-content .box li {
-      margin-bottom: 12px !important;
+    #copyToast.show {
+      transform: translateX(-50%) translateY(0);
     }
   </style>
-    
 </head>
 <body>
 
@@ -60,7 +273,7 @@
     </div>
   </div>
 
-    <!-- SITE HEADER -->
+  <!-- SITE HEADER -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand">
@@ -114,7 +327,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
-        <li><a href="free-test-weekly.html">Mock Test</a></li>
+        <li><a href="free-test-weekly.html" class="">Mock Test</a></li>
         <li><a href="short-notes-hub.html" class="active">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
@@ -140,78 +353,404 @@
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
       <li><a href="short-notes-hub.html">Short Notes Hub</a></li>
-      <li>General Science (सामान्य विज्ञान) Notes</li>
+      <li>General Science (सामान्य विज्ञान)</li>
     </ul>
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="job-page-container">
-    <article class="job-article">
-      <h1 class="job-main-title">🧬 General Science (सामान्य विज्ञान) 1-Minute Crisp Revision Notes</h1>
+  <main class="job-page-container" style="max-width: 1200px;">
+    
+    <!-- HERO BANNER -->
+    <div class="notes-hero">
+      <div class="notes-hero-badge">⚡ General Science (सामान्य विज्ञान) Special 2026</div>
+      <h1>🧬 General Science (सामान्य विज्ञान) 1-Minute Revision Notes</h1>
+      <p>जीव विज्ञान (विटामिन, रक्त समूह, मानव शरीर), भौतिक विज्ञान (प्रकाश, ध्वनि, लेंस, न्यूटन के नियम) एवं रसायन विज्ञान (pH मान, रासायनिक सूत्र, धातु-अधातु) के 21 अति-महत्वपूर्ण रिवीज़न पॉइंट्स।</p>
+    </div>
 
-      <div class="article-meta">
-        <span><b>Subject:</b> General Science (सामान्य विज्ञान)</span>
-        <span><b>Format:</b> High-Yield Quick Revision Facts</span>
-        <span><b>Target Exams:</b> SSC GD, UP Police, RRB, Agniveer &amp; State PSC</span>
+    <!-- SUBJECT PILL NAVIGATION -->
+    <div class="subject-pill-nav">
+      <a href="notes-history.html" class="pill-link ">🏛️ History Notes</a>
+      <a href="notes-science.html" class="pill-link active">🧬 Science Notes</a>
+      <a href="notes-polity.html" class="pill-link ">⚖️ Polity Notes</a>
+      <a href="notes-geography.html" class="pill-link ">🌍 Geography Notes</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+    </div>
+
+    <!-- SEARCH & CONTROLS -->
+    <div class="notes-controls">
+      <div class="search-box-wrapper">
+        <span class="search-icon-inside">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="subjectSearchInput" placeholder="Search keywords in General Science (सामान्य विज्ञान)..." onkeyup="filterSubjectNotes(this.value)">
+        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
       </div>
-
-      <div class="job-summary-lead">
-        Key high-yield indicators and revision points prepared specifically for one-minute rapid recall before examinations. Focus on direct factual questions repeatedly asked in government competitive exams.
+      <div class="notes-status-row">
+        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">21</strong> high-yield points</span>
+        <span>Click 📋 to copy any point</span>
       </div>
+    </div>
 
-      <!-- SUBJECT NAV BAR -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0;">
-        <a href="notes-history.html" class="pill-btn" style="text-decoration: none;">🏛️ History Notes</a>
-        <a href="notes-science.html" class="pill-btn active" style="text-decoration: none;">🧬 Science Notes</a>
-        <a href="notes-polity.html" class="pill-btn" style="text-decoration: none;">⚖️ Polity Notes</a>
-        <a href="notes-geography.html" class="pill-btn" style="text-decoration: none;">🌍 Geography Notes</a>
-        <a href="short-notes-hub.html" class="pill-btn" style="text-decoration: none; background: #dc2626; color: #fff;">⚡ All Notes Hub</a>
-      </div>
-
-      <div class="home-content" style="color: #1e293b;">
-            <h2 style="color: #0f172a !important;">🧪 General Science (Physics, Chemistry, Biology) High-Yield Facts</h2>
-            
-            <div class="box" style="margin-top:15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                <ul style="list-style:none; padding:0;">
-                    <li style="margin:10px 0; color: #1e293b;"><b>विटामिन की कमी से रोग:</b> Vitamin A से रतौंधी (Night Blindness), Vitamin B1 से बेरी-बेरी, Vitamin C से स्कर्वी, और Vitamin D से रिकेट्स (Rickets) होता है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>मानव शरीर क्रिया विज्ञान:</b> मानव शरीर की सबसे बड़ी ग्रंथि यकृत (Liver) है, और सबसे बड़ी हड्डी फीमर (Femur - जांघ की हड्डी) होती है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>प्रकाश के नियम (Physics):</b> आकाश का नीला रंग प्रकाश के प्रकीर्णन (Scattering of Light) के कारण और हीरा का चमकना पूर्ण आंतरिक परावर्तन (Total Internal Reflection) के कारण होता है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>पीएच मान (pH Scales):</b> शुद्ध जल का pH मान 7 (उदासीन), मानव रक्त का 7.4 (हल्का क्षारीय) और नींबू के रस का लगभग 2.4 (अम्लीय) होता है।</li>
-                </ul>
-            </div>
-        
-            <h3 style="margin-top:20px; color: #1e3a8a; font-weight: 700;">Quick Practice (Exam Pattern Based)</h3>
-            <p style="line-height:1.8; color: #334155;">नीचे दिए गए पॉइंट्स SSC GD, UP Police, Railway Group D और Defence exams के पिछले वर्षों के pattern को ध्यान में रखकर तैयार किए गए हैं। हर topic के साथ self-test question और memory trick दी गई है ताकि revision long-term याद रहे।</p>
-            <ul style="margin-top:10px; line-height:1.9; color: #334155; padding-left:20px;">
-                <li><b>1 Minute Rule:</b> हर fact को 60 सेकंड में recall करने की practice करें।</li>
-                <li><b>3-3-3 Revision:</b> उसी दिन, तीसरे दिन और सातवें दिन short revision करें।</li>
-                <li><b>MCQ Trigger Words:</b> longest, first, article, vitamin deficiency, movement year जैसे keywords पर विशेष ध्यान दें।</li>
-                <li><b>Error Notebook:</b> गलत सवालों की अलग कॉपी बनाएं और weekend में revise करें।</li>
-            </ul>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">How to Use These Notes Daily</h3>
-            <p style="line-height:1.8; color: #334155;">इन notes को सिर्फ पढ़ना काफी नहीं है; active recall जरूरी है। सुबह 20 मिनट theory पढ़ें, दोपहर में 15 MCQs लगाएं और रात में केवल गलत प्रश्न revise करें। अगर आप working candidate हैं, तो भी 45-60 मिनट की focused study से strong score बनाया जा सकता है।</p>
-            <p style="line-height:1.8; color: #334155;">AapkaResult.in पर हम regular updates, free mock links और quick notes provide करते हैं ताकि students को अलग-अलग websites पर भटकना न पड़े। हमारा उद्देश्य clear है: authentic content, easy language और exam-oriented preparation।</p>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">Important Disclaimer for Students</h3>
-            <p style="line-height:1.8; color: #334155;">ये notes revision purpose के लिए हैं। Official answer/notification के लिए हमेशा संबंधित विभाग की website देखें। अगर किसी exam pattern में बदलाव आता है, तो updated syllabus के अनुसार अपनी strategy adjust करें।</p>
-
+    <!-- CARDS GRID -->
+    <div class="notes-grid" id="subjectNotesGrid">
+      <article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#31</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
         </div>
-    
-            <div style="margin: 25px 0; padding: 16px; background: #1e293b; border-radius: 8px;">
-              <h4 style="color: #0f172a; margin-bottom: 10px; font-size: 14px;">Explore Other 1-Min Subject Notes:</h4>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="notes-history.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🏛️ History Notes</a>
-                <a href="notes-science.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🧬 Science Notes</a>
-                <a href="notes-polity.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">⚖️ Polity Notes</a>
-                <a href="notes-geography.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🌍 Geography Notes</a>
-                <a href="short-notes-hub.html" style="color: #f8fafc; background: #dc2626; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold;">⚡ All Short Notes Hub</a>
-              </div>
-            </div>
-    
-
+      </div>
+      <h3 class="note-title">कोशिका (Cell) के प्रमुख अंग व उनके उपनाम</h3>
+      <div class="note-content">कोशिका की खोज <mark class="exam-key">रॉबर्ट हुक (1665)</mark> ने की। जीवित कोशिका ल्यूवेनहॉक ने देखी। <mark class="exam-key">माइटोकॉन्ड्रिया</mark> = कोशिका का पावरहाउस (ऊर्जा गृह, ATP निर्माण); <mark class="exam-key">राइबोसोम</mark> = प्रोटीन की फैक्ट्री; <mark class="exam-key">लाइसोसोम</mark> = आत्मघाती थैली (Suicide Bag); केंद्रक (Nucleus) = कोशिका का मस्तिष्क/नियंत्रक।</div>
     </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#32</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">रक्त परिसंचरण व ब्लड ग्रुप (ABO System)</h3>
+      <div class="note-content">रक्त परिसंचरण की खोज <mark class="exam-key">विलियम हार्वे (1628)</mark> ने की। ब्लड ग्रुप की खोज <mark class="exam-key">कार्ल लैंडस्टीनर (1900)</mark> ने की। सर्वदाता (Universal Donor) = <mark class="exam-key">O Negative (O-)</mark>; सर्वग्राही (Universal Recipient) = <mark class="exam-key">AB Positive (AB+)</mark>। सामान्य रक्तचाप (BP) 120/80 mmHg होता है (मापक: स्फिग्मोमैनोमीटर)।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#33</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">विटामिन, उनके रासायनिक नाम व कमी से होने वाले रोग</h3>
+      <div class="note-content">विटामिन शब्द कैसिमिर फंक (1912) ने दिया। <br>&bull; <mark class="exam-key">विटामिन A (रेटिनॉल)</mark>: रतौंधी (Night Blindness)<br>&bull; <mark class="exam-key">विटामिन B1 (थायमिन)</mark>: बेरी-बेरी<br>&bull; <mark class="exam-key">विटामिन C (एस्कॉर्बिक एसिड)</mark>: स्कर्वी (मसूड़ों से खून आना)<br>&bull; <mark class="exam-key">विटामिन D (कैल्सिफेरॉल)</mark>: रिकेट्स (सूखा रोग)<br>&bull; <mark class="exam-key">विटामिन E (टोकोफेरॉल)</mark>: जनन क्षमता में कमी (बांझपन)<br>&bull; <mark class="exam-key">विटामिन K (फिलोक्यूनोन)</mark>: रक्त का थक्का (Blood Clotting) न जमना।<br>जल में घुलनशील: <mark class="exam-key">B & C</mark>; वसा में घुलनशील: <mark class="exam-key">K, E, D, A</mark>।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#34</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">मानव शरीर की ग्रंथियां एवं हार्मोन</h3>
+      <div class="note-content">शरीर की सबसे बड़ी ग्रंथि <mark class="exam-key">यकृत (Liver)</mark> है। सबसे बड़ी अंतःस्रावी ग्रंथि थायरॉयड है। <mark class="exam-key">पीयूष ग्रंथि (Pituitary Gland)</mark> को "मास्टर ग्रंथि" कहते हैं जो मस्तिष्क में होती है। <mark class="exam-key">इंसुलिन हार्मोन</mark> अग्न्याशय (Pancreas) की बीटा कोशिकाओं से निकलता है (इसकी कमी से मधुमेह/Diabetes होता है)। एड्रिनलिन को "लड़ो या उड़ो" (Fight or Flight) हार्मोन कहा जाता है।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#35</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">मानव कंकाल तंत्र (Bones & Muscles)</h3>
+      <div class="note-content">वयस्क मानव शरीर में कुल <mark class="exam-key">206 हड्डियां</mark> होती हैं (नवजात में ~300)। शरीर की सबसे लंबी व मजबूत हड्डी <mark class="exam-key">फीमर (Femur - जांघ की हड्डी)</mark> है। सबसे छोटी हड्डी <mark class="exam-key">स्टेप्स (Stapes - कान की हड्डी)</mark> है। हड्डियों को मांसपेशियों से जोड़ने वाला ऊतक <mark class="exam-key">टेंडन (Tendon)</mark> है और हड्डी को हड्डी से जोड़ने वाला <mark class="exam-key">लिगामेंट (Ligament)</mark> है।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#36</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रकाश संश्लेषण (Photosynthesis)</h3>
+      <div class="note-content">पौधे सूर्य के प्रकाश, क्लोरोफिल, जल (H2O) और CO2 की उपस्थिति में ग्लूकोज बनाते हैं और <mark class="exam-key">ऑक्सीजन (O2)</mark> गैस मुक्त करते हैं। प्रकाश संश्लेषण में निकलने वाली O2 गैस जल के अपघटन (Photolysis) से प्राप्त होती है। पत्तियों का हरा रंग <mark class="exam-key">क्लोरोफिल (पर्णहरित)</mark> के कारण होता है, जिसमें <mark class="exam-key">मैग्नीशियम (Mg)</mark> धातु पाई जाती है।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#37</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रमुख संक्रामक रोग व उनके कारक</h3>
+      <div class="note-content">&bull; <mark class="exam-key">जीवाणु (Bacteria)</mark>: टायफाइड, हैजा, टीबी (तपेदिक/क्षय), टिटनेस, प्लेग, डिप्थीरिया, काली खांसी।<br>&bull; <mark class="exam-key">विषाणु (Virus)</mark>: एड्स (HIV), पोलियो, चेचक, रेबीज, डेंगू, इन्फ्लूएंजा, हेपेटाइटिस।<br>&bull; <mark class="exam-key">प्रोटोजोआ (Protozoa)</mark>: मलेरिया (मादा एनाफिलीज मच्छर), पायरिया, कालाजार (सैंडफ्लाई), पेचिश।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#38</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भौतिक राशियां एवं उनके SI मात्रक (SI Units)</h3>
+      <div class="note-content">&bull; बल (Force) = <mark class="exam-key">न्यूटन (N)</mark><br>&bull; कार्य व ऊर्जा = <mark class="exam-key">जूल (J)</mark><br>&bull; शक्ति (Power) = <mark class="exam-key">वाट (W)</mark> (1 हॉर्सपावर = 746 वाट)<br>&bull; दाब (Pressure) = <mark class="exam-key">पास्कल (Pa)</mark><br>&bull; आवृत्ति (Frequency) = <mark class="exam-key">हर्ट्ज़ (Hz)</mark><br>&bull; विद्युत धारा = <mark class="exam-key">एम्पीयर (A)</mark><br>&bull; विद्युत प्रतिरोध = <mark class="exam-key">ओम (&Omega;)</mark><br>&bull; ज्योति तीव्रता = <mark class="exam-key">कैंडेला (cd)</mark><br>&bull; लेंस की क्षमता = <mark class="exam-key">डायोप्टर (D)</mark>।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#39</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रकाश का परावर्तन, अपवर्तन व प्रकीर्णन</h3>
+      <div class="note-content">आकाश का नीला रंग और सूर्योदय/सूर्यास्त के समय सूर्य का लाल दिखना <mark class="exam-key">प्रकाश के प्रकीर्णन (Scattering)</mark> के कारण होता है। तारों का टिमटिमाना <mark class="exam-key">प्रकाश के अपवर्तन (Refraction)</mark> के कारण होता है। हीरे का चमकना, मृगमरीचिका (Mirage) और ऑप्टिकल फाइबर <mark class="exam-key">पूर्ण आंतरिक परावर्तन (TIR)</mark> के सिद्धांत पर काम करते हैं।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#40</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">दर्पण एवं लेंस के व्यावहारिक उपयोग</h3>
+      <div class="note-content">&bull; <mark class="exam-key">उत्तल दर्पण (Convex Mirror)</mark>: वाहनों के साइड/रियर व्यू मिरर (पीछे का बड़ा दृश्य सीधा देखने हेतु)।<br>&bull; <mark class="exam-key">अवतल दर्पण (Concave Mirror)</mark>: दाढ़ी बनाने का शीशा, दंत चिकित्सक (Dentist), कार की हेडलाइट, सोलर कुकर।<br>&bull; निकट दृष्टि दोष (Myopia) के निवारण हेतु <mark class="exam-key">अवतल लेंस (Concave Lens)</mark> का उपयोग होता है।<br>&bull; दूर दृष्टि दोष (Hypermetropia) हेतु <mark class="exam-key">उत्तल लेंस (Convex Lens)</mark> का उपयोग होता है।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#41</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">ध्वनि तरंगें एवं उनकी विशेषताएं</h3>
+      <div class="note-content">ध्वनि एक अनुदैर्ध्य यांत्रिक तरंग है, जो <mark class="exam-key">निर्वात (Vacuum) में गमन नहीं कर सकती</mark>। ध्वनि की चाल सबसे अधिक ठोस (जैसे स्टील में ~5100 m/s), फिर द्रव में, और सबसे कम गैस में होती है (हवा में ध्वनि का वेग 332 m/s है)। मनुष्य 20 Hz से 20,000 Hz तक की श्रव्य तरंगें (Audible waves) सुन सकता है। चमगादड़ पराश्रव्य तरंगें (>20,000 Hz) उत्सर्जित करते हैं।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#42</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">गुरुत्वाकर्षण एवं पलायन वेग (Escape Velocity)</h3>
+      <div class="note-content">पृथ्वी पर गुरुत्वीय त्वरण g = 9.8 m/s² होता है। भूमध्य रेखा पर g का मान न्यूनतम तथा ध्रुवों (Poles) पर अधिकतम होता है। लिफ्ट ऊपर जाने पर व्यक्ति का भार बढ़ा हुआ महसूस होता है। पृथ्वी का <mark class="exam-key">पलायन वेग 11.2 किमी/सेकंड</mark> है, जबकि चंद्रमा पर 2.38 किमी/सेकंड है (यही कारण है कि चंद्रमा पर वायुमंडल नहीं है)।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#43</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">दैनिक जीवन के प्रमुख रासायनिक सूत्र (Chemical Formulas)</h3>
+      <div class="note-content">&bull; साधारण नमक = <mark class="exam-key">NaCl</mark> (सोडियम क्लोराइड)<br>&bull; खाने का सोडा (Baking Soda) = <mark class="exam-key">NaHCO3</mark> (सोडियम बाइकार्बोनेट)<br>&bull; धोने का सोडा (Washing Soda) = <mark class="exam-key">Na2CO3.10H2O</mark><br>&bull; कास्टिक सोडा = <mark class="exam-key">NaOH</mark><br>&bull; विरंजक चूर्ण (Bleaching Powder) = <mark class="exam-key">CaOCl2</mark><br>&bull; प्लास्टर ऑफ पेरिस (POP) = <mark class="exam-key">CaSO4.1/2H2O</mark><br>&bull; जिप्सम = <mark class="exam-key">CaSO4.2H2O</mark><br>&bull; लाफिंग गैस (हंसाने वाली गैस) = <mark class="exam-key">N2O</mark> (नाइट्रस ऑक्साइड)<br>&bull; भारी जल = <mark class="exam-key">D2O</mark> (ड्यूटेरियम ऑक्साइड - मंदक के रूप में)।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#44</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">पीएच मान (pH Value Scale)</h3>
+      <div class="note-content">pH स्केल की खोज <mark class="exam-key">सोरेन्सन (1909)</mark> ने की। 0 से 7 अम्लीय (Acidic), 7 उदासीन (Neutral), और 7 से 14 क्षारीय (Basic) होता है।<br>&bull; शुद्ध जल = <mark class="exam-key">7.0</mark><br>&bull; मानव रक्त = <mark class="exam-key">7.4</mark> (हल्का क्षारीय)<br>&bull; समुद्री जल = ~8.4<br>&bull; लार (Saliva) = ~6.5 - 6.8<br>&bull; सिरका (Vinegar) = ~3.0<br>&bull; नींबू का रस = ~2.2 - 2.4<br>&bull; आमाशय रस (HCl) = ~1.2 - 1.5।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#45</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रमुख मिश्रधातुएं (Alloys) व घटक</h3>
+      <div class="note-content">&bull; पीतल (Brass) = <mark class="exam-key">तांबा (Cu) + जस्ता (Zn)</mark><br>&bull; कांसा (Bronze) = <mark class="exam-key">तांबा (Cu) + टिन (Sn)</mark><br>&bull; टांका/सोल्डर = सीसा (Pb) + टिन (Sn)<br>&bull; स्टेनलेस स्टील = लोहा (Fe) + क्रोमियम (Cr) + निकेल (Ni) + कार्बन<br>&bull; जर्मन सिल्वर = तांबा + जस्ता + निकेल (नोट: इसमें चांदी 0% होती है)।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#46</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">द्रव धातु एवं द्रव अधातु</h3>
+      <div class="note-content">कमरे के सामान्य तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र धातु <mark class="exam-key">पारा (Mercury - Hg)</mark> है (सिंदूर का रासायनिक नाम मरक्यूरिक सल्फाइड HgS है)। कमरे के तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र अधातु <mark class="exam-key">ब्रोमीन (Bromine - Br)</mark> है।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (परमाणु संरचना)</span>
+        <div class="note-actions">
+          <span class="note-num">#79</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">परमाणु के मूलभूत कण एवं उनके खोजकर्ता</h3>
+      <div class="note-content">&bull; इलेक्ट्रॉन (ऋणावेशित) = <mark class="exam-key">जे.जे. थॉमसन (1897)</mark><br>&bull; प्रोटॉन (धनावेशित) = <mark class="exam-key">गोल्डस्टीन (खोज), रदरफोर्ड (नामकरण)</mark><br>&bull; न्यूट्रॉन (उदासीन) = <mark class="exam-key">जेम्स चैडविक (1932)</mark><br>&bull; परमाणु के नाभिक की खोज <mark class="exam-key">अर्नेस्ट रदरफोर्ड</mark> ने अल्फा-कण प्रकीर्णन प्रयोग द्वारा की थी (नाभिक में प्रोटॉन + न्यूट्रॉन = न्यूक्लिऑन होते हैं)।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (आवर्त सारणी)</span>
+        <div class="note-actions">
+          <span class="note-num">#80</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">आवर्त सारणी के नियम (Periodic Table Laws)</h3>
+      <div class="note-content">सर्वप्रथम तत्वों का वर्गीकरण मेंडलीफ ने 1869 में "परमाणु भार" (Atomic Mass) के आधार पर किया। <mark class="exam-key">आधुनिक आवर्त सारणी 1913 में हेनरी मोसले</mark> ने "परमाणु क्रमांक" (Atomic Number) के आधार पर बनाई। आधुनिक आवर्त सारणी में कुल <mark class="exam-key">7 आवर्त (Periods) और 18 वर्ग (Groups)</mark> हैं। 18वें वर्ग को अक्रिय गैसें/शून्य वर्ग (He, Ne, Ar, Kr, Xe, Rn) कहते हैं।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#81</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">मानव नेत्र एवं दृष्टि दोष (Human Eye)</h3>
+      <div class="note-content">स्वस्थ मानव नेत्र के लिए स्पष्ट दृष्टि की न्यूनतम दूरी <mark class="exam-key">25 सेमी</mark> होती है और अधिकतम दूरी अनंत होती है। नेत्रदान (Eye Donation) में आंख का <mark class="exam-key">कॉर्निया (Cornea)</mark> दान किया जाता है। रेटिना पर बनने वाला प्रतिबिंब <mark class="exam-key">वास्तविक, उल्टा और वस्तु से छोटा</mark> होता है। शंकु कोशिकाएं (Cones) रंगों की पहचान और शलाका कोशिकाएं (Rods) मंद प्रकाश में देखने में मदद करती हैं।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
+        <div class="note-actions">
+          <span class="note-num">#82</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">ऊर्जा रूपांतरण के प्रमुख वैज्ञानिक उपकरण</h3>
+      <div class="note-content">&bull; डायनेमो / जनरेटर = <mark class="exam-key">यांत्रिक ऊर्जा &rarr; विद्युत ऊर्जा</mark><br>&bull; विद्युत मोटर = <mark class="exam-key">विद्युत ऊर्जा &rarr; यांत्रिक ऊर्जा</mark><br>&bull; सोलर सेल = सौर ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; विद्युत बल्ब = विद्युत ऊर्जा &rarr; प्रकाश एवं ऊष्मा ऊर्जा<br>&bull; माइक्रोफोन = ध्वनि ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; लाउडस्पीकर = विद्युत ऊर्जा &rarr; ध्वनि ऊर्जा<br>&bull; बैटरी/सेल = रासायनिक ऊर्जा &rarr; विद्युत ऊर्जा।</div>
+    </article>
+<article class="note-card" data-cat="science">
+      <div class="note-card-head">
+        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
+        <div class="note-actions">
+          <span class="note-num">#83</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्राकृतिक अम्ल एवं उनके स्रोत (Natural Acids)</h3>
+      <div class="note-content">&bull; सिरका (Vinegar) = <mark class="exam-key">एसिटिक अम्ल (CH3COOH)</mark><br>&bull; संतरा व नींबू = <mark class="exam-key">सिट्रिक अम्ल</mark><br>&bull; इमली व अंगूर = <mark class="exam-key">टार्टरिक अम्ल</mark><br>&bull; टमाटर = <mark class="exam-key">ऑक्जेलिक अम्ल</mark> (कपड़ों पर जंग के दाग हटाने हेतु उपयोगी)<br>&bull; खट्टा दूध/दही = <mark class="exam-key">लैक्टिक अम्ल</mark><br>&bull; चींटी व बिच्छू का डंक = <mark class="exam-key">मेथेनोइक / फॉर्मिक अम्ल</mark><br>&bull; सेब = मैलिक अम्ल।</div>
+    </article>
+    </div>
+
+    <!-- BOTTOM CROSS LINKS -->
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
+      <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
+      <div class="related-vacancies-grid">
+        <a href="short-notes-hub.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+          </div>
+          <span class="btn-link">Open Hub &rarr;</span>
+        </a>
+        <a href="free-test-weekly.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Mock Tests</span>
+            <h4 style="margin-top: 4px;">Free Weekly Mock Test &amp; Quiz Engine (Live Timers)</h4>
+          </div>
+          <span class="btn-link">Practice Tests &rarr;</span>
+        </a>
+      </div>
+    </div>
+
   </main>
+
+  <!-- COPY TOAST -->
+  <div id="copyToast">
+    <span>✅</span>
+    <span id="copyToastMsg">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    function copyFact(btn) {
+      const card = btn.closest('.note-card');
+      const title = card.querySelector('.note-title').innerText.trim();
+      const content = card.querySelector('.note-content').innerText.trim();
+      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast("Point Copied: " + title.substring(0, 30) + "...");
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast("Point Copied!");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('copyToast');
+      const toastMsg = document.getElementById('copyToastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    function filterSubjectNotes(query) {
+      const q = query.trim().toLowerCase();
+      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
+      const clearBtn = document.getElementById('clearSubjectSearch');
+      clearBtn.style.display = q ? 'block' : 'none';
+
+      let visible = 0;
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('subjectVisibleCount').innerText = visible;
+    }
+
+    function clearSubjectSearch() {
+      const input = document.getElementById('subjectSearchInput');
+      input.value = '';
+      filterSubjectNotes('');
+      input.focus();
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="site-footer">

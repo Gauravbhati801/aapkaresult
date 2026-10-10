@@ -3,45 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geography (भूगोल) 1-Min Short Notes - AapkaResult.in</title>
-  <meta name="description" content="Indian and World Geography rivers, mountain ranges, peaks, and climate quick revision facts.">
+  <title>Geography (भूगोल एवं पर्यावरण) 1-Minute Short Revision Notes (20 High-Yield Facts) - AapkaResult.in</title>
+  <meta name="description" content="Top 20 Geography short notes for UP Police, SSC GD, Railway Group D & Defence. Indian rivers, passes, mountain peaks, national parks & solar system.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-geography.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* High Contrast Notes Typography */
-    .home-content, .job-article {
+    .notes-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 30px 24px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .notes-hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .notes-hero h1 {
+      font-size: 1.85rem;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .notes-hero p {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Sub Nav Pills */
+    .subject-pill-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .pill-link {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill-link:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .pill-link.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+    .pill-link.hub-link {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #dc2626;
+    }
+
+    /* Search & Stats Bar */
+    .notes-controls {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .search-box-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-box-wrapper input {
+      width: 100%;
+      padding: 12px 42px 12px 42px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box-wrapper input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    .search-icon-inside {
+      position: absolute;
+      left: 14px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #94a3b8;
+      cursor: pointer;
+      display: none;
+      padding: 4px 8px;
+    }
+    .notes-status-row {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Cards Grid */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .note-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+    }
+    .note-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      border-color: #cbd5e1;
+    }
+    .note-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .note-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-history { background: #fef3c7; color: #92400e; }
+    .badge-science { background: #dcfce7; color: #166534; }
+    .badge-polity { background: #dbeafe; color: #1e40af; }
+    .badge-geography { background: #f3e8ff; color: #6b21a8; }
+    .badge-static { background: #ffedd5; color: #9a3412; }
+    .badge-economics { background: #e0e7ff; color: #3730a3; }
+
+    .note-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .note-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .btn-copy-note {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #475569;
+      cursor: pointer;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .btn-copy-note:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .note-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a !important;
+      line-height: 1.4;
+      margin: 0 0 10px 0;
+    }
+    .note-content {
+      font-size: 14.5px;
       color: #1e293b !important;
+      line-height: 1.65;
+      flex-grow: 1;
     }
-    .home-content h2, .home-content h3, .home-content h4 {
-      color: #0f172a !important;
-      font-weight: 800 !important;
+    .exam-key {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border-bottom: 2px solid #bfdbfe;
     }
-    .home-content p, .home-content li {
-      color: #334155 !important;
-      line-height: 1.75 !important;
-      font-size: 15px !important;
+
+    /* Toast */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
     }
-    .home-content strong, .home-content b {
-      color: #0f172a !important;
-    }
-    .home-content .box {
-      background: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 4px solid #2563eb !important;
-      border-radius: 8px !important;
-      padding: 16px !important;
-      margin: 16px 0 !important;
-    }
-    .home-content .box li {
-      margin-bottom: 12px !important;
+    #copyToast.show {
+      transform: translateX(-50%) translateY(0);
     }
   </style>
-    
 </head>
 <body>
 
@@ -60,7 +273,7 @@
     </div>
   </div>
 
-    <!-- SITE HEADER -->
+  <!-- SITE HEADER -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand">
@@ -114,7 +327,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
-        <li><a href="free-test-weekly.html">Mock Test</a></li>
+        <li><a href="free-test-weekly.html" class="">Mock Test</a></li>
         <li><a href="short-notes-hub.html" class="active">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
@@ -140,78 +353,391 @@
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
       <li><a href="short-notes-hub.html">Short Notes Hub</a></li>
-      <li>Geography (भूगोल) Notes</li>
+      <li>Geography (भूगोल)</li>
     </ul>
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="job-page-container">
-    <article class="job-article">
-      <h1 class="job-main-title">🌍 Geography (भूगोल) 1-Minute Crisp Revision Notes</h1>
+  <main class="job-page-container" style="max-width: 1200px;">
+    
+    <!-- HERO BANNER -->
+    <div class="notes-hero">
+      <div class="notes-hero-badge">⚡ Geography (भूगोल) Special 2026</div>
+      <h1>🌍 Geography (भारत एवं विश्व का भूगोल) 1-Minute Revision Notes</h1>
+      <p>भारत की प्रमुख नदियां, कर्क रेखा, पर्वतीय दर्रे, झीलें व जलप्रपात, राष्ट्रीय उद्यान व टाइगर रिजर्व, सौरमंडल तथा मिट्टियों के 20 सर्वाधिक स्कोरिंग पॉइंट्स।</p>
+    </div>
 
-      <div class="article-meta">
-        <span><b>Subject:</b> Geography (भूगोल)</span>
-        <span><b>Format:</b> High-Yield Quick Revision Facts</span>
-        <span><b>Target Exams:</b> SSC GD, UP Police, RRB, Agniveer &amp; State PSC</span>
+    <!-- SUBJECT PILL NAVIGATION -->
+    <div class="subject-pill-nav">
+      <a href="notes-history.html" class="pill-link ">🏛️ History Notes</a>
+      <a href="notes-science.html" class="pill-link ">🧬 Science Notes</a>
+      <a href="notes-polity.html" class="pill-link ">⚖️ Polity Notes</a>
+      <a href="notes-geography.html" class="pill-link active">🌍 Geography Notes</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+    </div>
+
+    <!-- SEARCH & CONTROLS -->
+    <div class="notes-controls">
+      <div class="search-box-wrapper">
+        <span class="search-icon-inside">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="subjectSearchInput" placeholder="Search keywords in Geography (भूगोल)..." onkeyup="filterSubjectNotes(this.value)">
+        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
       </div>
-
-      <div class="job-summary-lead">
-        Key high-yield indicators and revision points prepared specifically for one-minute rapid recall before examinations. Focus on direct factual questions repeatedly asked in government competitive exams.
+      <div class="notes-status-row">
+        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">20</strong> high-yield points</span>
+        <span>Click 📋 to copy any point</span>
       </div>
+    </div>
 
-      <!-- SUBJECT NAV BAR -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0;">
-        <a href="notes-history.html" class="pill-btn" style="text-decoration: none;">🏛️ History Notes</a>
-        <a href="notes-science.html" class="pill-btn" style="text-decoration: none;">🧬 Science Notes</a>
-        <a href="notes-polity.html" class="pill-btn" style="text-decoration: none;">⚖️ Polity Notes</a>
-        <a href="notes-geography.html" class="pill-btn active" style="text-decoration: none;">🌍 Geography Notes</a>
-        <a href="short-notes-hub.html" class="pill-btn" style="text-decoration: none; background: #dc2626; color: #fff;">⚡ All Notes Hub</a>
-      </div>
-
-      <div class="home-content" style="color: #1e293b;">
-            <h2 style="color: #0f172a !important;">🌍 Indian & World Geography Core Target Facts</h2>
-            
-            <div class="box" style="margin-top:15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                <ul style="list-style:none; padding:0;">
-                    <li style="margin:10px 0; color: #1e293b;"><b>भारत की सीमाएं:</b> भारत की सबसे लंबी स्थलीय सीमा बांग्लादेश (4096 KM) के साथ लगती है। क्षेत्रफल के स्थान पर भारत विश्व में 7वें नंबर पर है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>महत्वपूर्ण नदियां:</b> गंगा भारत की सबसे लंबी नदी (2525 KM) है। दक्षिण भारत की सबसे लंबी नदी गोदावरी है, जिसे 'वृद्ध गंगा' भी कहा जाता है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>दर्रे और चोटियां:</b> भारत की सबसे ऊंची चोटी के-2 (गॉडविन ऑस्टिन) है। जोजिला दर्रा जम्मू-कश्मीर को लद्दाख (लेह) से जोड़ता है।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>सौरमंडल (Solar System):</b> सौरमंडल का सबसे बड़ा ग्रह बृहस्पति (Jupiter) है, और सबसे चमकीला व गर्म ग्रह शुक्र (Venus) है, जिसे भोर का तारा भी कहते हैं।</li>
-                </ul>
-            </div>
-        
-            <h3 style="margin-top:20px; color: #1e3a8a; font-weight: 700;">Quick Practice (Exam Pattern Based)</h3>
-            <p style="line-height:1.8; color: #334155;">नीचे दिए गए पॉइंट्स SSC GD, UP Police, Railway Group D और Defence exams के पिछले वर्षों के pattern को ध्यान में रखकर तैयार किए गए हैं। हर topic के साथ self-test question और memory trick दी गई है ताकि revision long-term याद रहे।</p>
-            <ul style="margin-top:10px; line-height:1.9; color: #334155; padding-left:20px;">
-                <li><b>1 Minute Rule:</b> हर fact को 60 सेकंड में recall करने की practice करें।</li>
-                <li><b>3-3-3 Revision:</b> उसी दिन, तीसरे दिन और सातवें दिन short revision करें।</li>
-                <li><b>MCQ Trigger Words:</b> longest, first, article, vitamin deficiency, movement year जैसे keywords पर विशेष ध्यान दें।</li>
-                <li><b>Error Notebook:</b> गलत सवालों की अलग कॉपी बनाएं और weekend में revise करें।</li>
-            </ul>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">How to Use These Notes Daily</h3>
-            <p style="line-height:1.8; color: #334155;">इन notes को सिर्फ पढ़ना काफी नहीं है; active recall जरूरी है। सुबह 20 मिनट theory पढ़ें, दोपहर में 15 MCQs लगाएं और रात में केवल गलत प्रश्न revise करें। अगर आप working candidate हैं, तो भी 45-60 मिनट की focused study से strong score बनाया जा सकता है।</p>
-            <p style="line-height:1.8; color: #334155;">AapkaResult.in पर हम regular updates, free mock links और quick notes provide करते हैं ताकि students को अलग-अलग websites पर भटकना न पड़े। हमारा उद्देश्य clear है: authentic content, easy language और exam-oriented preparation।</p>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">Important Disclaimer for Students</h3>
-            <p style="line-height:1.8; color: #334155;">ये notes revision purpose के लिए हैं। Official answer/notification के लिए हमेशा संबंधित विभाग की website देखें। अगर किसी exam pattern में बदलाव आता है, तो updated syllabus के अनुसार अपनी strategy adjust करें।</p>
-
+    <!-- CARDS GRID -->
+    <div class="notes-grid" id="subjectNotesGrid">
+      <article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (भारत का भूगोल)</span>
+        <div class="note-actions">
+          <span class="note-num">#56</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
         </div>
-    
-            <div style="margin: 25px 0; padding: 16px; background: #1e293b; border-radius: 8px;">
-              <h4 style="color: #0f172a; margin-bottom: 10px; font-size: 14px;">Explore Other 1-Min Subject Notes:</h4>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="notes-history.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🏛️ History Notes</a>
-                <a href="notes-science.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🧬 Science Notes</a>
-                <a href="notes-polity.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">⚖️ Polity Notes</a>
-                <a href="notes-geography.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🌍 Geography Notes</a>
-                <a href="short-notes-hub.html" style="color: #f8fafc; background: #dc2626; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold;">⚡ All Short Notes Hub</a>
-              </div>
-            </div>
-    
-
+      </div>
+      <h3 class="note-title">भारत की भौगोलिक स्थिति, सीमाएं व क्षेत्रफल</h3>
+      <div class="note-content">भारत का कुल क्षेत्रफल <mark class="exam-key">32,87,263 वर्ग किमी</mark> है, जो विश्व के कुल क्षेत्रफल का 2.42% है (क्षेत्रफल में 7वां बड़ा देश)। उत्तर से दक्षिण विस्तार 3,214 किमी और पूर्व से पश्चिम 2,933 किमी है। स्थलीय सीमा 15,200 किमी और मुख्य तटरेखा 7,516.6 किमी है। भारत का मानक समय रेखा <mark class="exam-key">82°30' पूर्वी देशांतर (IST)</mark> प्रयागराज के नैनी/मिर्जापुर से गुजरती है जो GMT से 5 घंटा 30 मिनट आगे है।</div>
     </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (कर्क रेखा व राज्य)</span>
+        <div class="note-actions">
+          <span class="note-num">#57</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">कर्क रेखा (23.5° N) और 8 भारतीय राज्य</h3>
+      <div class="note-content">कर्क रेखा भारत के ठीक मध्य से होकर 8 राज्यों से गुजरती है: <mark class="exam-key">गुजरात &rarr; राजस्थान &rarr; मध्य प्रदेश &rarr; छत्तीसगढ़ &rarr; झारखंड &rarr; पश्चिम बंगाल &rarr; त्रिपुरा &rarr; मिजोरम</mark> (ट्रिक: "मित्र पर गमछा झार")। माही नदी कर्क रेखा को दो बार काटती है।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर व दर्रे)</span>
+        <div class="note-actions">
+          <span class="note-num">#58</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रमुख पर्वत शिखर एवं दर्रे (Mountain Peaks & Passes)</h3>
+      <div class="note-content">&bull; <mark class="exam-key">के-2 (गॉडविन ऑस्टिन, 8,611 मी)</mark>: भारत की सबसे ऊंची चोटी (काराकोरम श्रेणी, PoK)।<br>&bull; <mark class="exam-key">कंचनजंगा (8,586 मी)</mark>: भारत की निर्विवाद सबसे ऊंची चोटी (सिक्किम)।<br>&bull; <mark class="exam-key">अनाईमुडी (2,695 मी)</mark>: दक्षिण भारत (प्रायद्वीपीय भारत) की सबसे ऊंची चोटी (अन्नामलाई पहाड़ी, केरल)।<br>&bull; <mark class="exam-key">दोद्दाबेट्टा</mark>: नीलगिरि पहाड़ियों की सबसे ऊंची चोटी।<br>&bull; प्रमुख दर्रे: जोजिला व बनिहाल (जम्मू-कश्मीर), रोहतांग व शिपकी ला (हिमाचल प्रदेश), माना व नीति व लिपुलेख (उत्तराखंड), नाथुला व जेलेप ला (सिक्किम), बोमडिला (अरुणाचल प्रदेश)।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (नदियां व उद्गम)</span>
+        <div class="note-actions">
+          <span class="note-num">#59</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भारत की प्रमुख नदियां, उद्गम व सहायक नदियां</h3>
+      <div class="note-content">&bull; <mark class="exam-key">गंगा (2,525 किमी)</mark>: भारत की सबसे लंबी नदी; गंगोत्री ग्लेशियर से भागीरथी व अलकनंदा का देवप्रयाग में संगम गंगा कहलाता है।<br>&bull; <mark class="exam-key">ब्रह्मपुत्र</mark>: तिब्बत में मानसरोवर के निकट से निकलती है (तिब्बत में सांगपो, अरुणाचल में दिहांग, असम में ब्रह्मपुत्र, बांग्लादेश में जमुना)। विश्व का सबसे बड़ा नदी द्वीप <mark class="exam-key">माजुली</mark> असम में इसी नदी पर है।<br>&bull; <mark class="exam-key">गोदावरी (1,465 किमी)</mark>: दक्षिण भारत की सबसे लंबी नदी (त्र्यंबकेश्वर नासिक से उद्गम, "वृद्ध गंगा" व "दक्षिण गंगा" उपनाम)।<br>&bull; <mark class="exam-key">नर्मदा व ताप्ती</mark>: पश्चिम की ओर बहने वाली नदियां जो भ्रंश घाटी (Rift Valley) से बहती हैं और डेल्टा न बनाकर एश्चुअरी (ज्वारनदमुख) बनाती हैं।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (बांध व परियोजनाएं)</span>
+        <div class="note-actions">
+          <span class="note-num">#60</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भारत के प्रमुख बहुउद्देशीय नदी बांध</h3>
+      <div class="note-content">&bull; <mark class="exam-key">टिहरी बांध</mark>: भारत का सबसे ऊंचा बांध (260.5 मी, भागीरथी नदी, उत्तराखंड)।<br>&bull; <mark class="exam-key">हीराकुंड बांध</mark>: भारत का सबसे लंबा बांध (4.8 किमी मुख्य, महानदी, ओडिशा)।<br>&bull; <mark class="exam-key">भाखड़ा नांगल बांध</mark>: सतलुज नदी (हिमाचल/पंजाब, गोविंद सागर झील)।<br>&bull; <mark class="exam-key">सरदार सरोवर बांध</mark>: नर्मदा नदी (गुजरात)।<br>&bull; <mark class="exam-key">नागार्जुन सागर बांध</mark>: कृष्णा नदी (तेलंगाना/आंध्र प्रदेश)।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
+        <div class="note-actions">
+          <span class="note-num">#61</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रमुख राष्ट्रीय उद्यान एवं वन्यजीव अभयारण्य</h3>
+      <div class="note-content">&bull; <mark class="exam-key">जिम कॉर्बेट (रामगंगा)</mark>: भारत का प्रथम राष्ट्रीय उद्यान (1936, उत्तराखंड)।<br>&bull; <mark class="exam-key">काजीरंगा</mark>: एक सींग वाले गैंडे हेतु प्रसिद्ध (असम)।<br>&bull; <mark class="exam-key">गिर राष्ट्रीय उद्यान</mark>: एशियाई शेरों (Asiatic Lions) का एकमात्र प्राकृतिक आवास (गुजरात)।<br>&bull; <mark class="exam-key">केबुल लामजाओ</mark>: विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान (लोकटक झील, मणिपुर)।<br>&bull; <mark class="exam-key">सुंदरबन</mark>: रॉयल बंगाल टाइगर और मैंग्रोव वनों हेतु प्रसिद्ध (पश्चिम बंगाल)।<br>&bull; <mark class="exam-key">दुधवा राष्ट्रीय उद्यान</mark>: उत्तर प्रदेश (लखीमपुर खीरी)।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (भारत के द्वीप)</span>
+        <div class="note-actions">
+          <span class="note-num">#84</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">अंडमान-निकोबार एवं लक्षद्वीप समूह</h3>
+      <div class="note-content">&bull; <mark class="exam-key">10 डिग्री चैनल (10° Channel)</mark>: अंडमान द्वीप को निकोबार द्वीप से अलग करता है।<br>&bull; <mark class="exam-key">9 डिग्री चैनल</mark>: लक्षद्वीप को मिनिकॉय से अलग करता है।<br>&bull; <mark class="exam-key">8 डिग्री चैनल</mark>: मिनिकॉय को मालदीव से अलग करता है।<br>&bull; बैरन द्वीप (Barren Island): भारत का एकमात्र सक्रिय ज्वालामुखी (अंडमान सागर में)।<br>&bull; इंदिरा पॉइंट (पिग्मेलियन पॉइंट): भारत का सबसे दक्षिणी बिंदु (ग्रेट निकोबार में, 6°4' N)।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (मिट्टियां व फसलें)</span>
+        <div class="note-actions">
+          <span class="note-num">#85</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भारतीय मिट्टियां (Soils) एवं प्रमुख फसलें</h3>
+      <div class="note-content">&bull; <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark>: कपास (Cotton) की खेती हेतु सर्वश्रेष्ठ (महाराष्ट्र, गुजरात, MP - बेसाल्ट लावा चट्टानों के अपक्षय से निर्मित)।<br>&bull; <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil)</mark>: भारत में सर्वाधिक क्षेत्रफल (लगभग 43%) पर पाई जाने वाली उपजाऊ मिट्टी (नई जलोढ़ = खादर, पुरानी जलोढ़ = बांगर)।<br>&bull; <mark class="exam-key">लेटराइट मिट्टी</mark>: चाय, कॉफी और काजू की खेती हेतु उपयुक्त (केरल, पश्चिमी घाट - भारी वर्षा व लीचिंग से निर्मित)।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+      <div class="note-card-head">
+        <span class="note-badge badge-geography">🌍 Geography (प्रमुख फसलें)</span>
+        <div class="note-actions">
+          <span class="note-num">#86</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">खरीफ, रबी और जायद फसलें</h3>
+      <div class="note-content">&bull; <mark class="exam-key">खरीफ फसलें (जून-जुलाई में बोई, अक्टूबर-नवंबर में काटी)</mark>: धान (चावल), मक्का, ज्वार, बाजरा, कपास, सोयाबीन, मूंगफली।<br>&bull; <mark class="exam-key">रबी फसलें (अक्टूबर-नवंबर में बोई, मार्च-अप्रैल में काटी)</mark>: गेहूं, जौ, चना, मटर, सरसों, आलू, अलसी।<br>&bull; <mark class="exam-key">जायद फसलें (मार्च-अप्रैल में बोई, जून में काटी)</mark>: तरबूज, खरबूजा, खीरा, ककड़ी, मौसमी सब्जियां।</div>
+    </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (भारत की नदियां)</span>
+      <div class="note-actions">
+        <span class="note-num">#10</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत की प्रमुख नदियां एवं उद्गम स्थल</h3>
+    <div class="note-content">भारत की सबसे लंबी नदी <mark class="exam-key">गंगा (2525 किमी)</mark> गंगोत्री हिमनद (भागीरथी) से निकलती है। दक्षिण भारत की सबसे लंबी नदी <mark class="exam-key">गोदावरी (वृद्ध गंगा - त्र्यंबकेश्वर नासिक)</mark> है। नर्मदा और ताप्ती नदियां पश्चिम की ओर बहकर <mark class="exam-key">अरब सागर में ज्वारनदमुख (Estuary)</mark> बनाती हैं, डेल्टा नहीं।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (अक्षांश व मानक समय)</span>
+      <div class="note-actions">
+        <span class="note-num">#11</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">कर्क रेखा व भारतीय मानक समय रेखा (IST)</h3>
+    <div class="note-content"><mark class="exam-key">कर्क रेखा (23.5° N) भारत के 8 राज्यों</mark> (गुजरात, राजस्थान, MP, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा, मिजोरम) से गुजरती है। भारतीय मानक समय (IST) <mark class="exam-key">82.5° पूर्व देशांतर (प्रयागराज मिर्जापुर)</mark> पर आधारित है, जो ग्रीनविच मीन टाइम (GMT) से 5 घंटे 30 मिनट आगे है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (झीलें व जलप्रपात)</span>
+      <div class="note-actions">
+        <span class="note-num">#12</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत की प्रमुख झीलें व जलप्रपात</h3>
+    <div class="note-content">भारत में मीठे पानी की सबसे बड़ी प्राकृतिक झील <mark class="exam-key">वुलर झील (जम्मू कश्मीर)</mark> है। सबसे बड़ी तटीय खारे पानी की लैगून झील <mark class="exam-key">चिल्का झील (ओडिशा)</mark> है। विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान 'केइबुल लामजाओ' <mark class="exam-key">लोकतक झील (मणिपुर)</mark> में स्थित है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (पर्वतीय दर्रे)</span>
+      <div class="note-actions">
+        <span class="note-num">#13</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत के प्रमुख पर्वतीय दर्रे (Mountain Passes)</h3>
+    <div class="note-content"><mark class="exam-key">जोजिला दर्रा</mark> श्रीनगर को लेह से जोड़ता है। <mark class="exam-key">बनिहाल दर्रा</mark> में प्रसिद्ध 'जवाहर सुरंग' स्थित है। <mark class="exam-key">शिपकी ला व रोहतांग</mark> हिमाचल प्रदेश में हैं (सतलुज नदी भारत में शिपकी ला से प्रवेश करती है)। <mark class="exam-key">नाथू ला व जेलेप ला</mark> सिक्किम में और <mark class="exam-key">बोमडिला</mark> अरुणाचल में हैं।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
+      <div class="note-actions">
+        <span class="note-num">#14</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत का पहला राष्ट्रीय उद्यान एवं वन्यजीव</h3>
+    <div class="note-content">भारत का प्रथम राष्ट्रीय उद्यान <mark class="exam-key">जिम कॉर्बेट (उत्तराखंड, 1936)</mark> है (पूर्व नाम हेली नेशनल पार्क)। एक सींग वाले गैंडे के लिए <mark class="exam-key">काजीरंगा (असम)</mark> प्रसिद्ध है। एशियाई शेरों के लिए <mark class="exam-key">गिर नेशनल पार्क (गुजरात)</mark> विख्यात है। भारत में प्रोजेक्ट टाइगर 1973 में शुरू हुआ था।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (सौरमंडल)</span>
+      <div class="note-actions">
+        <span class="note-num">#15</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">सौरमंडल के प्रमुख तथ्य (Solar System Facts)</h3>
+    <div class="note-content">सौरमंडल का सबसे बड़ा ग्रह <mark class="exam-key">बृहस्पति (Jupiter)</mark> और सबसे छोटा <mark class="exam-key">बुध (Mercury)</mark> है। सबसे चमकीला व सबसे गर्म ग्रह <mark class="exam-key">शुक्र (Venus - भोर व सांझ का तारा)</mark> है। शुक्र और अरुण (Uranus) पूरब से पश्चिम (दक्षिणावर्त) परिक्रमा करते हैं। मंगल को लाल ग्रह कहा जाता है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (भारतीय मिट्टियां)</span>
+      <div class="note-actions">
+        <span class="note-num">#16</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत की प्रमुख मिट्टियां (Soils of India)</h3>
+    <div class="note-content">भारत में सर्वाधिक क्षेत्रफल पर <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil - 40%+)</mark> पाई जाती है (खादर = नई, बांगर = पुरानी जलोढ़)। <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark> दक्कन ट्रैप में कपास की खेती के लिए सर्वोत्तम होती है और इसमें जलधारण क्षमता सर्वाधिक होती है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर)</span>
+      <div class="note-actions">
+        <span class="note-num">#17</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत व विश्व के प्रमुख पर्वत शिखर</h3>
+    <div class="note-content">विश्व की सबसे ऊंची चोटी <mark class="exam-key">माउंट एवरेस्ट (8848.86 मी, नेपाल)</mark> है। भारत की सर्वोच्च चोटी <mark class="exam-key">K2 (गॉडविन ऑस्टिन - 8611 मी, काराकोरम)</mark> है। निर्विवाद भारतीय भूभाग में सर्वोच्च चोटी <mark class="exam-key">कंचनजंगा (सिक्किम - 8586 मी)</mark> है। दक्षिण भारत की सर्वोच्च चोटी <mark class="exam-key">अनाईमुडी (2695 मी)</mark> है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (प्रमुख बांध)</span>
+      <div class="note-actions">
+        <span class="note-num">#18</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत के प्रमुख बांध व नदी परियोजनाएं</h3>
+    <div class="note-content">भारत का सबसे ऊंचा बांध <mark class="exam-key">टिहरी बांध (भागीरथी नदी, उत्तराखंड)</mark> है। सबसे लंबा बांध <mark class="exam-key">हीराकुंड बांध (महानदी, ओडिशा)</mark> है। सबसे बड़ा गुरुत्वीय बांध <mark class="exam-key">भाखड़ा बांध (सतलुज नदी, हिमाचल-पंजाब)</mark> है। सरदार सरोवर बांध नर्मदा नदी पर गुजरात में स्थित है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (खनिज संसाधन)</span>
+      <div class="note-actions">
+        <span class="note-num">#19</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत के प्रमुख खनिज एवं उत्पादक क्षेत्र</h3>
+    <div class="note-content">भारत में <mark class="exam-key">कोयले का सर्वाधिक भंडार झारखंड (झरिया)</mark> में है। सोने की प्रसिद्ध खान <mark class="exam-key">कोलार व हट्टी (कर्नाटक)</mark> में है। तांबे के लिए प्रसिद्ध खान <mark class="exam-key">खेतड़ी (राजस्थान)</mark> है। पन्ना (मध्य प्रदेश) हीरे की खदानों के लिए भारत में एकमात्र सक्रिय क्षेत्र है।</div>
+  </article>
+<article class="note-card" data-cat="geography">
+    <div class="note-card-head">
+      <span class="note-badge badge-geography">🌍 Geography (अंतर्राष्ट्रीय सीमाएं)</span>
+      <div class="note-actions">
+        <span class="note-num">#20</span>
+        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+    </div>
+    <h3 class="note-title">भारत की अंतर्राष्ट्रीय सीमाएं एवं रेखाएं</h3>
+    <div class="note-content">भारत की सबसे लंबी स्थलीय सीमा <mark class="exam-key">बांग्लादेश (4,096.7 किमी)</mark> के साथ लगती है। भारत-पाकिस्तान सीमा रेखा को <mark class="exam-key">रेडक्लिफ रेखा (1947)</mark> और भारत-चीन सीमा को <mark class="exam-key">मैकमोहन रेखा (1914)</mark> कहते हैं। भारत व श्रीलंका को <mark class="exam-key">पाक जलडमरूमध्य (Palk Strait)</mark> अलग करता है।</div>
+  </article>
+    </div>
+
+    <!-- BOTTOM CROSS LINKS -->
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
+      <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
+      <div class="related-vacancies-grid">
+        <a href="short-notes-hub.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+          </div>
+          <span class="btn-link">Open Hub &rarr;</span>
+        </a>
+        <a href="free-test-weekly.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Mock Tests</span>
+            <h4 style="margin-top: 4px;">Free Weekly Mock Test &amp; Quiz Engine (Live Timers)</h4>
+          </div>
+          <span class="btn-link">Practice Tests &rarr;</span>
+        </a>
+      </div>
+    </div>
+
   </main>
+
+  <!-- COPY TOAST -->
+  <div id="copyToast">
+    <span>✅</span>
+    <span id="copyToastMsg">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    function copyFact(btn) {
+      const card = btn.closest('.note-card');
+      const title = card.querySelector('.note-title').innerText.trim();
+      const content = card.querySelector('.note-content').innerText.trim();
+      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast("Point Copied: " + title.substring(0, 30) + "...");
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast("Point Copied!");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('copyToast');
+      const toastMsg = document.getElementById('copyToastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    function filterSubjectNotes(query) {
+      const q = query.trim().toLowerCase();
+      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
+      const clearBtn = document.getElementById('clearSubjectSearch');
+      clearBtn.style.display = q ? 'block' : 'none';
+
+      let visible = 0;
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('subjectVisibleCount').innerText = visible;
+    }
+
+    function clearSubjectSearch() {
+      const input = document.getElementById('subjectSearchInput');
+      input.value = '';
+      filterSubjectNotes('');
+      input.focus();
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="site-footer">

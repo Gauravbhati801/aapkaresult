@@ -3,45 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History (इतिहास) 1-Min Short Notes - AapkaResult.in</title>
-  <meta name="description" content="Ancient, Medieval and Modern Indian History short revision notes and key points for government competitive exams.">
+  <title>History (इतिहास) 1-Minute Short Revision Notes (30 High-Yield Facts) - AapkaResult.in</title>
+  <meta name="description" content="Download & read 30 crisp History short notes for UP Police, SSC GD, Railway & Agniveer. Ancient, Medieval, and Modern Indian Freedom Movement key points.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-history.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* High Contrast Notes Typography */
-    .home-content, .job-article {
+    .notes-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 30px 24px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .notes-hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .notes-hero h1 {
+      font-size: 1.85rem;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .notes-hero p {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Sub Nav Pills */
+    .subject-pill-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .pill-link {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill-link:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .pill-link.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+    .pill-link.hub-link {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #dc2626;
+    }
+
+    /* Search & Stats Bar */
+    .notes-controls {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .search-box-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-box-wrapper input {
+      width: 100%;
+      padding: 12px 42px 12px 42px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box-wrapper input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    .search-icon-inside {
+      position: absolute;
+      left: 14px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: #94a3b8;
+      cursor: pointer;
+      display: none;
+      padding: 4px 8px;
+    }
+    .notes-status-row {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Cards Grid */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .note-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+    }
+    .note-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      border-color: #cbd5e1;
+    }
+    .note-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .note-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-history { background: #fef3c7; color: #92400e; }
+    .badge-science { background: #dcfce7; color: #166534; }
+    .badge-polity { background: #dbeafe; color: #1e40af; }
+    .badge-geography { background: #f3e8ff; color: #6b21a8; }
+    .badge-static { background: #ffedd5; color: #9a3412; }
+    .badge-economics { background: #e0e7ff; color: #3730a3; }
+
+    .note-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .note-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .btn-copy-note {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #475569;
+      cursor: pointer;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .btn-copy-note:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .note-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a !important;
+      line-height: 1.4;
+      margin: 0 0 10px 0;
+    }
+    .note-content {
+      font-size: 14.5px;
       color: #1e293b !important;
+      line-height: 1.65;
+      flex-grow: 1;
     }
-    .home-content h2, .home-content h3, .home-content h4 {
-      color: #0f172a !important;
-      font-weight: 800 !important;
+    .exam-key {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border-bottom: 2px solid #bfdbfe;
     }
-    .home-content p, .home-content li {
-      color: #334155 !important;
-      line-height: 1.75 !important;
-      font-size: 15px !important;
+
+    /* Toast */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
     }
-    .home-content strong, .home-content b {
-      color: #0f172a !important;
-    }
-    .home-content .box {
-      background: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
-      border-left: 4px solid #2563eb !important;
-      border-radius: 8px !important;
-      padding: 16px !important;
-      margin: 16px 0 !important;
-    }
-    .home-content .box li {
-      margin-bottom: 12px !important;
+    #copyToast.show {
+      transform: translateX(-50%) translateY(0);
     }
   </style>
-    
 </head>
 <body>
 
@@ -60,7 +273,7 @@
     </div>
   </div>
 
-    <!-- SITE HEADER -->
+  <!-- SITE HEADER -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand">
@@ -114,7 +327,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
-        <li><a href="free-test-weekly.html">Mock Test</a></li>
+        <li><a href="free-test-weekly.html" class="">Mock Test</a></li>
         <li><a href="short-notes-hub.html" class="active">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
@@ -140,79 +353,521 @@
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
       <li><a href="short-notes-hub.html">Short Notes Hub</a></li>
-      <li>History (इतिहास) Notes</li>
+      <li>History (इतिहास)</li>
     </ul>
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="job-page-container">
-    <article class="job-article">
-      <h1 class="job-main-title">📜 History (इतिहास) 1-Minute Crisp Revision Notes</h1>
+  <main class="job-page-container" style="max-width: 1200px;">
+    
+    <!-- HERO BANNER -->
+    <div class="notes-hero">
+      <div class="notes-hero-badge">⚡ History (इतिहास) Special 2026</div>
+      <h1>🏛️ History (इतिहास) 1-Minute Crisp Revision Notes</h1>
+      <p>प्राचीन भारत (हड़प्पा, वैदिक काल, बौद्ध धर्म), मध्यकालीन भारत (दिल्ली सल्तनत, मुगल साम्राज्य) और आधुनिक भारत (1857 क्रांति, गांधीजी एवं स्वतंत्रता आंदोलन) के 30 सर्वाधिक पूछे जाने वाले परीक्षा उपयोगी तथ्य।</p>
+    </div>
 
-      <div class="article-meta">
-        <span><b>Subject:</b> History (इतिहास)</span>
-        <span><b>Format:</b> High-Yield Quick Revision Facts</span>
-        <span><b>Target Exams:</b> SSC GD, UP Police, RRB, Agniveer &amp; State PSC</span>
+    <!-- SUBJECT PILL NAVIGATION -->
+    <div class="subject-pill-nav">
+      <a href="notes-history.html" class="pill-link active">🏛️ History Notes</a>
+      <a href="notes-science.html" class="pill-link ">🧬 Science Notes</a>
+      <a href="notes-polity.html" class="pill-link ">⚖️ Polity Notes</a>
+      <a href="notes-geography.html" class="pill-link ">🌍 Geography Notes</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+    </div>
+
+    <!-- SEARCH & CONTROLS -->
+    <div class="notes-controls">
+      <div class="search-box-wrapper">
+        <span class="search-icon-inside">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="subjectSearchInput" placeholder="Search keywords in History (इतिहास)..." onkeyup="filterSubjectNotes(this.value)">
+        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
       </div>
-
-      <div class="job-summary-lead">
-        Key high-yield indicators and revision points prepared specifically for one-minute rapid recall before examinations. Focus on direct factual questions repeatedly asked in government competitive exams.
+      <div class="notes-status-row">
+        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">30</strong> high-yield points</span>
+        <span>Click 📋 to copy any point</span>
       </div>
+    </div>
 
-      <!-- SUBJECT NAV BAR -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0;">
-        <a href="notes-history.html" class="pill-btn active" style="text-decoration: none;">🏛️ History Notes</a>
-        <a href="notes-science.html" class="pill-btn" style="text-decoration: none;">🧬 Science Notes</a>
-        <a href="notes-polity.html" class="pill-btn" style="text-decoration: none;">⚖️ Polity Notes</a>
-        <a href="notes-geography.html" class="pill-btn" style="text-decoration: none;">🌍 Geography Notes</a>
-        <a href="short-notes-hub.html" class="pill-btn" style="text-decoration: none; background: #dc2626; color: #fff;">⚡ All Notes Hub</a>
-      </div>
-
-      <div class="home-content" style="color: #1e293b;">
-            <h2 style="color: #0f172a !important;">📜 Ancient & Modern Indian History Crisp Revision Notes</h2>
-            <p>Agniveer, UP Police aur SSC exam updates ke short revision ke liye ye high-yield indicators bahut zaroori hain:</p>
-            
-            <div class="box" style="margin-top:15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                <ul style="list-style:none; padding:0;">
-                    <li style="margin:10px 0; color: #1e293b;"><b>सिंधु घाटी सभ्यता (Indus Valley):</b> हड़प्पा की खोज 1921 में दयाराम साहनी द्वारा की गई थी। यह एक कांस्य युगीन (Bronze Age) शहरी सभ्यता थी।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>बौद्ध धर्म संगीतियां (Buddhist Councils):</b> प्रथम संगीति राजगृह (अजातशत्रु), द्वितीय वैशाली (कालाशोक), तृतीय पाटलिपुत्र (अशोक), और चतुर्थ कुंडलवन (कनिष्क) में आयोजित हुई।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>1526 पानीपत का प्रथम युद्ध:</b> बाबर ने इब्राहिम लोदी को हराकर भारत में मुगल साम्राज्य की नींव रखी और पहली बार बारूद-तोपों का प्रयोग किया।</li>
-                    <li style="margin:10px 0; color: #1e293b;"><b>1857 की क्रांति:</b> इसकी शुरुआत 10 मई को मेरठ छावनी से हुई थी। मंगल पांडे ने बैरकपुर में ब्रिटिश अधिकारियों पर गोली चलाई थी।</li>
-                </ul>
-            </div>
-        
-            <h3 style="margin-top:20px; color: #1e3a8a; font-weight: 700;">Quick Practice (Exam Pattern Based)</h3>
-            <p style="line-height:1.8; color: #334155;">नीचे दिए गए पॉइंट्स SSC GD, UP Police, Railway Group D और Defence exams के पिछले वर्षों के pattern को ध्यान में रखकर तैयार किए गए हैं। हर topic के साथ self-test question और memory trick दी गई है ताकि revision long-term याद रहे।</p>
-            <ul style="margin-top:10px; line-height:1.9; color: #334155; padding-left:20px;">
-                <li><b>1 Minute Rule:</b> हर fact को 60 सेकंड में recall करने की practice करें।</li>
-                <li><b>3-3-3 Revision:</b> उसी दिन, तीसरे दिन और सातवें दिन short revision करें।</li>
-                <li><b>MCQ Trigger Words:</b> longest, first, article, vitamin deficiency, movement year जैसे keywords पर विशेष ध्यान दें।</li>
-                <li><b>Error Notebook:</b> गलत सवालों की अलग कॉपी बनाएं और weekend में revise करें।</li>
-            </ul>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">How to Use These Notes Daily</h3>
-            <p style="line-height:1.8; color: #334155;">इन notes को सिर्फ पढ़ना काफी नहीं है; active recall जरूरी है। सुबह 20 मिनट theory पढ़ें, दोपहर में 15 MCQs लगाएं और रात में केवल गलत प्रश्न revise करें। अगर आप working candidate हैं, तो भी 45-60 मिनट की focused study से strong score बनाया जा सकता है।</p>
-            <p style="line-height:1.8; color: #334155;">AapkaResult.in पर हम regular updates, free mock links और quick notes provide करते हैं ताकि students को अलग-अलग websites पर भटकना न पड़े। हमारा उद्देश्य clear है: authentic content, easy language और exam-oriented preparation।</p>
-
-            <h3 style="margin-top:22px; color: #1e3a8a; font-weight: 700;">Important Disclaimer for Students</h3>
-            <p style="line-height:1.8; color: #334155;">ये notes revision purpose के लिए हैं। Official answer/notification के लिए हमेशा संबंधित विभाग की website देखें। अगर किसी exam pattern में बदलाव आता है, तो updated syllabus के अनुसार अपनी strategy adjust करें।</p>
-
+    <!-- CARDS GRID -->
+    <div class="notes-grid" id="subjectNotesGrid">
+      <article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#01</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
         </div>
-    
-            <div style="margin: 25px 0; padding: 16px; background: #1e293b; border-radius: 8px;">
-              <h4 style="color: #0f172a; margin-bottom: 10px; font-size: 14px;">Explore Other 1-Min Subject Notes:</h4>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="notes-history.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🏛️ History Notes</a>
-                <a href="notes-science.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🧬 Science Notes</a>
-                <a href="notes-polity.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">⚖️ Polity Notes</a>
-                <a href="notes-geography.html" style="color: #f8fafc; background: #334155; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">🌍 Geography Notes</a>
-                <a href="short-notes-hub.html" style="color: #f8fafc; background: #dc2626; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold;">⚡ All Short Notes Hub</a>
-              </div>
-            </div>
-    
-
+      </div>
+      <h3 class="note-title">सिंधु घाटी सभ्यता की खोज एवं प्रमुख स्थल</h3>
+      <div class="note-content"><mark class="exam-key">1921 में दयाराम साहनी</mark> ने हड़प्पा की और <mark class="exam-key">1922 में राखालदास बनर्जी</mark> ने मोहनजोदड़ो की खोज की। लोथल (गुजरात) प्रमुख प्राचीन बंदरगाह व गोदीवाड़ा (Dockyard) था, जबकि कालीबंगा (राजस्थान) से जुते हुए खेत के साक्ष्य मिले।</div>
     </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#02</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">ऋग्वेद व चारों वेद</h3>
+      <div class="note-content">सबसे प्राचीन वेद <mark class="exam-key">ऋग्वेद</mark> है जिसमें 10 मंडल, 1,028 सूक्त और प्रसिद्ध <mark class="exam-key">गायत्री मंत्र (तीसरे मंडल में)</mark> है। सामवेद को भारतीय संगीत का जनक माना जाता है, यजुर्वेद कर्मकांड व गद्य-पद्य दोनों में है, और अथर्ववेद तंत्र-मंत्र व औषधि से संबंधित है।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#03</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">महात्मा बुद्ध एवं बौद्ध धर्म</h3>
+      <div class="note-content">गौतम बुद्ध का जन्म <mark class="exam-key">लुम्बिनी (नेपाल)</mark> में हुआ था। बोधगया में पीपल वृक्ष (बोधिवृक्ष) के नीचे ज्ञान प्राप्त हुआ। उन्होंने अपना प्रथम उपदेश <mark class="exam-key">सारनाथ</mark> में दिया (धर्मचक्रप्रवर्तन) और महापरिनिर्वाण <mark class="exam-key">कुशीनगर</mark> (उत्तर प्रदेश) में हुआ।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#04</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">चार प्रमुख बौद्ध संगीतियां (Buddhist Councils)</h3>
+      <div class="note-content">1. प्रथम संगीति: राजगृह (अजातशत्रु के काल में); 2. द्वितीय: वैशाली (कालाशोक); 3. तृतीय: पाटलिपुत्र (अशोक के संरक्षण में); 4. चतुर्थ: <mark class="exam-key">कुंडलवन, कश्मीर (कनिष्क के काल में)</mark> जहां बौद्ध धर्म हीनयान और महायान में विभाजित हुआ।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#05</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भगवान महावीर एवं जैन धर्म</h3>
+      <div class="note-content">भगवान महावीर जैन धर्म के <mark class="exam-key">24वें व अंतिम तीर्थंकर</mark> थे (प्रथम तीर्थंकर ऋषभदेव थे)। महावीर का जन्म वैशाली के कुंडग्राम में हुआ और निर्वाण पावापुरी में प्राप्त हुआ। जैन धर्म के त्रिरत्न हैं: सम्यक दर्शन, सम्यक ज्ञान और सम्यक आचरण।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#06</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">मौर्य साम्राज्य व चाणक्य का अर्थशास्त्र</h3>
+      <div class="note-content">चंद्रगुप्त मौर्य ने नंद वंश के धनानंद को हराकर 322 ईसा पूर्व में मौर्य साम्राज्य की स्थापना की। उनके गुरु <mark class="exam-key">चाणक्य (विष्णुगुप्त/कौटिल्य)</mark> ने राजनीति और शासन कला पर प्रसिद्ध ग्रंथ <mark class="exam-key">अर्थशास्त्र</mark> लिखा। मेगस्थनीज ने इंडिका पुस्तक लिखी।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#07</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">सम्राट अशोक व कलिंग युद्ध</h3>
+      <div class="note-content">सम्राट अशोक ने 261 ई.पू. में <mark class="exam-key">कलिंग युद्ध</mark> लड़ा, जिसके भारी रक्तपात के बाद उन्होंने बौद्ध धर्म (उपगुप्त से दीक्षा) अपनाया। अशोक के 13वें शिलालेख में कलिंग युद्ध का वर्णन है। अशोक के अभिलेखों को सर्वप्रथम <mark class="exam-key">1837 में जेम्स प्रिंसेप</mark> ने पढ़ा था।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#08</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">गुप्त काल - भारतीय इतिहास का स्वर्ण युग</h3>
+      <div class="note-content">गुप्त वंश के संस्थापक श्रीगुप्त थे। <mark class="exam-key">समुद्रगुप्त</mark> को इतिहासकार विंसेंट स्मिथ ने "भारत का नेपोलियन" कहा (प्रयाग प्रशस्ति - हरिषेण द्वारा रचित)। <mark class="exam-key">चंद्रगुप्त द्वितीय (विक्रमादित्य)</mark> के दरबार में नवरत्न थे, जिनमें महाकवि कालिदास प्रमुख थे।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#09</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">तराइन के ऐतिहासिक युद्ध (1191 & 1192)</h3>
+      <div class="note-content">तराइन का प्रथम युद्ध (1191) में <mark class="exam-key">पृथ्वीराज चौहान तृतीय</mark> ने मुहम्मद गोरी को पराजित किया। तराइन के द्वितीय युद्ध (1192) में मुहम्मद गोरी ने छल से पृथ्वीराज चौहान को हराया, जिससे भारत में मुस्लिम शासन की नींव पड़ी।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#10</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">दिल्ली सल्तनत के 5 वंश (क्रम याद रखें)</h3>
+      <div class="note-content">क्रम: <mark class="exam-key">गुलाम वंश (1206-1290) &rarr; खिलजी (1290-1320) &rarr; तुगलक (1320-1414) &rarr; सैयद (1414-1451) &rarr; लोदी वंश (1451-1526)</mark>। गुलाम वंश का संस्थापक कुतुबुद्दीन ऐबक था (लाखबख्श उपाधि), और भारत की पहली महिला मुस्लिम शासिका <mark class="exam-key">रजिया सुल्तान</mark> थी।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#11</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">अलाउद्दीन खिलजी की बाजार नियंत्रण नीति</h3>
+      <div class="note-content">अलाउद्दीन खिलजी ने मूल्य नियंत्रण व राशनिंग प्रणाली लागू की। उसने सैनिकों को नकद वेतन देने तथा घोड़ों को दागने व सैनिकों का हुलिया लिखने की प्रथा शुरू की। उसने चित्तौड़ पर 1303 में आक्रमण किया (पद्मावत - मलिक मुहम्मद जायसी)।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#12</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">मुहम्मद बिन तुगलक की 5 योजनाएं</h3>
+      <div class="note-content">मुहम्मद बिन तुगलक को विरोधाभासों का मिश्रण कहा जाता है। उसकी योजनाएं: राजधानी दिल्ली से दौलताबाद (देवगिरि) स्थानांतरण, सांकेतिक मुद्रा (तांबे/कांसे के सिक्के), दोआब में कर वृद्धि, खुरासान व कराचिल अभियान।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#13</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">विजयनगर साम्राज्य की स्थापना (1336)</h3>
+      <div class="note-content">विजयनगर साम्राज्य की स्थापना <mark class="exam-key">हरिहर और बुक्का</mark> नामक दो भाइयों ने तुंगभद्रा नदी के तट पर की। राजधानी हम्पी थी। इसके सबसे प्रतापी राजा <mark class="exam-key">कृष्णदेव राय (तुलुव वंश)</mark> थे, जिन्होंने आमुक्तमाल्याद ग्रंथ लिखा और उनके दरबार में अष्टदिग्गज कवि थे।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#14</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">पानीपत का प्रथम युद्ध (1526) एवं मुगल वंश</h3>
+      <div class="note-content">21 अप्रैल 1526 को पानीपत के प्रथम युद्ध में <mark class="exam-key">बाबर ने इब्राहिम लोदी को हराकर</mark> भारत में मुगल साम्राज्य की नींव रखी। बाबर ने इसमें तुगलमा युद्ध नीति और तोपखाने का पहली बार सफल प्रयोग किया। 1527 में खानवा का युद्ध (राणा सांगा के विरुद्ध) जीता।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#15</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">शेरशाह सूरी एवं ग्रैंड ट्रंक (GT) रोड</h3>
+      <div class="note-content">शेरशाह सूरी ने हुमायूं को चौसा (1539) और बिलग्राम/कन्नौज (1540) के युद्ध में पराजित किया। उसने कोलकाता से पेशावर तक <mark class="exam-key">ग्रैंड ट्रंक रोड (सड़क-ए-आजम)</mark> बनवाई, चांदी का "रुपया" चलाया और उसका मकबरा <mark class="exam-key">सासाराम (बिहार)</mark> में झील के बीच स्थित है।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#16</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">सम्राट अकबर, हल्दीघाटी युद्ध व नवरत्न</h3>
+      <div class="note-content">अकबर ने 1556 में पानीपत का दूसरा युद्ध (हेमू के विरुद्ध) जीता। <mark class="exam-key">हल्दीघाटी का युद्ध (1576)</mark> महाराणा प्रताप और अकबर के सेनापति मानसिंह के बीच लड़ा गया। अकबर ने 1582 में <mark class="exam-key">दीन-ए-इलाही धर्म</mark> शुरू किया (स्वीकारने वाला एकमात्र हिंदू बीरबल था)।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#17</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">छत्रपति शिवाजी महाराज एवं मराठा साम्राज्य</h3>
+      <div class="note-content">शिवाजी महाराज का राज्याभिषेक 1674 में रायगढ़ किले में पंडित गंगाभट्ट द्वारा हुआ और उन्हें <mark class="exam-key">छत्रपति</mark> की उपाधि मिली। 1665 में जयसिंह और शिवाजी के बीच <mark class="exam-key">पुरंदर की संधि</mark> हुई। उनके मंत्रिमंडल को <mark class="exam-key">अष्टप्रधान</mark> कहा जाता था (पेशवा मुख्य प्रधानमंत्री होता था)।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#18</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्लासी (1757) एवं बक्सर का युद्ध (1764)</h3>
+      <div class="note-content">23 जून 1757 को प्लासी के युद्ध में रॉबर्ट क्लाइव ने बंगाल के नवाब सिराजुद्दौला को मीर जाफर के विश्वासघात से हराया। <mark class="exam-key">22 अक्टूबर 1764 को बक्सर के युद्ध</mark> में हेक्टर मुनरो के नेतृत्व में अंग्रेजों ने मीर कासिम, शुजाउद्दौला और शाह आलम द्वितीय की संयुक्त सेना को हराकर भारत पर राजनीतिक नियंत्रण स्थापित किया।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#19</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">1857 का प्रथम स्वतंत्रता संग्राम (महाविद्रोह)</h3>
+      <div class="note-content"><mark class="exam-key">मंगल पांडे</mark> ने 29 मार्च 1857 को बैरकपुर में चर्बी वाले कारतूस के विरोध में विद्रोह की शुरुआत की। 10 मई 1857 को मेरठ छावनी से क्रांति का बिगुल बजा। प्रतीक: <mark class="exam-key">कमल और रोटी</mark>। लखनऊ से बेगम हजरत महल, कानपुर से नाना साहेब/तात्या टोपे, झांसी से रानी लक्ष्मीबाई, और जगदीशपुर (बिहार) से कुंवर सिंह ने नेतृत्व किया।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#20</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">प्रमुख 19वीं सदी के समाज सुधार आंदोलन</h3>
+      <div class="note-content">1. ब्रह्म समाज (1828): राजा राममोहन राय (सती प्रथा उन्मूलन 1829 विलियम बेंटिक के सहयोग से); 2. आर्य समाज (1875): <mark class="exam-key">स्वामी दयानंद सरस्वती ("वेदों की ओर लौटो", सत्यार्थ प्रकाश पुस्तक)</mark>; 3. रामकृष्ण मिशन (1897): स्वामी विवेकानंद (शिकागो धर्म सम्मेलन 1893); 4. सत्यशोधक समाज (1873): ज्योतिबा फुले (गुलामगिरी पुस्तक)।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#21</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भारतीय राष्ट्रीय कांग्रेस (INC) की स्थापना 1885</h3>
+      <div class="note-content">28 दिसंबर 1885 को बंबई (गोकुलदास तेजपाल संस्कृत कॉलेज) में सेवानिवृत्त अंग्रेज अधिकारी <mark class="exam-key">ए.ओ. ह्यूम</mark> द्वारा स्थापना हुई। प्रथम अध्यक्ष <mark class="exam-key">व्योमेश चंद्र बनर्जी</mark> थे (कुल 72 प्रतिनिधियों ने भाग लिया)। उस समय भारत का वायसराय लॉर्ड डफरिन था।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#22</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">कांग्रेस के सबसे महत्वपूर्ण ऐतिहासिक अधिवेशन</h3>
+      <div class="note-content">1906 कोलकाता: दादाभाई नौरोजी द्वारा पहली बार "स्वराज" शब्द की मांग; 1907 सूरत: कांग्रेस का नरम दल व गरम दल में विभाजन; 1916 लखनऊ: कांग्रेस-मुस्लिम लीग समझौता; <mark class="exam-key">1924 बेलगाम: एकमात्र अधिवेशन जिसकी अध्यक्षता महात्मा गांधी ने की</mark>; 1925 कानपुर: प्रथम भारतीय महिला अध्यक्ष सरोजिनी नायडू; <mark class="exam-key">1929 लाहौर: पं. जवाहरलाल नेहरू द्वारा पूर्ण स्वराज का प्रस्ताव</mark>।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#23</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">बंगाल विभाजन (1905) व स्वदेशी आंदोलन</h3>
+      <div class="note-content"><mark class="exam-key">लॉर्ड कर्जन</mark> ने 16 अक्टूबर 1905 को बंगाल का विभाजन लागू किया, जिसके विरोध में पूरे देश में स्वदेशी एवं बहिष्कार आंदोलन शुरू हुआ। रवींद्रनाथ टैगोर ने "आमार सोनार बांग्ला" गीत लिखा और लोगों ने एकता के प्रतीक के रूप में राखी बांधी। 1911 में लॉर्ड हार्डिंग द्वितीय ने बंगाल विभाजन रद्द किया।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#24</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">गांधीजी का भारत आगमन एवं चंपारण सत्याग्रह</h3>
+      <div class="note-content">गांधीजी <mark class="exam-key">9 जनवरी 1915 को दक्षिण अफ्रीका से भारत लौटे</mark> (इसी उपलक्ष्य में हर वर्ष प्रवासी भारतीय दिवस मनाया जाता है)। भारत में उनका प्रथम सफल सत्याग्रह <mark class="exam-key">1917 में चंपारण (बिहार)</mark> में नील की खेती की तिनकठिया प्रथा (3/20 भाग) के विरोध में हुआ।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#25</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">जलियांवाला बाग हत्याकांड (13 अप्रैल 1919)</h3>
+      <div class="note-content">रौलट एक्ट ("ना कोई अपील, ना कोई वकील, ना कोई दलील") के तहत डॉ. सैफुद्दीन किचलू और डॉ. सत्यपाल की गिरफ्तारी के विरोध में अमृतसर के जलियांवाला बाग में शांतिपूर्ण सभा पर <mark class="exam-key">जनरल डायर</mark> ने अंधाधुंध गोलियां चलवाईं। रवींद्रनाथ टैगोर ने विरोध में नाइटहुड की उपाधि त्याग दी।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#26</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">असहयोग आंदोलन व चौरी-चौरा कांड (1922)</h3>
+      <div class="note-content">1 अगस्त 1920 को गांधीजी ने असहयोग आंदोलन शुरू किया (इसी दिन बाल गंगाधर तिलक का निधन हुआ)। <mark class="exam-key">4 फरवरी 1922 को गोरखपुर (उत्तर प्रदेश) के चौरी-चौरा</mark> में उत्तेजित भीड़ ने थाने में 22 पुलिसकर्मियों को जिंदा जला दिया, जिससे दुखी होकर गांधीजी ने 12 फरवरी 1922 को आंदोलन वापस ले लिया।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#27</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">काकोरी ट्रेन एक्शन (9 अगस्त 1925)</h3>
+      <div class="note-content">हिंदुस्तान रिपब्लिकन एसोसिएशन (HRA) के क्रांतिकारियों (राम प्रसाद बिस्मिल, अशफाक उल्ला खां, राजेंद्र लाहिड़ी, रोशन सिंह) ने लखनऊ के पास काकोरी में सरकारी खजाने से भरी ट्रेन को लूटा। चंद्रशेखर आजाद मौके से बच निकले।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#28</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">दांडी मार्च एवं सविनय अवज्ञा आंदोलन (1930)</h3>
+      <div class="note-content">गांधीजी ने 12 मार्च 1930 को साबरमती आश्रम से 78 अनुयायियों के साथ <mark class="exam-key">240 मील की दांडी यात्रा</mark> शुरू की और 6 अप्रैल 1930 को समुद्र तट पर नमक बनाकर नमक कानून तोड़ा, जिसके साथ सविनय अवज्ञा आंदोलन प्रारंभ हुआ।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#29</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भगत सिंह, सुखदेव व राजगुरु का बलिदान</h3>
+      <div class="note-content">लाहौर षड्यंत्र केस में सॉन्डर्स की हत्या के आरोप में <mark class="exam-key">23 मार्च 1931</mark> को भगत सिंह, सुखदेव और राजगुरु को लाहौर जेल में फांसी दी गई। इस दिन को पूरे भारत में "शहीद दिवस" के रूप में मनाया जाता है। भगत सिंह ने "इंकलाब जिंदाबाद" का नारा जन-जन तक पहुंचाया।</div>
+    </article>
+<article class="note-card" data-cat="history">
+      <div class="note-card-head">
+        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
+        <div class="note-actions">
+          <span class="note-num">#30</span>
+          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      <h3 class="note-title">भारत छोड़ो आंदोलन (8 अगस्त 1942)</h3>
+      <div class="note-content">क्रिप्स मिशन की विफलता के बाद 8 अगस्त 1942 को मुंबई के ग्वालिया टैंक मैदान से गांधीजी ने <mark class="exam-key">"करो या मरो" (Do or Die)</mark> का ऐतिहासिक नारा देकर "भारत छोड़ो आंदोलन" (Quit India Movement) की शुरुआत की। 9 अगस्त की सुबह "ऑपरेशन जीरो ऑवर" के तहत सभी बड़े नेता गिरफ्तार कर लिए गए।</div>
+    </article>
+    </div>
+
+    <!-- BOTTOM CROSS LINKS -->
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
+      <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
+      <div class="related-vacancies-grid">
+        <a href="short-notes-hub.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+          </div>
+          <span class="btn-link">Open Hub &rarr;</span>
+        </a>
+        <a href="free-test-weekly.html" class="related-vac-card">
+          <div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Mock Tests</span>
+            <h4 style="margin-top: 4px;">Free Weekly Mock Test &amp; Quiz Engine (Live Timers)</h4>
+          </div>
+          <span class="btn-link">Practice Tests &rarr;</span>
+        </a>
+      </div>
+    </div>
+
   </main>
+
+  <!-- COPY TOAST -->
+  <div id="copyToast">
+    <span>✅</span>
+    <span id="copyToastMsg">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    function copyFact(btn) {
+      const card = btn.closest('.note-card');
+      const title = card.querySelector('.note-title').innerText.trim();
+      const content = card.querySelector('.note-content').innerText.trim();
+      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast("Point Copied: " + title.substring(0, 30) + "...");
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast("Point Copied!");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('copyToast');
+      const toastMsg = document.getElementById('copyToastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    function filterSubjectNotes(query) {
+      const q = query.trim().toLowerCase();
+      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
+      const clearBtn = document.getElementById('clearSubjectSearch');
+      clearBtn.style.display = q ? 'block' : 'none';
+
+      let visible = 0;
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('subjectVisibleCount').innerText = visible;
+    }
+
+    function clearSubjectSearch() {
+      const input = document.getElementById('subjectSearchInput');
+      input.value = '';
+      filterSubjectNotes('');
+      input.focus();
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer class="site-footer">
