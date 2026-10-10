@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Static GK (स्टैटिक सामान्य ज्ञान) In-Depth Question Bank with Solutions - AapkaResult.in</title>
-  <meta name="description" content="Top Static GK repeated questions with detailed explanation for UP Police, SSC GD, Railway & Agniveer. Classical dances, festivals, awards, first in India & world organizations.">
+  <title>Static GK (स्टैटिक सामान्य ज्ञान) Complete Notes-Type Question Bank - AapkaResult.in</title>
+  <meta name="description" content="Attempt 25+ comprehensive notes-type Static GK questions with complete factual breakdowns. Classical dances, festivals, awards, UNESCO sites, world organizations & sports trophies for UP Police, SSC GD & Railway.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-gk.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -22,9 +22,9 @@
     }
     .notes-hero-badge {
       display: inline-block;
-      background: rgba(37, 99, 235, 0.25);
-      color: #60a5fa;
-      border: 1px solid rgba(96, 165, 250, 0.4);
+      background: rgba(236, 72, 153, 0.2);
+      color: #f472b6;
+      border: 1px solid rgba(244, 114, 182, 0.4);
       font-size: 12px;
       font-weight: 700;
       padding: 4px 12px;
@@ -45,6 +45,7 @@
       line-height: 1.6;
     }
 
+    /* Sub Nav Pills */
     .subject-pill-nav {
       display: flex;
       gap: 10px;
@@ -71,10 +72,10 @@
       border-color: #94a3b8;
     }
     .pill-link.active {
-      background: #2563eb;
+      background: #ec4899;
       color: #ffffff;
-      border-color: #2563eb;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+      border-color: #ec4899;
+      box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
     }
     .pill-link.hub-link {
       background: #dc2626;
@@ -82,6 +83,7 @@
       border-color: #dc2626;
     }
 
+    /* Search & Stats Bar */
     .notes-controls {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -94,6 +96,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      margin-bottom: 12px;
     }
     .search-box-wrapper input {
       width: 100%;
@@ -105,8 +108,8 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     .search-box-wrapper input:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      border-color: #ec4899;
+      box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
     }
     .search-icon-inside {
       position: absolute;
@@ -126,8 +129,37 @@
       display: none;
       padding: 4px 8px;
     }
+
+    /* Topic Filter Pills Row */
+    .topic-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .t-filter-btn {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .t-filter-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .t-filter-btn.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
     .notes-status-row {
-      margin-top: 12px;
+      margin-top: 10px;
       padding-top: 10px;
       border-top: 1px solid #f1f5f9;
       display: flex;
@@ -137,25 +169,26 @@
       color: #64748b;
     }
 
-    .questions-container {
+    /* Notes Cards Grid */
+    .gk-notes-container {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
       margin-bottom: 30px;
     }
-    .question-deep-card {
+    .gk-note-card {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 12px;
       padding: 20px 22px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
-    .question-deep-card:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    .gk-note-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
       border-color: #94a3b8;
     }
-    .q-header {
+    .gk-card-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -163,21 +196,16 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .q-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .q-cat-badge {
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-size: 11.5px;
+    .gk-topic-badge {
+      background: #fdf2f8;
+      color: #be185d;
+      font-size: 12px;
       font-weight: 700;
-      padding: 3px 8px;
+      padding: 3px 10px;
       border-radius: 6px;
-      border: 1px solid #bfdbfe;
+      border: 1px solid #fbcfe8;
     }
-    .q-exam-badge {
+    .gk-exam-tag {
       background: #fef3c7;
       color: #92400e;
       font-size: 11.5px;
@@ -186,17 +214,17 @@
       border-radius: 6px;
       border: 1px solid #fde68a;
     }
-    .q-actions {
+    .gk-actions {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .q-number {
+    .gk-num {
       font-size: 13px;
       font-weight: 800;
       color: #64748b;
     }
-    .btn-copy-q {
+    .btn-copy-gk {
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
@@ -207,35 +235,40 @@
       align-items: center;
       justify-content: center;
     }
-    .btn-copy-q:hover {
+    .btn-copy-gk:hover {
       background: #e2e8f0;
       color: #0f172a;
     }
-    .q-title {
+    .gk-q-title {
       font-size: 16.5px;
       font-weight: 700;
       color: #0f172a !important;
       line-height: 1.45;
       margin: 0 0 10px 0;
     }
-    .q-explanation-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid #2563eb;
+    .gk-note-body {
+      background: #ffffff;
       border-radius: 8px;
-      padding: 14px 16px;
-      margin-top: 14px;
     }
-    .ans-badge {
-      display: inline-block;
-      background: #dcfce7;
-      color: #15803d;
-      font-weight: 700;
-      font-size: 13.5px;
-      padding: 4px 10px;
+    .gk-quick-ans {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      padding: 10px 14px;
       border-radius: 6px;
-      margin-bottom: 8px;
-      border: 1px solid #bbf7d0;
+      font-size: 14px;
+      color: #166534;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .gk-exam-tip {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      color: #1e40af;
+      line-height: 1.55;
+      margin-top: 10px;
     }
 
     #copyToast {
@@ -333,7 +366,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
-        <li><a href="free-test-weekly.html" class="">Mock Test</a></li>
+        <li><a href="free-test-weekly.html">Mock Test</a></li>
         <li><a href="short-notes-hub.html" class="active">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
@@ -359,26 +392,26 @@
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
       <li><a href="short-notes-hub.html">Short Notes Hub</a></li>
-      <li>Static GK (सामान्य ज्ञान व संस्कृति)</li>
+      <li>Static GK (सामान्य ज्ञान)</li>
     </ul>
   </div>
 
   <!-- MAIN CONTAINER -->
   <main class="job-page-container" style="max-width: 1200px;">
-    
+
     <!-- HERO BANNER -->
     <div class="notes-hero">
-      <div class="notes-hero-badge">⚡ Static GK (सामान्य ज्ञान व संस्कृति) Question Bank 2026</div>
-      <h1>🎯 Static GK (स्टैटिक सामान्य ज्ञान) Detailed Question Bank</h1>
-      <p>भारत के 8 शास्त्रीय नृत्य एवं कलाकार, प्रमुख लोक नृत्य व राज्यवार त्यौहार (हॉर्नबिल, बिहू, ओणम), भारत रत्न व दादा साहब फाल्के पुरस्कार, साहित्य सम्मान (ज्ञानपीठ), भारत में प्रथम व्यक्तित्व, संयुक्त राष्ट्र संघ (UN/WHO/UNESCO) तथा खेलकूद ट्रॉफियों की सम्पूर्ण विस्तृत व्याख्या।</p>
+      <div class="notes-hero-badge">⚡ Static GK Master Notes 2026</div>
+      <h1>🎯 Static GK Complete Notes-Type Question Bank</h1>
+      <p>UP Police, SSC GD, Railway NTPC/Group D, BSSC एवं Defence CEE के लिए शास्त्रीय नृत्य, त्यौहार, राष्ट्रीय पुरस्कार, यूनेस्को धरोहर, विश्व संगठन, खेलकूद ट्रॉफियां और भारत में प्रथम व्यक्तित्व के विस्तृत नोट्स-फॉर्मेट प्रश्न।</p>
     </div>
 
-    <!-- SUBJECT NAVIGATION PILLS -->
+    <!-- SUBJECT PILLS -->
     <div class="subject-pill-nav">
-      <a href="notes-history.html" class="pill-link ">🏛️ History (इतिहास)</a>
-      <a href="notes-science.html" class="pill-link ">🧬 Science (सामान्य विज्ञान)</a>
-      <a href="notes-polity.html" class="pill-link ">⚖️ Polity (संविधान व राजव्यवस्था)</a>
-      <a href="notes-geography.html" class="pill-link ">🌍 Geography (भूगोल)</a>
+      <a href="notes-history.html" class="pill-link">🏛️ History (इतिहास)</a>
+      <a href="notes-science.html" class="pill-link">🧬 Science (सामान्य विज्ञान)</a>
+      <a href="notes-polity.html" class="pill-link">⚖️ Polity (संविधान व राजव्यवस्था)</a>
+      <a href="notes-geography.html" class="pill-link">🌍 Geography (भूगोल)</a>
       <a href="notes-gk.html" class="pill-link active">🎯 Static GK (सामान्य ज्ञान)</a>
       <a href="short-notes-hub.html" class="pill-link hub-link">⚡ Quick Formula Hub</a>
     </div>
@@ -389,973 +422,1636 @@
         <span class="search-icon-inside">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="notebookSearchInput" placeholder="Search keywords in this subject (e.g. बाबर, विटामिन, अनुच्छेद, गंगा, कथक)..." onkeyup="filterNotebook(this.value)">
-        <button type="button" id="clearSearch" class="clear-search-btn" onclick="clearNotebookSearch()" aria-label="Clear">&times;</button>
+        <input type="text" id="gkSearchInput" placeholder="Quick search Static GK (e.g. कथक, भारत रत्न, यूनेस्को, हॉर्नबिल, ओलंपिक, इसरो, स्वेज नहर, पिंगली वेंकैया)..." onkeyup="filterGkNotes(this.value)">
+        <button type="button" id="clearGkSearch" class="clear-search-btn" onclick="clearGkSearchInput()" aria-label="Clear">&times;</button>
       </div>
+
+      <div class="topic-filter-row">
+        <button type="button" class="t-filter-btn active" onclick="filterByTopic('all', this)">🌟 All Topics (25)</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('dance', this)">🎭 Dances (नृत्य)</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('festival', this)">🎪 Festivals &amp; Fairs</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('awards', this)">🏆 Awards &amp; Honors</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('first_india', this)">🇮🇳 First in India</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('org', this)">🌐 International Org</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('days', this)">📅 Important Days</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('sports', this)">🏅 Sports Trophies</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('books', this)">📖 Books &amp; Authors</button>
+        <button type="button" class="t-filter-btn" onclick="filterByTopic('heritage', this)">🏛️ Heritage &amp; Sites</button>
+      </div>
+
       <div class="notes-status-row">
-        <span>Showing <strong id="visibleQCount" style="color: #0f172a;">20</strong> exam questions with complete detailed explanations</span>
-        <span>Click 📋 to copy any question &amp; solution</span>
+        <span>Showing <strong id="gkVisibleCount" style="color: #0f172a;">25</strong> comprehensive notes-type questions</span>
+        <span>Click 📋 to copy any note point</span>
       </div>
     </div>
 
-    <!-- QUESTIONS LIST -->
-    <div class="questions-container" id="questionsContainer">
+    <!-- GK NOTES CONTAINER -->
+    <div class="gk-notes-container" id="gkNotesContainer">
       
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">भारतीय शास्त्रीय नृत्य</span>
-          <span class="q-exam-badge">🎯 SSC GD, CGL & UP Police Repeated</span>
+    <article class="gk-note-card" data-topic="dance">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🎭 शास्त्रीय नृत्य (Classical Dance)</span>
+          <span class="gk-exam-tag">🎯 SSC GD & UP Police Repeated</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q01</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK01</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">संगीत नाटक अकादमी द्वारा मान्यता प्राप्त भारत के 8 शास्त्रीय नृत्यों में 'कथक' और 'सत्त्रिया' किस राज्य के प्रमुख शास्त्रीय नृत्य हैं?</h3>
+      <h3 class="gk-q-title">Q1. भारत में संगीत नाटक अकादमी द्वारा मान्यता प्राप्त 8 शास्त्रीय नृत्य कौन से हैं और उनके संबंधित राज्य क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> तमिलनाडु और केरल 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> उत्तर प्रदेश (उत्तर भारत) और असम <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> आंध्र प्रदेश और ओडिशा 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> मणिपुर और कर्नाटक 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत में आधिकारिक रूप से 8 शास्त्रीय नृत्य हैं, जिनमें सबसे प्राचीन 'भरतनाट्यम' और सबसे नवीन 'सत्त्रिया' है।
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">'कथक' उत्तर प्रदेश तथा उत्तर भारत का प्रमुख शास्त्रीय नृत्य है, जिसकी उत्पत्ति कथा कहने वाले 'कथिकों' से हुई थी (प्रमुख घराने: लखनऊ, बनारस और जयपुर)। पंडित बिरजू महाराज, लच्छू महाराज और सितारा देवी इसके महान कलाकार रहे हैं। वहीं 'सत्त्रिया' असम का 500 वर्ष पुराना शास्त्रीय नृत्य है, जिसे 15वीं शताब्दी में महान वैष्णव संत श्रीमंत शंकरदेव ने 'सत्रों' (मठों) में भक्ति आंदोलन के दौरान विकसित किया था।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारत के 8 शास्त्रीय नृत्य: (1) भरतनाट्यम - तमिलनाडु (सबसे प्राचीन), (2) कथक - उत्तर प्रदेश, (3) कथकली - केरल (पुरुष प्रधान/मुखौटा), (4) मोहिनीअट्टम - केरल (महिला एकल नृत्य), (5) कुचिपुड़ी - आंध्र प्रदेश, (6) ओडिसी - ओडिशा, (7) मणिपुरी - मणिपुर (रासलीला आधारित), (8) सत्त्रिया - असम।</li><li>भरतनाट्यम की प्रसिद्ध नृत्यांगनाएं: रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति और सोनल मानसिंह।</li><li>कुचिपुड़ी नृत्य का नाम आंध्र प्रदेश के कृष्णा जिले के 'कुचेलापुरम' गांव के नाम पर पड़ा है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भरतनाट्यम:</strong> तमिलनाडु (सबसे प्राचीन मंदिर नृत्य | प्रमुख कलाकार: रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति, सोनल मानसिंह)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कथक:</strong> उत्तर प्रदेश / उत्तर भारत (कथा कहने की परंपरा | प्रमुख घराने: लखनऊ, बनारस, जयपुर | कलाकार: पं. बिरजू महाराज, लच्छू महाराज, सितारा देवी)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कथकली:</strong> केरल (कथा आधारित पुरुष प्रधान नृत्य नाटक, चेहरे पर विशेष हरे-लाल रंगों का लेप और विशाल मुकुट)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मोहिनीअट्टम:</strong> केरल (महिलाओं द्वारा एकल लास्य नृत्य, भगवान विष्णु के मोहिनी अवतार की कथा)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कुचिपुड़ी:</strong> आंध्र प्रदेश (कृष्णा जिले के कुचेलापुरम गांव से उत्पत्ति | प्रमुख कलाकार: राधा रेड्डी, राजा रेड्डी, यामिनी कृष्णमूर्ति)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>ओडिसी:</strong> ओडिशा (मंदिरों में देवदासियों द्वारा प्रारंभ | प्रमुख कलाकार: केलुचरण महापात्र, माधवी मुद्गल | त्रिभंग मुद्रा प्रसिद्ध)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मणिपुरी:</strong> मणिपुर (राधा-कृष्ण की रासलीला पर आधारित | प्रमुख कलाकार: झावेरी बहनें - नयना, सुवर्णा, रंजना, दर्शना)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सत्त्रिया:</strong> असम (15वीं सदी में महान वैष्णव संत श्रीमंत शंकरदेव द्वारा 'सत्रों' / मठों में विकसित किया गया)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> संस्कृति मंत्रालय 'छऊ' (Chhau) नृत्य को भी 9वां शास्त्रीय नृत्य मानता है, परंतु मुख्य अकादमी अनुसार 8 ही हैं।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">लोक नृत्य एवं प्रमुख त्यौहार</span>
-          <span class="q-exam-badge">🎯 All State Police & SSC</span>
+    <article class="gk-note-card" data-topic="dance">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">💃 प्रमुख लोक नृत्य (Folk Dances)</span>
+          <span class="gk-exam-tag">🎯 All State & Central Exams</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q02</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK02</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">प्रसिद्ध 'हॉर्नबिल महोत्सव' (Festival of Festivals) किस पूर्वोत्तर राज्य में मनाया जाता है और 'बिहू' किस राज्य का प्रमुख लोक नृत्य है?</h3>
+      <h3 class="gk-q-title">Q2. भारत के प्रमुख राज्यों के सर्वाधिक पूछे जाने वाले लोक नृत्य कौन से हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> मणिपुर - त्रिपुरा 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> नागालैंड - असम <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> मिजोरम - मेघालय 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> सिक्किम - अरुणाचल प्रदेश 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> राज्यों की क्षेत्रीय लोक संस्कृति, ऋतु चक्र और फसल कटाई पर आधारित प्रमुख लोक नृत्य निम्नलिखित हैं:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">'हॉर्नबिल महोत्सव' नागालैंड में प्रतिवर्ष 1 से 10 दिसंबर तक नागा हेरिटेज विलेज (किसामा, कोहिमा) में मनाया जाता है। इसे 'त्यौहारों का त्यौहार' कहा जाता है और इसका नाम राज्य के प्रसिद्ध हॉर्नबिल पक्षी के सम्मान में रखा गया है। वहीं 'बिहू' असम का सबसे प्रसिद्ध लोक नृत्य और सांस्कृतिक उत्सव है, जो वर्ष में तीन बार (बोहाग बिहू, काटी बिहू, माघ बिहू) फसल चक्र के अनुसार मनाया जाता है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>लावणी और तमाशा 'महाराष्ट्र' के प्रसिद्ध लोक नृत्य हैं।</li><li>घूमर और कालबेलिया (सपेरा नृत्य) 'राजस्थान' के प्रसिद्ध लोक नृत्य हैं (कालबेलिया यूनेस्को अमूर्त सांस्कृतिक विरासत में शामिल है)।</li><li>ओणम 'केरल' का 10 दिवसीय फसल उत्सव है (राजा महाबली के स्वागत में, नौका दौड़ 'वल्लम कली' इसका मुख्य आकर्षण है)।</li><li>पोंगल 'तमिलनाडु' का 4 दिवसीय मकर संक्रांति फसल पर्व है (जल्लीकट्टू इसी अवसर पर आयोजित होता है)।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>असम:</strong> बिहू (फसल उत्सव पर तीन बार), बगुरुम्बा (बोडो जनजाति), कलिगोपाल।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पंजाब:</strong> भांगड़ा (पुरुषों द्वारा), गिद्धा (महिलाओं द्वारा), किकली।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राजस्थान:</strong> घूमर (भील जनजाति द्वारा विकसित), कालबेलिया (सपेरा नृत्य - यूनेस्को धरोहर), गैर, कठपुतली।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>गुजरात:</strong> गरबा (नवरात्रि पर्व), डांडिया रास, भवई (पारंपरिक नाटक)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>महाराष्ट्र:</strong> लावणी (ढोलकी की थाप पर तीव्र गति), तमाशा, कोली नृत्य।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>उत्तर प्रदेश:</strong> नौटंकी, रासलीला, कजरी, झूला, चरकुला (ब्रज भूमि - सिर पर 108 दीपकों का पिंजरा)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मध्य प्रदेश:</strong> मटकी नृत्य (मालवा), जवारा, बधाई नृत्य।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पश्चिम बंगाल:</strong> छऊ, बाउल, कीर्तन, गंभीरा।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> कालबेलिया नृत्य को वर्ष 2010 में यूनेस्को (UNESCO) की अमूर्त सांस्कृतिक विरासत सूची में शामिल किया गया था।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">राष्ट्रीय पुरस्कार एवं सम्मान</span>
-          <span class="q-exam-badge">🎯 UP Police, SSC GD & Railway</span>
+    <article class="gk-note-card" data-topic="festival">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🎪 प्रमुख त्यौहार एवं मेले (Festivals & Fairs)</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC GD & Defence</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q03</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK03</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारत का सर्वोच्च नागरिक सम्मान 'भारत रत्न' किस वर्ष शुरू किया गया था और सर्वप्रथम किन्हें प्रदान किया गया था?</h3>
+      <h3 class="gk-q-title">Q3. भारत के प्रसिद्ध त्यौहार और ऐतिहासिक मेले किस राज्य में मनाए जाते हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> 1950 - डॉ. भीमराव अंबेडकर 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> 1954 - डॉ. सर्वपल्ली राधाकृष्णन, सी. राजगोपालाचारी एवं डॉ. सी.वी. रमन <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> 1962 - डॉ. राजेंद्र प्रसाद 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> 1971 - इंदिरा गांधी 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत के सांस्कृतिक त्यौहार और वार्षिक धार्मिक व व्यापारिक मेलों की संपूर्ण सूची:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत रत्न की शुरुआत 2 जनवरी 1954 को तत्कालीन राष्ट्रपति डॉ. राजेंद्र प्रसाद द्वारा की गई थी। 1954 में यह सम्मान संयुक्त रूप से तीन महान विभूतियों- देश के प्रथम उपराष्ट्रपति डॉ. सर्वपल्ली राधाकृष्णन, स्वतंत्र भारत के प्रथम भारतीय गवर्नर जनरल चक्रवर्ती राजगोपालाचारी, तथा नोबेल पुरस्कार विजेता वैज्ञानिक डॉ. सी.वी. रमन को प्रदान किया गया था।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारत रत्न प्राप्त करने वाली प्रथम महिला श्रीमती इंदिरा गांधी (1971) थीं।</li><li>मरणोपरांत सर्वप्रथम भारत रत्न 1966 में पूर्व प्रधानमंत्री लाल बहादुर शास्त्री जी को दिया गया।</li><li>भारत रत्न प्राप्त करने वाले दो विदेशी नागरिक: खान अब्दुल गफ्फार खान (सीमांत गांधी, 1987 - पाकिस्तान) और नेल्सन मंडेला (1990 - दक्षिण अफ्रीका)।</li><li>खेल जगत में भारत रत्न प्राप्त करने वाले एकमात्र खिलाड़ी सचिन तेंदुलकर (2014) हैं।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>हॉर्नबिल महोत्सव (Hornbill Festival):</strong> नागालैंड (1 से 10 दिसंबर तक किसामा गांव में, इसे 'त्यौहारों का त्यौहार' कहते हैं)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>ओणम (Onam):</strong> केरल (10 दिवसीय फसल उत्सव, राजा महाबली के स्वागत में, नौका दौड़ 'वल्लम कली' मुख्य आकर्षण)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पोंगल (Pongal):</strong> तमिलनाडु (4 दिवसीय मकर संक्रांति फसल पर्व | जल्लीकट्टू / सांड वश में करने का खेल इसी दौरान होता है)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>छठ पूजा:</strong> बिहार व पूर्वी उत्तर प्रदेश (सूर्य देव और छठी मइया को समर्पित 4 दिवसीय महापर्व, अस्ताचल और उदीयमान सूर्य को अर्घ्य)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पुष्कर मेला:</strong> राजस्थान (अजमेर के निकट कार्तिक पूर्णिमा पर लगने वाला विश्व का सबसे बड़ा ऊंट मेला, ब्रह्मा जी का एकमात्र प्रसिद्ध मंदिर)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अंबुबाची मेला (Ambubachi Mela):</strong> असम (गुवाहाटी में नीलांचल पहाड़ी पर स्थित प्रसिद्ध कामाख्या देवी मंदिर में प्रतिवर्ष आषाढ़ माह में)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सोनपुर मेला:</strong> बिहार (गंगा और गंडक नदी के संगम पर कार्तिक पूर्णिमा पर लगने वाला एशिया का सबसे बड़ा पशु मेला)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>लोसार महोत्सव:</strong> लद्दाख व अरुणाचल प्रदेश (तिब्बती बौद्ध नववर्ष का स्वागत उत्सव)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> कुंभ मेला भारत में 4 पवित्र स्थलों पर प्रत्येक 12 वर्ष में लगता है: प्रयागराज (गंगा-यमुना-सरस्वती), हरिद्वार (गंगा), नासिक (गोदावरी), और उज्जैन (क्षिप्रा नदी)।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">साहित्य एवं सिनेमा पुरस्कार</span>
-          <span class="q-exam-badge">🎯 UPSSSC, Police & SSC</span>
+    <article class="gk-note-card" data-topic="awards">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🏆 भारत रत्न (Bharat Ratna)</span>
+          <span class="gk-exam-tag">🎯 All Competitive Exams Core</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q04</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK04</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारतीय सिनेमा का सर्वोच्च पुरस्कार 'दादा साहब फाल्के पुरस्कार' सर्वप्रथम किसे प्रदान किया गया था और साहित्य का सर्वोच्च सम्मान कौन सा है?</h3>
+      <h3 class="gk-q-title">Q4. भारत रत्न पुरस्कार की स्थापना, प्रथम विजेता, विदेशी प्राप्तकर्ता और मुख्य नियम क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> राज कपूर - साहित्य अकादमी 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> देविका रानी रोयरिक (1969) - ज्ञानपीठ पुरस्कार (Jnanpith Award) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> दिलीप कुमार - व्यास सम्मान 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> लता मंगेशकर - सरस्वती सम्मान 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत रत्न देश का सर्वोच्च नागरिक सम्मान है, जिसकी स्थापना 2 जनवरी 1954 को राष्ट्रपति डॉ. राजेंद्र प्रसाद द्वारा की गई थी।
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारतीय सिनेमा के जनक धुंडीराज गोविंद फाल्के (जिन्होंने 1913 में भारत की पहली पूर्ण मूक फिल्म 'राजा हरिश्चंद्र' बनाई) की स्मृति में 1969 में भारत सरकार द्वारा दादा साहब फाल्के पुरस्कार शुरू किया गया। पहली विजेता अभिनेत्री 'देविका रानी' थीं। वहीं भारत में साहित्य का सर्वोच्च सम्मान 'ज्ञानपीठ पुरस्कार' (स्थापना 1961, प्रथम विजेता 1965 में मलयालम लेखक जी. शंकर कुरुप) है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>ज्ञानपीठ पुरस्कार प्राप्त करने वाली प्रथम महिला लेखिका आशापूर्णा देवी (1976, बंगाली भाषा) थीं।</li><li>हिंदी भाषा में प्रथम ज्ञानपीठ पुरस्कार सुमित्रानंदन पंत को उनकी कृति 'चिदंबरा' के लिए 1968 में मिला था।</li><li>भारत का सर्वोच्च खेल पुरस्कार 'मेजर ध्यानचंद खेल रत्न पुरस्कार' (पूर्व नाम राजीव गांधी खेल रत्न, 1991-92) है, जिसके प्रथम विजेता ग्रैंडमास्टर विश्वनाथन आनंद थे।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम प्राप्तकर्ता (1954):</strong> तीन विभूतियों को संयुक्त रूप से- डॉ. सर्वपल्ली राधाकृष्णन, सी. राजगोपालाचारी और डॉ. सी.वी. रमन।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम महिला प्राप्तकर्ता:</strong> श्रीमती इंदिरा गांधी (वर्ष 1971)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मरणोपरांत प्रथम विजेता:</strong> पूर्व प्रधानमंत्री लाल बहादुर शास्त्री (वर्ष 1966)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>विदेशी नागरिक विजेता:</strong> खान अब्दुल गफ्फार खान (सीमांत गांधी, 1987 - पाकिस्तान) और नेल्सन मंडेला (1990 - दक्षिण अफ्रीका)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>खेल जगत में प्रथम एवं सबसे युवा:</strong> सचिन तेंदुलकर (वर्ष 2014, मात्र 40 वर्ष की आयु में)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पदक का स्वरूप:</strong> तांबे के बने पीपल के पत्ते पर प्लैटिनम का चमकता हुआ सूर्य, जिसके नीचे देवनागरी में 'भारत रत्न' उत्कीर्ण होता है।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत रत्न में कोई नकद धनराशि नहीं दी जाती, बल्कि राष्ट्रपति द्वारा हस्ताक्षरित सनद (प्रशस्ति पत्र) और पदक दिया जाता है। एक वर्ष में अधिकतम 3 व्यक्तियों को दिया जा सकता है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">भारत में प्रथम (First in India)</span>
-          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+    <article class="gk-note-card" data-topic="awards">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🎬 सिनेमा एवं साहित्य पुरस्कार</span>
+          <span class="gk-exam-tag">🎯 UPSSSC, Police & SSC</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q05</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK05</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">अंतरिक्ष में जाने वाले प्रथम भारतीय व्यक्ति और माउंट एवरेस्ट फतह करने वाली प्रथम भारतीय महिला क्रमशः कौन हैं?</h3>
+      <h3 class="gk-q-title">Q5. दादा साहब फाल्के पुरस्कार, ज्ञानपीठ, सरस्वती सम्मान और व्यास सम्मान के महत्वपूर्ण तथ्य क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> रवीश मल्होत्रा और अरुणिमा सिन्हा 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> विंग कमांडर राकेश शर्मा (1984) और बछेंद्री पाल (1984) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> कल्पना चावला और संतोष यादव 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> सुनीता विलियम्स और प्रेमलता अग्रवाल 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> सिनेमा और भारतीय भाषाओं के सर्वोच्च साहित्यिक पुरस्कारों का विस्तृत विश्लेषण:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारतीय वायुसेना के पायलट विंग कमांडर राकेश शर्मा 3 अप्रैल 1984 को सोवियत संघ के 'सोयुज टी-11' अंतरिक्ष यान से अंतरिक्ष में जाने वाले प्रथम भारतीय बने (तत्कालीन प्रधानमंत्री इंदिरा गांधी द्वारा 'ऊपर से भारत कैसा दिखता है' पूछने पर उन्होंने 'सारे जहां से अच्छा' कहा था)। वहीं 23 मई 1984 को बछेंद्री पाल विश्व के सर्वोच्च पर्वत शिखर माउंट एवरेस्ट (8848.86 मी) पर तिरंगा फहराने वाली प्रथम भारतीय महिला बनीं।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>माउंट एवरेस्ट पर लगातार दो बार चढ़ने वाली प्रथम भारतीय महिला 'संतोष यादव' हैं।</li><li>कृत्रिम पैर (Amputee) के सहारे एवरेस्ट फतह करने वाली प्रथम दिव्यांग पर्वतारोही 'अरुणिमा सिन्हा' (उत्तर प्रदेश) हैं।</li><li>नोबेल पुरस्कार प्राप्त करने वाले प्रथम भारतीय रवींद्रनाथ टैगोर (1913, गीतांजलि साहित्य के लिए) थे।</li><li>भारत के प्रथम गवर्नर जनरल वॉरेन हेस्टिंग्स (बंगाल), स्वतंत्र भारत के प्रथम गवर्नर जनरल लॉर्ड माउंटबेटन और प्रथम भारतीय गवर्नर जनरल सी. राजगोपालाचारी थे।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दादा साहब फाल्के पुरस्कार (1969):</strong> भारतीय सिनेमा का सर्वोच्च सम्मान। प्रथम विजेता: अभिनेत्री देविका रानी (1969)। इसमें स्वर्ण कमल और ₹15 लाख नकद दिए जाते हैं।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>ज्ञानपीठ पुरस्कार (Jnanpith Award - 1961):</strong> साहित्य का सर्वोच्च सम्मान (संविधान की 8वीं अनुसूची की 22 भाषाएं + अंग्रेजी)। प्रथम विजेता: जी. शंकर कुरुप (1965, मलयालम कृति 'ओडक्कुझल')।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>ज्ञानपीठ प्रथम महिला विजेता:</strong> आशापूर्णा देवी (1976, बंगाली उपन्यास 'प्रथम प्रतिश्रुति')।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>हिंदी में प्रथम ज्ञानपीठ:</strong> सुमित्रानंदन पंत (1968, काव्य संग्रह 'चिदंबरा')।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सरस्वती सम्मान:</strong> के.के. बिड़ला फाउंडेशन द्वारा 1991 से 8वीं अनुसूची की भाषाओं में उत्कृष्ट गद्य/पद्य हेतु (प्रथम विजेता: हरिवंश राय बच्चन - आत्मकथा हेतु)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>व्यास सम्मान:</strong> के.के. बिड़ला फाउंडेशन द्वारा केवल 'हिंदी भाषा' में पिछले 10 वर्षों के उत्कृष्ट साहित्य हेतु (प्रथम विजेता: डॉ. रामविलास शर्मा, 1991)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> अंतर्राष्ट्रीय बुकर पुरस्कार (International Booker Prize) जीतने वाली पहली हिंदी कृति 'रेत समाधि' (Tomb of Sand) है, जिसकी लेखिका गीतांजलि श्री हैं (अनुवाद: डेजी रॉकवेल)।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">अंतर्राष्ट्रीय संगठन एवं मुख्यालय</span>
-          <span class="q-exam-badge">🎯 Railway NTPC & SSC GD</span>
+    <article class="gk-note-card" data-topic="awards">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🏅 खेल पुरस्कार एवं सम्मान</span>
+          <span class="gk-exam-tag">🎯 Railway NTPC & Defence CEE</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q06</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK06</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">संयुक्त राष्ट्र संघ (UN), विश्व स्वास्थ्य संगठन (WHO) और यूनेस्को (UNESCO) के मुख्यालय क्रमशः कहाँ स्थित हैं?</h3>
+      <h3 class="gk-q-title">Q6. मेजर ध्यानचंद खेल रत्न पुरस्कार, अर्जुन पुरस्कार और द्रोणाचार्य पुरस्कार की धनराशि और नियम क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> वाशिंगटन डीसी, लंदन, रोम 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> न्यूयॉर्क (USA), जिनेवा (स्विट्जरलैंड), पेरिस (फ्रांस) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> वियना, ब्रुसेल्स, द हेग 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> जिनेवा, न्यूयॉर्क, मनीला 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत सरकार के युवा कार्यक्रम और खेल मंत्रालय द्वारा दिए जाने वाले राष्ट्रीय खेल पुरस्कार:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संयुक्त राष्ट्र संघ (UNO) की स्थापना 24 अक्टूबर 1945 को हुई थी और इसका मुख्यालय न्यूयॉर्क (मैनहट्टन, USA) में स्थित है। विश्व स्वास्थ्य संगठन (WHO) और विश्व व्यापार संगठन (WTO) का मुख्यालय जिनेवा (स्विट्जरलैंड) में है। वहीं संयुक्त राष्ट्र शैक्षिक, वैज्ञानिक तथा सांस्कृतिक संगठन (UNESCO) का मुख्यालय पेरिस (फ्रांस) में स्थित है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>अंतर्राष्ट्रीय मुद्रा कोष (IMF) और विश्व बैंक (World Bank) का मुख्यालय वाशिंगटन डीसी (USA) में है।</li><li>अंतर्राष्ट्रीय न्यायालय (ICJ - International Court of Justice) का मुख्यालय 'द हेग' (नीदरलैंड) के पीस पैलेस में स्थित है।</li><li>दक्षेश (SAARC) का सचिवालय 'काठमांडू' (नेपाल) में स्थित है (स्थापना 1985)।</li><li>आसियान (ASEAN) का सचिवालय 'जकार्ता' (इंडोनेशिया) में है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मेजर ध्यानचंद खेल रत्न पुरस्कार:</strong> भारत का सर्वोच्च खेल सम्मान (पूर्व नाम राजीव गांधी खेल रत्न, 1991-92 में शुरू, अगस्त 2021 में नाम बदला गया)। पुरस्कार राशि: ₹25 लाख।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>खेल रत्न के प्रथम विजेता:</strong> शतरंज के प्रथम भारतीय ग्रैंडमास्टर विश्वनाथन आनंद (1991-92)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>खेल रत्न जीतने वाली प्रथम महिला:</strong> भारोत्तोलक कर्णम मल्लेश्वरी (1994-95)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अर्जुन पुरस्कार (Arjuna Award - 1961):</strong> पिछले 4 वर्षों में अंतरराष्ट्रीय स्तर पर उत्कृष्ट प्रदर्शन हेतु। पुरस्कार राशि: ₹15 लाख और कांस्य की अर्जुन प्रतिमा।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>द्रोणाचार्य पुरस्कार (Dronacharya Award - 1985):</strong> खेल प्रशिक्षकों (Coaches) को दिया जाता है। नियमित श्रेणी राशि: ₹10 लाख, लाइफटाइम श्रेणी राशि: ₹15 लाख।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मौलाना अबुल कलाम आजाद (MAKA) ट्रॉफी (1956):</strong> अंतर-विश्वविद्यालय टूर्नामेंट में सर्वश्रेष्ठ प्रदर्शन करने वाले विश्वविद्यालय को।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> राष्ट्रीय खेल पुरस्कार प्रतिवर्ष 29 अगस्त को 'राष्ट्रीय खेल दिवस' (हॉकी के जादूगर मेजर ध्यानचंद के जन्मदिवस) के अवसर पर राष्ट्रपति भवन में प्रदान किए जाते हैं।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">प्रमुख राष्ट्रीय एवं अंतर्राष्ट्रीय दिवस</span>
-          <span class="q-exam-badge">🎯 UP Police, SSC & Defence</span>
+    <article class="gk-note-card" data-topic="first_india">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🇮🇳 भारत में प्रथम (पुरुष)</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC GD & Agniveer</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q07</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK07</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">प्रतिवर्ष 'विश्व पर्यावरण दिवस' (5 जून) और भारत में 'राष्ट्रीय खेल दिवस' (29 अगस्त) किनकी स्मृति में मनाया जाता है?</h3>
+      <h3 class="gk-q-title">Q7. स्वतंत्र भारत के संवैधानिक पदों और उपलब्धियों में 'प्रथम भारतीय पुरुष' कौन थे?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> महात्मा गांधी - कपिल देव 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> स्टॉकहोम सम्मेलन 1972 - हॉकी के जादूगर मेजर ध्यानचंद का जन्मदिवस <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> रियो पृथ्वी शिखर सम्मेलन - मिल्खा सिंह 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> पेरिस समझौता - सचिन तेंदुलकर 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> प्रतियोगी परीक्षाओं में बार-बार पूछे जाने वाले प्रथम भारतीय पुरुषों की ऐतिहासिक सूची:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">5 जून 1972 को संयुक्त राष्ट्र द्वारा पर्यावरण पर पहला वैश्विक सम्मेलन (स्टॉकहोम सम्मेलन) आयोजित हुआ था, जिसकी स्मृति में 1974 से प्रतिवर्ष 5 जून को 'विश्व पर्यावरण दिवस' मनाया जाता है। वहीं 29 अगस्त को भारत के महानतम हॉकी खिलाड़ी 'हॉकी के जादूगर' मेजर ध्यानचंद के जन्मदिवस के उपलक्ष्य में भारत में 'राष्ट्रीय खेल दिवस' (National Sports Day) मनाया जाता है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>21 जून: अंतर्राष्ट्रीय योग दिवस (International Day of Yoga - 2015 से प्रारंभ)।</li><li>28 फरवरी: राष्ट्रीय विज्ञान दिवस (सर सी.वी. रमन द्वारा 1928 में 'रमन प्रभाव' की खोज के उपलक्ष्य में)।</li><li>14 सितंबर: राष्ट्रीय हिंदी दिवस (14 सितंबर 1949 को संविधान सभा ने हिंदी को राजभाषा स्वीकार किया था)।</li><li>10 दिसंबर: अंतर्राष्ट्रीय मानवाधिकार दिवस (Human Rights Day)।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत के प्रथम राष्ट्रपति:</strong> डॉ. राजेंद्र प्रसाद (1950 से 1962 तक - सबसे लंबा कार्यकाल)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत के प्रथम प्रधानमंत्री:</strong> पंडित जवाहरलाल नेहरू (1947 से 1964 तक)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत के प्रथम गृह मंत्री व उप-प्रधानमंत्री:</strong> सरदार वल्लभभाई पटेल (लौह पुरुष / रियासतों के एकीकरणकर्ता)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम गवर्नर जनरल (स्वतंत्र भारत के प्रथम भारतीय):</strong> चक्रवर्ती राजगोपालाचारी (सी. राजगोपालाचारी)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम मुख्य न्यायाधीश (CJI):</strong> न्यायमूर्ति हीरालाल जे. कानिया (H.J. Kania)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम मुख्य चुनाव आयुक्त:</strong> सुकुमार सेन (1950-1958)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>लोकसभा के प्रथम अध्यक्ष (Speaker):</strong> गणेश वासुदेव (जी.वी.) मावलंकर।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>नोबेल पुरस्कार विजेता प्रथम भारतीय:</strong> रवींद्रनाथ टैगोर (1913, साहित्य - गीतांजलि)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अंतरिक्ष में जाने वाले प्रथम भारतीय:</strong> विंग कमांडर राकेश शर्मा (3 अप्रैल 1984, सोयुज टी-11)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>प्रथम भारतीय आई.सी.एस. (ICS) अधिकारी:</strong> सत्येंद्रनाथ टैगोर (1863)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत के प्रथम चीफ ऑफ डिफेंस स्टाफ (CDS) जनरल बिपिन रावत थे (नियुक्ति 1 जनवरी 2020)।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">खेलकूद ट्रॉफियां एवं शब्दावली</span>
-          <span class="q-exam-badge">🎯 Police & Defence Exams</span>
+    <article class="gk-note-card" data-topic="first_india">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🇮🇳 भारत में प्रथम (महिलाएं)</span>
+          <span class="gk-exam-tag">🎯 All Competitive Exams</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q08</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK08</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">डूरंड कप (Durand Cup) और संतोष ट्रॉफी का संबंध किस खेल से है, तथा थॉमस कप किस खेल से संबंधित है?</h3>
+      <h3 class="gk-q-title">Q8. भारत के सर्वोच्च पदों, राजनीति और समाज सेवा में 'प्रथम भारतीय महिलाएं' कौन थीं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> क्रिकेट और टेनिस 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> फुटबॉल (Football) और पुरुष बैडमिंटन (Badminton) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> हॉकी और टेबल टेनिस 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> पोलो और गोल्फ 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> विभिन्न क्षेत्रों में इतिहास रचने वाली भारत की गौरवशाली प्रथम महिलाएं:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">डूरंड कप भारत और एशिया की सबसे पुरानी फुटबॉल प्रतियोगिता है (शुरुआत 1888, शिमला)। संतोष ट्रॉफी भारत की प्रमुख अंतर-राज्यीय सीनियर राष्ट्रीय फुटबॉल चैंपियनशिप है। वहीं 'थॉमस कप' (Thomas Cup) विश्व पुरुष बैडमिंटन चैंपियनशिप है (भारत ने 2022 में पहली बार थॉमस कप जीता था) और 'उबेर कप' (Uber Cup) विश्व महिला बैडमिंटन चैंपियनशिप है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>क्रिकेट की प्रमुख घरेलू ट्रॉफियां: रणजी ट्रॉफी, ईरानी ट्रॉफी, दलीप ट्रॉफी, विजय हजारे ट्रॉफी और देवधर ट्रॉफी।</li><li>हॉकी की प्रमुख ट्रॉफियां: आगा खां कप, ध्यानचंद ट्रॉफी, रंगास्वामी कप, और बेटन कप।</li><li>टेनिस के 4 ग्रैंड स्लैम (क्रमशः): ऑस्ट्रेलियन ओपन (हार्ड कोर्ट), फ्रेंच ओपन (क्ले/मिट्टी का कोर्ट), विंबलडन (घास का कोर्ट - सबसे पुराना 1877), और यूएस ओपन (हार्ड कोर्ट)।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की प्रथम महिला राष्ट्रपति:</strong> श्रीमती प्रतिभा देवीसिंह पाटिल (2007-2012)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की प्रथम आदिवासी महिला राष्ट्रपति:</strong> श्रीमती द्रौपदी मुर्मू (2022 से वर्तमान - 15वीं राष्ट्रपति)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की प्रथम महिला प्रधानमंत्री:</strong> श्रीमती इंदिरा गांधी (1966-1977 एवं 1980-1984)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की प्रथम महिला लोकसभा अध्यक्ष:</strong> श्रीमती मीरा कुमार (2009, 15वीं लोकसभा)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की किसी राज्य की प्रथम महिला राज्यपाल:</strong> श्रीमती सरोजिनी नायडू (उत्तर प्रदेश, 1947)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की किसी राज्य की प्रथम महिला मुख्यमंत्री:</strong> श्रीमती सुचेता कृपलानी (उत्तर प्रदेश, 1963)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत की प्रथम महिला आईपीएस (IPS) अधिकारी:</strong> किरण बेदी (1972 बैच)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>माउंट एवरेस्ट फतह करने वाली प्रथम भारतीय महिला:</strong> बछेंद्री पाल (23 मई 1984)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अंतरिक्ष में जाने वाली प्रथम भारतीय मूल की महिला:</strong> कल्पना चावला (1997, कोलंबिया स्पेस शटल STS-87)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सर्वोच्च न्यायालय की प्रथम महिला न्यायाधीश:</strong> न्यायमूर्ति एम. फातिमा बीवी (1989)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> संयुक्त राष्ट्र महासभा (UNGA) की प्रथम महिला अध्यक्ष बनने का गौरव भारत की विजया लक्ष्मी पंडित (1953, 8वां सत्र) को प्राप्त है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">भारतीय संस्कृति एवं विरासत</span>
-          <span class="q-exam-badge">🎯 SSC GD, UP Police & BSSC</span>
+    <article class="gk-note-card" data-topic="org">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🌐 अंतर्राष्ट्रीय संगठन एवं मुख्यालय</span>
+          <span class="gk-exam-tag">🎯 SSC CGL, GD & Railway NTPC</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q09</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK09</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">यूनेस्को (UNESCO) की विश्व विरासत सूची में शामिल 'खजुराहो के मंदिर' किस राज्य में हैं और इनका निर्माण किस राजवंश ने कराया था?</h3>
+      <h3 class="gk-q-title">Q9. प्रमुख वैश्विक संगठनों (UN, WHO, WTO, UNESCO, IMF) की स्थापना और मुख्यालय कहाँ स्थित हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> राजस्थान - चौहान वंश 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> मध्य प्रदेश (छतरपुर) - चंदेल राजवंश (950-1050 ई.) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> उत्तर प्रदेश - गुप्त वंश 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> ओडिशा - गंग वंश 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> अंतरराष्ट्रीय कूटनीतिक, आर्थिक और स्वास्थ्य संगठनों के मुख्यालयों की सूची:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">मध्य प्रदेश के छतरपुर जिले में स्थित खजुराहो के प्रसिद्ध हिंदू और जैन मंदिर नागर शैली के उत्कृष्ट उदाहरण हैं। इनका निर्माण 10वीं और 11वीं शताब्दी (950 से 1050 ईस्वी) के बीच 'चंदेल राजवंश' के शासकों द्वारा कराया गया था। यहाँ का 'कंदरिया महादेव मंदिर' भगवान शिव को समर्पित सबसे विशाल और भव्य मंदिर है। इन्हें 1986 में यूनेस्को विश्व धरोहर स्थल घोषित किया गया।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>ओडिशा के पुरी में स्थित 'कोणार्क का सूर्य मंदिर' (Black Pagoda) 13वीं शताब्दी में पूर्वी गंग वंश के राजा नरसिंहदेव प्रथम ने बनवाया था।</li><li>तंजावुर (तमिलनाडु) का प्रसिद्ध 'बृहदेश्वर मंदिर' (राजराजेश्वर मंदिर) चोल शासक राजराज प्रथम ने बनवाया था।</li><li>महाराष्ट्र के औरंगाबाद (छत्रपति संभाजीनगर) में स्थित 'एलोरा का कैलाश मंदिर' (गुफा संख्या 16) राष्ट्रकूट शासक कृष्ण प्रथम ने एक ही विशाल एकाश्म चट्टान को तराशकर बनवाया था।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>संयुक्त राष्ट्र संघ (UNO):</strong> स्थापना 24 अक्टूबर 1945 | मुख्यालय: न्यूयॉर्क (USA) | सदस्य देश: 193 (193वां दक्षिण सूडान) | आधिकारिक भाषाएं: 6 (अंग्रेजी, फ्रेंच, रूसी, चीनी, स्पेनिश, अरबी)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>विश्व स्वास्थ्य संगठन (WHO):</strong> स्थापना 7 अप्रैल 1948 (विश्व स्वास्थ्य दिवस) | मुख्यालय: जिनेवा (स्विट्जरलैंड)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>विश्व व्यापार संगठन (WTO):</strong> स्थापना 1 जनवरी 1995 (पूर्व नाम GATT) | मुख्यालय: जिनेवा (स्विट्जरलैंड)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>यूनेस्को (UNESCO):</strong> स्थापना 16 नवंबर 1945 | मुख्यालय: पेरिस (फ्रांस) | कार्य: शिक्षा, विज्ञान और सांस्कृतिक धरोहर संरक्षण।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अंतर्राष्ट्रीय मुद्रा कोष (IMF) व विश्व बैंक (World Bank):</strong> स्थापना 1944 (ब्रेटन वुड्स सम्मेलन) | मुख्यालय: वाशिंगटन डी.सी. (USA)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अंतर्राष्ट्रीय न्यायालय (ICJ):</strong> स्थापना 1945 | मुख्यालय: द हेग (नीदरलैंड) | कुल न्यायाधीश: 15 (कार्यकाल: 9 वर्ष)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दक्षेश (SAARC):</strong> स्थापना 8 दिसंबर 1985 (ढाका) | सचिवालय: काठमांडू (नेपाल) | सदस्य: 8 देश (भारत, पाक, बांग्लादेश, श्रीलंका, नेपाल, भूटान, मालदीव, अफगानिस्तान)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>आसियान (ASEAN):</strong> स्थापना 8 अगस्त 1967 | सचिवालय: जकार्ता (इंडोनेशिया) | सदस्य: 10 दक्षिण-पूर्व एशियाई देश।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> ट्रांसपेरेंसी इंटरनेशनल (भ्रष्टाचार धारणा सूचकांक जारीकर्ता) का मुख्यालय बर्लिन (जर्मनी) में है, और एमनेस्टी इंटरनेशनल का मुख्यालय लंदन (UK) में है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">भारत में प्रथम (महिलाएं)</span>
-          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+    <article class="gk-note-card" data-topic="days">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">📅 महत्वपूर्ण राष्ट्रीय एवं अंतर्राष्ट्रीय दिवस</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC GD & Defence</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q10</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK10</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारत की प्रथम महिला आईपीएस (IPS) अधिकारी और नोबेल शांति पुरस्कार प्राप्त करने वाली प्रथम भारतीय महिला क्रमशः कौन हैं?</h3>
+      <h3 class="gk-q-title">Q10. प्रतियोगी परीक्षाओं में वर्षभर पूछे जाने वाले प्रमुख राष्ट्रीय और अंतर्राष्ट्रीय दिवस कौन से हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> सरोजिनी नायडू और इंदिरा गांधी 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> किरण बेदी (1972 बैच) और मदर टेरेसा (1979) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> फातिमा बीवी और अरुंधति रॉय 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> कल्पना चावला और एनी बेसेंट 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> जनवरी से दिसंबर तक के सर्वाधिक महत्वपूर्ण तिथिवार दिवस:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">1972 में किरण बेदी भारतीय पुलिस सेवा (IPS) में चयनित होने वाली भारत की प्रथम महिला अधिकारी बनीं। उन्हें 1994 में रेमन मैग्सेसे पुरस्कार से भी सम्मानित किया गया। वहीं 1979 में कलकत्ता में दीन-दुखियों व कुष्ठ रोगियों की सेवा करने वाली 'मदर टेरेसा' (मिशनरीज ऑफ चैरिटी की संस्थापिका) को शांति का नोबेल पुरस्कार प्राप्त हुआ (उन्हें 1980 में भारत रत्न भी दिया गया)।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारत की प्रथम महिला प्रधानमंत्री: श्रीमती इंदिरा गांधी (1966)।</li><li>भारत की प्रथम महिला राष्ट्रपति: श्रीमती प्रतिभा देवीसिंह पाटिल (2007)।</li><li>भारत के किसी राज्य की प्रथम महिला राज्यपाल: श्रीमती सरोजिनी नायडू (उत्तर प्रदेश, 1947)।</li><li>भारत के किसी राज्य की प्रथम महिला मुख्यमंत्री: श्रीमती सुचेता कृपलानी (उत्तर प्रदेश, 1963)।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>9 जनवरी:</strong> प्रवासी भारतीय दिवस (1915 में गांधीजी के दक्षिण अफ्रीका से भारत वापसी की स्मृति में)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>12 जनवरी:</strong> राष्ट्रीय युवा दिवस (स्वामी विवेकानंद जी की जयंती)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>25 जनवरी:</strong> राष्ट्रीय मतदाता दिवस (1950 में निर्वाचन आयोग की स्थापना)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>28 फरवरी:</strong> राष्ट्रीय विज्ञान दिवस (1928 में डॉ. सी.वी. रमन द्वारा 'रमन प्रभाव' की खोज)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>8 मार्च:</strong> अंतर्राष्ट्रीय महिला दिवस (International Women's Day)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>22 मार्च:</strong> विश्व जल दिवस (World Water Day)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>22 अप्रैल:</strong> विश्व पृथ्वी दिवस (Earth Day)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>5 जून:</strong> विश्व पर्यावरण दिवस (1972 स्टॉकहोम सम्मेलन)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>21 जून:</strong> अंतर्राष्ट्रीय योग दिवस (वर्ष 2015 से प्रारंभ)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>29 अगस्त:</strong> राष्ट्रीय खेल दिवस (मेजर ध्यानचंद जी का जन्मदिवस)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>16 सितंबर:</strong> विश्व ओजोन संरक्षण दिवस (1987 मॉन्ट्रियल प्रोटोकॉल)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>26 नवंबर:</strong> संविधान दिवस (1949 में संविधान सभा द्वारा संविधान अंगीकृत)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>10 दिसंबर:</strong> अंतर्राष्ट्रीय मानवाधिकार दिवस (Human Rights Day)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> 24 अप्रैल को राष्ट्रीय पंचायती राज दिवस (73वां संशोधन 1993 में प्रभावी) और 14 सितंबर को राष्ट्रीय हिंदी दिवस मनाया जाता है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">अंतर्राष्ट्रीय संगठन एवं शिखर सम्मेलन</span>
-          <span class="q-exam-badge">🎯 Railway NTPC & SSC GD</span>
+    <article class="gk-note-card" data-topic="sports">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🏆 खेलकूद ट्रॉफियां एवं प्रतियोगिताएं</span>
+          <span class="gk-exam-tag">🎯 Police & Defence CEE</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q11</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK11</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">G-20 (Group of Twenty) की स्थापना किस वर्ष हुई थी और 2023 में ऐतिहासिक 18वां G-20 शिखर सम्मेलन कहाँ आयोजित हुआ था?</h3>
+      <h3 class="gk-q-title">Q11. क्रिकेट, फुटबॉल, हॉकी, बैडमिंटन और टेनिस की राष्ट्रीय एवं अंतर्राष्ट्रीय ट्रॉफियां कौन सी हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> 1995 - लंदन 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> 1999 - भारत मंडपम, नई दिल्ली (भारत की अध्यक्षता) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> 2008 - वाशिंगटन डीसी 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> 2015 - रियो डी जनेरियो 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> प्रमुख खेलों से संबंधित विख्यात कप एवं ट्रॉफियों की संपूर्ण तालिका:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">G-20 की स्थापना 1999 में एशियाई वित्तीय संकट के बाद वैश्विक वित्त मंत्रियों और केंद्रीय बैंक के गवर्नरों की बैठक के रूप में हुई थी। 2008 से यह राष्ट्राध्यक्षों के स्तर पर आयोजित होता है। 9-10 सितंबर 2023 को भारत ने नई दिल्ली के अत्याधुनिक 'भारत मंडपम' में 18वें G20 शिखर सम्मेलन की ऐतिहासिक अध्यक्षता की। इसका ध्येय वाक्य 'वसुधैव कुटुंबकम' (One Earth, One Family, One Future) था। इसी सम्मेलन में 'अफ्रीकी संघ' (African Union) को G-20 का नया स्थायी सदस्य बनाया गया।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>ब्रिक्स (BRICS): ब्राजील, रूस, भारत, चीन और दक्षिण अफ्रीका का समूह (स्थापना 2006/2009)।</li><li>नाटो (NATO - North Atlantic Treaty Organization) की स्थापना 4 अप्रैल 1949 को हुई, इसका मुख्यालय ब्रुसेल्स (बेल्जियम) में है।</li><li>ओपेक (OPEC - तेल निर्यातक देशों का संगठन) का मुख्यालय 'वियना' (ऑस्ट्रिया) में है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>क्रिकेट (Cricket):</strong> रणजी ट्रॉफी (भारत की प्रमुख प्रथम श्रेणी प्रतियोगिता), ईरानी कप, दलीप ट्रॉफी, विजय हजारे ट्रॉफी (50 ओवर), देवधर ट्रॉफी, सैयद मुश्ताक अली ट्रॉफी (T20), एशेज श्रृंखला (इंग्लैंड vs ऑस्ट्रेलिया)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>फुटबॉल (Football):</strong> डूरंड कप (एशिया का सबसे पुराना फुटबॉल टूर्नामेंट - 1888), संतोष ट्रॉफी (राष्ट्रीय चैंपियनशिप), सुब्रतो कप (स्कूली फुटबॉल), रोवर्स कप, फीफा विश्व कप, कोपा अमेरिका, यूईएफए यूरो कप।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>हॉकी (Field Hockey):</strong> आगा खां कप, ध्यानचंद ट्रॉफी, रंगास्वामी कप (राष्ट्रीय चैंपियनशिप), बेटन कप (1895 - सबसे पुराना), सिंधिया गोल्ड कप, अजलान शाह कप।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>बैडमिंटन (Badminton):</strong> थॉमस कप (विश्व पुरुष टीम चैंपियनशिप | भारत 2022 में पहली बार जीता), उबेर कप (विश्व महिला टीम चैंपियनशिप), सुदीरमन कप (मिश्रित टीम), योनेक्स ऑल इंग्लैंड चैंपियनशिप।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>टेनिस ग्रैंड स्लैम (Tennis Grand Slams):</strong> (1) ऑस्ट्रेलियन ओपन (जनवरी - हार्ड कोर्ट), (2) फ्रेंच ओपन / रोलां गैरो (मई-जून - क्ले/लाल बजरी कोर्ट), (3) विंबलडन (जून-जुलाई - ग्रास/घास कोर्ट - सबसे पुराना 1877), (4) यूएस ओपन (अगस्त-सितंबर - हार्ड कोर्ट)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> राइडर कप (Ryder Cup) और वॉकर कप का संबंध 'गोल्फ' खेल से है, जबकि थॉमस कप बैडमिंटन से संबंधित है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">महत्वपूर्ण पुस्तकें एवं लेखक</span>
-          <span class="q-exam-badge">🎯 UP Police, SSC & Defence</span>
+    <article class="gk-note-card" data-topic="books">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">📖 प्रसिद्ध पुस्तकें एवं उनके लेखक</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC & State PSC</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q12</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK12</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">'डिस्कवरी ऑफ इंडिया' (भारत की खोज) और 'माई एक्सपेरिमेंट्स विद ट्रुथ' (सत्य के साथ मेरे प्रयोग) के लेखक क्रमशः कौन हैं?</h3>
+      <h3 class="gk-q-title">Q12. प्राचीन काल से लेकर आधुनिक युग तक की कौन सी प्रमुख पुस्तकें प्रतियोगी परीक्षाओं में सर्वाधिक पूछी जाती हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> डॉ. राजेंद्र प्रसाद और सरदार पटेल 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> पंडित जवाहरलाल नेहरू और महात्मा गांधी <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> सुभाष चंद्र बोस और रवींद्रनाथ टैगोर 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> बाल गंगाधर तिलक और लाला लाजपत राय 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> ऐतिहासिक, राजनीतिक और साहित्यिक कालजयी कृतियां एवं उनके रचयिता:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">'डिस्कवरी ऑफ इंडिया' (The Discovery of India) पुस्तक पंडित जवाहरलाल नेहरू ने 1942 से 1946 के दौरान अहमदनगर किले में कैद रहने के समय लिखी थी। वहीं 'माई एक्सपेरिमेंट्स विद ट्रुथ' (सत्य के प्रयोग) महात्मा गांधी की प्रसिद्ध आत्मकथा है, जो मूल रूप से गुजराती भाषा में लिखी गई थी।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>सुभाष चंद्र बोस की प्रसिद्ध पुस्तक: 'द इंडियन स्ट्रगल' (The Indian Struggle)।</li><li>बाल गंगाधर तिलक ने मांडले जेल (म्यांमार) में प्रसिद्ध 'गीता रहस्य' पुस्तक लिखी थी।</li><li>दादाभाई नौरोजी ने 1901 में 'पॉवर्टी एंड अन-ब्रिटिश रूल इन इंडिया' लिखकर 'धन की निकासी का सिद्धांत' (Drain of Wealth) प्रतिपादित किया था।</li><li>डॉ. बी.आर. अंबेडकर की प्रसिद्ध कृतियां: 'द एनीहिलेशन ऑफ कास्ट' और 'द बुद्धा एंड हिज धम्मा'।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>इंडिका (Indica):</strong> मेगास्थनीज (मौर्य सम्राट चंद्रगुप्त के दरबार में यूनानी राजदूत)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अर्थशास्त्र (Arthashastra):</strong> चाणक्य / कौटिल्य / विष्णुगुप्त (मौर्यकालीन राजनीति व लोक प्रशासन)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राजतरंगिणी:</strong> कल्हण (12वीं सदी में कश्मीर का संपूर्ण क्रमबद्ध इतिहास - पहली प्रामाणिक ऐतिहासिक पुस्तक)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अष्टाध्यायी:</strong> महर्षि पाणिनि (संस्कृत व्याकरण का प्रथम प्रामाणिक ग्रंथ)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मुद्राराक्षस:</strong> विशाखदत्त (मौर्य काल और चाणक्य की कूटनीति का वर्णन)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>किताब-उल-हिंद / तहकीक-ए-हिंद:</strong> अल-बरूनी (महमूद गजनवी के साथ 11वीं सदी में भारत आया)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>बाबरनामा (तुजुक-ए-बाबरी):</strong> बाबर (मूलतः चगताई तुर्की भाषा में)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>आईन-ए-अकबरी एवं अकबरनामा:</strong> अबुल फजल (मुगल कालीन नवरत्न)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>आनंदमठ:</strong> बंकिम चंद्र चटर्जी (संन्यासी विद्रोह पर आधारित, इसी उपन्यास में राष्ट्रगीत 'वंदे मातरम्' है)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सत्यार्थ प्रकाश:</strong> स्वामी दयानंद सरस्वती (आर्य समाज के संस्थापक, 1875)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पॉवर्टी एंड अन-ब्रिटिश रूल इन इंडिया:</strong> दादाभाई नौरोजी (धन निष्कासन सिद्धांत)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>गुलगुलाता / गीता रहस्य:</strong> बाल गंगाधर तिलक (मांडले जेल में रचित)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> प्रसिद्ध कृति 'अनहैप्पी इंडिया' (Unhappy India) लाला लाजपत राय ने लिखी थी, और 'इंडिया डिवाइडेड' डॉ. राजेंद्र प्रसाद ने लिखी थी।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">खेलकूद एवं ओलंपिक</span>
-          <span class="q-exam-badge">🎯 SSC GD, UP Police & Railway</span>
+    <article class="gk-note-card" data-topic="heritage">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🏛️ यूनेस्को विश्व धरोहर स्थल (UNESCO Heritage Sites)</span>
+          <span class="gk-exam-tag">🎯 SSC GD, CGL & UP Police</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q13</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK13</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">आधुनिक ओलंपिक खेल सर्वप्रथम 1896 में कहाँ आयोजित हुए थे और भारत ने ओलंपिक में पहला व्यक्तिगत स्वर्ण पदक किस खेल में जीता था?</h3>
+      <h3 class="gk-q-title">Q13. भारत के प्रमुख यूनेस्को विश्व विरासत स्थल और नवीनतम शामिल स्थल कौन से हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> पेरिस - कुश्ती (के.डी. जाधव) 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> एथेंस (ग्रीस) - निशानेबाजी (अभिनव बिंद्रा, बीजिंग 2008) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> लंदन - फील्ड हॉकी 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> टोक्यो - भाला फेंक (नीरज चोपड़ा) 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत में वर्तमान में 42 यूनेस्को विश्व धरोहर स्थल हैं (34 सांस्कृतिक, 7 प्राकृतिक, 1 मिश्रित- कंचनजंगा):
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अंतर्राष्ट्रीय ओलंपिक समिति (IOC) द्वारा प्रथम आधुनिक ओलंपिक खेल 1896 में यूनान की राजधानी एथेंस में आयोजित किए गए थे। भारत के लिए ओलंपिक के व्यक्तिगत वर्ग में सर्वप्रथम व्यक्तिगत स्वर्ण पदक अभिनव बिंद्रा ने 2008 के बीजिंग ओलंपिक में 10 मीटर एयर राइफल निशानेबाजी में जीता था। इसके पश्चात नीरज चोपड़ा ने टोक्यो 2020 ओलंपिक में भाला फेंक (Javelin Throw - 87.58 मी) में दूसरा व्यक्तिगत स्वर्ण जीता।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारतीय पुरुष हॉकी टीम ने ओलंपिक में सर्वाधिक 8 स्वर्ण पदक जीते हैं (पहला स्वर्ण 1928 एम्सटर्डम ओलंपिक में ध्यानचंद के नेतृत्व में)।</li><li>व्यक्तिगत स्पर्धा में पदक जीतने वाले स्वतंत्र भारत के पहले एथलीट के.डी. जाधव (कांस्य पदक, 1952 हेलसिंकी ओलंपिक - कुश्ती) थे।</li><li>ओलंपिक में पदक जीतने वाली पहली भारतीय महिला भारोत्तोलक कर्णम मल्लेश्वरी (कांस्य पदक, सिडनी 2000) थीं।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सर्वप्रथम शामिल स्थल (1983):</strong> अजंता की गुफाएं (महाराष्ट्र), एलोरा की गुफाएं (महाराष्ट्र), आगरा का किला (UP), और ताजमहल (UP)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>खजुराहो स्मारक समूह (1986):</strong> मध्य प्रदेश के छतरपुर में चंदेल शासकों द्वारा निर्मित नागर शैली के भव्य मंदिर।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कोणार्क का सूर्य मंदिर (1984):</strong> ओडिशा (13वीं सदी, गंग वंश के राजा नरसिंहदेव प्रथम, इसे 'ब्लैक पैगोडा' कहते हैं)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>महाबलीपुरम के स्मारक (1984):</strong> तमिलनाडु (पल्लव वंश के नरसिंहवर्मन प्रथम द्वारा निर्मित रथ मंदिर व शोर मंदिर)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>काजीरंगा राष्ट्रीय उद्यान (1985):</strong> असम (एक सींग वाले गैंडों का प्राकृतिक आवास)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सुंदरबन राष्ट्रीय उद्यान (1987):</strong> पश्चिम बंगाल (विश्व का सबसे बड़ा मैंग्रोव वन व रॉयल बंगाल टाइगर)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>धोलावीरा (2021 - 40वां स्थल):</strong> गुजरात के कच्छ में स्थित हड़प्पा सभ्यता का त्रिस्तरीय नगर (उत्कृष्ट जल प्रबंधन प्रणाली)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>शांतिनिकेतन (2023 - 41वां स्थल):</strong> पश्चिम बंगाल के बीरभूम में रवींद्रनाथ टैगोर द्वारा स्थापित विश्व-भारती विश्वविद्यालय।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>होयसल के पवित्र मंदिर समूह (2023 - 42वां स्थल):</strong> कर्नाटक के बेलूर, हलेबिड और सोमनाथपुरा के होयसल कालीन तारे के आकार के मंदिर।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत का एकमात्र 'मिश्रित' (सांस्कृतिक + प्राकृतिक) यूनेस्को विश्व धरोहर स्थल 'कंचनजंगा राष्ट्रीय उद्यान' (सिक्किम, 2016) है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">राष्ट्रीय प्रतीक एवं चिन्ह</span>
-          <span class="q-exam-badge">🎯 All Defence & Police Exams</span>
+    <article class="gk-note-card" data-topic="science_inst">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🔬 प्रमुख भारतीय अनुसंधान संस्थान</span>
+          <span class="gk-exam-tag">🎯 UP Police, Railway & SSC</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q14</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK14</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारत के राष्ट्रीय ध्वज (तिरंगा) का प्रारूप किसने तैयार किया था और संविधान सभा ने इसे कब अपनाया था?</h3>
+      <h3 class="gk-q-title">Q14. भारत के प्रमुख वैज्ञानिक, कृषि एवं औद्योगिक अनुसंधान संस्थान किस शहर में स्थित हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> बंकिम चंद्र चटर्जी - 15 अगस्त 1947 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> पिंगली वेंकैया (Pingali Venkayya) - 22 जुलाई 1947 <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> रवींद्रनाथ टैगोर - 26 जनवरी 1950 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> डॉ. राजेंद्र प्रसाद - 24 जनवरी 1950 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> विभिन्न राष्ट्रीय अनुसंधान प्रयोगशालाओं एवं संस्थानों के मुख्यालय:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत के राष्ट्रीय ध्वज का वर्तमान स्वरूप आंध्र प्रदेश के स्वतंत्रता सेनानी पिंगली वेंकैया द्वारा डिजाइन किया गया था। संविधान सभा ने इसे 22 जुलाई 1947 को भारत के राष्ट्रीय ध्वज के रूप में अंगीकार किया। राष्ट्रीय ध्वज की लंबाई और चौड़ाई का अनुपात 3:2 होता है। इसमें तीन समान पट्टियां हैं (केसरिया-साहस, सफेद-शांति, हरा-समृद्धि) तथा केंद्र में 24 तीलियों वाला गहरे नीले रंग का अशोक चक्र है जो सारनाथ के सिंह स्तंभ से लिया गया है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारत का राष्ट्रगान 'जन गण मन' (रवींद्रनाथ टैगोर) और राष्ट्रगीत 'वंदे मातरम्' (बंकिम चंद्र चटर्जी के उपन्यास 'आनंदमठ' से) दोनों 24 जनवरी 1950 को संविधान सभा द्वारा अपनाए गए।</li><li>भारत का राष्ट्रीय संवत 'शक संवत' (78 ईस्वी) है, जिसे 22 मार्च 1957 को राष्ट्रीय कैलेंडर के रूप में अपनाया गया (पहला महीना 'चैत्र' और अंतिम 'फाल्गुन' होता है)।</li><li>भारत का राष्ट्रीय जलीय जीव 'गंगा डॉल्फिन' (Platanista gangetica) है (घोषित 2009)।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO):</strong> स्थापना 15 अगस्त 1969 | मुख्यालय: बेंगलुरु (कर्नाटक) | प्रक्षेपण केंद्र: सतीश धवन अंतरिक्ष केंद्र (श्रीहरिकोटा, आंध्र प्रदेश)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>रक्षा अनुसंधान एवं विकास संगठन (DRDO):</strong> स्थापना 1958 | मुख्यालय: नई दिल्ली | ध्येय वाक्य: 'बलस्य मूलं विज्ञानम्'।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भाभा परमाणु अनुसंधान केंद्र (BARC):</strong> स्थापना 1954 (डॉ. होमी जहांगीर भाभा) | मुख्यालय: ट्रॉम्बे, मुंबई (महाराष्ट्र)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>केंद्रीय चावल अनुसंधान संस्थान (CRRI):</strong> कटक (ओडिशा)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय कृषि अनुसंधान संस्थान (IARI - पूसा):</strong> नई दिल्ली।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>केंद्रीय आलू अनुसंधान संस्थान (CPRI):</strong> कुफरी, शिमला (हिमाचल प्रदेश)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>केंद्रीय वन अनुसंधान संस्थान (FRI):</strong> देहरादून (उत्तराखंड)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय डेयरी अनुसंधान संस्थान (NDRI):</strong> करनाल (हरियाणा)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>केंद्रीय तंबाकू अनुसंधान संस्थान (CTRI):</strong> राजमुंदरी (आंध्र प्रदेश)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय दलहन अनुसंधान संस्थान (IIPR):</strong> कानपुर (उत्तर प्रदेश)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> उत्तर प्रदेश के लखनऊ में तीन प्रमुख राष्ट्रीय संस्थान हैं: केंद्रीय औषधि अनुसंधान संस्थान (CDRI), राष्ट्रीय वनस्पति अनुसंधान संस्थान (NBRI), और भारतीय विषविज्ञान अनुसंधान संस्थान (IITR)।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">विश्व के प्रमुख संगठन एवं मुद्राएं</span>
-          <span class="q-exam-badge">🎯 Railway NTPC & SSC CGL</span>
+    <article class="gk-note-card" data-topic="temples">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🛕 प्रसिद्ध भारतीय मंदिर एवं निर्माता</span>
+          <span class="gk-exam-tag">🎯 All State Police & Railway</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q15</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK15</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">यूरोपीय संघ (EU) की आधिकारिक मुद्रा कौन सी है और जापान तथा रूस की राष्ट्रीय मुद्राएं क्रमशः क्या हैं?</h3>
+      <h3 class="gk-q-title">Q15. भारत के ऐतिहासिक भव्य मंदिर, उनकी स्थापत्य शैली और निर्माणकर्ता शासक कौन हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> डॉलर - पाउंड और लीरा 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> यूरो (Euro) - येन (Yen, जापान) और रूबल (Ruble, रूस) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> दिनार - रियाल और रैंड 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> टका - क्यात और युआन 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत के विख्यात प्राचीन एवं मध्यकालीन मंदिरों की ऐतिहासिक जानकारी:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">यूरोपीय संघ (EU) के 20 सदस्य देशों की साझा आधिकारिक मुद्रा 'यूरो' (Euro - €) है। वहीं एशियाई शक्ति जापान की राष्ट्रीय मुद्रा 'येन' (Yen - ¥) और राजधानी टोक्यो है। रूस की राष्ट्रीय मुद्रा 'रूबल' (Ruble - ₽) और राजधानी मॉस्को है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>चीन की आधिकारिक मुद्रा 'रेन्मिन्बी' (Renminbi) है, जिसकी मूल इकाई 'युआन' (Yuan) है।</li><li>बांग्लादेश की मुद्रा 'टका' और राजधानी 'ढाका' है।</li><li>दक्षिण अफ्रीका की राष्ट्रीय मुद्रा 'रैंड' (Rand) है।</li><li>सऊदी अरब की मुद्रा 'सऊदी रियाल' और संयुक्त अरब अमीरात (UAE) की मुद्रा 'दिरहम' है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>बृहदेश्वर मंदिर (तंजावुर, तमिलनाडु):</strong> द्रविड़ शैली का उत्कृष्ट शिखर मंदिर, चोल सम्राट राजराज प्रथम (1010 ई.) द्वारा निर्मित भगवान शिव का मंदिर।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मीनाक्षी अम्मन मंदिर (मदुरै, तमिलनाडु):</strong> वैगई नदी के तट पर, पांड्य व नायक शासकों द्वारा निर्मित, देवी पार्वती (मीनाक्षी) और शिव (सुंदरेश्वर) को समर्पित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कैलाश मंदिर (एलोरा गुफा 16, महाराष्ट्र):</strong> राष्ट्रकूट नरेश कृष्ण प्रथम द्वारा 8वीं सदी में एक ही विशाल पहाड़ी चट्टान को ऊपर से नीचे तराशकर बनाया गया।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>जगन्नाथ मंदिर (पुरी, ओडिशा):</strong> कलिंग शैली, 12वीं सदी में पूर्वी गंग वंश के राजा अनंतवर्मन चोडगंग देव द्वारा निर्मित (वार्षिक रथ यात्रा विख्यात)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दिलवाड़ा के जैन मंदिर (माउंट आबू, राजस्थान):</strong> सफेद संगमरमर पर महीन नक्काशी, 11वीं-13वीं सदी में सोलंकी/चालुक्य शासक भीमदेव प्रथम के मंत्रियों (विमल शाह व वास्तुपाल-तेजपाल) द्वारा निर्मित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कामाख्या देवी मंदिर (गुवाहाटी, असम):</strong> नीलांचल पर्वत पर स्थित 51 शक्तिपीठों में से प्रमुख तंत्र साधना केंद्र (अंबुबाची मेला)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सोमनाथ मंदिर (वेरावल, गुजरात):</strong> भगवान शिव के 12 ज्योतिर्लिंगों में प्रथम ज्योतिर्लिंग (1026 ई. में महमूद गजनवी द्वारा लूटा गया, स्वतंत्रता बाद सरदार पटेल के प्रयासों से पुनर्निर्मित)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> उत्तर भारत की मंदिर निर्माण शैली को 'नागर शैली', दक्षिण भारत की शैली को 'द्रविड़ शैली', और दोनों के मिश्रित रूप को 'बेसर शैली' कहा जाता है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">महत्वपूर्ण अनुसंधान संस्थान</span>
-          <span class="q-exam-badge">🎯 UP Police, UPSSSC & Railway</span>
+    <article class="gk-note-card" data-topic="samadhi">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🕯️ प्रमुख समाधि स्थल एवं महापुरुष</span>
+          <span class="gk-exam-tag">🎯 Defence Agniveer, SSC & Police</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q16</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK16</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारतीय कृषि अनुसंधान संस्थान (IARI) कहाँ स्थित है और केंद्रीय औषधि अनुसंधान संस्थान (CDRI) किस शहर में है?</h3>
+      <h3 class="gk-q-title">Q16. भारत के राष्ट्रपिता, प्रधानमंत्रियों और महापुरुषों के प्रसिद्ध समाधि स्थल कहाँ स्थित हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> कटक और देहरादून 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> नई दिल्ली (पूसा) और लखनऊ (उत्तर प्रदेश) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> नागपुर और करनाल 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> हैदराबाद और शिमला 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> नई दिल्ली में यमुना नदी तट पर स्थित प्रमुख महापुरुषों के समाधि स्थल:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारतीय कृषि अनुसंधान संस्थान (IARI - पूसा संस्थान) और भारतीय कृषि अनुसंधान परिषद (ICAR) नई दिल्ली में स्थित हैं। वहीं केंद्रीय औषधि अनुसंधान संस्थान (CDRI - Central Drug Research Institute) तथा राष्ट्रीय वनस्पति अनुसंधान संस्थान (NBRI) उत्तर प्रदेश की राजधानी लखनऊ में स्थित हैं।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>केंद्रीय चावल अनुसंधान संस्थान (CRRI) 'कटक' (ओडिशा) में स्थित है।</li><li>भारतीय आलू अनुसंधान संस्थान (CPRI) 'कुफरी, शिमला' (हिमाचल प्रदेश) में है।</li><li>केंद्रीय वन अनुसंधान संस्थान (FRI) 'देहरादून' (उत्तराखंड) में स्थित है।</li><li>राष्ट्रीय डेयरी अनुसंधान संस्थान (NDRI) 'करनाल' (हरियाणा) में है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राजघाट (Rajghat):</strong> राष्ट्रपिता महात्मा गांधी (30 जनवरी 1948 - 'हे राम' अंतिम शब्द)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>शांतिवन (Shantivan):</strong> स्वतंत्र भारत के प्रथम प्रधानमंत्री पंडित जवाहरलाल नेहरू।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>विजय घाट (Vijay Ghat):</strong> 'जय जवान जय किसान' के प्रणेता पूर्व प्रधानमंत्री लाल बहादुर शास्त्री (1965 भारत-पाक युद्ध में विजय की स्मृति)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>शक्ति स्थल (Shakti Sthal):</strong> भारत की प्रथम महिला प्रधानमंत्री श्रीमती इंदिरा गांधी।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>वीर भूमि (Veer Bhumi):</strong> भारत में दूरसंचार व सूचना प्रौद्योगिकी क्रांति के जनक पूर्व प्रधानमंत्री राजीव गांधी।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>किसान घाट (Kisan Ghat):</strong> भारत के पूर्व प्रधानमंत्री एवं किसानों के मसीहा चौधरी चरण सिंह।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>चैत्य भूमि (Chaitya Bhoomi):</strong> संविधान निर्माता एवं भारतरत्न डॉ. भीमराव रामजी अंबेडकर (दादर, मुंबई, महाराष्ट्र)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सदैव अटल (Sadaiv Atal):</strong> भारत के पूर्व प्रधानमंत्री भारतरत्न अटल बिहारी वाजपेयी।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> ज्ञानी जैल सिंह (भारत के प्रथम सिख राष्ट्रपति) के समाधि स्थल को 'एकता स्थल' कहा जाता है, और जगजीवन राम (बाबूजी) के समाधि स्थल को 'समता स्थल' कहते हैं।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">पर्यावरण एवं सम्मेलन</span>
-          <span class="q-exam-badge">🎯 All State & Central Exams</span>
+    <article class="gk-note-card" data-topic="defence">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🎖️ प्रमुख संयुक्त सैन्य अभ्यास (Military Exercises)</span>
+          <span class="gk-exam-tag">🎯 Defence Agniveer, NDA & Police</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q17</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK17</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">ओजोन परत के संरक्षण के लिए ऐतिहासिक 'मॉन्ट्रियल प्रोटोकॉल' किस वर्ष हस्ताक्षरित हुआ था और ओजोन परत वायुमंडल के किस मंडल में पाई जाती है?</h3>
+      <h3 class="gk-q-title">Q17. भारतीय सशस्त्र बलों के प्रमुख द्विपक्षीय और बहुपक्षीय युद्धाभ्यास किन देशों के साथ होते हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> 1972 - क्षोभमंडल (Troposphere) 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> 16 सितंबर 1987 - समतापमंडल (Stratosphere) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> 1992 - मध्यमंडल (Mesosphere) 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> 1997 - आयनमंडल (Ionosphere) 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत और मित्र देशों की थलसेना, नौसेना व वायुसेना के नियमित युद्धाभ्यास:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">ओजोन परत को नुकसान पहुंचाने वाले क्लोरोफ्लोरोकार्बन (CFCs) और हैलोन्स के उत्सर्जन को रोकने के लिए 16 सितंबर 1987 को कनाडा के मॉन्ट्रियल शहर में ऐतिहासिक 'मॉन्ट्रियल प्रोटोकॉल' पर हस्ताक्षर किए गए थे। इसलिए प्रतिवर्ष '16 सितंबर' को 'विश्व ओजोन दिवस' मनाया जाता है। ओजोन ($O_3$) की सांद्रता वायुमंडल की दूसरी परत 'समतापमंडल' (Stratosphere) में 15 से 35 किमी की ऊंचाई पर पाई जाती है, जो सूर्य से आने वाली हानिकारक पराबैंगनी किरणों (UV-B) को अवशोषित करती है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>ओजोन परत की मोटाई मापने की इकाई 'डॉबसन यूनिट' (Dobson Unit - DU) है।</li><li>मौसम संबंधी सभी घटनाएं (बादल, वर्षा, आंधी, तूफान) वायुमंडल की सबसे निचली परत 'क्षोभमंडल' (Troposphere) में घटित होती हैं।</li><li>हवाई जहाज सामान्यतः 'समतापमंडल' (Stratosphere) में उड़ाए जाते हैं क्योंकि यह मौसमी हलचलों से मुक्त होता है।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सूर्य किरण (Surya Kiran):</strong> भारत और नेपाल की थलसेनाओं के मध्य वार्षिक अभ्यास।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मित्र शक्ति (Mitra Shakti) व स्लिनेक्स (SLINEX):</strong> भारत और श्रीलंका (मित्र शक्ति थलसेना, स्लिनेक्स नौसेना)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>संप्रीति (Sampriti) व बोंगोसागर (Bongo Sagar):</strong> भारत और बांग्लादेश के मध्य द्विपक्षीय सैन्य अभ्यास।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>युद्ध अभ्यास (Yudh Abhyas) व वज्र प्रहार:</strong> भारत और संयुक्त राज्य अमेरिका (USA) के मध्य (वज्र प्रहार विशेष बलों का अभ्यास)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मालाबार अभ्यास (Malabar Exercise):</strong> क्वाड (QUAD) देशों (भारत, अमेरिका, जापान, ऑस्ट्रेलिया) का बहुपक्षीय उच्चस्तरीय नौसैनिक अभ्यास।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>गरुड़ शक्ति व समुद्र शक्ति:</strong> भारत और इंडोनेशिया के मध्य द्विपक्षीय अभ्यास।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>वरुण (नौसेना), गरुड़ (वायुसेना) एवं शक्ति (थलसेना):</strong> भारत और फ्रांस की सेनाओं के मध्य संयुक्त युद्धाभ्यास।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>इंद्र (Indra Exercise):</strong> भारत और रूस की तीनों सेनाओं (Tri-Services) का संयुक्त अभ्यास।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> नोमैडिक एलिफेंट (Nomadic Elephant) भारत और मंगोलिया के बीच थलसेना अभ्यास है, जबकि खंजर (Khanjar) अभ्यास भारत और किर्गिस्तान के बीच होता है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">सैन्य अभ्यास एवं रक्षा</span>
-          <span class="q-exam-badge">🎯 Defence Agniveer, NDA & Police</span>
+    <article class="gk-note-card" data-topic="world_facts">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🪙 विश्व के प्रमुख देश, राजधानियां एवं मुद्राएं</span>
+          <span class="gk-exam-tag">🎯 All Competitive Exams</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q18</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK18</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारत और फ्रांस के बीच होने वाले संयुक्त थलसेना अभ्यास और नौसेना अभ्यास का नाम क्या है?</h3>
+      <h3 class="gk-q-title">Q18. प्रतियोगी परीक्षाओं में सबसे ज्यादा पूछे जाने वाले देशों की राजधानियां और उनकी मुद्राएं क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> सूर्य किरण और मित्र शक्ति 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> शक्ति (थलसेना अभ्यास) और वरुण (नौसेना अभ्यास) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> संप्रीति और बोंगोसागर 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> गरुड़ शक्ति और सिम्बेक्स 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> एशिया, यूरोप, अफ्रीका और अमेरिका के महत्वपूर्ण देशों की आधिकारिक मुद्रा व राजधानी:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत और फ्रांस की सेनाओं के बीच प्रमुख द्विपक्षीय सैन्य अभ्यास हैं: 'शक्ति' (सेना अभ्यास), 'वरुण' (नौसेना अभ्यास), और 'गरुड़' (वायुसेना अभ्यास)। ये अभ्यास दोनों देशों की सेनाओं के बीच अंतर-संचालन क्षमता और सामरिक तालमेल को सुदृढ़ करते हैं।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>भारत और नेपाल के बीच संयुक्त सैन्य अभ्यास: 'सूर्य किरण' (Surya Kiran)।</li><li>भारत और श्रीलंका के बीच अभ्यास: 'मित्र शक्ति' (Mitra Shakti) और 'स्लिनेक्स' (SLINEX)।</li><li>भारत और बांग्लादेश के बीच अभ्यास: 'संप्रीति' (Sampriti) और 'बोंगोसागर'।</li><li>भारत और अमेरिका के बीच अभ्यास: 'युद्ध अभ्यास' और 'वज्र प्रहार'।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>जापान:</strong> राजधानी - टोक्यो | मुद्रा - येन (Yen - ¥)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>चीन:</strong> राजधानी - बीजिंग | आधिकारिक मुद्रा - रेन्मिन्बी (Renminbi, मूल इकाई: युआन - Yuan)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>रूस:</strong> राजधानी - मॉस्को | मुद्रा - रूसी रूबल (Ruble - ₽)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दक्षिण कोरिया:</strong> राजधानी - सियोल | मुद्रा - दक्षिण कोरियाई वॉन (Won - ₩)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>बांग्लादेश:</strong> राजधानी - ढाका | मुद्रा - टका (Taka)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>म्यांमार:</strong> राजधानी - नेपिडॉ (Naypyidaw) | मुद्रा - क्यात (Kyat)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>थाईलैंड:</strong> राजधानी - बैंकॉक | मुद्रा - थाई बहत (Baht)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>सऊदी अरब:</strong> राजधानी - रियाद | मुद्रा - सऊदी रियाल (Riyal)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>संयुक्त अरब अमीरात (UAE):</strong> राजधानी - अबू धाबी | मुद्रा - दिरहम (Dirham)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दक्षिण अफ्रीका:</strong> प्रशासनिक राजधानी - प्रिटोरिया | मुद्रा - दक्षिण अफ्रीकी रैंड (Rand)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> तुर्की (तुर्किये) की राजधानी 'अंकारा' और मुद्रा 'लीरा' (Lira) है, जबकि ईरान की राजधानी 'तेहरान' और नई प्रस्तावित मुद्रा 'तोमान' (Toman) है।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">विश्व के प्रमुख भौगोलिक उपनाम</span>
-          <span class="q-exam-badge">🎯 UP Police & SSC GD</span>
+    <article class="gk-note-card" data-topic="nicknames">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🗺️ प्रसिद्ध भौगोलिक उपनाम (Geographical Epithets)</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC GD & Railway</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q19</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK19</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">'उगते सूर्य का देश' (Land of the Rising Sun) और 'हजार झीलों की भूमि' (Land of Thousand Lakes) क्रमशः किसे कहा जाता है?</h3>
+      <h3 class="gk-q-title">Q19. भारत और विश्व के शहरों व देशों के प्रसिद्ध भौगोलिक उपनाम क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> नॉर्वे और स्विट्जरलैंड 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> जापान और फिनलैंड (Finland) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> थाईलैंड और कनाडा 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> न्यूजीलैंड और स्वीडन 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> प्रमुख उपनाम और उनकी भौगोलिक व ऐतिहासिक पृष्ठभूमि:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">जापान को उसकी सुदूर पूर्वी स्थिति और सबसे पहले सूर्योदय होने के कारण 'उगते सूर्य का देश' (Nippon / Land of the Rising Sun) कहा जाता है। वहीं उत्तरी यूरोप के देश 'फिनलैंड' में 1,87,000 से अधिक प्राकृतिक हिमनदीय झीलें होने के कारण इसे 'हजार झीलों का देश' कहा जाता है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>'मध्यरात्रि के सूर्य का देश' (Land of the Midnight Sun) 'नॉर्वे' को कहा जाता है।</li><li>'सफेद हाथियों की भूमि' 'थाईलैंड' को कहा जाता है।</li><li>'कंगारुओं का देश' और 'प्यासी भूमि का देश' 'ऑस्ट्रेलिया' को कहा जाता है।</li><li>'यूरोप का खेल का मैदान' (Playground of Europe) 'स्विट्जरलैंड' को कहते हैं।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>गुलाबी नगर (Pink City):</strong> जयपुर, राजस्थान (1876 में महाराजा सवाई रामसिंह ने प्रिंस ऑफ वेल्स के स्वागत में गुलाबी रंग से रंगवाया था)।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>झीलों की नगरी (City of Lakes):</strong> उदयपुर (राजस्थान) तथा भोपाल (मध्य प्रदेश)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत का बोस्टन / मैनचेस्टर:</strong> अहमदाबाद (गुजरात - सूती वस्त्र उद्योग का प्रमुख केंद्र)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>उत्तर भारत का मैनचेस्टर:</strong> कानपुर (उत्तर प्रदेश)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारत का सिलिकॉन वैली (IT Capital):</strong> बेंगलुरु (कर्नाटक)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मसालों का बगीचा:</strong> केरल (काली मिर्च, इलायची, लौंग के ऐतिहासिक उत्पादन हेतु)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>उगते सूर्य का देश (Land of Rising Sun):</strong> जापान (सुदूर पूर्व में स्थित होने के कारण)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मध्यरात्रि के सूर्य का देश:</strong> नॉर्वे (उत्तरी ध्रुव के निकट ग्रीष्म ऋतु में रात में भी सूर्य दिखाई देता है)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>हजार झीलों का देश:</strong> फिनलैंड (1.8 लाख से अधिक हिमनदीय झीलों की उपस्थिति)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>यूरोप का खेल का मैदान:</strong> स्विट्जरलैंड (आल्प्स पर्वतों और पर्यटन के कारण)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> विश्व की छत (Roof of the World) 'पामीर के पठार' (मध्य एशिया) को कहा जाता है, और 'सफेद हाथियों की भूमि' थाईलैंड को कहते हैं।
         </div>
       </div>
     </article>
   
 
-    <article class="question-deep-card">
-      <div class="q-header">
-        <div class="q-tags">
-          <span class="q-cat-badge">भारतीय बैंकिंग एवं अर्थव्यवस्था</span>
-          <span class="q-exam-badge">🎯 SSC & Railway Exams</span>
+    <article class="gk-note-card" data-topic="symbols">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🇮🇳 भारत के राष्ट्रीय प्रतीक एवं चिन्ह</span>
+          <span class="gk-exam-tag">🎯 All Defence & Police Exams Core</span>
         </div>
-        <div class="q-actions">
-          <span class="q-number">#Q20</span>
-          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+        <div class="gk-actions">
+          <span class="gk-num">#GK20</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
 
-      <h3 class="q-title">भारतीय रिजर्व बैंक (RBI) की स्थापना किस आयोग की सिफारिश पर हुई थी और इसका राष्ट्रीयकरण किस वर्ष हुआ था?</h3>
+      <h3 class="gk-q-title">Q20. भारत के राष्ट्रीय प्रतीकों (ध्वज, गान, गीत, चिन्ह, संवत, जलीय जीव) से जुड़े संवैधानिक तथ्य क्या हैं?</h3>
 
-      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
-        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(A)</strong> साइमन कमीशन - 1935 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
-      <strong>(B)</strong> हिल्टन यंग आयोग (1926) - 1 जनवरी 1949 <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(C)</strong> चेलैया समिति - 1955 
-    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
-      <strong>(D)</strong> नरसिम्हम समिति - 1969 
-    </li>
-      </ul>
-
-      <div class="q-explanation-box">
-        <div class="ans-badge">
-          <strong>सही उत्तर:</strong> विकल्प (B)
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारतीय संविधान सभा द्वारा अंगीकृत सभी राष्ट्रीय प्रतीकों की प्रामाणिक सूची:
         </div>
-        <div class="exp-content">
-          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
-          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारतीय रिजर्व बैंक (RBI) की स्थापना 'हिल्टन यंग कमीशन' (रॉयल कमीशन ऑन इंडियन करेंसी एंड फाइनेंस 1926) की सिफारिश पर RBI अधिनियम 1934 के तहत '1 अप्रैल 1935' को 5 करोड़ रुपये की अधिकृत पूंजी से हुई थी। स्वतंत्रता के पश्चात 1 जनवरी 1949 को इसका राष्ट्रीयकरण (Nationalization) किया गया। इसका केंद्रीय कार्यालय मुंबई में है।</p>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
           
-    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
-      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
-      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
-        <li>RBI के प्रथम गवर्नर सर ऑसबॉर्न स्मिथ (1935-37) थे, जबकि प्रथम भारतीय गवर्नर 'सी.डी. देशमुख' (1943-49) थे।</li><li>भारत में 1 रुपये के नोट और सभी सिक्कों को 'वित्त मंत्रालय' जारी करता है (जिस पर वित्त सचिव के हस्ताक्षर होते हैं), जबकि अन्य सभी करेंसी नोटों पर RBI गवर्नर के हस्ताक्षर होते हैं।</li><li>14 बड़े वाणिज्यिक बैंकों का ऐतिहासिक राष्ट्रीयकरण 19 जुलाई 1969 को तत्कालीन प्रधानमंत्री इंदिरा गांधी के कार्यकाल में हुआ था।</li>
-      </ul>
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय ध्वज (तिरंगा):</strong> प्रारूप पिंगली वेंकैया द्वारा तैयार। संविधान सभा ने 22 जुलाई 1947 को अपनाया। लंबाई:चौड़ाई का अनुपात = 3:2। केंद्र में 24 तीलियों वाला चक्र सारनाथ के अशोक स्तंभ से लिया गया है।
     </div>
   
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रगान (जन गण मन):</strong> रवींद्रनाथ टैगोर द्वारा मूल रूप से बांग्ला में रचित। 24 जनवरी 1950 को राष्ट्रगान बना। गाने की आधिकारिक समयावधि 52 सेकंड (संक्षिप्त रूप 20 सेकंड) है। सर्वप्रथम 27 दिसंबर 1911 को कलकत्ता कांग्रेस अधिवेशन में गाया गया था।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रगीत (वंदे मातरम्):</strong> बंकिम चंद्र चटर्जी के 1882 के उपन्यास 'आनंदमठ' से लिया गया। 24 जनवरी 1950 को राष्ट्रगान के समान दर्जा मिला। सर्वप्रथम 1896 के कलकत्ता अधिवेशन में गाया गया।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय चिन्ह (सारनाथ का सिंह स्तंभ):</strong> 26 जनवरी 1950 को अपनाया गया। इसमें 4 एशियाई शेर पीठ सटाए खड़े हैं (3 दिखाई देते हैं)। फलक के नीचे देवनागरी में 'सत्यमेव जयते' (मुंडकोपनिषद से) अंकित है।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय संवत (कैलेंडर):</strong> 78 ईस्वी का 'शक संवत' जिसे 22 मार्च 1957 को राष्ट्रीय पंचांग घोषित किया गया। पहला महीना 'चैत्र' और अंतिम 'फाल्गुन' होता है।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय जलीय जीव:</strong> गंगा नदी की डॉल्फिन (Platanista gangetica) - 5 अक्टूबर 2009 को घोषित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>राष्ट्रीय धरोहर पशु:</strong> एशियाई हाथी (Elephant) - वर्ष 2010 में घोषित।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत के राष्ट्रीय ध्वज को फहराना नागरिकों का मौलिक अधिकार है (अनुच्छेद 19(1)(a) के तहत, नवीन जिंदल वाद 2004 में सर्वोच्च न्यायालय का निर्णय)।
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="gk-note-card" data-topic="heritage">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🕌 भारत के प्रमुख ऐतिहासिक स्मारक एवं निर्माता</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC GD & Railway</span>
+        </div>
+        <div class="gk-actions">
+          <span class="gk-num">#GK21</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="gk-q-title">Q21. दिल्ली, आगरा और हैदराबाद के प्रसिद्ध स्मारकों (कुतुबमीनार, लाल किला, चारमीनार) का निर्माण किसने कराया था?</h3>
+
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत के प्रमुख ऐतिहासिक स्मारकों और उनके निर्माणकर्ता सुल्तानों व बादशाहों की सूची:
+        </div>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
+          
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कुतुबमीनार (दिल्ली):</strong> निर्माण प्रारंभ 1199 में कुतुबुद्दीन ऐबक ने ख्वाजा बख्तियार काकी की स्मृति में किया। पूरा इल्तुतमिश ने कराया। फिरोज शाह तुगलक ने 5वीं मंजिल का पुनर्निर्माण कराया।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>अलाई दरवाजा (दिल्ली):</strong> 1311 ई. में अलाउद्दीन खिलजी द्वारा निर्मित, जिसे घोड़े की नाल के आकार की पहली इस्लामिक मेहराब माना जाता है।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>आगरा का लाल किला व फतेहपुर सीकरी:</strong> मुगल सम्राट अकबर द्वारा निर्मित (फतेहपुर सीकरी में बुलंद दरवाजा गुजरात विजय की स्मृति में बनवाया गया था)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>दिल्ली का लाल किला एवं जामा मस्जिद:</strong> मुगल सम्राट शाहजहां (1638-1648) द्वारा निर्मित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>चारमीनार (हैदराबाद):</strong> 1591 ई. में कुली कुतुब शाह द्वारा प्लेग महामारी के खात्मे की स्मृति में मूसी नदी के तट पर निर्मित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>हवा महल (जयपुर):</strong> 1799 में सवाई प्रताप सिंह द्वारा 953 झरोखों (खिड़कियों) के साथ निर्मित, इसके वास्तुकार लाल चंद उस्ता थे।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> आगरा का ताजमहल शाहजहां ने अपनी बेगम मुमताज महल की स्मृति में बनवाया था, जिसके मुख्य स्थापत्यकार उस्ताद अहमद लाहौरी थे।
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="gk-note-card" data-topic="science_inst">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🚀 भारत के अंतरिक्ष एवं परमाणु ऊर्जा केंद्र</span>
+          <span class="gk-exam-tag">🎯 Railway NTPC & Defence CEE</span>
+        </div>
+        <div class="gk-actions">
+          <span class="gk-num">#GK22</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="gk-q-title">Q22. भारत के प्रमुख परमाणु ऊर्जा संयंत्र (Nuclear Power Plants) किस राज्य में स्थित हैं?</h3>
+
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत के 7 प्रमुख सक्रिय वाणिज्यिक परमाणु विद्युत संयंत्रों की भौगोलिक स्थिति:
+        </div>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
+          
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>तारापुर परमाणु ऊर्जा संयंत्र (TAPS):</strong> महाराष्ट्र (पालघर) - 1969 में अमेरिका के सहयोग से स्थापित भारत का पहला परमाणु ऊर्जा संयंत्र।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>रावतभाटा (राजस्थान परमाणु ऊर्जा केंद्र):</strong> चित्तौड़गढ़ (राजस्थान) - कनाडा के सहयोग से स्थापित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कुडनकुलम परमाणु संयंत्र:</strong> तमिलनाडु (तिरुनेलवेली) - रूस के सहयोग से निर्मित भारत का सबसे बड़ा परमाणु ऊर्जा संयंत्र (2000 MW)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कलपक्कम (मद्रास परमाणु ऊर्जा केंद्र):</strong> तमिलनाडु - भारत का पहला पूर्णतः स्वदेशी तकनीक से निर्मित संयंत्र (इंदिरा गांधी परमाणु अनुसंधान केंद्र IGCAR यहीं स्थित है)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>नरोरा परमाणु ऊर्जा संयंत्र:</strong> बुलंदशहर (उत्तर प्रदेश) - गंगा नदी के तट पर भूकंपीय क्षेत्र IV में स्थित।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>काकरापार परमाणु संयंत्र:</strong> तापी जिला (गुजरात) - ताप्ती नदी के निकट।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>कैगा परमाणु संयंत्र:</strong> उत्तर कन्नड़ (कर्नाटक) - काली नदी के किनारे स्थित।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत में परमाणु ऊर्जा कार्यक्रम के जनक 'डॉ. होमी जहांगीर भाभा' थे, और अंतरिक्ष कार्यक्रम के जनक 'डॉ. विक्रम साराभाई' थे।
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="gk-note-card" data-topic="world_facts">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🌐 विश्व के प्रमुख जलप्रपात, नहरें व जलसंधियां</span>
+          <span class="gk-exam-tag">🎯 SSC CGL, GD & Police</span>
+        </div>
+        <div class="gk-actions">
+          <span class="gk-num">#GK23</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="gk-q-title">Q23. स्वेज नहर, पनामा नहर, जिब्राल्टर जलसंधि और मलक्का जलसंधि किन जलीय भागों को जोड़ती हैं?</h3>
+
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> विश्व के प्रमुख रणनीतिक समुद्री मार्गों और जलसंधियों (Straits) का भौगोलिक विवरण:
+        </div>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
+          
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>स्वेज नहर (Suez Canal - 1869):</strong> मिस्र में स्थित 193 किमी लंबी कृत्रिम नहर, जो 'भूमध्य सागर' को 'लाल सागर' से जोड़ती है (एशिया और यूरोप के बीच का प्रमुख जलमार्ग)। इसके निर्माणकर्ता फ्रांसीसी इंजीनियर फर्डिनेंड डी लेसेप्स थे।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पनामा नहर (Panama Canal - 1914):</strong> मध्य अमेरिका में स्थित, जो 'प्रशांत महासागर' को 'अटलांटिक महासागर' (कैरेबियन सागर) से जोड़ती है।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>जिब्राल्टर जलसंधि (Strait of Gibraltar):</strong> भूमध्य सागर को अटलांटिक महासागर से जोड़ती है तथा स्पेन (यूरोप) को मोरक्को (अफ्रीका) से अलग करती है (इसे 'भूमध्य सागर की कुंजी' कहा जाता है)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>मलक्का जलसंधि (Strait of Malacca):</strong> अंडमान सागर (हिंद महासागर) को दक्षिण चीन सागर (प्रशांत महासागर) से जोड़ती है (विश्व का सबसे व्यस्ततम व्यापारिक चोकपॉइंट)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>बेरिंग जलसंधि (Bering Strait):</strong> आर्कटिक महासागर को बेरिंग सागर से जोड़ती है तथा अलास्का (USA) को रूस (एशिया) से अलग करती है (अंतर्राष्ट्रीय तिथि रेखा इसके समानांतर गुजरती है)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> बॉब-अल-मंदेब जलसंधि लाल सागर को अदन की खाड़ी से जोड़ती है, जिसे 'आंसुओं का प्रवेश द्वार' (Gate of Tears) कहा जाता है।
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="gk-note-card" data-topic="symbols">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🌿 प्रमुख पर्यावरण समझौते एवं वैश्विक सम्मेलन</span>
+          <span class="gk-exam-tag">🎯 UP Police, SSC & State Exams</span>
+        </div>
+        <div class="gk-actions">
+          <span class="gk-num">#GK24</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="gk-q-title">Q24. क्योटो प्रोटोकॉल, पेरिस जलवायु समझौता और रामसर कन्वेंशन का संबंध किस पर्यावरणीय विषय से है?</h3>
+
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> वैश्विक पर्यावरण और जलवायु परिवर्तन पर हुए ऐतिहासिक संधियों का विवरण:
+        </div>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
+          
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>रामसर कन्वेंशन (Ramsar Convention - 1971):</strong> 2 फरवरी 1971 को ईरान के रामसर शहर में आद्रभूमियों (Wetlands) के संरक्षण हेतु हुआ समझौता। इसलिए प्रतिवर्ष 2 फरवरी को 'विश्व आर्द्रभूमि दिवस' मनाया जाता है। भारत में चिल्का झील और केवलादेव प्रथम रामसर स्थल थे।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>क्योटो प्रोटोकॉल (Kyoto Protocol - 1997):</strong> जापान के क्योटो में ग्रीनहाउस गैसों (कार्बन डाइऑक्साइड, मीथेन, नाइट्रस ऑक्साइड आदि) के उत्सर्जन में कटौती करने हेतु कानूनी रूप से बाध्यकारी समझौता।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पेरिस जलवायु समझौता (COP-21 - 2015):</strong> वैश्विक औसत तापमान वृद्धि को पूर्व-औद्योगिक स्तर से 2°C से नीचे (संभवतः 1.5°C तक) सीमित रखने का ऐतिहासिक समझौता।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>पृथ्वी शिखर सम्मेलन (Earth Summit - 1992):</strong> ब्राजील के रियो डी जनेरियो में आयोजित प्रथम वैश्विक पर्यावरण सम्मेलन (एजेंडा 21 अंगीकृत)।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> प्रोजेक्ट एलीफेंट भारत सरकार द्वारा वर्ष 1992 में हाथियों के संरक्षण हेतु शुरू किया गया था, जबकि प्रोजेक्ट टाइगर 1973 में शुरू हुआ।
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="gk-note-card" data-topic="defence">
+      <div class="gk-card-head">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="gk-topic-badge">🇮🇳 भारतीय सशस्त्र बल कमान एवं रैंक संरचना</span>
+          <span class="gk-exam-tag">🎯 Defence Agniveer, Navy, Airforce & Police</span>
+        </div>
+        <div class="gk-actions">
+          <span class="gk-num">#GK25</span>
+          <button type="button" class="btn-copy-gk" onclick="copyGkCard(this)" title="Copy this Static GK note" aria-label="Copy note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="gk-q-title">Q25. भारतीय सेना की तीनों शाखाओं (थलसेना, नौसेना, वायुसेना) के सर्वोच्च पद और स्थापना दिवस क्या हैं?</h3>
+
+      <div class="gk-note-body">
+        <div class="gk-quick-ans">
+          <strong>⚡ मुख्य बिंदु / सारांश:</strong> भारत के रक्षा बलों की शीर्ष कमान, स्थापना दिवस एवं समकक्ष रैंक तालिका:
+        </div>
+
+        <div style="margin: 12px 0;">
+          <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">📝 विस्तृत परीक्षा उपयोगी तथ्य (Comprehensive High-Yield Notes):</strong>
+          
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय थलसेना (Indian Army):</strong> स्थापना दिवस: 15 जनवरी (सेना दिवस - 1949 में फील्ड मार्शल के.एम. करियप्पा के पहले भारतीय कमांडर-इन-चीफ बनने की स्मृति) | सर्वोच्च पद: जनरल (General) | कुल कमान: 7 कमान।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय नौसेना (Indian Navy):</strong> स्थापना दिवस: 4 दिसंबर (नौसेना दिवस - 1971 के युद्ध में ऑपरेशन ट्राइडेंट के तहत कराची बंदरगाह पर सफल हमले की स्मृति) | सर्वोच्च पद: एडमिरल (Admiral) | मुख्यालय: नई दिल्ली (3 ऑपरेशनल कमान)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>भारतीय वायुसेना (Indian Air Force):</strong> स्थापना दिवस: 8 अक्टूबर (वायुसेना दिवस - 1932 में स्थापना) | सर्वोच्च पद: एयर चीफ मार्शल (Air Chief Marshal) | कुल कमान: 7 कमान।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>तीनों सेनाओं के सर्वोच्च सेनापति:</strong> भारत के राष्ट्रपति (संविधान के अनुच्छेद 53(2) के अनुसार)।
+    </div>
+  
+    <div style="padding: 7px 10px; margin: 4px 0; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; color: #1e293b;">
+      <strong>समकक्ष सैन्य रैंक:</strong> थलसेना में कैप्टन = वायुसेना में फ्लाइट लेफ्टिनेंट = नौसेना में सब-लेफ्टिनेंट | थलसेना में मेजर = वायुसेना में स्क्वाड्रन लीडर = नौसेना में लेफ्टिनेंट कमांडर।
+    </div>
+  
+        </div>
+
+        <div class="gk-exam-tip">
+          <strong>💡 महत्वपूर्ण परीक्षा टिप (Special Exam Insight):</strong> भारत के प्रथम फील्ड मार्शल (Five-Star General) सैम मानेकशॉ (1973) थे, और दूसरे फील्ड मार्शल के.एम. करियप्पा (1986) थे।
         </div>
       </div>
     </article>
@@ -1391,15 +2087,17 @@
   </div>
 
   <script>
-    function copyQuestionCard(btn) {
-      const card = btn.closest('.question-deep-card');
-      const qTitle = card.querySelector('.q-title').innerText.trim();
-      const ans = card.querySelector('.ans-badge').innerText.trim();
-      const exp = card.querySelector('.exp-content p').innerText.trim();
-      const textToCopy = qTitle + "\n\n" + ans + "\n\nव्याख्या: " + exp + "\n\n(AapkaResult.in)";
+    let activeTopic = 'all';
+
+    function copyGkCard(btn) {
+      const card = btn.closest('.gk-note-card');
+      const title = card.querySelector('.gk-q-title').innerText.trim();
+      const quickAns = card.querySelector('.gk-quick-ans').innerText.trim();
+      const bodyText = card.querySelector('.gk-note-body').innerText.trim();
+      const textToCopy = title + "\n\n" + bodyText + "\n\n(AapkaResult.in Static GK)";
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Question & Explanation Copied!");
+        showToast("Static GK Note Copied!");
       }).catch(() => {
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -1407,7 +2105,7 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast("Question & Explanation Copied!");
+        showToast("Static GK Note Copied!");
       });
     }
 
@@ -1419,30 +2117,46 @@
       setTimeout(() => { toast.classList.remove('show'); }, 2200);
     }
 
-    function filterNotebook(query) {
-      const q = query.trim().toLowerCase();
-      const cards = document.querySelectorAll('.question-deep-card');
-      const clearBtn = document.getElementById('clearSearch');
-      clearBtn.style.display = q ? 'block' : 'none';
+    function filterByTopic(topic, btn) {
+      activeTopic = topic;
+      document.querySelectorAll('.t-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyGkFilter();
+    }
 
+    function filterGkNotes(query) {
+      const clearBtn = document.getElementById('clearGkSearch');
+      clearBtn.style.display = query.trim() ? 'block' : 'none';
+      applyGkFilter();
+    }
+
+    function clearGkSearchInput() {
+      const input = document.getElementById('gkSearchInput');
+      input.value = '';
+      document.getElementById('clearGkSearch').style.display = 'none';
+      applyGkFilter();
+      input.focus();
+    }
+
+    function applyGkFilter() {
+      const q = document.getElementById('gkSearchInput').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.gk-note-card');
       let count = 0;
+
       cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        if (!q || text.includes(q)) {
+        const cardTopic = card.getAttribute('data-topic');
+        const matchesTopic = (activeTopic === 'all' || activeTopic === cardTopic);
+        const matchesQuery = !q || card.innerText.toLowerCase().includes(q);
+
+        if (matchesTopic && matchesQuery) {
           card.style.display = '';
           count++;
         } else {
           card.style.display = 'none';
         }
       });
-      document.getElementById('visibleQCount').innerText = count;
-    }
 
-    function clearNotebookSearch() {
-      const input = document.getElementById('notebookSearchInput');
-      input.value = '';
-      filterNotebook('');
-      input.focus();
+      document.getElementById('gkVisibleCount').innerText = count;
     }
   </script>
 
