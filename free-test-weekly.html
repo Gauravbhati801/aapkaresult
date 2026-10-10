@@ -111,35 +111,35 @@
     .mock-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       display: flex;
       flex-direction: column;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       position: relative;
     }
     .mock-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
     }
-    .mock-card.police { border-top: 5px solid #2563eb; }
-    .mock-card.ssc { border-top: 5px solid #dc2626; }
-    .mock-card.army { border-top: 5px solid #16a34a; }
+    .mock-card.police { border-top: 3.5px solid #2563eb; }
+    .mock-card.ssc { border-top: 3.5px solid #dc2626; }
+    .mock-card.army { border-top: 3.5px solid #16a34a; }
 
     .mock-card-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
+      align-items: center;
+      margin-bottom: 6px;
     }
     .mock-exam-tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 2px 7px;
+      border-radius: 4px;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
     }
     .tag-police { background: #dbeafe; color: #1e40af; }
     .tag-ssc { background: #fee2e2; color: #991b1b; }
@@ -148,21 +148,21 @@
     .mock-live-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11.5px;
+      gap: 4px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #16a34a;
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
-      padding: 3px 8px;
+      padding: 1.5px 6px;
       border-radius: 999px;
     }
     .mock-live-dot {
-      width: 7px;
-      height: 7px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: #16a34a;
-      box-shadow: 0 0 6px rgba(22, 163, 74, 0.8);
+      box-shadow: 0 0 5px rgba(22, 163, 74, 0.8);
       animation: pulseDot 1.8s infinite;
     }
     @keyframes pulseDot {
@@ -171,79 +171,79 @@
     }
 
     .mock-title {
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
       color: #0f172a;
-      margin: 0 0 10px 0;
-      line-height: 1.35;
+      margin: 0 0 4px 0;
+      line-height: 1.3;
     }
     .mock-desc {
-      font-size: 13.5px;
-      color: #475569;
-      line-height: 1.6;
-      margin-bottom: 16px;
+      font-size: 11.5px;
+      color: #64748b;
+      line-height: 1.45;
+      margin-bottom: 8px;
     }
 
     /* Meta Specs Grid */
     .mock-specs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      gap: 4px;
       background: #f8fafc;
       border: 1px solid #f1f5f9;
-      border-radius: 8px;
-      padding: 10px;
+      border-radius: 6px;
+      padding: 5px 4px;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
     .spec-item span {
       display: block;
-      font-size: 11px;
+      font-size: 8.5px;
       color: #64748b;
       font-weight: 600;
       text-transform: uppercase;
     }
     .spec-item strong {
       display: block;
-      font-size: 14.5px;
+      font-size: 12px;
       color: #0f172a;
       font-weight: 700;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .section-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 20px;
+      gap: 4px;
+      margin-bottom: 10px;
     }
     .section-pill {
       background: #f1f5f9;
       color: #334155;
-      font-size: 11.5px;
-      padding: 3px 8px;
-      border-radius: 4px;
+      font-size: 10px;
+      padding: 1.5px 6px;
+      border-radius: 3px;
       font-weight: 600;
     }
 
     .mock-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 6px;
       margin-top: auto;
     }
     .btn-mock-primary {
-      padding: 10px 14px;
-      border-radius: 8px;
+      padding: 7px 10px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 700;
       color: #ffffff;
       text-align: center;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 4px;
       transition: all 0.15s;
     }
     .btn-primary-police { background: #2563eb; }
@@ -254,10 +254,10 @@
     .btn-primary-army:hover { background: #15803d; }
 
     .btn-mock-details {
-      padding: 10px 14px;
-      border-radius: 8px;
+      padding: 7px 10px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       background: #f8fafc;
       border: 1px solid #cbd5e1;
@@ -266,7 +266,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 3px;
       transition: all 0.15s;
     }
     .btn-mock-details:hover {
@@ -413,43 +413,43 @@
       .stat-pill span { font-size: 9.5px; }
 
       /* Super Compact Mobile Cards */
-      .mock-cards-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+      .mock-cards-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
       .mock-card {
-        padding: 13px 14px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        padding: 10px 12px;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.03);
       }
-      .mock-card.police { border-top-width: 3.5px; }
-      .mock-card.ssc { border-top-width: 3.5px; }
-      .mock-card.army { border-top-width: 3.5px; }
-      .mock-card-header { margin-bottom: 6px; }
-      .mock-exam-tag { font-size: 10px; padding: 2px 7px; border-radius: 4px; }
-      .mock-live-badge { font-size: 10px; padding: 1px 6px; }
-      .mock-live-dot { width: 5px; height: 5px; }
-      .mock-title { font-size: 15px; margin: 0 0 5px 0; font-weight: 700; }
-      .mock-desc { font-size: 11.5px; line-height: 1.45; margin-bottom: 8px; }
+      .mock-card.police { border-top-width: 3px; }
+      .mock-card.ssc { border-top-width: 3px; }
+      .mock-card.army { border-top-width: 3px; }
+      .mock-card-header { margin-bottom: 4px; }
+      .mock-exam-tag { font-size: 9.5px; padding: 1.5px 6px; border-radius: 3px; }
+      .mock-live-badge { font-size: 9.5px; padding: 1px 5px; }
+      .mock-live-dot { width: 4.5px; height: 4.5px; }
+      .mock-title { font-size: 14px; margin: 0 0 3px 0; font-weight: 700; }
+      .mock-desc { font-size: 11px; line-height: 1.35; margin-bottom: 6px; }
       .mock-specs-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 4px;
-        padding: 6px 4px;
-        margin-bottom: 8px;
-        border-radius: 6px;
+        gap: 3px;
+        padding: 4px 3px;
+        margin-bottom: 6px;
+        border-radius: 5px;
       }
-      .spec-item { padding: 3px 2px; }
-      .spec-item span { font-size: 8.5px; }
-      .spec-item strong { font-size: 11.5px; }
-      .section-pills { gap: 4px; margin-bottom: 10px; }
-      .section-pill { font-size: 10px; padding: 2px 5px; border-radius: 3px; }
+      .spec-item { padding: 1px; }
+      .spec-item span { font-size: 8px; }
+      .spec-item strong { font-size: 11px; }
+      .section-pills { gap: 3px; margin-bottom: 8px; }
+      .section-pill { font-size: 9.5px; padding: 1px 4px; border-radius: 3px; }
       .mock-actions {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 7px;
+        gap: 6px;
         margin-top: auto;
       }
       .btn-mock-primary, .btn-mock-details {
-        padding: 8px 6px;
-        font-size: 12px;
-        border-radius: 6px;
+        padding: 6.5px 6px;
+        font-size: 11.5px;
+        border-radius: 5px;
         width: 100%;
         box-sizing: border-box;
         text-align: center;
@@ -604,10 +604,8 @@
           <span class="mock-exam-tag tag-police">UPPRPB Pattern</span>
           <span class="mock-live-badge"><span class="mock-live-dot"></span> Live Now</span>
         </div>
-        <h3 class="mock-title">UP Police Constable Full Mock Test</h3>
-        <p class="mock-desc">
-          Strictly designed on the UPPRPB Constable syllabus. Real +2.00 marks per correct answer and -0.50 negative marking.
-        </p>
+        <h3 class="mock-title">UP Police Constable Full Mock</h3>
+        <p class="mock-desc">UPPRPB Constable 150 Qs CBT format (+2.00 / -0.50 Neg).</p>
 
         <div class="mock-specs-grid">
           <div class="spec-item">
@@ -619,16 +617,16 @@
             <strong>150 Qs</strong>
           </div>
           <div class="spec-item">
-            <span>Total Marks</span>
+            <span>Marks</span>
             <strong>300 Marks</strong>
           </div>
         </div>
 
         <div class="section-pills">
-          <span class="section-pill">Hindi (37 Qs)</span>
-          <span class="section-pill">GK &amp; UP Special (38 Qs)</span>
-          <span class="section-pill">Numerical (38 Qs)</span>
-          <span class="section-pill">Reasoning (37 Qs)</span>
+          <span class="section-pill">Hindi (37)</span>
+          <span class="section-pill">GK &amp; UP Special (38)</span>
+          <span class="section-pill">Maths (38)</span>
+          <span class="section-pill">Reasoning (37)</span>
         </div>
 
         <div class="mock-actions">
@@ -643,10 +641,8 @@
           <span class="mock-exam-tag tag-ssc">SSC New Pattern</span>
           <span class="mock-live-badge"><span class="mock-live-dot"></span> Live Now</span>
         </div>
-        <h3 class="mock-title">SSC GD Constable Full Mock Test</h3>
-        <p class="mock-desc">
-          Latest 80-question CBT format for BSF, CISF, CRPF, SSB, ITBP, AR, and SSF recruitments with -0.25 negative marking.
-        </p>
+        <h3 class="mock-title">SSC GD Constable Full Mock</h3>
+        <p class="mock-desc">Latest 80 Qs CBT format for CAPF GD (+2.00 / -0.25 Neg).</p>
 
         <div class="mock-specs-grid">
           <div class="spec-item">
@@ -658,16 +654,16 @@
             <strong>80 Qs</strong>
           </div>
           <div class="spec-item">
-            <span>Total Marks</span>
+            <span>Marks</span>
             <strong>160 Marks</strong>
           </div>
         </div>
 
         <div class="section-pills">
-          <span class="section-pill">Reasoning (20 Qs)</span>
-          <span class="section-pill">GK/GS (20 Qs)</span>
-          <span class="section-pill">Maths (20 Qs)</span>
-          <span class="section-pill">Hindi (20 Qs)</span>
+          <span class="section-pill">Reasoning (20)</span>
+          <span class="section-pill">GK/GS (20)</span>
+          <span class="section-pill">Maths (20)</span>
+          <span class="section-pill">Hindi (20)</span>
         </div>
 
         <div class="mock-actions">
@@ -682,10 +678,8 @@
           <span class="mock-exam-tag tag-army">Indian Army CEE</span>
           <span class="mock-live-badge"><span class="mock-live-dot"></span> Live Now</span>
         </div>
-        <h3 class="mock-title">Indian Army Agniveer GD Mock</h3>
-        <p class="mock-desc">
-          Common Entrance Examination (CEE) practice test covering GK, Science, Maths, and Logic. No Negative Marking (0.00).
-        </p>
+        <h3 class="mock-title">Army Agniveer GD Full Mock</h3>
+        <p class="mock-desc">Official CEE 50 Qs CBT format (+2.00 / No Neg Marking).</p>
 
         <div class="mock-specs-grid">
           <div class="spec-item">
@@ -697,16 +691,16 @@
             <strong>50 Qs</strong>
           </div>
           <div class="spec-item">
-            <span>Total Marks</span>
+            <span>Marks</span>
             <strong>100 Marks</strong>
           </div>
         </div>
 
         <div class="section-pills">
-          <span class="section-pill">General Knowledge (15 Qs)</span>
-          <span class="section-pill">General Science (15 Qs)</span>
-          <span class="section-pill">Maths (15 Qs)</span>
-          <span class="section-pill">Logic (5 Qs)</span>
+          <span class="section-pill">GK (15)</span>
+          <span class="section-pill">Science (15)</span>
+          <span class="section-pill">Maths (15)</span>
+          <span class="section-pill">Logic (5)</span>
         </div>
 
         <div class="mock-actions">
