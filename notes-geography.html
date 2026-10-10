@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geography (भूगोल एवं पर्यावरण) 1-Minute Short Revision Notes (20 High-Yield Facts) - AapkaResult.in</title>
-  <meta name="description" content="Top 20 Geography short notes for UP Police, SSC GD, Railway Group D & Defence. Indian rivers, passes, mountain peaks, national parks & solar system.">
+  <title>Geography (भूगोल एवं पर्यावरण) In-Depth Question Bank with Solutions - AapkaResult.in</title>
+  <meta name="description" content="Top Geography questions with detailed geographical analysis for UP Police, SSC GD, Railway Group D & Defence. Indian rivers, mountain peaks, passes, national parks & solar system.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-geography.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -45,7 +45,6 @@
       line-height: 1.6;
     }
 
-    /* Sub Nav Pills */
     .subject-pill-nav {
       display: flex;
       gap: 10px;
@@ -83,7 +82,6 @@
       border-color: #dc2626;
     }
 
-    /* Search & Stats Bar */
     .notes-controls {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -139,99 +137,107 @@
       color: #64748b;
     }
 
-    /* Cards Grid */
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-    .note-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    .questions-container {
       display: flex;
       flex-direction: column;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
+      gap: 20px;
+      margin-bottom: 30px;
     }
-    .note-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-      border-color: #cbd5e1;
+    .question-deep-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .note-card-head {
+    .question-deep-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-color: #94a3b8;
+    }
+    .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .note-badge {
+    .q-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .q-cat-badge {
+      background: #eff6ff;
+      color: #1d4ed8;
       font-size: 11.5px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      border: 1px solid #bfdbfe;
     }
-    .badge-history { background: #fef3c7; color: #92400e; }
-    .badge-science { background: #dcfce7; color: #166534; }
-    .badge-polity { background: #dbeafe; color: #1e40af; }
-    .badge-geography { background: #f3e8ff; color: #6b21a8; }
-    .badge-static { background: #ffedd5; color: #9a3412; }
-    .badge-economics { background: #e0e7ff; color: #3730a3; }
-
-    .note-actions {
+    .q-exam-badge {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #fde68a;
+    }
+    .q-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .note-num {
-      font-size: 12px;
-      font-weight: 700;
-      color: #94a3b8;
+    .q-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: #64748b;
     }
-    .btn-copy-note {
+    .btn-copy-q {
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
       color: #475569;
       cursor: pointer;
-      padding: 4px 6px;
+      padding: 4px 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s;
     }
-    .btn-copy-note:hover {
+    .btn-copy-q:hover {
       background: #e2e8f0;
       color: #0f172a;
     }
-    .note-title {
-      font-size: 16px;
+    .q-title {
+      font-size: 16.5px;
       font-weight: 700;
       color: #0f172a !important;
-      line-height: 1.4;
+      line-height: 1.45;
       margin: 0 0 10px 0;
     }
-    .note-content {
-      font-size: 14.5px;
-      color: #1e293b !important;
-      line-height: 1.65;
-      flex-grow: 1;
+    .q-explanation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
     }
-    .exam-key {
-      background: #eff6ff;
-      color: #1d4ed8;
+    .ans-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border-bottom: 2px solid #bfdbfe;
+      font-size: 13.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border: 1px solid #bbf7d0;
     }
 
-    /* Toast */
     #copyToast {
       position: fixed;
       bottom: 24px;
@@ -353,7 +359,7 @@
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
       <li><a href="short-notes-hub.html">Short Notes Hub</a></li>
-      <li>Geography (भूगोल)</li>
+      <li>Geography (भूगोल एवं पर्यावरण)</li>
     </ul>
   </div>
 
@@ -362,18 +368,19 @@
     
     <!-- HERO BANNER -->
     <div class="notes-hero">
-      <div class="notes-hero-badge">⚡ Geography (भूगोल) Special 2026</div>
-      <h1>🌍 Geography (भारत एवं विश्व का भूगोल) 1-Minute Revision Notes</h1>
-      <p>भारत की प्रमुख नदियां, कर्क रेखा, पर्वतीय दर्रे, झीलें व जलप्रपात, राष्ट्रीय उद्यान व टाइगर रिजर्व, सौरमंडल तथा मिट्टियों के 20 सर्वाधिक स्कोरिंग पॉइंट्स।</p>
+      <div class="notes-hero-badge">⚡ Geography (भूगोल एवं पर्यावरण) Question Bank 2026</div>
+      <h1>🌍 Geography (भारत एवं विश्व का भूगोल) Detailed Question Bank</h1>
+      <p>कर्क रेखा व भारतीय मानक समय रेखा (IST), भारत की प्रमुख नदियां (गंगा, ब्रह्मपुत्र, गोदावरी, नर्मदा, ताप्ती), अरावली व हिमालय पर्वत शिखर, प्रमुख पर्वतीय दर्रे (जोजिला, शिपकी ला), झीलें व जलप्रपात, राष्ट्रीय उद्यान व टाइगर रिजर्व, सौरमंडल तथा मिट्टियों के विस्तृत विश्लेषणात्मक प्रश्न।</p>
     </div>
 
-    <!-- SUBJECT PILL NAVIGATION -->
+    <!-- SUBJECT NAVIGATION PILLS -->
     <div class="subject-pill-nav">
-      <a href="notes-history.html" class="pill-link ">🏛️ History Notes</a>
-      <a href="notes-science.html" class="pill-link ">🧬 Science Notes</a>
-      <a href="notes-polity.html" class="pill-link ">⚖️ Polity Notes</a>
-      <a href="notes-geography.html" class="pill-link active">🌍 Geography Notes</a>
-      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+      <a href="notes-history.html" class="pill-link ">🏛️ History (इतिहास)</a>
+      <a href="notes-science.html" class="pill-link ">🧬 Science (सामान्य विज्ञान)</a>
+      <a href="notes-polity.html" class="pill-link ">⚖️ Polity (संविधान व राजव्यवस्था)</a>
+      <a href="notes-geography.html" class="pill-link active">🌍 Geography (भूगोल)</a>
+      <a href="notes-gk.html" class="pill-link ">🎯 Static GK (सामान्य ज्ञान)</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ Quick Formula Hub</a>
     </div>
 
     <!-- SEARCH & CONTROLS -->
@@ -382,287 +389,987 @@
         <span class="search-icon-inside">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="subjectSearchInput" placeholder="Search keywords in Geography (भूगोल)..." onkeyup="filterSubjectNotes(this.value)">
-        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
+        <input type="text" id="notebookSearchInput" placeholder="Search keywords in this subject (e.g. बाबर, विटामिन, अनुच्छेद, गंगा, कथक)..." onkeyup="filterNotebook(this.value)">
+        <button type="button" id="clearSearch" class="clear-search-btn" onclick="clearNotebookSearch()" aria-label="Clear">&times;</button>
       </div>
       <div class="notes-status-row">
-        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">20</strong> high-yield points</span>
-        <span>Click 📋 to copy any point</span>
+        <span>Showing <strong id="visibleQCount" style="color: #0f172a;">20</strong> exam questions with complete detailed explanations</span>
+        <span>Click 📋 to copy any question &amp; solution</span>
       </div>
     </div>
 
-    <!-- CARDS GRID -->
-    <div class="notes-grid" id="subjectNotesGrid">
-      <article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (भारत का भूगोल)</span>
-        <div class="note-actions">
-          <span class="note-num">#56</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+    <!-- QUESTIONS LIST -->
+    <div class="questions-container" id="questionsContainer">
+      
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भारत का भौतिक स्वरूप</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC GD Repeated</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q01</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">भारत की भौगोलिक स्थिति, सीमाएं व क्षेत्रफल</h3>
-      <div class="note-content">भारत का कुल क्षेत्रफल <mark class="exam-key">32,87,263 वर्ग किमी</mark> है, जो विश्व के कुल क्षेत्रफल का 2.42% है (क्षेत्रफल में 7वां बड़ा देश)। उत्तर से दक्षिण विस्तार 3,214 किमी और पूर्व से पश्चिम 2,933 किमी है। स्थलीय सीमा 15,200 किमी और मुख्य तटरेखा 7,516.6 किमी है। भारत का मानक समय रेखा <mark class="exam-key">82°30' पूर्वी देशांतर (IST)</mark> प्रयागराज के नैनी/मिर्जापुर से गुजरती है जो GMT से 5 घंटा 30 मिनट आगे है।</div>
+
+      <h3 class="q-title">कर्क रेखा (23.5° N अक्षांश) भारत के कितने राज्यों से होकर गुजरती है और भारतीय मानक समय रेखा (IST) कहाँ से गुजरती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 6 राज्य - नई दिल्ली 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 8 राज्य - प्रयागराज (मिर्जापुर, 82.5° E) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 7 राज्य - भोपाल 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 9 राज्य - नागपुर 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">कर्क रेखा भारत के ठीक मध्य से होकर कुल 8 राज्यों से गुजरती है: गुजरात, राजस्थान, मध्य प्रदेश, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा और मिजोरम (ट्रिक: मित्र पर गमछा झार)। वहीं भारतीय मानक समय रेखा (IST) 82°30' (82.5°) पूर्व देशांतर रेखा है जो उत्तर प्रदेश के प्रयागराज (मिर्जापुर) के पास से गुजरती है और यह 5 राज्यों (UP, MP, छत्तीसगढ़, ओडिशा, आंध्र प्रदेश) से गुजरती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>कर्क रेखा और भारतीय मानक समय रेखा (IST) एक दूसरे को 'छत्तीसगढ़' राज्य में काटती हैं।</li><li>भारतीय मानक समय (IST) ग्रीनविच मीन टाइम (GMT) से 5 घंटे 30 मिनट (5.5 घंटे) आगे है।</li><li>माही नदी भारत की एकमात्र ऐसी नदी है जो कर्क रेखा को दो बार काटती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (कर्क रेखा व राज्य)</span>
-        <div class="note-actions">
-          <span class="note-num">#57</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भारत की नदियां</span>
+          <span class="q-exam-badge">🎯 All State & Central Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q02</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">कर्क रेखा (23.5° N) और 8 भारतीय राज्य</h3>
-      <div class="note-content">कर्क रेखा भारत के ठीक मध्य से होकर 8 राज्यों से गुजरती है: <mark class="exam-key">गुजरात &rarr; राजस्थान &rarr; मध्य प्रदेश &rarr; छत्तीसगढ़ &rarr; झारखंड &rarr; पश्चिम बंगाल &rarr; त्रिपुरा &rarr; मिजोरम</mark> (ट्रिक: "मित्र पर गमछा झार")। माही नदी कर्क रेखा को दो बार काटती है।</div>
+
+      <h3 class="q-title">दक्षिण भारत की सबसे लंबी नदी कौन सी है, जिसे 'दक्षिण गंगा' या 'वृद्ध गंगा' भी कहा जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> कृष्णा नदी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> गोदावरी नदी (Godavari) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> कावेरी नदी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> महानदी 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">गोदावरी नदी प्रायद्वीपीय भारत (दक्षिण भारत) की सबसे लंबी नदी है, जिसकी कुल लंबाई 1,465 किलोमीटर है। इसका उद्गम महाराष्ट्र के नासिक जिले में त्र्यंबकेश्वर की पहाड़ियों से होता है। अपने विशाल आकार और धार्मिक महत्व के कारण इसे 'वृद्ध गंगा' और 'दक्षिण की गंगा' कहा जाता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>कावेरी नदी को अपने पवित्र जल और वर्षभर प्रवाह के कारण 'दक्षिण भारत की गंगा' कहा जाता है (उद्गम: ब्रह्मगिरि पहाड़ी, कर्नाटक)।</li><li>कावेरी जल विवाद मुख्य रूप से तमिलनाडु, कर्नाटक, केरल और पुडुचेरी के बीच है।</li><li>कृष्णा नदी (1,400 किमी) महाबलेश्वर (महाराष्ट्र) से निकलती है और नागार्जुन सागर बांध इसी नदी पर बना है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर व दर्रे)</span>
-        <div class="note-actions">
-          <span class="note-num">#58</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">नदी अपवाह तंत्र</span>
+          <span class="q-exam-badge">🎯 Railway & Defence CEE</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q03</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रमुख पर्वत शिखर एवं दर्रे (Mountain Peaks & Passes)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">के-2 (गॉडविन ऑस्टिन, 8,611 मी)</mark>: भारत की सबसे ऊंची चोटी (काराकोरम श्रेणी, PoK)।<br>&bull; <mark class="exam-key">कंचनजंगा (8,586 मी)</mark>: भारत की निर्विवाद सबसे ऊंची चोटी (सिक्किम)।<br>&bull; <mark class="exam-key">अनाईमुडी (2,695 मी)</mark>: दक्षिण भारत (प्रायद्वीपीय भारत) की सबसे ऊंची चोटी (अन्नामलाई पहाड़ी, केरल)।<br>&bull; <mark class="exam-key">दोद्दाबेट्टा</mark>: नीलगिरि पहाड़ियों की सबसे ऊंची चोटी।<br>&bull; प्रमुख दर्रे: जोजिला व बनिहाल (जम्मू-कश्मीर), रोहतांग व शिपकी ला (हिमाचल प्रदेश), माना व नीति व लिपुलेख (उत्तराखंड), नाथुला व जेलेप ला (सिक्किम), बोमडिला (अरुणाचल प्रदेश)।</div>
+
+      <h3 class="q-title">भारत की कौन सी दो प्रमुख नदियां भ्रंश घाटी (Rift Valley) से होकर पश्चिम की ओर बहती हैं और डेल्टा नहीं बनातीं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> गंगा और यमुना 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> नर्मदा और ताप्ती (तापी) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> गोदावरी और महानदी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> सिंधु और सतलुज 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">नर्मदा और ताप्ती नदियां विंध्याचल और सतपुड़ा पर्वत श्रेणियों के बीच बनी भ्रंश घाटी (Rift Valley) से होकर पूर्व से पश्चिम की ओर बहती हैं। ये नदियां अरब सागर (खंभात की खाड़ी) में गिरती हैं और अपने मुहाने पर डेल्टा के स्थान पर ज्वारनदमुख (Estuary) का निर्माण करती हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>नर्मदा नदी का उद्गम मध्य प्रदेश के अमरकंटक पठार से होता है। जबलपुर के पास यह संगमरमर की चट्टानों में प्रसिद्ध 'धुआंधार जलप्रपात' बनाती है।</li><li>सरदार सरोवर बांध गुजरात में नर्मदा नदी पर बना सबसे बड़ा बांध है।</li><li>विश्व का सबसे बड़ा नदी द्वीप 'माजुली' (Majuli) असम में ब्रह्मपुत्र नदी में स्थित है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (नदियां व उद्गम)</span>
-        <div class="note-actions">
-          <span class="note-num">#59</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">पर्वत एवं दर्रे</span>
+          <span class="q-exam-badge">🎯 SSC GD & UP Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q04</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">भारत की प्रमुख नदियां, उद्गम व सहायक नदियां</h3>
-      <div class="note-content">&bull; <mark class="exam-key">गंगा (2,525 किमी)</mark>: भारत की सबसे लंबी नदी; गंगोत्री ग्लेशियर से भागीरथी व अलकनंदा का देवप्रयाग में संगम गंगा कहलाता है।<br>&bull; <mark class="exam-key">ब्रह्मपुत्र</mark>: तिब्बत में मानसरोवर के निकट से निकलती है (तिब्बत में सांगपो, अरुणाचल में दिहांग, असम में ब्रह्मपुत्र, बांग्लादेश में जमुना)। विश्व का सबसे बड़ा नदी द्वीप <mark class="exam-key">माजुली</mark> असम में इसी नदी पर है।<br>&bull; <mark class="exam-key">गोदावरी (1,465 किमी)</mark>: दक्षिण भारत की सबसे लंबी नदी (त्र्यंबकेश्वर नासिक से उद्गम, "वृद्ध गंगा" व "दक्षिण गंगा" उपनाम)।<br>&bull; <mark class="exam-key">नर्मदा व ताप्ती</mark>: पश्चिम की ओर बहने वाली नदियां जो भ्रंश घाटी (Rift Valley) से बहती हैं और डेल्टा न बनाकर एश्चुअरी (ज्वारनदमुख) बनाती हैं।</div>
+
+      <h3 class="q-title">विश्व की सबसे प्राचीन वलित पर्वत श्रृंखला (Oldest Fold Mountain Range) कौन सी है और इसकी सर्वोच्च चोटी कौन सी है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> हिमालय पर्वत - माउंट एवरेस्ट 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अरावली पर्वत श्रृंखला - गुरु शिखर (1722 मीटर) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> पश्चिमी घाट - अनाईमुडी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> सतपुड़ा पर्वत - धूपगढ़ 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अरावली पर्वतमाला भारत ही नहीं बल्कि विश्व की सबसे प्राचीन वलित पर्वत श्रृंखलाओं में से एक है, जो अब अवशिष्ट पर्वत (Residual Mountain) का रूप ले चुकी है। यह गुजरात से लेकर राजस्थान, हरियाणा होते हुए दिल्ली (रायसीना हिल्स) तक लगभग 800 किमी में फैली है। इसका सर्वोच्च शिखर 'गुरु शिखर' (1,722 मी) माउंट आबू (सिरोही, राजस्थान) में स्थित है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>दक्षिण भारत और पश्चिमी घाट की सबसे ऊंची चोटी 'अनाईमुडी' (2,695 मी, केरल के अन्नामलाई पर्वत पर) है।</li><li>नीलगिरि पर्वत की सबसे ऊंची चोटी 'दोदाबेट्टा' (2,637 मी) है, जहाँ पश्चिमी और पूर्वी घाट आपस में मिलते हैं।</li><li>भारत की सर्वोच्च चोटी 'के-2' (K2 / गॉडविन ऑस्टिन, 8611 मी) पाक अधिकृत कश्मीर (PoK) के काराकोरम श्रेणी में है, जबकि पूर्णतः भारतीय क्षेत्र में सर्वोच्च चोटी 'कंचनजंगा' (8586 मी, सिक्किम) है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (बांध व परियोजनाएं)</span>
-        <div class="note-actions">
-          <span class="note-num">#60</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">पर्वतीय दर्रे</span>
+          <span class="q-exam-badge">🎯 Defence & Railway Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q05</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">भारत के प्रमुख बहुउद्देशीय नदी बांध</h3>
-      <div class="note-content">&bull; <mark class="exam-key">टिहरी बांध</mark>: भारत का सबसे ऊंचा बांध (260.5 मी, भागीरथी नदी, उत्तराखंड)।<br>&bull; <mark class="exam-key">हीराकुंड बांध</mark>: भारत का सबसे लंबा बांध (4.8 किमी मुख्य, महानदी, ओडिशा)।<br>&bull; <mark class="exam-key">भाखड़ा नांगल बांध</mark>: सतलुज नदी (हिमाचल/पंजाब, गोविंद सागर झील)।<br>&bull; <mark class="exam-key">सरदार सरोवर बांध</mark>: नर्मदा नदी (गुजरात)।<br>&bull; <mark class="exam-key">नागार्जुन सागर बांध</mark>: कृष्णा नदी (तेलंगाना/आंध्र प्रदेश)।</div>
+
+      <h3 class="q-title">श्रीनगर को लेह से जोड़ने वाला प्रसिद्ध दर्रा कौन सा है और भारत में सतलुज नदी किस दर्रे से प्रवेश करती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> रोहतांग दर्रा और नाथू ला 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> जोजिला दर्रा (Zoji La) और शिपकी ला दर्रा (Shipki La) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> बनिहाल दर्रा और नीति दर्रा 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बोमडिला दर्रा और पालघाट 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">जोजिला दर्रा लद्दाख में जास्कर श्रेणी में स्थित है, जो श्रीनगर को कारगिल और लेह से जोड़ता है। राष्ट्रीय राजमार्ग 1D (NH-1) इसी दर्रे से गुजरता है। वहीं 'शिपकी ला दर्रा' हिमाचल प्रदेश के किन्नौर जिले में स्थित है, जिसके माध्यम से तिब्बत से आने वाली सतलुज नदी भारत में प्रवेश करती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>बनिहाल दर्रा (जम्मू-कश्मीर) में प्रसिद्ध 'जवाहर सुरंग' स्थित है जो जम्मू को श्रीनगर से जोड़ती है।</li><li>रोहतांग दर्रा हिमाचल प्रदेश में है, जिसके नीचे विश्व की सबसे लंबी उच्च ऊंचाई वाली 'अटल सुरंग' (Atal Tunnel - 9.02 किमी) बनी है।</li><li>नाथू ला और जेलेप ला दर्रा 'सिक्किम' में हैं, जो भारत और चीन (तिब्बत) के बीच व्यापारिक मार्ग हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
-        <div class="note-actions">
-          <span class="note-num">#61</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">झीलें एवं जलप्रपात</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & State PSC</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q06</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रमुख राष्ट्रीय उद्यान एवं वन्यजीव अभयारण्य</h3>
-      <div class="note-content">&bull; <mark class="exam-key">जिम कॉर्बेट (रामगंगा)</mark>: भारत का प्रथम राष्ट्रीय उद्यान (1936, उत्तराखंड)।<br>&bull; <mark class="exam-key">काजीरंगा</mark>: एक सींग वाले गैंडे हेतु प्रसिद्ध (असम)।<br>&bull; <mark class="exam-key">गिर राष्ट्रीय उद्यान</mark>: एशियाई शेरों (Asiatic Lions) का एकमात्र प्राकृतिक आवास (गुजरात)।<br>&bull; <mark class="exam-key">केबुल लामजाओ</mark>: विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान (लोकटक झील, मणिपुर)।<br>&bull; <mark class="exam-key">सुंदरबन</mark>: रॉयल बंगाल टाइगर और मैंग्रोव वनों हेतु प्रसिद्ध (पश्चिम बंगाल)।<br>&bull; <mark class="exam-key">दुधवा राष्ट्रीय उद्यान</mark>: उत्तर प्रदेश (लखीमपुर खीरी)।</div>
+
+      <h3 class="q-title">विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान 'केइबुल लामजाओ' किस राज्य की किस प्रसिद्ध झील में स्थित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> ओडिशा - चिल्का झील 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> मणिपुर - लोकतक झील (Loktak Lake) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> जम्मू-कश्मीर - वुलर झील 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> केरल - वेम्बनाड झील 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">पूर्वोत्तर भारत में मीठे पानी की सबसे बड़ी झील 'लोकतक झील' (मणिपुर) है। इस झील में वनस्पतियों और मिट्टी के तैरते हुए प्राकृतिक द्वीप पाए जाते हैं जिन्हें स्थानीय भाषा में 'फुमडी' (Phumdi) कहते हैं। इसी झील पर विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान 'केइबुल लामजाओ' स्थित है, जो दुर्लभ संघाई हिरण (Dancing Deer) का एकमात्र प्राकृतिक आवास है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत में मीठे पानी की सबसे बड़ी प्राकृतिक झील 'वुलर झील' (जम्मू-कश्मीर) है, जो झेलम नदी पर गोखुर झील का उदाहरण है।</li><li>भारत की सबसे बड़ी तटीय खारे पानी की लैगून झील 'चिल्का झील' (ओडिशा) है।</li><li>महाराष्ट्र के बुलढाणा जिले की 'लोनार झील' उल्कापिंड के गिरने से बनी क्रेटर झील है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (भारत के द्वीप)</span>
-        <div class="note-actions">
-          <span class="note-num">#84</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">राष्ट्रीय उद्यान एवं वन्यजीव</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q07</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">अंडमान-निकोबार एवं लक्षद्वीप समूह</h3>
-      <div class="note-content">&bull; <mark class="exam-key">10 डिग्री चैनल (10° Channel)</mark>: अंडमान द्वीप को निकोबार द्वीप से अलग करता है।<br>&bull; <mark class="exam-key">9 डिग्री चैनल</mark>: लक्षद्वीप को मिनिकॉय से अलग करता है।<br>&bull; <mark class="exam-key">8 डिग्री चैनल</mark>: मिनिकॉय को मालदीव से अलग करता है।<br>&bull; बैरन द्वीप (Barren Island): भारत का एकमात्र सक्रिय ज्वालामुखी (अंडमान सागर में)।<br>&bull; इंदिरा पॉइंट (पिग्मेलियन पॉइंट): भारत का सबसे दक्षिणी बिंदु (ग्रेट निकोबार में, 6°4' N)।</div>
+
+      <h3 class="q-title">भारत का प्रथम राष्ट्रीय उद्यान कौन सा था और 'एक सींग वाले गैंडे' के लिए कौन सा राष्ट्रीय उद्यान विश्व प्रसिद्ध है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> कान्हा राष्ट्रीय उद्यान - गिर वन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> जिम कॉर्बेट राष्ट्रीय उद्यान (1936, उत्तराखंड) - काजीरंगा राष्ट्रीय उद्यान (असम) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> रणथंभौर - सुंदरबन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> दुधवा - बांदीपुर 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत का पहला राष्ट्रीय उद्यान 1936 में उत्तराखंड के नैनीताल/पौड़ी गढ़वाल में 'हेली नेशनल पार्क' के नाम से स्थापित हुआ था, जिसे बाद में 'जिम कॉर्बेट नेशनल पार्क' नाम दिया गया (वर्तमान में रामगंगा नेशनल पार्क)। वहीं असम का 'काजीरंगा राष्ट्रीय उद्यान' ब्रह्मपुत्र नदी के बाढ़ क्षेत्र में स्थित है और विश्व के दो-तिहाई एक सींग वाले गैंडों (One-horned Rhinoceros) का घर है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत में प्रोजेक्ट टाइगर की शुरुआत 1 अप्रैल 1973 को जिम कॉर्बेट नेशनल पार्क से हुई थी।</li><li>एशियाई शेरों (Asiatic Lions) का एकमात्र प्राकृतिक आवास 'गिर राष्ट्रीय उद्यान' (गुजरात) है।</li><li>रॉयल बंगाल टाइगर और मैंग्रोव वनों के लिए 'सुंदरबन राष्ट्रीय उद्यान' (पश्चिम बंगाल) विश्व प्रसिद्ध है।</li><li>मध्य प्रदेश को भारत का 'टाइगर स्टेट' कहा जाता है क्योंकि यहाँ सर्वाधिक राष्ट्रीय उद्यान और बाघ हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (मिट्टियां व फसलें)</span>
-        <div class="note-actions">
-          <span class="note-num">#85</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">सौरमंडल एवं खगोलिकी</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q08</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">भारतीय मिट्टियां (Soils) एवं प्रमुख फसलें</h3>
-      <div class="note-content">&bull; <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark>: कपास (Cotton) की खेती हेतु सर्वश्रेष्ठ (महाराष्ट्र, गुजरात, MP - बेसाल्ट लावा चट्टानों के अपक्षय से निर्मित)।<br>&bull; <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil)</mark>: भारत में सर्वाधिक क्षेत्रफल (लगभग 43%) पर पाई जाने वाली उपजाऊ मिट्टी (नई जलोढ़ = खादर, पुरानी जलोढ़ = बांगर)।<br>&bull; <mark class="exam-key">लेटराइट मिट्टी</mark>: चाय, कॉफी और काजू की खेती हेतु उपयुक्त (केरल, पश्चिमी घाट - भारी वर्षा व लीचिंग से निर्मित)।</div>
+
+      <h3 class="q-title">सौरमंडल का सबसे गर्म और सबसे चमकीला ग्रह कौन सा है, जिसे 'पृथ्वी की जुड़वां बहन' भी कहा जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> बुध (Mercury) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> शुक्र (Venus) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> मंगल (Mars) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बृहस्पति (Jupiter) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">शुक्र (Venus) सूर्य से दूसरा ग्रह है, लेकिन इसके वायुमंडल में 95% से अधिक कार्बन डाइऑक्साइड ($CO_2$) होने के कारण तीव्र ग्रीनहाउस प्रभाव उत्पन्न होता है, जिससे इसका तापमान लगभग 475°C तक पहुंच जाता है और यह सबसे गर्म ग्रह है। आकार, द्रव्यमान और घनत्व में पृथ्वी के समान होने के कारण इसे 'पृथ्वी की बहन' (Earth's Twin) और 'भोर व सांझ का तारा' (Morning & Evening Star) कहते हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>शुक्र और अरुण (Uranus) अपनी धुरी पर पूर्व से पश्चिम (दक्षिणावर्त - Clockwise) घूमते हैं, जबकि अन्य सभी ग्रह पश्चिम से पूर्व घूमते हैं।</li><li>सौरमंडल का सबसे बड़ा ग्रह 'बृहस्पति' है, जिसका उपग्रह 'गैनीमीड' सौरमंडल का सबसे बड़ा उपग्रह है।</li><li>मंगल को आयरन ऑक्साइड की प्रचुरता के कारण 'लाल ग्रह' (Red Planet) कहा जाता है। इसके दो उपग्रह फोबोस और डीमोस हैं。</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (प्रमुख फसलें)</span>
-        <div class="note-actions">
-          <span class="note-num">#86</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भारतीय मिट्टियां</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC Core</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q09</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">खरीफ, रबी और जायद फसलें</h3>
-      <div class="note-content">&bull; <mark class="exam-key">खरीफ फसलें (जून-जुलाई में बोई, अक्टूबर-नवंबर में काटी)</mark>: धान (चावल), मक्का, ज्वार, बाजरा, कपास, सोयाबीन, मूंगफली।<br>&bull; <mark class="exam-key">रबी फसलें (अक्टूबर-नवंबर में बोई, मार्च-अप्रैल में काटी)</mark>: गेहूं, जौ, चना, मटर, सरसों, आलू, अलसी।<br>&bull; <mark class="exam-key">जायद फसलें (मार्च-अप्रैल में बोई, जून में काटी)</mark>: तरबूज, खरबूजा, खीरा, ककड़ी, मौसमी सब्जियां।</div>
+
+      <h3 class="q-title">कपास की खेती के लिए सबसे उपयुक्त मिट्टी कौन सी मानी जाती है, जिसे स्थानीय भाषा में 'रेगुर मिट्टी' भी कहा जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> जलोढ़ मिट्टी (Alluvial Soil) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> काली मिट्टी (Black Cotton Soil) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> लाल और पीली मिट्टी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> लैटेराइट मिट्टी 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">काली मिट्टी का निर्माण ज्वालामुखी से निकली बेसाल्टिक लावा चट्टानों के विखंडन से हुआ है। इसमें क्ले (चीका) की मात्रा अधिक होने के कारण जलधारण क्षमता सर्वाधिक होती है। सूखने पर इसमें गहरी दरारें पड़ जाती हैं जिससे इसे 'स्वतः जुताई वाली मिट्टी' भी कहते हैं। यह महाराष्ट्र, गुजरात और पश्चिमी मध्य प्रदेश में कपास (Cotton) की खेती के लिए सर्वोत्तम होती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत के सर्वाधिक भूभाग (लगभग 40-43%) पर 'जलोढ़ मिट्टी' (Alluvial Soil) पाई जाती है, जो नदियों द्वारा लाई गई गाद से बनती है।</li><li>नवीन जलोढ़ मिट्टी को 'खादर' और पुरानी जलोढ़ मिट्टी को 'बांगर' कहते हैं।</li><li>चाय, कॉफी और काजू की खेती के लिए उच्च वर्षा और तापमान वाले क्षेत्रों की 'लैटेराइट मिट्टी' सर्वोत्तम होती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (भारत की नदियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#10</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भारत की स्थिति एवं विस्तार</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC GD & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q10</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">भारत का कुल भौगोलिक क्षेत्रफल कितना है और क्षेत्रफल की दृष्टि से भारत का विश्व में कौन सा स्थान है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 25,87,263 वर्ग किमी - 5वां स्थान 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 32,87,263 वर्ग किमी - 7वां स्थान (विश्व का 2.42%) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 40,12,000 वर्ग किमी - 6वां स्थान 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 28,50,000 वर्ग किमी - 8वां स्थान 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत का कुल भौगोलिक क्षेत्रफल 32,87,263 वर्ग किलोमीटर है, जो संपूर्ण विश्व के स्थलीय क्षेत्रफल का लगभग 2.42% है। क्षेत्रफल के आधार पर भारत विश्व का 7वां सबसे बड़ा देश है (रूस, कनाडा, चीन, अमेरिका, ब्राजील और ऑस्ट्रेलिया के बाद)। जनसंख्या की दृष्टि से भारत विश्व में शीर्ष पर है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत का उत्तर से दक्षिण तक कुल विस्तार 3,214 किलोमीटर और पूर्व से पश्चिम तक विस्तार 2,933 किलोमीटर है।</li><li>भारत की कुल स्थलीय सीमा रेखा लगभग 15,200 किलोमीटर और मुख्य भूमि की तटीय सीमा 6,100 किमी (द्वीपों सहित कुल तटीय सीमा 7,516.6 किमी) है।</li><li>भारत का सबसे उत्तरी बिंदु 'इंदिरा कॉल' (लद्दाख) और सबसे दक्षिणी बिंदु 'इंदिरा पॉइंट' (ग्रेट निकोबार द्वीप) है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत की प्रमुख नदियां एवं उद्गम स्थल</h3>
-    <div class="note-content">भारत की सबसे लंबी नदी <mark class="exam-key">गंगा (2525 किमी)</mark> गंगोत्री हिमनद (भागीरथी) से निकलती है। दक्षिण भारत की सबसे लंबी नदी <mark class="exam-key">गोदावरी (वृद्ध गंगा - त्र्यंबकेश्वर नासिक)</mark> है। नर्मदा और ताप्ती नदियां पश्चिम की ओर बहकर <mark class="exam-key">अरब सागर में ज्वारनदमुख (Estuary)</mark> बनाती हैं, डेल्टा नहीं।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (अक्षांश व मानक समय)</span>
-      <div class="note-actions">
-        <span class="note-num">#11</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">कर्क रेखा व भारतीय मानक समय रेखा (IST)</h3>
-    <div class="note-content"><mark class="exam-key">कर्क रेखा (23.5° N) भारत के 8 राज्यों</mark> (गुजरात, राजस्थान, MP, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा, मिजोरम) से गुजरती है। भारतीय मानक समय (IST) <mark class="exam-key">82.5° पूर्व देशांतर (प्रयागराज मिर्जापुर)</mark> पर आधारित है, जो ग्रीनविच मीन टाइम (GMT) से 5 घंटे 30 मिनट आगे है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (झीलें व जलप्रपात)</span>
-      <div class="note-actions">
-        <span class="note-num">#12</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">अंतर्राष्ट्रीय सीमाएं</span>
+          <span class="q-exam-badge">🎯 All Defence & Police Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q11</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">भारत की सबसे लंबी स्थलीय अंतर्राष्ट्रीय सीमा किस पड़ोसी देश के साथ लगती है और भारत-चीन सीमा रेखा को क्या कहा जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> पाकिस्तान - डूरंड रेखा 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> बांग्लादेश (4,096.7 किमी) - मैकमोहन रेखा (1914) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> चीन - रेडक्लिफ रेखा 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> नेपाल - 24वीं समानांतर रेखा 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत की सबसे लंबी स्थलीय सीमा 'बांग्लादेश' के साथ 4,096.7 किलोमीटर लगती है, जो 5 राज्यों (पश्चिम बंगाल, असम, मेघालय, त्रिपुरा, मिजोरम) को स्पर्श करती है। वहीं 1914 में शिमला समझौते के तहत निर्धारित भारत और चीन (तिब्बत) के बीच की अंतर्राष्ट्रीय सीमा रेखा को 'मैकमोहन रेखा' (McMahon Line) कहा जाता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत और पाकिस्तान के बीच की सीमा रेखा को 'रेडक्लिफ रेखा' (17 अगस्त 1947 को सर सिरिल रेडक्लिफ द्वारा) कहा जाता है।</li><li>भारत और अफगानिस्तान के बीच की सीमा रेखा को 'डूरंड रेखा' (1896) कहा जाता है (भारत की सबसे छोटी सीमा अफगानिस्तान के साथ मात्र 106 किमी है)।</li><li>भारत और श्रीलंका को 'पाक जलडमरूमध्य' (Palk Strait) और मन्नार की खाड़ी अलग करती है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत की प्रमुख झीलें व जलप्रपात</h3>
-    <div class="note-content">भारत में मीठे पानी की सबसे बड़ी प्राकृतिक झील <mark class="exam-key">वुलर झील (जम्मू कश्मीर)</mark> है। सबसे बड़ी तटीय खारे पानी की लैगून झील <mark class="exam-key">चिल्का झील (ओडिशा)</mark> है। विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान 'केइबुल लामजाओ' <mark class="exam-key">लोकतक झील (मणिपुर)</mark> में स्थित है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (पर्वतीय दर्रे)</span>
-      <div class="note-actions">
-        <span class="note-num">#13</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">भारत के प्रमुख पर्वतीय दर्रे (Mountain Passes)</h3>
-    <div class="note-content"><mark class="exam-key">जोजिला दर्रा</mark> श्रीनगर को लेह से जोड़ता है। <mark class="exam-key">बनिहाल दर्रा</mark> में प्रसिद्ध 'जवाहर सुरंग' स्थित है। <mark class="exam-key">शिपकी ला व रोहतांग</mark> हिमाचल प्रदेश में हैं (सतलुज नदी भारत में शिपकी ला से प्रवेश करती है)। <mark class="exam-key">नाथू ला व जेलेप ला</mark> सिक्किम में और <mark class="exam-key">बोमडिला</mark> अरुणाचल में हैं।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
-      <div class="note-actions">
-        <span class="note-num">#14</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">नदी घाटी परियोजनाएं एवं बांध</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & State Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q12</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">भारत का सबसे ऊंचा बांध 'टिहरी बांध' किस नदी पर बना है और सबसे लंबा बांध 'हीराकुंड' किस नदी पर स्थित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> सतलुज नदी और नर्मदा नदी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> भागीरथी नदी (उत्तराखंड) और महानदी (ओडिशा) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> चिनाब नदी और कावेरी नदी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> चंबल नदी और कृष्णा नदी 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">टिहरी बांध उत्तराखंड के टिहरी जिले में भागीरथी और भिलंगना नदी के संगम पर बना भारत का सबसे ऊंचा बांध (ऊंचाई 260.5 मीटर) है। वहीं 'हीराकुंड बांध' ओडिशा के संबलपुर में महानदी पर बना विश्व और भारत का सबसे लंबा मिट्टी का बांध है (मुख्य बांध की लंबाई 4.8 किमी और कुल लंबाई 25.8 किमी है)।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भाखड़ा-नांगल बांध हिमाचल-पंजाब में 'सतलुज नदी' पर बना भारत का सबसे ऊंचा सीधा गुरुत्वीय बांध (Gravity Dam - 226 मी) है, जिसके पीछे बनी झील का नाम 'गोविंद सागर' है।</li><li>नागार्जुन सागर बांध आंध्र प्रदेश/तेलंगाना में 'कृष्णा नदी' पर स्थित है।</li><li>माताटीला बांध और रानी लक्ष्मीबाई बांध उत्तर प्रदेश में 'बेतवा नदी' पर स्थित हैं।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत का पहला राष्ट्रीय उद्यान एवं वन्यजीव</h3>
-    <div class="note-content">भारत का प्रथम राष्ट्रीय उद्यान <mark class="exam-key">जिम कॉर्बेट (उत्तराखंड, 1936)</mark> है (पूर्व नाम हेली नेशनल पार्क)। एक सींग वाले गैंडे के लिए <mark class="exam-key">काजीरंगा (असम)</mark> प्रसिद्ध है। एशियाई शेरों के लिए <mark class="exam-key">गिर नेशनल पार्क (गुजरात)</mark> विख्यात है। भारत में प्रोजेक्ट टाइगर 1973 में शुरू हुआ था।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (सौरमंडल)</span>
-      <div class="note-actions">
-        <span class="note-num">#15</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">सौरमंडल के प्रमुख तथ्य (Solar System Facts)</h3>
-    <div class="note-content">सौरमंडल का सबसे बड़ा ग्रह <mark class="exam-key">बृहस्पति (Jupiter)</mark> और सबसे छोटा <mark class="exam-key">बुध (Mercury)</mark> है। सबसे चमकीला व सबसे गर्म ग्रह <mark class="exam-key">शुक्र (Venus - भोर व सांझ का तारा)</mark> है। शुक्र और अरुण (Uranus) पूरब से पश्चिम (दक्षिणावर्त) परिक्रमा करते हैं। मंगल को लाल ग्रह कहा जाता है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (भारतीय मिट्टियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#16</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">पर्वतीय दर्रे एवं सुरंगे</span>
+          <span class="q-exam-badge">🎯 Defence Agniveer & SSC GD</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q13</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">विश्व की सबसे लंबी राजमार्ग सुरंग 'अटल सुरंग' (Atal Tunnel - 9.02 किमी) किस दर्रे के नीचे स्थित है और यह किन दो स्थानों को जोड़ती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> जोजिला दर्रा - श्रीनगर से लेह 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> रोहतांग दर्रा (हिमाचल प्रदेश) - मनाली को लाहौल-स्पीति घाटी से <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> नाथू ला - गंगटोक से ल्हासा 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बनिहाल दर्रा - जम्मू से श्रीनगर 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अटल सुरंग (पूर्व नाम रोहतांग सुरंग) हिमाचल प्रदेश में पीर पंजाल पर्वत श्रेणी में रोहतांग दर्रे के नीचे समुद्र तल से 3,000 मीटर से अधिक की ऊंचाई पर बनाई गई 9.02 किलोमीटर लंबी विश्व की सबसे लंबी एकल ट्यूब डबल-लेन राजमार्ग सुरंग है। यह मनाली को वर्षभर लाहौल-स्पीति घाटी और लेह से जोड़े रखती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>सिक्किम का 'नाथू ला दर्रा' प्राचीन ऐतिहासिक 'रेशम मार्ग' (Silk Route) का हिस्सा था, जिसे 2006 में भारत-चीन व्यापार के लिए पुनः खोला गया।</li><li>अरुणाचल प्रदेश का 'बोमडिला दर्रा' तवांग घाटी से होकर तिब्बत की राजधानी ल्हासा को जोड़ता है।</li><li>केरल और तमिलनाडु को पश्चिमी घाट का 'पालघाट दर्रा' (Palakkad Gap) जोड़ता है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत की प्रमुख मिट्टियां (Soils of India)</h3>
-    <div class="note-content">भारत में सर्वाधिक क्षेत्रफल पर <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil - 40%+)</mark> पाई जाती है (खादर = नई, बांगर = पुरानी जलोढ़)। <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark> दक्कन ट्रैप में कपास की खेती के लिए सर्वोत्तम होती है और इसमें जलधारण क्षमता सर्वाधिक होती है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर)</span>
-      <div class="note-actions">
-        <span class="note-num">#17</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">भारत व विश्व के प्रमुख पर्वत शिखर</h3>
-    <div class="note-content">विश्व की सबसे ऊंची चोटी <mark class="exam-key">माउंट एवरेस्ट (8848.86 मी, नेपाल)</mark> है। भारत की सर्वोच्च चोटी <mark class="exam-key">K2 (गॉडविन ऑस्टिन - 8611 मी, काराकोरम)</mark> है। निर्विवाद भारतीय भूभाग में सर्वोच्च चोटी <mark class="exam-key">कंचनजंगा (सिक्किम - 8586 मी)</mark> है। दक्षिण भारत की सर्वोच्च चोटी <mark class="exam-key">अनाईमुडी (2695 मी)</mark> है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (प्रमुख बांध)</span>
-      <div class="note-actions">
-        <span class="note-num">#18</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">झीलें एवं जलप्रपात</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & Railway</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q14</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">भारत का सबसे ऊंचा जलप्रपात कौन सा है और राजस्थान की सबसे बड़ी खारे पानी की अंतःस्थलीय झील कौन सी है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> धुआंधार जलप्रपात - डल झील 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> कुंचिकल / जोग (गरसोप्पा) जलप्रपात - सांभर झील (Sambhar Lake) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> हुंडरू जलप्रपात - पिछोला झील 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> शिवसमुद्रम जलप्रपात - पुष्कर झील 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">कर्नाटक के शिमोगा जिले में वाराही नदी पर स्थित 'कुंचिकल जलप्रपात' (455 मीटर) भारत का सबसे ऊंचा सोपानी जलप्रपात है, जबकि शरावती नदी पर स्थित 'जोग या गरसोप्पा जलप्रपात' (महात्मा गांधी जलप्रपात - 253 मी) भारत का सबसे ऊंचा गैर-विभाजित सीधा गिरने वाला झरना है। वहीं राजस्थान के जयपुर के पास स्थित 'सांभर झील' भारत की सबसे बड़ी अंतःस्थलीय खारे पानी की झील है, जहाँ से देश के कुल नमक उत्पादन का लगभग 8-9% प्राप्त होता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>मध्य प्रदेश के जबलपुर में नर्मदा नदी पर भेड़ाघाट में प्रसिद्ध 'धुआंधार जलप्रपात' स्थित है।</li><li>झारखंड के रांची में स्वर्णरेखा नदी पर 'हुंडरू जलप्रपात' स्थित है।</li><li>कर्नाटक में कावेरी नदी पर 'शिवसमुद्रम जलप्रपात' स्थित है, जहाँ 1902 में भारत का पहला जलविद्युत संयंत्र लगाया गया था।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत के प्रमुख बांध व नदी परियोजनाएं</h3>
-    <div class="note-content">भारत का सबसे ऊंचा बांध <mark class="exam-key">टिहरी बांध (भागीरथी नदी, उत्तराखंड)</mark> है। सबसे लंबा बांध <mark class="exam-key">हीराकुंड बांध (महानदी, ओडिशा)</mark> है। सबसे बड़ा गुरुत्वीय बांध <mark class="exam-key">भाखड़ा बांध (सतलुज नदी, हिमाचल-पंजाब)</mark> है। सरदार सरोवर बांध नर्मदा नदी पर गुजरात में स्थित है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (खनिज संसाधन)</span>
-      <div class="note-actions">
-        <span class="note-num">#19</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">भारत के प्रमुख खनिज एवं उत्पादक क्षेत्र</h3>
-    <div class="note-content">भारत में <mark class="exam-key">कोयले का सर्वाधिक भंडार झारखंड (झरिया)</mark> में है। सोने की प्रसिद्ध खान <mark class="exam-key">कोलार व हट्टी (कर्नाटक)</mark> में है। तांबे के लिए प्रसिद्ध खान <mark class="exam-key">खेतड़ी (राजस्थान)</mark> है। पन्ना (मध्य प्रदेश) हीरे की खदानों के लिए भारत में एकमात्र सक्रिय क्षेत्र है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (अंतर्राष्ट्रीय सीमाएं)</span>
-      <div class="note-actions">
-        <span class="note-num">#20</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">खनिज संसाधन एवं उत्पादक क्षेत्र</span>
+          <span class="q-exam-badge">🎯 Railway RRB, SSC & Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q15</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">भारत में कोयले की राजधानी 'झरिया' किस राज्य में है और तांबे के लिए प्रसिद्ध 'खेतड़ी' किस राज्य में स्थित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> छत्तीसगढ़ - मध्य प्रदेश 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> झारखंड - राजस्थान <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> ओडिशा - कर्नाटक 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> पश्चिम बंगाल - गुजरात 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">झारखंड के धनबाद जिले में स्थित 'झरिया' भारत में उच्च कोटि के प्राइम कोकिंग कोल (कोयला) का सबसे बड़ा खनन क्षेत्र है। वहीं राजस्थान के झुंझुनू जिले में स्थित 'खेतड़ी' अरावली श्रृंखला में हड़प्पा काल से ही तांबे (Copper) के उत्खनन के लिए भारत का सबसे प्रसिद्ध ऐतिहासिक क्षेत्र है, जहाँ हिंदुस्तान कॉपर लिमिटेड का संयंत्र है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>कर्नाटक का 'कोलार' (KGF) और 'हट्टी' क्षेत्र भारत में प्राथमिक सोने (Gold) के उत्पादन के लिए प्रसिद्ध हैं।</li><li>मध्य प्रदेश का 'पन्ना' जिला भारत में हीरे (Diamonds) की खदानों के लिए पूरे देश में एकमात्र सक्रिय केंद्र है।</li><li>ओडिशा का मयूरभंज व बादामपहाड़ 'लौह अयस्क' और कोरापुट 'बॉक्साइट' के उत्पादन में भारत में प्रथम स्थान पर हैं।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत की अंतर्राष्ट्रीय सीमाएं एवं रेखाएं</h3>
-    <div class="note-content">भारत की सबसे लंबी स्थलीय सीमा <mark class="exam-key">बांग्लादेश (4,096.7 किमी)</mark> के साथ लगती है। भारत-पाकिस्तान सीमा रेखा को <mark class="exam-key">रेडक्लिफ रेखा (1947)</mark> और भारत-चीन सीमा को <mark class="exam-key">मैकमोहन रेखा (1914)</mark> कहते हैं। भारत व श्रीलंका को <mark class="exam-key">पाक जलडमरूमध्य (Palk Strait)</mark> अलग करता है।</div>
-  </article>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">जलवायु एवं मानसून</span>
+          <span class="q-exam-badge">🎯 All State & Central Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q16</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारत में 75% से अधिक मानसूनी वर्षा किस मानसून से होती है और विश्व में सर्वाधिक वर्षा वाला स्थान 'मौसिनराम' किस पहाड़ी पर स्थित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> उत्तर-पूर्वी मानसून - गारो पहाड़ी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> दक्षिण-पश्चिम मानसून (South-West Monsoon) - खासी पहाड़ी (मेघालय) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> लौटता मानसून - जयंतिया पहाड़ी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> पश्चिमी विक्षोभ - मिकिर पहाड़ी 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत में जून से सितंबर के दौरान होने वाली अधिकांश वर्षा 'दक्षिण-पश्चिम मानसून' की अरब सागर और बंगाल की खाड़ी शाखाओं द्वारा होती है। मेघालय के पूर्वी खासी हिल्स जिले में स्थित 'मौसिनराम' (Mawsynram) में कीप के आकार की खासी पहाड़ियों के कारण मानसूनी हवाएं फंसकर भारी वर्षा करती हैं (औसत वार्षिक वर्षा 11,872 मिमी), जिससे यह पृथ्वी पर सर्वाधिक वर्षा वाला नम स्थान है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>शीत ऋतु (अक्टूबर-दिसंबर) में तमिलनाडु के कोरोमंडल तट पर वर्षा 'उत्तर-पूर्वी लौटते हुए मानसून' (Retreating Monsoon) से होती है।</li><li>उत्तर भारत के मैदानी भागों में शीतकालीन वर्षा 'पश्चिमी विक्षोभ' (Western Disturbances) से होती है, जो रबी (गेहूं) की फसल के लिए अमृत मानी जाती है।</li><li>ग्रीष्म ऋतु में पश्चिम बंगाल में चलने वाली तीव्र आंधी-वर्षा को 'काल बैसाखी' और कर्नाटक/केरल में 'आम्र वर्षा' (Mango Showers) कहते हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">कृषि एवं फसल चक्र</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC Core</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q17</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">खरीफ, रबी और जायद की फसलों के प्रमुख उदाहरण क्रमशः कौन से हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> गेहूं, धान, चना 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> खरीफ: धान (चावल), मक्का, कपास | रबी: गेहूं, सरसों, चना | जायद: तरबूज, खीरा <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> सरसों, मूंगफली, आलू 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बाजरा, जौ, मटर 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत में तीन मुख्य फसल चक्र हैं: (1) खरीफ फसलें: जून-जुलाई में मानसूनी वर्षा के साथ बोई जाती हैं और अक्टूबर-नवंबर में काटी जाती हैं (जैसे- धान/चावल, मक्का, ज्वार, बाजरा, कपास, मूंगफली, सोयाबीन)। (2) रबी फसलें: अक्टूबर-नवंबर (सर्दियों) में बोई जाती हैं और मार्च-अप्रैल में काटी जाती हैं (जैसे- गेहूं, जौ, चना, सरसों, मटर, आलू)। (3) जायद फसलें: मार्च से जून की ग्रीष्म ऋतु में पानी की प्रचुरता वाले क्षेत्रों में बोई जाती हैं (जैसे- तरबूज, खरबूजा, खीरा, ककड़ी)।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत में 'हरित क्रांति' (Green Revolution) के जनक डॉ. एम.एस. स्वामीनाथन थे (1966-67 में गेहूं और चावल के उच्च उत्पादक बीजों HYV द्वारा शुरुआत हुई)।</li><li>विश्व में हरित क्रांति के जनक नोबेल पुरस्कार विजेता 'नॉर्मन बोरलॉग' (USA) थे।</li><li>भारत में 'श्वेत क्रांति' (दुग्ध उत्पादन) के जनक 'डॉ. वर्गीज कुरियन' थे (ऑपरेशन फ्लड 1970)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">वनस्पति एवं वन</span>
+          <span class="q-exam-badge">🎯 Railway & Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q18</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारत में कुल कितने प्रतिशत भौगोलिक क्षेत्र पर वन हैं और 'मैंग्रोव वन' (सुंदरी वृक्ष) सर्वाधिक किस राज्य में पाए जाते हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 15% - केरल 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> लगभग 24.62% (वनावरण + वृक्षावरण) - पश्चिम बंगाल (सुंदरबन डेल्टा) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 33% - असम 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 20% - मध्य प्रदेश 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारतीय वन सर्वेक्षण (FSI, देहरादून) की द्विवार्षिक 'इंडिया स्टेट ऑफ फॉरेस्ट रिपोर्ट' (ISFR) के अनुसार भारत के कुल भौगोलिक क्षेत्रफल का लगभग 24.6% हिस्सा वन और वृक्षों से आच्छादित है (राष्ट्रीय वन नीति 1988 के अनुसार 33% का लक्ष्य है)। वहीं खारे दलदली पानी में उगने वाले 'मैंग्रोव वन' (ज्वारीय वन) सर्वाधिक पश्चिम बंगाल के गंगा-ब्रह्मपुत्र सुंदरबन डेल्टा में पाए जाते हैं जहाँ 'सुंदरी' वृक्षों की प्रचुरता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>क्षेत्रफल की दृष्टि से भारत में सर्वाधिक वन क्षेत्र 'मध्य प्रदेश' राज्य में है।</li><li>प्रतिशत के आधार पर सर्वाधिक वनावरण वाला राज्य 'मिजोरम' (लगभग 84%+) है।</li><li>चिपको आंदोलन (1973, उत्तराखंड के चमोली में पेड़ों की कटाई रोकने हेतु) का नेतृत्व सुंदरलाल बहुगुणा, चंडी प्रसाद भट्ट और गौरा देवी ने किया था।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">विश्व भूगोल एवं सौरमंडल</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q19</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">विश्व का सबसे बड़ा महासागर और सबसे गहरी समुद्री खाई 'मारियाना गर्त' (Mariana Trench - 11,022 मी) कहाँ स्थित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अटलांटिक महासागर - प्यूर्टो रिको गर्त 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> प्रशांत महासागर (Pacific Ocean) - मारियाना ट्रेंच (गुआम द्वीप के पास) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> हिंद महासागर - सुंडा गर्त 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> आर्कटिक महासागर - यूरेशियन बेसिन 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">प्रशांत महासागर (Pacific Ocean) पृथ्वी का सबसे बड़ा और सबसे गहरा महासागर है, जो संपूर्ण पृथ्वी के लगभग एक-तिहाई भाग पर फैला है। पश्चिमी प्रशांत महासागर में फिलीपींस/गुआम के पास स्थित 'मारियाना गर्त' (Mariana Trench) का 'चैलेंजर डीप' समुद्र का सबसे गहरा बिंदु है, जिसकी गहराई लगभग 11,022 मीटर (11 किमी) है। यदि माउंट एवरेस्ट को इसमें डुबो दिया जाए तो भी उसके ऊपर 2 किमी से अधिक पानी रहेगा।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>प्रशांत महासागर के चारों ओर सक्रिय ज्वालामुखियों की पेटी को 'अग्निवलय' (Ring of Fire) कहा जाता है, जहाँ विश्व के 75% भूकंप और ज्वालामुखी आते हैं।</li><li>अटलांटिक महासागर का आकार अंग्रेजी के 'S' अक्षर जैसा है और यह विश्व का सबसे व्यस्त व्यापारिक महासागर है।</li><li>भूमध्य सागर को लाल सागर से जोड़ने वाली प्रसिद्ध 'स्वेज नहर' (मिस्र, 1869) है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">विश्व के प्रमुख महाद्वीप एवं जलसंधियां</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q20</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">विश्व की सबसे लंबी नदी और जल प्रवाह (आयतन) की दृष्टि से सबसे बड़ी नदी क्रमशः कौन सी हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> मिसिसिपी और यांग्त्सी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> नील नदी (अफ्रीका - 6,650 किमी) और अमेज़न नदी (दक्षिण अमेरिका) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> कांगो और डेन्यूब 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> गंगा और ब्रह्मपुत्र 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">विश्व की सबसे लंबी नदी 'नील नदी' (Nile River - लंबाई लगभग 6,650 किमी) है जो अफ्रीका की विक्टोरिया झील से निकलकर भूमध्य सागर में गिरती है (इसे 'मिस्र का वरदान' कहा जाता है)। वहीं विश्व में सर्वाधिक जल प्रवाह, सबसे चौड़े पाट और सबसे बड़े अपवाह बेसिन वाली नदी 'अमेज़न नदी' (Amazon River - दक्षिण अमेरिका) है, जो एंडीज पर्वत से निकलकर अटलांटिक महासागर में गिरती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>विश्व की सबसे ऊंची ताजे पानी की नौकागम्य झील 'टिटिकाका झील' (पेरू-बोलीविया सीमा) है।</li><li>विश्व का सबसे ऊंचा जलप्रपात 'एंजेल जलप्रपात' (Angel Falls - 979 मी, वेनेजुएला में कैरोनी नदी पर) है।</li><li>अफ्रीका की 'कांगो (जायरे) नदी' भूमध्य रेखा (Equator) को दो बार काटती है और 'लिम्पोपो नदी' मकर रेखा (Tropic of Capricorn) को दो बार काटती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
     </div>
 
-    <!-- BOTTOM CROSS LINKS -->
+    <!-- BOTTOM CROSS NAVIGATION -->
     <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
       <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
       <div class="related-vacancies-grid">
         <a href="short-notes-hub.html" class="related-vac-card">
           <div>
-            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
-            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Central Gateway</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Notes Hub (Formulas &amp; Rapid Charts)</h4>
           </div>
           <span class="btn-link">Open Hub &rarr;</span>
         </a>
@@ -678,21 +1385,21 @@
 
   </main>
 
-  <!-- COPY TOAST -->
   <div id="copyToast">
     <span>✅</span>
     <span id="copyToastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    function copyFact(btn) {
-      const card = btn.closest('.note-card');
-      const title = card.querySelector('.note-title').innerText.trim();
-      const content = card.querySelector('.note-content').innerText.trim();
-      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+    function copyQuestionCard(btn) {
+      const card = btn.closest('.question-deep-card');
+      const qTitle = card.querySelector('.q-title').innerText.trim();
+      const ans = card.querySelector('.ans-badge').innerText.trim();
+      const exp = card.querySelector('.exp-content p').innerText.trim();
+      const textToCopy = qTitle + "\n\n" + ans + "\n\nव्याख्या: " + exp + "\n\n(AapkaResult.in)";
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Point Copied: " + title.substring(0, 30) + "...");
+        showToast("Question & Explanation Copied!");
       }).catch(() => {
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -700,7 +1407,7 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast("Point Copied!");
+        showToast("Question & Explanation Copied!");
       });
     }
 
@@ -712,29 +1419,29 @@
       setTimeout(() => { toast.classList.remove('show'); }, 2200);
     }
 
-    function filterSubjectNotes(query) {
+    function filterNotebook(query) {
       const q = query.trim().toLowerCase();
-      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
-      const clearBtn = document.getElementById('clearSubjectSearch');
+      const cards = document.querySelectorAll('.question-deep-card');
+      const clearBtn = document.getElementById('clearSearch');
       clearBtn.style.display = q ? 'block' : 'none';
 
-      let visible = 0;
+      let count = 0;
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
         if (!q || text.includes(q)) {
           card.style.display = '';
-          visible++;
+          count++;
         } else {
           card.style.display = 'none';
         }
       });
-      document.getElementById('subjectVisibleCount').innerText = visible;
+      document.getElementById('visibleQCount').innerText = count;
     }
 
-    function clearSubjectSearch() {
-      const input = document.getElementById('subjectSearchInput');
+    function clearNotebookSearch() {
+      const input = document.getElementById('notebookSearchInput');
       input.value = '';
-      filterSubjectNotes('');
+      filterNotebook('');
       input.focus();
     }
   </script>

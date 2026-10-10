@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>General Science (सामान्य विज्ञान) 1-Minute Short Revision Notes (21 High-Yield Facts) - AapkaResult.in</title>
-  <meta name="description" content="Crisp General Science short notes for SSC GD, UP Police, Railway RRB & Agniveer. Biology, Physics, Chemistry, Vitamins, SI Units and Inventions.">
+  <title>General Science (सामान्य विज्ञान) In-Depth Question Bank with Solutions - AapkaResult.in</title>
+  <meta name="description" content="Complete General Science questions with detailed scientific explanations for SSC GD, UP Police, Railway RRB & Agniveer. Biology, Physics, Chemistry, SI Units and Formulae.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-science.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -45,7 +45,6 @@
       line-height: 1.6;
     }
 
-    /* Sub Nav Pills */
     .subject-pill-nav {
       display: flex;
       gap: 10px;
@@ -83,7 +82,6 @@
       border-color: #dc2626;
     }
 
-    /* Search & Stats Bar */
     .notes-controls {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -139,99 +137,107 @@
       color: #64748b;
     }
 
-    /* Cards Grid */
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-    .note-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    .questions-container {
       display: flex;
       flex-direction: column;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
+      gap: 20px;
+      margin-bottom: 30px;
     }
-    .note-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-      border-color: #cbd5e1;
+    .question-deep-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .note-card-head {
+    .question-deep-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-color: #94a3b8;
+    }
+    .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .note-badge {
+    .q-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .q-cat-badge {
+      background: #eff6ff;
+      color: #1d4ed8;
       font-size: 11.5px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      border: 1px solid #bfdbfe;
     }
-    .badge-history { background: #fef3c7; color: #92400e; }
-    .badge-science { background: #dcfce7; color: #166534; }
-    .badge-polity { background: #dbeafe; color: #1e40af; }
-    .badge-geography { background: #f3e8ff; color: #6b21a8; }
-    .badge-static { background: #ffedd5; color: #9a3412; }
-    .badge-economics { background: #e0e7ff; color: #3730a3; }
-
-    .note-actions {
+    .q-exam-badge {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #fde68a;
+    }
+    .q-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .note-num {
-      font-size: 12px;
-      font-weight: 700;
-      color: #94a3b8;
+    .q-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: #64748b;
     }
-    .btn-copy-note {
+    .btn-copy-q {
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
       color: #475569;
       cursor: pointer;
-      padding: 4px 6px;
+      padding: 4px 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s;
     }
-    .btn-copy-note:hover {
+    .btn-copy-q:hover {
       background: #e2e8f0;
       color: #0f172a;
     }
-    .note-title {
-      font-size: 16px;
+    .q-title {
+      font-size: 16.5px;
       font-weight: 700;
       color: #0f172a !important;
-      line-height: 1.4;
+      line-height: 1.45;
       margin: 0 0 10px 0;
     }
-    .note-content {
-      font-size: 14.5px;
-      color: #1e293b !important;
-      line-height: 1.65;
-      flex-grow: 1;
+    .q-explanation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
     }
-    .exam-key {
-      background: #eff6ff;
-      color: #1d4ed8;
+    .ans-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border-bottom: 2px solid #bfdbfe;
+      font-size: 13.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border: 1px solid #bbf7d0;
     }
 
-    /* Toast */
     #copyToast {
       position: fixed;
       bottom: 24px;
@@ -362,18 +368,19 @@
     
     <!-- HERO BANNER -->
     <div class="notes-hero">
-      <div class="notes-hero-badge">⚡ General Science (सामान्य विज्ञान) Special 2026</div>
-      <h1>🧬 General Science (सामान्य विज्ञान) 1-Minute Revision Notes</h1>
-      <p>जीव विज्ञान (विटामिन, रक्त समूह, मानव शरीर), भौतिक विज्ञान (प्रकाश, ध्वनि, लेंस, न्यूटन के नियम) एवं रसायन विज्ञान (pH मान, रासायनिक सूत्र, धातु-अधातु) के 21 अति-महत्वपूर्ण रिवीज़न पॉइंट्स।</p>
+      <div class="notes-hero-badge">⚡ General Science (सामान्य विज्ञान) Question Bank 2026</div>
+      <h1>🧬 General Science (सामान्य विज्ञान) Detailed Question Bank</h1>
+      <p>जीव विज्ञान (कोशिका, रक्त परिसंचरण, विटामिन व पोषण, मानव अंग), भौतिक विज्ञान (प्रकाश, दर्पण, लेंस, न्यूटन के गति नियम, ध्वनि तरंगें, SI मात्रक) एवं रसायन विज्ञान (pH मान, रासायनिक सूत्र, धातु-अधातु) के विस्तृत व्याख्या सहित प्रश्न।</p>
     </div>
 
-    <!-- SUBJECT PILL NAVIGATION -->
+    <!-- SUBJECT NAVIGATION PILLS -->
     <div class="subject-pill-nav">
-      <a href="notes-history.html" class="pill-link ">🏛️ History Notes</a>
-      <a href="notes-science.html" class="pill-link active">🧬 Science Notes</a>
-      <a href="notes-polity.html" class="pill-link ">⚖️ Polity Notes</a>
-      <a href="notes-geography.html" class="pill-link ">🌍 Geography Notes</a>
-      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+      <a href="notes-history.html" class="pill-link ">🏛️ History (इतिहास)</a>
+      <a href="notes-science.html" class="pill-link active">🧬 Science (सामान्य विज्ञान)</a>
+      <a href="notes-polity.html" class="pill-link ">⚖️ Polity (संविधान व राजव्यवस्था)</a>
+      <a href="notes-geography.html" class="pill-link ">🌍 Geography (भूगोल)</a>
+      <a href="notes-gk.html" class="pill-link ">🎯 Static GK (सामान्य ज्ञान)</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ Quick Formula Hub</a>
     </div>
 
     <!-- SEARCH & CONTROLS -->
@@ -382,300 +389,987 @@
         <span class="search-icon-inside">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="subjectSearchInput" placeholder="Search keywords in General Science (सामान्य विज्ञान)..." onkeyup="filterSubjectNotes(this.value)">
-        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
+        <input type="text" id="notebookSearchInput" placeholder="Search keywords in this subject (e.g. बाबर, विटामिन, अनुच्छेद, गंगा, कथक)..." onkeyup="filterNotebook(this.value)">
+        <button type="button" id="clearSearch" class="clear-search-btn" onclick="clearNotebookSearch()" aria-label="Clear">&times;</button>
       </div>
       <div class="notes-status-row">
-        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">21</strong> high-yield points</span>
-        <span>Click 📋 to copy any point</span>
+        <span>Showing <strong id="visibleQCount" style="color: #0f172a;">20</strong> exam questions with complete detailed explanations</span>
+        <span>Click 📋 to copy any question &amp; solution</span>
       </div>
     </div>
 
-    <!-- CARDS GRID -->
-    <div class="notes-grid" id="subjectNotesGrid">
-      <article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#31</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+    <!-- QUESTIONS LIST -->
+    <div class="questions-container" id="questionsContainer">
+      
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">जीव विज्ञान (कोशिका)</span>
+          <span class="q-exam-badge">🎯 SSC GD, UP Police & Agniveer</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q01</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">कोशिका (Cell) के प्रमुख अंग व उनके उपनाम</h3>
-      <div class="note-content">कोशिका की खोज <mark class="exam-key">रॉबर्ट हुक (1665)</mark> ने की। जीवित कोशिका ल्यूवेनहॉक ने देखी। <mark class="exam-key">माइटोकॉन्ड्रिया</mark> = कोशिका का पावरहाउस (ऊर्जा गृह, ATP निर्माण); <mark class="exam-key">राइबोसोम</mark> = प्रोटीन की फैक्ट्री; <mark class="exam-key">लाइसोसोम</mark> = आत्मघाती थैली (Suicide Bag); केंद्रक (Nucleus) = कोशिका का मस्तिष्क/नियंत्रक।</div>
+
+      <h3 class="q-title">मानव शरीर में 'कोशिका का ऊर्जा घर' (Powerhouse of the Cell) किसे कहा जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> राइबोसोम (Ribosome) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> माइटोकॉन्ड्रिया (Mitochondria) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> लाइसोसोम (Lysosome) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> गॉल्जीकाय (Golgi Apparatus) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">माइटोकॉन्ड्रिया को कोशिका का पावरहाउस कहा जाता है क्योंकि कोशिकीय श्वसन की प्रक्रिया (क्रेब्स चक्र) यहीं संपन्न होती है। इसके दौरान भोजन (ग्लूकोज) के ऑक्सीकरण से एटीपी (ATP - Adenosine Triphosphate) के रूप में उच्च ऊर्जा उत्पन्न होती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>राइबोसोम को 'प्रोटीन की फैक्ट्री' कहा जाता है क्योंकि यह प्रोटीन संश्लेषण करता है।</li><li>लाइसोसोम को 'आत्मघाती थैली' (Suicide Bag) कहा जाता है क्योंकि इसमें पाचक एंजाइम होते हैं जो क्षतिग्रस्त कोशिका को नष्ट कर देते हैं।</li><li>कोशिका की खोज 1665 में अंग्रेज वैज्ञानिक रॉबर्ट हुक ने की थी।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#32</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मानव रक्त परिसंचरण</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & Defence CEE</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q02</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">रक्त परिसंचरण व ब्लड ग्रुप (ABO System)</h3>
-      <div class="note-content">रक्त परिसंचरण की खोज <mark class="exam-key">विलियम हार्वे (1628)</mark> ने की। ब्लड ग्रुप की खोज <mark class="exam-key">कार्ल लैंडस्टीनर (1900)</mark> ने की। सर्वदाता (Universal Donor) = <mark class="exam-key">O Negative (O-)</mark>; सर्वग्राही (Universal Recipient) = <mark class="exam-key">AB Positive (AB+)</mark>। सामान्य रक्तचाप (BP) 120/80 mmHg होता है (मापक: स्फिग्मोमैनोमीटर)।</div>
+
+      <h3 class="q-title">रक्त का सर्वदाता समूह (Universal Donor) और सर्वग्राही समूह (Universal Acceptor) क्रमशः कौन से हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> AB+ सर्वदाता, O- सर्वग्राही 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> O नेगेटिव (O-) सर्वदाता, AB पॉजिटिव (AB+) सर्वग्राही <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> A+ सर्वदाता, B- सर्वग्राही 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> O पॉजिटिव सर्वदाता, AB नेगेटिव सर्वग्राही 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">रक्त समूह O- (O नेगेटिव) को 'सर्वदाता' कहा जाता है क्योंकि इसकी लाल रक्त कणिकाओं (RBC) पर कोई एंटीजन (A, B या Rh) नहीं होता, जिससे यह किसी भी व्यक्ति को दिया जा सकता है। रक्त समूह AB+ को 'सर्वग्राही' कहा जाता है क्योंकि इसके प्लाज्मा में कोई एंटीबॉडी नहीं होती।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>रक्त समूह (ABO System) की खोज 1900 में कार्ल लैंडस्टीनर ने की थी (जिसके लिए उन्हें नोबेल पुरस्कार मिला)।</li><li>मानव रक्त का pH मान 7.4 (हल्का क्षारीय) होता है।</li><li>आरबीसी (लाल रक्त कणिका) का जीवनकाल लगभग 120 दिन होता है और इनका कब्रिस्तान 'प्लीहा' (Spleen) को कहते हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#33</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">विटामिन एवं पोषण</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC GD, Railway</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q03</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">विटामिन, उनके रासायनिक नाम व कमी से होने वाले रोग</h3>
-      <div class="note-content">विटामिन शब्द कैसिमिर फंक (1912) ने दिया। <br>&bull; <mark class="exam-key">विटामिन A (रेटिनॉल)</mark>: रतौंधी (Night Blindness)<br>&bull; <mark class="exam-key">विटामिन B1 (थायमिन)</mark>: बेरी-बेरी<br>&bull; <mark class="exam-key">विटामिन C (एस्कॉर्बिक एसिड)</mark>: स्कर्वी (मसूड़ों से खून आना)<br>&bull; <mark class="exam-key">विटामिन D (कैल्सिफेरॉल)</mark>: रिकेट्स (सूखा रोग)<br>&bull; <mark class="exam-key">विटामिन E (टोकोफेरॉल)</mark>: जनन क्षमता में कमी (बांझपन)<br>&bull; <mark class="exam-key">विटामिन K (फिलोक्यूनोन)</mark>: रक्त का थक्का (Blood Clotting) न जमना।<br>जल में घुलनशील: <mark class="exam-key">B & C</mark>; वसा में घुलनशील: <mark class="exam-key">K, E, D, A</mark>।</div>
+
+      <h3 class="q-title">विटामिन C का रासायनिक नाम क्या है और इसकी कमी से कौन सा प्रसिद्ध रोग होता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> थायमिन - बेरी-बेरी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> एस्कॉर्बिक एसिड (Ascorbic Acid) - स्कर्वी (मसूड़ों से खून आना) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> रेटिनॉल - रतौंधी (Night Blindness) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> कैल्सिफेरॉल - रिकेट्स (सूखा रोग) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">विटामिन C का रासायनिक नाम 'एस्कॉर्बिक एसिड' है। यह जल में घुलनशील विटामिन है जो त्वचा, मसूड़ों और घाव भरने के लिए आवश्यक होता है। इसकी कमी से 'स्कर्वी' रोग होता है जिसमें मसूड़ों में सूजन और खून बहने लगता है। आंवला विटामिन C का सर्वोत्तम प्राकृतिक स्रोत है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>जल में घुलनशील विटामिन: विटामिन B और C।</li><li>वसा (Fat) में घुलनशील विटामिन: विटामिन A, D, E, K (ट्रिक: KEDA)।</li><li>विटामिन K रक्त का थक्का (Blood Clotting) जमाने में सहायक होता है (रासायनिक नाम: फिलोक्विनोन)।</li><li>विटामिन B12 में कोबाल्ट धातु पाई जाती है (रासायनिक नाम: सायनोकोबालामिन)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#34</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मानव शरीर रचना</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q04</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">मानव शरीर की ग्रंथियां एवं हार्मोन</h3>
-      <div class="note-content">शरीर की सबसे बड़ी ग्रंथि <mark class="exam-key">यकृत (Liver)</mark> है। सबसे बड़ी अंतःस्रावी ग्रंथि थायरॉयड है। <mark class="exam-key">पीयूष ग्रंथि (Pituitary Gland)</mark> को "मास्टर ग्रंथि" कहते हैं जो मस्तिष्क में होती है। <mark class="exam-key">इंसुलिन हार्मोन</mark> अग्न्याशय (Pancreas) की बीटा कोशिकाओं से निकलता है (इसकी कमी से मधुमेह/Diabetes होता है)। एड्रिनलिन को "लड़ो या उड़ो" (Fight or Flight) हार्मोन कहा जाता है।</div>
+
+      <h3 class="q-title">मानव शरीर की सबसे बड़ी ग्रंथि (Largest Gland) कौन सी है और यह किस रस का निर्माण करती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अग्न्याशय (Pancreas) - इंसुलिन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> यकृत (Liver / जिगर) - पित्त रस (Bile Juice) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> थायरॉयड ग्रंथि - थायरोक्सिन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> पीयूष ग्रंथि - वृद्धि हार्मोन 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">यकृत (Liver) मानव शरीर की सबसे बड़ी ग्रंथि है, जिसका भार लगभग 1.5 से 2 किलोग्राम होता है। यकृत लगातार पित्त रस (Bile) का निर्माण करता है, जो पित्ताशय (Gallbladder) में जमा होता है और वसा के पाचन (Emulsification) में सहायता करता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>मानव शरीर की सबसे बड़ी अंतःस्रावी ग्रंथि (Endocrine Gland) थायरॉयड (गले में) है।</li><li>पीयूष ग्रंथि (Pituitary Gland) को 'मास्टर ग्रंथि' कहा जाता है जो मस्तिष्क के आधार में स्थित होती है।</li><li>अग्न्याशय (Pancreas) शरीर की दूसरी सबसे बड़ी ग्रंथि तथा मिश्रित ग्रंथि (अंतः एवं बहिःस्रावी) है जो इंसुलिन स्रावित करती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#35</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भौतिक विज्ञान (प्रकाश)</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC GD</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q05</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">मानव कंकाल तंत्र (Bones & Muscles)</h3>
-      <div class="note-content">वयस्क मानव शरीर में कुल <mark class="exam-key">206 हड्डियां</mark> होती हैं (नवजात में ~300)। शरीर की सबसे लंबी व मजबूत हड्डी <mark class="exam-key">फीमर (Femur - जांघ की हड्डी)</mark> है। सबसे छोटी हड्डी <mark class="exam-key">स्टेप्स (Stapes - कान की हड्डी)</mark> है। हड्डियों को मांसपेशियों से जोड़ने वाला ऊतक <mark class="exam-key">टेंडन (Tendon)</mark> है और हड्डी को हड्डी से जोड़ने वाला <mark class="exam-key">लिगामेंट (Ligament)</mark> है।</div>
+
+      <h3 class="q-title">वाहनों में पीछे का दृश्य देखने के लिए (Rear View Mirror) किस प्रकार के दर्पण का उपयोग किया जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> समतल दर्पण (Plane Mirror) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अवतल दर्पण (Concave Mirror) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> उत्तल दर्पण (Convex Mirror) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बेलनाकार दर्पण 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">वाहनों में साइड मिरर और रियर व्यू मिरर के रूप में 'उत्तल दर्पण' (Convex Mirror) का उपयोग किया जाता है क्योंकि यह हमेशा वस्तु का सीधा और छोटा (आभासी) प्रतिबिंब बनाता है। इसका दृष्टि क्षेत्र (Field of View) बहुत चौड़ा होता है, जिससे चालक पीछे के बड़े क्षेत्र को स्पष्ट देख पाता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>दंत चिकित्सक (Dentists) और शेविंग/हजामत बनाने के लिए 'अवतल दर्पण' (Concave Mirror) का प्रयोग होता है क्योंकि यह बड़ा प्रतिबिंब दिखाता है।</li><li>वाहनों की हेडलाइट और सर्चलाइट में अवतल परावर्तक का उपयोग होता है।</li><li>सड़क पर लगे सोडियम परावर्तक लैंप में उत्तल दर्पण का प्रयोग किया जाता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#36</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भौतिक विज्ञान (तरंगें)</span>
+          <span class="q-exam-badge">🎯 Railway Group D & CEE</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q06</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रकाश संश्लेषण (Photosynthesis)</h3>
-      <div class="note-content">पौधे सूर्य के प्रकाश, क्लोरोफिल, जल (H2O) और CO2 की उपस्थिति में ग्लूकोज बनाते हैं और <mark class="exam-key">ऑक्सीजन (O2)</mark> गैस मुक्त करते हैं। प्रकाश संश्लेषण में निकलने वाली O2 गैस जल के अपघटन (Photolysis) से प्राप्त होती है। पत्तियों का हरा रंग <mark class="exam-key">क्लोरोफिल (पर्णहरित)</mark> के कारण होता है, जिसमें <mark class="exam-key">मैग्नीशियम (Mg)</mark> धातु पाई जाती है।</div>
+
+      <h3 class="q-title">स्वच्छ आकाश का रंग नीला दिखाई देने का मुख्य वैज्ञानिक कारण क्या है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> प्रकाश का अपवर्तन (Refraction) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> प्रकाश का परावर्तन (Reflection) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> प्रकाश का प्रकीर्णन (Scattering of Light) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> प्रकाश का पूर्ण आंतरिक परावर्तन (TIR) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">रैले के प्रकीर्णन नियम के अनुसार, जिस रंग की तरंगदैर्घ्य (Wavelength) सबसे कम होती है, उसका प्रकीर्णन वायुमंडल के धूल कणों और गैस के अणुओं द्वारा सबसे अधिक होता है। नीले और बैंगनी रंग की तरंगदैर्घ्य सबसे छोटी होने के कारण वे आकाश में चारों ओर बिखर जाते हैं, जिससे आकाश नीला दिखाई देता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अंतरिक्ष यात्री को अंतरिक्ष से आकाश काला दिखाई देता है क्योंकि अंतरिक्ष में वायुमंडल न होने से प्रकीर्णन नहीं होता।</li><li>सूर्योदय और सूर्यास्त के समय सूर्य का लाल दिखाई देना भी प्रकाश के प्रकीर्णन के कारण होता है (लाल रंग की तरंगदैर्घ्य सर्वाधिक होती है)।</li><li>पानी में डूबी पेंसिल का मुड़ी हुई दिखना 'प्रकाश के अपवर्तन' के कारण होता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#37</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">भौतिकी नियम</span>
+          <span class="q-exam-badge">🎯 SSC & Police Core</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q07</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रमुख संक्रामक रोग व उनके कारक</h3>
-      <div class="note-content">&bull; <mark class="exam-key">जीवाणु (Bacteria)</mark>: टायफाइड, हैजा, टीबी (तपेदिक/क्षय), टिटनेस, प्लेग, डिप्थीरिया, काली खांसी।<br>&bull; <mark class="exam-key">विषाणु (Virus)</mark>: एड्स (HIV), पोलियो, चेचक, रेबीज, डेंगू, इन्फ्लूएंजा, हेपेटाइटिस।<br>&bull; <mark class="exam-key">प्रोटोजोआ (Protozoa)</mark>: मलेरिया (मादा एनाफिलीज मच्छर), पायरिया, कालाजार (सैंडफ्लाई), पेचिश।</div>
+
+      <h3 class="q-title">रॉकेट प्रक्षेपण (Rocket Propulsion) न्यूटन के गति के किस नियम तथा किस संरक्षण सिद्धांत पर कार्य करता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> प्रथम नियम - ऊर्जा संरक्षण 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> द्वितीय नियम - द्रव्यमान संरक्षण 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> तृतीय नियम (क्रिया-प्रतिक्रिया) - रेखीय संवेग संरक्षण <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> गुरुत्वाकर्षण नियम - कोणीय संवेग 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">रॉकेट जब ईंधन जलाता है, तो अत्यधिक वेग से पीछे की ओर गर्म गैसें निकलती हैं (क्रिया बल), जिसके जवाब में रॉकेट को आगे की दिशा में तीव्र धक्का मिलता है (प्रतिक्रिया बल)। यह न्यूटन के गति के तीसरे नियम ('प्रत्येक क्रिया के बराबर एवं विपरीत दिशा में प्रतिक्रिया होती है') और 'रेखीय संवेग संरक्षण के सिद्धांत' (Law of Conservation of Linear Momentum) पर आधारित है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>न्यूटन का प्रथम नियम 'जड़त्व का नियम' (Law of Inertia) कहलाता है, जिससे बल की परिभाषा प्राप्त होती है।</li><li>न्यूटन के द्वितीय नियम से बल का व्यंजक ($F = m \times a$) प्राप्त होता है।</li><li>जेट विमान (Jet Aircraft) भी संवेग संरक्षण के सिद्धांत पर उड़ते हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#38</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">ध्वनि विज्ञान</span>
+          <span class="q-exam-badge">🎯 Defence Agniveer & Railway</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q08</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">भौतिक राशियां एवं उनके SI मात्रक (SI Units)</h3>
-      <div class="note-content">&bull; बल (Force) = <mark class="exam-key">न्यूटन (N)</mark><br>&bull; कार्य व ऊर्जा = <mark class="exam-key">जूल (J)</mark><br>&bull; शक्ति (Power) = <mark class="exam-key">वाट (W)</mark> (1 हॉर्सपावर = 746 वाट)<br>&bull; दाब (Pressure) = <mark class="exam-key">पास्कल (Pa)</mark><br>&bull; आवृत्ति (Frequency) = <mark class="exam-key">हर्ट्ज़ (Hz)</mark><br>&bull; विद्युत धारा = <mark class="exam-key">एम्पीयर (A)</mark><br>&bull; विद्युत प्रतिरोध = <mark class="exam-key">ओम (&Omega;)</mark><br>&bull; ज्योति तीव्रता = <mark class="exam-key">कैंडेला (cd)</mark><br>&bull; लेंस की क्षमता = <mark class="exam-key">डायोप्टर (D)</mark>।</div>
+
+      <h3 class="q-title">मानव कान के लिए श्रव्य ध्वनि तरंगों (Audible Sound Waves) की आवृत्ति सीमा क्या है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 0 से 20 हर्ट्ज तक 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 20 हर्ट्ज से 20,000 हर्ट्ज (20 kHz) तक <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 20,000 हर्ट्ज से ऊपर 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 50,000 से 1,00,000 हर्ट्ज तक 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">मानव कर्ण केवल 20 हर्ट्ज (Hz) से 20,000 हर्ट्ज (20 kHz) के बीच की आवृत्ति वाली ध्वनि तरंगों को सुन सकता है, जिन्हें 'श्रव्य तरंगें' (Audible Waves) कहते हैं। 20 हर्ट्ज से कम आवृत्ति वाली तरंगों को 'अपश्रव्य' (Infrasonic) और 20,000 हर्ट्ज से अधिक आवृत्ति को 'पराश्रव्य' (Ultrasonic) कहते हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>चमगादड़, डॉल्फिन और कुत्ते पराश्रव्य तरंगें (Ultrasonic waves) सुन और उत्पन्न कर सकते हैं।</li><li>समुद्र की गहराई और पनडुब्बियों का पता लगाने के लिए 'सोनार' (SONAR) में पराश्रव्य तरंगों का प्रयोग होता है।</li><li>ध्वनि एक अनुदैर्ध्य यांत्रिक तरंग है और यह निर्वात (Vacuum) में गमन नहीं कर सकती।</li><li>ध्वनि की चाल ठोस (स्टील/लोहा) में सर्वाधिक (लगभग 5000+ मी/से) और गैस में न्यूनतम होती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#39</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">रसायन विज्ञान (pH मान)</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & BSSC</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q09</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रकाश का परावर्तन, अपवर्तन व प्रकीर्णन</h3>
-      <div class="note-content">आकाश का नीला रंग और सूर्योदय/सूर्यास्त के समय सूर्य का लाल दिखना <mark class="exam-key">प्रकाश के प्रकीर्णन (Scattering)</mark> के कारण होता है। तारों का टिमटिमाना <mark class="exam-key">प्रकाश के अपवर्तन (Refraction)</mark> के कारण होता है। हीरे का चमकना, मृगमरीचिका (Mirage) और ऑप्टिकल फाइबर <mark class="exam-key">पूर्ण आंतरिक परावर्तन (TIR)</mark> के सिद्धांत पर काम करते हैं।</div>
+
+      <h3 class="q-title">pH स्केल की खोज किसने की थी और शुद्ध जल तथा सामान्य मानव रक्त का pH मान कितना होता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> रदरफोर्ड - जल 5.5, रक्त 6.8 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> सोरेंसन (S.P.L. Sorensen) - शुद्ध जल 7.0, मानव रक्त 7.4 <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> मेंडलीव - जल 8.0, रक्त 7.0 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> डाल्टन - जल 6.5, रक्त 8.5 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">1909 में डेनिश रसायनशास्त्री सोरेंसन ने pH स्केल का आविष्कार किया था। pH मान किसी विलयन की अम्लीयता या क्षारीयता को मापता है (0 से 14 तक)। 7 पर विलयन उदासीन होता है। शुद्ध जल का pH मान ठीक 7.0 (उदासीन) होता है, जबकि स्वस्थ मानव रक्त का pH मान 7.35 से 7.45 (औसतन 7.4, हल्का क्षारीय) होता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>यदि pH 7 से कम हो तो अम्लीय (Acidic), और 7 से अधिक हो तो क्षारीय (Basic) होता है।</li><li>नींबू के रस का pH मान लगभग 2.2 से 2.4 (प्रबल अम्लीय) होता है।</li><li>सिरके (Vinegar) में 4% से 8% एसिटिक अम्ल ($CH_3COOH$) पाया जाता है।</li><li>दूध का pH मान लगभग 6.5 से 6.7 होता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#40</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">दैनिक रसायन</span>
+          <span class="q-exam-badge">🎯 Railway & Police Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q10</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">दर्पण एवं लेंस के व्यावहारिक उपयोग</h3>
-      <div class="note-content">&bull; <mark class="exam-key">उत्तल दर्पण (Convex Mirror)</mark>: वाहनों के साइड/रियर व्यू मिरर (पीछे का बड़ा दृश्य सीधा देखने हेतु)।<br>&bull; <mark class="exam-key">अवतल दर्पण (Concave Mirror)</mark>: दाढ़ी बनाने का शीशा, दंत चिकित्सक (Dentist), कार की हेडलाइट, सोलर कुकर।<br>&bull; निकट दृष्टि दोष (Myopia) के निवारण हेतु <mark class="exam-key">अवतल लेंस (Concave Lens)</mark> का उपयोग होता है।<br>&bull; दूर दृष्टि दोष (Hypermetropia) हेतु <mark class="exam-key">उत्तल लेंस (Convex Lens)</mark> का उपयोग होता है।</div>
+
+      <h3 class="q-title">बेकिंग सोडा (खाने का सोडा) और धावन सोडा (धोने का सोडा) का रासायनिक नाम एवं सूत्र क्रमशः क्या है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> सोडियम क्लोराइड ($NaCl$) और सोडियम हाइड्रोक्साइड ($NaOH$) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> सोडियम बाइकार्बोनेट ($NaHCO_3$) और सोडियम कार्बोनेट ($Na_2CO_3 \cdot 10H_2O$) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> कैल्शियम कार्बोनेट और ब्लीचिंग पाउडर 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> पोटेशियम नाइट्रेट और सल्फ्यूरिक एसिड 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">बेकिंग सोडा (खाने का सोडा) का रासायनिक नाम 'सोडियम हाइड्रोजन कार्बोनेट' या 'सोडियम बाइकार्बोनेट' है और इसका रासायनिक सूत्र $NaHCO_3$ है। धावन सोडा (कपड़े धोने का सोडा) का रासायनिक नाम 'सोडियम कार्बोनेट डेकाहाइड्रेट' है और इसका सूत्र $Na_2CO_3 \cdot 10H_2O$ है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>कास्टिक सोडा का रासायनिक नाम सोडियम हाइड्रोक्साइड ($NaOH$) है।</li><li>प्लास्टर ऑफ पेरिस (POP) का सूत्र $CaSO_4 \cdot \frac{1}{2}H_2O$ (कैल्शियम सल्फेट हेमीहाइड्रेट) है, जो जिप्सम ($CaSO_4 \cdot 2H_2O$) को गर्म करने पर बनता है।</li><li>ब्लीचिंग पाउडर (विरंजक चूर्ण) का रासायनिक नाम कैल्शियम ऑक्सीक्लोराइड ($CaOCl_2$) है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#41</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">धातु एवं अधातु</span>
+          <span class="q-exam-badge">🎯 All State & Central Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q11</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">ध्वनि तरंगें एवं उनकी विशेषताएं</h3>
-      <div class="note-content">ध्वनि एक अनुदैर्ध्य यांत्रिक तरंग है, जो <mark class="exam-key">निर्वात (Vacuum) में गमन नहीं कर सकती</mark>। ध्वनि की चाल सबसे अधिक ठोस (जैसे स्टील में ~5100 m/s), फिर द्रव में, और सबसे कम गैस में होती है (हवा में ध्वनि का वेग 332 m/s है)। मनुष्य 20 Hz से 20,000 Hz तक की श्रव्य तरंगें (Audible waves) सुन सकता है। चमगादड़ पराश्रव्य तरंगें (>20,000 Hz) उत्सर्जित करते हैं।</div>
+
+      <h3 class="q-title">कमरे के सामान्य तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र धातु और एकमात्र अधातु कौन सी है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> सोडियम (धातु) और क्लोरीन (अधातु) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> पारा / मरकरी (धातु) और ब्रोमीन (अधातु) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> गैलियम (धातु) और आयोडीन (अधातु) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> चांदी (धातु) और सल्फर (अधातु) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">पारा (Mercury - Hg) एकमात्र ऐसी धातु है जो कमरे के सामान्य तापमान (25°C) पर द्रव अवस्था में रहती है। इसका उपयोग थर्मामीटर और बैरोमीटर में किया जाता है। वहीं दूसरी ओर, ब्रोमीन (Bromine - Br) एकमात्र ऐसी अधातु है जो सामान्य ताप पर लाल-भूरे रंग के द्रव के रूप में पाई जाती है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>विद्युत और ऊष्मा की सर्वोत्तम सुचालक धातु 'चांदी' (Silver - Ag) है, इसके बाद तांबा आता है।</li><li>सोडियम (Na) और पोटेशियम (K) इतनी मुलायम धातुएं हैं कि इन्हें चाकू से आसानी से काटा जा सकता है, और इन्हें केरोसिन (मिट्टी के तेल) में डुबोकर रखा जाता है।</li><li>भविष्य का ईंधन 'हाइड्रोजन' को कहा जाता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#42</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">प्रमुख भौतिक राशियां एवं मात्रक</span>
+          <span class="q-exam-badge">🎯 Railway Group D, NTPC & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q12</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">गुरुत्वाकर्षण एवं पलायन वेग (Escape Velocity)</h3>
-      <div class="note-content">पृथ्वी पर गुरुत्वीय त्वरण g = 9.8 m/s² होता है। भूमध्य रेखा पर g का मान न्यूनतम तथा ध्रुवों (Poles) पर अधिकतम होता है। लिफ्ट ऊपर जाने पर व्यक्ति का भार बढ़ा हुआ महसूस होता है। पृथ्वी का <mark class="exam-key">पलायन वेग 11.2 किमी/सेकंड</mark> है, जबकि चंद्रमा पर 2.38 किमी/सेकंड है (यही कारण है कि चंद्रमा पर वायुमंडल नहीं है)।</div>
+
+      <h3 class="q-title">विद्युत धारा (Electric Current), आवृत्ति (Frequency) और ज्योति तीव्रता (Luminous Intensity) के SI मात्रक क्रमशः क्या हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> वोल्ट, डेसिबल, वाट 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> एम्पीयर (Ampere), हर्ट्ज (Hertz), कैन्डेला (Candela) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> ओम, न्यूटन, पास्कल 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> जूल, टेस्ला, हेनरी 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अंतर्राष्ट्रीय मात्रक प्रणाली (SI) में 7 मूल राशियां हैं: विद्युत धारा का SI मात्रक 'एम्पीयर' (A), आवृत्ति का मात्रक 'हर्ट्ज' (Hz), और ज्योति तीव्रता का मात्रक 'कैन्डेला' (cd) है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>दाब (Pressure) का SI मात्रक 'पास्कल' (Pa) या न्यूटन/मीटर² है।</li><li>विद्युत प्रतिरोध (Resistance) का मात्रक 'ओम' ($\Omega$) है।</li><li>1 अश्वशक्ति (Horsepower - HP) बराबर 746 वाट (Watt) होता है।</li><li>लेंस की क्षमता का मात्रक 'डायोप्टर' (Diopter - D) है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#43</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मानव कार्यिकी (श्वसन एवं हीमोग्लोबिन)</span>
+          <span class="q-exam-badge">🎯 SSC GD, UP Police & Railway</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q13</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">दैनिक जीवन के प्रमुख रासायनिक सूत्र (Chemical Formulas)</h3>
-      <div class="note-content">&bull; साधारण नमक = <mark class="exam-key">NaCl</mark> (सोडियम क्लोराइड)<br>&bull; खाने का सोडा (Baking Soda) = <mark class="exam-key">NaHCO3</mark> (सोडियम बाइकार्बोनेट)<br>&bull; धोने का सोडा (Washing Soda) = <mark class="exam-key">Na2CO3.10H2O</mark><br>&bull; कास्टिक सोडा = <mark class="exam-key">NaOH</mark><br>&bull; विरंजक चूर्ण (Bleaching Powder) = <mark class="exam-key">CaOCl2</mark><br>&bull; प्लास्टर ऑफ पेरिस (POP) = <mark class="exam-key">CaSO4.1/2H2O</mark><br>&bull; जिप्सम = <mark class="exam-key">CaSO4.2H2O</mark><br>&bull; लाफिंग गैस (हंसाने वाली गैस) = <mark class="exam-key">N2O</mark> (नाइट्रस ऑक्साइड)<br>&bull; भारी जल = <mark class="exam-key">D2O</mark> (ड्यूटेरियम ऑक्साइड - मंदक के रूप में)।</div>
+
+      <h3 class="q-title">मानव रक्त में ऑक्सीजन का परिवहन किसके द्वारा होता है और किस गैस की हीमोग्लोबिन से जुड़ने की क्षमता ऑक्सीजन से 250 गुना अधिक होती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> प्लाज्मा - कार्बन डाइऑक्साइड 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> हीमोग्लोबिन - कार्बन मोनोऑक्साइड (CO) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> श्वेत रक्त कणिकाएं - नाइट्रोजन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> प्लेटलेट्स - सल्फर डाइऑक्साइड 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">लाल रक्त कणिकाओं (RBC) में पाया जाने वाला 'हीमोग्लोबिन' (लौह युक्त प्रोटीन) फेफड़ों से ऑक्सीजन को अवशोषित करके 'ऑक्सीहीमोग्लोबिन' बनाता है और शरीर की प्रत्येक कोशिका तक ऑक्सीजन पहुंचाता है। जब बंद कमरे में अंगीठी जलाई जाती है, तो निकलने वाली 'कार्बन मोनोऑक्साइड' (CO) गैस हीमोग्लोबिन के साथ ऑक्सीजन से 250 गुना तेजी से क्रिया करके 'कार्बोक्सीहीमोग्लोबिन' बनाती है, जिससे दम घुटने से मृत्यु हो जाती है। इसे 'दमघोंटू गैस' कहते हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>हीमोग्लोबिन के केंद्र में 'आयरन' (Fe / लोहा) धातु पाई जाती है।</li><li>रक्त में आयरन की कमी से 'एनीमिया' (रक्तल्पता) रोग हो जाता है।</li><li>मानव श्वसन दर सामान्यतः 16 से 18 बार प्रति मिनट होती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#44</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">आनुवंशिकी (Genetics)</span>
+          <span class="q-exam-badge">🎯 All State & Central Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q14</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">पीएच मान (pH Value Scale)</h3>
-      <div class="note-content">pH स्केल की खोज <mark class="exam-key">सोरेन्सन (1909)</mark> ने की। 0 से 7 अम्लीय (Acidic), 7 उदासीन (Neutral), और 7 से 14 क्षारीय (Basic) होता है।<br>&bull; शुद्ध जल = <mark class="exam-key">7.0</mark><br>&bull; मानव रक्त = <mark class="exam-key">7.4</mark> (हल्का क्षारीय)<br>&bull; समुद्री जल = ~8.4<br>&bull; लार (Saliva) = ~6.5 - 6.8<br>&bull; सिरका (Vinegar) = ~3.0<br>&bull; नींबू का रस = ~2.2 - 2.4<br>&bull; आमाशय रस (HCl) = ~1.2 - 1.5।</div>
+
+      <h3 class="q-title">आनुवंशिकी का जनक (Father of Genetics) किसे कहा जाता है और उन्होंने अपने प्रयोग किस पौधे पर किए थे?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> चार्ल्स डार्विन - गुलाब 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> ग्रेगर जॉन मेंडल (Gregor Mendel) - मटर का पौधा (Garden Pea) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> ह्यूगो डी व्रीज - गेहूं 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> रॉबर्ट ब्राउन - धान 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">ऑस्ट्रिया के पादरी और वैज्ञानिक ग्रेगर जॉन मेंडल ने 1856 से 1863 के बीच बगीचे की मटर (Garden Pea / Pisum sativum) पर संकरण (Hybridization) के ऐतिहासिक प्रयोग किए और आनुवंशिकता के तीन मूल नियम प्रतिपादित किए: (1) प्रभाविता का नियम, (2) पृथक्करण का नियम (युग्मकों की शुद्धता), और (3) स्वतंत्र अपव्यूहन का नियम।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>DNA की द्विकुंडलिनी संरचना (Double Helix Model) का प्रतिपादन 1953 में जेम्स वॉटसन और फ्रांसिस क्रिक ने किया था।</li><li>मानव कोशिका में 23 जोड़े (अर्थात कुल 46) गुणसूत्र (Chromosomes) पाए जाते हैं।</li><li>पुरुषों में 44+XY और महिलाओं में 44+XX गुणसूत्र होते हैं। बच्चे के लिंग का निर्धारण पिता के Y गुणसूत्र द्वारा होता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#45</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मानव नेत्र एवं दृष्टि दोष</span>
+          <span class="q-exam-badge">🎯 UP Police, Railway & Agniveer</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q15</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">प्रमुख मिश्रधातुएं (Alloys) व घटक</h3>
-      <div class="note-content">&bull; पीतल (Brass) = <mark class="exam-key">तांबा (Cu) + जस्ता (Zn)</mark><br>&bull; कांसा (Bronze) = <mark class="exam-key">तांबा (Cu) + टिन (Sn)</mark><br>&bull; टांका/सोल्डर = सीसा (Pb) + टिन (Sn)<br>&bull; स्टेनलेस स्टील = लोहा (Fe) + क्रोमियम (Cr) + निकेल (Ni) + कार्बन<br>&bull; जर्मन सिल्वर = तांबा + जस्ता + निकेल (नोट: इसमें चांदी 0% होती है)।</div>
+
+      <h3 class="q-title">निकट दृष्टि दोष (Myopia) और दूर दृष्टि दोष (Hypermetropia) के निवारण के लिए क्रमशः किस प्रकार के लेंस का उपयोग किया जाता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> उत्तल लेंस और अवतल लेंस 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अवतल लेंस (Concave Lens) और उत्तल लेंस (Convex Lens) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> द्विफोकसी लेंस और बेलनाकार लेंस 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> समतल लेंस और प्रिज्म 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">निकट दृष्टि दोष (Myopia) में व्यक्ति को पास की वस्तुएं तो स्पष्ट दिखाई देती हैं किंतु दूर की वस्तुएं धुंधली दिखाई देती हैं (प्रतिबिंब रेटिना से पहले बन जाता है)। इसके निवारण के लिए 'अवतल लेंस' (अपसारी लेंस) का चश्मा दिया जाता है। वहीं दूर दृष्टि दोष में दूर की वस्तुएं दिखती हैं पर पास की नहीं (प्रतिबिंब रेटिना के पीछे बनता है), जिसके निवारण के लिए 'उत्तल लेंस' (अभिसारी लेंस) का प्रयोग होता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>स्वस्थ मानव नेत्र के लिए स्पष्ट दृष्टि की न्यूनतम दूरी 25 सेंटीमीटर (25 cm) होती है।</li><li>जरा दृष्टि दोष (Presbyopia - बुढ़ापे में होने वाला दोष) के निवारण हेतु 'द्विफोकसी लेंस' (Bifocal Lens) का प्रयोग किया जाता है।</li><li>नेत्रदान में दाता की आंख का 'कॉर्निया' (Cornea) प्रत्यारोपित किया जाता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#46</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">विद्युत एवं चुंबकत्व</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & SSC GD</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q16</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">द्रव धातु एवं द्रव अधातु</h3>
-      <div class="note-content">कमरे के सामान्य तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र धातु <mark class="exam-key">पारा (Mercury - Hg)</mark> है (सिंदूर का रासायनिक नाम मरक्यूरिक सल्फाइड HgS है)। कमरे के तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र अधातु <mark class="exam-key">ब्रोमीन (Bromine - Br)</mark> है।</div>
+
+      <h3 class="q-title">विद्युत मोटर और डायनेमो (विद्युत जनरेटर) ऊर्जा का रूपांतरण क्रमशः किस प्रकार करते हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> दोनों विद्युत ऊर्जा को ध्वनि ऊर्जा में बदलते हैं 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> विद्युत मोटर: विद्युत को यांत्रिक ऊर्जा में | डायनेमो: यांत्रिक को विद्युत ऊर्जा में <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> विद्युत मोटर: यांत्रिक को रासायनिक में | डायनेमो: ऊष्मा को विद्युत में 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> दोनों केवल प्रकाश ऊर्जा उत्पन्न करते हैं 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">विद्युत मोटर (Electric Motor) विद्युत ऊर्जा को ग्रहण करके उसे घूर्णन यांत्रिक ऊर्जा (Mechanical Energy) में परिवर्तित करती है (यह फ्लेमिंग के बाएं हाथ के नियम पर आधारित है)। इसके विपरीत, विद्युत जनरेटर (Dynamo) यांत्रिक ऊर्जा को विद्युत ऊर्जा में बदलता है, जो माइकल फैराडे के 'विद्युत चुंबकीय प्रेरण' (Electromagnetic Induction) के सिद्धांत पर कार्य करता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>ट्रांसफॉर्मर (Transformer) केवल प्रत्यावर्ती धारा (AC) पर कार्य करता है और यह वोल्टेज को बढ़ाने (Step-up) या घटाने (Step-down) का कार्य करता है।</li><li>विद्युत बल्ब का फिलामेंट 'टंगस्टन' (W) धातु का बना होता है (गलनांक लगभग 3400°C)।</li><li>विद्युत हीटर का तार 'नाइक्रोम' (निकेल + क्रोमियम) मिश्रधातु का बना होता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (परमाणु संरचना)</span>
-        <div class="note-actions">
-          <span class="note-num">#79</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">ऊष्मा एवं तापमान</span>
+          <span class="q-exam-badge">🎯 UP Police & Defence Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q17</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">परमाणु के मूलभूत कण एवं उनके खोजकर्ता</h3>
-      <div class="note-content">&bull; इलेक्ट्रॉन (ऋणावेशित) = <mark class="exam-key">जे.जे. थॉमसन (1897)</mark><br>&bull; प्रोटॉन (धनावेशित) = <mark class="exam-key">गोल्डस्टीन (खोज), रदरफोर्ड (नामकरण)</mark><br>&bull; न्यूट्रॉन (उदासीन) = <mark class="exam-key">जेम्स चैडविक (1932)</mark><br>&bull; परमाणु के नाभिक की खोज <mark class="exam-key">अर्नेस्ट रदरफोर्ड</mark> ने अल्फा-कण प्रकीर्णन प्रयोग द्वारा की थी (नाभिक में प्रोटॉन + न्यूट्रॉन = न्यूक्लिऑन होते हैं)।</div>
+
+      <h3 class="q-title">किस तापमान पर सेल्सियस (°C) और फारेनहाइट (°F) पैमाने का पाठ्यांक बिल्कुल बराबर होता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 0 डिग्री 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> -40 डिग्री (-40°) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 100 डिग्री 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 37 डिग्री 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">सूत्र $\frac{C}{5} = \frac{F - 32}{9}$ के अनुसार, जब तापमान $-40^\circ$ होता है, तो गणना करने पर $-40^\circ\text{C} = -40^\circ\text{F}$ आता है। यह वह अद्वितीय बिंदु है जहाँ दोनों पैमाने समान संख्यात्मक मान दर्शाते हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>स्वस्थ मानव शरीर का सामान्य तापमान $37^\circ\text{C}$ या $98.6^\circ\text{F}$ या $310.15\text{ K}$ होता है।</li><li>परम शून्य तापमान (Absolute Zero Temperature) $-273.15^\circ\text{C}$ या $0\text{ Kelvin}$ को कहते हैं, जिससे नीचे कोई तापमान संभव नहीं है।</li><li>केल्विन पैमाने पर डिग्री ($^\circ$) का चिन्ह नहीं लगाया जाता।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (आवर्त सारणी)</span>
-        <div class="note-actions">
-          <span class="note-num">#80</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">आवर्त सारणी (Periodic Table)</span>
+          <span class="q-exam-badge">🎯 Railway RRB, SSC & Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q18</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">आवर्त सारणी के नियम (Periodic Table Laws)</h3>
-      <div class="note-content">सर्वप्रथम तत्वों का वर्गीकरण मेंडलीफ ने 1869 में "परमाणु भार" (Atomic Mass) के आधार पर किया। <mark class="exam-key">आधुनिक आवर्त सारणी 1913 में हेनरी मोसले</mark> ने "परमाणु क्रमांक" (Atomic Number) के आधार पर बनाई। आधुनिक आवर्त सारणी में कुल <mark class="exam-key">7 आवर्त (Periods) और 18 वर्ग (Groups)</mark> हैं। 18वें वर्ग को अक्रिय गैसें/शून्य वर्ग (He, Ne, Ar, Kr, Xe, Rn) कहते हैं।</div>
+
+      <h3 class="q-title">आधुनिक आवर्त सारणी (Modern Periodic Table) का नियम किसने दिया था और यह तत्वों के किस गुण पर आधारित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> दिमित्री मेंडलीव - परमाणु द्रव्यमान (भार) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> हेनरी मोजले (1913) - परमाणु क्रमांक (Atomic Number) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> जॉन न्यूलैंड्स - अष्टक नियम 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> डोबेराइनर - त्रिक नियम 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">1913 में अंग्रेज भौतिकविज्ञानी हेनरी मोजले ने आधुनिक आवर्त नियम प्रस्तुत किया, जिसके अनुसार 'तत्वों के भौतिक और रासायनिक गुण उनके परमाणु क्रमांकों (Atomic Numbers) के आवर्ती फलन होते हैं।' जबकि 1869 में मेंडलीव की मूल आवर्त सारणी परमाणु भार पर आधारित थी। आधुनिक आवर्त सारणी में कुल 18 वर्ग (Groups) और 7 आवर्त (Periods) हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>वर्तमान आवर्त सारणी में कुल 118 तत्व हैं, जिनमें 94 प्राकृतिक और 24 कृत्रिम रूप से संश्लेषित हैं।</li><li>आवर्त सारणी का सबसे हल्का तत्व 'हाइड्रोजन' और सबसे भारी प्राकृतिक तत्व 'यूरेनियम' (परमाणु क्रमांक 92) है।</li><li>अक्रिय गैसें (Noble Gases - हीलियम, नियॉन, आर्गन, क्रिप्टॉन, जीनॉन, रेडॉन) 18वें वर्ग (शून्य समूह) में स्थित हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#81</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">कार्बन एवं अपररूप</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q19</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">मानव नेत्र एवं दृष्टि दोष (Human Eye)</h3>
-      <div class="note-content">स्वस्थ मानव नेत्र के लिए स्पष्ट दृष्टि की न्यूनतम दूरी <mark class="exam-key">25 सेमी</mark> होती है और अधिकतम दूरी अनंत होती है। नेत्रदान (Eye Donation) में आंख का <mark class="exam-key">कॉर्निया (Cornea)</mark> दान किया जाता है। रेटिना पर बनने वाला प्रतिबिंब <mark class="exam-key">वास्तविक, उल्टा और वस्तु से छोटा</mark> होता है। शंकु कोशिकाएं (Cones) रंगों की पहचान और शलाका कोशिकाएं (Rods) मंद प्रकाश में देखने में मदद करती हैं।</div>
+
+      <h3 class="q-title">प्रकृति में पाया जाने वाला सबसे कठोर प्राकृतिक पदार्थ कौन सा है और पेंसिल की लेड में किसका प्रयोग होता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> लोहा - कोयला 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> हीरा (Diamond) - ग्रेफाइट (Graphite) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> प्लैटिनम - चारकोल 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> क्वार्ट्ज - सिलिकॉन 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">हीरा और ग्रेफाइट दोनों शुद्ध कार्बन के अपररूप (Allotropes) हैं। हीरे में प्रत्येक कार्बन परमाणु चार अन्य कार्बन परमाणुओं से दृढ़ त्रि-आयामी (Tetrahedral) जालक में जुड़ा होता है, जिससे यह प्रकृति का सबसे कठोरतम ज्ञात पदार्थ है और इसका अपवर्तनांक 2.42 होने के कारण पूर्ण आंतरिक परावर्तन से चमकता है। वहीं ग्रेफाइट में षट्कोणीय परतदार संरचना होती है, जिससे यह मुलायम, चिकना और विद्युत का अच्छा सुचालक होता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>ग्रेफाइट एकमात्र ऐसी अधातु है जो विद्युत की सुचालक होती है।</li><li>परमाणु भट्टी (Nuclear Reactor) में ग्रेफाइट की छड़ों का उपयोग 'न्यूट्रॉन मंदक' (Moderator) के रूप में किया जाता है।</li><li>फुलरीन ($C_{60}$) कार्बन का फुटबॉल जैसी संरचना वाला अपररूप है जिसे 'बकीबॉल' भी कहते हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
     </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#82</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">परमाणु भौतिकी</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC GD & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q20</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">ऊर्जा रूपांतरण के प्रमुख वैज्ञानिक उपकरण</h3>
-      <div class="note-content">&bull; डायनेमो / जनरेटर = <mark class="exam-key">यांत्रिक ऊर्जा &rarr; विद्युत ऊर्जा</mark><br>&bull; विद्युत मोटर = <mark class="exam-key">विद्युत ऊर्जा &rarr; यांत्रिक ऊर्जा</mark><br>&bull; सोलर सेल = सौर ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; विद्युत बल्ब = विद्युत ऊर्जा &rarr; प्रकाश एवं ऊष्मा ऊर्जा<br>&bull; माइक्रोफोन = ध्वनि ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; लाउडस्पीकर = विद्युत ऊर्जा &rarr; ध्वनि ऊर्जा<br>&bull; बैटरी/सेल = रासायनिक ऊर्जा &rarr; विद्युत ऊर्जा।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#83</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
+
+      <h3 class="q-title">इलेक्ट्रॉन, प्रोटॉन और न्यूट्रॉन की खोज क्रमशः किन वैज्ञानिकों ने की थी?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> रदरफोर्ड, डाल्टन, बोहर 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> जे.जे. थॉमसन (इलेक्ट्रॉन), गोल्डस्टीन/रदरफोर्ड (प्रोटॉन), जेम्स चैडविक (न्यूट्रॉन) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> मैडम क्यूरी, बेकेरल, आइंस्टीन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> नील्स बोहर, मैक्स प्लांक, हाइजेनबर्ग 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">इलेक्ट्रॉन (ऋणावेशित कण) की खोज 1897 में ब्रिटिश भौतिकशास्त्री जे.जे. थॉमसन ने कैथोड किरणों के प्रयोग से की थी। प्रोटॉन (धनावेशित कण) का नामकरण रदरफोर्ड ने किया (खोज का श्रेय गोल्डस्टीन के कैनाल रे प्रयोग को जाता है)। वहीं न्यूट्रॉन (आवेशहीन/उदासीन कण) की खोज 1932 में जेम्स चैडविक ने बेरिलियम पर अल्फा कणों की बमबारी करके की थी (ट्रिक: ईंट पर नाच - इलेक्ट्रॉन/थॉमसन, प्रोटॉन/रदरफोर्ड, न्यूट्रॉन/चैडविक)।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>परमाणु के नाभिक (Nucleus) की खोज 1911 में लॉर्ड रदरफोर्ड ने 'अल्फा प्रकीर्णन प्रयोग' द्वारा की थी।</li><li>परमाणु का समस्त धनावेश और द्रव्यमान उसके नाभिक में प्रोटॉन और न्यूट्रॉन (न्यूक्लिऑन) के रूप में केंद्रित रहता है।</li><li>इलेक्ट्रॉन नाभिक के चारों ओर निश्चित कक्षाओं में चक्कर लगाते हैं।</li>
+      </ul>
+    </div>
+  
         </div>
       </div>
-      <h3 class="note-title">प्राकृतिक अम्ल एवं उनके स्रोत (Natural Acids)</h3>
-      <div class="note-content">&bull; सिरका (Vinegar) = <mark class="exam-key">एसिटिक अम्ल (CH3COOH)</mark><br>&bull; संतरा व नींबू = <mark class="exam-key">सिट्रिक अम्ल</mark><br>&bull; इमली व अंगूर = <mark class="exam-key">टार्टरिक अम्ल</mark><br>&bull; टमाटर = <mark class="exam-key">ऑक्जेलिक अम्ल</mark> (कपड़ों पर जंग के दाग हटाने हेतु उपयोगी)<br>&bull; खट्टा दूध/दही = <mark class="exam-key">लैक्टिक अम्ल</mark><br>&bull; चींटी व बिच्छू का डंक = <mark class="exam-key">मेथेनोइक / फॉर्मिक अम्ल</mark><br>&bull; सेब = मैलिक अम्ल।</div>
     </article>
+  
     </div>
 
-    <!-- BOTTOM CROSS LINKS -->
+    <!-- BOTTOM CROSS NAVIGATION -->
     <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
       <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
       <div class="related-vacancies-grid">
         <a href="short-notes-hub.html" class="related-vac-card">
           <div>
-            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
-            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Central Gateway</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Notes Hub (Formulas &amp; Rapid Charts)</h4>
           </div>
           <span class="btn-link">Open Hub &rarr;</span>
         </a>
@@ -691,21 +1385,21 @@
 
   </main>
 
-  <!-- COPY TOAST -->
   <div id="copyToast">
     <span>✅</span>
     <span id="copyToastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    function copyFact(btn) {
-      const card = btn.closest('.note-card');
-      const title = card.querySelector('.note-title').innerText.trim();
-      const content = card.querySelector('.note-content').innerText.trim();
-      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+    function copyQuestionCard(btn) {
+      const card = btn.closest('.question-deep-card');
+      const qTitle = card.querySelector('.q-title').innerText.trim();
+      const ans = card.querySelector('.ans-badge').innerText.trim();
+      const exp = card.querySelector('.exp-content p').innerText.trim();
+      const textToCopy = qTitle + "\n\n" + ans + "\n\nव्याख्या: " + exp + "\n\n(AapkaResult.in)";
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Point Copied: " + title.substring(0, 30) + "...");
+        showToast("Question & Explanation Copied!");
       }).catch(() => {
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -713,7 +1407,7 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast("Point Copied!");
+        showToast("Question & Explanation Copied!");
       });
     }
 
@@ -725,29 +1419,29 @@
       setTimeout(() => { toast.classList.remove('show'); }, 2200);
     }
 
-    function filterSubjectNotes(query) {
+    function filterNotebook(query) {
       const q = query.trim().toLowerCase();
-      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
-      const clearBtn = document.getElementById('clearSubjectSearch');
+      const cards = document.querySelectorAll('.question-deep-card');
+      const clearBtn = document.getElementById('clearSearch');
       clearBtn.style.display = q ? 'block' : 'none';
 
-      let visible = 0;
+      let count = 0;
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
         if (!q || text.includes(q)) {
           card.style.display = '';
-          visible++;
+          count++;
         } else {
           card.style.display = 'none';
         }
       });
-      document.getElementById('subjectVisibleCount').innerText = visible;
+      document.getElementById('visibleQCount').innerText = count;
     }
 
-    function clearSubjectSearch() {
-      const input = document.getElementById('subjectSearchInput');
+    function clearNotebookSearch() {
+      const input = document.getElementById('notebookSearchInput');
       input.value = '';
-      filterSubjectNotes('');
+      filterNotebook('');
       input.focus();
     }
   </script>

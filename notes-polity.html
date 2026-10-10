@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Polity (भारतीय संविधान एवं राजव्यवस्था) 1-Minute Short Notes (20 High-Yield Facts) - AapkaResult.in</title>
-  <meta name="description" content="Top 20 Indian Polity & Constitution short notes for UP Police, SSC GD, RRB & Agniveer. Articles, Fundamental Rights, President, Parliament & Amendments.">
+  <title>Indian Polity (भारतीय संविधान एवं राजव्यवस्था) Detailed Question Bank - AapkaResult.in</title>
+  <meta name="description" content="Top Indian Polity questions with in-depth constitutional solutions for UP Police, SSC GD, Railway NTPC & Defence. Articles, Fundamental Rights, President & Amendments.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/notes-polity.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -45,7 +45,6 @@
       line-height: 1.6;
     }
 
-    /* Sub Nav Pills */
     .subject-pill-nav {
       display: flex;
       gap: 10px;
@@ -83,7 +82,6 @@
       border-color: #dc2626;
     }
 
-    /* Search & Stats Bar */
     .notes-controls {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -139,99 +137,107 @@
       color: #64748b;
     }
 
-    /* Cards Grid */
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-    .note-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    .questions-container {
       display: flex;
       flex-direction: column;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
+      gap: 20px;
+      margin-bottom: 30px;
     }
-    .note-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-      border-color: #cbd5e1;
+    .question-deep-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .note-card-head {
+    .question-deep-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-color: #94a3b8;
+    }
+    .q-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .note-badge {
+    .q-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .q-cat-badge {
+      background: #eff6ff;
+      color: #1d4ed8;
       font-size: 11.5px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+      border: 1px solid #bfdbfe;
     }
-    .badge-history { background: #fef3c7; color: #92400e; }
-    .badge-science { background: #dcfce7; color: #166534; }
-    .badge-polity { background: #dbeafe; color: #1e40af; }
-    .badge-geography { background: #f3e8ff; color: #6b21a8; }
-    .badge-static { background: #ffedd5; color: #9a3412; }
-    .badge-economics { background: #e0e7ff; color: #3730a3; }
-
-    .note-actions {
+    .q-exam-badge {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #fde68a;
+    }
+    .q-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .note-num {
-      font-size: 12px;
-      font-weight: 700;
-      color: #94a3b8;
+    .q-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: #64748b;
     }
-    .btn-copy-note {
+    .btn-copy-q {
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
       color: #475569;
       cursor: pointer;
-      padding: 4px 6px;
+      padding: 4px 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s;
     }
-    .btn-copy-note:hover {
+    .btn-copy-q:hover {
       background: #e2e8f0;
       color: #0f172a;
     }
-    .note-title {
-      font-size: 16px;
+    .q-title {
+      font-size: 16.5px;
       font-weight: 700;
       color: #0f172a !important;
-      line-height: 1.4;
+      line-height: 1.45;
       margin: 0 0 10px 0;
     }
-    .note-content {
-      font-size: 14.5px;
-      color: #1e293b !important;
-      line-height: 1.65;
-      flex-grow: 1;
+    .q-explanation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
     }
-    .exam-key {
-      background: #eff6ff;
-      color: #1d4ed8;
+    .ans-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border-bottom: 2px solid #bfdbfe;
+      font-size: 13.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border: 1px solid #bbf7d0;
     }
 
-    /* Toast */
     #copyToast {
       position: fixed;
       bottom: 24px;
@@ -362,18 +368,19 @@
     
     <!-- HERO BANNER -->
     <div class="notes-hero">
-      <div class="notes-hero-badge">⚡ Indian Polity (संविधान व राजव्यवस्था) Special 2026</div>
-      <h1>⚖️ Indian Polity (भारतीय राजव्यवस्था) 1-Minute Revision Notes</h1>
-      <p>भारतीय संविधान का निर्माण, प्रमुख अनुच्छेद (14-32, 51A, 352, 356, 360), राष्ट्रपति, संसद, सर्वोच्च न्यायालय, पंचायती राज एवं 12 अनुसूचियों के 20 सबसे महत्वपूर्ण परीक्षा प्रश्न।</p>
+      <div class="notes-hero-badge">⚡ Indian Polity (संविधान व राजव्यवस्था) Question Bank 2026</div>
+      <h1>⚖️ Indian Polity (भारतीय राजव्यवस्था) Detailed Question Bank</h1>
+      <p>संविधान सभा, प्रस्तावना, मौलिक अधिकार (अनुच्छेद 12-35), संवैधानिक उपचार (अनुच्छेद 32), नीति निदेशक तत्व (DPSP), राष्ट्रपति की आपातकालीन शक्तियां (352, 356, 360), संसद, सर्वोच्च न्यायालय, 12 अनुसूचियां और संविधान संशोधन (अनुच्छेद 368) की विस्तृत व्याख्या।</p>
     </div>
 
-    <!-- SUBJECT PILL NAVIGATION -->
+    <!-- SUBJECT NAVIGATION PILLS -->
     <div class="subject-pill-nav">
-      <a href="notes-history.html" class="pill-link ">🏛️ History Notes</a>
-      <a href="notes-science.html" class="pill-link ">🧬 Science Notes</a>
-      <a href="notes-polity.html" class="pill-link active">⚖️ Polity Notes</a>
-      <a href="notes-geography.html" class="pill-link ">🌍 Geography Notes</a>
-      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ All Subjects Hub</a>
+      <a href="notes-history.html" class="pill-link ">🏛️ History (इतिहास)</a>
+      <a href="notes-science.html" class="pill-link ">🧬 Science (सामान्य विज्ञान)</a>
+      <a href="notes-polity.html" class="pill-link active">⚖️ Polity (संविधान व राजव्यवस्था)</a>
+      <a href="notes-geography.html" class="pill-link ">🌍 Geography (भूगोल)</a>
+      <a href="notes-gk.html" class="pill-link ">🎯 Static GK (सामान्य ज्ञान)</a>
+      <a href="short-notes-hub.html" class="pill-link hub-link">⚡ Quick Formula Hub</a>
     </div>
 
     <!-- SEARCH & CONTROLS -->
@@ -382,287 +389,987 @@
         <span class="search-icon-inside">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </span>
-        <input type="text" id="subjectSearchInput" placeholder="Search keywords in Indian Polity (संविधान व राजव्यवस्था)..." onkeyup="filterSubjectNotes(this.value)">
-        <button type="button" id="clearSubjectSearch" class="clear-search-btn" onclick="clearSubjectSearch()" aria-label="Clear">&times;</button>
+        <input type="text" id="notebookSearchInput" placeholder="Search keywords in this subject (e.g. बाबर, विटामिन, अनुच्छेद, गंगा, कथक)..." onkeyup="filterNotebook(this.value)">
+        <button type="button" id="clearSearch" class="clear-search-btn" onclick="clearNotebookSearch()" aria-label="Clear">&times;</button>
       </div>
       <div class="notes-status-row">
-        <span>Showing <strong id="subjectVisibleCount" style="color: #0f172a;">20</strong> high-yield points</span>
-        <span>Click 📋 to copy any point</span>
+        <span>Showing <strong id="visibleQCount" style="color: #0f172a;">20</strong> exam questions with complete detailed explanations</span>
+        <span>Click 📋 to copy any question &amp; solution</span>
       </div>
     </div>
 
-    <!-- CARDS GRID -->
-    <div class="notes-grid" id="subjectNotesGrid">
-      <article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान सभा)</span>
-        <div class="note-actions">
-          <span class="note-num">#47</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
+    <!-- QUESTIONS LIST -->
+    <div class="questions-container" id="questionsContainer">
+      
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संविधान निर्माण</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC GD & State PSC</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q01</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
         </div>
       </div>
-      <h3 class="note-title">संविधान सभा की ऐतिहासिक तिथियां व अध्यक्ष</h3>
-      <div class="note-content">संविधान सभा की प्रथम बैठक <mark class="exam-key">9 दिसंबर 1946</mark> को हुई (सच्चिदानंद सिन्हा अस्थायी अध्यक्ष बने)। 11 दिसंबर 1946 को <mark class="exam-key">डॉ. राजेंद्र प्रसाद</mark> स्थायी अध्यक्ष चुने गए। 13 दिसंबर 1946 को जवाहरलाल नेहरू ने "उद्देश्य प्रस्ताव" प्रस्तुत किया। संविधान 26 नवंबर 1949 को अंगीकृत हुआ (संविधान दिवस) और <mark class="exam-key">26 जनवरी 1950 को पूर्ण रूप से लागू हुआ</mark>। बनने में 2 वर्ष, 11 माह, 18 दिन लगे।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान के स्रोत)</span>
-        <div class="note-actions">
-          <span class="note-num">#48</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
+
+      <h3 class="q-title">संविधान सभा की प्रारूप समिति (Drafting Committee) के अध्यक्ष कौन थे और संविधान को तैयार करने में कितना समय लगा था?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> डॉ. राजेंद्र प्रसाद - 1 वर्ष 8 माह 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> डॉ. भीमराव अंबेडकर - 2 वर्ष 11 माह 18 दिन <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> पंडित जवाहरलाल नेहरू - 3 वर्ष 5 माह 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बी.एन. राव - 2 वर्ष 6 माह 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
         </div>
-      </div>
-      <h3 class="note-title">भारतीय संविधान के विदेशी स्रोत (Major Sources)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">अमेरिका</mark>: मौलिक अधिकार, न्यायिक पुनरावलोकन, न्यायपालिका की स्वतंत्रता, राष्ट्रपति पर महाभियोग, प्रस्तावना का विचार。<br>&bull; <mark class="exam-key">ब्रिटेन</mark>: संसदीय शासन प्रणाली, एकल नागरिकता, विधि का शासन (Rule of Law)।<br>&bull; <mark class="exam-key">आयरलैंड</mark>: राज्य के नीति निदेशक तत्व (DPSP), राष्ट्रपति द्वारा राज्यसभा में 12 सदस्यों का मनोनयन。<br>&bull; <mark class="exam-key">दक्षिण अफ्रीका</mark>: संविधान संशोधन की प्रक्रिया (अनुच्छेद 368)।<br>&bull; <mark class="exam-key">ऑस्ट्रेलिया</mark>: समवर्ती सूची (Concurrent List), संसद की संयुक्त बैठक。<br>&bull; <mark class="exam-key">सोवियत संघ (रूस)</mark>: मौलिक कर्तव्य (Fundamental Duties)।<br>&bull; <mark class="exam-key">जर्मनी (वाइमर)</mark>: आपातकाल के समय मौलिक अधिकारों का निलंबन।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (मौलिक अधिकार)</span>
-        <div class="note-actions">
-          <span class="note-num">#49</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मौलिक अधिकार (Fundamental Rights - भाग 3, Art 12-35)</h3>
-      <div class="note-content">मूल संविधान में 7 मौलिक अधिकार थे, परंतु 44वें संविधान संशोधन (1978) द्वारा <mark class="exam-key">संपत्ति के अधिकार (Art 31)</mark> को मौलिक अधिकारों से हटाकर कानूनी अधिकार (Art 300A) बना दिया गया। वर्तमान में 6 मौलिक अधिकार हैं: 1. समानता का अधिकार (14-18), 2. स्वतंत्रता (19-22), 3. शोषण के विरुद्ध (23-24), 4. धार्मिक स्वतंत्रता (25-28), 5. संस्कृति व शिक्षा (29-30), 6. संवैधानिक उपचारों का अधिकार (Art 32)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (अनुच्छेद 32)</span>
-        <div class="note-actions">
-          <span class="note-num">#50</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">अनुच्छेद 32 - संवैधानिक उपचारों का अधिकार</h3>
-      <div class="note-content">डॉ. बी.आर. अंबेडकर ने अनुच्छेद 32 को <mark class="exam-key">"संविधान का हृदय और आत्मा"</mark> कहा था। इसके तहत सुप्रीम कोर्ट नागरिकों के मौलिक अधिकारों के संरक्षण हेतु 5 प्रकार की रिट (Writs) जारी करता है: 1. बंदी प्रत्यक्षीकरण (Habeas Corpus), 2. परमादेश (Mandamus), 3. प्रतिषेध (Prohibition), 4. उत्प्रेषण (Certiorari), 5. अधिकार पृच्छा (Quo-Warranto)। हाईकोर्ट अनुच्छेद 226 के तहत रिट जारी करता है।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (अति-महत्वपूर्ण अनुच्छेद)</span>
-        <div class="note-actions">
-          <span class="note-num">#51</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">परीक्षा में बार-बार पूछे जाने वाले प्रमुख अनुच्छेद (Articles)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 14</mark>: विधि के समक्ष समता<br>&bull; <mark class="exam-key">Art 17</mark>: अस्पृश्यता का अंत (Abolition of Untouchability)<br>&bull; <mark class="exam-key">Art 19(1)(a)</mark>: वाक् एवं अभिव्यक्ति तथा प्रेस की स्वतंत्रता<br>&bull; <mark class="exam-key">Art 21</mark>: प्राण एवं दैहिक स्वतंत्रता का संरक्षण<br>&bull; <mark class="exam-key">Art 21A</mark>: 6 से 14 वर्ष के बच्चों को निःशुल्क व अनिवार्य शिक्षा (86वां संशोधन 2002)<br>&bull; <mark class="exam-key">Art 24</mark>: 14 वर्ष से कम आयु के बच्चों का कारखानों में नियोजन निषेध<br>&bull; <mark class="exam-key">Art 40</mark>: ग्राम पंचायतों का गठन (गांधीवादी सिद्धांत)<br>&bull; <mark class="exam-key">Art 44</mark>: समान नागरिक संहिता (Uniform Civil Code - UCC लागू करने वाला पहला राज्य गोवा, 2024 में उत्तराखंड)<br>&bull; <mark class="exam-key">Art 50</mark>: कार्यपालिका से न्यायपालिका का पृथक्करण<br>&bull; <mark class="exam-key">Art 51A</mark>: मौलिक कर्तव्य (42वां संशोधन 1976, स्वर्ण सिंह समिति, कुल 11 कर्तव्य)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (राष्ट्रपति एवं संसद)</span>
-        <div class="note-actions">
-          <span class="note-num">#52</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">राष्ट्रपति, उपराष्ट्रपति व संसद के मुख्य प्रावधान</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 52</mark>: भारत का एक राष्ट्रपति होगा; न्यूनतम आयु 35 वर्ष, कार्यकाल 5 वर्ष।<br>&bull; <mark class="exam-key">Art 61</mark>: राष्ट्रपति पर महाभियोग (Impeachment) चलाने की प्रक्रिया (संसद के किसी भी सदन में 14 दिन पूर्व सूचना देकर)।<br>&bull; <mark class="exam-key">Art 72</mark>: राष्ट्रपति की क्षमादान (Pardon) की शक्ति।<br>&bull; <mark class="exam-key">Art 108</mark>: संसद के दोनों सदनों की संयुक्त बैठक (आहूत राष्ट्रपति करते हैं, लेकिन अध्यक्षता लोकसभा अध्यक्ष करता है)।<br>&bull; <mark class="exam-key">Art 110</mark>: धन विधेयक (Money Bill - केवल लोकसभा में प्रस्तुत, निर्णय स्पीकर करता है)।<br>&bull; <mark class="exam-key">Art 123</mark>: राष्ट्रपति की अध्यादेश (Ordinance) जारी करने की शक्ति।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संवैधानिक पद)</span>
-        <div class="note-actions">
-          <span class="note-num">#53</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">संवैधानिक पदाधिकारी व उनके अनुच्छेद</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 76</mark>: भारत का महान्यायवादी (Attorney General - देश का सर्वोच्च विधि अधिकारी)।<br>&bull; <mark class="exam-key">Art 148</mark>: नियंत्रक एवं महालेखा परीक्षक (CAG - लोक वित्त का संरक्षक, कार्यकाल 6 वर्ष या 65 वर्ष आयु)।<br>&bull; <mark class="exam-key">Art 280</mark>: वित्त आयोग (Finance Commission - राष्ट्रपति द्वारा प्रत्येक 5 वर्ष में गठन, 1+4 सदस्य)।<br>&bull; <mark class="exam-key">Art 324</mark>: भारत का निर्वाचन आयोग (Election Commission)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (आपातकालीन प्रावधान)</span>
-        <div class="note-actions">
-          <span class="note-num">#54</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">तीन प्रकार के राष्ट्रीय आपातकाल (भाग 18)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">अनुच्छेद 352 (राष्ट्रीय आपातकाल)</mark>: युद्ध, बाह्य आक्रमण या सशस्त्र विद्रोह के आधार पर (अब तक 3 बार: 1962, 1971, 1975 में लगा)।<br>&bull; <mark class="exam-key">अनुच्छेद 356 (राष्ट्रपति शासन)</mark>: राज्य में संवैधानिक तंत्र विफल होने पर (सर्वप्रथम 1951 में पंजाब में लगा)।<br>&bull; <mark class="exam-key">अनुच्छेद 360 (वित्तीय आपातकाल)</mark>: वित्तीय साख संकट में होने पर (भारत में आज तक एक बार भी नहीं लगा)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान संशोधन)</span>
-        <div class="note-actions">
-          <span class="note-num">#55</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख ऐतिहासिक संविधान संशोधन (Constitutional Amendments)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">42वां संशोधन (1976)</mark>: "लघु संविधान" (Mini Constitution) कहा जाता है। प्रस्तावना में तीन शब्द जोड़े गए: "समाजवादी", "पंथनिरपेक्ष" और "अखंडता"। 10 मौलिक कर्तव्य जोड़े गए।<br>&bull; <mark class="exam-key">44वां संशोधन (1978)</mark>: आंतरिक अशांति के स्थान पर "सशस्त्र विद्रोह" शब्द जोड़ा गया; संपत्ति का अधिकार मौलिक अधिकारों से समाप्त किया गया।<br>&bull; <mark class="exam-key">61वां संशोधन (1989)</mark>: मतदान की न्यूनतम आयु 21 वर्ष से घटाकर 18 वर्ष की गई।<br>&bull; <mark class="exam-key">73वां व 74वां संशोधन (1992)</mark>: पंचायती राज (11वीं अनुसूची, 29 विषय) और नगर पालिका (12वीं अनुसूची, 18 विषय) को संवैधानिक मान्यता।<br>&bull; <mark class="exam-key">101वां संशोधन (2016)</mark>: वस्तु एवं सेवा कर (GST) लागू किया गया।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान की अनुसूचियां)</span>
-        <div class="note-actions">
-          <span class="note-num">#75</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय संविधान की 12 अनुसूचियां (Schedules)</h3>
-      <div class="note-content">मूल संविधान में 8 अनुसूचियां थीं, वर्तमान में 12 हैं:<br>&bull; पहली: 28 राज्य व 8 UT<br>&bull; दूसरी: वेतन व भत्ते<br>&bull; तीसरी: शपथ ग्रहण<br>&bull; चौथी: राज्यसभा में सीटों का आवंटन<br>&bull; पांचवीं: SC/ST क्षेत्रों का प्रशासन<br>&bull; छठी: असम, मेघालय, त्रिपुरा, मिजोरम का जनजातीय प्रशासन<br>&bull; <mark class="exam-key">सातवीं: संघ, राज्य व समवर्ती सूची</mark><br>&bull; <mark class="exam-key">आठवीं: 22 आधिकारिक भाषाएं</mark> (मूल में 14)<br>&bull; नौवीं: भूमि सुधार (1st संशोधन 1951)<br>&bull; <mark class="exam-key">दसवीं: दल-बदल विरोधी कानून (52nd संशोधन 1985)</mark><br>&bull; <mark class="exam-key">ग्यारहवीं: पंचायती राज (73rd संशोधन 1992, 29 विषय)</mark><br>&bull; बारहवीं: नगर पालिका (74th संशोधन 1992, 18 विषय)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (पंचायती राज)</span>
-        <div class="note-actions">
-          <span class="note-num">#76</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">पंचायती राज व्यवस्था का इतिहास एवं त्रिस्तरीय ढांचा</h3>
-      <div class="note-content"><mark class="exam-key">बलवंत राय मेहता समिति (1957)</mark> की सिफारिश पर त्रिस्तरीय पंचायती राज प्रणाली लागू की गई (ग्राम पंचायत, पंचायत समिति, जिला परिषद)। सर्वप्रथम <mark class="exam-key">2 अक्टूबर 1959 को राजस्थान के नागौर जिले</mark> में पं. नेहरू द्वारा शुभारंभ हुआ। 73वें संशोधन (1992) द्वारा संविधान के भाग 9 (Art 243 से 243O) में संवैधानिक दर्जा दिया गया। राष्ट्रीय पंचायती राज दिवस <mark class="exam-key">24 अप्रैल</mark> को मनाया जाता है।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संसद व सदन)</span>
-        <div class="note-actions">
-          <span class="note-num">#77</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">लोकसभा एवं राज्यसभा की संरचना व योग्यता</h3>
-      <div class="note-content">&bull; <mark class="exam-key">लोकसभा (निम्न सदन)</mark>: अधिकतम सीटें 550 (104वें संशोधन द्वारा 2 एंग्लो-इंडियन सीटें समाप्त); न्यूनतम आयु <mark class="exam-key">25 वर्ष</mark>; सामान्य कार्यकाल 5 वर्ष।<br>&bull; <mark class="exam-key">राज्यसभा (उच्च सदन / स्थायी सदन)</mark>: कभी भंग नहीं होती; अधिकतम 250 सदस्य (12 राष्ट्रपति द्वारा मनोनीत); न्यूनतम आयु <mark class="exam-key">30 वर्ष</mark>; सदस्यों का कार्यकाल <mark class="exam-key">6 वर्ष</mark> (प्रत्येक 2 वर्ष में 1/3 सदस्य सेवानिवृत्त होते हैं)। उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है (Art 64)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (न्यायपालिका)</span>
-        <div class="note-actions">
-          <span class="note-num">#78</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">सर्वोच्च न्यायालय एवं उच्च न्यायालय</h3>
-      <div class="note-content"><mark class="exam-key">अनुच्छेद 124</mark> के तहत सर्वोच्च न्यायालय (SC) की स्थापना; वर्तमान में 1 मुख्य न्यायाधीश (CJI) + 33 अन्य न्यायाधीश = कुल 34 न्यायाधीश। SC न्यायाधीशों की सेवानिवृत्ति आयु <mark class="exam-key">65 वर्ष</mark> होती है। प्रथम मुख्य न्यायाधीश <mark class="exam-key">एच.जे. कानिया</mark> थे। <mark class="exam-key">अनुच्छेद 214</mark> के तहत राज्यों में उच्च न्यायालय (HC); HC न्यायाधीशों की सेवानिवृत्ति आयु 62 वर्ष होती है। भारत में कुल 25 उच्च न्यायालय हैं।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (अनुसूचियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#14</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">29 अगस्त 1947 को संविधान सभा ने 7 सदस्यीय 'प्रारूप समिति' का गठन किया, जिसके अध्यक्ष डॉ. भीमराव अंबेडकर बनाए गए। भारतीय संविधान को पूर्ण रूप से तैयार करने में कुल 2 वर्ष, 11 महीने और 18 दिन का समय लगा। इस दौरान कुल 11 अधिवेशन और 165 बैठकें हुईं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>संविधान सभा की प्रथम बैठक 9 दिसंबर 1946 को हुई, जिसके अस्थाई अध्यक्ष डॉ. सच्चिदानंद सिन्हा थे।</li><li>11 दिसंबर 1946 को डॉ. राजेंद्र प्रसाद को संविधान सभा का स्थाई अध्यक्ष चुना गया।</li><li>संविधान सभा के संवैधानिक सलाहकार सर बी.एन. राव (Benegal Narsing Rau) थे।</li><li>26 नवंबर 1949 को संविधान अंगीकृत (Adopted) हुआ, इसलिए प्रतिवर्ष 26 नवंबर को 'संविधान दिवस' मनाया जाता है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">संविधान की प्रमुख 12 अनुसूचियां</h3>
-    <div class="note-content">मूल संविधान में <mark class="exam-key">8 अनुसूचियां थीं, वर्तमान में 12 हैं</mark>। 8वीं अनुसूची में <mark class="exam-key">22 आधिकारिक भाषाएं</mark> हैं। 10वीं अनुसूची में <mark class="exam-key">दल-बदल विरोधी कानून (52वां संशोधन 1985)</mark> है। 11वीं में पंचायती राज (29 विषय) और 12वीं में नगर पालिकाएं (18 विषय) हैं।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (मौलिक कर्तव्य)</span>
-      <div class="note-actions">
-        <span class="note-num">#15</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">मौलिक कर्तव्य (Fundamental Duties)</h3>
-    <div class="note-content">मौलिक कर्तव्य <mark class="exam-key">42वें संविधान संशोधन 1976 द्वारा सरदार स्वर्ण सिंह समिति</mark> की सिफारिश पर सोवियत संघ (USSR) से लिए गए। इन्हें <mark class="exam-key">भाग IV-A व अनुच्छेद 51A</mark> में जोड़ा गया। वर्तमान में कुल 11 मौलिक कर्तव्य हैं (11वां 86वें संशोधन 2002 में जुड़ा)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (आपातकालीन प्रावधान)</span>
-      <div class="note-actions">
-        <span class="note-num">#16</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संविधान की प्रस्तावना</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q02</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">42वें संविधान संशोधन अधिनियम 1976 द्वारा भारतीय संविधान की प्रस्तावना में कौन से तीन नए शब्द जोड़े गए थे?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> लोकतांत्रिक, गणराज्य, संप्रभु 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> समाजवादी, पंथनिरपेक्ष (धर्मनिरपेक्ष), और अखंडता <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> न्याय, स्वतंत्रता, समानता 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> बंधुत्व, एकता, प्रजातांत्रिक 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान की प्रस्तावना को पंडित जवाहरलाल नेहरू द्वारा 13 दिसंबर 1946 को प्रस्तुत 'उद्देश्य प्रस्ताव' के आधार पर तैयार किया गया था। प्रस्तावना में अब तक केवल एक बार 42वें संविधान संशोधन 1976 द्वारा संशोधन किया गया है, जिसके द्वारा 'समाजवादी' (Socialist), 'पंथनिरपेक्ष' (Secular) और 'अखंडता' (Integrity) शब्द जोड़े गए।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>प्रस्तावना को 'संविधान की कुंजी' (Key to the Constitution) और 'संविधान की आत्मा' कहा जाता है।</li><li>प्रस्तावना की भाषा ऑस्ट्रेलिया के संविधान से और 'हम भारत के लोग' की अवधारणा अमेरिकी संविधान से प्रेरित है।</li><li>प्रस्तावना में 3 प्रकार के न्याय (सामाजिक, आर्थिक, राजनीतिक) और 5 प्रकार की स्वतंत्रता (विचार, अभिव्यक्ति, विश्वास, धर्म और उपासना) का उल्लेख है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">राष्ट्रपति के तीन आपातकाल (Emergency Provisions)</h3>
-    <div class="note-content">संविधान के भाग XVIII में जर्मनी के वाइमर संविधान से 3 आपातकाल लिए गए हैं: <mark class="exam-key">अनुच्छेद 352 (राष्ट्रीय आपातकाल)</mark>, <mark class="exam-key">अनुच्छेद 356 (राज्यों में राष्ट्रपति शासन)</mark>, और <mark class="exam-key">अनुच्छेद 360 (वित्तीय आपातकाल)</mark> जो भारत में अब तक कभी नहीं लगा है।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (अध्यादेश शक्ति)</span>
-      <div class="note-actions">
-        <span class="note-num">#17</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">राष्ट्रपति व राज्यपाल की अध्यादेश शक्ति</h3>
-    <div class="note-content">जब संसद का सत्र न चल रहा हो तो राष्ट्रपति <mark class="exam-key">अनुच्छेद 123</mark> के तहत अध्यादेश (Ordinance) जारी कर सकते हैं। इसी प्रकार राज्यों में राज्यपाल <mark class="exam-key">अनुच्छेद 213</mark> के तहत अध्यादेश जारी करते हैं, जिसकी संसद सत्र शुरू होने के 6 सप्ताह में मंजूरी आवश्यक होती है।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (स्थानीय स्वशासन)</span>
-      <div class="note-actions">
-        <span class="note-num">#18</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मौलिक अधिकार</span>
+          <span class="q-exam-badge">🎯 UP Police Constable Core</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q03</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">डॉ. बी.आर. अंबेडकर ने किस मौलिक अधिकार को 'संविधान की आत्मा और हृदय' (Heart and Soul of the Constitution) कहा था?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> समानता का अधिकार (अनुच्छेद 14) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> धार्मिक स्वतंत्रता का अधिकार (अनुच्छेद 25) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> संवैधानिक उपचारों का अधिकार (अनुच्छेद 32) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> स्वतंत्रता का अधिकार (अनुच्छेद 19) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अनुच्छेद 32 (संवैधानिक उपचारों का अधिकार) नागरिकों को उनके मौलिक अधिकारों के हनन होने पर सीधे भारत के सर्वोच्च न्यायालय (Supreme Court) जाने का अधिकार देता है। डॉ. अंबेडकर ने कहा था कि यदि मुझसे पूछा जाए कि संविधान का सबसे महत्वपूर्ण अनुच्छेद कौन सा है, जिसके बिना संविधान शून्य हो जाएगा, तो मैं अनुच्छेद 32 की ओर इशारा करूँगा।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>सर्वोच्च न्यायालय अनुच्छेद 32 के तहत और उच्च न्यायालय अनुच्छेद 226 के तहत 5 प्रकार की रिटें (Writs) जारी करते हैं: (1) बंदी प्रत्यक्षीकरण (Habeas Corpus), (2) परमादेश (Mandamus), (3) प्रतिषेध (Prohibition), (4) उत्प्रेषण (Certiorari), और (5) अधिकार पृच्छा (Quo-Warranto)।</li><li>मौलिक अधिकार संविधान के भाग III (अनुच्छेद 12 से 35) में अमेरिकी बिल ऑफ राइट्स से प्रेरित होकर शामिल किए गए हैं।</li><li>मूल संविधान में 7 मौलिक अधिकार थे, 44वें संशोधन 1978 द्वारा 'संपत्ति के अधिकार' (अनुच्छेद 31) को मौलिक अधिकारों से हटाकर अनुच्छेद 300A के तहत कानूनी अधिकार बना दिया गया।</li>
+      </ul>
     </div>
-    <h3 class="note-title">पंचायती राज व्यवस्था (73वां संविधान संशोधन)</h3>
-    <div class="note-content">भारत में त्रिस्तरीय पंचायती राज व्यवस्था <mark class="exam-key">बलवंत राय मेहता समिति (1957)</mark> की सिफारिश पर आधारित है। पहली बार 2 अक्टूबर 1959 को <mark class="exam-key">नागौर (राजस्थान)</mark> में लागू हुई। <mark class="exam-key">73वें संशोधन 1992</mark> द्वारा संवैधानिक दर्जा मिला (24 अप्रैल = पंचायती राज दिवस)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (संशोधन प्रक्रिया)</span>
-      <div class="note-actions">
-        <span class="note-num">#19</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+  
+        </div>
       </div>
-    </div>
-    <h3 class="note-title">संविधान संशोधन प्रक्रिया (अनुच्छेद 368)</h3>
-    <div class="note-content">संविधान के <mark class="exam-key">भाग XX और अनुच्छेद 368</mark> में संशोधन की प्रक्रिया दी गई है, जो <mark class="exam-key">दक्षिण अफ्रीका</mark> के संविधान से प्रेरित है। संविधान के बुनियादी ढांचे (Basic Structure) में कोई संशोधन नहीं किया जा सकता (केशवानंद भारती वाद 1973)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (निर्वाचन आयोग)</span>
-      <div class="note-actions">
-        <span class="note-num">#20</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">नीति निदेशक तत्व (DPSP)</span>
+          <span class="q-exam-badge">🎯 SSC GD & Railway NTPC</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q04</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
       </div>
+
+      <h3 class="q-title">राज्य के नीति निदेशक तत्व (DPSP) किस देश के संविधान से लिए गए हैं और समान नागरिक संहिता (UCC) किस अनुच्छेद में वर्णित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> ब्रिटेन - अनुच्छेद 40 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> आयरलैंड - अनुच्छेद 44 <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> रूस - अनुच्छेद 39A 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> अमेरिका - अनुच्छेद 48 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">राज्य के नीति निदेशक तत्व संविधान के भाग IV (अनुच्छेद 36 से 51) में आयरलैंड के संविधान से लिए गए हैं। ये राज्य के लिए कल्याणकारी दिशा-निर्देश हैं जो न्यायालय द्वारा प्रवर्तनीय (Non-Justiciable) नहीं हैं। 'अनुच्छेद 44' भारत के समस्त राज्यक्षेत्र में नागरिकों के लिए एक 'समान नागरिक संहिता' (Uniform Civil Code - UCC) लागू करने का निर्देश देता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अनुच्छेद 40 में 'ग्राम पंचायतों के संगठन' का गांधीवादी सिद्धांत वर्णित है।</li><li>अनुच्छेद 45 व 21A 6 से 14 वर्ष के बच्चों के लिए निःशुल्क और अनिवार्य शिक्षा से संबंधित हैं।</li><li>अनुच्छेद 50 कार्यपालिका से न्यायपालिका के पृथक्करण (Separation of Powers) की व्यवस्था करता है।</li><li>अनुच्छेद 51 अंतर्राष्ट्रीय शांति और सुरक्षा की अभिवृद्धि से संबंधित है।</li>
+      </ul>
     </div>
-    <h3 class="note-title">भारत का निर्वाचन आयोग (Election Commission)</h3>
-    <div class="note-content">भारतीय संविधान के <mark class="exam-key">अनुच्छेद 324</mark> के तहत एक स्वतंत्र निर्वाचन आयोग का प्रावधान है। इसकी स्थापना <mark class="exam-key">25 जनवरी 1950</mark> को हुई थी, इसलिए प्रतिवर्ष 25 जनवरी को 'राष्ट्रीय मतदाता दिवस' मनाया जाता है। प्रथम मुख्य चुनाव आयुक्त <mark class="exam-key">सुकुमार सेन</mark> थे।</div>
-  </article>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">राष्ट्रपति पद एवं शक्तियां</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q05</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारत के राष्ट्रपति पर महाभियोग (Impeachment) चलाने की प्रक्रिया किस अनुच्छेद में दी गई है और इसके लिए कितने दिन पूर्व लिखित सूचना देना अनिवार्य है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अनुच्छेद 52 - 7 दिन पूर्व 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अनुच्छेद 61 - 14 दिन पूर्व <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> अनुच्छेद 72 - 30 दिन पूर्व 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> अनुच्छेद 123 - 21 दिन पूर्व 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के 'अनुच्छेद 61' के तहत राष्ट्रपति द्वारा संविधान का अतिक्रमण (Violation of the Constitution) करने पर संसद के किसी भी सदन (लोकसभा या राज्यसभा) द्वारा महाभियोग प्रस्ताव लाया जा सकता है। ऐसा प्रस्ताव लाने से कम से कम 14 दिन पूर्व राष्ट्रपति को लिखित सूचना देना अनिवार्य है जिस पर उस सदन के कम से कम एक-चौथाई (1/4) सदस्यों के हस्ताक्षर होने चाहिए।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>महाभियोग प्रस्ताव दोनों सदनों द्वारा अलग-अलग कुल सदस्य संख्या के दो-तिहाई (2/3) बहुमत से पारित होना अनिवार्य है।</li><li>भारत में आज तक किसी भी राष्ट्रपति पर महाभियोग नहीं चलाया गया है।</li><li>अनुच्छेद 72 के तहत राष्ट्रपति को किसी भी अपराधी की सजा क्षमा (Pardon), कम (Commute) या स्थगित करने की न्यायिक शक्ति प्राप्त है (मृत्युदंड भी क्षमा कर सकते हैं)।</li><li>राष्ट्रपति बनने के लिए न्यूनतम आयु 35 वर्ष होनी चाहिए और कार्यकाल 5 वर्ष होता है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संसद एवं कार्यप्रणाली</span>
+          <span class="q-exam-badge">🎯 All Competitive Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q06</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारतीय संसद के स्थायी सदन (Permanent House) 'राज्यसभा' के सदस्यों का कार्यकाल कितना होता है और इसके पदेन सभापति कौन होते हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 5 वर्ष - लोकसभा अध्यक्ष 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 6 वर्ष - भारत के उपराष्ट्रपति (Vice-President) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 4 वर्ष - प्रधानमंत्री 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 6 वर्ष - भारत के मुख्य न्यायाधीश 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के अनुच्छेद 80 के तहत राज्यसभा संसद का उच्च सदन एवं स्थायी सदन है, जिसका कभी विघटन नहीं होता। इसके सदस्यों का कार्यकाल 6 वर्ष का होता है और इसके एक-तिहाई (1/3) सदस्य प्रत्येक दो वर्ष बाद सेवानिवृत्त हो जाते हैं। अनुच्छेद 64 और 89 के अनुसार 'भारत के उपराष्ट्रपति' राज्यसभा के पदेन सभापति (Ex-Officio Chairman) होते हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>राज्यसभा का सदस्य बनने के लिए न्यूनतम आयु 30 वर्ष, जबकि लोकसभा सदस्य के लिए 25 वर्ष होनी चाहिए।</li><li>राज्यसभा में अधिकतम 250 सदस्य हो सकते हैं (वर्तमान में 245), जिनमें से 12 सदस्यों को राष्ट्रपति साहित्य, विज्ञान, कला और समाज सेवा के क्षेत्र से मनोनीत करते हैं।</li><li>धन विधेयक (Money Bill - अनुच्छेद 110) केवल लोकसभा में ही पेश किया जा सकता है, राज्यसभा इसे अधिकतम केवल 14 दिन तक रोक सकती है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संवैधानिक संशोधन</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC CGL/GD</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q07</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">संविधान संशोधन की शक्ति संसद को किस अनुच्छेद और भाग के तहत प्राप्त है और यह प्रक्रिया किस देश से ली गई है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> भाग XV, अनुच्छेद 324 - ब्रिटेन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> भाग XX, अनुच्छेद 368 - दक्षिण अफ्रीका (South Africa) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> भाग XVIII, अनुच्छेद 352 - जर्मनी 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> भाग XII, अनुच्छेद 280 - कनाडा 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के 'भाग XX' और 'अनुच्छेद 368' में संसद को संविधान में संशोधन करने की शक्ति और प्रक्रिया दी गई है। यह प्रावधान 'दक्षिण अफ्रीका' के संविधान से लिया गया है। केशवानंद भारती केस (1973) के ऐतिहासिक निर्णय के अनुसार, संसद संविधान के 'मूल ढांचे' (Basic Structure) को नष्ट या संशोधित नहीं कर सकती।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>प्रथम संविधान संशोधन 1951 में हुआ था, जिसके द्वारा संविधान में '9वीं अनुसूची' जोड़ी गई थी।</li><li>42वें संशोधन 1976 को 'लघु संविधान' (Mini Constitution) कहा जाता है।</li><li>44वें संशोधन 1978 द्वारा आंतरिक अशांति के स्थान पर 'सशस्त्र विद्रोह' शब्द जोड़ा गया।</li><li>61वें संविधान संशोधन 1989 द्वारा मतदान की न्यूनतम आयु 21 वर्ष से घटाकर 18 वर्ष की गई।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संविधान की अनुसूचियां</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & Police Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q08</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारतीय संविधान की 8वीं अनुसूची में कुल कितनी मान्यता प्राप्त भाषाएं हैं और 10वीं अनुसूची किससे संबंधित है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 18 भाषाएं - भूमि सुधार 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 22 आधिकारिक भाषाएं - दल-बदल विरोधी कानून (Anti-Defection Law) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 14 भाषाएं - पंचायती राज 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 24 भाषाएं - वेतन एवं भत्ते 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">मूल संविधान में 8 अनुसूचियां और 14 भाषाएं थीं। वर्तमान में 12 अनुसूचियां हैं। 8वीं अनुसूची में '22 मान्यता प्राप्त भारतीय भाषाएं' हैं (सिंधी 21वें संशोधन से, कोंकणी, मणिपुरी, नेपाली 71वें से, और बोडो, डोगरी, मैथिली, संथाली 92वें संशोधन 2003 से जुड़ीं)। 10वीं अनुसूची 52वें संशोधन 1985 द्वारा जोड़ी गई, जो 'दल-बदल विरोधी कानून' से संबंधित है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>11वीं अनुसूची (73वां संशोधन 1992): पंचायती राज व्यवस्था (29 कार्य विषय)।</li><li>12वीं अनुसूची (74वां संशोधन 1992): नगर पालिकाएं / शहरी स्थानीय निकाय (18 कार्य विषय)।</li><li>7वीं अनुसूची में केंद्र और राज्यों के बीच शक्तियों का बंटवारा है (संघ सूची 100 विषय, राज्य सूची 61 विषय, समवर्ती सूची 52 विषय)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संवैधानिक संस्थाएं</span>
+          <span class="q-exam-badge">🎯 UPSSSC, SSC & Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q09</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारत के नियंत्रक एवं महालेखापरीक्षक (CAG) और वित्त आयोग की नियुक्ति का प्रावधान संविधान के किन अनुच्छेदों में है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अनुच्छेद 76 और अनुच्छेद 124 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अनुच्छेद 148 (CAG) और अनुच्छेद 280 (वित्त आयोग) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> अनुच्छेद 324 और अनुच्छेद 315 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> अनुच्छेद 165 और अनुच्छेद 243 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अनुच्छेद 148 के तहत भारत के नियंत्रक एवं महालेखापरीक्षक (CAG) की नियुक्ति राष्ट्रपति द्वारा की जाती है। CAG को 'सार्वजनिक धन का संरक्षक' (Guardian of Public Purse) और संसद की लोक लेखा समिति (PAC) का मित्र व मार्गदर्शक कहा जाता है। अनुच्छेद 280 के तहत प्रत्येक 5 वर्ष में राष्ट्रपति द्वारा 'वित्त आयोग' का गठन किया जाता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अनुच्छेद 76: भारत के महान्यायवादी (Attorney General of India) की नियुक्ति, जो भारत सरकार का सर्वोच्च विधिक अधिकारी होता है।</li><li>अनुच्छेद 324: स्वतंत्र भारत निर्वाचन आयोग (Election Commission) का प्रावधान।</li><li>अनुच्छेद 315: संघ लोक सेवा आयोग (UPSC) और राज्य लोक सेवा आयोगों का प्रावधान।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">मौलिक कर्तव्य</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC GD & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q10</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">मौलिक कर्तव्यों (Fundamental Duties) को किस समिति की सिफारिश पर संविधान में जोड़ा गया और वर्तमान में कुल कितने मौलिक कर्तव्य हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> बलवंत राय मेहता समिति - 10 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> सरदार स्वर्ण सिंह समिति - 11 मौलिक कर्तव्य <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> सरकारिया आयोग - 12 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> वर्मा समिति - 9 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">42वें संविधान संशोधन 1976 द्वारा सोवियत संघ (USSR) के संविधान से प्रेरित होकर 'सरदार स्वर्ण सिंह समिति' की सिफारिश पर संविधान में 'भाग IV-A' और 'अनुच्छेद 51A' जोड़कर 10 मौलिक कर्तव्य शामिल किए गए थे। बाद में 86वें संविधान संशोधन 2002 द्वारा 11वां मौलिक कर्तव्य (6 से 14 वर्ष के बच्चों को शिक्षा के अवसर उपलब्ध कराना) जोड़ा गया।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>मौलिक कर्तव्य न्यायालय द्वारा प्रवर्तनीय (Non-enforceable) नहीं हैं, अर्थात इनके उल्लंघन पर सीधे अदालत नहीं जा सकते।</li><li>मूल संविधान में मौलिक कर्तव्यों का कोई प्रावधान नहीं था।</li><li>राष्ट्रीय ध्वज और राष्ट्रगान का आदर करना अनुच्छेद 51A(a) के तहत प्रत्येक नागरिक का पहला कर्तव्य है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">आपातकालीन उपबंध</span>
+          <span class="q-exam-badge">🎯 All State Police & Railway</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q11</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">संविधान में कितने प्रकार के आपातकाल का प्रावधान है और वित्तीय आपातकाल (अनुच्छेद 360) भारत में अब तक कितनी बार लागू हुआ है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 2 प्रकार - दो बार 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 3 प्रकार (352, 356, 360) - एक बार भी नहीं (शून्य बार) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 4 प्रकार - तीन बार 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 3 प्रकार - एक बार (1991 में) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के भाग XVIII में जर्मनी के वाइमर संविधान से प्रेरित होकर तीन प्रकार के आपातकाल का प्रावधान है: (1) अनुच्छेद 352: राष्ट्रीय आपातकाल (युद्ध, बाह्य आक्रमण या सशस्त्र विद्रोह पर), (2) अनुच्छेद 356: राज्यों में राष्ट्रपति शासन (संवैधानिक तंत्र विफल होने पर), और (3) अनुच्छेद 360: वित्तीय आपातकाल (देश की वित्तीय साख खतरे में होने पर)। भारत में आज तक एक बार भी वित्तीय आपातकाल लागू नहीं किया गया है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत में अब तक 3 बार राष्ट्रीय आपातकाल (1962 भारत-चीन युद्ध, 1971 भारत-पाक युद्ध, और 1975 आंतरिक अशांति) लागू हुआ है।</li><li>अनुच्छेद 356 के तहत राष्ट्रपति शासन का सर्वप्रथम प्रयोग 1951 में पंजाब राज्य (पेप्सू) में किया गया था।</li><li>आपातकाल के समय भी नागरिकों के जीवन और व्यक्तिगत स्वतंत्रता के अधिकार (अनुच्छेद 20 और 21) को निलंबित नहीं किया जा सकता।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">अध्यादेश जारी करने की शक्ति</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC CGL & GD</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q12</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">जब संसद का सत्र न चल रहा हो तो राष्ट्रपति किस अनुच्छेद के तहत और राज्यपाल किस अनुच्छेद के तहत अध्यादेश (Ordinance) जारी करते हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अनुच्छेद 72 और अनुच्छेद 161 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अनुच्छेद 123 (राष्ट्रपति) और अनुच्छेद 213 (राज्यपाल) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> अनुच्छेद 110 और अनुच्छेद 199 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> अनुच्छेद 143 और अनुच्छेद 226 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के 'अनुच्छेद 123' के तहत जब संसद के दोनों सदनों का सत्र न चल रहा हो और तत्काल कानून बनाने की आवश्यकता हो, तो राष्ट्रपति को अध्यादेश जारी करने की विधायी शक्ति प्राप्त है। इसी प्रकार राज्यों में 'अनुच्छेद 213' के तहत राज्यपाल अध्यादेश जारी करते हैं। अध्यादेश का प्रभाव संसद द्वारा बनाए गए अधिनियम के समान ही होता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>संसद का सत्र पुनः प्रारंभ होने के 6 सप्ताह के भीतर अध्यादेश को संसद की मंजूरी मिलना अनिवार्य है, अन्यथा यह निष्प्रभावी हो जाता है।</li><li>अध्यादेश की अधिकतम अवधि 6 माह 6 सप्ताह हो सकती है।</li><li>अनुच्छेद 143 के तहत राष्ट्रपति विधि के किसी प्रश्न पर सर्वोच्च न्यायालय से परामर्श मांग सकते हैं (लेकिन परामर्श मानना बाध्यकारी नहीं है)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">पंचायती राज व्यवस्था</span>
+          <span class="q-exam-badge">🎯 UP Police, UPSSSC & BSSC Core</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q13</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">73वें संविधान संशोधन 1992 द्वारा पंचायती राज को संवैधानिक दर्जा मिला। यह संशोधन किस अनुसूची से जुड़ा है और इसमें कितने विषय हैं?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 9वीं अनुसूची - 18 विषय 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 11वीं अनुसूची - 29 कार्य विषय (Subjects) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 12वीं अनुसूची - 22 विषय 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 10वीं अनुसूची - 25 विषय 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">73वें संविधान संशोधन अधिनियम 1992 द्वारा संविधान में 'भाग IX' (अनुच्छेद 243 से 243-O) और '11वीं अनुसूची' जोड़ी गई, जिसमें पंचायतों को सौंपे गए कुल 29 विषयों की सूची दी गई है। यह संशोधन 24 अप्रैल 1993 से पूरे देश में प्रभावी हुआ, इसलिए प्रतिवर्ष '24 अप्रैल' को 'राष्ट्रीय पंचायती राज दिवस' मनाया जाता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>भारत में त्रिस्तरीय पंचायती राज व्यवस्था 'बलवंत राय मेहता समिति (1957)' की सिफारिश पर आधारित है।</li><li>देश में सर्वप्रथम 2 अक्टूबर 1959 को राजस्थान के नागौर जिले में पंडित नेहरू द्वारा पंचायती राज का उद्घाटन किया गया था।</li><li>पंचायतों में महिलाओं के लिए कम से कम एक-तिहाई (33%) सीटें आरक्षित करने का संवैधानिक प्रावधान अनुच्छेद 243D में है।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">सर्वोच्च न्यायालय एवं न्यायपालिका</span>
+          <span class="q-exam-badge">🎯 Railway NTPC & State Police</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q14</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारत के मुख्य न्यायाधीश (CJI) और सर्वोच्च न्यायालय के अन्य न्यायाधीशों की सेवानिवृत्ति आयु (Retirement Age) कितनी होती है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 60 वर्ष 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 62 वर्ष 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 65 वर्ष (65 Years) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 68 वर्ष 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के अनुच्छेद 124 के तहत भारत के सर्वोच्च न्यायालय के मुख्य न्यायाधीश तथा अन्य न्यायाधीश 65 वर्ष की आयु पूरी होने तक पद पर बने रहते हैं। जबकि राज्यों के उच्च न्यायालयों (High Courts) के न्यायाधीशों की सेवानिवृत्ति आयु 62 वर्ष होती है। न्यायाधीशों को राष्ट्रपति द्वारा केवल संसद में महाभियोग जैसी विशेष प्रक्रिया (साबित कदाचार या असमर्थता) द्वारा ही हटाया जा सकता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>सर्वोच्च न्यायालय के प्रथम मुख्य न्यायाधीश एच.जे. कानिया (Harilal Jekisundas Kania) थे।</li><li>सर्वोच्च न्यायालय की प्रथम महिला न्यायाधीश न्यायमूर्ति फातिमा बीवी (1989) थीं।</li><li>सर्वोच्च न्यायालय एक 'अभिलेख न्यायालय' (Court of Record) है (अनुच्छेद 129)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संसदीय कार्यवाही एवं शब्दावली</span>
+          <span class="q-exam-badge">🎯 SSC GD & All Defence Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q15</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारतीय संसद में 'शून्यकाल' (Zero Hour) की समयावधि क्या होती है और यह किस देश की देन है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> प्रातः 10 से 11 बजे - ब्रिटेन 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> दोपहर 12:00 बजे से 1:00 बजे तक - भारत की अपनी देन <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> शाम 4 से 5 बजे - अमेरिका 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> सुबह 11 से 12 बजे - फ्रांस 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संसद के दोनों सदनों में प्रश्नकाल (11:00 AM से 12:00 PM) के ठीक बाद का 1 घंटे का समय (दोपहर 12:00 PM से 1:00 PM) 'शून्यकाल' कहलाता है। इसमें संसद सदस्य बिना किसी पूर्व सूचना के अविलंबनीय लोक महत्व के मामले उठा सकते हैं। यह संसदीय प्रक्रिया में 1962 से 'भारत की अपनी अद्वितीय देन' है (संविधान के नियमों में इसका कोई औपचारिक उल्लेख नहीं है)।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>संसद की बैठक का पहला घंटा (11:00 से 12:00) 'प्रश्नकाल' (Question Hour) कहलाता है जिसमें तारांकित और अतारांकित प्रश्न पूछे जाते हैं।</li><li>संसद के किसी भी सदन की कार्यवाही चलाने के लिए न्यूनतम 'कोरम / गणपूर्ति' कुल सदस्य संख्या का 1/10 (10वां भाग) होना अनिवार्य है।</li><li>संसद के दो सत्रों के बीच अधिकतम अंतर 6 माह से अधिक नहीं हो सकता।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संविधान के विदेशी स्रोत</span>
+          <span class="q-exam-badge">🎯 UP Police, SSC & Defence</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q16</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">भारतीय संविधान में 'संसदीय शासन प्रणाली' और 'विधि का शासन' किस देश के संविधान से लिया गया है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> संयुक्त राज्य अमेरिका (USA) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> ब्रिटेन (United Kingdom) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> आयरलैंड 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> कनाडा 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">भारत ने ब्रिटेन के संविधान से अनेक महत्वपूर्ण प्रावधान ग्रहण किए हैं, जिनमें: (1) संसदीय शासन प्रणाली (द्विसदनीय व्यवस्था), (2) विधि का शासन (Rule of Law), (3) एकल नागरिकता (Single Citizenship), (4) कैबिनेट प्रणाली (मंत्रिमंडल व्यवस्था), और (5) विधायी प्रक्रिया शामिल हैं।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अमेरिका के संविधान से: मौलिक अधिकार, न्यायिक पुनरावलोकन (Judicial Review), राष्ट्रपति पर महाभियोग, और स्वतंत्र न्यायपालिका।</li><li>आयरलैंड से: राज्य के नीति निदेशक तत्व (DPSP) और राष्ट्रपति का निर्वाचक मंडल।</li><li>कनाडा से: एक मजबूत केंद्र के साथ संघीय व्यवस्था और अवशिष्ट शक्तियों का केंद्र के पास होना।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">केंद्रीय कार्यपालिका</span>
+          <span class="q-exam-badge">🎯 All State Exams</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q17</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">संविधान के अनुच्छेद 76 के तहत भारत सरकार का प्रथम विधिक अधिकारी (Chief Legal Advisor) कौन होता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> भारत के मुख्य न्यायाधीश (CJI) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> भारत का महान्यायवादी (Attorney General of India) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> सॉलिसिटर जनरल 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> केंद्रीय कानून मंत्री 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अनुच्छेद 76 के तहत राष्ट्रपति द्वारा उच्चतम न्यायालय के न्यायाधीश बनने की योग्यता रखने वाले व्यक्ति को 'भारत का महान्यायवादी' नियुक्त किया जाता है। यह भारत सरकार का सर्वोच्च विधिक अधिकारी होता है। उसे भारत के राज्यक्षेत्र के सभी न्यायालयों में सुनवाई का अधिकार होता है तथा वह संसद के दोनों सदनों की कार्यवाही में बिना मतदान के भाग ले सकता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अनुच्छेद 165 के तहत राज्यों में राज्य सरकार का सर्वोच्च विधिक सलाहकार 'महाधिवक्ता' (Advocate General) होता है, जिसकी नियुक्ति राज्यपाल करते हैं।</li><li>महान्यायवादी राष्ट्रपति के 'प्रसादपर्यंत' (Pleasure of the President) पद धारण करता है।</li><li>भारत के प्रथम महान्यायवादी एम.सी. सीतलवाड़ (M.C. Setalvad) थे।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संवैधानिक संशोधन</span>
+          <span class="q-exam-badge">🎯 UP Police & SSC Repeated</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q18</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">किस संविधान संशोधन अधिनियम द्वारा भारतीय नागरिकों के मतदान की न्यूनतम आयु 21 वर्ष से घटाकर 18 वर्ष की गई थी?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> 42वां संविधान संशोधन (1976) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> 44वां संविधान संशोधन (1978) 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> 61वां संविधान संशोधन अधिनियम (1989) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> 73वां संविधान संशोधन (1992) 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (C)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">61वें संविधान संशोधन अधिनियम 1988 (जो 28 मार्च 1989 को लागू हुआ) द्वारा संविधान के अनुच्छेद 326 में संशोधन करके लोकसभा तथा राज्य विधानसभाओं के चुनावों में मतदान की न्यूनतम आयु सीमा 21 वर्ष से घटाकर 18 वर्ष कर दी गई थी। इस समय भारत के प्रधानमंत्री राजीव गांधी थे।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>अनुच्छेद 326 भारत में 'वयस्क मताधिकार' (Universal Adult Suffrage) की गारंटी देता है।</li><li>52वें संविधान संशोधन 1985 द्वारा राजनीतिक दल-बदल को रोकने के लिए 10वीं अनुसूची जोड़ी गई।</li><li>101वें संविधान संशोधन 2016 द्वारा पूरे देश में 'वस्तु एवं सेवा कर' (GST) लागू किया गया (1 जुलाई 2017 से)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संविधान की अनुसूचियां</span>
+          <span class="q-exam-badge">🎯 Railway & Defence CEE</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q19</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">संविधान की 7वीं अनुसूची में केंद्र और राज्यों के बीच शक्तियों का विभाजन किन तीन सूचियों में किया गया है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> केंद्रीय, प्रांतीय एवं स्थानीय सूची 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> संघ सूची, राज्य सूची एवं समवर्ती सूची (Concurrent List) <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> प्रथम, द्वितीय एवं तृतीय सूची 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> आर्थिक, न्यायिक एवं प्रशासनिक सूची 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">अनुच्छेद 246 के तहत 7वीं अनुसूची में तीन सूचियां हैं: (1) संघ सूची (Union List): राष्ट्रीय महत्व के विषय जिन पर केवल संसद कानून बना सकती है (मूलतः 97, वर्तमान में 100 विषय जैसे रक्षा, विदेश मामले, रेलवे, बैंकिंग)। (2) राज्य सूची (State List): स्थानीय महत्व के विषय जिन पर राज्य विधानमंडल कानून बनाता है (मूलतः 66, वर्तमान में 61 विषय जैसे पुलिस, जेल, कृषि, लोक स्वास्थ्य)। (3) समवर्ती सूची (Concurrent List - ऑस्ट्रेलिया से प्रेरित): जिन पर केंद्र और राज्य दोनों कानून बना सकते हैं (मूलतः 47, वर्तमान में 52 विषय जैसे शिक्षा, वन, विवाह)।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>42वें संशोधन 1976 द्वारा 5 विषयों (शिक्षा, वन, नाप-तौल, वन्यजीव संरक्षण, और न्याय प्रशासन) को राज्य सूची से निकालकर 'समवर्ती सूची' में डाला गया।</li><li>अवशिष्ट शक्तियां (Residuary Powers - अनुच्छेद 248) वे विषय हैं जिनका उल्लेख तीनों सूचियों में नहीं है, ये केवल केंद्र सरकार के पास हैं।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="question-deep-card">
+      <div class="q-header">
+        <div class="q-tags">
+          <span class="q-cat-badge">संसद के दोनों सदनों की संयुक्त बैठक</span>
+          <span class="q-exam-badge">🎯 SSC CGL, GD & State PSC</span>
+        </div>
+        <div class="q-actions">
+          <span class="q-number">#Q20</span>
+          <button type="button" class="btn-copy-q" onclick="copyQuestionCard(this)" title="Copy Question &amp; Explanation" aria-label="Copy question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <h3 class="q-title">संसद के दोनों सदनों की संयुक्त बैठक (Joint Sitting) किस अनुच्छेद के तहत कौन बुलाता है और इसकी अध्यक्षता कौन करता है?</h3>
+
+      <ul class="q-options-list" style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(A)</strong> अनुच्छेद 108: राष्ट्रपति बुलाते हैं, प्रधानमंत्री अध्यक्षता करते हैं 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f0fdf4; border: 1px solid #86efac; color: #1e293b; font-size: 14.5px;">
+      <strong>(B)</strong> अनुच्छेद 108: राष्ट्रपति बुलाते हैं, लोकसभा अध्यक्ष (Speaker) अध्यक्षता करते हैं <span style="color: #16a34a; font-weight: 700; margin-left: 8px;">[✅ सही उत्तर]</span>
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(C)</strong> अनुच्छेद 110: उपराष्ट्रपति बुलाते हैं, राष्ट्रपति अध्यक्षता करते हैं 
+    </li><li style="margin: 6px 0; padding: 7px 12px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; font-size: 14.5px;">
+      <strong>(D)</strong> अनुच्छेद 85: मुख्य न्यायाधीश बुलाते हैं, उपराष्ट्रपति अध्यक्षता करते हैं 
+    </li>
+      </ul>
+
+      <div class="q-explanation-box">
+        <div class="ans-badge">
+          <strong>सही उत्तर:</strong> विकल्प (B)
+        </div>
+        <div class="exp-content">
+          <strong style="color: #0f172a; display: block; margin-bottom: 5px;">💡 विस्तृत व्याख्या एवं परीक्षा विश्लेषण:</strong>
+          <p style="margin: 0; line-height: 1.7; color: #1e293b; font-size: 14.5px;">संविधान के 'अनुच्छेद 108' के तहत जब किसी साधारण विधेयक पर लोकसभा और राज्यसभा के बीच गतिरोध उत्पन्न हो जाता है, तो राष्ट्रपति दोनों सदनों की संयुक्त बैठक आहूत (बुलाते) हैं। संविधान के 'अनुच्छेद 118(4)' के अनुसार इस संयुक्त बैठक की अध्यक्षता 'लोकसभा का अध्यक्ष' (Speaker of Lok Sabha) करता है। यदि अध्यक्ष अनुपस्थित हो तो लोकसभा उपाध्यक्ष अध्यक्षता करता है।</p>
+          
+    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
+      <strong style="color: #1e3a8a; font-size: 13.5px; display: block; margin-bottom: 6px;">📌 परीक्षा उपयोगी महत्वपूर्ण जुड़े हुए तथ्य (Connected Key Points):</strong>
+      <ul style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.65;">
+        <li>राज्यसभा का सभापति (उपराष्ट्रपति) संयुक्त बैठक की अध्यक्षता कभी नहीं कर सकता क्योंकि वह संसद के किसी भी सदन का सदस्य नहीं होता।</li><li>धन विधेयक (Money Bill) और संविधान संशोधन विधेयक (Constitutional Amendment Bill) पर संयुक्त बैठक का कोई प्रावधान नहीं है।</li><li>भारत के संसदीय इतिहास में अब तक केवल 3 बार संयुक्त बैठक बुलाई गई है (दहेज निषेध 1961, बैंकिंग सेवा आयोग 1978, और पोटा/आतंकवाद निवारण 2002)।</li>
+      </ul>
+    </div>
+  
+        </div>
+      </div>
+    </article>
+  
     </div>
 
-    <!-- BOTTOM CROSS LINKS -->
+    <!-- BOTTOM CROSS NAVIGATION -->
     <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; margin-top: 30px;">
       <h3 style="font-size: 1.15rem; color: #0f172a; margin: 0 0 14px 0;">Explore Other Subjects &amp; Free Mocks</h3>
       <div class="related-vacancies-grid">
         <a href="short-notes-hub.html" class="related-vac-card">
           <div>
-            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">All Subjects Hub</span>
-            <h4 style="margin-top: 4px;">1-Minute Short Revision Notes Master Hub (All Topics)</h4>
+            <span style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">Central Gateway</span>
+            <h4 style="margin-top: 4px;">1-Minute Short Notes Hub (Formulas &amp; Rapid Charts)</h4>
           </div>
           <span class="btn-link">Open Hub &rarr;</span>
         </a>
@@ -678,21 +1385,21 @@
 
   </main>
 
-  <!-- COPY TOAST -->
   <div id="copyToast">
     <span>✅</span>
     <span id="copyToastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    function copyFact(btn) {
-      const card = btn.closest('.note-card');
-      const title = card.querySelector('.note-title').innerText.trim();
-      const content = card.querySelector('.note-content').innerText.trim();
-      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in)";
+    function copyQuestionCard(btn) {
+      const card = btn.closest('.question-deep-card');
+      const qTitle = card.querySelector('.q-title').innerText.trim();
+      const ans = card.querySelector('.ans-badge').innerText.trim();
+      const exp = card.querySelector('.exp-content p').innerText.trim();
+      const textToCopy = qTitle + "\n\n" + ans + "\n\nव्याख्या: " + exp + "\n\n(AapkaResult.in)";
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Point Copied: " + title.substring(0, 30) + "...");
+        showToast("Question & Explanation Copied!");
       }).catch(() => {
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -700,7 +1407,7 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast("Point Copied!");
+        showToast("Question & Explanation Copied!");
       });
     }
 
@@ -712,29 +1419,29 @@
       setTimeout(() => { toast.classList.remove('show'); }, 2200);
     }
 
-    function filterSubjectNotes(query) {
+    function filterNotebook(query) {
       const q = query.trim().toLowerCase();
-      const cards = document.querySelectorAll('#subjectNotesGrid .note-card');
-      const clearBtn = document.getElementById('clearSubjectSearch');
+      const cards = document.querySelectorAll('.question-deep-card');
+      const clearBtn = document.getElementById('clearSearch');
       clearBtn.style.display = q ? 'block' : 'none';
 
-      let visible = 0;
+      let count = 0;
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
         if (!q || text.includes(q)) {
           card.style.display = '';
-          visible++;
+          count++;
         } else {
           card.style.display = 'none';
         }
       });
-      document.getElementById('subjectVisibleCount').innerText = visible;
+      document.getElementById('visibleQCount').innerText = count;
     }
 
-    function clearSubjectSearch() {
-      const input = document.getElementById('subjectSearchInput');
+    function clearNotebookSearch() {
+      const input = document.getElementById('notebookSearchInput');
       input.value = '';
-      filterSubjectNotes('');
+      filterNotebook('');
       input.focus();
     }
   </script>

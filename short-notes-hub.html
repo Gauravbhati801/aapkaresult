@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1-Minute Short Notes Hub: Subject-Wise High-Yield Exam Revision - AapkaResult.in</title>
-  <meta name="description" content="Subject-wise 1-Minute Short Notes Hub for UP Police, SSC GD, Railway NTPC & Agniveer. Quick revision points across History, Science, Indian Polity, Geography, Static GK & Economics.">
+  <title>1-Minute Short Notes Hub: Quick Formulae, Rapid Charts &amp; Subject Gateways - AapkaResult.in</title>
+  <meta name="description" content="Official 1-Minute Short Notes Hub for competitive exams 2026. Rapid revision tables, constitutional articles quick glance, historical battles timeline, science formula sheets & subject gateways.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/short-notes-hub.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,15 +12,15 @@
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
   <style>
-    .notes-hero {
+    .hub-hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
       padding: 32px 24px;
       border-radius: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
-    .notes-hero-badge {
+    .hub-hero-badge {
       display: inline-block;
       background: rgba(34, 197, 94, 0.2);
       color: #4ade80;
@@ -32,31 +32,31 @@
       margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
-    .notes-hero h1 {
+    .hub-hero h1 {
       font-size: 1.95rem;
       color: #ffffff;
       margin: 0 0 10px 0;
       line-height: 1.3;
     }
-    .notes-hero p {
+    .hub-hero p {
       color: #cbd5e1;
       font-size: 14.5px;
       line-height: 1.6;
       margin: 0;
     }
 
-    /* Subject Jump Gateways Grid */
-    .subject-deep-grid {
+    /* Top Gateway Cards */
+    .gateways-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
-    .deep-card {
+    .gateway-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 16px 18px;
+      padding: 18px;
       text-decoration: none;
       color: #0f172a;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -64,136 +64,55 @@
       flex-direction: column;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
-    .deep-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    .gateway-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.09);
       border-color: #cbd5e1;
     }
-    .deep-card-title {
-      font-size: 15px;
+    .gw-title {
+      font-size: 16px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 6px;
     }
-    .deep-card-sub {
-      font-size: 12.5px;
+    .gw-desc {
+      font-size: 13px;
       color: #64748b;
-      line-height: 1.4;
-      margin-bottom: 8px;
+      line-height: 1.45;
+      margin-bottom: 12px;
     }
-    .deep-card-btn {
-      font-size: 12px;
+    .gw-btn {
+      font-size: 12.5px;
       font-weight: 700;
       color: #2563eb;
       margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    /* Controls Bar */
-    .notes-controls {
+    /* Rapid Reference Sections */
+    .rapid-section {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 18px;
+      padding: 22px;
       margin-bottom: 26px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
-    .search-box-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-    .search-box-wrapper input {
-      width: 100%;
-      padding: 12px 42px 12px 42px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 14.5px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .search-box-wrapper input:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-    }
-    .search-icon-inside {
-      position: absolute;
-      left: 14px;
-      color: #64748b;
-      display: flex;
-      align-items: center;
-    }
-    .clear-search-btn {
-      position: absolute;
-      right: 12px;
-      background: none;
-      border: none;
-      font-size: 18px;
-      color: #94a3b8;
-      cursor: pointer;
-      display: none;
-      padding: 4px 8px;
-    }
-    .filter-pills-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .filter-pill {
-      background: #f1f5f9;
-      color: #334155;
-      border: 1px solid #e2e8f0;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13.5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.18s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .filter-pill:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-    .filter-pill.active {
-      background: #2563eb;
-      color: #ffffff;
-      border-color: #2563eb;
-      box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
-    }
-    .filter-status-bar {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid #f1f5f9;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    /* Subject Section Blocks */
-    .subject-block-container {
-      margin-bottom: 35px;
-    }
-    .subject-block-header {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin-bottom: 14px;
+    .rapid-section-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      margin-bottom: 16px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 10px;
     }
-    .subject-block-header h2 {
+    .rapid-section-header h2 {
       font-size: 1.25rem;
       color: #0f172a;
       margin: 0;
@@ -201,7 +120,7 @@
       align-items: center;
       gap: 8px;
     }
-    .subject-block-link {
+    .rapid-view-all-link {
       background: #eff6ff;
       color: #1d4ed8;
       border: 1px solid #bfdbfe;
@@ -212,123 +131,31 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-    .subject-block-link:hover {
+    .rapid-view-all-link:hover {
       background: #dbeafe;
     }
 
-    /* Notes Cards Grid */
-    .notes-grid {
+    /* Fast Fact Cards */
+    .fast-facts-row {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
     }
-    .note-card {
-      background: #ffffff;
+    .fast-fact-card {
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
-    }
-    .note-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-      border-color: #cbd5e1;
-    }
-    .note-card-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .note-badge {
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-    .badge-history { background: #fef3c7; color: #92400e; }
-    .badge-science { background: #dcfce7; color: #166534; }
-    .badge-polity { background: #dbeafe; color: #1e40af; }
-    .badge-geography { background: #f3e8ff; color: #6b21a8; }
-    .badge-static { background: #ffedd5; color: #9a3412; }
-    .badge-economics { background: #e0e7ff; color: #3730a3; }
-
-    .note-actions {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .note-num {
-      font-size: 12px;
-      font-weight: 700;
-      color: #94a3b8;
-    }
-    .btn-copy-note {
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      color: #475569;
-      cursor: pointer;
-      padding: 4px 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.15s;
-    }
-    .btn-copy-note:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-    .note-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0f172a !important;
-      line-height: 1.4;
-      margin: 0 0 10px 0;
-    }
-    .note-content {
-      font-size: 14.5px;
-      color: #1e293b !important;
-      line-height: 1.65;
-      flex-grow: 1;
-    }
-    .exam-key {
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border-bottom: 2px solid #bfdbfe;
-    }
-
-    /* Toast */
-    #copyToast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #0f172a;
-      color: #ffffff;
-      padding: 10px 20px;
       border-radius: 8px;
+      padding: 12px 14px;
       font-size: 13.5px;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      z-index: 9999;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      pointer-events: none;
+      color: #1e293b;
+      line-height: 1.6;
     }
-    #copyToast.show {
-      transform: translateX(-50%) translateY(0);
+    .fast-fact-card strong {
+      color: #1e3a8a;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -428,7 +255,7 @@
   <div class="breadcrumb-bar">
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
-      <li>Subject-Wise Short Notes Hub</li>
+      <li>1-Minute Short Notes Hub</li>
     </ul>
   </div>
 
@@ -436,1621 +263,350 @@
   <main class="job-page-container" style="max-width: 1200px;">
 
     <!-- HERO BANNER -->
-    <div class="notes-hero">
-      <div class="notes-hero-badge">⚡ Subject-Wise Rapid Revision 2026</div>
-      <h1>⏱️ 1-Minute Short Notes Hub</h1>
-      <p>UP Police, SSC GD, Railway NTPC/Group D एवं Defence CEE परीक्षाओं के लिए विषयवार (Subject-Wise) संकलित हाई-यील्ड शॉर्ट नोट्स। हर विषय का अलग सेक्शन और त्वरित रिवीज़न बिंदु।</p>
+    <div class="hub-hero">
+      <span class="hub-hero-badge">⚡ CENTRAL RAPID REVISION PORTAL 2026</span>
+      <h1>⏱️ 1-Minute Short Notes &amp; Formula Hub</h1>
+      <p>UP Police, SSC GD, Railway NTPC/Group D एवं Defence CEE के लिए एक-क्लिक में त्वरित रिवीज़न टेबल्स, संविधान के अनुच्छेद, विज्ञान के सूत्र एवं विषयवार डिटेल्ड क्वेश्चन बैंक नोटबुक।</p>
     </div>
 
-    <!-- SUBJECT GATEWAY CARDS (DIRECT NOTEBOOKS) -->
-    <div class="subject-deep-grid">
-      <a href="notes-history.html" class="deep-card" style="border-left: 4px solid #f59e0b;">
-        <span class="deep-card-title">🏛️ History Notes <span>&rarr;</span></span>
-        <span class="deep-card-sub">प्राचीन, मध्यकालीन व आधुनिक भारत (30 Points)</span>
-        <span class="deep-card-btn">Open History Notes &rarr;</span>
+    <!-- SUBJECT NOTEBOOK GATEWAYS -->
+    <h2 style="font-size: 1.35rem; color: #0f172a; margin: 0 0 14px 0;">📚 Select Subject-Wise In-Depth Question Bank</h2>
+    <div class="gateways-grid">
+      <a href="notes-history.html" class="gateway-card" style="border-top: 4px solid #f59e0b;">
+        <span class="gw-title">🏛️ History (इतिहास) <span>&rarr;</span></span>
+        <span class="gw-desc">प्राचीन, मध्यकालीन व आधुनिक भारत के सम्पूर्ण प्रश्न एवं व्याख्या</span>
+        <span class="gw-btn">Open History Questions Notebook &rarr;</span>
       </a>
-      <a href="notes-science.html" class="deep-card" style="border-left: 4px solid #10b981;">
-        <span class="deep-card-title">🧬 Science Notes <span>&rarr;</span></span>
-        <span class="deep-card-sub">जीव, भौतिक, रसायन व SI मात्रक (21 Points)</span>
-        <span class="deep-card-btn">Open Science Notes &rarr;</span>
+
+      <a href="notes-science.html" class="gateway-card" style="border-top: 4px solid #10b981;">
+        <span class="gw-title">🧬 General Science <span>&rarr;</span></span>
+        <span class="gw-desc">जीव विज्ञान, भौतिकी, रसायन, विटामिन व मात्रकों की विस्तृत व्याख्या</span>
+        <span class="gw-btn">Open Science Questions Notebook &rarr;</span>
       </a>
-      <a href="notes-polity.html" class="deep-card" style="border-left: 4px solid #3b82f6;">
-        <span class="deep-card-title">⚖️ Polity Notes <span>&rarr;</span></span>
-        <span class="deep-card-sub">संविधान, अनुच्छेद व 12 अनुसूचियां (20 Points)</span>
-        <span class="deep-card-btn">Open Polity Notes &rarr;</span>
+
+      <a href="notes-polity.html" class="gateway-card" style="border-top: 4px solid #3b82f6;">
+        <span class="gw-title">⚖️ Indian Polity <span>&rarr;</span></span>
+        <span class="gw-desc">संविधान, मौलिक अधिकार, राष्ट्रपति, संसद व 12 अनुसूचियों का विश्लेषण</span>
+        <span class="gw-btn">Open Polity Questions Notebook &rarr;</span>
       </a>
-      <a href="notes-geography.html" class="deep-card" style="border-left: 4px solid #8b5cf6;">
-        <span class="deep-card-title">🌍 Geography Notes <span>&rarr;</span></span>
-        <span class="deep-card-sub">नदियां, दर्रे, राष्ट्रीय उद्यान व सौरमंडल (20 Points)</span>
-        <span class="deep-card-btn">Open Geography Notes &rarr;</span>
+
+      <a href="notes-geography.html" class="gateway-card" style="border-top: 4px solid #8b5cf6;">
+        <span class="gw-title">🌍 Geography <span>&rarr;</span></span>
+        <span class="gw-desc">भारत की नदियां, पर्वत शिखर, दर्रे, राष्ट्रीय उद्यान व सौरमंडल</span>
+        <span class="gw-btn">Open Geography Questions Notebook &rarr;</span>
+      </a>
+
+      <a href="notes-gk.html" class="gateway-card" style="border-top: 4px solid #ec4899;">
+        <span class="gw-title">🎯 Static GK <span>&rarr;</span></span>
+        <span class="gw-desc">शास्त्रीय नृत्य, त्यौहार, भारत रत्न, विश्व संगठन व खेलकूद ट्रॉफियां</span>
+        <span class="gw-btn">Open Static GK Questions Notebook &rarr;</span>
       </a>
     </div>
 
-    <!-- SEARCH & CATEGORY FILTER BAR -->
-    <div class="notes-controls">
-      <div class="search-box-wrapper">
-        <span class="search-icon-inside">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </span>
-        <input type="text" id="noteSearchInput" placeholder="Search keywords across all subjects (e.g. बाबर, विटामिन, अनुच्छेद 32, गंगा, कथक, नीति आयोग, रक्त)..." onkeyup="filterNotes(this.value)">
-        <button type="button" id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" aria-label="Clear Search">&times;</button>
+    <!-- RAPID CHART 1: INDIAN POLITY ARTICLES -->
+    <section class="rapid-section">
+      <div class="rapid-section-header">
+        <h2>⚖️ Most Important Articles of Indian Constitution (संविधान के प्रमुख अनुच्छेद)</h2>
+        <a href="notes-polity.html" class="rapid-view-all-link">Open Full Polity Questions Notebook &rarr;</a>
       </div>
+      <p style="color: #475569; font-size: 14px; margin-bottom: 14px;">
+        प्रतियोगी परीक्षाओं में बार-बार पूछे जाने वाले संविधान के महत्वपूर्ण अनुच्छेदों का 1-मिनट क्विक चार्ट:
+      </p>
+      <div class="responsive-table-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="width: 140px;">अनुच्छेद (Article)</th>
+              <th>प्रावधान एवं संवैधानिक विषय</th>
+              <th>परीक्षा में बार-बार आने वाला बिंदु</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>अनुच्छेद 14</strong></td>
+              <td>विधि के समक्ष समता एवं विधियों का समान संरक्षण</td>
+              <td>ब्रिटेन व अमेरिकी संविधान से प्रेरित मूल अधिकार</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 17</strong></td>
+              <td>अस्पृश्यता का अंत (Abolition of Untouchability)</td>
+              <td>किसी भी रूप में छुआछूत का आचरण दंडनीय अपराध</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 21</strong></td>
+              <td>प्राण एवं दैहिक स्वतंत्रता का संरक्षण (Right to Life)</td>
+              <td>आपातकाल (352) में भी निलंबित नहीं हो सकता</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 21A</strong></td>
+              <td>6 से 14 वर्ष के बच्चों के लिए अनिवार्य शिक्षा</td>
+              <td>86वां संविधान संशोधन अधिनियम 2002</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 32</strong></td>
+              <td>संवैधानिक उपचारों का अधिकार (Right to Constitutional Remedies)</td>
+              <td>डॉ. अंबेडकर ने 'संविधान की आत्मा और हृदय' कहा (5 प्रकार की रिट)</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 44</strong></td>
+              <td>समान नागरिक संहिता (Uniform Civil Code - UCC)</td>
+              <td>राज्य के नीति निदेशक तत्व (DPSP)</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 51A</strong></td>
+              <td>मौलिक कर्तव्य (कुल 11 कर्तव्य)</td>
+              <td>42वां संशोधन 1976 (स्वर्ण सिंह समिति)</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 61</strong></td>
+              <td>राष्ट्रपति पर महाभियोग की प्रक्रिया</td>
+              <td>14 दिन पूर्व लिखित सूचना अनिवार्य</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 324</strong></td>
+              <td>भारत का स्वतंत्र निर्वाचन आयोग</td>
+              <td>स्थापना 25 जनवरी 1950 (राष्ट्रीय मतदाता दिवस)</td>
+            </tr>
+            <tr>
+              <td><strong>अनुच्छेद 368</strong></td>
+              <td>संसद की संविधान संशोधन शक्ति</td>
+              <td>दक्षिण अफ्रीका के संविधान से प्रेरित</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-      <div class="filter-pills-row">
-        <button type="button" class="filter-pill active" onclick="filterCategory('all', this)">🌟 All Subjects (107)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('history', this)">🏛️ History (30)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('science', this)">🧬 Science (21)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('polity', this)">⚖️ Indian Polity (20)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('geography', this)">🌍 Geography (20)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('static', this)">🎯 Static GK (13)</button>
-        <button type="button" class="filter-pill" onclick="filterCategory('economics', this)">💰 Economics (3)</button>
+    <!-- RAPID CHART 2: HISTORICAL BATTLES -->
+    <section class="rapid-section">
+      <div class="rapid-section-header">
+        <h2>⚔️ Major Historical Battles of India (भारतीय इतिहास के प्रमुख युद्ध)</h2>
+        <a href="notes-history.html" class="rapid-view-all-link">Open Full History Questions Notebook &rarr;</a>
       </div>
+      <p style="color: #475569; font-size: 14px; margin-bottom: 14px;">
+        विभिन्न भर्ती परीक्षाओं में सीधे पूछे जाने वाले प्रमुख ऐतिहासिक युद्ध और उनके निर्णायक परिणाम:
+      </p>
+      <div class="responsive-table-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="width: 120px;">वर्ष (Year)</th>
+              <th>प्रमुख युद्ध का नाम</th>
+              <th>किनके मध्य लड़ा गया</th>
+              <th>ऐतिहासिक परिणाम</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>326 ई.पू.</strong></td>
+              <td>हाईडेस्पीज (झेलम) का युद्ध</td>
+              <td>सिकंदर और पंजाब के राजा पोरस</td>
+              <td>सिकंदर की विजय, पोरस की वीरता से प्रभावित होकर राज्य लौटाया</td>
+            </tr>
+            <tr>
+              <td><strong>261 ई.पू.</strong></td>
+              <td>कलिंग का युद्ध</td>
+              <td>मौर्य सम्राट अशोक और कलिंग नरेश</td>
+              <td>अशोक का हृदय परिवर्तन, 'धम्म विजय' को अपनाया (13वां शिलालेख)</td>
+            </tr>
+            <tr>
+              <td><strong>1191 ई.</strong></td>
+              <td>तराइन का प्रथम युद्ध</td>
+              <td>पृथ्वीराज चौहान और मुहम्मद गोरी</td>
+              <td>पृथ्वीराज चौहान की निर्णायक विजय</td>
+            </tr>
+            <tr>
+              <td><strong>1192 ई.</strong></td>
+              <td>तराइन का द्वितीय युद्ध</td>
+              <td>मुहम्मद गोरी और पृथ्वीराज चौहान</td>
+              <td>गोरी की विजय, भारत में मुस्लिम शासन की शुरुआत</td>
+            </tr>
+            <tr>
+              <td><strong>1526 ई.</strong></td>
+              <td>पानीपत का प्रथम युद्ध</td>
+              <td>बाबर और इब्राहिम लोदी</td>
+              <td>बाबर विजयी, भारत में मुगल साम्राज्य की नींव रखी</td>
+            </tr>
+            <tr>
+              <td><strong>1556 ई.</strong></td>
+              <td>पानीपत का द्वितीय युद्ध</td>
+              <td>अकबर (बैरम खां) और हेमू (हेमचंद्र)</td>
+              <td>मुगलों की विजय, दिल्ली पर पुनः मुगलों का आधिपत्य</td>
+            </tr>
+            <tr>
+              <td><strong>1576 ई.</strong></td>
+              <td>हल्दीघाटी का युद्ध</td>
+              <td>महाराणा प्रताप और अकबर (मानसिंह)</td>
+              <td>मेवाड़ का स्वाभिमान युद्ध, महाराणा प्रताप ने कभी अधीनता नहीं मानी</td>
+            </tr>
+            <tr>
+              <td><strong>1757 ई.</strong></td>
+              <td>प्लासी का युद्ध (23 जून)</td>
+              <td>रॉबर्ट क्लाइव और नवाब सिराजुद्दौला</td>
+              <td>मीर जाफर के विश्वासघात से अंग्रेज जीते, ब्रिटिश राज की नींव</td>
+            </tr>
+            <tr>
+              <td><strong>1764 ई.</strong></td>
+              <td>बक्सर का युद्ध (22 अक्टूबर)</td>
+              <td>हेक्टर मुनरो और त्रिगुट सेना (मीर कासिम)</td>
+              <td>अंग्रेजों की पूर्ण विजय, 1765 में इलाहाबाद की संधि से दीवानी अधिकार</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-      <div class="filter-status-bar">
-        <span>Showing <strong id="visibleCount" style="color: #0f172a;">107</strong> high-retention exam points</span>
-        <span style="font-weight: 500;">Click 📋 to copy any note</span>
+    <!-- RAPID CHART 3: SCIENCE CHEMICAL FORMULAS & UNITS -->
+    <section class="rapid-section">
+      <div class="rapid-section-header">
+        <h2>🧬 Important Chemical Formulas &amp; SI Units (रासायनिक सूत्र एवं मात्रक)</h2>
+        <a href="notes-science.html" class="rapid-view-all-link">Open Full Science Questions Notebook &rarr;</a>
       </div>
-    </div>
+      <div class="fast-facts-row">
+        <div class="fast-fact-card">
+          <strong>बेकिंग सोडा (खाने का सोडा):</strong>
+          रासायनिक नाम: सोडियम हाइड्रोजन कार्बोनेट / बाइकार्बोनेट<br>
+          सूत्र: <mark class="exam-key">$NaHCO_3$</mark>
+        </div>
+        <div class="fast-fact-card">
+          <strong>धावन सोडा (धोने का सोडा):</strong>
+          रासायनिक नाम: सोडियम कार्बोनेट डेकाहाइड्रेट<br>
+          सूत्र: <mark class="exam-key">$Na_2CO_3 \cdot 10H_2O$</mark>
+        </div>
+        <div class="fast-fact-card">
+          <strong>प्लास्टर ऑफ पेरिस (POP):</strong>
+          रासायनिक नाम: कैल्शियम सल्फेट हेमीहाइड्रेट<br>
+          सूत्र: <mark class="exam-key">$CaSO_4 \cdot \frac{1}{2}H_2O$</mark>
+        </div>
+        <div class="fast-fact-card">
+          <strong>विरंजक चूर्ण (Bleaching Powder):</strong>
+          रासायनिक नाम: कैल्शियम ऑक्सीक्लोराइड<br>
+          सूत्र: <mark class="exam-key">$CaOCl_2$</mark>
+        </div>
+        <div class="fast-fact-card">
+          <strong>भारी जल (Heavy Water):</strong>
+          ड्यूटेरियम ऑक्साइड (परमाणु रिएक्टर मंदक)<br>
+          सूत्र: <mark class="exam-key">$D_2O$</mark>
+        </div>
+        <div class="fast-fact-card">
+          <strong>हंसाने वाली गैस (Laughing Gas):</strong>
+          नाइट्रस ऑक्साइड (एनेस्थीसिया के रूप में)<br>
+          सूत्र: <mark class="exam-key">$N_2O$</mark>
+        </div>
+      </div>
+    </section>
 
-    <!-- SUBJECT-WISE SECTIONS CONTAINER -->
-    <div id="allSubjectSections">
+    <!-- RAPID CHART 4: GEOGRAPHICAL ORIGINS & PEAKS -->
+    <section class="rapid-section">
+      <div class="rapid-section-header">
+        <h2>🌍 Indian Rivers &amp; Highest Peaks Quick Facts (नदियां एवं पर्वत शिखर)</h2>
+        <a href="notes-geography.html" class="rapid-view-all-link">Open Full Geography Questions Notebook &rarr;</a>
+      </div>
+      <div class="fast-facts-row">
+        <div class="fast-fact-card">
+          <strong>गंगा नदी (2,525 किमी):</strong>
+          उद्गम: गंगोत्री हिमनद (भागीरथी नदी के रूप में)<br>
+          समागम: बंगाल की खाड़ी (सुंदरबन डेल्टा बनाती है)
+        </div>
+        <div class="fast-fact-card">
+          <strong>गोदावरी नदी (1,465 किमी):</strong>
+          उद्गम: त्र्यंबकेश्वर पहाड़ी, नासिक (महाराष्ट्र)<br>
+          उपनाम: 'दक्षिण गंगा' या 'वृद्ध गंगा' (प्रायद्वीपीय भारत की सबसे लंबी नदी)
+        </div>
+        <div class="fast-fact-card">
+          <strong>नर्मदा नदी (1,312 किमी):</strong>
+          उद्गम: अमरकंटक पहाड़ी (मध्य प्रदेश)<br>
+          विशेष: भ्रंश घाटी से बहकर अरब सागर में एश्चुअरी बनाती है (धुआंधार जलप्रपात)
+        </div>
+        <div class="fast-fact-card">
+          <strong>माउंट K2 / गॉडविन ऑस्टिन (8,611 मी):</strong>
+          स्थान: काराकोरम श्रेणी (लद्दाख/PoK)<br>
+          विशेष: भारत की सर्वोच्च चोटी एवं विश्व की दूसरी सबसे ऊंची चोटी
+        </div>
+        <div class="fast-fact-card">
+          <strong>कंचनजंगा (8,586 मी):</strong>
+          स्थान: सिक्किम (भारत-नेपाल सीमा)<br>
+          विशेष: पूर्ण रूप से भारतीय अधिकार क्षेत्र में भारत की सर्वोच्च चोटी
+        </div>
+        <div class="fast-fact-card">
+          <strong>अनाईमुडी (2,695 मी):</strong>
+          स्थान: अन्नामलाई पहाड़ी, केरल<br>
+          विशेष: दक्षिण भारत एवं पश्चिमी घाट की सर्वोच्च चोटी
+        </div>
+      </div>
+    </section>
 
-      <!-- SECTION 1: HISTORY -->
-      <section class="subject-block-container" data-section-cat="history">
-        <div class="subject-block-header">
-          <h2>🏛️ भारतीय इतिहास (History - 30 High-Yield Facts)</h2>
-          <a href="notes-history.html" class="subject-block-link">Open Full History Notebook &rarr;</a>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#01</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
+    <!-- RAPID CHART 5: 8 CLASSICAL DANCES OF INDIA -->
+    <section class="rapid-section">
+      <div class="rapid-section-header">
+        <h2>🎭 8 Classical Dances of India (भारत के 8 शास्त्रीय नृत्य)</h2>
+        <a href="notes-gk.html" class="rapid-view-all-link">Open Full Static GK Questions Notebook &rarr;</a>
       </div>
-      <h3 class="note-title">सिंधु घाटी सभ्यता की खोज एवं प्रमुख स्थल</h3>
-      <div class="note-content"><mark class="exam-key">1921 में दयाराम साहनी</mark> ने हड़प्पा की और <mark class="exam-key">1922 में राखालदास बनर्जी</mark> ने मोहनजोदड़ो की खोज की। लोथल (गुजरात) प्रमुख प्राचीन बंदरगाह व गोदीवाड़ा (Dockyard) था, जबकि कालीबंगा (राजस्थान) से जुते हुए खेत के साक्ष्य मिले।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#02</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
+      <div class="responsive-table-wrap">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>शास्त्रीय नृत्य</th>
+              <th>संबंधित राज्य</th>
+              <th>प्रसिद्ध कलाकार / मुख्य विशेषता</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>भरतनाट्यम</strong></td>
+              <td>तमिलनाडु (सबसे प्राचीन नृत्य)</td>
+              <td>रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति, पद्म सुब्रह्मण्यम</td>
+            </tr>
+            <tr>
+              <td><strong>कथक</strong></td>
+              <td>उत्तर प्रदेश (उत्तर भारत)</td>
+              <td>पंडित बिरजू महाराज, लच्छू महाराज, सितारा देवी (कथा कहने की कला)</td>
+            </tr>
+            <tr>
+              <td><strong>कथकली</strong></td>
+              <td>केरल (पुरुष प्रधान नृत्य नाटक)</td>
+              <td>विशाल मुखौटे, चेहरे के गहरे रंग (हरा-भला, लाल-बुरा)</td>
+            </tr>
+            <tr>
+              <td><strong>मोहिनीअट्टम</strong></td>
+              <td>केरल (महिला एकल नृत्य)</td>
+              <td>भगवान विष्णु के मोहिनी अवतार की सुंदर भाव-भंगिमाएं</td>
+            </tr>
+            <tr>
+              <td><strong>कुचिपुड़ी</strong></td>
+              <td>आंध्र प्रदेश (कुचेलापुरम गांव)</td>
+              <td>राधा रेड्डी, राजा रेड्डी (थाली और मटके पर नृत्य की परंपरा)</td>
+            </tr>
+            <tr>
+              <td><strong>ओडिसी</strong></td>
+              <td>ओडिशा (मंदिर नृत्य परंपरा)</td>
+              <td>केलुचरण महापात्र, माधवी मुद्गल (त्रिभंग मुद्रा प्रसिद्ध)</td>
+            </tr>
+            <tr>
+              <td><strong>मणिपुरी</strong></td>
+              <td>मणिपुर (राधा-कृष्ण रासलीला)</td>
+              <td>झावेरी बहनें (नयना, सुवर्णा, दर्शना), कुमिल पोशाक</td>
+            </tr>
+            <tr>
+              <td><strong>सत्त्रिया</strong></td>
+              <td>असम (वैष्णव मठों की परंपरा)</td>
+              <td>15वीं शताब्दी में महान संत श्रीमंत शंकरदेव द्वारा प्रतिपादित</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <h3 class="note-title">ऋग्वेद व चारों वेद</h3>
-      <div class="note-content">सबसे प्राचीन वेद <mark class="exam-key">ऋग्वेद</mark> है जिसमें 10 मंडल, 1,028 सूक्त और प्रसिद्ध <mark class="exam-key">गायत्री मंत्र (तीसरे मंडल में)</mark> है। सामवेद को भारतीय संगीत का जनक माना जाता है, यजुर्वेद कर्मकांड व गद्य-पद्य दोनों में है, और अथर्ववेद तंत्र-मंत्र व औषधि से संबंधित है।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#03</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">महात्मा बुद्ध एवं बौद्ध धर्म</h3>
-      <div class="note-content">गौतम बुद्ध का जन्म <mark class="exam-key">लुम्बिनी (नेपाल)</mark> में हुआ था। बोधगया में पीपल वृक्ष (बोधिवृक्ष) के नीचे ज्ञान प्राप्त हुआ। उन्होंने अपना प्रथम उपदेश <mark class="exam-key">सारनाथ</mark> में दिया (धर्मचक्रप्रवर्तन) और महापरिनिर्वाण <mark class="exam-key">कुशीनगर</mark> (उत्तर प्रदेश) में हुआ।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#04</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">चार प्रमुख बौद्ध संगीतियां (Buddhist Councils)</h3>
-      <div class="note-content">1. प्रथम संगीति: राजगृह (अजातशत्रु के काल में); 2. द्वितीय: वैशाली (कालाशोक); 3. तृतीय: पाटलिपुत्र (अशोक के संरक्षण में); 4. चतुर्थ: <mark class="exam-key">कुंडलवन, कश्मीर (कनिष्क के काल में)</mark> जहां बौद्ध धर्म हीनयान और महायान में विभाजित हुआ।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#05</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भगवान महावीर एवं जैन धर्म</h3>
-      <div class="note-content">भगवान महावीर जैन धर्म के <mark class="exam-key">24वें व अंतिम तीर्थंकर</mark> थे (प्रथम तीर्थंकर ऋषभदेव थे)। महावीर का जन्म वैशाली के कुंडग्राम में हुआ और निर्वाण पावापुरी में प्राप्त हुआ। जैन धर्म के त्रिरत्न हैं: सम्यक दर्शन, सम्यक ज्ञान और सम्यक आचरण।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#06</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मौर्य साम्राज्य व चाणक्य का अर्थशास्त्र</h3>
-      <div class="note-content">चंद्रगुप्त मौर्य ने नंद वंश के धनानंद को हराकर 322 ईसा पूर्व में मौर्य साम्राज्य की स्थापना की। उनके गुरु <mark class="exam-key">चाणक्य (विष्णुगुप्त/कौटिल्य)</mark> ने राजनीति और शासन कला पर प्रसिद्ध ग्रंथ <mark class="exam-key">अर्थशास्त्र</mark> लिखा। मेगस्थनीज ने इंडिका पुस्तक लिखी।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#07</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">सम्राट अशोक व कलिंग युद्ध</h3>
-      <div class="note-content">सम्राट अशोक ने 261 ई.पू. में <mark class="exam-key">कलिंग युद्ध</mark> लड़ा, जिसके भारी रक्तपात के बाद उन्होंने बौद्ध धर्म (उपगुप्त से दीक्षा) अपनाया। अशोक के 13वें शिलालेख में कलिंग युद्ध का वर्णन है। अशोक के अभिलेखों को सर्वप्रथम <mark class="exam-key">1837 में जेम्स प्रिंसेप</mark> ने पढ़ा था।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (प्राचीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#08</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">गुप्त काल - भारतीय इतिहास का स्वर्ण युग</h3>
-      <div class="note-content">गुप्त वंश के संस्थापक श्रीगुप्त थे। <mark class="exam-key">समुद्रगुप्त</mark> को इतिहासकार विंसेंट स्मिथ ने "भारत का नेपोलियन" कहा (प्रयाग प्रशस्ति - हरिषेण द्वारा रचित)। <mark class="exam-key">चंद्रगुप्त द्वितीय (विक्रमादित्य)</mark> के दरबार में नवरत्न थे, जिनमें महाकवि कालिदास प्रमुख थे।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#09</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">तराइन के ऐतिहासिक युद्ध (1191 & 1192)</h3>
-      <div class="note-content">तराइन का प्रथम युद्ध (1191) में <mark class="exam-key">पृथ्वीराज चौहान तृतीय</mark> ने मुहम्मद गोरी को पराजित किया। तराइन के द्वितीय युद्ध (1192) में मुहम्मद गोरी ने छल से पृथ्वीराज चौहान को हराया, जिससे भारत में मुस्लिम शासन की नींव पड़ी।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#10</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">दिल्ली सल्तनत के 5 वंश (क्रम याद रखें)</h3>
-      <div class="note-content">क्रम: <mark class="exam-key">गुलाम वंश (1206-1290) &rarr; खिलजी (1290-1320) &rarr; तुगलक (1320-1414) &rarr; सैयद (1414-1451) &rarr; लोदी वंश (1451-1526)</mark>। गुलाम वंश का संस्थापक कुतुबुद्दीन ऐबक था (लाखबख्श उपाधि), और भारत की पहली महिला मुस्लिम शासिका <mark class="exam-key">रजिया सुल्तान</mark> थी।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#11</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">अलाउद्दीन खिलजी की बाजार नियंत्रण नीति</h3>
-      <div class="note-content">अलाउद्दीन खिलजी ने मूल्य नियंत्रण व राशनिंग प्रणाली लागू की। उसने सैनिकों को नकद वेतन देने तथा घोड़ों को दागने व सैनिकों का हुलिया लिखने की प्रथा शुरू की। उसने चित्तौड़ पर 1303 में आक्रमण किया (पद्मावत - मलिक मुहम्मद जायसी)।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#12</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मुहम्मद बिन तुगलक की 5 योजनाएं</h3>
-      <div class="note-content">मुहम्मद बिन तुगलक को विरोधाभासों का मिश्रण कहा जाता है। उसकी योजनाएं: राजधानी दिल्ली से दौलताबाद (देवगिरि) स्थानांतरण, सांकेतिक मुद्रा (तांबे/कांसे के सिक्के), दोआब में कर वृद्धि, खुरासान व कराचिल अभियान।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#13</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">विजयनगर साम्राज्य की स्थापना (1336)</h3>
-      <div class="note-content">विजयनगर साम्राज्य की स्थापना <mark class="exam-key">हरिहर और बुक्का</mark> नामक दो भाइयों ने तुंगभद्रा नदी के तट पर की। राजधानी हम्पी थी। इसके सबसे प्रतापी राजा <mark class="exam-key">कृष्णदेव राय (तुलुव वंश)</mark> थे, जिन्होंने आमुक्तमाल्याद ग्रंथ लिखा और उनके दरबार में अष्टदिग्गज कवि थे।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#14</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">पानीपत का प्रथम युद्ध (1526) एवं मुगल वंश</h3>
-      <div class="note-content">21 अप्रैल 1526 को पानीपत के प्रथम युद्ध में <mark class="exam-key">बाबर ने इब्राहिम लोदी को हराकर</mark> भारत में मुगल साम्राज्य की नींव रखी। बाबर ने इसमें तुगलमा युद्ध नीति और तोपखाने का पहली बार सफल प्रयोग किया। 1527 में खानवा का युद्ध (राणा सांगा के विरुद्ध) जीता।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#15</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">शेरशाह सूरी एवं ग्रैंड ट्रंक (GT) रोड</h3>
-      <div class="note-content">शेरशाह सूरी ने हुमायूं को चौसा (1539) और बिलग्राम/कन्नौज (1540) के युद्ध में पराजित किया। उसने कोलकाता से पेशावर तक <mark class="exam-key">ग्रैंड ट्रंक रोड (सड़क-ए-आजम)</mark> बनवाई, चांदी का "रुपया" चलाया और उसका मकबरा <mark class="exam-key">सासाराम (बिहार)</mark> में झील के बीच स्थित है।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#16</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">सम्राट अकबर, हल्दीघाटी युद्ध व नवरत्न</h3>
-      <div class="note-content">अकबर ने 1556 में पानीपत का दूसरा युद्ध (हेमू के विरुद्ध) जीता। <mark class="exam-key">हल्दीघाटी का युद्ध (1576)</mark> महाराणा प्रताप और अकबर के सेनापति मानसिंह के बीच लड़ा गया। अकबर ने 1582 में <mark class="exam-key">दीन-ए-इलाही धर्म</mark> शुरू किया (स्वीकारने वाला एकमात्र हिंदू बीरबल था)।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (मध्यकालीन इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#17</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">छत्रपति शिवाजी महाराज एवं मराठा साम्राज्य</h3>
-      <div class="note-content">शिवाजी महाराज का राज्याभिषेक 1674 में रायगढ़ किले में पंडित गंगाभट्ट द्वारा हुआ और उन्हें <mark class="exam-key">छत्रपति</mark> की उपाधि मिली। 1665 में जयसिंह और शिवाजी के बीच <mark class="exam-key">पुरंदर की संधि</mark> हुई। उनके मंत्रिमंडल को <mark class="exam-key">अष्टप्रधान</mark> कहा जाता था (पेशवा मुख्य प्रधानमंत्री होता था)।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#18</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्लासी (1757) एवं बक्सर का युद्ध (1764)</h3>
-      <div class="note-content">23 जून 1757 को प्लासी के युद्ध में रॉबर्ट क्लाइव ने बंगाल के नवाब सिराजुद्दौला को मीर जाफर के विश्वासघात से हराया। <mark class="exam-key">22 अक्टूबर 1764 को बक्सर के युद्ध</mark> में हेक्टर मुनरो के नेतृत्व में अंग्रेजों ने मीर कासिम, शुजाउद्दौला और शाह आलम द्वितीय की संयुक्त सेना को हराकर भारत पर राजनीतिक नियंत्रण स्थापित किया।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#19</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">1857 का प्रथम स्वतंत्रता संग्राम (महाविद्रोह)</h3>
-      <div class="note-content"><mark class="exam-key">मंगल पांडे</mark> ने 29 मार्च 1857 को बैरकपुर में चर्बी वाले कारतूस के विरोध में विद्रोह की शुरुआत की। 10 मई 1857 को मेरठ छावनी से क्रांति का बिगुल बजा। प्रतीक: <mark class="exam-key">कमल और रोटी</mark>। लखनऊ से बेगम हजरत महल, कानपुर से नाना साहेब/तात्या टोपे, झांसी से रानी लक्ष्मीबाई, और जगदीशपुर (बिहार) से कुंवर सिंह ने नेतृत्व किया।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#20</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख 19वीं सदी के समाज सुधार आंदोलन</h3>
-      <div class="note-content">1. ब्रह्म समाज (1828): राजा राममोहन राय (सती प्रथा उन्मूलन 1829 विलियम बेंटिक के सहयोग से); 2. आर्य समाज (1875): <mark class="exam-key">स्वामी दयानंद सरस्वती ("वेदों की ओर लौटो", सत्यार्थ प्रकाश पुस्तक)</mark>; 3. रामकृष्ण मिशन (1897): स्वामी विवेकानंद (शिकागो धर्म सम्मेलन 1893); 4. सत्यशोधक समाज (1873): ज्योतिबा फुले (गुलामगिरी पुस्तक)।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#21</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय राष्ट्रीय कांग्रेस (INC) की स्थापना 1885</h3>
-      <div class="note-content">28 दिसंबर 1885 को बंबई (गोकुलदास तेजपाल संस्कृत कॉलेज) में सेवानिवृत्त अंग्रेज अधिकारी <mark class="exam-key">ए.ओ. ह्यूम</mark> द्वारा स्थापना हुई। प्रथम अध्यक्ष <mark class="exam-key">व्योमेश चंद्र बनर्जी</mark> थे (कुल 72 प्रतिनिधियों ने भाग लिया)। उस समय भारत का वायसराय लॉर्ड डफरिन था।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#22</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">कांग्रेस के सबसे महत्वपूर्ण ऐतिहासिक अधिवेशन</h3>
-      <div class="note-content">1906 कोलकाता: दादाभाई नौरोजी द्वारा पहली बार "स्वराज" शब्द की मांग; 1907 सूरत: कांग्रेस का नरम दल व गरम दल में विभाजन; 1916 लखनऊ: कांग्रेस-मुस्लिम लीग समझौता; <mark class="exam-key">1924 बेलगाम: एकमात्र अधिवेशन जिसकी अध्यक्षता महात्मा गांधी ने की</mark>; 1925 कानपुर: प्रथम भारतीय महिला अध्यक्ष सरोजिनी नायडू; <mark class="exam-key">1929 लाहौर: पं. जवाहरलाल नेहरू द्वारा पूर्ण स्वराज का प्रस्ताव</mark>।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#23</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">बंगाल विभाजन (1905) व स्वदेशी आंदोलन</h3>
-      <div class="note-content"><mark class="exam-key">लॉर्ड कर्जन</mark> ने 16 अक्टूबर 1905 को बंगाल का विभाजन लागू किया, जिसके विरोध में पूरे देश में स्वदेशी एवं बहिष्कार आंदोलन शुरू हुआ। रवींद्रनाथ टैगोर ने "आमार सोनार बांग्ला" गीत लिखा और लोगों ने एकता के प्रतीक के रूप में राखी बांधी। 1911 में लॉर्ड हार्डिंग द्वितीय ने बंगाल विभाजन रद्द किया।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#24</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">गांधीजी का भारत आगमन एवं चंपारण सत्याग्रह</h3>
-      <div class="note-content">गांधीजी <mark class="exam-key">9 जनवरी 1915 को दक्षिण अफ्रीका से भारत लौटे</mark> (इसी उपलक्ष्य में हर वर्ष प्रवासी भारतीय दिवस मनाया जाता है)। भारत में उनका प्रथम सफल सत्याग्रह <mark class="exam-key">1917 में चंपारण (बिहार)</mark> में नील की खेती की तिनकठिया प्रथा (3/20 भाग) के विरोध में हुआ।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#25</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">जलियांवाला बाग हत्याकांड (13 अप्रैल 1919)</h3>
-      <div class="note-content">रौलट एक्ट ("ना कोई अपील, ना कोई वकील, ना कोई दलील") के तहत डॉ. सैफुद्दीन किचलू और डॉ. सत्यपाल की गिरफ्तारी के विरोध में अमृतसर के जलियांवाला बाग में शांतिपूर्ण सभा पर <mark class="exam-key">जनरल डायर</mark> ने अंधाधुंध गोलियां चलवाईं। रवींद्रनाथ टैगोर ने विरोध में नाइटहुड की उपाधि त्याग दी।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#26</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">असहयोग आंदोलन व चौरी-चौरा कांड (1922)</h3>
-      <div class="note-content">1 अगस्त 1920 को गांधीजी ने असहयोग आंदोलन शुरू किया (इसी दिन बाल गंगाधर तिलक का निधन हुआ)। <mark class="exam-key">4 फरवरी 1922 को गोरखपुर (उत्तर प्रदेश) के चौरी-चौरा</mark> में उत्तेजित भीड़ ने थाने में 22 पुलिसकर्मियों को जिंदा जला दिया, जिससे दुखी होकर गांधीजी ने 12 फरवरी 1922 को आंदोलन वापस ले लिया।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#27</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">काकोरी ट्रेन एक्शन (9 अगस्त 1925)</h3>
-      <div class="note-content">हिंदुस्तान रिपब्लिकन एसोसिएशन (HRA) के क्रांतिकारियों (राम प्रसाद बिस्मिल, अशफाक उल्ला खां, राजेंद्र लाहिड़ी, रोशन सिंह) ने लखनऊ के पास काकोरी में सरकारी खजाने से भरी ट्रेन को लूटा। चंद्रशेखर आजाद मौके से बच निकले।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#28</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">दांडी मार्च एवं सविनय अवज्ञा आंदोलन (1930)</h3>
-      <div class="note-content">गांधीजी ने 12 मार्च 1930 को साबरमती आश्रम से 78 अनुयायियों के साथ <mark class="exam-key">240 मील की दांडी यात्रा</mark> शुरू की और 6 अप्रैल 1930 को समुद्र तट पर नमक बनाकर नमक कानून तोड़ा, जिसके साथ सविनय अवज्ञा आंदोलन प्रारंभ हुआ।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#29</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भगत सिंह, सुखदेव व राजगुरु का बलिदान</h3>
-      <div class="note-content">लाहौर षड्यंत्र केस में सॉन्डर्स की हत्या के आरोप में <mark class="exam-key">23 मार्च 1931</mark> को भगत सिंह, सुखदेव और राजगुरु को लाहौर जेल में फांसी दी गई। इस दिन को पूरे भारत में "शहीद दिवस" के रूप में मनाया जाता है। भगत सिंह ने "इंकलाब जिंदाबाद" का नारा जन-जन तक पहुंचाया।</div>
-    </article>
-<article class="note-card" data-cat="history">
-      <div class="note-card-head">
-        <span class="note-badge badge-history">🏛️ History (आधुनिक इतिहास)</span>
-        <div class="note-actions">
-          <span class="note-num">#30</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत छोड़ो आंदोलन (8 अगस्त 1942)</h3>
-      <div class="note-content">क्रिप्स मिशन की विफलता के बाद 8 अगस्त 1942 को मुंबई के ग्वालिया टैंक मैदान से गांधीजी ने <mark class="exam-key">"करो या मरो" (Do or Die)</mark> का ऐतिहासिक नारा देकर "भारत छोड़ो आंदोलन" (Quit India Movement) की शुरुआत की। 9 अगस्त की सुबह "ऑपरेशन जीरो ऑवर" के तहत सभी बड़े नेता गिरफ्तार कर लिए गए।</div>
-    </article>
-        </div>
-      </section>
+    </section>
 
-      <!-- SECTION 2: SCIENCE -->
-      <section class="subject-block-container" data-section-cat="science">
-        <div class="subject-block-header">
-          <h2>🧬 सामान्य विज्ञान (General Science - 21 High-Yield Facts)</h2>
-          <a href="notes-science.html" class="subject-block-link">Open Full Science Notebook &rarr;</a>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#31</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">कोशिका (Cell) के प्रमुख अंग व उनके उपनाम</h3>
-      <div class="note-content">कोशिका की खोज <mark class="exam-key">रॉबर्ट हुक (1665)</mark> ने की। जीवित कोशिका ल्यूवेनहॉक ने देखी। <mark class="exam-key">माइटोकॉन्ड्रिया</mark> = कोशिका का पावरहाउस (ऊर्जा गृह, ATP निर्माण); <mark class="exam-key">राइबोसोम</mark> = प्रोटीन की फैक्ट्री; <mark class="exam-key">लाइसोसोम</mark> = आत्मघाती थैली (Suicide Bag); केंद्रक (Nucleus) = कोशिका का मस्तिष्क/नियंत्रक।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#32</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">रक्त परिसंचरण व ब्लड ग्रुप (ABO System)</h3>
-      <div class="note-content">रक्त परिसंचरण की खोज <mark class="exam-key">विलियम हार्वे (1628)</mark> ने की। ब्लड ग्रुप की खोज <mark class="exam-key">कार्ल लैंडस्टीनर (1900)</mark> ने की। सर्वदाता (Universal Donor) = <mark class="exam-key">O Negative (O-)</mark>; सर्वग्राही (Universal Recipient) = <mark class="exam-key">AB Positive (AB+)</mark>। सामान्य रक्तचाप (BP) 120/80 mmHg होता है (मापक: स्फिग्मोमैनोमीटर)।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#33</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">विटामिन, उनके रासायनिक नाम व कमी से होने वाले रोग</h3>
-      <div class="note-content">विटामिन शब्द कैसिमिर फंक (1912) ने दिया। <br>&bull; <mark class="exam-key">विटामिन A (रेटिनॉल)</mark>: रतौंधी (Night Blindness)<br>&bull; <mark class="exam-key">विटामिन B1 (थायमिन)</mark>: बेरी-बेरी<br>&bull; <mark class="exam-key">विटामिन C (एस्कॉर्बिक एसिड)</mark>: स्कर्वी (मसूड़ों से खून आना)<br>&bull; <mark class="exam-key">विटामिन D (कैल्सिफेरॉल)</mark>: रिकेट्स (सूखा रोग)<br>&bull; <mark class="exam-key">विटामिन E (टोकोफेरॉल)</mark>: जनन क्षमता में कमी (बांझपन)<br>&bull; <mark class="exam-key">विटामिन K (फिलोक्यूनोन)</mark>: रक्त का थक्का (Blood Clotting) न जमना।<br>जल में घुलनशील: <mark class="exam-key">B & C</mark>; वसा में घुलनशील: <mark class="exam-key">K, E, D, A</mark>।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#34</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मानव शरीर की ग्रंथियां एवं हार्मोन</h3>
-      <div class="note-content">शरीर की सबसे बड़ी ग्रंथि <mark class="exam-key">यकृत (Liver)</mark> है। सबसे बड़ी अंतःस्रावी ग्रंथि थायरॉयड है। <mark class="exam-key">पीयूष ग्रंथि (Pituitary Gland)</mark> को "मास्टर ग्रंथि" कहते हैं जो मस्तिष्क में होती है। <mark class="exam-key">इंसुलिन हार्मोन</mark> अग्न्याशय (Pancreas) की बीटा कोशिकाओं से निकलता है (इसकी कमी से मधुमेह/Diabetes होता है)। एड्रिनलिन को "लड़ो या उड़ो" (Fight or Flight) हार्मोन कहा जाता है।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#35</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मानव कंकाल तंत्र (Bones & Muscles)</h3>
-      <div class="note-content">वयस्क मानव शरीर में कुल <mark class="exam-key">206 हड्डियां</mark> होती हैं (नवजात में ~300)। शरीर की सबसे लंबी व मजबूत हड्डी <mark class="exam-key">फीमर (Femur - जांघ की हड्डी)</mark> है। सबसे छोटी हड्डी <mark class="exam-key">स्टेप्स (Stapes - कान की हड्डी)</mark> है। हड्डियों को मांसपेशियों से जोड़ने वाला ऊतक <mark class="exam-key">टेंडन (Tendon)</mark> है और हड्डी को हड्डी से जोड़ने वाला <mark class="exam-key">लिगामेंट (Ligament)</mark> है।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#36</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रकाश संश्लेषण (Photosynthesis)</h3>
-      <div class="note-content">पौधे सूर्य के प्रकाश, क्लोरोफिल, जल (H2O) और CO2 की उपस्थिति में ग्लूकोज बनाते हैं और <mark class="exam-key">ऑक्सीजन (O2)</mark> गैस मुक्त करते हैं। प्रकाश संश्लेषण में निकलने वाली O2 गैस जल के अपघटन (Photolysis) से प्राप्त होती है। पत्तियों का हरा रंग <mark class="exam-key">क्लोरोफिल (पर्णहरित)</mark> के कारण होता है, जिसमें <mark class="exam-key">मैग्नीशियम (Mg)</mark> धातु पाई जाती है।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#37</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख संक्रामक रोग व उनके कारक</h3>
-      <div class="note-content">&bull; <mark class="exam-key">जीवाणु (Bacteria)</mark>: टायफाइड, हैजा, टीबी (तपेदिक/क्षय), टिटनेस, प्लेग, डिप्थीरिया, काली खांसी।<br>&bull; <mark class="exam-key">विषाणु (Virus)</mark>: एड्स (HIV), पोलियो, चेचक, रेबीज, डेंगू, इन्फ्लूएंजा, हेपेटाइटिस।<br>&bull; <mark class="exam-key">प्रोटोजोआ (Protozoa)</mark>: मलेरिया (मादा एनाफिलीज मच्छर), पायरिया, कालाजार (सैंडफ्लाई), पेचिश।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#38</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भौतिक राशियां एवं उनके SI मात्रक (SI Units)</h3>
-      <div class="note-content">&bull; बल (Force) = <mark class="exam-key">न्यूटन (N)</mark><br>&bull; कार्य व ऊर्जा = <mark class="exam-key">जूल (J)</mark><br>&bull; शक्ति (Power) = <mark class="exam-key">वाट (W)</mark> (1 हॉर्सपावर = 746 वाट)<br>&bull; दाब (Pressure) = <mark class="exam-key">पास्कल (Pa)</mark><br>&bull; आवृत्ति (Frequency) = <mark class="exam-key">हर्ट्ज़ (Hz)</mark><br>&bull; विद्युत धारा = <mark class="exam-key">एम्पीयर (A)</mark><br>&bull; विद्युत प्रतिरोध = <mark class="exam-key">ओम (&Omega;)</mark><br>&bull; ज्योति तीव्रता = <mark class="exam-key">कैंडेला (cd)</mark><br>&bull; लेंस की क्षमता = <mark class="exam-key">डायोप्टर (D)</mark>।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#39</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रकाश का परावर्तन, अपवर्तन व प्रकीर्णन</h3>
-      <div class="note-content">आकाश का नीला रंग और सूर्योदय/सूर्यास्त के समय सूर्य का लाल दिखना <mark class="exam-key">प्रकाश के प्रकीर्णन (Scattering)</mark> के कारण होता है। तारों का टिमटिमाना <mark class="exam-key">प्रकाश के अपवर्तन (Refraction)</mark> के कारण होता है। हीरे का चमकना, मृगमरीचिका (Mirage) और ऑप्टिकल फाइबर <mark class="exam-key">पूर्ण आंतरिक परावर्तन (TIR)</mark> के सिद्धांत पर काम करते हैं।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#40</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">दर्पण एवं लेंस के व्यावहारिक उपयोग</h3>
-      <div class="note-content">&bull; <mark class="exam-key">उत्तल दर्पण (Convex Mirror)</mark>: वाहनों के साइड/रियर व्यू मिरर (पीछे का बड़ा दृश्य सीधा देखने हेतु)।<br>&bull; <mark class="exam-key">अवतल दर्पण (Concave Mirror)</mark>: दाढ़ी बनाने का शीशा, दंत चिकित्सक (Dentist), कार की हेडलाइट, सोलर कुकर।<br>&bull; निकट दृष्टि दोष (Myopia) के निवारण हेतु <mark class="exam-key">अवतल लेंस (Concave Lens)</mark> का उपयोग होता है।<br>&bull; दूर दृष्टि दोष (Hypermetropia) हेतु <mark class="exam-key">उत्तल लेंस (Convex Lens)</mark> का उपयोग होता है।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#41</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">ध्वनि तरंगें एवं उनकी विशेषताएं</h3>
-      <div class="note-content">ध्वनि एक अनुदैर्ध्य यांत्रिक तरंग है, जो <mark class="exam-key">निर्वात (Vacuum) में गमन नहीं कर सकती</mark>। ध्वनि की चाल सबसे अधिक ठोस (जैसे स्टील में ~5100 m/s), फिर द्रव में, और सबसे कम गैस में होती है (हवा में ध्वनि का वेग 332 m/s है)। मनुष्य 20 Hz से 20,000 Hz तक की श्रव्य तरंगें (Audible waves) सुन सकता है। चमगादड़ पराश्रव्य तरंगें (>20,000 Hz) उत्सर्जित करते हैं।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#42</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">गुरुत्वाकर्षण एवं पलायन वेग (Escape Velocity)</h3>
-      <div class="note-content">पृथ्वी पर गुरुत्वीय त्वरण g = 9.8 m/s² होता है। भूमध्य रेखा पर g का मान न्यूनतम तथा ध्रुवों (Poles) पर अधिकतम होता है। लिफ्ट ऊपर जाने पर व्यक्ति का भार बढ़ा हुआ महसूस होता है। पृथ्वी का <mark class="exam-key">पलायन वेग 11.2 किमी/सेकंड</mark> है, जबकि चंद्रमा पर 2.38 किमी/सेकंड है (यही कारण है कि चंद्रमा पर वायुमंडल नहीं है)।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#43</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">दैनिक जीवन के प्रमुख रासायनिक सूत्र (Chemical Formulas)</h3>
-      <div class="note-content">&bull; साधारण नमक = <mark class="exam-key">NaCl</mark> (सोडियम क्लोराइड)<br>&bull; खाने का सोडा (Baking Soda) = <mark class="exam-key">NaHCO3</mark> (सोडियम बाइकार्बोनेट)<br>&bull; धोने का सोडा (Washing Soda) = <mark class="exam-key">Na2CO3.10H2O</mark><br>&bull; कास्टिक सोडा = <mark class="exam-key">NaOH</mark><br>&bull; विरंजक चूर्ण (Bleaching Powder) = <mark class="exam-key">CaOCl2</mark><br>&bull; प्लास्टर ऑफ पेरिस (POP) = <mark class="exam-key">CaSO4.1/2H2O</mark><br>&bull; जिप्सम = <mark class="exam-key">CaSO4.2H2O</mark><br>&bull; लाफिंग गैस (हंसाने वाली गैस) = <mark class="exam-key">N2O</mark> (नाइट्रस ऑक्साइड)<br>&bull; भारी जल = <mark class="exam-key">D2O</mark> (ड्यूटेरियम ऑक्साइड - मंदक के रूप में)।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#44</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">पीएच मान (pH Value Scale)</h3>
-      <div class="note-content">pH स्केल की खोज <mark class="exam-key">सोरेन्सन (1909)</mark> ने की। 0 से 7 अम्लीय (Acidic), 7 उदासीन (Neutral), और 7 से 14 क्षारीय (Basic) होता है।<br>&bull; शुद्ध जल = <mark class="exam-key">7.0</mark><br>&bull; मानव रक्त = <mark class="exam-key">7.4</mark> (हल्का क्षारीय)<br>&bull; समुद्री जल = ~8.4<br>&bull; लार (Saliva) = ~6.5 - 6.8<br>&bull; सिरका (Vinegar) = ~3.0<br>&bull; नींबू का रस = ~2.2 - 2.4<br>&bull; आमाशय रस (HCl) = ~1.2 - 1.5।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#45</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख मिश्रधातुएं (Alloys) व घटक</h3>
-      <div class="note-content">&bull; पीतल (Brass) = <mark class="exam-key">तांबा (Cu) + जस्ता (Zn)</mark><br>&bull; कांसा (Bronze) = <mark class="exam-key">तांबा (Cu) + टिन (Sn)</mark><br>&bull; टांका/सोल्डर = सीसा (Pb) + टिन (Sn)<br>&bull; स्टेनलेस स्टील = लोहा (Fe) + क्रोमियम (Cr) + निकेल (Ni) + कार्बन<br>&bull; जर्मन सिल्वर = तांबा + जस्ता + निकेल (नोट: इसमें चांदी 0% होती है)।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#46</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">द्रव धातु एवं द्रव अधातु</h3>
-      <div class="note-content">कमरे के सामान्य तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र धातु <mark class="exam-key">पारा (Mercury - Hg)</mark> है (सिंदूर का रासायनिक नाम मरक्यूरिक सल्फाइड HgS है)। कमरे के तापमान पर द्रव अवस्था में पाई जाने वाली एकमात्र अधातु <mark class="exam-key">ब्रोमीन (Bromine - Br)</mark> है।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (परमाणु संरचना)</span>
-        <div class="note-actions">
-          <span class="note-num">#79</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">परमाणु के मूलभूत कण एवं उनके खोजकर्ता</h3>
-      <div class="note-content">&bull; इलेक्ट्रॉन (ऋणावेशित) = <mark class="exam-key">जे.जे. थॉमसन (1897)</mark><br>&bull; प्रोटॉन (धनावेशित) = <mark class="exam-key">गोल्डस्टीन (खोज), रदरफोर्ड (नामकरण)</mark><br>&bull; न्यूट्रॉन (उदासीन) = <mark class="exam-key">जेम्स चैडविक (1932)</mark><br>&bull; परमाणु के नाभिक की खोज <mark class="exam-key">अर्नेस्ट रदरफोर्ड</mark> ने अल्फा-कण प्रकीर्णन प्रयोग द्वारा की थी (नाभिक में प्रोटॉन + न्यूट्रॉन = न्यूक्लिऑन होते हैं)।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (आवर्त सारणी)</span>
-        <div class="note-actions">
-          <span class="note-num">#80</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">आवर्त सारणी के नियम (Periodic Table Laws)</h3>
-      <div class="note-content">सर्वप्रथम तत्वों का वर्गीकरण मेंडलीफ ने 1869 में "परमाणु भार" (Atomic Mass) के आधार पर किया। <mark class="exam-key">आधुनिक आवर्त सारणी 1913 में हेनरी मोसले</mark> ने "परमाणु क्रमांक" (Atomic Number) के आधार पर बनाई। आधुनिक आवर्त सारणी में कुल <mark class="exam-key">7 आवर्त (Periods) और 18 वर्ग (Groups)</mark> हैं। 18वें वर्ग को अक्रिय गैसें/शून्य वर्ग (He, Ne, Ar, Kr, Xe, Rn) कहते हैं।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (जीवविज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#81</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मानव नेत्र एवं दृष्टि दोष (Human Eye)</h3>
-      <div class="note-content">स्वस्थ मानव नेत्र के लिए स्पष्ट दृष्टि की न्यूनतम दूरी <mark class="exam-key">25 सेमी</mark> होती है और अधिकतम दूरी अनंत होती है। नेत्रदान (Eye Donation) में आंख का <mark class="exam-key">कॉर्निया (Cornea)</mark> दान किया जाता है। रेटिना पर बनने वाला प्रतिबिंब <mark class="exam-key">वास्तविक, उल्टा और वस्तु से छोटा</mark> होता है। शंकु कोशिकाएं (Cones) रंगों की पहचान और शलाका कोशिकाएं (Rods) मंद प्रकाश में देखने में मदद करती हैं।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (भौतिकी)</span>
-        <div class="note-actions">
-          <span class="note-num">#82</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">ऊर्जा रूपांतरण के प्रमुख वैज्ञानिक उपकरण</h3>
-      <div class="note-content">&bull; डायनेमो / जनरेटर = <mark class="exam-key">यांत्रिक ऊर्जा &rarr; विद्युत ऊर्जा</mark><br>&bull; विद्युत मोटर = <mark class="exam-key">विद्युत ऊर्जा &rarr; यांत्रिक ऊर्जा</mark><br>&bull; सोलर सेल = सौर ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; विद्युत बल्ब = विद्युत ऊर्जा &rarr; प्रकाश एवं ऊष्मा ऊर्जा<br>&bull; माइक्रोफोन = ध्वनि ऊर्जा &rarr; विद्युत ऊर्जा<br>&bull; लाउडस्पीकर = विद्युत ऊर्जा &rarr; ध्वनि ऊर्जा<br>&bull; बैटरी/सेल = रासायनिक ऊर्जा &rarr; विद्युत ऊर्जा।</div>
-    </article>
-<article class="note-card" data-cat="science">
-      <div class="note-card-head">
-        <span class="note-badge badge-science">🧬 Science (रसायन विज्ञान)</span>
-        <div class="note-actions">
-          <span class="note-num">#83</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्राकृतिक अम्ल एवं उनके स्रोत (Natural Acids)</h3>
-      <div class="note-content">&bull; सिरका (Vinegar) = <mark class="exam-key">एसिटिक अम्ल (CH3COOH)</mark><br>&bull; संतरा व नींबू = <mark class="exam-key">सिट्रिक अम्ल</mark><br>&bull; इमली व अंगूर = <mark class="exam-key">टार्टरिक अम्ल</mark><br>&bull; टमाटर = <mark class="exam-key">ऑक्जेलिक अम्ल</mark> (कपड़ों पर जंग के दाग हटाने हेतु उपयोगी)<br>&bull; खट्टा दूध/दही = <mark class="exam-key">लैक्टिक अम्ल</mark><br>&bull; चींटी व बिच्छू का डंक = <mark class="exam-key">मेथेनोइक / फॉर्मिक अम्ल</mark><br>&bull; सेब = मैलिक अम्ल।</div>
-    </article>
-        </div>
-      </section>
-
-      <!-- SECTION 3: POLITY -->
-      <section class="subject-block-container" data-section-cat="polity">
-        <div class="subject-block-header">
-          <h2>⚖️ भारतीय राजव्यवस्था एवं संविधान (Indian Polity - 20 High-Yield Facts)</h2>
-          <a href="notes-polity.html" class="subject-block-link">Open Full Polity Notebook &rarr;</a>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान सभा)</span>
-        <div class="note-actions">
-          <span class="note-num">#47</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">संविधान सभा की ऐतिहासिक तिथियां व अध्यक्ष</h3>
-      <div class="note-content">संविधान सभा की प्रथम बैठक <mark class="exam-key">9 दिसंबर 1946</mark> को हुई (सच्चिदानंद सिन्हा अस्थायी अध्यक्ष बने)। 11 दिसंबर 1946 को <mark class="exam-key">डॉ. राजेंद्र प्रसाद</mark> स्थायी अध्यक्ष चुने गए। 13 दिसंबर 1946 को जवाहरलाल नेहरू ने "उद्देश्य प्रस्ताव" प्रस्तुत किया। संविधान 26 नवंबर 1949 को अंगीकृत हुआ (संविधान दिवस) और <mark class="exam-key">26 जनवरी 1950 को पूर्ण रूप से लागू हुआ</mark>। बनने में 2 वर्ष, 11 माह, 18 दिन लगे।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान के स्रोत)</span>
-        <div class="note-actions">
-          <span class="note-num">#48</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय संविधान के विदेशी स्रोत (Major Sources)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">अमेरिका</mark>: मौलिक अधिकार, न्यायिक पुनरावलोकन, न्यायपालिका की स्वतंत्रता, राष्ट्रपति पर महाभियोग, प्रस्तावना का विचार。<br>&bull; <mark class="exam-key">ब्रिटेन</mark>: संसदीय शासन प्रणाली, एकल नागरिकता, विधि का शासन (Rule of Law)।<br>&bull; <mark class="exam-key">आयरलैंड</mark>: राज्य के नीति निदेशक तत्व (DPSP), राष्ट्रपति द्वारा राज्यसभा में 12 सदस्यों का मनोनयन。<br>&bull; <mark class="exam-key">दक्षिण अफ्रीका</mark>: संविधान संशोधन की प्रक्रिया (अनुच्छेद 368)।<br>&bull; <mark class="exam-key">ऑस्ट्रेलिया</mark>: समवर्ती सूची (Concurrent List), संसद की संयुक्त बैठक。<br>&bull; <mark class="exam-key">सोवियत संघ (रूस)</mark>: मौलिक कर्तव्य (Fundamental Duties)।<br>&bull; <mark class="exam-key">जर्मनी (वाइमर)</mark>: आपातकाल के समय मौलिक अधिकारों का निलंबन।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (मौलिक अधिकार)</span>
-        <div class="note-actions">
-          <span class="note-num">#49</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">मौलिक अधिकार (Fundamental Rights - भाग 3, Art 12-35)</h3>
-      <div class="note-content">मूल संविधान में 7 मौलिक अधिकार थे, परंतु 44वें संविधान संशोधन (1978) द्वारा <mark class="exam-key">संपत्ति के अधिकार (Art 31)</mark> को मौलिक अधिकारों से हटाकर कानूनी अधिकार (Art 300A) बना दिया गया। वर्तमान में 6 मौलिक अधिकार हैं: 1. समानता का अधिकार (14-18), 2. स्वतंत्रता (19-22), 3. शोषण के विरुद्ध (23-24), 4. धार्मिक स्वतंत्रता (25-28), 5. संस्कृति व शिक्षा (29-30), 6. संवैधानिक उपचारों का अधिकार (Art 32)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (अनुच्छेद 32)</span>
-        <div class="note-actions">
-          <span class="note-num">#50</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">अनुच्छेद 32 - संवैधानिक उपचारों का अधिकार</h3>
-      <div class="note-content">डॉ. बी.आर. अंबेडकर ने अनुच्छेद 32 को <mark class="exam-key">"संविधान का हृदय और आत्मा"</mark> कहा था। इसके तहत सुप्रीम कोर्ट नागरिकों के मौलिक अधिकारों के संरक्षण हेतु 5 प्रकार की रिट (Writs) जारी करता है: 1. बंदी प्रत्यक्षीकरण (Habeas Corpus), 2. परमादेश (Mandamus), 3. प्रतिषेध (Prohibition), 4. उत्प्रेषण (Certiorari), 5. अधिकार पृच्छा (Quo-Warranto)। हाईकोर्ट अनुच्छेद 226 के तहत रिट जारी करता है।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (अति-महत्वपूर्ण अनुच्छेद)</span>
-        <div class="note-actions">
-          <span class="note-num">#51</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">परीक्षा में बार-बार पूछे जाने वाले प्रमुख अनुच्छेद (Articles)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 14</mark>: विधि के समक्ष समता<br>&bull; <mark class="exam-key">Art 17</mark>: अस्पृश्यता का अंत (Abolition of Untouchability)<br>&bull; <mark class="exam-key">Art 19(1)(a)</mark>: वाक् एवं अभिव्यक्ति तथा प्रेस की स्वतंत्रता<br>&bull; <mark class="exam-key">Art 21</mark>: प्राण एवं दैहिक स्वतंत्रता का संरक्षण<br>&bull; <mark class="exam-key">Art 21A</mark>: 6 से 14 वर्ष के बच्चों को निःशुल्क व अनिवार्य शिक्षा (86वां संशोधन 2002)<br>&bull; <mark class="exam-key">Art 24</mark>: 14 वर्ष से कम आयु के बच्चों का कारखानों में नियोजन निषेध<br>&bull; <mark class="exam-key">Art 40</mark>: ग्राम पंचायतों का गठन (गांधीवादी सिद्धांत)<br>&bull; <mark class="exam-key">Art 44</mark>: समान नागरिक संहिता (Uniform Civil Code - UCC लागू करने वाला पहला राज्य गोवा, 2024 में उत्तराखंड)<br>&bull; <mark class="exam-key">Art 50</mark>: कार्यपालिका से न्यायपालिका का पृथक्करण<br>&bull; <mark class="exam-key">Art 51A</mark>: मौलिक कर्तव्य (42वां संशोधन 1976, स्वर्ण सिंह समिति, कुल 11 कर्तव्य)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (राष्ट्रपति एवं संसद)</span>
-        <div class="note-actions">
-          <span class="note-num">#52</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">राष्ट्रपति, उपराष्ट्रपति व संसद के मुख्य प्रावधान</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 52</mark>: भारत का एक राष्ट्रपति होगा; न्यूनतम आयु 35 वर्ष, कार्यकाल 5 वर्ष।<br>&bull; <mark class="exam-key">Art 61</mark>: राष्ट्रपति पर महाभियोग (Impeachment) चलाने की प्रक्रिया (संसद के किसी भी सदन में 14 दिन पूर्व सूचना देकर)।<br>&bull; <mark class="exam-key">Art 72</mark>: राष्ट्रपति की क्षमादान (Pardon) की शक्ति।<br>&bull; <mark class="exam-key">Art 108</mark>: संसद के दोनों सदनों की संयुक्त बैठक (आहूत राष्ट्रपति करते हैं, लेकिन अध्यक्षता लोकसभा अध्यक्ष करता है)।<br>&bull; <mark class="exam-key">Art 110</mark>: धन विधेयक (Money Bill - केवल लोकसभा में प्रस्तुत, निर्णय स्पीकर करता है)।<br>&bull; <mark class="exam-key">Art 123</mark>: राष्ट्रपति की अध्यादेश (Ordinance) जारी करने की शक्ति।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संवैधानिक पद)</span>
-        <div class="note-actions">
-          <span class="note-num">#53</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">संवैधानिक पदाधिकारी व उनके अनुच्छेद</h3>
-      <div class="note-content">&bull; <mark class="exam-key">Art 76</mark>: भारत का महान्यायवादी (Attorney General - देश का सर्वोच्च विधि अधिकारी)।<br>&bull; <mark class="exam-key">Art 148</mark>: नियंत्रक एवं महालेखा परीक्षक (CAG - लोक वित्त का संरक्षक, कार्यकाल 6 वर्ष या 65 वर्ष आयु)।<br>&bull; <mark class="exam-key">Art 280</mark>: वित्त आयोग (Finance Commission - राष्ट्रपति द्वारा प्रत्येक 5 वर्ष में गठन, 1+4 सदस्य)।<br>&bull; <mark class="exam-key">Art 324</mark>: भारत का निर्वाचन आयोग (Election Commission)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (आपातकालीन प्रावधान)</span>
-        <div class="note-actions">
-          <span class="note-num">#54</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">तीन प्रकार के राष्ट्रीय आपातकाल (भाग 18)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">अनुच्छेद 352 (राष्ट्रीय आपातकाल)</mark>: युद्ध, बाह्य आक्रमण या सशस्त्र विद्रोह के आधार पर (अब तक 3 बार: 1962, 1971, 1975 में लगा)।<br>&bull; <mark class="exam-key">अनुच्छेद 356 (राष्ट्रपति शासन)</mark>: राज्य में संवैधानिक तंत्र विफल होने पर (सर्वप्रथम 1951 में पंजाब में लगा)।<br>&bull; <mark class="exam-key">अनुच्छेद 360 (वित्तीय आपातकाल)</mark>: वित्तीय साख संकट में होने पर (भारत में आज तक एक बार भी नहीं लगा)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान संशोधन)</span>
-        <div class="note-actions">
-          <span class="note-num">#55</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख ऐतिहासिक संविधान संशोधन (Constitutional Amendments)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">42वां संशोधन (1976)</mark>: "लघु संविधान" (Mini Constitution) कहा जाता है। प्रस्तावना में तीन शब्द जोड़े गए: "समाजवादी", "पंथनिरपेक्ष" और "अखंडता"। 10 मौलिक कर्तव्य जोड़े गए।<br>&bull; <mark class="exam-key">44वां संशोधन (1978)</mark>: आंतरिक अशांति के स्थान पर "सशस्त्र विद्रोह" शब्द जोड़ा गया; संपत्ति का अधिकार मौलिक अधिकारों से समाप्त किया गया।<br>&bull; <mark class="exam-key">61वां संशोधन (1989)</mark>: मतदान की न्यूनतम आयु 21 वर्ष से घटाकर 18 वर्ष की गई।<br>&bull; <mark class="exam-key">73वां व 74वां संशोधन (1992)</mark>: पंचायती राज (11वीं अनुसूची, 29 विषय) और नगर पालिका (12वीं अनुसूची, 18 विषय) को संवैधानिक मान्यता।<br>&bull; <mark class="exam-key">101वां संशोधन (2016)</mark>: वस्तु एवं सेवा कर (GST) लागू किया गया।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संविधान की अनुसूचियां)</span>
-        <div class="note-actions">
-          <span class="note-num">#75</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय संविधान की 12 अनुसूचियां (Schedules)</h3>
-      <div class="note-content">मूल संविधान में 8 अनुसूचियां थीं, वर्तमान में 12 हैं:<br>&bull; पहली: 28 राज्य व 8 UT<br>&bull; दूसरी: वेतन व भत्ते<br>&bull; तीसरी: शपथ ग्रहण<br>&bull; चौथी: राज्यसभा में सीटों का आवंटन<br>&bull; पांचवीं: SC/ST क्षेत्रों का प्रशासन<br>&bull; छठी: असम, मेघालय, त्रिपुरा, मिजोरम का जनजातीय प्रशासन<br>&bull; <mark class="exam-key">सातवीं: संघ, राज्य व समवर्ती सूची</mark><br>&bull; <mark class="exam-key">आठवीं: 22 आधिकारिक भाषाएं</mark> (मूल में 14)<br>&bull; नौवीं: भूमि सुधार (1st संशोधन 1951)<br>&bull; <mark class="exam-key">दसवीं: दल-बदल विरोधी कानून (52nd संशोधन 1985)</mark><br>&bull; <mark class="exam-key">ग्यारहवीं: पंचायती राज (73rd संशोधन 1992, 29 विषय)</mark><br>&bull; बारहवीं: नगर पालिका (74th संशोधन 1992, 18 विषय)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (पंचायती राज)</span>
-        <div class="note-actions">
-          <span class="note-num">#76</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">पंचायती राज व्यवस्था का इतिहास एवं त्रिस्तरीय ढांचा</h3>
-      <div class="note-content"><mark class="exam-key">बलवंत राय मेहता समिति (1957)</mark> की सिफारिश पर त्रिस्तरीय पंचायती राज प्रणाली लागू की गई (ग्राम पंचायत, पंचायत समिति, जिला परिषद)। सर्वप्रथम <mark class="exam-key">2 अक्टूबर 1959 को राजस्थान के नागौर जिले</mark> में पं. नेहरू द्वारा शुभारंभ हुआ। 73वें संशोधन (1992) द्वारा संविधान के भाग 9 (Art 243 से 243O) में संवैधानिक दर्जा दिया गया। राष्ट्रीय पंचायती राज दिवस <mark class="exam-key">24 अप्रैल</mark> को मनाया जाता है।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (संसद व सदन)</span>
-        <div class="note-actions">
-          <span class="note-num">#77</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">लोकसभा एवं राज्यसभा की संरचना व योग्यता</h3>
-      <div class="note-content">&bull; <mark class="exam-key">लोकसभा (निम्न सदन)</mark>: अधिकतम सीटें 550 (104वें संशोधन द्वारा 2 एंग्लो-इंडियन सीटें समाप्त); न्यूनतम आयु <mark class="exam-key">25 वर्ष</mark>; सामान्य कार्यकाल 5 वर्ष।<br>&bull; <mark class="exam-key">राज्यसभा (उच्च सदन / स्थायी सदन)</mark>: कभी भंग नहीं होती; अधिकतम 250 सदस्य (12 राष्ट्रपति द्वारा मनोनीत); न्यूनतम आयु <mark class="exam-key">30 वर्ष</mark>; सदस्यों का कार्यकाल <mark class="exam-key">6 वर्ष</mark> (प्रत्येक 2 वर्ष में 1/3 सदस्य सेवानिवृत्त होते हैं)। उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है (Art 64)।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-      <div class="note-card-head">
-        <span class="note-badge badge-polity">⚖️ Polity (न्यायपालिका)</span>
-        <div class="note-actions">
-          <span class="note-num">#78</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">सर्वोच्च न्यायालय एवं उच्च न्यायालय</h3>
-      <div class="note-content"><mark class="exam-key">अनुच्छेद 124</mark> के तहत सर्वोच्च न्यायालय (SC) की स्थापना; वर्तमान में 1 मुख्य न्यायाधीश (CJI) + 33 अन्य न्यायाधीश = कुल 34 न्यायाधीश। SC न्यायाधीशों की सेवानिवृत्ति आयु <mark class="exam-key">65 वर्ष</mark> होती है। प्रथम मुख्य न्यायाधीश <mark class="exam-key">एच.जे. कानिया</mark> थे। <mark class="exam-key">अनुच्छेद 214</mark> के तहत राज्यों में उच्च न्यायालय (HC); HC न्यायाधीशों की सेवानिवृत्ति आयु 62 वर्ष होती है। भारत में कुल 25 उच्च न्यायालय हैं।</div>
-    </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (अनुसूचियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#14</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">संविधान की प्रमुख 12 अनुसूचियां</h3>
-    <div class="note-content">मूल संविधान में <mark class="exam-key">8 अनुसूचियां थीं, वर्तमान में 12 हैं</mark>। 8वीं अनुसूची में <mark class="exam-key">22 आधिकारिक भाषाएं</mark> हैं। 10वीं अनुसूची में <mark class="exam-key">दल-बदल विरोधी कानून (52वां संशोधन 1985)</mark> है। 11वीं में पंचायती राज (29 विषय) और 12वीं में नगर पालिकाएं (18 विषय) हैं।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (मौलिक कर्तव्य)</span>
-      <div class="note-actions">
-        <span class="note-num">#15</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">मौलिक कर्तव्य (Fundamental Duties)</h3>
-    <div class="note-content">मौलिक कर्तव्य <mark class="exam-key">42वें संविधान संशोधन 1976 द्वारा सरदार स्वर्ण सिंह समिति</mark> की सिफारिश पर सोवियत संघ (USSR) से लिए गए। इन्हें <mark class="exam-key">भाग IV-A व अनुच्छेद 51A</mark> में जोड़ा गया। वर्तमान में कुल 11 मौलिक कर्तव्य हैं (11वां 86वें संशोधन 2002 में जुड़ा)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (आपातकालीन प्रावधान)</span>
-      <div class="note-actions">
-        <span class="note-num">#16</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">राष्ट्रपति के तीन आपातकाल (Emergency Provisions)</h3>
-    <div class="note-content">संविधान के भाग XVIII में जर्मनी के वाइमर संविधान से 3 आपातकाल लिए गए हैं: <mark class="exam-key">अनुच्छेद 352 (राष्ट्रीय आपातकाल)</mark>, <mark class="exam-key">अनुच्छेद 356 (राज्यों में राष्ट्रपति शासन)</mark>, और <mark class="exam-key">अनुच्छेद 360 (वित्तीय आपातकाल)</mark> जो भारत में अब तक कभी नहीं लगा है।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (अध्यादेश शक्ति)</span>
-      <div class="note-actions">
-        <span class="note-num">#17</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">राष्ट्रपति व राज्यपाल की अध्यादेश शक्ति</h3>
-    <div class="note-content">जब संसद का सत्र न चल रहा हो तो राष्ट्रपति <mark class="exam-key">अनुच्छेद 123</mark> के तहत अध्यादेश (Ordinance) जारी कर सकते हैं। इसी प्रकार राज्यों में राज्यपाल <mark class="exam-key">अनुच्छेद 213</mark> के तहत अध्यादेश जारी करते हैं, जिसकी संसद सत्र शुरू होने के 6 सप्ताह में मंजूरी आवश्यक होती है।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (स्थानीय स्वशासन)</span>
-      <div class="note-actions">
-        <span class="note-num">#18</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">पंचायती राज व्यवस्था (73वां संविधान संशोधन)</h3>
-    <div class="note-content">भारत में त्रिस्तरीय पंचायती राज व्यवस्था <mark class="exam-key">बलवंत राय मेहता समिति (1957)</mark> की सिफारिश पर आधारित है। पहली बार 2 अक्टूबर 1959 को <mark class="exam-key">नागौर (राजस्थान)</mark> में लागू हुई। <mark class="exam-key">73वें संशोधन 1992</mark> द्वारा संवैधानिक दर्जा मिला (24 अप्रैल = पंचायती राज दिवस)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (संशोधन प्रक्रिया)</span>
-      <div class="note-actions">
-        <span class="note-num">#19</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">संविधान संशोधन प्रक्रिया (अनुच्छेद 368)</h3>
-    <div class="note-content">संविधान के <mark class="exam-key">भाग XX और अनुच्छेद 368</mark> में संशोधन की प्रक्रिया दी गई है, जो <mark class="exam-key">दक्षिण अफ्रीका</mark> के संविधान से प्रेरित है। संविधान के बुनियादी ढांचे (Basic Structure) में कोई संशोधन नहीं किया जा सकता (केशवानंद भारती वाद 1973)।</div>
-  </article>
-<article class="note-card" data-cat="polity">
-    <div class="note-card-head">
-      <span class="note-badge badge-polity">⚖️ Indian Polity (निर्वाचन आयोग)</span>
-      <div class="note-actions">
-        <span class="note-num">#20</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत का निर्वाचन आयोग (Election Commission)</h3>
-    <div class="note-content">भारतीय संविधान के <mark class="exam-key">अनुच्छेद 324</mark> के तहत एक स्वतंत्र निर्वाचन आयोग का प्रावधान है। इसकी स्थापना <mark class="exam-key">25 जनवरी 1950</mark> को हुई थी, इसलिए प्रतिवर्ष 25 जनवरी को 'राष्ट्रीय मतदाता दिवस' मनाया जाता है। प्रथम मुख्य चुनाव आयुक्त <mark class="exam-key">सुकुमार सेन</mark> थे।</div>
-  </article>
-        </div>
-      </section>
-
-      <!-- SECTION 4: GEOGRAPHY -->
-      <section class="subject-block-container" data-section-cat="geography">
-        <div class="subject-block-header">
-          <h2>🌍 भारत एवं विश्व का भूगोल (Geography - 20 High-Yield Facts)</h2>
-          <a href="notes-geography.html" class="subject-block-link">Open Full Geography Notebook &rarr;</a>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (भारत का भूगोल)</span>
-        <div class="note-actions">
-          <span class="note-num">#56</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत की भौगोलिक स्थिति, सीमाएं व क्षेत्रफल</h3>
-      <div class="note-content">भारत का कुल क्षेत्रफल <mark class="exam-key">32,87,263 वर्ग किमी</mark> है, जो विश्व के कुल क्षेत्रफल का 2.42% है (क्षेत्रफल में 7वां बड़ा देश)। उत्तर से दक्षिण विस्तार 3,214 किमी और पूर्व से पश्चिम 2,933 किमी है। स्थलीय सीमा 15,200 किमी और मुख्य तटरेखा 7,516.6 किमी है। भारत का मानक समय रेखा <mark class="exam-key">82°30' पूर्वी देशांतर (IST)</mark> प्रयागराज के नैनी/मिर्जापुर से गुजरती है जो GMT से 5 घंटा 30 मिनट आगे है।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (कर्क रेखा व राज्य)</span>
-        <div class="note-actions">
-          <span class="note-num">#57</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">कर्क रेखा (23.5° N) और 8 भारतीय राज्य</h3>
-      <div class="note-content">कर्क रेखा भारत के ठीक मध्य से होकर 8 राज्यों से गुजरती है: <mark class="exam-key">गुजरात &rarr; राजस्थान &rarr; मध्य प्रदेश &rarr; छत्तीसगढ़ &rarr; झारखंड &rarr; पश्चिम बंगाल &rarr; त्रिपुरा &rarr; मिजोरम</mark> (ट्रिक: "मित्र पर गमछा झार")। माही नदी कर्क रेखा को दो बार काटती है।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर व दर्रे)</span>
-        <div class="note-actions">
-          <span class="note-num">#58</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख पर्वत शिखर एवं दर्रे (Mountain Peaks & Passes)</h3>
-      <div class="note-content">&bull; <mark class="exam-key">के-2 (गॉडविन ऑस्टिन, 8,611 मी)</mark>: भारत की सबसे ऊंची चोटी (काराकोरम श्रेणी, PoK)।<br>&bull; <mark class="exam-key">कंचनजंगा (8,586 मी)</mark>: भारत की निर्विवाद सबसे ऊंची चोटी (सिक्किम)।<br>&bull; <mark class="exam-key">अनाईमुडी (2,695 मी)</mark>: दक्षिण भारत (प्रायद्वीपीय भारत) की सबसे ऊंची चोटी (अन्नामलाई पहाड़ी, केरल)।<br>&bull; <mark class="exam-key">दोद्दाबेट्टा</mark>: नीलगिरि पहाड़ियों की सबसे ऊंची चोटी।<br>&bull; प्रमुख दर्रे: जोजिला व बनिहाल (जम्मू-कश्मीर), रोहतांग व शिपकी ला (हिमाचल प्रदेश), माना व नीति व लिपुलेख (उत्तराखंड), नाथुला व जेलेप ला (सिक्किम), बोमडिला (अरुणाचल प्रदेश)।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (नदियां व उद्गम)</span>
-        <div class="note-actions">
-          <span class="note-num">#59</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत की प्रमुख नदियां, उद्गम व सहायक नदियां</h3>
-      <div class="note-content">&bull; <mark class="exam-key">गंगा (2,525 किमी)</mark>: भारत की सबसे लंबी नदी; गंगोत्री ग्लेशियर से भागीरथी व अलकनंदा का देवप्रयाग में संगम गंगा कहलाता है।<br>&bull; <mark class="exam-key">ब्रह्मपुत्र</mark>: तिब्बत में मानसरोवर के निकट से निकलती है (तिब्बत में सांगपो, अरुणाचल में दिहांग, असम में ब्रह्मपुत्र, बांग्लादेश में जमुना)। विश्व का सबसे बड़ा नदी द्वीप <mark class="exam-key">माजुली</mark> असम में इसी नदी पर है।<br>&bull; <mark class="exam-key">गोदावरी (1,465 किमी)</mark>: दक्षिण भारत की सबसे लंबी नदी (त्र्यंबकेश्वर नासिक से उद्गम, "वृद्ध गंगा" व "दक्षिण गंगा" उपनाम)।<br>&bull; <mark class="exam-key">नर्मदा व ताप्ती</mark>: पश्चिम की ओर बहने वाली नदियां जो भ्रंश घाटी (Rift Valley) से बहती हैं और डेल्टा न बनाकर एश्चुअरी (ज्वारनदमुख) बनाती हैं।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (बांध व परियोजनाएं)</span>
-        <div class="note-actions">
-          <span class="note-num">#60</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत के प्रमुख बहुउद्देशीय नदी बांध</h3>
-      <div class="note-content">&bull; <mark class="exam-key">टिहरी बांध</mark>: भारत का सबसे ऊंचा बांध (260.5 मी, भागीरथी नदी, उत्तराखंड)।<br>&bull; <mark class="exam-key">हीराकुंड बांध</mark>: भारत का सबसे लंबा बांध (4.8 किमी मुख्य, महानदी, ओडिशा)।<br>&bull; <mark class="exam-key">भाखड़ा नांगल बांध</mark>: सतलुज नदी (हिमाचल/पंजाब, गोविंद सागर झील)।<br>&bull; <mark class="exam-key">सरदार सरोवर बांध</mark>: नर्मदा नदी (गुजरात)।<br>&bull; <mark class="exam-key">नागार्जुन सागर बांध</mark>: कृष्णा नदी (तेलंगाना/आंध्र प्रदेश)।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
-        <div class="note-actions">
-          <span class="note-num">#61</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">प्रमुख राष्ट्रीय उद्यान एवं वन्यजीव अभयारण्य</h3>
-      <div class="note-content">&bull; <mark class="exam-key">जिम कॉर्बेट (रामगंगा)</mark>: भारत का प्रथम राष्ट्रीय उद्यान (1936, उत्तराखंड)।<br>&bull; <mark class="exam-key">काजीरंगा</mark>: एक सींग वाले गैंडे हेतु प्रसिद्ध (असम)।<br>&bull; <mark class="exam-key">गिर राष्ट्रीय उद्यान</mark>: एशियाई शेरों (Asiatic Lions) का एकमात्र प्राकृतिक आवास (गुजरात)।<br>&bull; <mark class="exam-key">केबुल लामजाओ</mark>: विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान (लोकटक झील, मणिपुर)।<br>&bull; <mark class="exam-key">सुंदरबन</mark>: रॉयल बंगाल टाइगर और मैंग्रोव वनों हेतु प्रसिद्ध (पश्चिम बंगाल)।<br>&bull; <mark class="exam-key">दुधवा राष्ट्रीय उद्यान</mark>: उत्तर प्रदेश (लखीमपुर खीरी)।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (भारत के द्वीप)</span>
-        <div class="note-actions">
-          <span class="note-num">#84</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">अंडमान-निकोबार एवं लक्षद्वीप समूह</h3>
-      <div class="note-content">&bull; <mark class="exam-key">10 डिग्री चैनल (10° Channel)</mark>: अंडमान द्वीप को निकोबार द्वीप से अलग करता है।<br>&bull; <mark class="exam-key">9 डिग्री चैनल</mark>: लक्षद्वीप को मिनिकॉय से अलग करता है।<br>&bull; <mark class="exam-key">8 डिग्री चैनल</mark>: मिनिकॉय को मालदीव से अलग करता है।<br>&bull; बैरन द्वीप (Barren Island): भारत का एकमात्र सक्रिय ज्वालामुखी (अंडमान सागर में)।<br>&bull; इंदिरा पॉइंट (पिग्मेलियन पॉइंट): भारत का सबसे दक्षिणी बिंदु (ग्रेट निकोबार में, 6°4' N)।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (मिट्टियां व फसलें)</span>
-        <div class="note-actions">
-          <span class="note-num">#85</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय मिट्टियां (Soils) एवं प्रमुख फसलें</h3>
-      <div class="note-content">&bull; <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark>: कपास (Cotton) की खेती हेतु सर्वश्रेष्ठ (महाराष्ट्र, गुजरात, MP - बेसाल्ट लावा चट्टानों के अपक्षय से निर्मित)।<br>&bull; <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil)</mark>: भारत में सर्वाधिक क्षेत्रफल (लगभग 43%) पर पाई जाने वाली उपजाऊ मिट्टी (नई जलोढ़ = खादर, पुरानी जलोढ़ = बांगर)।<br>&bull; <mark class="exam-key">लेटराइट मिट्टी</mark>: चाय, कॉफी और काजू की खेती हेतु उपयुक्त (केरल, पश्चिमी घाट - भारी वर्षा व लीचिंग से निर्मित)।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-      <div class="note-card-head">
-        <span class="note-badge badge-geography">🌍 Geography (प्रमुख फसलें)</span>
-        <div class="note-actions">
-          <span class="note-num">#86</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">खरीफ, रबी और जायद फसलें</h3>
-      <div class="note-content">&bull; <mark class="exam-key">खरीफ फसलें (जून-जुलाई में बोई, अक्टूबर-नवंबर में काटी)</mark>: धान (चावल), मक्का, ज्वार, बाजरा, कपास, सोयाबीन, मूंगफली।<br>&bull; <mark class="exam-key">रबी फसलें (अक्टूबर-नवंबर में बोई, मार्च-अप्रैल में काटी)</mark>: गेहूं, जौ, चना, मटर, सरसों, आलू, अलसी।<br>&bull; <mark class="exam-key">जायद फसलें (मार्च-अप्रैल में बोई, जून में काटी)</mark>: तरबूज, खरबूजा, खीरा, ककड़ी, मौसमी सब्जियां।</div>
-    </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (भारत की नदियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#10</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत की प्रमुख नदियां एवं उद्गम स्थल</h3>
-    <div class="note-content">भारत की सबसे लंबी नदी <mark class="exam-key">गंगा (2525 किमी)</mark> गंगोत्री हिमनद (भागीरथी) से निकलती है। दक्षिण भारत की सबसे लंबी नदी <mark class="exam-key">गोदावरी (वृद्ध गंगा - त्र्यंबकेश्वर नासिक)</mark> है। नर्मदा और ताप्ती नदियां पश्चिम की ओर बहकर <mark class="exam-key">अरब सागर में ज्वारनदमुख (Estuary)</mark> बनाती हैं, डेल्टा नहीं।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (अक्षांश व मानक समय)</span>
-      <div class="note-actions">
-        <span class="note-num">#11</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">कर्क रेखा व भारतीय मानक समय रेखा (IST)</h3>
-    <div class="note-content"><mark class="exam-key">कर्क रेखा (23.5° N) भारत के 8 राज्यों</mark> (गुजरात, राजस्थान, MP, छत्तीसगढ़, झारखंड, पश्चिम बंगाल, त्रिपुरा, मिजोरम) से गुजरती है। भारतीय मानक समय (IST) <mark class="exam-key">82.5° पूर्व देशांतर (प्रयागराज मिर्जापुर)</mark> पर आधारित है, जो ग्रीनविच मीन टाइम (GMT) से 5 घंटे 30 मिनट आगे है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (झीलें व जलप्रपात)</span>
-      <div class="note-actions">
-        <span class="note-num">#12</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत की प्रमुख झीलें व जलप्रपात</h3>
-    <div class="note-content">भारत में मीठे पानी की सबसे बड़ी प्राकृतिक झील <mark class="exam-key">वुलर झील (जम्मू कश्मीर)</mark> है। सबसे बड़ी तटीय खारे पानी की लैगून झील <mark class="exam-key">चिल्का झील (ओडिशा)</mark> है। विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान 'केइबुल लामजाओ' <mark class="exam-key">लोकतक झील (मणिपुर)</mark> में स्थित है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (पर्वतीय दर्रे)</span>
-      <div class="note-actions">
-        <span class="note-num">#13</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत के प्रमुख पर्वतीय दर्रे (Mountain Passes)</h3>
-    <div class="note-content"><mark class="exam-key">जोजिला दर्रा</mark> श्रीनगर को लेह से जोड़ता है। <mark class="exam-key">बनिहाल दर्रा</mark> में प्रसिद्ध 'जवाहर सुरंग' स्थित है। <mark class="exam-key">शिपकी ला व रोहतांग</mark> हिमाचल प्रदेश में हैं (सतलुज नदी भारत में शिपकी ला से प्रवेश करती है)। <mark class="exam-key">नाथू ला व जेलेप ला</mark> सिक्किम में और <mark class="exam-key">बोमडिला</mark> अरुणाचल में हैं।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (राष्ट्रीय उद्यान)</span>
-      <div class="note-actions">
-        <span class="note-num">#14</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत का पहला राष्ट्रीय उद्यान एवं वन्यजीव</h3>
-    <div class="note-content">भारत का प्रथम राष्ट्रीय उद्यान <mark class="exam-key">जिम कॉर्बेट (उत्तराखंड, 1936)</mark> है (पूर्व नाम हेली नेशनल पार्क)। एक सींग वाले गैंडे के लिए <mark class="exam-key">काजीरंगा (असम)</mark> प्रसिद्ध है। एशियाई शेरों के लिए <mark class="exam-key">गिर नेशनल पार्क (गुजरात)</mark> विख्यात है। भारत में प्रोजेक्ट टाइगर 1973 में शुरू हुआ था।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (सौरमंडल)</span>
-      <div class="note-actions">
-        <span class="note-num">#15</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">सौरमंडल के प्रमुख तथ्य (Solar System Facts)</h3>
-    <div class="note-content">सौरमंडल का सबसे बड़ा ग्रह <mark class="exam-key">बृहस्पति (Jupiter)</mark> और सबसे छोटा <mark class="exam-key">बुध (Mercury)</mark> है। सबसे चमकीला व सबसे गर्म ग्रह <mark class="exam-key">शुक्र (Venus - भोर व सांझ का तारा)</mark> है। शुक्र और अरुण (Uranus) पूरब से पश्चिम (दक्षिणावर्त) परिक्रमा करते हैं। मंगल को लाल ग्रह कहा जाता है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (भारतीय मिट्टियां)</span>
-      <div class="note-actions">
-        <span class="note-num">#16</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत की प्रमुख मिट्टियां (Soils of India)</h3>
-    <div class="note-content">भारत में सर्वाधिक क्षेत्रफल पर <mark class="exam-key">जलोढ़ मिट्टी (Alluvial Soil - 40%+)</mark> पाई जाती है (खादर = नई, बांगर = पुरानी जलोढ़)। <mark class="exam-key">काली मिट्टी (रेगुर मिट्टी)</mark> दक्कन ट्रैप में कपास की खेती के लिए सर्वोत्तम होती है और इसमें जलधारण क्षमता सर्वाधिक होती है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (पर्वत शिखर)</span>
-      <div class="note-actions">
-        <span class="note-num">#17</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत व विश्व के प्रमुख पर्वत शिखर</h3>
-    <div class="note-content">विश्व की सबसे ऊंची चोटी <mark class="exam-key">माउंट एवरेस्ट (8848.86 मी, नेपाल)</mark> है। भारत की सर्वोच्च चोटी <mark class="exam-key">K2 (गॉडविन ऑस्टिन - 8611 मी, काराकोरम)</mark> है। निर्विवाद भारतीय भूभाग में सर्वोच्च चोटी <mark class="exam-key">कंचनजंगा (सिक्किम - 8586 मी)</mark> है। दक्षिण भारत की सर्वोच्च चोटी <mark class="exam-key">अनाईमुडी (2695 मी)</mark> है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (प्रमुख बांध)</span>
-      <div class="note-actions">
-        <span class="note-num">#18</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत के प्रमुख बांध व नदी परियोजनाएं</h3>
-    <div class="note-content">भारत का सबसे ऊंचा बांध <mark class="exam-key">टिहरी बांध (भागीरथी नदी, उत्तराखंड)</mark> है। सबसे लंबा बांध <mark class="exam-key">हीराकुंड बांध (महानदी, ओडिशा)</mark> है। सबसे बड़ा गुरुत्वीय बांध <mark class="exam-key">भाखड़ा बांध (सतलुज नदी, हिमाचल-पंजाब)</mark> है। सरदार सरोवर बांध नर्मदा नदी पर गुजरात में स्थित है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (खनिज संसाधन)</span>
-      <div class="note-actions">
-        <span class="note-num">#19</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत के प्रमुख खनिज एवं उत्पादक क्षेत्र</h3>
-    <div class="note-content">भारत में <mark class="exam-key">कोयले का सर्वाधिक भंडार झारखंड (झरिया)</mark> में है। सोने की प्रसिद्ध खान <mark class="exam-key">कोलार व हट्टी (कर्नाटक)</mark> में है। तांबे के लिए प्रसिद्ध खान <mark class="exam-key">खेतड़ी (राजस्थान)</mark> है। पन्ना (मध्य प्रदेश) हीरे की खदानों के लिए भारत में एकमात्र सक्रिय क्षेत्र है।</div>
-  </article>
-<article class="note-card" data-cat="geography">
-    <div class="note-card-head">
-      <span class="note-badge badge-geography">🌍 Geography (अंतर्राष्ट्रीय सीमाएं)</span>
-      <div class="note-actions">
-        <span class="note-num">#20</span>
-        <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        </button>
-      </div>
-    </div>
-    <h3 class="note-title">भारत की अंतर्राष्ट्रीय सीमाएं एवं रेखाएं</h3>
-    <div class="note-content">भारत की सबसे लंबी स्थलीय सीमा <mark class="exam-key">बांग्लादेश (4,096.7 किमी)</mark> के साथ लगती है। भारत-पाकिस्तान सीमा रेखा को <mark class="exam-key">रेडक्लिफ रेखा (1947)</mark> और भारत-चीन सीमा को <mark class="exam-key">मैकमोहन रेखा (1914)</mark> कहते हैं। भारत व श्रीलंका को <mark class="exam-key">पाक जलडमरूमध्य (Palk Strait)</mark> अलग करता है।</div>
-  </article>
-        </div>
-      </section>
-
-      <!-- SECTION 5: STATIC GK -->
-      <section class="subject-block-container" data-section-cat="static">
-        <div class="subject-block-header">
-          <h2>🎯 स्टैटिक सामान्य ज्ञान (Static GK &amp; Culture - 13 High-Yield Facts)</h2>
-          <span style="font-size: 13px; color: #64748b; font-weight: 600;">नृत्य, त्योहार, प्रथम व्यक्तित्व व संगठन</span>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (शास्त्रीय नृत्य)</span>
-        <div class="note-actions">
-          <span class="note-num">#62</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत के 8 शास्त्रीय नृत्य (Classical Dances) एवं राज्य</h3>
-      <div class="note-content">संगीत नाटक अकादमी द्वारा मान्यता प्राप्त 8 शास्त्रीय नृत्य:<br>1. <mark class="exam-key">भरतनाट्यम</mark> - तमिलनाडु (रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति)<br>2. <mark class="exam-key">कथक</mark> - उत्तर प्रदेश/उत्तर भारत (पंडित बिरजू महाराज, लच्छू महाराज, सितारा देवी)<br>3. <mark class="exam-key">कथकली</mark> - केरल (मुखौटा नृत्य, महाभारत/रामायण प्रसंग)<br>4. <mark class="exam-key">मोहिनीअट्टम</mark> - केरल (महिलाओं द्वारा एकल नृत्य)<br>5. <mark class="exam-key">कुचिपुड़ी</mark> - आंध्र प्रदेश (राधा रेड्डी, राजा रेड्डी)<br>6. <mark class="exam-key">ओडिसी</mark> - ओडिशा (केलूचरण महापात्र)<br>7. <mark class="exam-key">मणिपुरी</mark> - मणिपुर (झावेरी बहनें)<br>8. <mark class="exam-key">सत्रिया</mark> - असम (श्रीमंत शंकरदेव द्वारा 15वीं सदी में स्थापित)।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (प्रमुख लोकनृत्य)</span>
-        <div class="note-actions">
-          <span class="note-num">#63</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">राज्यों के प्रमुख लोकप्रिय लोकनृत्य (Folk Dances)</h3>
-      <div class="note-content">&bull; पंजाब: <mark class="exam-key">भांगड़ा व गिद्दा</mark><br>&bull; गुजरात: <mark class="exam-key">गरबा, डांडिया व रास</mark><br>&bull; राजस्थान: <mark class="exam-key">घूमर, कालबेलिया (सपेरा नृत्य - यूनेस्को सूची) व पनिहारी</mark><br>&bull; उत्तर प्रदेश: <mark class="exam-key">चरकुला, रासलीला, नौटंकी, कजरी</mark><br>&bull; असम: <mark class="exam-key">बिहू व बगुरुम्बा</mark><br>&bull; महाराष्ट्र: <mark class="exam-key">लावणी व तमाशा</mark><br>&bull; कर्नाटक: <mark class="exam-key">यक्षगान</mark><br>&bull; जम्मू-कश्मीर: <mark class="exam-key">रऊफ व हिकात</mark><br>&bull; बिहार: <mark class="exam-key">जाट-जटिन व बिदेसिया</mark>।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (प्रसिद्ध मंदिर)</span>
-        <div class="note-actions">
-          <span class="note-num">#64</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत के प्रमुख ऐतिहासिक मंदिर एवं उनकी शैली</h3>
-      <div class="note-content">&bull; <mark class="exam-key">सूर्य मंदिर (कोणार्क, ओडिशा)</mark>: "ब्लैक पैगोडा" (नरसिंहदेव प्रथम - गंग वंश)।<br>&bull; <mark class="exam-key">मीनाक्षी मंदिर (मदुरै, तमिलनाडु)</mark>: द्रविड़ शैली, वैगई नदी तट (पांड्य शासक)।<br>&bull; <mark class="exam-key">बृहदेश्वर मंदिर (तंजावुर, तमिलनाडु)</mark>: राजराज चोल प्रथम द्वारा निर्मित (यूनेस्को स्थल)।<br>&bull; <mark class="exam-key">खजुराहो मंदिर (मध्य प्रदेश)</mark>: चंदेल शासकों द्वारा निर्मित, कंदरिया महादेव मंदिर प्रसिद्ध。<br>&bull; <mark class="exam-key">दिलवाड़ा जैन मंदिर</mark>: माउंट आबू (राजस्थान), संगमरमर की नक्काशी (विमल शाह द्वारा निर्मित)।<br>&bull; <mark class="exam-key">कामाख्या देवी मंदिर</mark>: नीलांचल पहाड़ी, गुवाहाटी (असम), प्रसिद्ध अंबुबाची मेला।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (अंतरराष्ट्रीय संगठन)</span>
-        <div class="note-actions">
-          <span class="note-num">#65</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">अंतरराष्ट्रीय संगठन एवं उनके मुख्यालय (Headquarters)</h3>
-      <div class="note-content">&bull; संयुक्त राष्ट्र संघ (UNO) = <mark class="exam-key">न्यूयॉर्क (USA)</mark><br>&bull; UNESCO = <mark class="exam-key">पेरिस (फ्रांस)</mark><br>&bull; WHO (विश्व स्वास्थ्य संगठन) = <mark class="exam-key">जिनेवा (स्विट्जरलैंड)</mark><br>&bull; WTO (विश्व व्यापार संगठन) = <mark class="exam-key">जिनेवा (स्विट्जरलैंड)</mark><br>&bull; विश्व बैंक व IMF = <mark class="exam-key">वॉशिंगटन डी.सी. (USA)</mark><br>&bull; अंतर्राष्ट्रीय न्यायालय (ICJ) = <mark class="exam-key">द हेग (नीदरलैंड्स)</mark><br>&bull; सार्क (SAARC) = <mark class="exam-key">काठमांडू (नेपाल)</mark><br>&bull; आसियान (ASEAN) = <mark class="exam-key">जकार्ता (इंडोनेशिया)</mark><br>&bull; ब्रिक्स (BRICS) बैंक (NDB) = <mark class="exam-key">शंघाई (चीन)</mark>।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (महत्वपूर्ण दिवस)</span>
-        <div class="note-actions">
-          <span class="note-num">#66</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">परीक्षा में आने वाले प्रमुख राष्ट्रीय व अंतरराष्ट्रीय दिवस</h3>
-      <div class="note-content">&bull; 9 जनवरी: <mark class="exam-key">प्रवासी भारतीय दिवस</mark><br>&bull; 12 जनवरी: <mark class="exam-key">राष्ट्रीय युवा दिवस</mark> (स्वामी विवेकानंद जयंती)<br>&bull; 25 जनवरी: <mark class="exam-key">राष्ट्रीय मतदाता दिवस</mark><br>&bull; 28 फरवरी: <mark class="exam-key">राष्ट्रीय विज्ञान दिवस</mark> (सी.वी. रमन द्वारा रमन प्रभाव खोज)<br>&bull; 22 मार्च: <mark class="exam-key">विश्व जल दिवस</mark><br>&bull; 7 अप्रैल: <mark class="exam-key">विश्व स्वास्थ्य दिवस</mark><br>&bull; 22 अप्रैल: <mark class="exam-key">विश्व पृथ्वी दिवस</mark><br>&bull; 5 जून: <mark class="exam-key">विश्व पर्यावरण दिवस</mark><br>&bull; 21 जून: <mark class="exam-key">अंतरराष्ट्रीय योग दिवस</mark><br>&bull; 29 अगस्त: <mark class="exam-key">राष्ट्रीय खेल दिवस</mark> (मेजर ध्यानचंद जयंती)<br>&bull; 14 सितंबर: <mark class="exam-key">हिंदी दिवस</mark><br>&bull; 26 नवंबर: <mark class="exam-key">संविधान दिवस / राष्ट्रीय दुग्ध दिवस</mark>।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (उत्तर प्रदेश विशेष)</span>
-        <div class="note-actions">
-          <span class="note-num">#70</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">उत्तर प्रदेश के राजकीय प्रतीक (State Symbols of UP)</h3>
-      <div class="note-content">राजकीय पशु: <mark class="exam-key">बारहसिंगा (Swamp Deer)</mark>; राजकीय पक्षी: <mark class="exam-key">सारस या क्रौंच (Crane)</mark>; राजकीय पुष्प: <mark class="exam-key">पलाश या ढाक</mark>; राजकीय वृक्ष: <mark class="exam-key">अशोक</mark>; राजकीय जलीय जीव: <mark class="exam-key">गंगा डॉल्फिन</mark>; राजकीय चिह्न: एक वृत्त में दो मछलियां और तीर-धनुष (1938 में स्वीकृत)।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (उत्तर प्रदेश विशेष)</span>
-        <div class="note-actions">
-          <span class="note-num">#71</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">उत्तर प्रदेश का प्रशासनिक ढांचा</h3>
-      <div class="note-content">UP में कुल <mark class="exam-key">75 जिले और 18 मंडल</mark> हैं। क्षेत्रफल की दृष्टि से सबसे बड़ा जिला <mark class="exam-key">लखीमपुर खीरी (7,680 वर्ग किमी)</mark> और सबसे छोटा जिला <mark class="exam-key">हापुड़ (660 वर्ग किमी)</mark> है। विधानसभा सीटें: 403, विधान परिषद: 100, लोकसभा सीटें: 80, राज्यसभा सीटें: 31।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (उत्तर प्रदेश विशेष)</span>
-        <div class="note-actions">
-          <span class="note-num">#72</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">उत्तर प्रदेश के प्रमुख हवाई अड्डे व एक्सप्रेसवे</h3>
-      <div class="note-content">UP 5 अंतरराष्ट्रीय हवाई अड्डों वाला राज्य है: 1. चौधरी चरण सिंह (अमौसी, लखनऊ), 2. लाल बहादुर शास्त्री (बाबतपुर, वाराणसी), 3. कुशीनगर, 4. मर्यादा पुरुषोत्तम श्रीराम (अयोध्या धाम), 5. नोएडा इंटरनेशनल एयरपोर्ट (जेवर)। गंगा एक्सप्रेसवे (मेरठ से प्रयागराज - 594 किमी) सबसे लंबा एक्सप्रेसवे है।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (उत्तर प्रदेश विशेष)</span>
-        <div class="note-actions">
-          <span class="note-num">#73</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">उत्तर प्रदेश के प्रमुख सांस्कृतिक मेले एवं उत्सव</h3>
-      <div class="note-content">&bull; <mark class="exam-key">कुंभ मेला</mark>: प्रयागराज (प्रत्येक 12 वर्ष पर, यूनेस्को अमूर्त सांस्कृतिक धरोहर)।<br>&bull; <mark class="exam-key">नौचंदी मेला</mark>: मेरठ (हिंदू-मुस्लिम एकता का प्रतीक)।<br>&bull; <mark class="exam-key">देवा शरीफ मेला</mark>: बाराबंकी (वारिस अली शाह की दरगाह)।<br>&bull; <mark class="exam-key">दादरी पशु मेला</mark>: बलिया (कार्तिक पूर्णिमा)।<br>&bull; <mark class="exam-key">शाकंभरी देवी मेला</mark>: सहारनपुर।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (उत्तर प्रदेश विशेष)</span>
-        <div class="note-actions">
-          <span class="note-num">#74</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">उत्तर प्रदेश के प्रमुख वन्यजीव विहार व पक्षी अभयारण्य</h3>
-      <div class="note-content">&bull; <mark class="exam-key">दुधवा राष्ट्रीय उद्यान</mark>: लखीमपुर खीरी (UP का एकमात्र राष्ट्रीय उद्यान)।<br>&bull; <mark class="exam-key">चंद्रप्रभा वन्यजीव विहार</mark>: चंदौली (UP का सबसे पहला वन्यजीव विहार 1957)।<br>&bull; <mark class="exam-key">हस्तिनापुर वन्यजीव विहार</mark>: UP का सबसे बड़ा वन्यजीव विहार (मेरठ, मुजफ्फरनगर, बिजनौर)।<br>&bull; <mark class="exam-key">नवाबगंज पक्षी विहार (शहीद चंद्रशेखर आजाद)</mark>: उन्नाव (UP का पहला पक्षी विहार)।<br>&bull; <mark class="exam-key">लाख बहोसी पक्षी विहार</mark>: कन्नौज (UP का सबसे बड़ा पक्षी विहार)।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (प्रमुख समाधि स्थल)</span>
-        <div class="note-actions">
-          <span class="note-num">#87</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत के प्रमुख महापुरुषों के समाधि स्थल</h3>
-      <div class="note-content">&bull; महात्मा गांधी = <mark class="exam-key">राजघाट (नई दिल्ली)</mark><br>&bull; पं. जवाहरलाल नेहरू = <mark class="exam-key">शांतिवन</mark><br>&bull; लाल बहादुर शास्त्री = <mark class="exam-key">विजय घाट</mark><br>&bull; इंदिरा गांधी = <mark class="exam-key">शक्ति स्थल</mark><br>&bull; डॉ. बी.आर. अंबेडकर = <mark class="exam-key">चैत्य भूमि (मुंबई)</mark><br>&bull; चौधरी चरण सिंह = <mark class="exam-key">किसान घाट</mark><br>&bull; राजीव गांधी = <mark class="exam-key">वीरभूमि</mark><br>&bull; मोरारजी देसाई = अभय घाट (अहमदाबाद)।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (भारत में प्रथम)</span>
-        <div class="note-actions">
-          <span class="note-num">#88</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत में प्रथम (First in India - Key Figures)</h3>
-      <div class="note-content">&bull; प्रथम राष्ट्रपति = <mark class="exam-key">डॉ. राजेंद्र प्रसाद</mark><br>&bull; प्रथम प्रधानमंत्री = <mark class="exam-key">पं. जवाहरलाल नेहरू</mark><br>&bull; प्रथम उप-राष्ट्रपति = डॉ. सर्वपल्ली राधाकृष्णन<br>&bull; प्रथम गृह मंत्री व उप-प्रधानमंत्री = सरदार वल्लभभाई पटेल (लौह पुरुष)<br>&bull; प्रथम लोकसभा अध्यक्ष = <mark class="exam-key">जी.वी. मावलंकर</mark><br>&bull; प्रथम मुख्य चुनाव आयुक्त = <mark class="exam-key">सुकुमार सेन</mark><br>&bull; भारत की प्रथम महिला प्रधानमंत्री = <mark class="exam-key">इंदिरा गांधी</mark><br>&bull; भारत की प्रथम महिला राष्ट्रपति = प्रतिभा देवीसिंह पाटिल<br>&bull; प्रथम महिला राज्यपाल = सरोजिनी नायडू (उत्तर प्रदेश)<br>&bull; प्रथम महिला मुख्यमंत्री = सुचेता कृपलानी (उत्तर प्रदेश)।</div>
-    </article>
-<article class="note-card" data-cat="static">
-      <div class="note-card-head">
-        <span class="note-badge badge-static">🎯 Static GK (नोबेल व भारत रत्न)</span>
-        <div class="note-actions">
-          <span class="note-num">#89</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारत के नोबेल पुरस्कार एवं भारत रत्न विजेता</h3>
-      <div class="note-content">&bull; भारत में प्रथम नोबेल पुरस्कार: <mark class="exam-key">रवींद्रनाथ टैगोर (1913, साहित्य - गीतांजलि)</mark>。<br>&bull; विज्ञान में प्रथम नोबेल: <mark class="exam-key">डॉ. सी.वी. रमन (1930, भौतिकी - रमन प्रभाव)</mark>。<br>&bull; मदर टेरेसा (1979 - शांति नोबेल) & अमृत्य सेन (1998 - अर्थशास्त्र नोबेल)।<br>&bull; भारत रत्न की शुरुआत <mark class="exam-key">1954</mark> में हुई (प्रथम प्राप्तकर्ता: डॉ. सर्वपल्ली राधाकृष्णन, सी. राजगोपालाचारी, सी.वी. रमन)। प्रथम विदेशी प्राप्तकर्ता: <mark class="exam-key">खान अब्दुल गफ्फार खान (सीमांत गांधी, 1987)</mark> और नेल्सन मंडेला (1990)।</div>
-    </article>
-        </div>
-      </section>
-
-      <!-- SECTION 6: ECONOMICS -->
-      <section class="subject-block-container" data-section-cat="economics">
-        <div class="subject-block-header">
-          <h2>💰 भारतीय अर्थव्यवस्था (Economics - 3 High-Yield Facts)</h2>
-          <span style="font-size: 13px; color: #64748b; font-weight: 600;">योजना आयोग, नीति आयोग, RBI व GDP</span>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card" data-cat="economics">
-      <div class="note-card-head">
-        <span class="note-badge badge-economics">💰 Economics (पंचवर्षीय योजनाएं व नीति आयोग)</span>
-        <div class="note-actions">
-          <span class="note-num">#67</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">पंचवर्षीय योजनाएं एवं नीति आयोग (NITI Aayog)</h3>
-      <div class="note-content">&bull; प्रथम पंचवर्षीय योजना (1951-56): <mark class="exam-key">हैरोड-डोमर मॉडल</mark> पर आधारित (कृषि को सर्वोच्च प्राथमिकता)।<br>&bull; द्वितीय पंचवर्षीय योजना (1956-61): <mark class="exam-key">पी.सी. महालनोबिस मॉडल</mark> (भारी उद्योगों व दुर्गापुर, भिलाई, राउरकेला इस्पात संयंत्रों की स्थापना)।<br>&bull; योजना आयोग को समाप्त कर <mark class="exam-key">1 जनवरी 2015 को नीति आयोग</mark> (NITI - National Institution for Transforming India) की स्थापना की गई। इसके पदेन अध्यक्ष प्रधानमंत्री होते हैं।</div>
-    </article>
-<article class="note-card" data-cat="economics">
-      <div class="note-card-head">
-        <span class="note-badge badge-economics">💰 Economics (भारतीय रिजर्व बैंक)</span>
-        <div class="note-actions">
-          <span class="note-num">#68</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">भारतीय रिजर्व बैंक (RBI) एवं मौद्रिक नीतियां</h3>
-      <div class="note-content">RBI की स्थापना <mark class="exam-key">1 अप्रैल 1935</mark> को हिल्टन यंग कमीशन की सिफारिश पर हुई थी (अधिनियम 1934)। 1 जनवरी 1949 को इसका राष्ट्रीयकरण हुआ। मुख्यालय मुंबई में है। प्रथम गवर्नर सर ऑसबोर्न स्मिथ थे और प्रथम भारतीय गवर्नर सी.डी. देशमुख थे। <br>&bull; <mark class="exam-key">रेपो रेट (Repo Rate)</mark>: वह ब्याज दर जिस पर RBI वाणिज्यिक बैंकों को अल्पकालिक ऋण देता है。<br>&bull; <mark class="exam-key">रिवर्स रेपो रेट</mark>: वह दर जिस पर RBI बैंकों से अधिशेष जमा स्वीकार करता है。<br>&bull; <mark class="exam-key">CRR (Cash Reserve Ratio)</mark>: बैंकों द्वारा RBI के पास आरक्षित रखा जाने वाला नकद अनुपात।</div>
-    </article>
-<article class="note-card" data-cat="economics">
-      <div class="note-card-head">
-        <span class="note-badge badge-economics">💰 Economics (प्रमुख सरकारी योजनाएं)</span>
-        <div class="note-actions">
-          <span class="note-num">#69</span>
-          <button type="button" class="btn-copy-note" onclick="copyFact(this)" title="Copy this revision point" aria-label="Copy note">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-      <h3 class="note-title">केन्द्र सरकार की प्रमुख कल्याणकारी योजनाएं</h3>
-      <div class="note-content">&bull; <mark class="exam-key">प्रधानमंत्री जन-धन योजना (PMJDY)</mark>: 28 अगस्त 2014 (वित्तीय समावेशन हेतु जीरो बैलेंस बैंक खाते)।<br>&bull; <mark class="exam-key">पीएम किसान सम्मान निधि</mark>: 24 फरवरी 2019 (पात्र किसानों को प्रति वर्ष ₹6,000 की प्रत्यक्ष सहायता तीन किस्तों में)।<br>&bull; <mark class="exam-key">आयुष्मान भारत (PMJAY)</mark>: 23 सितंबर 2018 रांची से शुरू (गरीब परिवारों को ₹5 लाख तक का निःशुल्क वार्षिक स्वास्थ्य बीमा)।<br>&bull; <mark class="exam-key">प्रधानमंत्री उज्ज्वला योजना</mark>: 1 मई 2016 बलिया (UP) से शुरू ("स्वच्छ ईंधन, बेहतर जीवन", BPL परिवारों को मुफ्त एलपीजी कनेक्शन)।</div>
-    </article>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- BOTTOM AD / CTA -->
-    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; border-radius: 12px; padding: 25px; text-align: center; margin-top: 35px; box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);">
-      <h3 style="font-size: 1.35rem; margin: 0 0 10px 0; color: #ffffff;">Want to Practice What You Just Read?</h3>
-      <p style="font-size: 14.5px; color: #dbeafe; margin: 0 0 18px 0;">Attempt our free weekly live mock tests with instant score analysis and solution keys.</p>
+    <!-- PRO EXAM STRATEGY -->
+    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; border-radius: 12px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);">
+      <h3 style="font-size: 1.35rem; margin: 0 0 10px 0; color: #ffffff;">Ready for Daily Mock Test Practice?</h3>
+      <p style="font-size: 14.5px; color: #dbeafe; margin: 0 0 18px 0;">Revision के साथ-साथ अपनी स्पीड और एक्यूरेसी जांचने के लिए फ्री वीकली मॉक टेस्ट अवश्य दें।</p>
       <a href="free-test-weekly.html" class="btn-action" style="background: #22c55e; color: #ffffff; font-size: 15px; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">
         ▶ Take Free Mock Test Now
       </a>
     </div>
 
   </main>
-
-  <!-- COPY TOAST -->
-  <div id="copyToast">
-    <span>✅</span>
-    <span id="copyToastMsg">Copied to clipboard!</span>
-  </div>
-
-  <script>
-    let activeCategory = 'all';
-
-    function copyFact(btn) {
-      const card = btn.closest('.note-card');
-      const title = card.querySelector('.note-title').innerText.trim();
-      const content = card.querySelector('.note-content').innerText.trim();
-      const textToCopy = title + "\n\n" + content + "\n\n(AapkaResult.in 1-Min Short Notes)";
-
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Point Copied: " + title.substring(0, 30) + "...");
-      }).catch(() => {
-        const ta = document.createElement('textarea');
-        ta.value = textToCopy;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        showToast("Point Copied!");
-      });
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('copyToast');
-      const toastMsg = document.getElementById('copyToastMsg');
-      toastMsg.innerText = msg;
-      toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 2200);
-    }
-
-    function filterCategory(cat, btn) {
-      activeCategory = cat;
-      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      applyCombinedFilter();
-    }
-
-    function filterNotes(query) {
-      const clearBtn = document.getElementById('clearSearchBtn');
-      clearBtn.style.display = query.trim() ? 'block' : 'none';
-      applyCombinedFilter();
-    }
-
-    function clearSearch() {
-      const input = document.getElementById('noteSearchInput');
-      input.value = '';
-      document.getElementById('clearSearchBtn').style.display = 'none';
-      applyCombinedFilter();
-      input.focus();
-    }
-
-    function applyCombinedFilter() {
-      const q = document.getElementById('noteSearchInput').value.trim().toLowerCase();
-      const sections = document.querySelectorAll('.subject-block-container');
-      let totalVisible = 0;
-
-      sections.forEach(section => {
-        const sectionCat = section.getAttribute('data-section-cat');
-        const cards = section.querySelectorAll('.note-card');
-        let sectionVisibleCards = 0;
-
-        cards.forEach(card => {
-          const cardCat = card.getAttribute('data-cat');
-          const matchesCat = (activeCategory === 'all' || activeCategory === cardCat);
-          const matchesQuery = !q || card.innerText.toLowerCase().includes(q);
-
-          if (matchesCat && matchesQuery) {
-            card.style.display = '';
-            sectionVisibleCards++;
-            totalVisible++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        // Hide section container if 0 cards match
-        if (sectionVisibleCards > 0) {
-          section.style.display = '';
-        } else {
-          section.style.display = 'none';
-        }
-      });
-
-      document.getElementById('visibleCount').innerText = totalVisible;
-    }
-  </script>
 
   <!-- FOOTER -->
   <footer class="site-footer">
