@@ -2069,3 +2069,74 @@ img, svg {
       height: 2px !important;
     }
   }
+
+/* --- HERO SECTION FEATURED MOCK TEST BUTTON --- */
+.hero-mock-cta-wrap {
+  margin: 12px auto 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-mock-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #1d4ed8 100%);
+  color: #ffffff !important;
+  padding: 8px 26px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.32);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-mock-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  color: #ffffff !important;
+}
+
+.hero-mock-btn:active {
+  transform: translateY(1px);
+}
+
+.hero-mock-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.hero-mock-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: #bfdbfe;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .hero-mock-cta-wrap {
+    margin: 10px auto 4px;
+  }
+  .hero-mock-btn {
+    padding: 7px 20px;
+    border-radius: 40px;
+  }
+  .hero-mock-title {
+    font-size: 13.5px;
+  }
+  .hero-mock-sub {
+    font-size: 10px;
+  }
+}

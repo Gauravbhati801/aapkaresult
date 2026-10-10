@@ -29,10 +29,76 @@
     .job-page-container { width: 100% !important; max-width: 1100px !important; box-sizing: border-box !important; padding: 0 14px !important; overflow-x: hidden !important; }
     .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-bottom: 30px; width: 100%; box-sizing: border-box; }
     @media (max-width: 768px) {
-      .dash-grid { grid-template-columns: 1fr !important; }
-      .dash-hero { padding: 20px 14px !important; border-radius: 10px !important; }
-      .dash-hero h1 { font-size: 1.4rem !important; }
-      .dash-specs-row { font-size: 11px !important; gap: 6px !important; }
+      .job-page-container { padding: 0 10px !important; }
+      .dash-hero {
+        padding: 14px 12px !important;
+        border-radius: 9px !important;
+        margin-bottom: 12px !important;
+      }
+      .dash-hero h1 {
+        font-size: 1.2rem !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.3 !important;
+      }
+      .dash-hero p {
+        font-size: 11.5px !important;
+        line-height: 1.4 !important;
+      }
+      .dash-quick-links {
+        margin-top: 8px !important;
+        gap: 6px !important;
+      }
+      .dash-quick-link {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+        border-radius: 5px !important;
+      }
+      .dash-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+      }
+      .dash-test-card {
+        padding: 10px 12px !important;
+        border-radius: 8px !important;
+        border-top-width: 3px !important;
+      }
+      .dash-card-header {
+        margin-bottom: 4px !important;
+      }
+      .dash-test-badge {
+        font-size: 9.5px !important;
+        padding: 2px 6px !important;
+      }
+      .btn-share-mini {
+        padding: 3px 5px !important;
+      }
+      .dash-test-title {
+        font-size: 13.5px !important;
+        margin: 0 0 3px 0 !important;
+        line-height: 1.3 !important;
+      }
+      .dash-test-desc {
+        font-size: 11px !important;
+        margin: 0 0 6px 0 !important;
+        line-height: 1.35 !important;
+      }
+      .dash-specs-row {
+        font-size: 10.5px !important;
+        gap: 4px 8px !important;
+        padding: 4px 8px !important;
+        margin-bottom: 8px !important;
+        border-radius: 5px !important;
+      }
+      .dash-actions {
+        gap: 6px !important;
+        margin-top: 2px !important;
+      }
+      .btn-dash-primary, .btn-dash-view, .btn-dash-retake {
+        padding: 7px 10px !important;
+        font-size: 12.5px !important;
+        border-radius: 6px !important;
+      }
     }
     .dash-test-card {
       background: #fff;

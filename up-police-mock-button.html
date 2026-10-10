@@ -123,41 +123,66 @@
       line-height: 1.5;
     }
     .cta-banner {
-      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
       color: #ffffff;
-      border-radius: 10px;
-      padding: 18px 16px;
+      border-radius: 12px;
+      padding: 20px 16px;
       text-align: center;
       margin: 22px 0;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+      border: 1px solid rgba(59, 130, 246, 0.3);
     }
     .cta-banner h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin: 0 0 6px 0;
       color: #ffffff;
       font-weight: 800;
+      letter-spacing: -0.2px;
     }
     .cta-banner p {
       font-size: 13px;
-      margin: 0 0 14px 0;
+      margin: 0 auto 16px auto;
+      max-width: 580px;
       color: #dbeafe;
-      line-height: 1.45;
+      line-height: 1.5;
     }
     .cta-banner a.btn-action {
-      background: #22c55e;
-      color: #ffffff;
-      font-size: 14px;
-      padding: 10px 22px;
-      border-radius: 7px;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 55%, #15803d 100%);
+      color: #ffffff !important;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-      box-shadow: 0 3px 10px rgba(34, 197, 94, 0.35);
-      transition: transform 0.15s, background 0.15s;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 18px rgba(34, 197, 94, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.25) inset;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.3px;
+      animation: ctaGlowPulse 2.4s infinite;
+      cursor: pointer;
+    }
+    @keyframes ctaGlowPulse {
+      0% {
+        box-shadow: 0 4px 18px rgba(34, 197, 94, 0.45), 0 0 0 0 rgba(34, 197, 94, 0.55);
+      }
+      70% {
+        box-shadow: 0 6px 22px rgba(34, 197, 94, 0.6), 0 0 0 10px rgba(34, 197, 94, 0);
+      }
+      100% {
+        box-shadow: 0 4px 18px rgba(34, 197, 94, 0.45), 0 0 0 0 rgba(34, 197, 94, 0);
+      }
     }
     .cta-banner a.btn-action:hover {
-      background: #16a34a;
-      transform: translateY(-1px);
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.6);
+      color: #ffffff !important;
+    }
+    .cta-banner a.btn-action:active {
+      transform: translateY(1px) scale(0.99);
     }
 
     /* Mobile Responsive Optimizations */
@@ -237,9 +262,9 @@
         border-radius: 5px !important;
       }
       .cta-banner {
-        padding: 14px 10px !important;
+        padding: 14px 12px !important;
         margin: 14px 0 !important;
-        border-radius: 8px !important;
+        border-radius: 10px !important;
       }
       .cta-banner h3 {
         font-size: 1.05rem !important;
@@ -247,15 +272,22 @@
       }
       .cta-banner p {
         font-size: 11.5px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        line-height: 1.4 !important;
       }
       .cta-banner a.btn-action, .cta-banner a {
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        padding: 8px 10px !important;
-        font-size: 12.5px !important;
+        padding: 12px 14px !important;
+        font-size: 13.5px !important;
+        font-weight: 800 !important;
+        border-radius: 50px !important;
         text-align: center !important;
+        box-shadow: 0 4px 16px rgba(34, 197, 94, 0.45) !important;
       }
       .responsive-table-wrap {
         overflow-x: auto !important;
@@ -429,7 +461,8 @@
         <h3>Ready to Test Your Preparation?</h3>
         <p>Attempt the complete 150 Questions UP Police Constable Free Practice Mock Test strictly on this official blueprint.</p>
         <a href="up-police-mocks-page.html" class="btn-action">
-          ▶ Start Free UP Police Mock Test Now
+          <span>🚀 Start Free UP Police Mock Test Now</span>
+          <span style="font-size: 1.1em;">➔</span>
         </a>
       </div>
 
