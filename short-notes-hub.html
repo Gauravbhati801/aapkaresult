@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1-Minute Short Notes Hub: Quick Formulae, Rapid Charts &amp; Subject Gateways - AapkaResult.in</title>
-  <meta name="description" content="Official 1-Minute Short Notes Hub for competitive exams 2026. Rapid revision tables, constitutional articles quick glance, historical battles timeline, science formula sheets & subject gateways.">
+  <title>1-Minute Short Notes Hub: Quick Revision Cards &amp; Formulae - AapkaResult.in</title>
+  <meta name="description" content="Attempt 25+ high-yield 1-minute short notes for UP Police, SSC GD, Railway &amp; Defence exams. Indian Polity articles, historical battles, science formulas, geography &amp; static GK flashcards.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aapkaresult.in/short-notes-hub.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,150 +12,443 @@
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
   <style>
-    .hub-hero {
+    /* COMPACT, MOBILE-FIRST 1-MINUTE NOTES HUB STYLES */
+    :root {
+      --hub-blue: #1e3a8a;
+      --hub-accent: #2563eb;
+      --hub-bg: #f8fafc;
+      --hub-card-bg: #ffffff;
+      --hub-border: #e2e8f0;
+      --hub-text: #0f172a;
+      --hub-muted: #475569;
+    }
+
+    /* Compact Hero */
+    .hub-hero-compact {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
-      padding: 32px 24px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      padding: 18px 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
-    .hub-hero-badge {
-      display: inline-block;
-      background: rgba(34, 197, 94, 0.2);
+    .hub-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(34, 197, 94, 0.15);
       color: #4ade80;
-      border: 1px solid rgba(74, 222, 128, 0.4);
-      font-size: 12px;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      font-size: 11px;
       font-weight: 700;
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 999px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
     }
-    .hub-hero h1 {
-      font-size: 1.95rem;
+    .hub-hero-compact h1 {
+      font-size: 1.45rem;
       color: #ffffff;
-      margin: 0 0 10px 0;
+      margin: 0 0 6px 0;
       line-height: 1.3;
     }
-    .hub-hero p {
+    .hub-hero-compact p {
       color: #cbd5e1;
-      font-size: 14.5px;
-      line-height: 1.6;
+      font-size: 13.5px;
+      line-height: 1.5;
       margin: 0;
     }
 
-    /* Top Gateway Cards */
-    .gateways-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-    .gateway-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 18px;
-      text-decoration: none;
-      color: #0f172a;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-    .gateway-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.09);
-      border-color: #cbd5e1;
-    }
-    .gw-title {
-      font-size: 16px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 6px;
-    }
-    .gw-desc {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.45;
-      margin-bottom: 12px;
-    }
-    .gw-btn {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: #2563eb;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Rapid Reference Sections */
-    .rapid-section {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 22px;
-      margin-bottom: 26px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-    .rapid-section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-      border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 10px;
-    }
-    .rapid-section-header h2 {
-      font-size: 1.25rem;
-      color: #0f172a;
-      margin: 0;
+    /* Direct Notebook Quick Strip */
+    .notebooks-quick-strip {
       display: flex;
       align-items: center;
       gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 12px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
-    .rapid-view-all-link {
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
+    .notebooks-quick-strip::-webkit-scrollbar {
+      display: none;
+    }
+    .nqs-heading {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+    .nqs-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #f1f5f9;
+      color: #1e293b;
+      padding: 5px 11px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #cbd5e1;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .nqs-item:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+
+    /* Controls Bar: Search & View Modes */
+    .hub-controls-bar {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .hub-search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .hub-search-input {
+      width: 100%;
+      padding: 8px 36px 8px 34px;
+      font-size: 13.5px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .hub-search-input:focus {
+      border-color: #2563eb;
+    }
+    .hub-search-icon {
+      position: absolute;
+      left: 10px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+    }
+    .hub-clear-search {
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #94a3b8;
+      cursor: pointer;
+      display: none;
+      padding: 2px 6px;
+    }
+
+    /* Subject Filter Pills */
+    .subject-pills-wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .subject-pills-wrap::-webkit-scrollbar {
+      display: none;
+    }
+    .sub-pill {
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .sub-pill:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .sub-pill.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #1d4ed8;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+    }
+
+    /* View Mode & Counter Bar */
+    .view-mode-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12.5px;
+      color: #64748b;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .mode-switch-group {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 2px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    .mode-btn {
+      background: none;
+      border: none;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .mode-btn.active {
+      background: #ffffff;
+      color: #1e3a8a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      font-weight: 700;
+    }
+
+    /* Single Note Focus Mode Navigation (Shown in Focus Mode) */
+    .focus-nav-bar {
+      display: none; /* activated in focus mode */
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+    .focus-nav-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #ffffff;
       padding: 6px 14px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: 700;
-      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: background 0.15s;
     }
-    .rapid-view-all-link:hover {
-      background: #dbeafe;
+    .focus-nav-btn:hover {
+      background: #334155;
+    }
+    .focus-counter-text {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #38bdf8;
     }
 
-    /* Fast Fact Cards */
-    .fast-facts-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-      margin-top: 14px;
+    /* THE ONE-MIN-NOTE CARD (EK NOTE PURA DIKHE) */
+    .notes-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
     }
-    .fast-fact-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px 14px;
+
+    .one-min-note-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .one-min-note-card:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+    .sub-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+    .badge-polity { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .badge-history { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-science { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-geography { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+    .badge-gk { background: #fce7f3; color: #9d174d; border: 1px solid #fbcfe8; }
+
+    .btn-copy-note {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #475569;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .btn-copy-note:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .card-note-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.4;
+      margin: 0 0 12px 0;
+      border-left: 3px solid #2563eb;
+      padding-left: 8px;
+    }
+
+    .card-note-body {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .note-fact-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
       font-size: 13.5px;
+      line-height: 1.55;
       color: #1e293b;
-      line-height: 1.6;
     }
-    .fast-fact-card strong {
+    .fact-key {
+      font-weight: 700;
       color: #1e3a8a;
-      display: block;
-      margin-bottom: 3px;
-      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .fact-desc {
+      color: #334155;
+    }
+
+    .card-exam-hack {
+      background: #fffbeb;
+      border: 1px solid #fef08a;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #854d0e;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .hack-badge {
+      font-weight: 700;
+      flex-shrink: 0;
+      color: #b45309;
+    }
+    .hack-text {
+      color: #78350f;
+    }
+
+    .card-action-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .card-notebook-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
+    }
+    .card-notebook-link:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    /* Toast Notification */
+    #hubToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+    }
+    #hubToast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Small Screen Tuning */
+    @media (max-width: 600px) {
+      .hub-hero-compact {
+        padding: 14px 12px;
+      }
+      .hub-hero-compact h1 {
+        font-size: 1.25rem;
+      }
+      .hub-hero-compact p {
+        font-size: 12.5px;
+      }
+      .one-min-note-card {
+        padding: 13px 12px;
+      }
+      .card-note-title {
+        font-size: 1.02rem;
+      }
+      .note-fact-row {
+        font-size: 13px;
+        flex-direction: column;
+        gap: 1px;
+      }
+      .fact-key {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -260,353 +553,1615 @@
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="job-page-container" style="max-width: 1200px;">
+  <main class="job-page-container" style="max-width: 900px; margin: 0 auto; padding: 12px 14px;">
 
-    <!-- HERO BANNER -->
-    <div class="hub-hero">
-      <span class="hub-hero-badge">⚡ CENTRAL RAPID REVISION PORTAL 2026</span>
-      <h1>⏱️ 1-Minute Short Notes &amp; Formula Hub</h1>
-      <p>UP Police, SSC GD, Railway NTPC/Group D एवं Defence CEE के लिए एक-क्लिक में त्वरित रिवीज़न टेबल्स, संविधान के अनुच्छेद, विज्ञान के सूत्र एवं विषयवार डिटेल्ड क्वेश्चन बैंक नोटबुक।</p>
+    <!-- COMPACT HERO BANNER -->
+    <div class="hub-hero-compact">
+      <span class="hub-badge-pill">⚡ 1-MINUTE RAPID REVISION</span>
+      <h1>⏱️ 1-Minute Short Notes Hub</h1>
+      <p>UP Police, SSC GD, Railway NTPC/Group D व Defence CEE के लिए एक नजर में याद होने वाले संक्षिप्त परीक्षा नोट्स।</p>
     </div>
 
-    <!-- SUBJECT NOTEBOOK GATEWAYS -->
-    <h2 style="font-size: 1.35rem; color: #0f172a; margin: 0 0 14px 0;">📚 Select Subject-Wise In-Depth Question Bank</h2>
-    <div class="gateways-grid">
-      <a href="notes-history.html" class="gateway-card" style="border-top: 4px solid #f59e0b;">
-        <span class="gw-title">🏛️ History (इतिहास) <span>&rarr;</span></span>
-        <span class="gw-desc">प्राचीन, मध्यकालीन व आधुनिक भारत के सम्पूर्ण प्रश्न एवं व्याख्या</span>
-        <span class="gw-btn">Open History Questions Notebook &rarr;</span>
-      </a>
-
-      <a href="notes-science.html" class="gateway-card" style="border-top: 4px solid #10b981;">
-        <span class="gw-title">🧬 General Science <span>&rarr;</span></span>
-        <span class="gw-desc">जीव विज्ञान, भौतिकी, रसायन, विटामिन व मात्रकों की विस्तृत व्याख्या</span>
-        <span class="gw-btn">Open Science Questions Notebook &rarr;</span>
-      </a>
-
-      <a href="notes-polity.html" class="gateway-card" style="border-top: 4px solid #3b82f6;">
-        <span class="gw-title">⚖️ Indian Polity <span>&rarr;</span></span>
-        <span class="gw-desc">संविधान, मौलिक अधिकार, राष्ट्रपति, संसद व 12 अनुसूचियों का विश्लेषण</span>
-        <span class="gw-btn">Open Polity Questions Notebook &rarr;</span>
-      </a>
-
-      <a href="notes-geography.html" class="gateway-card" style="border-top: 4px solid #8b5cf6;">
-        <span class="gw-title">🌍 Geography <span>&rarr;</span></span>
-        <span class="gw-desc">भारत की नदियां, पर्वत शिखर, दर्रे, राष्ट्रीय उद्यान व सौरमंडल</span>
-        <span class="gw-btn">Open Geography Questions Notebook &rarr;</span>
-      </a>
-
-      <a href="notes-gk.html" class="gateway-card" style="border-top: 4px solid #ec4899;">
-        <span class="gw-title">🎯 Static GK <span>&rarr;</span></span>
-        <span class="gw-desc">शास्त्रीय नृत्य, त्यौहार, भारत रत्न, विश्व संगठन व खेलकूद ट्रॉफियां</span>
-        <span class="gw-btn">Open Static GK Questions Notebook &rarr;</span>
-      </a>
+    <!-- SUBJECT NOTEBOOK QUICK STRIP -->
+    <div class="notebooks-quick-strip">
+      <span class="nqs-heading">Full Q&amp;A Notebooks:</span>
+      <a href="notes-polity.html" class="nqs-item">⚖️ Polity Q&amp;A</a>
+      <a href="notes-history.html" class="nqs-item">🏛️ History Q&amp;A</a>
+      <a href="notes-science.html" class="nqs-item">🧬 Science Q&amp;A</a>
+      <a href="notes-geography.html" class="nqs-item">🌍 Geography Q&amp;A</a>
+      <a href="notes-gk.html" class="nqs-item">🎯 Static GK Q&amp;A</a>
     </div>
 
-    <!-- RAPID CHART 1: INDIAN POLITY ARTICLES -->
-    <section class="rapid-section">
-      <div class="rapid-section-header">
-        <h2>⚖️ Most Important Articles of Indian Constitution (संविधान के प्रमुख अनुच्छेद)</h2>
-        <a href="notes-polity.html" class="rapid-view-all-link">Open Full Polity Questions Notebook &rarr;</a>
+    <!-- CONTROLS & FILTER BAR -->
+    <div class="hub-controls-bar">
+      <!-- Search Input -->
+      <div class="hub-search-box">
+        <span class="hub-search-icon">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="hubSearchInput" class="hub-search-input" placeholder="Search formula, article, battle, dance..." oninput="filterHubNotes(this.value)">
+        <button type="button" id="clearHubSearch" class="hub-clear-search" onclick="clearHubSearchInput()" aria-label="Clear Search">&times;</button>
       </div>
-      <p style="color: #475569; font-size: 14px; margin-bottom: 14px;">
-        प्रतियोगी परीक्षाओं में बार-बार पूछे जाने वाले संविधान के महत्वपूर्ण अनुच्छेदों का 1-मिनट क्विक चार्ट:
-      </p>
-      <div class="responsive-table-wrap">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th style="width: 140px;">अनुच्छेद (Article)</th>
-              <th>प्रावधान एवं संवैधानिक विषय</th>
-              <th>परीक्षा में बार-बार आने वाला बिंदु</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>अनुच्छेद 14</strong></td>
-              <td>विधि के समक्ष समता एवं विधियों का समान संरक्षण</td>
-              <td>ब्रिटेन व अमेरिकी संविधान से प्रेरित मूल अधिकार</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 17</strong></td>
-              <td>अस्पृश्यता का अंत (Abolition of Untouchability)</td>
-              <td>किसी भी रूप में छुआछूत का आचरण दंडनीय अपराध</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 21</strong></td>
-              <td>प्राण एवं दैहिक स्वतंत्रता का संरक्षण (Right to Life)</td>
-              <td>आपातकाल (352) में भी निलंबित नहीं हो सकता</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 21A</strong></td>
-              <td>6 से 14 वर्ष के बच्चों के लिए अनिवार्य शिक्षा</td>
-              <td>86वां संविधान संशोधन अधिनियम 2002</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 32</strong></td>
-              <td>संवैधानिक उपचारों का अधिकार (Right to Constitutional Remedies)</td>
-              <td>डॉ. अंबेडकर ने 'संविधान की आत्मा और हृदय' कहा (5 प्रकार की रिट)</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 44</strong></td>
-              <td>समान नागरिक संहिता (Uniform Civil Code - UCC)</td>
-              <td>राज्य के नीति निदेशक तत्व (DPSP)</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 51A</strong></td>
-              <td>मौलिक कर्तव्य (कुल 11 कर्तव्य)</td>
-              <td>42वां संशोधन 1976 (स्वर्ण सिंह समिति)</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 61</strong></td>
-              <td>राष्ट्रपति पर महाभियोग की प्रक्रिया</td>
-              <td>14 दिन पूर्व लिखित सूचना अनिवार्य</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 324</strong></td>
-              <td>भारत का स्वतंत्र निर्वाचन आयोग</td>
-              <td>स्थापना 25 जनवरी 1950 (राष्ट्रीय मतदाता दिवस)</td>
-            </tr>
-            <tr>
-              <td><strong>अनुच्छेद 368</strong></td>
-              <td>संसद की संविधान संशोधन शक्ति</td>
-              <td>दक्षिण अफ्रीका के संविधान से प्रेरित</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
-    <!-- RAPID CHART 2: HISTORICAL BATTLES -->
-    <section class="rapid-section">
-      <div class="rapid-section-header">
-        <h2>⚔️ Major Historical Battles of India (भारतीय इतिहास के प्रमुख युद्ध)</h2>
-        <a href="notes-history.html" class="rapid-view-all-link">Open Full History Questions Notebook &rarr;</a>
+      <!-- Subject Filter Pills -->
+      <div class="subject-pills-wrap">
+        <button type="button" class="sub-pill active" onclick="setSubjectFilter('all', this)">⚡ All Subjects (25)</button>
+        <button type="button" class="sub-pill" onclick="setSubjectFilter('polity', this)">⚖️ Polity (5)</button>
+        <button type="button" class="sub-pill" onclick="setSubjectFilter('history', this)">🏛️ History (5)</button>
+        <button type="button" class="sub-pill" onclick="setSubjectFilter('science', this)">🧬 Science (5)</button>
+        <button type="button" class="sub-pill" onclick="setSubjectFilter('geography', this)">🌍 Geography (5)</button>
+        <button type="button" class="sub-pill" onclick="setSubjectFilter('gk', this)">🎯 Static GK (5)</button>
       </div>
-      <p style="color: #475569; font-size: 14px; margin-bottom: 14px;">
-        विभिन्न भर्ती परीक्षाओं में सीधे पूछे जाने वाले प्रमुख ऐतिहासिक युद्ध और उनके निर्णायक परिणाम:
-      </p>
-      <div class="responsive-table-wrap">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th style="width: 120px;">वर्ष (Year)</th>
-              <th>प्रमुख युद्ध का नाम</th>
-              <th>किनके मध्य लड़ा गया</th>
-              <th>ऐतिहासिक परिणाम</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>326 ई.पू.</strong></td>
-              <td>हाईडेस्पीज (झेलम) का युद्ध</td>
-              <td>सिकंदर और पंजाब के राजा पोरस</td>
-              <td>सिकंदर की विजय, पोरस की वीरता से प्रभावित होकर राज्य लौटाया</td>
-            </tr>
-            <tr>
-              <td><strong>261 ई.पू.</strong></td>
-              <td>कलिंग का युद्ध</td>
-              <td>मौर्य सम्राट अशोक और कलिंग नरेश</td>
-              <td>अशोक का हृदय परिवर्तन, 'धम्म विजय' को अपनाया (13वां शिलालेख)</td>
-            </tr>
-            <tr>
-              <td><strong>1191 ई.</strong></td>
-              <td>तराइन का प्रथम युद्ध</td>
-              <td>पृथ्वीराज चौहान और मुहम्मद गोरी</td>
-              <td>पृथ्वीराज चौहान की निर्णायक विजय</td>
-            </tr>
-            <tr>
-              <td><strong>1192 ई.</strong></td>
-              <td>तराइन का द्वितीय युद्ध</td>
-              <td>मुहम्मद गोरी और पृथ्वीराज चौहान</td>
-              <td>गोरी की विजय, भारत में मुस्लिम शासन की शुरुआत</td>
-            </tr>
-            <tr>
-              <td><strong>1526 ई.</strong></td>
-              <td>पानीपत का प्रथम युद्ध</td>
-              <td>बाबर और इब्राहिम लोदी</td>
-              <td>बाबर विजयी, भारत में मुगल साम्राज्य की नींव रखी</td>
-            </tr>
-            <tr>
-              <td><strong>1556 ई.</strong></td>
-              <td>पानीपत का द्वितीय युद्ध</td>
-              <td>अकबर (बैरम खां) और हेमू (हेमचंद्र)</td>
-              <td>मुगलों की विजय, दिल्ली पर पुनः मुगलों का आधिपत्य</td>
-            </tr>
-            <tr>
-              <td><strong>1576 ई.</strong></td>
-              <td>हल्दीघाटी का युद्ध</td>
-              <td>महाराणा प्रताप और अकबर (मानसिंह)</td>
-              <td>मेवाड़ का स्वाभिमान युद्ध, महाराणा प्रताप ने कभी अधीनता नहीं मानी</td>
-            </tr>
-            <tr>
-              <td><strong>1757 ई.</strong></td>
-              <td>प्लासी का युद्ध (23 जून)</td>
-              <td>रॉबर्ट क्लाइव और नवाब सिराजुद्दौला</td>
-              <td>मीर जाफर के विश्वासघात से अंग्रेज जीते, ब्रिटिश राज की नींव</td>
-            </tr>
-            <tr>
-              <td><strong>1764 ई.</strong></td>
-              <td>बक्सर का युद्ध (22 अक्टूबर)</td>
-              <td>हेक्टर मुनरो और त्रिगुट सेना (मीर कासिम)</td>
-              <td>अंग्रेजों की पूर्ण विजय, 1765 में इलाहाबाद की संधि से दीवानी अधिकार</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
-    <!-- RAPID CHART 3: SCIENCE CHEMICAL FORMULAS & UNITS -->
-    <section class="rapid-section">
-      <div class="rapid-section-header">
-        <h2>🧬 Important Chemical Formulas &amp; SI Units (रासायनिक सूत्र एवं मात्रक)</h2>
-        <a href="notes-science.html" class="rapid-view-all-link">Open Full Science Questions Notebook &rarr;</a>
-      </div>
-      <div class="fast-facts-row">
-        <div class="fast-fact-card">
-          <strong>बेकिंग सोडा (खाने का सोडा):</strong>
-          रासायनिक नाम: सोडियम हाइड्रोजन कार्बोनेट / बाइकार्बोनेट<br>
-          सूत्र: <mark class="exam-key">$NaHCO_3$</mark>
-        </div>
-        <div class="fast-fact-card">
-          <strong>धावन सोडा (धोने का सोडा):</strong>
-          रासायनिक नाम: सोडियम कार्बोनेट डेकाहाइड्रेट<br>
-          सूत्र: <mark class="exam-key">$Na_2CO_3 \cdot 10H_2O$</mark>
-        </div>
-        <div class="fast-fact-card">
-          <strong>प्लास्टर ऑफ पेरिस (POP):</strong>
-          रासायनिक नाम: कैल्शियम सल्फेट हेमीहाइड्रेट<br>
-          सूत्र: <mark class="exam-key">$CaSO_4 \cdot \frac{1}{2}H_2O$</mark>
-        </div>
-        <div class="fast-fact-card">
-          <strong>विरंजक चूर्ण (Bleaching Powder):</strong>
-          रासायनिक नाम: कैल्शियम ऑक्सीक्लोराइड<br>
-          सूत्र: <mark class="exam-key">$CaOCl_2$</mark>
-        </div>
-        <div class="fast-fact-card">
-          <strong>भारी जल (Heavy Water):</strong>
-          ड्यूटेरियम ऑक्साइड (परमाणु रिएक्टर मंदक)<br>
-          सूत्र: <mark class="exam-key">$D_2O$</mark>
-        </div>
-        <div class="fast-fact-card">
-          <strong>हंसाने वाली गैस (Laughing Gas):</strong>
-          नाइट्रस ऑक्साइड (एनेस्थीसिया के रूप में)<br>
-          सूत्र: <mark class="exam-key">$N_2O$</mark>
+      <!-- View Mode & Counter Bar -->
+      <div class="view-mode-bar">
+        <span>Showing <strong id="hubVisibleCount">25</strong> of 25 Short Notes</span>
+        <div class="mode-switch-group">
+          <button type="button" class="mode-btn active" id="btnModeScroll" onclick="setViewMode('scroll')" title="All Notes List View">📜 All Notes View</button>
+          <button type="button" class="mode-btn" id="btnModeFocus" onclick="setViewMode('focus')" title="1 Note on Screen at a Time">🎯 1-Note Focus Mode</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- RAPID CHART 4: GEOGRAPHICAL ORIGINS & PEAKS -->
-    <section class="rapid-section">
-      <div class="rapid-section-header">
-        <h2>🌍 Indian Rivers &amp; Highest Peaks Quick Facts (नदियां एवं पर्वत शिखर)</h2>
-        <a href="notes-geography.html" class="rapid-view-all-link">Open Full Geography Questions Notebook &rarr;</a>
-      </div>
-      <div class="fast-facts-row">
-        <div class="fast-fact-card">
-          <strong>गंगा नदी (2,525 किमी):</strong>
-          उद्गम: गंगोत्री हिमनद (भागीरथी नदी के रूप में)<br>
-          समागम: बंगाल की खाड़ी (सुंदरबन डेल्टा बनाती है)
-        </div>
-        <div class="fast-fact-card">
-          <strong>गोदावरी नदी (1,465 किमी):</strong>
-          उद्गम: त्र्यंबकेश्वर पहाड़ी, नासिक (महाराष्ट्र)<br>
-          उपनाम: 'दक्षिण गंगा' या 'वृद्ध गंगा' (प्रायद्वीपीय भारत की सबसे लंबी नदी)
-        </div>
-        <div class="fast-fact-card">
-          <strong>नर्मदा नदी (1,312 किमी):</strong>
-          उद्गम: अमरकंटक पहाड़ी (मध्य प्रदेश)<br>
-          विशेष: भ्रंश घाटी से बहकर अरब सागर में एश्चुअरी बनाती है (धुआंधार जलप्रपात)
-        </div>
-        <div class="fast-fact-card">
-          <strong>माउंट K2 / गॉडविन ऑस्टिन (8,611 मी):</strong>
-          स्थान: काराकोरम श्रेणी (लद्दाख/PoK)<br>
-          विशेष: भारत की सर्वोच्च चोटी एवं विश्व की दूसरी सबसे ऊंची चोटी
-        </div>
-        <div class="fast-fact-card">
-          <strong>कंचनजंगा (8,586 मी):</strong>
-          स्थान: सिक्किम (भारत-नेपाल सीमा)<br>
-          विशेष: पूर्ण रूप से भारतीय अधिकार क्षेत्र में भारत की सर्वोच्च चोटी
-        </div>
-        <div class="fast-fact-card">
-          <strong>अनाईमुडी (2,695 मी):</strong>
-          स्थान: अन्नामलाई पहाड़ी, केरल<br>
-          विशेष: दक्षिण भारत एवं पश्चिमी घाट की सर्वोच्च चोटी
-        </div>
-      </div>
-    </section>
+    <!-- FOCUS MODE STICKY NAV (Displayed only when Focus Mode is Active) -->
+    <div class="focus-nav-bar" id="focusNavBar">
+      <button type="button" class="focus-nav-btn" onclick="prevFocusNote()" aria-label="Previous Note">&larr; Previous</button>
+      <span class="focus-counter-text" id="focusCounter">Note 1 of 25</span>
+      <button type="button" class="focus-nav-btn" onclick="nextFocusNote()" aria-label="Next Note">Next &rarr;</button>
+    </div>
 
-    <!-- RAPID CHART 5: 8 CLASSICAL DANCES OF INDIA -->
-    <section class="rapid-section">
-      <div class="rapid-section-header">
-        <h2>🎭 8 Classical Dances of India (भारत के 8 शास्त्रीय नृत्य)</h2>
-        <a href="notes-gk.html" class="rapid-view-all-link">Open Full Static GK Questions Notebook &rarr;</a>
+    <!-- NOTES CARDS LIST (EK NOTE PURA DIKHE) -->
+    <div class="notes-cards-container" id="notesCardsContainer">
+      
+    <article class="one-min-note-card" data-subject="polity" data-id="1" id="note-1">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-polity">⚖️ Polity &bull; 1-Min Note #1</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #1">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
       </div>
-      <div class="responsive-table-wrap">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>शास्त्रीय नृत्य</th>
-              <th>संबंधित राज्य</th>
-              <th>प्रसिद्ध कलाकार / मुख्य विशेषता</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>भरतनाट्यम</strong></td>
-              <td>तमिलनाडु (सबसे प्राचीन नृत्य)</td>
-              <td>रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति, पद्म सुब्रह्मण्यम</td>
-            </tr>
-            <tr>
-              <td><strong>कथक</strong></td>
-              <td>उत्तर प्रदेश (उत्तर भारत)</td>
-              <td>पंडित बिरजू महाराज, लच्छू महाराज, सितारा देवी (कथा कहने की कला)</td>
-            </tr>
-            <tr>
-              <td><strong>कथकली</strong></td>
-              <td>केरल (पुरुष प्रधान नृत्य नाटक)</td>
-              <td>विशाल मुखौटे, चेहरे के गहरे रंग (हरा-भला, लाल-बुरा)</td>
-            </tr>
-            <tr>
-              <td><strong>मोहिनीअट्टम</strong></td>
-              <td>केरल (महिला एकल नृत्य)</td>
-              <td>भगवान विष्णु के मोहिनी अवतार की सुंदर भाव-भंगिमाएं</td>
-            </tr>
-            <tr>
-              <td><strong>कुचिपुड़ी</strong></td>
-              <td>आंध्र प्रदेश (कुचेलापुरम गांव)</td>
-              <td>राधा रेड्डी, राजा रेड्डी (थाली और मटके पर नृत्य की परंपरा)</td>
-            </tr>
-            <tr>
-              <td><strong>ओडिसी</strong></td>
-              <td>ओडिशा (मंदिर नृत्य परंपरा)</td>
-              <td>केलुचरण महापात्र, माधवी मुद्गल (त्रिभंग मुद्रा प्रसिद्ध)</td>
-            </tr>
-            <tr>
-              <td><strong>मणिपुरी</strong></td>
-              <td>मणिपुर (राधा-कृष्ण रासलीला)</td>
-              <td>झावेरी बहनें (नयना, सुवर्णा, दर्शना), कुमिल पोशाक</td>
-            </tr>
-            <tr>
-              <td><strong>सत्त्रिया</strong></td>
-              <td>असम (वैष्णव मठों की परंपरा)</td>
-              <td>15वीं शताब्दी में महान संत श्रीमंत शंकरदेव द्वारा प्रतिपादित</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
-    <!-- PRO EXAM STRATEGY -->
-    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; border-radius: 12px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);">
-      <h3 style="font-size: 1.35rem; margin: 0 0 10px 0; color: #ffffff;">Ready for Daily Mock Test Practice?</h3>
-      <p style="font-size: 14.5px; color: #dbeafe; margin: 0 0 18px 0;">Revision के साथ-साथ अपनी स्पीड और एक्यूरेसी जांचने के लिए फ्री वीकली मॉक टेस्ट अवश्य दें।</p>
-      <a href="free-test-weekly.html" class="btn-action" style="background: #22c55e; color: #ffffff; font-size: 15px; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">
-        ▶ Take Free Mock Test Now
+      <h2 class="card-note-title">संविधान के 10 सबसे महत्वपूर्ण अनुच्छेद (Top 10 Exam Articles)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 14:</span>
+      <span class="fact-desc">विधि के समक्ष समता एवं विधियों का समान संरक्षण (ब्रिटेन व US प्रेरित)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 17:</span>
+      <span class="fact-desc">अस्पृश्यता (छुआछूत) का उन्मूलन एवं दंडनीय आचरण</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 21:</span>
+      <span class="fact-desc">प्राण एवं दैहिक स्वतंत्रता का अधिकार (Right to Life - कभी निलंबित नहीं)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 21A:</span>
+      <span class="fact-desc">6 से 14 वर्ष के बच्चों हेतु अनिवार्य शिक्षा (86वां संशोधन 2002)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 32:</span>
+      <span class="fact-desc">संवैधानिक उपचार (डॉ. अंबेडकर ने 'संविधान की आत्मा व हृदय' कहा - 5 रिटें)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 44:</span>
+      <span class="fact-desc">समान नागरिक संहिता (Uniform Civil Code - DPSP)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 51A:</span>
+      <span class="fact-desc">मौलिक कर्तव्य (कुल 11 कर्तव्य - 42वां संशोधन 1976, स्वर्ण सिंह समिति)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 61:</span>
+      <span class="fact-desc">राष्ट्रपति पर महाभियोग प्रक्रिया (14 दिन पूर्व लिखित सूचना अनिवार्य)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 324:</span>
+      <span class="fact-desc">भारत का निर्वाचन आयोग (स्थापना 25 जनवरी 1950 - राष्ट्रीय मतदाता दिवस)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनुच्छेद 368:</span>
+      <span class="fact-desc">संसद की संविधान संशोधन शक्ति (दक्षिण अफ्रीका के संविधान से प्रेरित)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">आपातकाल (अनुच्छेद 352) के दौरान भी अनुच्छेद 20 और 21 कभी सस्पेंड नहीं होते!</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-polity.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in ⚖️ Polity Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="polity" data-id="2" id="note-2">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-polity">⚖️ Polity &bull; 1-Min Note #2</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #2">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">संविधान की 12 अनुसूचियां (12 Schedules of Constitution)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">1st अनुसूची:</span>
+      <span class="fact-desc">28 राज्य एवं 8 केंद्रशासित प्रदेशों का उल्लेख</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">2nd अनुसूची:</span>
+      <span class="fact-desc">राष्ट्रपति, राज्यपाल, न्यायाधीशों के वेतन, भत्ते व पेंशन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">3rd अनुसूची:</span>
+      <span class="fact-desc">विभिन्न संवैधानिक पदाधिकारियों की शपथ एवं प्रतिज्ञान</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">4th अनुसूची:</span>
+      <span class="fact-desc">राज्यसभा में राज्यों व केंद्रशासित प्रदेशों के लिए सीटों का आवंटन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">5th अनुसूची:</span>
+      <span class="fact-desc">अनुसूचित क्षेत्रों और अनुसूचित जनजातियों के प्रशासन व नियंत्रण</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">6th अनुसूची:</span>
+      <span class="fact-desc">असम, मेघालय, त्रिपुरा, मिजोरम (AMTM) के जनजातीय क्षेत्रों का प्रशासन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">7th अनुसूची:</span>
+      <span class="fact-desc">शक्तियों का विभाजन (संघ सूची-100, राज्य सूची-61, समवर्ती सूची-52 विषय)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">8th अनुसूची:</span>
+      <span class="fact-desc">22 आधिकारिक मान्यता प्राप्त भाषाएं (मूल संविधान में 14 भाषाएं थीं)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">9th अनुसूची:</span>
+      <span class="fact-desc">भूमि सुधार कानून (प्रथम संविधान संशोधन 1951 द्वारा जोड़ी गई)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">10th अनुसूची:</span>
+      <span class="fact-desc">दल-बदल विरोधी कानून (52वां संविधान संशोधन अधिनियम 1985)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">11th अनुसूची:</span>
+      <span class="fact-desc">पंचायती राज व्यवस्था - 29 कार्य विषय (73वां संशोधन 1992)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">12th अनुसूची:</span>
+      <span class="fact-desc">नगर पालिकाएं एवं शहरी निकाय - 18 कार्य विषय (74वां संशोधन 1992)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">दल-बदल = 10वीं अनुसूची (दस बहाने करके ले गया दल, 52वां संशोधन 1985)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-polity.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in ⚖️ Polity Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="polity" data-id="3" id="note-3">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-polity">⚖️ Polity &bull; 1-Min Note #3</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #3">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">6 मौलिक अधिकार (Fundamental Rights - भाग III)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">समानता का अधिकार:</span>
+      <span class="fact-desc">अनुच्छेद 14 से 18 (कानून के समक्ष समता, उपाधियों का अंत)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">स्वतंत्रता का अधिकार:</span>
+      <span class="fact-desc">अनुच्छेद 19 से 22 (वाक् स्वतंत्रता, अपराध दोषसिद्धि संरक्षण, जीवन की रक्षा)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">शोषण के विरुद्ध अधिकार:</span>
+      <span class="fact-desc">अनुच्छेद 23 व 24 (मानव तस्करी व बाल श्रम पर पूर्ण प्रतिबंध)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">धार्मिक स्वतंत्रता:</span>
+      <span class="fact-desc">अनुच्छेद 25 से 28 (अंतःकरण की स्वतंत्रता, धार्मिक मामलों का प्रबंधन)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">संस्कृति व शिक्षा अधिकार:</span>
+      <span class="fact-desc">अनुच्छेद 29 व 30 (अल्पसंख्यकों के हितों एवं शिक्षण संस्थानों का संरक्षण)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">संवैधानिक उपचार:</span>
+      <span class="fact-desc">अनुच्छेद 32 (मूल अधिकारों के हनन पर सुप्रीम कोर्ट 5 रिट जारी कर सकता है)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">संपत्ति का अधिकार (Art 31) को 44वें संशोधन 1978 द्वारा मौलिक अधिकारों से हटाकर कानूनी अधिकार (Art 300A) बना दिया गया।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-polity.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in ⚖️ Polity Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="polity" data-id="4" id="note-4">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-polity">⚖️ Polity &bull; 1-Min Note #4</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #4">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">संवैधानिक पद: न्यूनतम आयु, कार्यकाल एवं शपथ</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रपति / उपराष्ट्रपति / राज्यपाल:</span>
+      <span class="fact-desc">न्यूनतम आयु 35 वर्ष, कार्यकाल 5 वर्ष</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राज्यसभा / विधान परिषद सदस्य:</span>
+      <span class="fact-desc">न्यूनतम आयु 30 वर्ष, कार्यकाल 6 वर्ष (1/3 सदस्य हर 2 वर्ष में सेवानिवृत्त)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">लोकसभा सदस्य / विधानसभा / PM / CM:</span>
+      <span class="fact-desc">न्यूनतम आयु 25 वर्ष, कार्यकाल 5 वर्ष</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">पंचायत प्रधान / नगर पालिका पार्षद:</span>
+      <span class="fact-desc">न्यूनतम आयु 21 वर्ष, कार्यकाल 5 वर्ष</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मतदान करने की न्यूनतम आयु:</span>
+      <span class="fact-desc">18 वर्ष (61वां संशोधन 1989 द्वारा 21 से घटाकर 18 की गई)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रपति की शपथ व त्यागपत्र:</span>
+      <span class="fact-desc">शपथ: मुख्य न्यायाधीश (CJI) दिलाते हैं | त्यागपत्र: उपराष्ट्रपति को सौंपते हैं</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">लोकसभा व विधानसभा का कार्यकाल 5 वर्ष होता है, जबकि राज्यसभा एक स्थायी सदन है जिसका विघटन कभी नहीं होता।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-polity.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in ⚖️ Polity Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="polity" data-id="5" id="note-5">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-polity">⚖️ Polity &bull; 1-Min Note #5</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #5">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रमुख ऐतिहासिक संविधान संशोधन (Landmark Amendments)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">1st संशोधन (1951):</span>
+      <span class="fact-desc">9वीं अनुसूची जोड़ी गई (भूमि सुधार एवं जमींदारी उन्मूलन कानून)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">42nd संशोधन (1976):</span>
+      <span class="fact-desc">'लघु संविधान' (Mini Constitution) - प्रस्तावना में समाजवादी, पंथनिरपेक्ष, अखंडता शब्द जुड़े; मौलिक कर्तव्य जुड़े</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">44th संशोधन (1978):</span>
+      <span class="fact-desc">संपत्ति का अधिकार मौलिक अधिकार से हटा; आपातकाल में आंतरिक अशांति की जगह 'सशस्त्र विद्रोह' शब्द आया</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">61st संशोधन (1989):</span>
+      <span class="fact-desc">मतदान की न्यूनतम आयु 21 वर्ष से घटाकर 18 वर्ष की गई</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">86th संशोधन (2002):</span>
+      <span class="fact-desc">अनुच्छेद 21A जोड़ा गया (6-14 वर्ष के बच्चों को निशुल्क व अनिवार्य शिक्षा)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">101st संशोधन (2016):</span>
+      <span class="fact-desc">GST (वस्तु एवं सेवा कर) लागू किया गया (1 जुलाई 2017 से प्रभावी)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">103rd संशोधन (2019):</span>
+      <span class="fact-desc">सामान्य वर्ग के आर्थिक रूप से कमजोर (EWS) नागरिकों को 10% आरक्षण</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">42वें संशोधन द्वारा प्रस्तावना में जोड़े गए 3 शब्द याद रखें: SPA (Socialist, Secular, Integrity/Akhandata).</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-polity.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in ⚖️ Polity Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="history" data-id="6" id="note-6">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-history">🏛️ History &bull; 1-Min Note #6</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #6">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">पानीपत के तीनों ऐतिहासिक युद्ध (Three Battles of Panipat)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">प्रथम युद्ध (21 अप्रैल 1526):</span>
+      <span class="fact-desc">बाबर vs इब्राहिम लोदी &bull; बाबर विजयी, भारत में मुग़ल साम्राज्य की स्थापना; तोपखाने (तुलगुमा पद्धति) का प्रयोग</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">द्वितीय युद्ध (5 नवंबर 1556):</span>
+      <span class="fact-desc">अकबर (बैरम खां) vs हेमू (हेमचंद्र विक्रमादित्य) &bull; मुग़ल सेना विजयी, दिल्ली की गद्दी पर पुनः मुग़ल आधिपत्य</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">तृतीय युद्ध (14 जनवरी 1761):</span>
+      <span class="fact-desc">अहमद शाह अब्दाली vs मराठा (सदाशिवराव भाऊ) &bull; अब्दाली विजयी, मराठा साम्राज्य को भारी क्षति</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">पानीपत वर्तमान समय में हरियाणा राज्य में स्थित है, जहां तीनों निर्णायक लड़ाइयां हुईं।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-history.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🏛️ History Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="history" data-id="7" id="note-7">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-history">🏛️ History &bull; 1-Min Note #7</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #7">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत के निर्णायक ऐतिहासिक युद्ध (Historic Decisive Battles)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">326 ई.पू. (हाईडेस्पीज युद्ध):</span>
+      <span class="fact-desc">सिकंदर vs राजा पोरस (झेलम नदी तट) &bull; सिकंदर जीता, पोरस की वीरता से प्रसन्न होकर राज्य लौटाया</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">261 ई.पू. (कलिंग युद्ध):</span>
+      <span class="fact-desc">सम्राट अशोक vs कलिंग नरेश &bull; भारी नरसंहार देख अशोक का हृदय परिवर्तन, 'धम्म विजय' को अपनाया (13वां शिलालेख)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1191 ई. (तराइन प्रथम युद्ध):</span>
+      <span class="fact-desc">पृथ्वीराज चौहान vs मुहम्मद गोरी &bull; पृथ्वीराज चौहान की शानदार निर्णायक विजय</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1192 ई. (तराइन द्वितीय युद्ध):</span>
+      <span class="fact-desc">मुहम्मद गोरी vs पृथ्वीराज चौहान &bull; गोरी विजयी, भारत में मुस्लिम/तुर्क सत्ता की स्थापना</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1757 ई. (प्लासी का युद्ध, 23 जून):</span>
+      <span class="fact-desc">रॉबर्ट क्लाइव vs नवाब सिराजुद्दौला &bull; मीर जाफर के धोखे से अंग्रेज जीते, ब्रिटिश राज की वास्तविक नींव</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1764 ई. (बक्सर का युद्ध, 22 अक्टूबर):</span>
+      <span class="fact-desc">हेक्टर मुनरो vs त्रिगुट सेना (मीर कासिम, शुजाउद्दौला, शाह आलम II) &bull; अंग्रेजों की पूर्ण विजय, 1765 में इलाहाबाद की संधि</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">प्लासी पश्चिम बंगाल के नदिया जिले में भागीरथी तट पर है, बक्सर बिहार में गंगा नदी तट पर है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-history.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🏛️ History Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="history" data-id="8" id="note-8">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-history">🏛️ History &bull; 1-Min Note #8</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #8">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">1857 की महान क्रांति: प्रमुख केंद्र एवं विद्रोही नेता</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">बैरकपुर (बंगाल):</span>
+      <span class="fact-desc">मंगल पांडे (34वीं नेटिव इन्फैंट्री) - 29 मार्च 1857 को चर्बी वाले कारतूस के विरोध में बिगुल फूंका</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मेरठ:</span>
+      <span class="fact-desc">10 मई 1857 को क्रांति की आधिकारिक शुरुआत, सैनिकों ने दिल्ली कूच किया</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">दिल्ली:</span>
+      <span class="fact-desc">बहादुर शाह ज़फ़र (नाममात्र नेता) एवं जनरल बख्त खान (वास्तविक सैन्य नेतृत्व)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कानपुर:</span>
+      <span class="fact-desc">नाना साहेब (धोंधू पंत) एवं तांत्या टोपे (रामचंद्र पांडुरंग)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">लखनऊ:</span>
+      <span class="fact-desc">बेगम हज़रत महल एवं उनके अल्पवयस्क पुत्र बिरजिस कादिर</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">झांसी:</span>
+      <span class="fact-desc">रानी लक्ष्मीबाई (मणिकर्णिका) - ब्रिटिश सेनापति ह्यूरोज के खिलाफ लड़ीं</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">बिहार (जगदीशपुर):</span>
+      <span class="fact-desc">बाबू कुंवर सिंह एवं अमर सिंह (80 वर्ष की उम्र में अदम्य वीरता दिखाई)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">1857 की क्रांति के समय भारत का गवर्नर जनरल 'लॉर्ड कैनिंग' और ब्रिटेन का प्रधानमंत्री 'पामर्स्टन' था।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-history.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🏛️ History Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="history" data-id="9" id="note-9">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-history">🏛️ History &bull; 1-Min Note #9</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #9">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">गांधीवादी युग के प्रमुख जन-आंदोलन (Gandhian Movements)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">1915 (9 जनवरी):</span>
+      <span class="fact-desc">गांधी जी दक्षिण अफ्रीका से भारत लौटे (इसी उपलक्ष्य में प्रवासी भारतीय दिवस मनाया जाता है)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1917 (चंपारण सत्याग्रह, बिहार):</span>
+      <span class="fact-desc">भारत में गांधी जी का प्रथम सत्याग्रह (तीनकठिया नील प्रणाली के विरोध में, राजकुमार शुक्ल के आमंत्रण पर)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1918 (अहमदाबाद मिल हड़ताल):</span>
+      <span class="fact-desc">गांधी जी की भारत में प्रथम भूख हड़ताल (प्लेग बोनस मांग)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1920 (असहयोग आंदोलन):</span>
+      <span class="fact-desc">1 अगस्त 1920 को शुरू; चौरी-चौरा कांड (4 फरवरी 1922) के बाद 12 फरवरी 1922 को बारदोली प्रस्ताव से वापस</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1930 (सविनय अवज्ञा आंदोलन):</span>
+      <span class="fact-desc">12 मार्च 1930 को साबरमती से दांडी यात्रा (78 अनुयायी, 240 मील), 6 अप्रैल को नमक कानून तोड़ा</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">1942 (भारत छोड़ो आंदोलन):</span>
+      <span class="fact-desc">8 अगस्त 1942 को मुंबई के ग्वालिया टैंक से शुरुआत, गांधी जी ने 'करो या मरो' (Do or Die) का मंत्र दिया</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">महात्मा गांधी ने भारतीय राष्ट्रीय कांग्रेस के केवल एक अधिवेशन की अध्यक्षता की थी: 1924, बेलगाम (कर्नाटक)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-history.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🏛️ History Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="history" data-id="10" id="note-10">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-history">🏛️ History &bull; 1-Min Note #10</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #10">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">चार प्रमुख बौद्ध संगीतियां (Four Buddhist Councils)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">प्रथम (483 ई.पू., राजगृह):</span>
+      <span class="fact-desc">शासक: अजातशत्रु (हर्यक वंश) &bull; अध्यक्ष: महाकश्यप &bull; कार्य: सुत्त पिटक व विनय पिटक का संकलन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">द्वितीय (383 ई.पू., वैशाली):</span>
+      <span class="fact-desc">शासक: कालाशोक (शिशुनाग वंश) &bull; अध्यक्ष: साबाकामी &bull; कार्य: बौद्ध संघ का दो भागों में विभाजन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">तृतीय (250 ई.पू., पाटलिपुत्र):</span>
+      <span class="fact-desc">शासक: सम्राट अशोक (मौर्य वंश) &bull; अध्यक्ष: मोग्गलिपुत्त तिस्स &bull; कार्य: तीसरा पिटक 'अभिधम्म पिटक' संकलित</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">चतुर्थ (78 ई., कुंडलवन-कश्मीर):</span>
+      <span class="fact-desc">शासक: कनिष्क (कुषाण वंश) &bull; अध्यक्ष: वसुमित्र (उपाध्यक्ष: अश्वघोष) &bull; कार्य: बौद्ध धर्म 'हीनयान' व 'महायान' में बंटा</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">शासकों का क्रम याद रखने की सुपर ट्रिक: AK-AK (अजातशत्रु, कालाशोक, अशोक, कनिष्क)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-history.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🏛️ History Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="science" data-id="11" id="note-11">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-science">🧬 Science &bull; 1-Min Note #11</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #11">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रमुख रासायनिक सूत्र एवं व्यापारिक नाम (Chemical Formulas)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">बेकिंग सोडा (खाने का सोडा):</span>
+      <span class="fact-desc">रासायनिक नाम: सोडियम हाइड्रोजन कार्बोनेट / बाइकार्बोनेट &bull; सूत्र: NaHCO₃</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">धावन सोडा (धोने का सोडा):</span>
+      <span class="fact-desc">रासायनिक नाम: सोडियम कार्बोनेट डेकाहाइड्रेट &bull; सूत्र: Na₂CO₃·10H₂O</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">प्लास्टर ऑफ पेरिस (POP):</span>
+      <span class="fact-desc">रासायनिक नाम: कैल्शियम सल्फेट हेमीहाइड्रेट &bull; सूत्र: CaSO₄·½H₂O</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">जिप्सम (Gypsum):</span>
+      <span class="fact-desc">रासायनिक नाम: कैल्शियम सल्फेट डाइहाइड्रेट &bull; सूत्र: CaSO₄·2H₂O</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विरंजक चूर्ण (Bleaching Powder):</span>
+      <span class="fact-desc">रासायनिक नाम: कैल्शियम ऑक्सीक्लोराइड &bull; सूत्र: CaOCl₂</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">भारी जल (Heavy Water):</span>
+      <span class="fact-desc">ड्यूटेरियम ऑक्साइड &bull; सूत्र: D₂O (नाभिकीय रिएक्टरों में मंदक के रूप में)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">हंसाने वाली गैस (Laughing Gas):</span>
+      <span class="fact-desc">नाइट्रस ऑक्साइड &bull; सूत्र: N₂O</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">जिप्सम को 100°C (373 K) पर गर्म करने पर पानी का 1½ अणु निकल जाता है और प्लास्टर ऑफ पेरिस बनता है!</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-science.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🧬 Science Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="science" data-id="12" id="note-12">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-science">🧬 Science &bull; 1-Min Note #12</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #12">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">विटामिन - रासायनिक नाम, मुख्य स्रोत एवं रोग</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन A (रेटिनॉल):</span>
+      <span class="fact-desc">कमी से रोग: रतौंधी (Night Blindness) &bull; स्रोत: गाजर, पपीता, दूध, अंडा</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन B1 (थायमिन):</span>
+      <span class="fact-desc">कमी से रोग: बेरी-बेरी &bull; पॉलिश किए हुए चावल खाने से इसकी कमी होती है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन B12 (सायनोकोबालामिन):</span>
+      <span class="fact-desc">कमी से रोग: घातक रक्ताल्पता &bull; इसमें 'कोबाल्ट धातु' पाई जाती है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन C (एस्कॉर्बिक एसिड):</span>
+      <span class="fact-desc">कमी से रोग: स्कर्वी (मसूड़ों से खून) &bull; स्रोत: आंवला, नींबू (गर्म करने पर नष्ट होता है)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन D (कैल्सीफेरॉल):</span>
+      <span class="fact-desc">कमी से रोग: रिकेट्स (सूखा रोग) &bull; स्रोत: सूर्य का प्रकाश, मछली यकृत तेल</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन E (टोकोफेरॉल):</span>
+      <span class="fact-desc">कमी से रोग: जनन क्षमता में कमी, बांझपन &bull; इसे 'ब्यूटी विटामिन' भी कहते हैं</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विटामिन K (फिलोक्विनोन):</span>
+      <span class="fact-desc">कमी से रोग: रक्त का थक्का (Blood Clot) न जमना &bull; स्रोत: हरी पत्तेदार सब्जियां</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">जल में घुलनशील विटामिन: B और C | वसा (Fat) में घुलनशील विटामिन: K, E, D, A (KEDA ट्रिक)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-science.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🧬 Science Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="science" data-id="13" id="note-13">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-science">🧬 Science &bull; 1-Min Note #13</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #13">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रमुख SI मात्रक एवं वैज्ञानिक मापक यंत्र</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">बल (Force):</span>
+      <span class="fact-desc">SI मात्रक: न्यूटन (N) | कार्य एवं ऊर्जा का मात्रक: जूल (J)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">दाब (Pressure):</span>
+      <span class="fact-desc">SI मात्रक: पास्कल (Pa) | विद्युत धारा का मात्रक: एम्पीयर (A)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">शक्ति (Power):</span>
+      <span class="fact-desc">SI मात्रक: वाट (W) &bull; 1 अश्व शक्ति (Horsepower - HP) = 746 वाट</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">लेंस की क्षमता:</span>
+      <span class="fact-desc">SI मात्रक: डायोप्टर (D)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">बैरोमीटर (Barometer):</span>
+      <span class="fact-desc">वायुमंडलीय दाब मापक &bull; पारा अचानक गिरना = आंधी-तूफान का संकेत</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सीस्मोग्राफ (Seismograph):</span>
+      <span class="fact-desc">भूकंप की तीव्रता मापने का यंत्र (रिक्टर स्केल पर अंकन)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">हाइग्रोमीटर (Hygrometer):</span>
+      <span class="fact-desc">वायुमंडल की सापेक्षिक आर्द्रता (नमी) मापक</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">स्फिग्मोमैनोमीटर:</span>
+      <span class="fact-desc">मानव रक्तचाप (Blood Pressure) मापक &bull; सामान्य BP: 120/80 mmHg</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">लैक्टोमीटर से दूध की शुद्धता/घनत्व और हाइड्रोमीटर से द्रवों का आपेक्षिक घनत्व मापा जाता है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-science.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🧬 Science Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="science" data-id="14" id="note-14">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-science">🧬 Science &bull; 1-Min Note #14</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #14">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">मानव शरीर विज्ञान के महत्वपूर्ण तथ्य (Human Body Facts)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">सबसे बड़ी हड्डी:</span>
+      <span class="fact-desc">फीमर (Femur - जांघ की हड्डी) | सबसे छोटी हड्डी: स्टेप्स (Stapes - कान की)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सबसे बड़ी ग्रंथि:</span>
+      <span class="fact-desc">यकृत (Liver) | सबसे बड़ी अंतःस्रावी ग्रंथि: थायरॉयड ग्रंथि</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मास्टर ग्रंथि:</span>
+      <span class="fact-desc">पीयूष ग्रंथि (Pituitary Gland) - मस्तिष्क के आधार में स्थित</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">रक्त का pH मान:</span>
+      <span class="fact-desc">7.4 (हल्का क्षारीय) &bull; शरीर में सामान्य रक्त की मात्रा: 5 से 6 लीटर</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सर्वदाता रक्त समूह:</span>
+      <span class="fact-desc">O नेगेटिव (O⁻) | सर्वग्राही रक्त समूह: AB पॉजिटिव (AB⁺)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">RBC का जीवनकाल:</span>
+      <span class="fact-desc">120 दिन &bull; RBC का कब्रिस्तान: प्लीहा (Spleen/तिल्ली)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मानव में गुणसूत्र (Chromosomes):</span>
+      <span class="fact-desc">कुल 46 गुणसूत्र (23 जोड़े) - 22 जोड़े ऑटोसोम + 1 जोड़ा लिंग गुणसूत्र (XX/XY)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">इंसुलिन हार्मोन का निर्माण अग्न्याशय (Pancreas) की लैंगरहैंस द्वीपिकाओं की बीटा (β) कोशिकाओं द्वारा होता है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-science.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🧬 Science Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="science" data-id="15" id="note-15">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-science">🧬 Science &bull; 1-Min Note #15</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #15">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रकाशिकी (Optics) एवं मानव नेत्र दृष्टि दोष</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">प्रकाश की चाल:</span>
+      <span class="fact-desc">निर्वात में 3 × 10⁸ मी/से &bull; रोमर ने सर्वप्रथम प्रकाश की गति मापी थी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">पूर्ण आंतरिक परावर्तन (TIR):</span>
+      <span class="fact-desc">हीरे की असाधारण चमक, रेगिस्तान की मृगमरीचिका (Mirage), ऑप्टिकल फाइबर</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">प्रकाश का प्रकीर्णन (Scattering):</span>
+      <span class="fact-desc">आकाश का नीला रंग, सूर्योदय व सूर्यास्त के समय सूर्य का लाल दिखाई देना</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">निकट दृष्टि दोष (Myopia):</span>
+      <span class="fact-desc">पास की वस्तु साफ, दूर की धुंधली &bull; निवारण: अवतल लेंस (Concave Lens)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">दूर दृष्टि दोष (Hypermetropia):</span>
+      <span class="fact-desc">दूर की वस्तु साफ, पास की धुंधली &bull; निवारण: उत्तल लेंस (Convex Lens)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">जरा दृष्टि दोष (Presbyopia):</span>
+      <span class="fact-desc">वृद्धावस्था में दोनों दूरी कमजोर &bull; निवारण: द्विफोकसी लेंस (Bifocal Lens)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">अक्षरों की ट्रिक: निकट (3 अक्षर) = अवतल (4 अक्षर) | दूर (2 अक्षर) = उत्तल (3 अक्षर)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-science.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🧬 Science Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="geography" data-id="16" id="note-16">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-geography">🌍 Geography &bull; 1-Min Note #16</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #16">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत की प्रमुख नदियां एवं उद्गम स्थल (Indian Rivers Origin)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">गंगा नदी (2,525 किमी):</span>
+      <span class="fact-desc">उद्गम: गंगोत्री हिमनद (भागीरथी रूप में) &bull; भारत की सबसे लंबी नदी, सुंदरबन डेल्टा बनाती है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">गोदावरी (1,465 किमी):</span>
+      <span class="fact-desc">उद्गम: त्र्यंबकेश्वर, नासिक (महाराष्ट्र) &bull; 'दक्षिण गंगा' / 'वृद्ध गंगा', प्रायद्वीपीय भारत की सबसे लंबी नदी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कृष्णा नदी (1,400 किमी):</span>
+      <span class="fact-desc">उद्गम: महाबलेश्वर (महाराष्ट्र) &bull; प्रमुख सहायक: तुंगभद्रा, भीमा, कोयना, घाटप्रभा</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">नर्मदा नदी (1,312 किमी):</span>
+      <span class="fact-desc">उद्गम: अमरकंटक पहाड़ी (MP) &bull; भ्रंश घाटी से बहकर अरब सागर में एश्चुअरी बनाती है (धुआंधार जलप्रपात)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">ताप्ती नदी (724 किमी):</span>
+      <span class="fact-desc">उद्गम: मुलताई (बैतूल, MP) &bull; सतपुड़ा के दक्षिण में बहकर खंभात की खाड़ी में गिरती है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">ब्रह्मपुत्र नदी (2,900 किमी):</span>
+      <span class="fact-desc">उद्गम: चेमायुंगडुंग हिमनद (तिब्बत) &bull; तिब्बत में 'त्सांगपो', असम में 'ब्रह्मपुत्र', बांग्लादेश में 'जमुना'</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">पश्चिम की ओर बहने वाली नदियां: समानता ट्रिक (साबरमती, माही, नर्मदा, ताप्ती) - ये डेल्टा नहीं, एश्चुअरी बनाती हैं।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-geography.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🌍 Geography Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="geography" data-id="17" id="note-17">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-geography">🌍 Geography &bull; 1-Min Note #17</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #17">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत के प्रमुख पर्वत शिखर एवं दर्रे (Mountain Peaks & Passes)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">माउंट K2 / गॉडविन ऑस्टिन (8,611 मी):</span>
+      <span class="fact-desc">काराकोरम श्रेणी (लद्दाख/PoK) &bull; भारत की सर्वोच्च चोटी (विश्व में दूसरी सबसे ऊंची)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कंचनजंगा (8,586 मी):</span>
+      <span class="fact-desc">सिक्किम (भारत-नेपाल सीमा) &bull; पूर्ण रूप से भारत के अधिकार में सर्वोच्च चोटी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अनाईमुडी (2,695 मी):</span>
+      <span class="fact-desc">अन्नामलाई पहाड़ी, केरल &bull; दक्षिण भारत एवं पश्चिमी घाट की सर्वोच्च चोटी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">डोडाबेटा (2,637 मी):</span>
+      <span class="fact-desc">नीलगिरी पहाड़ी, तमिलनाडु &bull; दक्षिण भारत की दूसरी सबसे ऊंची चोटी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">जोजिला दर्रा:</span>
+      <span class="fact-desc">लद्दाख &bull; श्रीनगर को लेह से जोड़ता है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">बनिहाल दर्रा:</span>
+      <span class="fact-desc">जम्मू-कश्मीर &bull; जम्मू को श्रीनगर से जोड़ता है (जवाहर सुरंग इसी में स्थित है)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">नाथुला दर्रा:</span>
+      <span class="fact-desc">सिक्किम &bull; भारत और चीन (तिब्बत) के बीच ऐतिहासिक व्यापारिक मार्ग</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">पश्चिमी घाट और पूर्वी घाट का मिलन बिंदु 'नीलगिरी की पहाड़ियां' (तमिलनाडु-केरल सीमा) हैं।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-geography.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🌍 Geography Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="geography" data-id="18" id="note-18">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-geography">🌍 Geography &bull; 1-Min Note #18</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #18">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत के शीर्ष राष्ट्रीय उद्यान एवं वन्यजीव अभयारण्य</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">जिम कॉर्बेट (रामगंगा NP):</span>
+      <span class="fact-desc">उत्तराखंड &bull; भारत का प्रथम राष्ट्रीय उद्यान (स्थापना 1936, पुराना नाम हेली नेशनल पार्क)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">काजीरंगा राष्ट्रीय उद्यान:</span>
+      <span class="fact-desc">असम &bull; एक सींग वाले गैंडे (One-horned Rhinoceros) के लिए विश्व प्रसिद्ध</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">केबुल लामजाओ:</span>
+      <span class="fact-desc">मणिपुर (लोकटक झील) &bull; विश्व का एकमात्र तैरता हुआ राष्ट्रीय उद्यान (संगाई नाचने वाला हिरण)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">गिर राष्ट्रीय उद्यान:</span>
+      <span class="fact-desc">गुजरात (जूनागढ़) &bull; एशियाई शेरों (Asiatic Lions) का एकमात्र प्राकृतिक आवास</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सुंदरबन राष्ट्रीय उद्यान:</span>
+      <span class="fact-desc">पश्चिम बंगाल &bull; रॉयल बंगाल टाइगर एवं विशाल मैंग्रोव वनों के लिए प्रसिद्ध</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कान्हा राष्ट्रीय उद्यान:</span>
+      <span class="fact-desc">मध्य प्रदेश &bull; दलदली हिरण (बारहसिंगा) एवं बाघों का प्रसिद्ध अभयारण्य</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">भारत का सबसे बड़ा राष्ट्रीय उद्यान 'हेमिस' (लद्दाख) है और सबसे छोटा 'साउथ बटन' (अंडमान निकोबार) है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-geography.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🌍 Geography Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="geography" data-id="19" id="note-19">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-geography">🌍 Geography &bull; 1-Min Note #19</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #19">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">सौरमंडल के महत्वपूर्ण तथ्य (Solar System Rapid Facts)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">सबसे बड़ा ग्रह:</span>
+      <span class="fact-desc">बृहस्पति (Jupiter) | सबसे छोटा ग्रह: बुध (Mercury)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सूर्य के सबसे निकट ग्रह:</span>
+      <span class="fact-desc">बुध | पृथ्वी के सबसे निकट ग्रह: शुक्र (Venus)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सबसे चमकीला व गर्म ग्रह:</span>
+      <span class="fact-desc">शुक्र (भोर का तारा / सांझ का तारा / पृथ्वी की जुड़वां बहन)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">लाल ग्रह (Red Planet):</span>
+      <span class="fact-desc">मंगल (Mars - Iron Oxide के कारण) &bull; उपग्रह: फोबोस और डिमॉस</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">वलयों वाला सुंदर ग्रह:</span>
+      <span class="fact-desc">शनि (Saturn) &bull; इसका सबसे बड़ा उपग्रह: टाइटन (Titan)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">उल्टी दिशा में घूमने वाले ग्रह:</span>
+      <span class="fact-desc">शुक्र (Venus) एवं अरुण (Uranus) - पूर्व से पश्चिम की ओर घूमते हैं</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सौरमंडल का सबसे बड़ा उपग्रह:</span>
+      <span class="fact-desc">गेनीमीड (Ganymede - बृहस्पति का उपग्रह)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">बुध और शुक्र ऐसे दो ग्रह हैं जिनका अपना कोई भी प्राकृतिक उपग्रह (चंद्रमा) नहीं है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-geography.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🌍 Geography Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="geography" data-id="20" id="note-20">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-geography">🌍 Geography &bull; 1-Min Note #20</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #20">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत की प्रमुख बहुउद्देशीय नदी घाटी परियोजनाएं</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">टिहरी बांध (260.5 मी):</span>
+      <span class="fact-desc">भागीरथी नदी (उत्तराखंड) &bull; भारत का सबसे ऊंचा बांध</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">भाखड़ा नांगल बांध:</span>
+      <span class="fact-desc">सतलुज नदी (हिमाचल/पंजाब) &bull; भारत का सबसे ऊंचा गुरुत्वीय बांध (गोविंद सागर झील)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">हीराकुंड बांध (25.8 किमी):</span>
+      <span class="fact-desc">महानदी (ओडिशा - संबलपुर) &bull; भारत व विश्व का सबसे लंबा मिट्टी का बांध</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सरदार सरोवर बांध:</span>
+      <span class="fact-desc">नर्मदा नदी (गुजरात) &bull; इसी के समीप स्टैच्यू ऑफ यूनिटी स्थित है</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">नागार्जुन सागर बांध:</span>
+      <span class="fact-desc">कृष्णा नदी (आंध्र प्रदेश / तेलंगाना)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">दामोदर घाटी परियोजना (DVC):</span>
+      <span class="fact-desc">दामोदर नदी (1948) &bull; स्वतंत्र भारत की प्रथम बहुउद्देशीय नदी घाटी परियोजना</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">कृष्णा नदी पर स्थित बांधों की ट्रिक: कृष्ण-अर्जुन संबंध (नागार्जुन सागर) और बाल-कृष्ण माटी खाते (अलमट्टी बांध)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-geography.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🌍 Geography Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="gk" data-id="21" id="note-21">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-gk">🎯 Static GK &bull; 1-Min Note #21</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #21">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत के 8 शास्त्रीय नृत्य एवं संबंधित राज्य</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">भरतनाट्यम:</span>
+      <span class="fact-desc">तमिलनाडु &bull; भारत का सबसे प्राचीन शास्त्रीय नृत्य (रुक्मिणी देवी अरुंडेल, यामिनी कृष्णमूर्ति)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कत्थक:</span>
+      <span class="fact-desc">उत्तर प्रदेश (उत्तर भारत) &bull; 'कथा कहे सो कत्थक' (पंडित बिरजू महाराज, लच्छू महाराज, सितारा देवी)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कथकली:</span>
+      <span class="fact-desc">केरल &bull; पुरुष प्रधान नृत्य नाटक, गहरे मुखौटे व चेहरे के भाव (रामायण/महाभारत प्रसंग)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मोहिनीअट्टम:</span>
+      <span class="fact-desc">केरल &bull; भगवान विष्णु के मोहिनी रूप पर आधारित महिला एकल लास्य नृत्य</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कुचिपुड़ी:</span>
+      <span class="fact-desc">आंध्र प्रदेश (कुचेलापुरम गांव) &bull; थाली के किनारों व पीतल के मटके पर संतुलन नृत्य</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">ओडिसी:</span>
+      <span class="fact-desc">ओडिशा &bull; मंदिर परंपरा का त्रिभंग मुद्रा नृत्य (केलुचरण महापात्र, माधवी मुद्गल)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">मणिपुरी:</span>
+      <span class="fact-desc">मणिपुर &bull; राधा-कृष्ण रासलीला एवं कुमिल पोशाक (झावेरी बहनें)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सत्त्रिया:</span>
+      <span class="fact-desc">असम &bull; 15वीं सदी में महान वैष्णव संत श्रीमंत शंकरदेव द्वारा प्रतिपादित</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">केरल भारत का एकमात्र राज्य है जिसके 2 आधिकारिक शास्त्रीय नृत्य हैं (कथकली एवं मोहिनीअट्टम)।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-gk.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🎯 Static GK Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="gk" data-id="22" id="note-22">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-gk">🎯 Static GK &bull; 1-Min Note #22</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #22">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">राज्यों के प्रमुख लोक नृत्य एवं प्रसिद्ध उत्सव/मेले</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">बिहू (असम):</span>
+      <span class="fact-desc">साल में तीन बार (बोहाग, काटी, माघ) मनाया जाने वाला फसल उत्सव व लोकनृत्य</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">हॉर्नबिल महोत्सव:</span>
+      <span class="fact-desc">नागालैंड (1 से 10 दिसंबर) &bull; इसे 'त्यौहारों का त्यौहार' (Festival of Festivals) कहते हैं</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">ओणम (केरल):</span>
+      <span class="fact-desc">राजा महाबली के स्वागत में 10 दिवसीय पर्व &bull; प्रसिद्ध नौका दौड़ (वल्लमकली)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">पोंगल (तमिलनाडु):</span>
+      <span class="fact-desc">4 दिवसीय मकर संक्रांति फसल पर्व &bull; पारंपरिक जल्लीकट्टू खेल</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">कालबेलिया व घूमर:</span>
+      <span class="fact-desc">राजस्थान &bull; कालबेलिया सपेरा जनजाति का नृत्य है (यूनेस्को अमूर्त सांस्कृतिक धरोहर)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">पुष्कर मेला (राजस्थान):</span>
+      <span class="fact-desc">अजमेर के निकट कार्तिक पूर्णिमा पर आयोजित विश्व का सबसे बड़ा ऊंट मेला</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">लोसांग (Namsoong) महोत्सव सिक्किम में मनाया जाता है, जबकि लोसार महोत्सव लद्दाख/तिब्बत में मनाया जाता है।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-gk.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🎯 Static GK Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="gk" data-id="23" id="note-23">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-gk">🎯 Static GK &bull; 1-Min Note #23</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #23">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रमुख अंतरराष्ट्रीय संगठन एवं उनके मुख्यालय</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">संयुक्त राष्ट्र संघ (UN):</span>
+      <span class="fact-desc">मुख्यालय: न्यूयॉर्क (USA) &bull; स्थापना: 24 अक्टूबर 1945 (संयुक्त राष्ट्र दिवस)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विश्व स्वास्थ्य संगठन (WHO):</span>
+      <span class="fact-desc">मुख्यालय: जिनेवा (स्विट्जरलैंड) &bull; स्थापना: 7 अप्रैल 1948 (विश्व स्वास्थ्य दिवस)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">विश्व व्यापार संगठन (WTO):</span>
+      <span class="fact-desc">मुख्यालय: जिनेवा (स्विट्जरलैंड) &bull; स्थापना: 1 जनवरी 1995 (पूर्व नाम GATT)</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">यूनेस्को (UNESCO):</span>
+      <span class="fact-desc">मुख्यालय: पेरिस (फ्रांस) &bull; संयुक्त राष्ट्र शैक्षिक, वैज्ञानिक एवं सांस्कृतिक संगठन</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">IMF एवं विश्व बैंक (World Bank):</span>
+      <span class="fact-desc">मुख्यालय: वाशिंगटन डी.सी. (USA) &bull; ब्रेटन वुड्स सम्मेलन 1944 की जुड़वां संतानें</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">अंतरराष्ट्रीय न्यायालय (ICJ):</span>
+      <span class="fact-desc">मुख्यालय: द हेग (नीदरलैंड्स) &bull; कुल 15 न्यायाधीश, कार्यकाल 9 वर्ष</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">सार्क (SAARC):</span>
+      <span class="fact-desc">मुख्यालय: काठमांडू (नेपाल) &bull; स्थापना 1985 (कुल 8 सदस्य देश)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">पैसे और ऋण से संबंधित दो बड़े संगठन (IMF व World Bank) दुनिया की वित्तीय राजधानी 'वाशिंगटन डी.सी.' में हैं।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-gk.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🎯 Static GK Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="gk" data-id="24" id="note-24">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-gk">🎯 Static GK &bull; 1-Min Note #24</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #24">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">भारत के राष्ट्रीय प्रतीक एवं संवैधानिक समय सीमा</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रीय ध्वज (तिरंगा):</span>
+      <span class="fact-desc">अनुपात 3:2 (लंबाई:चौड़ाई) &bull; डिज़ाइन: पिंगली वेंकैया &bull; 22 जुलाई 1947 को अपनाया गया; चक्र में 24 तीलियां</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रगान (जन गण मन):</span>
+      <span class="fact-desc">रचयिता: रवींद्रनाथ टैगोर &bull; गाने का समय: 52 सेकंड (संक्षिप्त 20 सेकंड) &bull; अपनाया: 24 जनवरी 1950</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रगीत (वंदे मातरम्):</span>
+      <span class="fact-desc">रचयिता: बंकिमचंद्र चटर्जी (आनंदमठ से) &bull; गाने का समय: 65 सेकंड (1 मिनट 5 सेकंड) &bull; अपनाया: 24 जनवरी 1950</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रीय प्रतीक (राजचिन्ह):</span>
+      <span class="fact-desc">सारनाथ स्थित अशोक के सिंह स्तंभ से &bull; नीचे 'सत्यमेव जयते' (मुंडकोपनिषद से) देवनागरी में अंकित</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रीय पंचांग:</span>
+      <span class="fact-desc">शक संवत (78 ई.) पर आधारित &bull; प्रथम माह: चैत्र, अंतिम माह: फाल्गुन &bull; अपनाया: 22 मार्च 1957</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">राष्ट्रीय जलीय जीव:</span>
+      <span class="fact-desc">गंगा डॉल्फिन (Gangetic Dolphin - 5 अक्टूबर 2009 को घोषित)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">राष्ट्रगान सर्वप्रथम 27 दिसंबर 1911 को भारतीय राष्ट्रीय कांग्रेस के कलकत्ता अधिवेशन में गाया गया था।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-gk.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🎯 Static GK Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="one-min-note-card" data-subject="gk" data-id="25" id="note-25">
+      <div class="card-meta-bar">
+        <span class="sub-badge badge-gk">🎯 Static GK &bull; 1-Min Note #25</span>
+        <button type="button" class="btn-copy-note" onclick="copySingleNote(this)" aria-label="Copy Note #25">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.893m-6 4.964h8c1.105 0 2 .912 2 2.036v10.893c0 1.125-.895 2.036-2 2.036H8c-1.105 0-2-.911-2-2.036V13.929c0-1.125.895-2.036 2-2.036z"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <h2 class="card-note-title">प्रमुख खेल ट्रॉफियां एवं प्रतियोगिताएं (Sports Trophies)</h2>
+
+      <div class="card-note-body">
+        
+    <div class="note-fact-row">
+      <span class="fact-key">क्रिकेट ट्रॉफियां:</span>
+      <span class="fact-desc">रणजी ट्रॉफी, दलीप ट्रॉफी, ईरानी कप, विजय हजारे ट्रॉफी, देवधर ट्रॉफी, सी.के. नायडू ट्रॉफी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">फुटबॉल ट्रॉफियां:</span>
+      <span class="fact-desc">डूरंड कप (भारत का सबसे पुराना - 1888), संतोष ट्रॉफी, सुब्रतो कप, रोवर्स कप</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">हॉकी ट्रॉफियां:</span>
+      <span class="fact-desc">आगा खां कप, ध्यानचंद ट्रॉफी, रंगास्वामी कप, सिंधिया गोल्ड कप, बेगम रसूल ट्रॉफी</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">बैडमिंटन ट्रॉफियां:</span>
+      <span class="fact-desc">थॉमस कप (पुरुष विश्व चैंपियनशिप), उबेर कप (महिला विश्व चैंपियनशिप), सुदीरमन कप</span>
+    </div>
+  
+    <div class="note-fact-row">
+      <span class="fact-key">टेनिस 4 ग्रैंड स्लैम (क्रम):</span>
+      <span class="fact-desc">1. ऑस्ट्रेलियन ओपन (हार्ड कोर्ट) &rarr; 2. फ्रेंच ओपन (क्ले कोर्ट) &rarr; 3. विंबलडन (ग्रास कोर्ट) &rarr; 4. US ओपन (हार्ड कोर्ट)</span>
+    </div>
+  
+      </div>
+
+      <div class="card-exam-hack">
+        <span class="hack-badge">💡 1-Min Hack:</span>
+        <span class="hack-text">थॉमस कप = केवल पुरुष बैडमिंटन टीम | उबेर कप = केवल महिला बैडमिंटन टीम।</span>
+      </div>
+
+      <div class="card-action-bar">
+        <a href="notes-gk.html" class="card-notebook-link">
+          <span>Read In-Depth Q&amp;A in 🎯 Static GK Notebook &rarr;</span>
+        </a>
+      </div>
+    </article>
+  
+    </div>
+
+    <!-- PRACTICE MOCK CTA -->
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+      <div>
+        <strong style="color: #1e3a8a; font-size: 14px; display: block;">🎯 Test Your Speed in Weekly Mock Test</strong>
+        <span style="color: #475569; font-size: 12.5px;">Short notes revision के बाद फ्री ऑनलाइन मॉक टेस्ट देकर अपनी रैंक चेक करें।</span>
+      </div>
+      <a href="free-test-weekly.html" style="background: #2563eb; color: #ffffff; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; flex-shrink: 0;">
+        ▶ Take Free Mock Test
       </a>
     </div>
 
   </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="hubToast">
+    <span>✅</span>
+    <span id="hubToastMsg">Note Copied!</span>
+  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -668,5 +2223,159 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    // INTERACTIVE CONTROLS FOR 1-MINUTE SHORT NOTES HUB
+    let currentSubject = 'all';
+    let currentMode = 'scroll'; // 'scroll' or 'focus'
+    let focusIndex = 0;
+    let visibleCardsList = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateVisibleList();
+    });
+
+    function copySingleNote(btn) {
+      const card = btn.closest('.one-min-note-card');
+      const title = card.querySelector('.card-note-title').innerText.trim();
+      const facts = Array.from(card.querySelectorAll('.note-fact-row')).map(r => r.innerText.trim()).join('\n');
+      const hack = card.querySelector('.card-exam-hack').innerText.trim();
+      const textToCopy = title + "\n\n" + facts + "\n\n" + hack + "\n\n(1-Min Short Notes - AapkaResult.in)";
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showHubToast("Short Note Copied!");
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showHubToast("Short Note Copied!");
+      });
+    }
+
+    function showHubToast(msg) {
+      const toast = document.getElementById('hubToast');
+      const toastMsg = document.getElementById('hubToastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    function setSubjectFilter(sub, btn) {
+      currentSubject = sub;
+      document.querySelectorAll('.sub-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter();
+    }
+
+    function filterHubNotes(q) {
+      const clearBtn = document.getElementById('clearHubSearch');
+      clearBtn.style.display = q.trim() ? 'block' : 'none';
+      applyFilter();
+    }
+
+    function clearHubSearchInput() {
+      const input = document.getElementById('hubSearchInput');
+      input.value = '';
+      document.getElementById('clearHubSearch').style.display = 'none';
+      applyFilter();
+      input.focus();
+    }
+
+    function applyFilter() {
+      const q = document.getElementById('hubSearchInput').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.one-min-note-card');
+      visibleCardsList = [];
+
+      cards.forEach(card => {
+        const sub = card.getAttribute('data-subject');
+        const matchesSub = (currentSubject === 'all' || currentSubject === sub);
+        const matchesQ = !q || card.innerText.toLowerCase().includes(q);
+
+        if (matchesSub && matchesQ) {
+          visibleCardsList.push(card);
+        }
+      });
+
+      document.getElementById('hubVisibleCount').innerText = visibleCardsList.length;
+
+      if (currentMode === 'focus') {
+        focusIndex = 0;
+        renderFocusCard();
+      } else {
+        cards.forEach(c => {
+          c.style.display = visibleCardsList.includes(c) ? '' : 'none';
+        });
+      }
+    }
+
+    function updateVisibleList() {
+      visibleCardsList = Array.from(document.querySelectorAll('.one-min-note-card'));
+    }
+
+    function setViewMode(mode) {
+      currentMode = mode;
+      const btnScroll = document.getElementById('btnModeScroll');
+      const btnFocus = document.getElementById('btnModeFocus');
+      const focusBar = document.getElementById('focusNavBar');
+
+      if (mode === 'focus') {
+        btnFocus.classList.add('active');
+        btnScroll.classList.remove('active');
+        focusBar.style.display = 'flex';
+        focusIndex = 0;
+        renderFocusCard();
+      } else {
+        btnScroll.classList.add('active');
+        btnFocus.classList.remove('active');
+        focusBar.style.display = 'none';
+        // restore normal list visibility
+        applyFilter();
+      }
+    }
+
+    function renderFocusCard() {
+      const cards = document.querySelectorAll('.one-min-note-card');
+      if (visibleCardsList.length === 0) {
+        cards.forEach(c => c.style.display = 'none');
+        document.getElementById('focusCounter').innerText = 'No notes found';
+        return;
+      }
+
+      if (focusIndex < 0) focusIndex = 0;
+      if (focusIndex >= visibleCardsList.length) focusIndex = visibleCardsList.length - 1;
+
+      cards.forEach(c => c.style.display = 'none');
+      const targetCard = visibleCardsList[focusIndex];
+      if (targetCard) {
+        targetCard.style.display = '';
+        document.getElementById('focusCounter').innerText = 'Note ' + (focusIndex + 1) + ' of ' + visibleCardsList.length;
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function prevFocusNote() {
+      if (focusIndex > 0) {
+        focusIndex--;
+        renderFocusCard();
+      }
+    }
+
+    function nextFocusNote() {
+      if (focusIndex < visibleCardsList.length - 1) {
+        focusIndex++;
+        renderFocusCard();
+      }
+    }
+
+    // Keyboard navigation in focus mode (left/right arrow)
+    document.addEventListener('keydown', (e) => {
+      if (currentMode === 'focus') {
+        if (e.key === 'ArrowRight') nextFocusNote();
+        if (e.key === 'ArrowLeft') prevFocusNote();
+      }
+    });
+  </script>
 </body>
 </html>
