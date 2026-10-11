@@ -50,7 +50,7 @@ The website strictly follows Google Publisher Policies and Google AdSense guidel
 * ✅ **Privacy Policy (`privacy-policy.html`):** Verified Google AdSense & DoubleClick DART cookie disclosures, personalized ads opt-out instructions, CCPA, and GDPR user rights.
 * ✅ **Terms & Conditions (`terms-and-conditions.html`):** Clear terms of service, intellectual property guidelines, and visitor obligations.
 * ✅ **Official Disclaimer (`disclaimer.html`):** Clear non-government entity disclaimer stating that AapkaResult.in is an educational aggregator.
-* ✅ **Contact & Grievance Desk (`contact-us.html`):** Working contact forms, email (`workwebsite299@gmail.com`), and physical office address.
+* ✅ **Contact & Grievance Desk (`contact-us.html`):** Working contact forms, email (`gauravbhati@aapkaresult.in`), and physical office address.
 * ✅ **Editorial Policy (`editorial-policy.html`):** Strict verification standards against official government gazettes.
 * ✅ **Fact Verification Policy (`fact-verification-policy.html`):** Verification workflows for all exam dates and notices.
 * ✅ **Content Ownership Policy (`content-ownership-policy.html`):** Copyright compliance and fair use of government notices.
