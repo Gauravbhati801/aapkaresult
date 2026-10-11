@@ -506,94 +506,109 @@
         line-height: 1.25;
       }
 
-      /* Solutions Card on Mobile */
+            /* Solutions Card on Mobile - ULTRA COMPACT (5 questions visible on screen) */
       .sol-card {
-        padding: 10px 8px;
+        padding: 6px 5px;
         border-radius: 8px;
       }
       .sol-header {
-        margin-bottom: 8px;
-        gap: 6px;
+        margin-bottom: 5px;
+        gap: 4px;
         flex-direction: column;
         align-items: flex-start;
       }
       .sol-title {
-        font-size: 13.5px;
+        font-size: 12.5px;
       }
       .sol-filter-pills {
         display: flex;
-        gap: 4px;
+        gap: 3px;
         width: 100%;
         overflow-x: auto;
         padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
       }
       .sol-pill {
-        padding: 4px 8px;
-        font-size: 10.5px;
+        padding: 2px 6px;
+        font-size: 9.5px;
         white-space: nowrap;
         flex-shrink: 0;
         border-radius: 4px;
       }
       .sol-item {
-        padding: 10px 8px;
-        margin-bottom: 8px;
-        border-radius: 8px;
+        padding: 4px 6px;
+        margin-bottom: 4px;
+        border-radius: 6px;
       }
-      .sol-item.border-c { border-left-width: 3.5px; }
-      .sol-item.border-i { border-left-width: 3.5px; }
-      .sol-item.border-u { border-left-width: 3.5px; }
+      .sol-item.border-c { border-left-width: 3px; }
+      .sol-item.border-i { border-left-width: 3px; }
+      .sol-item.border-u { border-left-width: 3px; }
 
       .sol-item-top {
-        margin-bottom: 6px;
+        margin-bottom: 2px;
       }
       .sol-item-qnum {
-        font-size: 11.5px;
+        font-size: 10px;
+        font-weight: 700;
       }
       .sol-item-badge {
-        font-size: 9.5px;
-        padding: 2px 6px;
-        border-radius: 4px;
+        font-size: 8px;
+        padding: 1px 4px;
+        border-radius: 3px;
       }
       .sol-q-text {
-        font-size: 12.5px;
-        line-height: 1.45;
-        margin-bottom: 8px;
+        font-size: 11px;
+        line-height: 1.25;
+        margin-bottom: 3px;
+        font-weight: 600;
       }
       .sol-opts-grid {
-        gap: 4px;
-        margin-bottom: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 4px;
+        margin-bottom: 2px;
       }
       .sol-opt-row {
-        padding: 5px 8px;
-        font-size: 11.5px;
-        border-radius: 6px;
-        gap: 6px;
+        padding: 2px 4px;
+        font-size: 9.5px;
+        line-height: 1.2;
+        border-radius: 4px;
+        gap: 3px;
+        min-height: 18px;
       }
       .sol-opt-letter {
-        width: 18px;
-        height: 18px;
-        font-size: 9.5px;
+        width: 13px;
+        height: 13px;
+        font-size: 7.5px;
       }
-            /* Dropdown Solution on Mobile */
+      .sol-opt-tag {
+        font-size: 7.5px;
+        padding: 0 1px;
+        white-space: nowrap;
+      }
+
+      /* Dropdown Solution on Mobile */
       .sol-dropdown {
-        margin-top: 6px;
-        border-radius: 6px;
+        margin-top: 2px;
+        border-radius: 4px;
       }
       .sol-summary {
-        padding: 6px 10px;
-        font-size: 11px;
+        padding: 2px 6px;
+        font-size: 9px;
       }
       .sol-summary-icon {
-        font-size: 12px;
+        font-size: 9.5px;
+      }
+      .sol-summary-arrow {
+        font-size: 8px;
       }
       .sol-explain-box {
-        padding: 8px 10px;
-        font-size: 11.5px;
-        line-height: 1.45;
+        padding: 5px 7px;
+        font-size: 10px;
+        line-height: 1.35;
       }
       .sol-explain-box strong {
-        font-size: 11px;
+        font-size: 9.5px;
         margin-bottom: 2px;
       }
     }
@@ -939,8 +954,8 @@
             <div class="${optClass}">
               <span class="sol-opt-letter">${letters[oIdx]}</span>
               <span>${opt}</span>
-              ${oIdx === q.correct ? '<span style="margin-left:auto; font-size:10.5px; font-weight:700; color:#166534;">(Correct)</span>' : ''}
-              ${oIdx === userAns && userAns !== q.correct ? '<span style="margin-left:auto; font-size:10.5px; font-weight:700; color:#991b1b;">(Your Choice)</span>' : ''}
+              ${oIdx === q.correct ? '<span class="sol-opt-tag" style="margin-left:auto; font-weight:700; color:#166534;">(Correct)</span>' : ''}
+              ${oIdx === userAns && userAns !== q.correct ? '<span class="sol-opt-tag" style="margin-left:auto; font-weight:700; color:#991b1b;">(Your Choice)</span>' : ''}
             </div>
           `;
         });
