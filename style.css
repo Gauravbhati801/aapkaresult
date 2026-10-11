@@ -1859,6 +1859,160 @@ img, svg {
   .brand-title {
     font-size: 26px;
   }
+
+  /* --- ALL JOB PAGES & TABLES ULTRA COMPACT MOBILE OPTIMIZATIONS --- */
+  .job-page-container {
+    margin: 8px auto 20px !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .job-article {
+    padding: 12px 10px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+  .job-main-title {
+    font-size: 15.5px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 6px !important;
+    font-weight: 800 !important;
+  }
+  .article-meta {
+    gap: 4px 8px !important;
+    font-size: 11px !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 8px !important;
+    flex-direction: column !important;
+  }
+  .article-meta span {
+    line-height: 1.35 !important;
+  }
+  .share-row {
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+    font-size: 11px !important;
+  }
+  .share-btn {
+    padding: 4px 10px !important;
+    font-size: 10.5px !important;
+    border-radius: 4px !important;
+  }
+  .job-summary-lead {
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 10px !important;
+  }
+  .quick-overview-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    margin: 10px 0 12px !important;
+  }
+  .overview-card {
+    padding: 6px 8px !important;
+    border-radius: 6px !important;
+    gap: 2px !important;
+    border-left-width: 3px !important;
+  }
+  .overview-label {
+    font-size: 9px !important;
+  }
+  .overview-val {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+  .detail-card-box {
+    border-radius: 6px !important;
+    margin-bottom: 8px !important;
+  }
+  .detail-card-head {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+  .detail-card-list {
+    padding: 6px 10px !important;
+  }
+  .detail-card-list li {
+    padding: 4px 0 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  .highlight-banner {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    border-radius: 6px 6px 0 0 !important;
+  }
+  .highlight-banner-body {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+    border-radius: 0 0 6px 6px !important;
+  }
+  .sub-heading {
+    font-size: 13.5px !important;
+    margin: 14px 0 8px !important;
+    padding-bottom: 4px !important;
+    border-bottom-width: 2px !important;
+  }
+  .responsive-table-wrap {
+    margin: 8px 0 12px !important;
+    border-radius: 6px !important;
+  }
+  .styled-table {
+    font-size: 11px !important;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+  .btn-action {
+    padding: 4px 8px !important;
+    font-size: 10.5px !important;
+    border-radius: 4px !important;
+  }
+  .btn-apply-main {
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+    gap: 4px !important;
+  }
+  .apply-table th,
+  .apply-table td {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+  }
+  .styled-ordered-list {
+    margin-left: 16px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.45 !important;
+    font-size: 11.5px !important;
+  }
+  .styled-ordered-list li {
+    margin-bottom: 4px !important;
+  }
+  .faq-card {
+    padding: 8px 10px !important;
+    margin-bottom: 8px !important;
+    border-radius: 6px !important;
+  }
+  .faq-card h4 {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+  .faq-card p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  .breadcrumb-bar {
+    padding: 6px 8px !important;
+    margin-bottom: 6px !important;
+  }
+  .breadcrumbs {
+    font-size: 11px !important;
+  }
 }
 
 /* --- COMPACT MOCK TEST & NOTES STRIP (PERFECT 2x2 MOBILE GRID - NO OVERFLOW) --- */
