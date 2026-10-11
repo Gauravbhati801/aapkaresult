@@ -10,20 +10,42 @@
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-  <style>
+    <style>
     .result-container {
-      max-width: 1000px;
-      margin: 0 auto 40px auto;
+      max-width: 960px;
+      margin: 0 auto 30px auto;
       padding: 0 16px;
+    }
+
+    .sample-notice-banner {
+      display: none;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .sample-notice-banner a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     /* Scorecard Hero */
     .score-hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       color: #ffffff;
-      border-radius: 16px;
-      padding: 32px 24px;
-      margin-bottom: 24px;
+      border-radius: 14px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
       text-align: center;
     }
@@ -34,20 +56,20 @@
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: #93c5fd;
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 999px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-transform: uppercase;
     }
     .score-hero h1 {
-      font-size: 1.85rem;
-      margin: 0 0 16px 0;
+      font-size: 1.6rem;
+      margin: 0 0 12px 0;
       color: #ffffff;
     }
     .score-main-display {
-      font-size: 3rem;
+      font-size: 2.6rem;
       font-weight: 900;
       color: #38bdf8;
       letter-spacing: -1px;
@@ -55,7 +77,7 @@
       margin-bottom: 4px;
     }
     .score-total-denom {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: #94a3b8;
       font-weight: 600;
     }
@@ -63,25 +85,25 @@
     /* 4 Stat Tiles */
     .stats-tiles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
     }
     .stat-tile {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 14px 10px;
+      border-radius: 10px;
+      padding: 10px 6px;
       text-align: center;
     }
     .stat-tile-val {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       font-weight: 800;
       display: block;
       margin-bottom: 2px;
     }
     .stat-tile-lbl {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #cbd5e1;
       text-transform: uppercase;
       font-weight: 600;
@@ -91,56 +113,62 @@
     .sec-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 24px;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
     .sec-card-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: #0f172a;
-      margin: 0 0 16px 0;
+      margin: 0 0 14px 0;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .sec-table-wrap { overflow-x: auto; }
+    .sec-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
     .sec-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13.5px;
+      font-size: 13px;
       text-align: left;
     }
     .sec-table th {
       background: #f8fafc;
       color: #0f172a;
-      padding: 10px 14px;
+      padding: 8px 12px;
       font-weight: 700;
       border-bottom: 2px solid #e2e8f0;
       white-space: nowrap;
     }
     .sec-table td {
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-bottom: 1px solid #f1f5f9;
       color: #334155;
     }
     .sec-table tr:hover td { background: #f8fafc; }
 
+    .col-full { display: inline; }
+    .col-mob { display: none; }
+
     /* Action Buttons Bar */
     .result-actions-strip {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
     .btn-act {
       flex: 1;
       min-width: 160px;
       text-align: center;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
@@ -162,20 +190,20 @@
     .sol-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 22px;
+      border-radius: 12px;
+      padding: 18px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
     .sol-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
     .sol-title {
-      font-size: 18px;
+      font-size: 16.5px;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
@@ -190,8 +218,8 @@
       color: #475569;
       border: 1px solid #e2e8f0;
       border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 12.5px;
+      padding: 5px 12px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.15s;
@@ -206,58 +234,58 @@
     .sol-item {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
       transition: border-color 0.15s;
     }
-    .sol-item.border-c { border-left: 5px solid #16a34a; }
-    .sol-item.border-i { border-left: 5px solid #dc2626; }
-    .sol-item.border-u { border-left: 5px solid #94a3b8; }
+    .sol-item.border-c { border-left: 4px solid #16a34a; }
+    .sol-item.border-i { border-left: 4px solid #dc2626; }
+    .sol-item.border-u { border-left: 4px solid #94a3b8; }
 
     .sol-item-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .sol-item-qnum {
-      font-size: 14.5px;
+      font-size: 13.5px;
       font-weight: 800;
       color: #0f172a;
     }
     .sol-item-badge {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 3px 8px;
+      border-radius: 5px;
     }
     .badge-c { background: #dcfce7; color: #166534; }
     .badge-i { background: #fee2e2; color: #991b1b; }
     .badge-u { background: #f1f5f9; color: #475569; }
 
     .sol-q-text {
-      font-size: 15.5px;
+      font-size: 14.5px;
       font-weight: 600;
       color: #0f172a;
-      line-height: 1.6;
-      margin-bottom: 16px;
+      line-height: 1.5;
+      margin-bottom: 12px;
       white-space: pre-line;
     }
     .sol-opts-grid {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 18px;
+      gap: 6px;
+      margin-bottom: 14px;
     }
     .sol-opt-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 8px;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 7px;
       border: 1px solid #e2e8f0;
-      font-size: 14px;
+      font-size: 13px;
       color: #334155;
     }
     .sol-opt-row.is-correct {
@@ -273,14 +301,14 @@
       font-weight: 600;
     }
     .sol-opt-letter {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -288,31 +316,231 @@
     .sol-explain-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-size: 13.5px;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-size: 12.5px;
       color: #1e3a8a;
-      line-height: 1.6;
+      line-height: 1.5;
     }
     .sol-explain-box strong {
       display: block;
       color: #1d4ed8;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
+    /* MOBILE VIEW OPTIMIZATIONS (COMPACT, NO HORIZONTAL SCROLL) */
     @media (max-width: 767px) {
-      .result-container { padding: 0 10px; }
-      .score-hero { padding: 20px 14px; border-radius: 12px; }
-      .score-hero h1 { font-size: 1.4rem; }
-      .score-main-display { font-size: 2.3rem; }
-      .stats-tiles-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .stat-tile { padding: 10px 8px; }
-      .stat-tile-val { font-size: 1.35rem; }
-      .result-actions-strip { flex-direction: column; gap: 8px; }
-      .btn-act { width: 100%; min-width: auto; box-sizing: border-box; }
-      .sec-card, .sol-card { padding: 16px 12px; border-radius: 10px; }
-      .sol-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .sol-item { padding: 14px 12px; border-radius: 10px; }
+      .col-full { display: none !important; }
+      .col-mob { display: inline !important; }
+
+      .result-container {
+        padding: 0 8px;
+        margin-bottom: 20px;
+      }
+      .sample-notice-banner {
+        padding: 8px 10px;
+        font-size: 11.5px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      /* Compact Scorecard Hero */
+      .score-hero {
+        padding: 14px 10px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+      .score-hero-badge {
+        font-size: 10.5px;
+        padding: 2px 8px;
+        margin-bottom: 6px;
+      }
+      .score-hero h1 {
+        font-size: 1.15rem;
+        margin: 0 0 6px 0;
+        line-height: 1.3;
+      }
+      .score-main-display {
+        font-size: 1.85rem;
+        margin-bottom: 1px;
+      }
+      .score-total-denom {
+        font-size: 0.95rem;
+      }
+
+      /* 4 Stat Tiles in 1 sleek compact row */
+      .stats-tiles-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        margin-top: 10px;
+      }
+      .stat-tile {
+        padding: 6px 2px;
+        border-radius: 6px;
+      }
+      .stat-tile-val {
+        font-size: 1.05rem;
+        margin-bottom: 1px;
+      }
+      .stat-tile-lbl {
+        font-size: 9.5px;
+        letter-spacing: -0.2px;
+      }
+
+      /* Action Buttons on Mobile: Clean 2-column grid */
+      .result-actions-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .btn-act {
+        min-width: auto;
+        border-radius: 6px;
+        gap: 4px;
+      }
+      .btn-act-retake {
+        grid-column: 1 / -1;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+      .btn-act-dash, .btn-act-share {
+        padding: 7px 8px;
+        font-size: 11.5px;
+      }
+
+      /* Sectional Table on Mobile: 100% visible with zero horizontal scroll */
+      .sec-card {
+        padding: 10px 8px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+      .sec-card-title {
+        font-size: 13px;
+        margin: 0 0 8px 0;
+        gap: 5px;
+      }
+      .sec-table-wrap {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      .sec-table {
+        font-size: 11px;
+        width: 100%;
+        table-layout: fixed;
+      }
+      .sec-table th {
+        padding: 6px 2px;
+        font-size: 10.5px;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .sec-table th:first-child {
+        text-align: left;
+        padding-left: 4px;
+        width: 38%;
+      }
+      .sec-table th:nth-child(2),
+      .sec-table th:nth-child(3),
+      .sec-table th:nth-child(4) {
+        width: 15%;
+      }
+      .sec-table th:last-child {
+        width: 17%;
+      }
+      .sec-table td {
+        padding: 6px 2px;
+        font-size: 11px;
+        text-align: center;
+        word-break: break-word;
+      }
+      .sec-table td:first-child {
+        text-align: left;
+        padding-left: 4px;
+        font-size: 10.5px;
+        line-height: 1.25;
+      }
+
+      /* Solutions Card on Mobile */
+      .sol-card {
+        padding: 10px 8px;
+        border-radius: 8px;
+      }
+      .sol-header {
+        margin-bottom: 8px;
+        gap: 6px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .sol-title {
+        font-size: 13.5px;
+      }
+      .sol-filter-pills {
+        display: flex;
+        gap: 4px;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sol-pill {
+        padding: 4px 8px;
+        font-size: 10.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        border-radius: 4px;
+      }
+      .sol-item {
+        padding: 10px 8px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+      }
+      .sol-item.border-c { border-left-width: 3.5px; }
+      .sol-item.border-i { border-left-width: 3.5px; }
+      .sol-item.border-u { border-left-width: 3.5px; }
+
+      .sol-item-top {
+        margin-bottom: 6px;
+      }
+      .sol-item-qnum {
+        font-size: 11.5px;
+      }
+      .sol-item-badge {
+        font-size: 9.5px;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .sol-q-text {
+        font-size: 12.5px;
+        line-height: 1.45;
+        margin-bottom: 8px;
+      }
+      .sol-opts-grid {
+        gap: 4px;
+        margin-bottom: 8px;
+      }
+      .sol-opt-row {
+        padding: 5px 8px;
+        font-size: 11.5px;
+        border-radius: 6px;
+        gap: 6px;
+      }
+      .sol-opt-letter {
+        width: 18px;
+        height: 18px;
+        font-size: 9.5px;
+      }
+      .sol-explain-box {
+        padding: 7px 9px;
+        font-size: 11px;
+        line-height: 1.4;
+        border-radius: 6px;
+      }
+      .sol-explain-box strong {
+        font-size: 11px;
+        margin-bottom: 2px;
+      }
     }
   </style>
 </head>
@@ -421,6 +649,12 @@
   <!-- MAIN RESULT CONTENT -->
   <main class="result-container">
 
+    <!-- SAMPLE PREVIEW NOTICE BANNER -->
+    <div class="sample-notice-banner" id="sampleNoticeBanner">
+      <span>📋 <strong>Demo / Sample Scorecard Preview:</strong> अपना लाइव टेस्ट स्कोर देखने के लिए</span>
+      <a href="up-police-quiz.html?test=1">Start Free Mock Test &rarr;</a>
+    </div>
+
     <!-- SCORECARD HERO -->
     <div class="score-hero">
       <div class="score-hero-badge">🏆 Performance Scorecard</div>
@@ -446,7 +680,7 @@
         </div>
         <div class="stat-tile">
           <span class="stat-tile-val" id="resUnattempted" style="color:#cbd5e1;">0</span>
-          <span class="stat-tile-lbl">Unattempted (−)</span>
+          <span class="stat-tile-lbl">Skip (−)</span>
         </div>
       </div>
     </div>
@@ -465,11 +699,11 @@
         <table class="sec-table">
           <thead>
             <tr>
-              <th>Subject / Section</th>
-              <th>Correct (✓)</th>
-              <th>Incorrect (✕)</th>
-              <th>Unattempted (−)</th>
-              <th>Net Marks</th>
+              <th><span class="col-full">Subject / Section</span><span class="col-mob">Section</span></th>
+              <th><span class="col-full">Correct (✓)</span><span class="col-mob">✓ Right</span></th>
+              <th><span class="col-full">Incorrect (✕)</span><span class="col-mob">✕ Wrong</span></th>
+              <th><span class="col-full">Unattempted (−)</span><span class="col-mob">− Skip</span></th>
+              <th><span class="col-full">Net Marks</span><span class="col-mob">Marks</span></th>
             </tr>
           </thead>
           <tbody id="secTableBody">
@@ -487,7 +721,7 @@
           <button type="button" class="sol-pill active" onclick="filterSol('all', this)">All Qs (<span id="countAll">0</span>)</button>
           <button type="button" class="sol-pill" onclick="filterSol('c', this)">Correct (<span id="countC">0</span>)</button>
           <button type="button" class="sol-pill" onclick="filterSol('i', this)">Incorrect (<span id="countI">0</span>)</button>
-          <button type="button" class="sol-pill" onclick="filterSol('u', this)">Unattempted (<span id="countU">0</span>)</button>
+          <button type="button" class="sol-pill" onclick="filterSol('u', this)">Skip (<span id="countU">0</span>)</button>
         </div>
       </div>
 
@@ -554,29 +788,30 @@
     const testId = urlParams.get('test') || '1';
     const storageKey = "myUpPoliceMockTestResult_" + testId;
 
+    const defaultSampleData = {"score":218.5,"accuracy":"84.60","correct":116,"incorrect":21,"unattempted":13,"total":150,"sections":{"सामान्य ज्ञान (GK)":{"c":30,"i":5,"u":3,"s":57.5},"सामान्य हिन्दी":{"c":31,"i":4,"u":2,"s":60},"संख्यात्मक योग्यता (Math)":{"c":27,"i":6,"u":5,"s":51},"तार्किक क्षमता (Reasoning)":{"c":28,"i":6,"u":3,"s":53}},"questionsData":[{"q":"उत्तर प्रदेश का राज्य पुष्प निम्नलिखित में से कौन सा है?","options":["गुलाब","पलाश (ढाक)","कमल","गेंदा"],"correct":1,"solution":"उत्तर प्रदेश का राजकीय पुष्प 'पलाश' (Butea monosperma) है जिसे ढाक भी कहा जाता है। इसे 2011 में राजकीय पुष्प घोषित किया गया था।","subject":"सामान्य ज्ञान (GK)"},{"q":"'दामिनी' और 'चंचला' निम्नलिखित में से किस शब्द के पर्यायवाची हैं?","options":["चन्द्रमा","विद्युत (बिजली)","गंगा","हवा"],"correct":1,"solution":"'दामिनी', 'चंचला', 'तड़ित', 'सौदामिनी' और 'विद्युत' सभी बिजली के पर्यायवाची शब्द हैं।","subject":"सामान्य हिन्दी"},{"q":"यदि किसी वस्तु का क्रय मूल्य ₹450 है और उसे 20% लाभ पर बेचा जाता है, तो विक्रय मूल्य क्या होगा?","options":["₹520","₹540","₹550","₹560"],"correct":1,"solution":"विक्रय मूल्य = क्रय मूल्य × (100 + लाभ%) / 100 = 450 × 120 / 100 = ₹540।","subject":"संख्यात्मक योग्यता (Math)"},{"q":"दिए गए विकल्पों में से संबंधित शब्द चुनिए:\nभारत : नई दिल्ली :: उत्तर प्रदेश : ?","options":["कानपुर","वाराणसी","लखनऊ","प्रयागराज"],"correct":2,"solution":"जिस प्रकार भारत की राजधानी नई दिल्ली है, उसी प्रकार उत्तर प्रदेश राज्य की प्रशासनिक राजधानी लखनऊ है।","subject":"तार्किक क्षमता (Reasoning)"},{"q":"प्रसिद्ध शास्त्रीय नृत्य शैली 'कथक' का उद्गम किस राज्य से माना जाता है?","options":["केरल","तमिलनाडु","उत्तर प्रदेश","ओडिशा"],"correct":2,"solution":"'कथक' उत्तर प्रदेश का प्रमुख शास्त्रीय नृत्य है, जो प्राचीन काल में 'कथा कहे सो कथक कहावे' परंपरा से विकसित हुआ।","subject":"सामान्य ज्ञान (GK)"}],"answersData":{"0":1,"1":1,"2":1,"3":2,"4":0}};
+
     let resData = null;
     let currentFilter = 'all';
 
     window.addEventListener('DOMContentLoaded', () => {
       const raw = localStorage.getItem(storageKey);
-      if (!raw) {
-        document.getElementById('solutionsContainer').innerHTML = `
-          <div style="text-align: center; padding: 40px 10px;">
-            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 16px;">⚠️ No result record found for this test session.</p>
-            <a href="up-police-quiz.html?test=${testId}" class="btn-act btn-act-retake" style="display:inline-flex;">Attempt Test Now &rarr;</a>
-          </div>
-        `;
-        return;
+      if (raw) {
+        try {
+          resData = JSON.parse(raw);
+        } catch (e) {
+          console.error(e);
+        }
       }
 
-      try {
-        resData = JSON.parse(raw);
-        renderScorecard();
-        renderSectionalTable();
-        renderSolutions();
-      } catch (e) {
-        console.error(e);
+      if (!resData) {
+        resData = defaultSampleData;
+        const banner = document.getElementById('sampleNoticeBanner');
+        if (banner) banner.style.display = 'flex';
       }
+
+      renderScorecard();
+      renderSectionalTable();
+      renderSolutions();
     });
 
     function renderScorecard() {
@@ -604,7 +839,7 @@
             <td><span style="color:#16a34a; font-weight:700;">${stats.c}</span></td>
             <td><span style="color:#dc2626; font-weight:700;">${stats.i}</span></td>
             <td><span style="color:#64748b; font-weight:700;">${stats.u}</span></td>
-            <td><strong>${Number(stats.s.toFixed(2))} Marks</strong></td>
+            <td><strong style="color:#1e3a8a;">${Number(stats.s.toFixed(2))}<span class="col-full"> M</span></strong></td>
           </tr>
         `;
       }
@@ -617,19 +852,21 @@
 
       let html = '';
       const letters = ['A', 'B', 'C', 'D'];
+      const posMarks = 2;
+      const negMarks = 0.5;
 
       resData.questionsData.forEach((q, idx) => {
         const userAns = resData.answersData ? resData.answersData[idx] : undefined;
         let statusType = 'u';
-        let badgeHtml = '<span class="sol-item-badge badge-u">Unattempted (0.00)</span>';
+        let badgeHtml = '<span class="sol-item-badge badge-u">Skip (0.00)</span>';
 
         if (userAns !== undefined) {
           if (userAns === q.correct) {
             statusType = 'c';
-            badgeHtml = '<span class="sol-item-badge badge-c">✓ Correct (+2.00)</span>';
+            badgeHtml = '<span class="sol-item-badge badge-c">✓ Right (+' + posMarks.toFixed(2) + ')</span>';
           } else {
             statusType = 'i';
-            badgeHtml = '<span class="sol-item-badge badge-i">✕ Incorrect (-0.50)</span>';
+            badgeHtml = '<span class="sol-item-badge badge-i">✕ Wrong (-' + negMarks.toFixed(2) + ')</span>';
           }
         }
 
@@ -646,8 +883,8 @@
             <div class="${optClass}">
               <span class="sol-opt-letter">${letters[oIdx]}</span>
               <span>${opt}</span>
-              ${oIdx === q.correct ? '<span style="margin-left:auto; font-size:12px; font-weight:700;">(Correct Answer)</span>' : ''}
-              ${oIdx === userAns && userAns !== q.correct ? '<span style="margin-left:auto; font-size:12px; font-weight:700;">(Your Choice)</span>' : ''}
+              ${oIdx === q.correct ? '<span style="margin-left:auto; font-size:10.5px; font-weight:700; color:#166534;">(Correct)</span>' : ''}
+              ${oIdx === userAns && userAns !== q.correct ? '<span style="margin-left:auto; font-size:10.5px; font-weight:700; color:#991b1b;">(Your Choice)</span>' : ''}
             </div>
           `;
         });
@@ -655,12 +892,12 @@
         html += `
           <div class="sol-item border-${statusType}" data-type="${statusType}">
             <div class="sol-item-top">
-              <span class="sol-item-qnum">Question ${idx + 1} &bull; <span style="font-size:12px; color:#64748b; font-weight:normal;">${q.subject}</span></span>
+              <span class="sol-item-qnum">Q${idx + 1} &bull; <span style="font-size:11px; color:#64748b; font-weight:normal;">${q.subject}</span></span>
               ${badgeHtml}
             </div>
             <div class="sol-q-text">${q.q}</div>
             <div class="sol-opts-grid">${optsHtml}</div>
-            ${q.solution ? `<div class="sol-explain-box"><strong>💡 Explanation / हल:</strong>${q.solution}</div>` : ''}
+            ${q.solution ? `<div class="sol-explain-box"><strong>💡 Solution / हल:</strong>${q.solution}</div>` : ''}
           </div>
         `;
       });
