@@ -463,7 +463,305 @@
       .dir-grid { grid-template-columns: 1fr; gap: 10px; }
       .dir-item { padding: 12px; }
     }
+  
+    /* Comprehensive Mock Test Student Guide Styles */
+    .mock-guide-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+      margin-bottom: 35px;
+    }
+    .guide-main-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .guide-main-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .guide-main-subtitle {
+      font-size: 13.5px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.55;
+    }
+    .guide-topic-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .guide-topic-card:hover {
+      border-left-color: #1d4ed8;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .guide-topic-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guide-topic-body {
+      font-size: 13.5px;
+      color: #334155;
+      line-height: 1.7;
+    }
+    .guide-topic-body p {
+      margin: 0 0 10px 0;
+    }
+    .guide-topic-body p:last-child {
+      margin-bottom: 0;
+    }
+    .guide-list {
+      margin: 8px 0 12px 18px;
+      padding: 0;
+    }
+    .guide-list li {
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .guide-callout {
+      background: #eff6ff;
+      border: 1px dashed #93c5fd;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 12px 0 6px 0;
+      font-size: 13px;
+      color: #1e40af;
+      line-height: 1.55;
+    }
+    .guide-callout strong {
+      color: #1d4ed8;
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+    .guide-exam-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .guide-exam-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .guide-exam-box strong {
+      color: #0f172a;
+      display: block;
+      font-size: 13.5px;
+      margin-bottom: 4px;
+    }
+    /* Guide FAQs Accordion */
+    .guide-faq-details {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .guide-faq-details[open] {
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+    .guide-faq-summary {
+      padding: 12px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1e3a8a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+    .guide-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+    .guide-faq-arrow {
+      font-size: 10px;
+      color: #2563eb;
+      transition: transform 0.2s;
+    }
+    .guide-faq-details[open] .guide-faq-arrow {
+      transform: rotate(180deg);
+    }
+    .guide-faq-answer {
+      padding: 10px 16px 14px 16px;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.65;
+      border-top: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    /* Mobile view for Guide */
+    @media (max-width: 767px) {
+      .mock-guide-section {
+        padding: 14px 10px !important;
+        border-radius: 10px !important;
+        margin-bottom: 20px !important;
+      }
+      .guide-main-header {
+        margin-bottom: 14px !important;
+        padding-bottom: 10px !important;
+      }
+      .guide-main-title {
+        font-size: 1.2rem !important;
+        line-height: 1.3 !important;
+      }
+      .guide-main-subtitle {
+        font-size: 11.5px !important;
+      }
+      .guide-topic-card {
+        padding: 12px 10px !important;
+        margin-bottom: 12px !important;
+        border-radius: 8px !important;
+        border-left-width: 3.5px !important;
+      }
+      .guide-topic-title {
+        font-size: 13.5px !important;
+        margin-bottom: 6px !important;
+      }
+      .guide-topic-body {
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+      }
+      .guide-list {
+        margin: 6px 0 8px 14px !important;
+      }
+      .guide-list li {
+        margin-bottom: 4px !important;
+      }
+      .guide-callout {
+        padding: 8px 10px !important;
+        font-size: 11.5px !important;
+        margin: 8px 0 4px 0 !important;
+      }
+      .guide-exam-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .guide-exam-box {
+        padding: 10px !important;
+      }
+      .guide-faq-summary {
+        padding: 9px 12px !important;
+        font-size: 12px !important;
+      }
+      .guide-faq-answer {
+        padding: 8px 12px 10px 12px !important;
+        font-size: 11.5px !important;
+      }
+    }
+
   </style>
+  <!-- Structured Data: FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "क्या AapkaResult.in पर मॉक टेस्ट वास्तव में 100% फ्री हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "जी हां, AapkaResult.in पर उपलब्ध सभी साप्ताहिक मॉक टेस्ट, प्रैक्टिस सेट और स्कोरकार्ड विश्लेषण 100% फ्री हैं। छात्रों से किसी भी प्रकार का कोई शुल्क या सब्सक्रिप्शन चार्ज नहीं लिया जाता।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या टेस्ट देने के लिए रजिस्ट्रेशन या लॉगिन करना जरूरी है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "नहीं, आप बिना किसी रजिस्ट्रेशन, मोबाइल नंबर या पासवर्ड के सीधे Start Free Mock Test पर क्लिक करके तुरंत टेस्ट शुरू कर सकते हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या यह मॉक टेस्ट मोबाइल फोन पर भी सही से काम करते हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "बिल्कुल! हमारा पूरा टेस्ट इंजन और रिजल्ट पोर्टल मोबाइल-फ्रेंडली व रिस्पॉन्सिव बनाया गया है। आप किसी भी एंड्रॉइड या आईफोन पर बिना किसी ऐप डाउनलोड किए सीधे ब्राउज़र में टेस्ट दे सकते हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या टेस्ट में नेगेटिव मार्किंग आधिकारिक नियमों के अनुसार होती है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "जी हां, UP Police में +2.00 सही और -0.50 गलत, SSC GD में +2.00 और -0.25/0.50 तथा Agniveer में आधिकारिक मानकों के अनुसार नेगेटिव मार्किंग की सटीक गणना की जाती है।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "टेस्ट सबमिट करने के बाद क्या सभी सवालों के विस्तृत हल मिलते हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हां, सबमिट करते ही आपका पूरा रिजल्ट सामने आता है जहां हर प्रश्न के नीचे View Solution / हल देखें का ड्रॉपडाउन दिया गया है। आप Expand All बटन से एक क्लिक में सभी प्रश्नों के विस्तृत हल भी देख सकते हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "नया साप्ताहिक मॉक टेस्ट कब अपडेट होता है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हर हफ्ते नए मॉडल पेपर्स और पिछले वर्षों (PYQ) पर आधारित फ्रेश टेस्ट सीरीज जोड़ी जाती है, ताकि छात्रों को निरंतर नए प्रश्नों का अभ्यास मिलता रहे।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या मैं एक ही मॉक टेस्ट को दोबारा (Re-attempt) दे सकता हूं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "जी हां! रिजल्ट पेज और डैशबोर्ड पर Re-attempt Mock Test का विकल्प मौजूद है। आप जितनी बार चाहें टेस्ट को पुनः देकर अपने स्कोर और गति में सुधार कर सकते हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या टेस्ट के प्रश्न नवीनतम 2026 परीक्षा पैटर्न पर आधारित हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हां, सभी प्रश्न भर्ती आयोगों द्वारा जारी नवीनतम 2026 परीक्षा पाठ्यक्रम, कठिनाई स्तर और हालिया परीक्षाओं के ट्रेंड्स का गहराई से विश्लेषण करके विषय विशेषज्ञों द्वारा तैयार किए गए हैं।"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -817,6 +1115,297 @@
         </div>
       </div>
     </div>
+
+
+    <!-- ========================================== -->
+    <!-- COMPREHENSIVE MOCK TEST STUDENT GUIDE (14 TOPICS) -->
+    <!-- ========================================== -->
+    <section class="mock-guide-section" id="mockTestGuide">
+      <div class="guide-main-header">
+        <h2 class="guide-main-title">📚 फ्री वीकली मॉक टेस्ट संपूर्ण मार्गदर्शिका (Complete Student Guide)</h2>
+        <p class="guide-main-subtitle">सरकारी नौकरी भर्ती परीक्षाओं में 100% सफलता प्राप्त करने के लिए नियमित मॉक टेस्ट का महत्व, सटीक रणनीति, समय प्रबंधन और विश्लेषण नियम।</p>
+      </div>
+
+      <!-- 1. फ्री वीकली मॉक टेस्ट क्या है? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">📌 1. फ्री वीकली मॉक टेस्ट क्या है?</h3>
+        <div class="guide-topic-body">
+          <p><strong>फ्री वीकली मॉक टेस्ट (Free Weekly Mock Test)</strong> वास्तविक सरकारी प्रतियोगी परीक्षा (CBT - Computer Based Test) का एक हूबहू सिमुलेशन (अभ्यास प्रारूप) होता है। इसमें प्रश्नों की संख्या, समय सीमा (Time Limit), विषयवार विभाजन (Sectional Breakdown) और नेगेटिव मार्किंग (Negative Marking) बिल्कुल आधिकारिक भर्ती आयोग के नवीनतम सिलेबस के अनुसार तैयार की जाती है।</p>
+          <p>AapkaResult.in पर यह टेस्ट हर सप्ताह पूरी तरह <strong>100% निशुल्क</strong> उपलब्ध कराया जाता है, ताकि किसी भी गांव या शहर का छात्र बिना किसी आर्थिक दबाव के अपनी वास्तविक परीक्षा तैयारी का मूल्यांकन हर हफ्ते कर सके।</p>
+        </div>
+      </article>
+
+      <!-- 2. मॉक टेस्ट किन-किन परीक्षाओं के लिए उपयोगी है? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">🎯 2. मॉक टेस्ट किन-किन परीक्षाओं के लिए उपयोगी है?</h3>
+        <div class="guide-topic-body">
+          <p>हमारा ऑनलाइन मॉक टेस्ट पोर्टल केंद्र और राज्य सरकार की सभी प्रमुख एक-दिवसीय व बहु-चरणीय प्रतियोगी परीक्षाओं के लिए बेहद उपयोगी है:</p>
+          <ul class="guide-list">
+            <li><strong>पुलिस भर्ती परीक्षाएं:</strong> UP Police Constable, UP Police SI, Delhi Police, MP/Bihar Police आदि।</li>
+            <li><strong>कर्मचारी चयन आयोग (SSC):</strong> SSC GD Constable, SSC CGL, CHSL, CPO, MTS।</li>
+            <li><strong>रक्षा एवं अर्धसैनिक सेवाएं:</strong> Indian Army Agniveer (GD, Tradesman, Clerk, Technical), Airforce Agniveervayu, Indian Navy MR/SSR, CISF, CRPF, BSF।</li>
+            <li><strong>रेलवे भर्ती बोर्ड (RRB):</strong> Railway RRB Group D, RRB NTPC (Graduate &amp; Under Graduate), ALP &amp; Technician, Railway RPF Constable।</li>
+            <li><strong>राज्य स्तरीय अन्य परीक्षाएं:</strong> UP Home Guard, UPSSSC Lekhpal, PET, BSSC Inter Level आदि।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. फ्री मॉक टेस्ट कैसे दें? (Step-by-Step प्रक्रिया) -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">📝 3. फ्री मॉक टेस्ट कैसे दें? (Step-by-Step प्रक्रिया)</h3>
+        <div class="guide-topic-body">
+          <p>AapkaResult.in पर मॉक टेस्ट देना बेहद सरल और सहज है। किसी भी रजिस्ट्रेशन या कठिन प्रक्रिया की आवश्यकता नहीं है:</p>
+          <ul class="guide-list" style="list-style: none; margin-left: 0;">
+            <li><span class="step-badge">1</span> <strong>परीक्षा का चयन करें:</strong> इस पेज पर दिए गए परीक्षा कार्ड्स (UP Police, SSC GD, या Agniveer) में से अपने पसंदीदा टेस्ट को चुनें।</li>
+            <li><span class="step-badge">2</span> <strong>'Start Free Mock Test Now' पर क्लिक करें:</strong> बटन दबाते ही आपका सुरक्षित ऑनलाइन CBT एग्जाम पोर्टल तुरंत लोड हो जाएगा।</li>
+            <li><span class="step-badge">3</span> <strong>दिशानिर्देश व टाइमर देखें:</strong> स्क्रीन पर कुल प्रश्न, कुल समय और नेगेटिव मार्किंग के नियम पढ़ें। ऊपर दाईं ओर लाइव टाइमर शुरू हो जाएगा।</li>
+            <li><span class="step-badge">4</span> <strong>प्रश्नों के उत्तर दें:</strong> चारों विकल्पों में से सही विकल्प चुनें। आप 'Next', 'Previous' या क्वेश्चन पैलेट से किसी भी सवाल पर सीधे जा सकते हैं।</li>
+            <li><span class="step-badge">5</span> <strong>सबमिट करें और स्कोरकार्ड देखें:</strong> सभी सवाल हल करने के बाद 'Submit Test' पर क्लिक करें। आपका प्राप्तांक (Score), सटीकता (Accuracy %), सही/गलत उत्तर और विस्तृत हल तुरंत स्क्रीन पर आ जाएंगे।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. मॉक टेस्ट देने के फायदे क्या हैं? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">✨ 4. मॉक टेस्ट देने के फायदे क्या हैं?</h3>
+        <div class="guide-topic-body">
+          <p>नियमित रूप से मॉक टेस्ट हल करने वाले छात्रों की सफलता दर आम छात्रों से 3 गुना अधिक होती है। इसके मुख्य लाभ निम्नलिखित हैं:</p>
+          <ul class="guide-list">
+            <li><strong>वास्तविक परीक्षा इंटरफेस की पहचान:</strong> ऑनलाइन कंप्यूटर बेस्ड टेस्ट (CBT) में माउस क्लिक, टाइमर और प्रश्न पैलेट का उपयोग करने की झिझक खत्म होती है।</li>
+            <li><strong>गति और सटीकता में संतुलन:</strong> कम समय में अधिक और सही प्रश्न हल करने का स्वाभाविक अभ्यास विकसित होता है।</li>
+            <li><strong>नेगेटिव मार्किंग पर नियंत्रण:</strong> अनावश्यक तुक्का लगाने की प्रवृत्ति रुकती है, जिससे कटऑफ में खोने वाले अनमोल अंक बचते हैं।</li>
+            <li><strong>आत्मविश्वास (Confidence) में वृद्धि:</strong> परीक्षा हॉल में बैठने से पहले दर्जनों बार परीक्षा जैसी स्थिति का अनुभव करने से घबराहट और डर पूरी तरह दूर हो जाता है।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. प्रतियोगी परीक्षाओं में मॉक टेस्ट देना क्यों जरूरी है? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">🔥 5. प्रतियोगी परीक्षाओं में मॉक टेस्ट देना क्यों जरूरी है?</h3>
+        <div class="guide-topic-body">
+          <p>आज के दौर में केवल किताबें पढ़ना या कोचिंग नोट्स याद करना सिलेक्शन की गारंटी नहीं है। जब 20-30 हजार पदों के लिए 40 से 50 लाख युवा आवेदन करते हैं, तो मुकाबला 0.25 अंकों का होता है।</p>
+          <p>मॉक टेस्ट यह स्पष्ट आईना दिखाता है कि आपकी तैयारी का स्तर वास्तव में कहां है। किताबों से पढ़ने पर सब कुछ आसान लगता है, लेकिन जब घड़ी की सुई टिक-टिक करती है, तब असली ज्ञान की परीक्षा होती है। मॉक टेस्ट आपको 'तैयारी करने वाले छात्र' से 'सफल प्रतियोगी' बनाता है।</p>
+        </div>
+      </article>
+
+      <!-- 6. मॉक टेस्ट से वास्तविक परीक्षा का अनुभव कैसे मिलता है? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">💻 6. मॉक टेस्ट से वास्तविक परीक्षा का अनुभव कैसे मिलता है?</h3>
+        <div class="guide-topic-body">
+          <p>AapkaResult.in का ऑनलाइन टेस्ट इंजन ठीक उसी मानक पर कार्य करता है जिस पर TCS और सरकारी भर्ती बोर्ड्स की परीक्षाएं आयोजित होती हैं:</p>
+          <ul class="guide-list">
+            <li><strong>उलटी गिनती वाला टाइमर (Countdown Timer):</strong> स्क्रीन पर शेष समय लगातार दिखता है जो आपको समय सीमा का अनुशासन सिखाता है।</li>
+            <li><strong>सेक्शनल नेविगेशन:</strong> सामान्य ज्ञान, हिंदी/अंग्रेजी, गणित और रीजनिंग के बीच अपनी सुविधानुसार स्विच करने की सुविधा।</li>
+            <li><strong>कलर-कोडेड क्वेश्चन पैलेट:</strong> कौन सा प्रश्न आपने अटेम्प्ट किया (हरा), कौन सा छोड़ा (ग्रे) और कौन सा री-व्यू के लिए रखा (बैंगनी), सब कुछ स्पष्ट दिखता है।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 7. मॉक टेस्ट में समय का सही प्रबंधन कैसे करें? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">⏱️ 7. मॉक टेस्ट में समय का सही प्रबंधन कैसे करें?</h3>
+        <div class="guide-topic-body">
+          <p>समय प्रबंधन (Time Management) के लिए टॉपर्स द्वारा अपनाई जाने वाली <strong>"3-राउंड रणनीति (Three-Round Rule)"</strong> सबसे असरदार मानी जाती है:</p>
+          <ul class="guide-list">
+            <li><strong>राउंड 1 (आसान व सीधे सवाल):</strong> परीक्षा के पहले 35-40% समय में केवल उन प्रश्नों को हल करें जिनका उत्तर आपको 100% याद है (विशेषकर GK और हिंदी)।</li>
+            <li><strong>राउंड 2 (मध्यम स्तर के सवाल):</strong> दूसरे चरण में रीजनिंग और गणित के ऐसे प्रश्नों को हल करें जिनमें 30-40 सेकंड का समय लगता है।</li>
+            <li><strong>राउंड 3 (कठिन व गणना वाले सवाल):</strong> बचे हुए अंतिम 15-20 मिनट में लंबे फॉर्मूले, सिटिंग अरेंजमेंट या जटिल कैलकुलेशन वाले सवालों को हल करें।</li>
+          </ul>
+          <div class="guide-callout">
+            <strong>⚠️ गोल्डन रूल:</strong> यदि कोई एक सवाल 1 मिनट से ज्यादा समय ले रहा है, तो उस पर ईगो (अहंकार) न दिखाएं; उसे तुरंत स्किप करके आगे बढ़ें!
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. मॉक टेस्ट में कम अंक आने पर क्या करें? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">🛡️ 8. मॉक टेस्ट में कम अंक आने पर क्या करें?</h3>
+        <div class="guide-topic-body">
+          <p>मॉक टेस्ट में कम नंबर आने पर निराश या हताश होने की बिल्कुल आवश्यकता नहीं है। मॉक टेस्ट का उद्देश्य आपको फेल घोषित करना नहीं, बल्कि असली परीक्षा से पहले आपकी गलतियों को सामने लाना है:</p>
+          <ul class="guide-list">
+            <li><strong>घबराएं नहीं, गलतियों का कारण समझें:</strong> क्या प्रश्न जल्दीबाजी में गलत पढ़ा (Silly Mistake)? क्या फॉर्मूला भूल गए? या फिर यह टॉपिक आपने कभी पढ़ा ही नहीं था?</li>
+            <li><strong>एक 'Mistake Notebook' बनाएं:</strong> हर टेस्ट के बाद जो भी सवाल गलत हुए या छूटे, उन्हें एक डायरी में नोट करें और उनका सही नियम व फॉर्मूला लिखें।</li>
+            <li><strong>48 घंटे में पुनः रिवीजन:</strong> उस कमजोर विषय को 2 दिन गहराई से पढ़ें और 3-4 दिन बाद उसी टेस्ट को Re-attempt करके अपना स्कोर सुधारें।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 9. मॉक टेस्ट से अपनी कमजोरियों को कैसे पहचानें? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">🔍 9. मॉक टेस्ट से अपनी कमजोरियों को कैसे पहचानें?</h3>
+        <div class="guide-topic-body">
+          <p>AapkaResult का एनालिटिकल स्कोरकार्ड आपको अपनी कमजोरियों को तीन स्तरों पर पहचानने में मदद करता है:</p>
+          <ul class="guide-list">
+            <li><strong>सेक्शनल स्कोर तुलना:</strong> चेक करें कि क्या आपके अंक सामान्य ज्ञान में कट रहे हैं या गणित में।</li>
+            <li><strong>सटीकता प्रतिशत (Accuracy Percentage):</strong> यदि आपने 100 में से 80 सवाल किए लेकिन सही सिर्फ 50 हुए और 30 गलत, तो आपकी कमजोरी विषय ज्ञान नहीं बल्कि 'अनुमान लगाना' (Negative Marking) है।</li>
+            <li><strong>टॉपिक-वाइज मैपिंग:</strong> गणित में प्रतिशत सही हो रहा है लेकिन लाभ-हानि गलत? रीजनिंग में दिशा ज्ञान सही है लेकिन रक्त संबंध गलत? इस डेटा के आधार पर अपनी कमजोरी ठीक करें।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 10. मॉक टेस्ट की तैयारी करने का सही तरीका -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">📖 10. मॉक टेस्ट की तैयारी करने का सही तरीका</h3>
+        <div class="guide-topic-body">
+          <p>मॉक टेस्ट देने का अधिकतम लाभ तभी मिलता है जब आप इसे सही अनुशासन के साथ दें:</p>
+          <ul class="guide-list">
+            <li><strong>शांत वातावरण चुनें:</strong> टेस्ट देते समय कमरे का दरवाजा बंद रखें और मोबाइल के सभी सोशल मीडिया नोटिफिकेशन बंद कर दें।</li>
+            <li><strong>किताब या गूगल की मदद न लें:</strong> टेस्ट के दौरान कोई भी नकल न करें; यह आपकी अपनी ईमानदारी और भविष्य का सवाल है।</li>
+            <li><strong>नियमित दिनचर्या बनाएं:</strong> सप्ताह में 2 से 3 फुल-लेंथ मॉक टेस्ट निश्चित समय (जैसे सुबह 10 से 12 बजे) पर दें, क्योंकि अधिकतर सरकारी परीक्षाएं इसी समय पर होती हैं।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 11. प्रमुख परीक्षाओं के लिए मॉक टेस्ट का महत्व -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">🏆 11. SSC GD, UP Police, Agniveer, UP Home Guard और Railway परीक्षाओं के लिए मॉक टेस्ट का महत्व</h3>
+        <div class="guide-topic-body">
+          <p>हर परीक्षा की प्रकृति और समय सीमा अलग होती है, इसलिए उनके मॉक टेस्ट का दृष्टिकोण भी अलग होना चाहिए:</p>
+          <div class="guide-exam-grid">
+            <div class="guide-exam-box">
+              <strong>👮 UP Police Constable:</strong>
+              <span>150 प्रश्न, 300 अंक, 120 मिनट और -0.50 नेगेटिव मार्किंग। यूपी विशेष ज्ञान और सामान्य हिंदी में 95%+ स्कोर सुनिश्चित करने के लिए नियमित अभ्यास अनिवार्य है।</span>
+            </div>
+            <div class="guide-exam-box">
+              <strong>💂 SSC GD Constable:</strong>
+              <span>80 प्रश्न, 160 अंक और मात्र 60 मिनट! यहां सबसे बड़ी लड़ाई समय की होती है। बिना मॉक टेस्ट के 60 मिनट में 80 प्रश्न देखना भी असंभव हो जाता है।</span>
+            </div>
+            <div class="guide-exam-box">
+              <strong>🇮🇳 Indian Army Agniveer:</strong>
+              <span>50 प्रश्न, 100 अंक, 60 मिनट। सामान्य विज्ञान, सामान्य ज्ञान और बेसिक मैथ्स के सीधे एवं तथ्यात्मक प्रश्नों का त्वरित समाधान।</span>
+            </div>
+            <div class="guide-exam-box">
+              <strong>🛡️ UP Home Guard:</strong>
+              <span>सामान्य ज्ञान, प्राथमिक गणित और हिंदी के वस्तुनिष्ठ प्रश्नों की सटीकता और बुनियादी समझ को परखने का सबसे उत्तम माध्यम।</span>
+            </div>
+            <div class="guide-exam-box">
+              <strong>🚆 Railway RRB Group D &amp; NTPC:</strong>
+              <span>सामान्य विज्ञान (NCERT आधारित) और तार्किक क्षमता के व्यापक प्रश्न, जहां टाइम मैनेजमेंट ही मेरिट लिस्ट में नाम पक्का करता है।</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 12. Answer और Result का विश्लेषण कैसे करें? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">📊 12. मॉक टेस्ट देने के बाद Answer और Result का विश्लेषण कैसे करें?</h3>
+        <div class="guide-topic-body">
+          <p>टेस्ट देना केवल 50% काम है; बाकी 50% सफलता <strong>पोस्ट-टेस्ट एनालिसिस (Post-Test Analysis)</strong> से तय होती है:</p>
+          <ul class="guide-list">
+            <li><strong>कम से कम 30-45 मिनट विश्लेषण करें:</strong> टेस्ट खत्म होने के तुरंत बाद स्कोर देखकर बंद न करें।</li>
+            <li><strong>प्रश्नों को 3 श्रेणियों में जांचें:</strong>
+              <br>&bull; <em>सही प्रश्न:</em> क्या उत्तर पक्का पता था या संयोग से सही हुआ?
+              <br>&bull; <em>गलत प्रश्न:</em> गलती कॉन्सेप्ट की थी या कैलकुलेशन की?
+              <br>&bull; <em>छूटे हुए प्रश्न:</em> समय की कमी से छूटे या प्रश्न समझ ही नहीं आया?
+            </li>
+            <li><strong>'💡 View Solution' का प्रयोग करें:</strong> हमारे रिजल्ट पेज पर हर प्रश्न के नीचे दिए गए ड्रॉपडाउन पर क्लिक करके शॉर्टकट विधियां और विस्तृत हल पढ़ें।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 13. Accuracy और Speed कैसे सुधारें? -->
+      <article class="guide-topic-card">
+        <h3 class="guide-topic-title">⚡ 13. मॉक टेस्ट से Accuracy और Speed कैसे सुधारें?</h3>
+        <div class="guide-topic-body">
+          <p>प्रतियोगी परीक्षा में स्पीड (गति) और एक्यूरेसी (सटीकता) दो पहिए हैं:</p>
+          <ul class="guide-list">
+            <li><strong>पहले Accuracy, फिर Speed:</strong> शुरुआती 5-7 टेस्ट में कभी भी जल्दीबाजी न करें। पहले अपना सही प्रतिशत 85% से ऊपर ले जाएं। जब सटीकता आ जाएगी, तो स्पीड अभ्यास के साथ अपने आप बढ़ जाएगी।</li>
+            <li><strong>कैलकुलेशन स्पीड बढ़ाएं:</strong> 1 से 30 तक के पहाड़े (Tables), 1 से 50 तक के वर्ग (Squares), और 1 से 25 तक के घन (Cubes) याद रखें ताकि मैथ्स और रीजनिंग में कलम चलाने की कम जरूरत पड़े।</li>
+            <li><strong>एलिमिनेशन मेथड (Elimination Method):</strong> चारों विकल्पों में से जो 2 विकल्प बिल्कुल गलत हैं, उन्हें पहले छांट लें। इससे सही उत्तर चुनने की संभावना 50% बढ़ जाती है।</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 14. Free Weekly Mock Test से जुड़े महत्वपूर्ण सवाल-जवाब (FAQs) -->
+      <article class="guide-topic-card" style="border-left-color: #16a34a;">
+        <h3 class="guide-topic-title" style="color: #166534;">❓ 14. Free Weekly Mock Test से जुड़े महत्वपूर्ण सवाल-जवाब (FAQs)</h3>
+        <div class="guide-topic-body">
+          <p style="margin-bottom: 14px;">छात्रों द्वारा अक्सर पूछे जाने वाले सामान्य प्रश्न और उनके आधिकारिक समाधान:</p>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q1. क्या AapkaResult.in पर मॉक टेस्ट वास्तव में 100% फ्री हैं?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              जी हां, AapkaResult.in पर उपलब्ध सभी साप्ताहिक मॉक टेस्ट, प्रैक्टिस सेट और स्कोरकार्ड विश्लेषण 100% फ्री हैं। छात्रों से किसी भी प्रकार का कोई शुल्क या सब्सक्रिप्शन चार्ज नहीं लिया जाता।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q2. क्या टेस्ट देने के लिए रजिस्ट्रेशन या लॉगिन करना जरूरी है?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              नहीं, आप बिना किसी रजिस्ट्रेशन, मोबाइल नंबर या पासवर्ड के सीधे 'Start Free Mock Test' पर क्लिक करके तुरंत टेस्ट शुरू कर सकते हैं।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q3. क्या यह मॉक टेस्ट मोबाइल फोन पर भी सही से काम करते हैं?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              बिल्कुल! हमारा पूरा टेस्ट इंजन और रिजल्ट पोर्टल मोबाइल-फ्रेंडली व रिस्पॉन्सिव बनाया गया है। आप किसी भी एंड्रॉइड या आईफोन पर बिना किसी ऐप डाउनलोड किए सीधे ब्राउज़र में टेस्ट दे सकते हैं।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q4. क्या टेस्ट में नेगेटिव मार्किंग आधिकारिक नियमों के अनुसार होती है?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              जी हां, UP Police में +2.00 सही और -0.50 गलत, SSC GD में +2.00 और -0.25/0.50 तथा Agniveer में आधिकारिक मानकों के अनुसार नेगेटिव मार्किंग की सटीक गणना की जाती है।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q5. टेस्ट सबमिट करने के बाद क्या सभी सवालों के हल (Solutions) मिलते हैं?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              हां, सबमिट करते ही आपका पूरा रिजल्ट सामने आता है जहां हर प्रश्न के नीचे '💡 View Solution / हल देखें' का ड्रॉपडाउन दिया गया है। आप 'Expand All' बटन से एक क्लिक में सभी प्रश्नों के विस्तृत हल भी देख सकते हैं।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q6. नया साप्ताहिक मॉक टेस्ट कब अपडेट होता है?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              हर हफ्ते नए मॉडल पेपर्स और पिछले वर्षों (PYQ) पर आधारित फ्रेश टेस्ट सीरीज जोड़ी जाती है, ताकि छात्रों को निरंतर नए प्रश्नों का अभ्यास मिलता रहे।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q7. क्या मैं एक ही मॉक टेस्ट को दोबारा (Re-attempt) दे सकता हूं?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              जी हां! रिजल्ट पेज और डैशबोर्ड पर '🔄 Re-attempt Mock Test' का विकल्प मौजूद है। आप जितनी बार चाहें टेस्ट को पुनः देकर अपने स्कोर और गति में सुधार कर सकते हैं।
+            </div>
+          </details>
+
+          <details class="guide-faq-details">
+            <summary class="guide-faq-summary">
+              <span>Q8. क्या टेस्ट के प्रश्न नवीनतम 2026 परीक्षा पैटर्न पर आधारित हैं?</span>
+              <span class="guide-faq-arrow">▼</span>
+            </summary>
+            <div class="guide-faq-answer">
+              हां, सभी प्रश्न भर्ती आयोगों द्वारा जारी नवीनतम 2026 परीक्षा पाठ्यक्रम, कठिनाई स्तर (Difficulty Level) और हालिया परीक्षाओं के ट्रेंड्स का गहराई से विश्लेषण करके विषय विशेषज्ञों द्वारा तैयार किए गए हैं।
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+
 
   </main>
 
