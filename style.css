@@ -905,6 +905,10 @@ img, svg {
   border: 1px solid var(--border-light);
 }
 
+.responsive-table-wrap::before {
+  display: none;
+}
+
 .styled-table {
   width: 100%;
   border-collapse: collapse;
@@ -1987,6 +1991,30 @@ img, svg {
   .responsive-table-wrap::-webkit-scrollbar-thumb {
     background: #cbd5e1 !important;
     border-radius: 4px !important;
+  }
+
+  /* Mobile Swipe Hint Cue (Clear visual prompt for users to swipe) */
+  .responsive-table-wrap::before {
+    content: "👉 स्वाइप करें (Swipe ➔) पूरा विवरण व लिंक देखने के लिए";
+    display: block !important;
+    position: sticky !important;
+    left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #f1f5f9 !important;
+    color: #1e3a8a !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 6px 10px !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    text-align: left !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Hide swipe cue on 2-column apply tables (fits mobile without scrolling) */
+  .responsive-table-wrap:has(.apply-table)::before {
+    display: none !important;
   }
 
   /* Base Styled Table on Mobile */
