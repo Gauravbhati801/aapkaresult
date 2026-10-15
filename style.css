@@ -2902,3 +2902,153 @@ img, svg {
   gap: 4px;
 }
 
+/* --- SARKARI TOOLS MOBILE VIEWPORT OPTIMIZATIONS (100% RESPONSIVE) --- */
+@media (max-width: 768px) {
+  .tools-hero {
+    padding: 20px 14px !important;
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+  }
+  .tools-hero-badge {
+    font-size: 11px !important;
+    padding: 3px 10px !important;
+  }
+  .tools-hero h1 {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+  }
+  .tools-hero p {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 2x2 Grid for Tools Navigation on Mobile */
+  .tools-tabs-nav {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+    padding: 5px !important;
+    background: #e2e8f0 !important;
+    border-radius: 10px !important;
+    margin-bottom: 16px !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .tool-tab-btn {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 9px 6px !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .tool-card-box {
+    padding: 15px 12px !important;
+    border-radius: 10px !important;
+    margin-bottom: 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .tool-card-header h2 {
+    font-size: 1.15rem !important;
+  }
+  .tool-card-header p {
+    font-size: 0.85rem !important;
+  }
+
+  .tool-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .tool-field input,
+  .tool-field select,
+  .tool-field textarea {
+    font-size: 14px !important;
+    padding: 9px 10px !important;
+  }
+
+  /* Age Results on Mobile */
+  .age-kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .age-kpi-card {
+    padding: 10px 6px !important;
+  }
+  .age-kpi-val {
+    font-size: 1.45rem !important;
+  }
+  .age-kpi-lbl {
+    font-size: 11px !important;
+  }
+
+  /* Typing Test on Mobile */
+  .typing-stats-ribbon {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .stat-box {
+    padding: 6px 4px !important;
+  }
+  .stat-box strong {
+    font-size: 1.15rem !important;
+  }
+  .stat-box span {
+    font-size: 9px !important;
+  }
+  .typing-passage-box {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    height: 120px !important;
+    padding: 10px !important;
+  }
+  .typing-input-area {
+    font-size: 15px !important;
+    height: 65px !important;
+    padding: 10px !important;
+  }
+
+  /* Physical Cards on Mobile */
+  .physical-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Tables horizontal scrolling safely */
+  .eligibility-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin-top: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+  }
+  .eligibility-table {
+    min-width: 520px !important;
+    width: 100% !important;
+    font-size: 12.5px !important;
+  }
+  .eligibility-table th,
+  .eligibility-table td {
+    padding: 8px 10px !important;
+  }
+}
+

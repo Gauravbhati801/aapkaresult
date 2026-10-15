@@ -23,19 +23,62 @@
     "operatingSystem": "All"
   }
   </script>
+  <style>
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+    .job-page-container {
+      width: 100% !important;
+      max-width: 1100px !important;
+      box-sizing: border-box !important;
+      padding: 0 12px !important;
+      margin: 16px auto 35px auto !important;
+      overflow-x: hidden !important;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- TOP HEADER -->
+  <!-- SITE HEADER -->
   <header class="site-header">
     <div class="header-container">
-      <div class="header-logo-area">
-        <a href="/" class="brand-logo" aria-label="AapkaResult.in Home">
-          <span class="logo-text">Aapka<span class="highlight">Result</span><span class="tld">.in</span></span>
+      <div class="brand">
+        <a href="/" class="brand-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="favicon.svg" alt="AapkaResult.in Logo" class="brand-icon" width="44" height="44">
+          <div class="brand-info">
+            <span class="brand-title">AAPKA<span class="accent">RESULT</span><span class="domain-tld">.IN</span></span>
+            <span class="brand-tagline">Make Your Dreams Come True</span>
+          </div>
         </a>
       </div>
+
+      <!-- Live Search -->
+      <div class="header-search">
+        <span class="search-icon">
+          <svg class="search-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" id="liveSearchInput" placeholder="Search by Exam, Post, Board, or Qualification..." onkeyup="liveSearch(this.value)">
+        <button type="button" class="search-submit-btn" onclick="liveSearch(document.getElementById('liveSearchInput').value)" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
       <div class="header-actions">
-        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation Menu">
+        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="btn-telegram">
+          <svg class="telegram-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Join Telegram</span>
+        </a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -53,12 +96,13 @@
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
         <li><a href="free-test-weekly.html">Mock Test</a></li>
-        <li><a href="sarkari-tools.html" style="color: #f97316; font-weight: 700;">Tools 2026</a></li>
+        <li><a href="sarkari-tools.html" class="active" style="color: #ea580c; font-weight: 700;">Tools 2026</a></li>
         <li><a href="short-notes-hub.html">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
         <li><a href="syllabus.html">Syllabus</a></li>
         <li><a href="admission.html">Admissions</a></li>
+        <li><a href="career-guide.html">Career Guides</a></li>
         <li class="dropdown">
           <button type="button" class="nav-dropdown-btn" onclick="toggleDropdown(event)" aria-expanded="false">More &#9662;</button>
           <div class="dropdown-menu">
@@ -73,8 +117,26 @@
     </div>
   </nav>
 
+  <!-- LIVE TICKER -->
+  <div class="breaking-ticker">
+    <span class="ticker-badge">&#128293; FLASH UPDATES </span>
+    <div class="ticker-content">
+      <marquee onmouseover="this.stop();" onmouseout="this.start();">
+        <a href="up-police-constable.html" style="font-weight:700; color:#dc2626;">🔥 UP Police Constable Final Result &amp; Selection List 2026 Declared &ndash; Check Cutoff Marks &amp; Merit List</a> &bull;
+        <a href="rrb-ntpc-graduate.html">Railway RRB NTPC Graduate Level (3,548 Posts) Online Form 2026 Live</a> &bull;
+        <a href="dsssb-sweeper-chowkidar.html">DSSSB Sweeper &amp; Chowkidar Recruitment 2026 (Advt 05/2026) Online Form Starting 13 Oct</a> &bull;
+        <a href="up-scholarship-2026.html">UP Scholarship 2026-27 Online Form (Pre &amp; Post Matric) Registration Ongoing</a> &bull;
+        <a href="up-police-constable.html">UP Police Constable (32,679 Posts) Application Closed (30 Jan 2026) &bull; PET Stage Active</a> &bull;
+        <a href="rrb-group-d.html">Railway RRB Group D (22,000+ Posts) Recruitment Notification Out</a> &bull;
+        <a href="ssc-gd-constable.html">SSC GD Constable (25,487 Posts) Computer Based Exam Updates</a> &bull;
+        <a href="india-post-gds.html">India Post GDS Recruitment 2026 (28,000+ Posts) 10th Pass Merit Selection</a> &bull;
+        <a href="results.html">IBPS RRB 13th Reserve List &amp; Allotment Declared</a>
+      </marquee>
+    </div>
+  </div>
+
   <!-- BREADCRUMBS -->
-  <div class="container" style="padding: 12px 14px 0 14px;">
+  <div class="job-page-container" style="padding-top: 14px; margin-bottom: 0;">
     <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size: 13px; color: #64748b;">
       <a href="/" style="color: #1e3a8a; text-decoration: none;">होम</a> &raquo;
       <a href="sarkari-tools.html" style="color: #1e3a8a; text-decoration: none;">सरकारी टूल्स</a> &raquo;
@@ -82,7 +144,7 @@
     </nav>
   </div>
 
-  <main class="container" style="padding: 14px; max-width: 1040px; margin: 0 auto;">
+  <main class="job-page-container">
 
     <!-- PAGE HERO -->
     <div style="background: linear-gradient(135deg, #1e3a8a 0%, #15803d 100%); color: #ffffff; padding: 28px 20px; border-radius: 14px; text-align: center; margin-bottom: 22px;">
@@ -324,34 +386,64 @@
 
   </main>
 
-  <!-- SITE FOOTER -->
+    <!-- SITE FOOTER -->
   <footer class="site-footer" style="margin-top: 40px;">
-    <div class="container footer-content">
+    <div class="footer-inner">
       <div class="footer-col">
-        <h3>AapkaResult.in</h3>
-        <p>भारत का विश्वसनीय रोजगार व रिजल्ट पोर्टल। सरकारी नौकरी, एडमिट कार्ड, आंसर की और फ्री टूल्स की प्रामाणिक जानकारी।</p>
+        <h4>About AapkaResult.in</h4>
+        <p>
+          AapkaResult.in is an independent educational news and employment alert portal. We aggregate publicly available recruitment notices to provide fast, authentic, and easy-to-understand information to students across India.
+        </p>
+        <p class="footer-copy">&copy; 2026 AapkaResult.in. All Rights Reserved.</p>
       </div>
+
       <div class="footer-col">
-        <h3>Sarkari Tools 2026</h3>
+        <h4>Quick Navigation</h4>
         <ul>
-          <li><a href="age-calculator.html">Sarkari Age Calculator</a></li>
-          <li><a href="typing-test.html">SSC / Railway Typing Test</a></li>
-          <li><a href="physical-standards-checker.html">Physical Standards Checker</a></li>
-          <li><a href="cgpa-percentage-calculator.html">CGPA to Percentage Converter</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="sarkari-tools.html" style="color: #ea580c; font-weight: 700;">Sarkari Tools 2026</a></li>
+          <li><a href="free-test-weekly.html">Free Mock Tests</a></li>
+          <li><a href="latest-jobs.html">Latest Jobs 2026</a></li>
+          <li><a href="results.html">Exam Results</a></li>
+          <li><a href="admit-cards.html">Admit Cards</a></li>
+          <li><a href="answer-key.html">Answer Keys</a></li>
+          <li><a href="syllabus.html">Exam Syllabus</a></li>
+          <li><a href="admission.html">Admissions</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
-        <h3>Legal &amp; Policy</h3>
+        <h4>Top Recruitments</h4>
         <ul>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="up-police-constable.html">UP Police Constable (32,679)</a></li>
+          <li><a href="rrb-group-d.html">Railway RRB Group D (22,000+)</a></li>
+          <li><a href="ssc-gd-constable.html">SSC GD Constable (25,487)</a></li>
+          <li><a href="india-post-gds.html">India Post GDS (28,000+)</a></li>
+          <li><a href="upsssc-lekhpal.html">UPSSSC Lekhpal (7,994)</a></li>
+          <li><a href="dsssb-mts.html">DSSSB MTS Delhi (714)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compliance &amp; Legal</h4>
+        <ul>
+          <li><a href="about-us.html">About Our Portal</a></li>
+          <li><a href="contact-us.html">Contact &amp; Grievance</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="disclaimer.html">Official Disclaimer</a></li>
+          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="editorial-policy.html">Editorial Policy</a></li>
+          <li><a href="fact-verification-policy.html">Fact Verification</a></li>
+          <li><a href="content-ownership-policy.html">Content Ownership</a></li>
+          <li><a href="sitemap.xml">XML Sitemap</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 AapkaResult.in &bull; All Rights Reserved &bull; For Educational &amp; Information Purposes Only.</p>
+      <p class="footer-disclaimer-text">
+        <strong>Non-Government Affiliation Disclaimer:</strong> AapkaResult.in is NOT an official government website and has no association with any central or state government agency, department, commission, or recruitment board (such as UPSC, SSC, RRB, NTA, or State PSCs). All examination information and dates provided are for educational reference only. Candidates must always verify details on the respective official government portal before taking any action.
+      </p>
     </div>
   </footer>
 
