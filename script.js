@@ -3,12 +3,48 @@
  * Provides Instant Search, Category Filtering, Mobile Nav, and Form Handling
  */
 
-// Mobile Navigation Toggle
+// Mobile Navigation Drawer Toggle & Controller
 function toggleMobileNav() {
   const navLinks = document.getElementById("navLinks");
-  if (navLinks) {
-    navLinks.classList.toggle("show-mobile");
+  const menuBtn = document.querySelector(".mobile-menu-btn");
+  let backdrop = document.querySelector(".nav-backdrop");
+
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.className = "nav-backdrop";
+    backdrop.setAttribute("aria-hidden", "true");
+    backdrop.addEventListener("click", closeMobileNav);
+    document.body.appendChild(backdrop);
   }
+
+  if (navLinks) {
+    const isOpening = !navLinks.classList.contains("show-mobile");
+    if (isOpening) {
+      navLinks.classList.add("show-mobile");
+      if (menuBtn) {
+        menuBtn.classList.add("active");
+        menuBtn.setAttribute("aria-expanded", "true");
+      }
+      backdrop.classList.add("show");
+      document.body.classList.add("nav-drawer-open");
+    } else {
+      closeMobileNav();
+    }
+  }
+}
+
+function closeMobileNav() {
+  const navLinks = document.getElementById("navLinks");
+  const menuBtn = document.querySelector(".mobile-menu-btn");
+  const backdrop = document.querySelector(".nav-backdrop");
+
+  if (navLinks) navLinks.classList.remove("show-mobile");
+  if (menuBtn) {
+    menuBtn.classList.remove("active");
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
+  if (backdrop) backdrop.classList.remove("show");
+  document.body.classList.remove("nav-drawer-open");
 }
 
 // Mobile Dropdown Click Handler (Open on Click, Hide on Next Click)
@@ -26,18 +62,18 @@ function toggleDropdown(e) {
   }
 }
 
-// Close mobile navigation or dropdown on click outside
+// Close mobile navigation drawer or dropdown on click outside
 document.addEventListener("click", function(event) {
   const nav = document.querySelector(".site-nav");
   const toggleBtn = document.querySelector(".mobile-toggle");
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.getElementById("navLinks");
   
-  if (nav && navLinks && navLinks.classList.contains("show-mobile")) {
+  if (navLinks && navLinks.classList.contains("show-mobile")) {
     const clickedInsideToggle = (toggleBtn && toggleBtn.contains(event.target)) || (mobileMenuBtn && mobileMenuBtn.contains(event.target));
-    if (!nav.contains(event.target) && !clickedInsideToggle) {
-      navLinks.classList.remove("show-mobile");
-      if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "false");
+    const clickedInsideNav = nav && nav.contains(event.target);
+    if (!clickedInsideNav && !clickedInsideToggle) {
+      closeMobileNav();
     }
   }
 
@@ -48,6 +84,13 @@ document.addEventListener("click", function(event) {
       const btn = d.querySelector(".nav-dropdown-btn, button, a");
       if (btn) btn.setAttribute("aria-expanded", "false");
     });
+  }
+});
+
+// Close drawer on Escape key press
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeMobileNav();
   }
 });
 

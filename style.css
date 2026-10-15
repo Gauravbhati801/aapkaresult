@@ -107,6 +107,9 @@ img, svg {
   .search-submit-btn {
     display: none !important;
   }
+  .nav-backdrop {
+    display: none !important;
+  }
 }
 
 /* --- SITE HEADER --- */
@@ -1493,7 +1496,7 @@ img, svg {
     border-bottom: 1px solid #e2e8f0 !important;
     position: sticky !important;
     top: 0 !important;
-    z-index: 1001 !important;
+    z-index: 1005 !important;
   }
 
   .header-container, .header-inner {
@@ -1679,123 +1682,209 @@ img, svg {
     display: none !important; /* Hidden on mobile header to preserve low height */
   }
 
+  /* Modern Sleek Mobile Menu Button (Hamburger to '✕' Morphing) */
   .mobile-menu-btn {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 3.5px !important;
-    width: 32px !important;
-    height: 32px !important;
-    background: transparent !important;
-    border: none !important;
+    gap: 4px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
     cursor: pointer !important;
-    padding: 2px !important;
+    padding: 0 !important;
     margin: 0 !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     flex-shrink: 0 !important;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    position: relative !important;
+    z-index: 1006 !important;
   }
 
   .mobile-menu-btn:active {
-    background: rgba(15, 23, 42, 0.08) !important;
+    transform: scale(0.92) !important;
+    background: #f1f5f9 !important;
   }
 
   .mobile-menu-btn .bar {
-    width: 20px !important;
-    height: 2.2px !important;
+    width: 18px !important;
+    height: 2px !important;
     background: #0f172a !important;
     border-radius: 2px !important;
     display: block !important;
-    transition: transform 0.2s ease, opacity 0.2s ease !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.2s ease !important;
+    transform-origin: center !important;
   }
 
-  /* Modern Mobile Navigation (Hidden trigger, opened by header hamburger) */
+  /* Morphing hamburger to red '✕' */
+  .mobile-menu-btn.active,
+  .mobile-menu-btn.is-active {
+    background: #fef2f2 !important;
+    border-color: #fecaca !important;
+    box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.15) !important;
+  }
+
+  .mobile-menu-btn.active .bar,
+  .mobile-menu-btn.is-active .bar {
+    background: #e11d48 !important;
+  }
+
+  .mobile-menu-btn.active .bar:nth-child(1),
+  .mobile-menu-btn.is-active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg) !important;
+  }
+
+  .mobile-menu-btn.active .bar:nth-child(2),
+  .mobile-menu-btn.is-active .bar:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  .mobile-menu-btn.active .bar:nth-child(3),
+  .mobile-menu-btn.is-active .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg) !important;
+  }
+
+  /* Mobile Nav Container: Zero Layout Shift on Homepage */
   .site-nav {
-    position: relative;
-    z-index: 1000;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    position: static !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 0 !important;
+    z-index: 1002 !important;
   }
 
   .nav-container {
-    padding: 0;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .mobile-toggle {
     display: none !important;
   }
 
-  /* Clean Dropdown Panel */
+  /* Right-Side Slide-in Drawer */
   .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #0b1329;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid #dc2626;
-    padding: 6px 0 12px 0;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    position: fixed !important;
+    top: 45px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 285px !important;
+    max-width: 82vw !important;
+    height: calc(100vh - 45px) !important;
+    height: calc(100dvh - 45px) !important;
+    background: #0b1329 !important;
+    z-index: 1002 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px 0 24px 0 !important;
+    box-shadow: -6px 0 28px rgba(0, 0, 0, 0.5) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    transform: translateX(105%) !important;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s !important;
+    visibility: hidden !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+    list-style: none !important;
   }
 
   .nav-links.show-mobile {
-    display: flex;
-    animation: fadeInMenu 0.2s ease;
+    transform: translateX(0) !important;
+    visibility: visible !important;
   }
 
-  @keyframes fadeInMenu {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* Drawer Section Title */
+  .nav-links::before {
+    content: "⚡ त्वरित नेविगेशन (Navigation)";
+    display: block;
+    padding: 12px 18px 8px 18px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 4px;
   }
 
   .nav-links > li {
-    width: 100%;
+    width: 100% !important;
   }
 
   .nav-links > li > a,
   .nav-links > li > .nav-dropdown-btn {
-    padding: 11px 20px;
-    font-size: 14px;
-    color: #e2e8f0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.15s ease;
-    width: 100%;
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-family: inherit;
-    cursor: pointer;
-    text-align: left;
+    padding: 12px 18px !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    color: #f1f5f9 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    transition: all 0.15s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    border-top: none !important;
+    border-left: 3px solid transparent !important;
+    border-right: none !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    text-decoration: none !important;
   }
 
+  .nav-links > li > a:active,
   .nav-links > li > a:hover,
   .nav-links > li > a.active,
-  .nav-links > li > .nav-dropdown-btn:hover,
-  .nav-links > li > .nav-dropdown-btn:active {
-    background: rgba(220, 38, 38, 0.2);
-    color: #fca5a5;
-    padding-left: 24px;
+  .nav-links > li > .nav-dropdown-btn:active,
+  .nav-links > li > .nav-dropdown-btn:hover {
+    background: rgba(225, 29, 72, 0.15) !important;
+    color: #ffffff !important;
+    padding-left: 22px !important;
+    border-left-color: #e11d48 !important;
   }
 
-  /* Explicit mobile dropdown handling without hover trap */
+  /* Scoped Category Icons for Mobile Drawer Only */
+  .nav-links > li > a[href="/"]::before,
+  .nav-links > li > a[href="index.html"]::before { content: "🏠"; font-size: 16px; }
+  .nav-links > li > a[href="latest-jobs.html"]::before { content: "💼"; font-size: 16px; }
+  .nav-links > li > a[href="results.html"]::before { content: "🏆"; font-size: 16px; }
+  .nav-links > li > a[href="free-test-weekly.html"]::before { content: "🚀"; font-size: 16px; }
+  .nav-links > li > a[href="sarkari-tools.html"]::before { content: "🛠️"; font-size: 16px; }
+  .nav-links > li > a[href="short-notes-hub.html"]::before { content: "📝"; font-size: 16px; }
+  .nav-links > li > a[href="admit-cards.html"]::before { content: "🪪"; font-size: 16px; }
+  .nav-links > li > a[href="answer-key.html"]::before { content: "🔑"; font-size: 16px; }
+  .nav-links > li > a[href="syllabus.html"]::before { content: "📋"; font-size: 16px; }
+  .nav-links > li > a[href="admission.html"]::before { content: "🎓"; font-size: 16px; }
+  .nav-links > li > a[href="career-guide.html"]::before { content: "🧭"; font-size: 16px; }
+  .nav-links > li > .nav-dropdown-btn::before { content: "⚙️"; font-size: 16px; }
+
+  /* Dropdown inside Drawer */
   .dropdown:hover .dropdown-menu {
     display: none;
   }
 
   .dropdown-menu {
-    position: static;
+    position: static !important;
     display: none !important;
-    box-shadow: none;
-    background: #070e1e;
-    border: none;
-    padding: 4px 0 6px 20px;
-    border-left: 3px solid #dc2626;
-    margin: 4px 14px;
-    border-radius: 6px;
+    box-shadow: none !important;
+    background: rgba(2, 6, 23, 0.6) !important;
+    border: none !important;
+    padding: 4px 0 6px 14px !important;
+    border-left: 2px solid #e11d48 !important;
+    margin: 4px 14px 8px 14px !important;
+    border-radius: 4px !important;
   }
 
   .dropdown.open-mobile .dropdown-menu {
@@ -1803,9 +1892,44 @@ img, svg {
   }
 
   .dropdown-menu a {
-    color: #cbd5e1;
-    padding: 8px 14px;
-    font-size: 13px;
+    color: #cbd5e1 !important;
+    padding: 8px 12px !important;
+    font-size: 13.5px !important;
+    display: block !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:active {
+    color: #ffffff !important;
+  }
+
+  /* Backdrop Overlay for Drawer */
+  .nav-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+    z-index: 1001 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.25s ease, visibility 0.25s ease !important;
+    pointer-events: none !important;
+  }
+
+  .nav-backdrop.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  body.nav-drawer-open {
+    overflow: hidden !important;
   }
   .trending-cards-grid {
     grid-template-columns: repeat(2, 1fr);
