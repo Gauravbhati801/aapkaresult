@@ -934,6 +934,11 @@ img, svg {
   text-align: center;
 }
 
+.table-center th:first-child,
+.table-center td:first-child {
+  text-align: left;
+}
+
 .apply-table th {
   background: #f8fafc;
   color: var(--primary-navy);
@@ -1304,6 +1309,7 @@ img, svg {
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.4px;
+  white-space: nowrap;
 }
 
 .btn-apply-main {
@@ -1956,33 +1962,205 @@ img, svg {
     padding-bottom: 4px !important;
     border-bottom-width: 2px !important;
   }
+  /* --- RESPONSIVE TABLE WRAPPER (TOUCH HORIZONTAL SCROLL) --- */
   .responsive-table-wrap {
-    margin: 8px 0 12px !important;
-    border-radius: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 10px 0 16px !important;
+    border-radius: 8px !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    background: #ffffff !important;
+    position: relative !important;
+    box-sizing: border-box !important;
   }
-  .styled-table {
-    font-size: 11px !important;
+
+  /* Subtle mobile scrollbar cue for swipeability */
+  .responsive-table-wrap::-webkit-scrollbar {
+    height: 5px !important;
   }
-  .styled-table th,
-  .styled-table td {
-    padding: 6px 8px !important;
-    font-size: 11px !important;
-    line-height: 1.3 !important;
+  .responsive-table-wrap::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
   }
-  .btn-action {
-    padding: 4px 8px !important;
-    font-size: 10.5px !important;
+  .responsive-table-wrap::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
     border-radius: 4px !important;
   }
-  .btn-apply-main {
-    padding: 6px 12px !important;
+
+  /* Base Styled Table on Mobile */
+  .styled-table {
+    width: 100% !important;
+    min-width: 660px !important;
+    border-collapse: collapse !important;
+    table-layout: auto !important;
     font-size: 11.5px !important;
-    gap: 4px !important;
+    margin: 0 !important;
   }
-  .apply-table th,
-  .apply-table td {
-    padding: 6px 8px !important;
+
+  /* 6-Column Tables (e.g. Latest Jobs, Syllabus Pattern) */
+  .styled-table:has(tr > th:nth-child(6)) {
+    min-width: 780px !important;
+  }
+
+  /* Table Cells & Headers General Styling */
+  .styled-table th,
+  .styled-table td {
+    padding: 8px 10px !important;
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+    vertical-align: middle !important;
+    box-sizing: border-box !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Table Header Row */
+  .styled-table th {
+    background: var(--primary-navy) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  /* Column 1: Examination / Post / Program Name (Sufficient width: 1-3 readable lines) */
+  .styled-table th:first-child,
+  .styled-table td:first-child {
+    min-width: 220px !important;
+    max-width: 320px !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  .styled-table td:first-child a {
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    color: var(--primary-navy) !important;
+    display: inline-block !important;
+    word-break: normal !important;
+  }
+
+  .styled-table td:first-child strong {
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    color: var(--text-main) !important;
+    display: inline-block !important;
+    word-break: normal !important;
+  }
+
+  .styled-table td:first-child span {
+    font-size: 10.5px !important;
+    line-height: 1.3 !important;
+    display: block !important;
+    margin-top: 3px !important;
+    word-break: normal !important;
+  }
+
+  /* Column 2: Authority / Organization */
+  .styled-table th:nth-child(2),
+  .styled-table td:nth-child(2) {
+    min-width: 130px !important;
+  }
+
+  /* Middle Data Columns */
+  .styled-table th:nth-child(3),
+  .styled-table td:nth-child(3) {
+    min-width: 95px !important;
+  }
+
+  .styled-table th:nth-child(4),
+  .styled-table td:nth-child(4) {
+    min-width: 120px !important;
+  }
+
+  .styled-table th:nth-child(5),
+  .styled-table td:nth-child(5) {
+    min-width: 105px !important;
+  }
+
+  .styled-table th:nth-child(6),
+  .styled-table td:nth-child(6) {
+    min-width: 115px !important;
+  }
+
+  /* Action Column (Last child) Alignment & Width */
+  .styled-table th:last-child,
+  .styled-table td:last-child {
+    min-width: 115px !important;
+    text-align: center !important;
+  }
+
+  /* Action Buttons in Tables: Never clip, never wrap awkwardly */
+  .styled-table .btn-action {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    padding: 6px 12px !important;
     font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+    min-width: 85px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Status Badges & Pills in Tables: No clipping, no line-breaking */
+  .styled-table .status-badge-live,
+  .styled-table .status-pill,
+  .styled-table [class*="status-badge"],
+  .styled-table [class*="badge"],
+  .styled-table td span[style*="border-radius"] {
+    white-space: nowrap !important;
+    display: inline-block !important;
+    font-size: 10.5px !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Specific: 2-Column Key Links Apply Tables (Do NOT blow out or force unwanted scroll) */
+  .styled-table.apply-table {
+    min-width: 100% !important;
+    width: 100% !important;
+    table-layout: auto !important;
+  }
+
+  .styled-table.apply-table th {
+    width: 44% !important;
+    min-width: 120px !important;
+    max-width: 50% !important;
+    white-space: normal !important;
+    text-align: left !important;
+    background: #f8fafc !important;
+    color: var(--primary-navy) !important;
+    padding: 8px 10px !important;
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .styled-table.apply-table td {
+    width: 56% !important;
+    min-width: 140px !important;
+    text-align: center !important;
+    padding: 8px 10px !important;
+    white-space: normal !important;
+  }
+
+  .styled-table.apply-table .btn-action,
+  .styled-table.apply-table .btn-apply-main {
+    max-width: 100% !important;
+    width: auto !important;
+    white-space: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
   }
   .styled-ordered-list {
     margin-left: 16px !important;
