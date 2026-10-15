@@ -2310,19 +2310,595 @@ img, svg {
   white-space: nowrap;
 }
 
+/* --- HERO SECTION TOOLS 2026 BUTTON --- */
+.hero-mock-cta-wrap {
+  margin: 14px auto 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-tools-interactive {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.hero-tools-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%);
+  color: #ffffff !important;
+  padding: 9px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.hero-tools-interactive:hover .hero-tools-btn {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.55);
+  background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
+}
+
+.hero-tools-interactive:active .hero-tools-btn {
+  transform: translateY(1px) scale(0.98);
+}
+
+.hero-tools-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero-tools-badge {
+  background: #fef08a;
+  color: #854d0e;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.orange-hand-click {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 5px rgba(249, 115, 22, 0.5));
+  user-select: none;
+}
+
 @media (max-width: 600px) {
-  .hero-mock-interactive {
+  .hero-mock-cta-wrap {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  .hero-mock-interactive,
+  .hero-tools-interactive {
     gap: 6px;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
-  .green-hand-click svg {
-    width: 24px !important;
-    height: 24px !important;
+  .green-hand-click svg,
+  .orange-hand-click svg {
+    width: 22px !important;
+    height: 22px !important;
   }
-  .hero-mock-btn {
+  .hero-mock-btn,
+  .hero-tools-btn {
     padding: 7px 16px;
     border-radius: 40px;
+    width: 100%;
+    justify-content: center;
   }
-  .hero-mock-title {
+  .hero-mock-title,
+  .hero-tools-title {
     font-size: 13.5px;
   }
 }
+
+/* --- SARKARI TOOLS COMPREHENSIVE SUITE CSS --- */
+.tools-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0369a1 100%);
+  color: #ffffff;
+  padding: 34px 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+}
+.tools-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fde047;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.tools-hero h1 {
+  color: #ffffff;
+  font-size: 1.95rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+.tools-hero p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin: 0 auto 18px auto;
+  max-width: 780px;
+  line-height: 1.6;
+}
+
+/* Tools Quick Tabs Navigation */
+.tools-tabs-nav {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.tools-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+.tool-tab-btn {
+  flex: 1;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+.tool-tab-btn:hover {
+  background: #e2e8f0;
+  color: #1e3a8a;
+}
+.tool-tab-btn.active {
+  background: #1e3a8a;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.25);
+}
+
+/* Tool Panel Containers */
+.tool-panel {
+  display: none;
+}
+.tool-panel.active {
+  display: block;
+}
+
+.tool-card-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 28px;
+}
+.tool-card-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.tool-card-header h2 {
+  font-size: 1.45rem;
+  color: #1e3a8a;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tool-card-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Form Controls & Grids */
+.tool-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.tool-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tool-field label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tool-field input,
+.tool-field select,
+.tool-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14.5px;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.tool-field input:focus,
+.tool-field select:focus,
+.tool-field textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.tool-field .help-text {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Buttons */
+.tool-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 11px 26px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+.tool-btn-primary:hover {
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+.tool-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tool-btn-secondary:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Output Result Cards */
+.tool-result-box {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+  animation: fadeInResult 0.3s ease-in-out;
+}
+@keyframes fadeInResult {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Age KPI Display */
+.age-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.age-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.age-kpi-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  line-height: 1.1;
+  display: block;
+}
+.age-kpi-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Eligibility Matrix Table */
+.eligibility-table-wrap {
+  overflow-x: auto;
+  margin-top: 18px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.eligibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+.eligibility-table th {
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 10px 12px;
+  font-weight: 700;
+  border-bottom: 1.5px solid #cbd5e1;
+}
+.eligibility-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+.eligibility-table tr:hover {
+  background: #f8fafc;
+}
+.status-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.status-pill.eligible {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+.status-pill.overage {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+.status-pill.underage {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+/* Typing Test Engine Styles */
+.typing-passage-box {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 17px;
+  line-height: 1.8;
+  height: 160px;
+  overflow-y: auto;
+  font-family: 'Consolas', 'Courier New', monospace;
+  user-select: none;
+  margin-bottom: 14px;
+}
+.typing-word {
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin: 0 1px;
+}
+.typing-word.active-word {
+  background: #dbeafe;
+  color: #1e40af;
+  border-bottom: 2px solid #2563eb;
+  font-weight: 700;
+}
+.typing-word.correct {
+  color: #16a34a;
+}
+.typing-word.error {
+  color: #dc2626;
+  text-decoration: underline wavy #dc2626;
+  background: #fee2e2;
+}
+.typing-input-area {
+  width: 100%;
+  font-size: 18px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  padding: 14px;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: none;
+  height: 80px;
+  outline: none;
+}
+.typing-stats-ribbon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat-box {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+.stat-box strong {
+  display: block;
+  font-size: 1.45rem;
+  color: #1e3a8a;
+  line-height: 1.1;
+}
+.stat-box span {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Physical Checker Matrix */
+.physical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.force-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.force-card.fit {
+  border-left: 5px solid #22c55e;
+}
+.force-card.unfit {
+  border-left: 5px solid #ef4444;
+}
+.force-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.force-card h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #1e3a8a;
+}
+
+/* BMI Meter */
+.bmi-meter-wrap {
+  background: #f1f5f9;
+  border-radius: 999px;
+  height: 18px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 12px 0 6px 0;
+  display: flex;
+}
+.bmi-zone {
+  height: 100%;
+}
+.bmi-zone.under { background: #38bdf8; width: 25%; }
+.bmi-zone.normal { background: #4ade80; width: 35%; }
+.bmi-zone.over { background: #fbbf24; width: 20%; }
+.bmi-zone.obese { background: #f87171; width: 20%; }
+
+/* Homepage 4-Card Tools Grid */
+.home-tools-section {
+  margin: 28px auto;
+}
+.home-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.home-tool-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.home-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+}
+.home-tool-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+.home-tool-card h3 {
+  font-size: 1.12rem;
+  color: #1e3a8a;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+.home-tool-card p {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+.home-tool-card .card-cta {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
