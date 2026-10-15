@@ -304,7 +304,8 @@ img, svg {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
+  left: auto;
   background: #ffffff;
   min-width: 210px;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
@@ -1868,42 +1869,69 @@ img, svg {
   .nav-links > li > a[href="syllabus.html"]::before { content: "📋"; font-size: 16px; }
   .nav-links > li > a[href="admission.html"]::before { content: "🎓"; font-size: 16px; }
   .nav-links > li > a[href="career-guide.html"]::before { content: "🧭"; font-size: 16px; }
-  .nav-links > li > .nav-dropdown-btn::before { content: "⚙️"; font-size: 16px; }
+  /* Information & Policies Section inside Mobile Drawer (Directly visible, no click needed!) */
+  .dropdown {
+    width: 100% !important;
+    margin-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 4px !important;
+  }
 
-  /* Dropdown inside Drawer */
-  .dropdown:hover .dropdown-menu {
-    display: none;
+  .nav-dropdown-btn {
+    display: none !important; /* Replaced by clean permanent section */
+  }
+
+  .dropdown::before {
+    content: "📌 नीतियां एवं संपर्क (About & Policies)";
+    display: block;
+    padding: 12px 18px 6px 18px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #94a3b8;
   }
 
   .dropdown-menu {
+    display: flex !important;
+    flex-direction: column !important;
     position: static !important;
-    display: none !important;
-    box-shadow: none !important;
-    background: rgba(2, 6, 23, 0.6) !important;
+    background: transparent !important;
     border: none !important;
-    padding: 4px 0 6px 14px !important;
-    border-left: 2px solid #e11d48 !important;
-    margin: 4px 14px 8px 14px !important;
-    border-radius: 4px !important;
-  }
-
-  .dropdown.open-mobile .dropdown-menu {
-    display: block !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 
   .dropdown-menu a {
+    padding: 11px 18px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
     color: #cbd5e1 !important;
-    padding: 8px 12px !important;
-    font-size: 13.5px !important;
-    display: block !important;
-    text-decoration: none !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    transition: all 0.15s ease !important;
+    text-decoration: none !important;
+    border-left: 3px solid transparent !important;
   }
 
   .dropdown-menu a:hover,
   .dropdown-menu a:active {
+    background: rgba(255, 255, 255, 0.06) !important;
     color: #ffffff !important;
+    padding-left: 22px !important;
+    border-left-color: #94a3b8 !important;
   }
+
+  /* Scoped Icons for Info & Policies */
+  .dropdown-menu a[href="about-us.html"]::before { content: "ℹ️"; font-size: 15px; }
+  .dropdown-menu a[href="contact-us.html"]::before { content: "📞"; font-size: 15px; }
+  .dropdown-menu a[href="privacy-policy.html"]::before { content: "🔒"; font-size: 15px; }
+  .dropdown-menu a[href="disclaimer.html"]::before { content: "⚠️"; font-size: 15px; }
+  .dropdown-menu a[href="terms.html"]::before { content: "📜"; font-size: 15px; }
 
   /* Backdrop Overlay for Drawer */
   .nav-backdrop {
