@@ -84,45 +84,7 @@ img, svg {
   max-width: 100%;
 }
 
-/* --- TOP ANNOUNCEMENT BAR --- */
-.top-bar {
-  background: var(--primary-navy);
-  color: #e2e8f0;
-  padding: 6px 15px;
-  font-size: 12.5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.top-bar-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.top-bar-badge {
-  background: var(--accent-gold);
-  color: #000000;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-.top-bar-links a {
-  color: #cbd5e1;
-  margin-left: 14px;
-  font-size: 12px;
-}
-
-.top-bar-links a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
 
 
 /* Isolated Mobile Header Helper Rules for Desktop (768px and above) */
@@ -1508,10 +1470,7 @@ img, svg {
 }
 
 @media (max-width: 768px) {
-  /* Hide cluttered top announcement strip on mobile for clean app feel */
-  .top-bar {
-    display: none !important;
-  }
+
 
   /* Compact Low-Height Mobile Header (Single Row: Left Brand, Center Search, Right Menu) */
   .site-header {
@@ -3022,66 +2981,7 @@ img, svg {
 .bmi-zone.over { background: #fbbf24; width: 20%; }
 .bmi-zone.obese { background: #f87171; width: 20%; }
 
-/* Homepage 4-Card Tools Grid */
-.home-tools-section {
-  margin: 28px auto;
-}
-.home-tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
-.home-tool-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 18px;
-  text-decoration: none !important;
-  color: inherit;
-  transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.home-tool-card:hover {
-  transform: translateY(-3px);
-  border-color: #3b82f6;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
-}
-.home-tool-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 12px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-}
-.home-tool-card h3 {
-  font-size: 1.12rem;
-  color: #1e3a8a;
-  margin: 0 0 6px 0;
-  font-weight: 700;
-}
-.home-tool-card p {
-  font-size: 0.88rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0 0 14px 0;
-}
-.home-tool-card .card-cta {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #2563eb;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+
 
 /* --- SARKARI TOOLS MOBILE VIEWPORT OPTIMIZATIONS (100% RESPONSIVE) --- */
 @media (max-width: 768px) {
