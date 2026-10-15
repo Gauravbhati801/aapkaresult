@@ -2430,193 +2430,168 @@ img, svg {
     }
   }
 
-/* --- HERO SECTION FEATURED MOCK TEST BUTTON & GREEN HAND ANIMATION --- */
+/* --- HERO SECTION ACTION BUTTONS (MOCK TESTS & SARKARI TOOLS) --- */
 .hero-mock-cta-wrap {
-  margin: 14px auto 6px;
+  margin: 16px auto 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.hero-mock-interactive {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none !important;
-  cursor: pointer;
-}
-
-.green-hand-click {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 2px 5px rgba(34, 197, 94, 0.5));
-  user-select: none;
-}
-
-.green-hand-left {
-  animation: greenHandClickRight 0.85s infinite alternate ease-in-out;
-}
-
-.green-hand-right {
-  animation: greenHandClickLeft 0.85s infinite alternate ease-in-out;
-}
-
-@keyframes greenHandClickRight {
-  0% {
-    transform: rotate(90deg) translateX(-4px) scale(0.95);
-  }
-  100% {
-    transform: rotate(90deg) translateX(5px) scale(1.12);
-  }
-}
-
-@keyframes greenHandClickLeft {
-  0% {
-    transform: scaleX(-1) rotate(90deg) translateX(-4px) scale(0.95);
-  }
-  100% {
-    transform: scaleX(-1) rotate(90deg) translateX(5px) scale(1.12);
-  }
-}
-
-.hero-mock-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #1d4ed8 100%);
-  color: #ffffff !important;
-  padding: 9px 24px;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.32);
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
-}
-
-.hero-mock-interactive:hover .hero-mock-btn {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
-  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
-}
-
-.hero-mock-interactive:active .hero-mock-btn {
-  transform: translateY(1px) scale(0.98);
-}
-
-.hero-mock-title {
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #ffffff;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* --- HERO SECTION TOOLS 2026 BUTTON --- */
-.hero-mock-cta-wrap {
-  margin: 14px auto 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.hero-tools-interactive {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none !important;
-  cursor: pointer;
-}
-
+.hero-mock-btn,
 .hero-tools-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%);
-  color: #ffffff !important;
-  padding: 9px 22px;
+  width: 100%;
+  max-width: 300px;
+  height: 48px;
+  padding: 0 18px;
   border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  box-sizing: border-box;
+  text-decoration: none !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
 }
 
-.hero-tools-interactive:hover .hero-tools-btn {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.55);
-  background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
+/* 1. Free Mock Tests (Green Gradient) */
+.hero-mock-btn {
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 50%, #22c55e 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
 }
 
-.hero-tools-interactive:active .hero-tools-btn {
+.hero-mock-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.55);
+  background: linear-gradient(135deg, #166534 0%, #15803d 50%, #16a34a 100%);
+}
+
+.hero-mock-btn:active {
   transform: translateY(1px) scale(0.98);
 }
 
-.hero-tools-title {
+/* 2. Sarkari Tools 2026 (Orange Gradient) */
+.hero-tools-btn {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+}
+
+.hero-tools-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.55);
+  background: linear-gradient(135deg, #9a3412 0%, #c2410c 50%, #ea580c 100%);
+}
+
+.hero-tools-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Title text inside buttons */
+.hero-btn-title {
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
   color: #ffffff;
   line-height: 1;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
+/* Yellow NEW badge on Tools button with subtle pulse */
 .hero-tools-badge {
   background: #fef08a;
   color: #854d0e;
   font-size: 10px;
   font-weight: 900;
-  padding: 2px 6px;
+  padding: 2.5px 7px;
   border-radius: 4px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  animation: badgePulseSubtle 2s infinite ease-in-out;
 }
 
-.orange-hand-click {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 2px 5px rgba(249, 115, 22, 0.5));
-  user-select: none;
+@keyframes badgePulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 8px rgba(254, 240, 138, 0.85);
+  }
+}
+
+/* --- ALTERNATING DIAGONAL GLASS SHINE EFFECT --- */
+.hero-mock-btn::after,
+.hero-tools-btn::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -150%;
+  width: 50%;
+  height: 220%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: buttonGlassShineSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Free Mock Tests shines first (delay 0s) */
+.hero-mock-btn::after {
+  animation-delay: 0s;
+}
+
+/* Sarkari Tools 2026 shines 2 seconds later (delay 2s) */
+.hero-tools-btn::after {
+  animation-delay: 2s;
+}
+
+@keyframes buttonGlassShineSweep {
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 200%;
+  }
+  100% {
+    left: 200%;
+  }
 }
 
 @media (max-width: 600px) {
   .hero-mock-cta-wrap {
     flex-direction: column;
-    gap: 8px !important;
-  }
-  .hero-mock-interactive,
-  .hero-tools-interactive {
-    gap: 6px;
-    width: 100%;
-    max-width: 320px;
-    justify-content: center;
-  }
-  .green-hand-click svg,
-  .orange-hand-click svg {
-    width: 22px !important;
-    height: 22px !important;
+    align-items: center;
+    gap: 10px !important;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
   .hero-mock-btn,
   .hero-tools-btn {
-    padding: 7px 16px;
-    border-radius: 40px;
     width: 100%;
-    justify-content: center;
+    max-width: 300px;
+    height: 46px;
+    padding: 0 16px;
   }
-  .hero-mock-title,
-  .hero-tools-title {
-    font-size: 13.5px;
+  .hero-btn-title {
+    font-size: 14px;
   }
 }
 
