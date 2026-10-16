@@ -3577,20 +3577,19 @@ img, svg {
     padding: 8px 6px !important;
   }
 
-  /* Smooth Swipeable Inner Tables with generous spacing */
+  /* ZERO-SWIPE COMPACT INNER TABLES (100% VISIBLE AT ONCE, PINCH-TO-ZOOM READY) */
   .sarkari-vacancy-cell {
-    padding: 8px 6px !important;
+    padding: 6px 3px !important;
     overflow: hidden !important;
   }
 
   .sarkari-vacancy-cell .responsive-table-wrap {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    overflow-x: hidden !important; /* NO SWIPE / NO SCROLL */
     display: block !important;
     box-sizing: border-box !important;
-    margin: 6px 0 10px !important;
+    margin: 4px 0 8px !important;
     border: 1px solid #cbd5e1 !important;
     border-radius: 4px !important;
   }
@@ -3598,8 +3597,10 @@ img, svg {
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table {
     display: table !important;
     width: 100% !important;
-    min-width: 520px !important;
-    font-size: 13px !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    font-size: 11px !important;
     border-collapse: collapse !important;
   }
 
@@ -3610,16 +3611,37 @@ img, svg {
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table th,
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table td {
     display: table-cell !important;
-    padding: 8px 10px !important;
+    padding: 4px 2px !important;
     border: 1px solid #cbd5e1 !important;
-    white-space: nowrap !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    line-height: 1.25 !important;
+    font-size: 10.5px !important;
   }
 
+  .inner-head th {
+    font-size: 10.5px !important;
+    padding: 4px 2px !important;
+    white-space: normal !important;
+  }
+
+  /* Category breakdown (7 columns) on mobile */
   .sarkari-inner-table.text-center th:first-child,
   .sarkari-inner-table.text-center td:first-child {
-    white-space: normal !important;
-    min-width: 130px !important;
+    width: 25% !important;
+    font-size: 10px !important;
     text-align: left !important;
+    font-weight: 700 !important;
+    padding: 4px 2px !important;
+    white-space: normal !important;
+    min-width: unset !important;
+  }
+
+  .sarkari-inner-table.text-center th:not(:first-child),
+  .sarkari-inner-table.text-center td:not(:first-child) {
+    font-size: 10px !important;
+    padding: 4px 1px !important;
+    text-align: center !important;
   }
 
   /* Instructions */
@@ -3629,7 +3651,7 @@ img, svg {
 
   /* Important Links (Zero Swipe, 100% visible on screen) */
   .sarkari-links-cell {
-    padding: 6px 4px !important;
+    padding: 6px 3px !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table {
@@ -3647,9 +3669,10 @@ img, svg {
 
   .sarkari-links-cell .sarkari-inner-table td {
     display: table-cell !important;
-    padding: 8px 6px !important;
-    font-size: 12px !important;
+    padding: 7px 4px !important;
+    font-size: 11.5px !important;
     vertical-align: middle !important;
+    white-space: normal !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table td:first-child {
@@ -3665,8 +3688,8 @@ img, svg {
   }
 
   .sarkari-click-btn {
-    font-size: 12px !important;
-    padding: 3px 6px !important;
+    font-size: 11.5px !important;
+    padding: 3px 5px !important;
   }
 }
 
