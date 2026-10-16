@@ -3429,55 +3429,211 @@ img, svg {
   color: #0284c7;
 }
 
-/* Mobile Responsive Adjustments */
+/* ==========================================================================
+   SARKARI RESULT MASTER TABLE - MOBILE RESPONSIVE ENGINE
+   ========================================================================== */
 @media (max-width: 768px) {
-  .sarkari-table-wrapper {
-    border-width: 1px;
-    margin: 8px auto 16px;
+  /* Prevent any page wrapper overflow */
+  .job-main-card,
+  .job-article,
+  main.job-page-container,
+  main.job-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    box-sizing: border-box !important;
   }
-  
+
+  .sarkari-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    margin: 8px 0 16px !important;
+    border: 1.5px solid #800000 !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Unravel outer table into 100% full-width stacked blocks on mobile */
+  .sarkari-main-table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-collapse: collapse !important;
+    border: none !important;
+  }
+
+  .sarkari-main-table thead,
+  .sarkari-main-table tbody,
+  .sarkari-main-table tr {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .sarkari-main-table th,
   .sarkari-main-table td {
-    padding: 8px 8px;
-  }
-  
-  .sarkari-head-board {
-    font-size: 15px !important;
-    padding: 10px 8px !important;
-  }
-  
-  .sarkari-head-exam {
-    font-size: 14px !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #cbd5e1 !important;
     padding: 8px 8px !important;
   }
-  
+
+  /* Master Header Bands on Mobile */
+  .sarkari-head-board {
+    font-size: 14.5px !important;
+    padding: 10px 8px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+
+  .sarkari-head-exam {
+    font-size: 13.5px !important;
+    padding: 8px 8px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+
   .sarkari-head-sub {
     font-size: 12px !important;
     padding: 6px 8px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
   }
-  
+
+  /* Meta & Short Info */
+  .sarkari-meta-row {
+    padding: 10px 8px !important;
+  }
+
+  .sarkari-meta-flex {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .sarkari-short-info {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    margin-top: 8px !important;
+  }
+
+  /* Important Dates & Application Fee 100% Full Width Stacked */
+  .sarkari-main-table tr.sarkari-dates-fee-row {
+    display: block !important;
+    width: 100% !important;
+  }
+
   .sarkari-col-dates,
   .sarkari-col-fee {
-    display: block;
+    display: block !important;
     width: 100% !important;
-    box-sizing: border-box;
+    padding: 10px 8px !important;
+    box-sizing: border-box !important;
   }
-  
+
   .sarkari-col-dates {
     border-bottom: 2px solid #800000 !important;
   }
-  
-  .sarkari-main-table tr.sarkari-dates-fee-row {
-    display: flex;
-    flex-direction: column;
+
+  .sarkari-bullet-list,
+  .sarkari-bullet-list-inline {
+    margin-left: 16px !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Age Limit Row */
+  .sarkari-age-box {
+    padding: 10px 8px !important;
+  }
+
+  /* Vacancy Details, Category, Physical & Exam Pattern inner tables */
+  .sarkari-vacancy-cell {
+    padding: 8px 6px !important;
+    overflow: hidden !important;
+  }
+
+  .sarkari-vacancy-cell .responsive-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 6px 0 10px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4px !important;
   }
 
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table {
-    min-width: 520px;
+    display: table !important;
+    width: 100% !important;
+    min-width: 480px !important;
+    font-size: 12.5px !important;
+  }
+
+  .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table tr {
+    display: table-row !important;
+  }
+
+  .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table th,
+  .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table td {
+    display: table-cell !important;
+    padding: 6px 8px !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  /* Instructions */
+  .sarkari-instructions-cell {
+    padding: 10px 8px !important;
+  }
+
+  /* Important Links: Clean 2-column table with Click Here button 100% visible on screen */
+  .sarkari-links-cell {
+    padding: 8px 6px !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table {
-    min-width: 100%;
+    display: table !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .sarkari-links-cell .sarkari-inner-table tr {
+    display: table-row !important;
+  }
+
+  .sarkari-links-cell .sarkari-inner-table td {
+    display: table-cell !important;
+    padding: 8px 6px !important;
+    font-size: 12.5px !important;
+    vertical-align: middle !important;
+  }
+
+  .sarkari-links-cell .sarkari-inner-table td:first-child {
+    width: 65% !important;
+    word-break: break-word !important;
+  }
+
+  .sarkari-links-cell .sarkari-inner-table td:last-child {
+    width: 35% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  .sarkari-click-btn {
+    font-size: 12.5px !important;
+    padding: 3px 6px !important;
   }
 }
 
