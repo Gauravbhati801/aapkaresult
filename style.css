@@ -3430,10 +3430,15 @@ img, svg {
 }
 
 /* ==========================================================================
-   SARKARI RESULT MASTER TABLE - MOBILE RESPONSIVE ENGINE
+   MOBILE ZERO-SWIPE SARKARI RESULT ENGINE (100% ALL-IN-ONE SCREEN VIEW)
    ========================================================================== */
 @media (max-width: 768px) {
   /* Prevent any page wrapper overflow */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
   .job-main-card,
   .job-article,
   main.job-page-container,
@@ -3441,8 +3446,8 @@ img, svg {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
     box-sizing: border-box !important;
   }
 
@@ -3456,7 +3461,7 @@ img, svg {
     box-sizing: border-box !important;
   }
 
-  /* Unravel outer table into 100% full-width stacked blocks on mobile */
+  /* Unravel outer table into 100% full-width stacked blocks */
   .sarkari-main-table {
     display: block !important;
     width: 100% !important;
@@ -3482,50 +3487,56 @@ img, svg {
     border-left: none !important;
     border-right: none !important;
     border-bottom: 1px solid #cbd5e1 !important;
-    padding: 8px 8px !important;
+    padding: 6px 6px !important;
   }
 
-  /* Master Header Bands on Mobile */
+  /* Header Bands */
   .sarkari-head-board {
-    font-size: 14.5px !important;
-    padding: 10px 8px !important;
+    font-size: 13.5px !important;
+    padding: 8px 6px !important;
     line-height: 1.35 !important;
     text-align: center !important;
   }
 
   .sarkari-head-exam {
-    font-size: 13.5px !important;
-    padding: 8px 8px !important;
+    font-size: 13px !important;
+    padding: 7px 6px !important;
     line-height: 1.35 !important;
     text-align: center !important;
   }
 
   .sarkari-head-sub {
-    font-size: 12px !important;
-    padding: 6px 8px !important;
+    font-size: 11.5px !important;
+    padding: 5px 6px !important;
     line-height: 1.35 !important;
     text-align: center !important;
   }
 
   /* Meta & Short Info */
   .sarkari-meta-row {
-    padding: 10px 8px !important;
+    padding: 8px 6px !important;
   }
 
   .sarkari-meta-flex {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 6px !important;
+    gap: 4px !important;
+    font-size: 12px !important;
+  }
+
+  .sarkari-status-pill {
+    font-size: 11px !important;
+    padding: 2px 6px !important;
   }
 
   .sarkari-short-info {
-    font-size: 13px !important;
-    line-height: 1.55 !important;
-    margin-top: 8px !important;
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    margin-top: 6px !important;
   }
 
-  /* Important Dates & Application Fee 100% Full Width Stacked */
+  /* Dates & Fee: Full Width Stacked */
   .sarkari-main-table tr.sarkari-dates-fee-row {
     display: block !important;
     width: 100% !important;
@@ -3535,7 +3546,7 @@ img, svg {
   .sarkari-col-fee {
     display: block !important;
     width: 100% !important;
-    padding: 10px 8px !important;
+    padding: 8px 6px !important;
     box-sizing: border-box !important;
   }
 
@@ -3543,32 +3554,42 @@ img, svg {
     border-bottom: 2px solid #800000 !important;
   }
 
+  .sarkari-box-title {
+    font-size: 12.5px !important;
+    padding: 5px 8px !important;
+    margin-bottom: 6px !important;
+  }
+
   .sarkari-bullet-list,
   .sarkari-bullet-list-inline {
-    margin-left: 16px !important;
-    font-size: 13px !important;
-    line-height: 1.6 !important;
+    margin-left: 14px !important;
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
   }
 
-  /* Age Limit Row */
+  .sarkari-bullet-list li,
+  .sarkari-bullet-list-inline li {
+    margin-bottom: 4px !important;
+  }
+
+  /* Age Limit */
   .sarkari-age-box {
-    padding: 10px 8px !important;
+    padding: 8px 6px !important;
   }
 
-  /* Vacancy Details, Category, Physical & Exam Pattern inner tables */
+  /* ZERO-SWIPE INNER TABLES (NO HORIZONTAL SCROLL) */
   .sarkari-vacancy-cell {
-    padding: 8px 6px !important;
+    padding: 6px 4px !important;
     overflow: hidden !important;
   }
 
   .sarkari-vacancy-cell .responsive-table-wrap {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    overflow-x: hidden !important; /* ZERO SWIPE */
     display: block !important;
     box-sizing: border-box !important;
-    margin: 6px 0 10px !important;
+    margin: 4px 0 8px !important;
     border: 1px solid #cbd5e1 !important;
     border-radius: 4px !important;
   }
@@ -3576,8 +3597,11 @@ img, svg {
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table {
     display: table !important;
     width: 100% !important;
-    min-width: 480px !important;
-    font-size: 12.5px !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    font-size: 11.5px !important;
+    border-collapse: collapse !important;
   }
 
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table tr {
@@ -3587,24 +3611,41 @@ img, svg {
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table th,
   .sarkari-vacancy-cell .responsive-table-wrap .sarkari-inner-table td {
     display: table-cell !important;
-    padding: 6px 8px !important;
+    padding: 5px 3px !important;
     border: 1px solid #cbd5e1 !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Specific column widths for 7-column category tables (UR, OBC, EWS, SC, ST, Total) */
+  .sarkari-inner-table.text-center th:first-child,
+  .sarkari-inner-table.text-center td:first-child {
+    width: 25% !important;
+    font-size: 11px !important;
+    text-align: left !important;
+  }
+
+  .sarkari-inner-table.text-center th:not(:first-child),
+  .sarkari-inner-table.text-center td:not(:first-child) {
+    font-size: 11px !important;
+    padding: 4px 2px !important;
   }
 
   /* Instructions */
   .sarkari-instructions-cell {
-    padding: 10px 8px !important;
+    padding: 8px 6px !important;
   }
 
-  /* Important Links: Clean 2-column table with Click Here button 100% visible on screen */
+  /* Important Links (Zero Swipe, 100% visible on screen) */
   .sarkari-links-cell {
-    padding: 8px 6px !important;
+    padding: 6px 4px !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table {
     display: table !important;
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
     table-layout: fixed !important;
     border: 1px solid #cbd5e1 !important;
   }
@@ -3616,13 +3657,14 @@ img, svg {
   .sarkari-links-cell .sarkari-inner-table td {
     display: table-cell !important;
     padding: 8px 6px !important;
-    font-size: 12.5px !important;
+    font-size: 12px !important;
     vertical-align: middle !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table td:first-child {
     width: 65% !important;
     word-break: break-word !important;
+    font-weight: 600 !important;
   }
 
   .sarkari-links-cell .sarkari-inner-table td:last-child {
@@ -3632,7 +3674,7 @@ img, svg {
   }
 
   .sarkari-click-btn {
-    font-size: 12.5px !important;
+    font-size: 12px !important;
     padding: 3px 6px !important;
   }
 }
