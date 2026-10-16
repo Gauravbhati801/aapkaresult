@@ -107,91 +107,167 @@
             </div>
 
             <!-- SOCIAL SHARE BAR -->
-            <div class="share-bar">
-                <span>Share:</span>
-                <button type="button" class="share-btn share-whatsapp" onclick="window.open('https://api.whatsapp.com/send?text=AapkaResult','_blank')" aria-label="Share on WhatsApp">WhatsApp</button>
-                <button type="button" class="share-btn share-telegram" onclick="window.open('https://t.me/share/url?url=https://aapkaresult.in','_blank')" aria-label="Share on Telegram">Telegram</button>
+            <div class="share-row">
+                <span>Share Alert:</span>
+                <button type="button" class="share-btn whatsapp" onclick="window.open('https://api.whatsapp.com/send?text=[Title]%20-%20AapkaResult.in','_blank')" aria-label="Share on WhatsApp">WhatsApp</button>
+                <button type="button" class="share-btn telegram" onclick="window.open('https://t.me/share/url?url=https%3A%2F%2Faapkaresult.in&text=[Title]','_blank')" aria-label="Share on Telegram">Telegram</button>
             </div>
 
-            <div class="job-desc">
-                <p>
-                    <strong>[Organization Name]</strong> has released the official recruitment notification for the post of <strong>[Post Name]</strong>. A total of <strong>[Number] vacancies</strong> are announced. Eligible candidates can read the details and apply online through the official portal.
-                </p>
-            </div>
-
-            <!-- Google AdSense Unit (Insert code here after AdSense approval) -->
-
-            <!-- DATES & FEES GRID -->
-            <div class="job-detail-grid">
-                <div class="job-box">
-                    <div class="job-box-title">Important Dates</div>
-                    <ul class="job-list">
-                        <li>Application Start Date: <b>[Date]</b></li>
-                        <li>Application Last Date: <b>[Date]</b></li>
-                        <li>Last Date for Fee Payment: <b>[Date]</b></li>
-                        <li>Correction Window: <b>[Date]</b></li>
-                        <li>Exam Date: <b>[Date / Notify Soon]</b></li>
-                        <li>Admit Card Release: <b>[Before Exam]</b></li>
-                    </ul>
-                </div>
-
-                <div class="job-box">
-                    <div class="job-box-title">Application Fee</div>
-                    <ul class="job-list">
-                        <li>General / OBC / EWS: <b>&#8377;[Amount]/-</b></li>
-                        <li>SC / ST Candidates: <b>&#8377;[Amount]/-</b></li>
-                        <li>Female Candidates: <b>&#8377;[Amount]/-</b></li>
-                        <li>Payment Mode: <b>Online (Net Banking, Cards, UPI)</b></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- AGE LIMIT STRIP -->
-            <div class="job-notice-strip">
-                [Exam Name] Age Limit (As on [Date])
-            </div>
-            <div class="job-notice-extra">
-                <strong>Minimum Age:</strong> 18 Years | <strong>Maximum Age:</strong> [Age] Years.<br>
-                <em>Age Relaxation:</em> As per government rules for SC/ST/OBC categories.
-            </div>
-
-            <!-- ELIGIBILITY -->
-            <h2 class="section-heading">Eligibility &amp; Educational Qualification</h2>
-            <div class="table-responsive">
-                <table class="data-table">
+            <!-- SARKARI RESULT CLASSIC MASTER TABLE -->
+            <div class="sarkari-table-wrapper">
+                <table class="sarkari-main-table">
+                    <!-- 1. Header Banner -->
                     <thead>
                         <tr>
-                            <th>Post Name</th>
-                            <th>Total Posts</th>
-                            <th>Educational Qualification</th>
+                            <th colspan="2" class="sarkari-head-board">
+                                [Conducting Board / Organization Name Full, e.g. UPPRPB / SSC / RRB]
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="sarkari-head-exam">
+                                [Full Recruitment / Exam Name 2026]
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="sarkari-head-sub">
+                                [Advt No. / Notification Summary] : Short Details of Notification
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Meta & Summary Row -->
                         <tr>
-                            <td><strong>[Post Name]</strong></td>
-                            <td>[Number]</td>
-                            <td>[10th / 12th / Graduate from any recognized Board/University in India]</td>
+                            <td colspan="2" class="sarkari-meta-row">
+                                <div class="sarkari-meta-flex">
+                                    <span><strong>Post Date / Update:</strong> [DD Month YYYY | HH:MM PM]</span>
+                                    <span class="sarkari-status-pill">🔥 LIVE NOTIFICATION</span>
+                                </div>
+                                <p class="sarkari-short-info">
+                                    <strong>Short Information :</strong> [Organization Name] has released the official recruitment notification for the post of [Post Name]. A total of [Total Posts] vacancies have been announced. Candidates who are interested and meet the eligibility criteria can read the notification and apply online using the direct links given below.
+                                </p>
+                            </td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <!-- OFFICIAL DIRECT LINKS -->
-            <h2 class="section-heading">Important Official Direct Links</h2>
-            <div class="table-responsive">
-                <table class="apply-table">
-                    <tbody>
-                        <tr>
-                            <th>Apply Online Portal</th>
-                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Click Here to Apply</a></td>
+                        <!-- 2. Important Dates & Application Fee (2 Columns) -->
+                        <tr class="sarkari-dates-fee-row">
+                            <td class="sarkari-col-dates">
+                                <div class="sarkari-box-title maroon">Important Dates</div>
+                                <ul class="sarkari-bullet-list">
+                                    <li>Application Begin : <strong>[DD/MM/YYYY]</strong></li>
+                                    <li>Last Date for Apply Online : <strong>[DD/MM/YYYY]</strong></li>
+                                    <li>Pay Exam Fee Last Date : <strong>[DD/MM/YYYY]</strong></li>
+                                    <li>Correction Last Date : <strong>[Date / As per Schedule]</strong></li>
+                                    <li>Exam Date : <strong>[Exam Date / As per Schedule]</strong></li>
+                                    <li>Admit Card Available : <strong>[Before Exam]</strong></li>
+                                    <li>Answer Key Available : <strong>[After Exam]</strong></li>
+                                    <li>Result Declared : <strong>[Notify Soon]</strong></li>
+                                </ul>
+                            </td>
+                            <td class="sarkari-col-fee">
+                                <div class="sarkari-box-title maroon">Application Fee</div>
+                                <ul class="sarkari-bullet-list">
+                                    <li>General / OBC / EWS : <strong>[Fee]/-</strong></li>
+                                    <li>SC / ST Candidates : <strong>[Fee]/-</strong></li>
+                                    <li>Female / PH Candidates : <strong>[Fee]/-</strong></li>
+                                    <li class="fee-pay-mode">
+                                        <strong>Payment Mode :</strong> Pay the Examination Fee Through Online Net Banking, Debit Card, Credit Card, or UPI Gateway Only.
+                                    </li>
+                                </ul>
+                            </td>
                         </tr>
+
+                        <!-- 3. Age Limit Row -->
                         <tr>
-                            <th>Download Official Notification PDF</th>
-                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Download PDF Notification</a></td>
+                            <td colspan="2" class="sarkari-age-box">
+                                <div class="sarkari-box-title green">[Exam Name] Notification 2026 : Age Limit as on [Date]</div>
+                                <ul class="sarkari-bullet-list-inline">
+                                    <li>Minimum Age : <strong>[Min Age] Years.</strong></li>
+                                    <li>Maximum Age : <strong>[Max Age] Years.</strong></li>
+                                    <li>Age Relaxation Extra as per Official Recruitment Rules (SC / ST / OBC / Ex-Serviceman candidates).</li>
+                                </ul>
+                            </td>
                         </tr>
+
+                        <!-- 4. Vacancy Details Total (Post Name | Total Post | Eligibility) -->
                         <tr>
-                            <th>Official Website</th>
-                            <td><a href="https://aapkaresult.in/" class="click-btn" target="_blank" rel="noopener noreferrer">Visit Official Website</a></td>
+                            <td colspan="2" class="sarkari-vacancy-cell">
+                                <div class="sarkari-box-title green">[Exam Name] Vacancy 2026 Details Total : [Total Posts] Post</div>
+                                <div class="responsive-table-wrap" style="margin: 0; border: none;">
+                                    <table class="sarkari-inner-table">
+                                        <thead>
+                                            <tr class="inner-head">
+                                                <th style="width: 35%;">Post Name</th>
+                                                <th style="width: 20%; text-align: center;">Total Post</th>
+                                                <th>Eligibility Criteria</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>[Post Name 1]</strong></td>
+                                                <td class="text-center" style="font-weight: 800; color: #1e3a8a;">[Count]</td>
+                                                <td>
+                                                    <ul class="sarkari-elig-list">
+                                                        <li>[10th / 12th / Graduate Passed from Any Recognized Board / University in India].</li>
+                                                        <li>[Read Official Notification for More Details].</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- 5. How to Fill Form -->
+                        <tr>
+                            <td colspan="2" class="sarkari-instructions-cell">
+                                <div class="sarkari-box-title maroon">How to Fill [Exam Name] Online Form 2026</div>
+                                <ul class="sarkari-bullet-list">
+                                    <li>Candidates Can Apply Online Between <strong>[Start Date] to [Last Date]</strong>.</li>
+                                    <li>Candidate Must Read the Full Official Notification Before Applying.</li>
+                                    <li>Kindly Check and Collect All Required Documents &ndash; Eligibility Proof, ID Proof, Address Details, and Basic Details.</li>
+                                    <li>Kindly Keep Ready Scanned Documents &ndash; Photo, Signature, ID Proof, Marksheets, and Certificates.</li>
+                                    <li>Before Final Submission, Must Check the Preview and Verify All Columns Carefully.</li>
+                                    <li>If Candidate is Required to Pay Application Fee, Must Submit Before Deadline.</li>
+                                    <li>Take A Print Out of Final Submitted Application Form for Future Reference.</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- 6. Important Notice Banner -->
+                        <tr>
+                            <td colspan="2" class="sarkari-disclaimer-band">
+                                Interested Candidates Can Read the Full Official Notification Before Apply Online.
+                            </td>
+                        </tr>
+
+                        <!-- 7. Useful Important Links (Classic Sarkari Result Format) -->
+                        <tr>
+                            <td colspan="2" class="sarkari-links-cell">
+                                <div class="sarkari-box-title maroon">Some Useful Important Links</div>
+                                <table class="sarkari-inner-table">
+                                    <tbody>
+                                        <tr class="sarkari-link-highlight">
+                                            <td style="width: 55%; font-weight: 700; color: #166534;">⚡ Apply Online (Registration / Login)</td>
+                                            <td style="text-align: center;">
+                                                <a href="#" class="sarkari-click-btn green" target="_blank" rel="noopener noreferrer">Click Here</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">📄 Download Official Notification PDF</td>
+                                            <td style="text-align: center;">
+                                                <a href="#" class="sarkari-click-btn" target="_blank" rel="noopener noreferrer">Click Here</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">🌐 Official Recruitment Portal</td>
+                                            <td style="text-align: center;">
+                                                <a href="#" class="sarkari-click-btn blue" target="_blank" rel="noopener noreferrer">Click Here</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
