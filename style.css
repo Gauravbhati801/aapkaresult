@@ -1984,12 +1984,11 @@ img, svg {
     padding-bottom: 4px !important;
     border-bottom-width: 2px !important;
   }
-  /* --- RESPONSIVE TABLE WRAPPER (TOUCH HORIZONTAL SCROLL) --- */
+  /* --- RESPONSIVE TABLE WRAPPER (DESKTOP SITE VIEW ON MOBILE - ZERO HORIZONTAL SCROLL) --- */
   .responsive-table-wrap {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    overflow-x: hidden !important;
     margin: 10px 0 16px !important;
     border-radius: 8px !important;
     border: 1px solid #cbd5e1 !important;
@@ -1997,18 +1996,55 @@ img, svg {
     background: #ffffff !important;
     position: relative !important;
     box-sizing: border-box !important;
+    transform-origin: top left !important;
+    zoom: 0.45;
   }
 
-  /* Subtle mobile scrollbar cue for swipeability */
+  @media (max-width: 360px) {
+    .responsive-table-wrap {
+      zoom: 0.39 !important;
+    }
+  }
+
+  @media (min-width: 361px) and (max-width: 389px) {
+    .responsive-table-wrap {
+      zoom: 0.41 !important;
+    }
+  }
+
+  @media (min-width: 390px) and (max-width: 411px) {
+    .responsive-table-wrap {
+      zoom: 0.44 !important;
+    }
+  }
+
+  @media (min-width: 412px) and (max-width: 430px) {
+    .responsive-table-wrap {
+      zoom: 0.46 !important;
+    }
+  }
+
+  @media (min-width: 431px) and (max-width: 500px) {
+    .responsive-table-wrap {
+      zoom: 0.52 !important;
+    }
+  }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    .responsive-table-wrap {
+      zoom: 0.65 !important;
+    }
+  }
+
+  /* Prevent double-zoom if responsive-table-wrap is inside sarkari-table-wrapper */
+  .sarkari-table-wrapper .responsive-table-wrap {
+    zoom: 1 !important;
+  }
+
+  /* Subtle mobile scrollbar cue - hidden */
   .responsive-table-wrap::-webkit-scrollbar {
-    height: 5px !important;
-  }
-  .responsive-table-wrap::-webkit-scrollbar-track {
-    background: #f1f5f9 !important;
-  }
-  .responsive-table-wrap::-webkit-scrollbar-thumb {
-    background: #cbd5e1 !important;
-    border-radius: 4px !important;
+    display: none !important;
+    height: 0 !important;
   }
 
   /* Mobile Swipe Hint Cue - Disabled completely for zero-swipe system */
@@ -2017,19 +2053,23 @@ img, svg {
     content: none !important;
   }
 
-  /* Base Styled Table on Mobile */
+  /* Base Styled Table on Mobile - Desktop Site View */
   .styled-table {
-    width: 100% !important;
-    min-width: 660px !important;
+    width: 820px !important;
+    min-width: 820px !important;
     border-collapse: collapse !important;
     table-layout: auto !important;
-    font-size: 11.5px !important;
+    font-size: 13px !important;
     margin: 0 !important;
   }
 
   /* 6-Column Tables (e.g. Latest Jobs, Syllabus Pattern) */
   .styled-table:has(tr > th:nth-child(6)) {
-    min-width: 780px !important;
+    width: 960px !important;
+    min-width: 960px !important;
+  }
+  .responsive-table-wrap:has(tr > th:nth-child(6)) {
+    zoom: 0.36 !important;
   }
 
   /* Table Cells & Headers General Styling */
