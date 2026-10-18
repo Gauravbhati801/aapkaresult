@@ -483,7 +483,7 @@ const PHYSICAL_STANDARDS = [
   {
     force: 'SSC GD Constable (CAPFs)',
     slug: 'ssc-gd-constable.html',
-    male: { genHeight: 170, stHeight: 162.5, chestNorm: 80, chestExp: 85 },
+    male: { genHeight: 170, stHeight: 162.5, chestNorm: 80, chestExp: 85, stChestNorm: 76, stChestExp: 81 },
     female: { genHeight: 157, stHeight: 150, minWeight: null }
   },
   {
@@ -632,8 +632,9 @@ function evaluatePhysicalStandards() {
       if (gender === 'male') {
         reqHeight = isST ? item.male.stHeight : item.male.genHeight;
         isHeightOk = (height >= reqHeight);
-        reqChest = `${isST ? (item.male.chestNorm - 2) : item.male.chestNorm} - ${isST ? (item.male.chestExp - 2) : item.male.chestExp} cm`;
-        const minNorm = isST ? (item.male.chestNorm - 2) : item.male.chestNorm;
+        const minNorm = isST ? (item.male.stChestNorm || (item.male.chestNorm - 2)) : item.male.chestNorm;
+        const minExp = isST ? (item.male.stChestExp || (item.male.chestExp - 2)) : item.male.chestExp;
+        reqChest = `${minNorm} - ${minExp} cm`;
         isChestOk = (chestNorm >= minNorm && chestExpansion >= 5);
       } else {
         reqHeight = isST ? item.female.stHeight : item.female.genHeight;
