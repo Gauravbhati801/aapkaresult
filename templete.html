@@ -12,6 +12,48 @@
     <link rel="alternate icon" href="favicon.png" type="image/png">
     <link rel="preload" href="style.css?v=3.3" as="style">
   <link rel="stylesheet" href="style.css?v=3.3">
+
+  <!-- Structured Data: JobPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "[JOB_TITLE_HERE]",
+    "description": "[JOB_DESCRIPTION_HERE]",
+    "datePosted": "2026-01-01",
+    "validThrough": "2026-12-31",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "[RECRUITMENT_BOARD_NAME]",
+      "sameAs": "https://aapkaresult.in"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": {
+        "@type": "QuantitativeValue",
+        "unitText": "MONTH",
+        "value": "25000"
+      }
+    },
+    "educationRequirements": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "High School"
+    },
+    "experienceRequirements": {
+      "@type": "OccupationalExperienceRequirements",
+      "monthsOfExperience": 0
+    }
+  }
+  </script>
 </head>
 <body>
 
