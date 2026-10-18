@@ -4144,4 +4144,401 @@ img, svg {
   }
 }
 
+/* ==========================================================================
+   SARKARI RESULT MASTER JOBS TABLE (Authentic Sarkari Result Directory Style)
+   ========================================================================== */
+.sarkari-jobs-box {
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0 25px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.sarkari-jobs-header {
+  background: linear-gradient(135deg, #ab183d 0%, #880e28 100%);
+  color: #ffffff;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.sarkari-jobs-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 !important;
+  text-align: center !important;
+  letter-spacing: 0.5px;
+  font-family: var(--font-brand);
+}
+
+.sarkari-jobs-header .sarkari-badge-counter {
+  background: #ffffff;
+  color: #880e28;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  font-family: var(--font-brand);
+}
+
+/* Category Filter Bar */
+.sarkari-filter-bar {
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.sarkari-filter-btn {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-brand);
+}
+
+.sarkari-filter-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.sarkari-filter-btn.active {
+  background: #ab183d;
+  color: #ffffff;
+  border-color: #880e28;
+  box-shadow: 0 2px 6px rgba(171, 24, 61, 0.3);
+}
+
+/* Master Table Layout */
+.sarkari-jobs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  zoom: 1 !important;
+}
+
+.sarkari-jobs-table {
+  width: 100% !important;
+  min-width: 100% !important;
+  border-collapse: collapse !important;
+  background: #ffffff !important;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0 !important;
+  table-layout: auto !important;
+}
+
+.sarkari-jobs-table thead th {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  padding: 12px 14px !important;
+  border: 1px solid #1e293b !important;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  vertical-align: middle;
+}
+
+.sarkari-jobs-table tbody tr {
+  border-bottom: 1px solid #e2e8f0 !important;
+  transition: background-color 0.15s ease;
+}
+
+.sarkari-jobs-table tbody tr:nth-child(even) {
+  background-color: #fbfcfd !important;
+}
+
+.sarkari-jobs-table tbody tr:hover {
+  background-color: #f0f7ff !important;
+}
+
+.sarkari-jobs-table td {
+  padding: 12px 14px !important;
+  border: 1px solid #e2e8f0 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+/* Post Title Link */
+.sarkari-job-title-link {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #000dff !important;
+  text-decoration: none !important;
+  display: inline-block;
+  line-height: 1.35 !important;
+  transition: color 0.15s ease;
+}
+
+.sarkari-jobs-table tbody tr:hover .sarkari-job-title-link,
+.sarkari-job-title-link:hover {
+  color: #dc2626 !important;
+  text-decoration: underline !important;
+}
+
+/* Sub-meta */
+.job-meta-line {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: #475569;
+}
+
+.job-meta-line .meta-tag {
+  font-weight: 600;
+}
+
+.job-meta-line .meta-tag.dept {
+  color: #0f172a;
+}
+
+.job-meta-line .meta-sep {
+  color: #94a3b8;
+}
+
+.job-meta-line .meta-badge-live {
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.2px;
+}
+
+.mobile-only-meta {
+  display: none;
+}
+
+/* Total Posts Cell */
+.sarkari-jobs-table .col-posts {
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  white-space: nowrap !important;
+}
+
+/* Last Date Cell */
+.sarkari-jobs-table .col-date {
+  text-align: center !important;
+  font-size: 13px !important;
+  white-space: nowrap !important;
+}
+
+.date-live {
+  color: #dc2626 !important;
+  font-weight: 800 !important;
+  display: inline-block;
+}
+
+.date-closed {
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+/* Action Buttons */
+.sarkari-jobs-table .col-action {
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+.sarkari-act-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none !important;
+  border-radius: 4px;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-family: var(--font-brand);
+}
+
+.sarkari-act-btn:hover {
+  transform: translateY(-1px);
+}
+
+.sarkari-act-btn.btn-apply {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+}
+
+.sarkari-act-btn.btn-apply:hover {
+  background: #15803d !important;
+}
+
+.sarkari-act-btn.btn-details {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.sarkari-act-btn.btn-details:hover {
+  background: #1d4ed8 !important;
+}
+
+/* Responsive Mobile View */
+@media (max-width: 768px) {
+  .sarkari-jobs-box {
+    border-radius: 6px;
+    margin: 14px 0 20px;
+  }
+  .sarkari-jobs-header {
+    padding: 10px 12px !important;
+  }
+  .sarkari-jobs-header h2 {
+    font-size: 15px !important;
+  }
+  .sarkari-jobs-table thead th:nth-child(2),
+  .sarkari-jobs-table tbody td:nth-child(2),
+  .sarkari-jobs-table thead th:nth-child(3),
+  .sarkari-jobs-table tbody td:nth-child(3) {
+    display: none !important;
+  }
+  .sarkari-jobs-table thead th:first-child {
+    width: 74% !important;
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+  .sarkari-jobs-table thead th:last-child {
+    width: 26% !important;
+    font-size: 12px !important;
+    padding: 8px 6px !important;
+    text-align: center !important;
+  }
+  .sarkari-jobs-table tbody td:first-child {
+    width: 74% !important;
+    padding: 10px 8px !important;
+  }
+  .sarkari-jobs-table tbody td:last-child {
+    width: 26% !important;
+    padding: 10px 6px !important;
+    text-align: center !important;
+  }
+  .sarkari-job-title-link {
+    font-size: 13.5px !important;
+    line-height: 1.35 !important;
+  }
+  .job-meta-line {
+    font-size: 10.5px !important;
+    gap: 4px !important;
+    margin-top: 3px !important;
+  }
+  .mobile-only-meta {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px !important;
+    margin-top: 4px;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .mobile-only-meta .mobile-date {
+    color: #dc2626;
+  }
+  .sarkari-act-btn {
+    font-size: 11px !important;
+    padding: 6px 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Sarkari Result Authentic Pure Links-Only Table (Clean Background & No Lines) */
+.sarkari-links-only-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  background: #ffffff !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.sarkari-links-only-table tr {
+  border: none !important;
+}
+
+.sarkari-links-only-table td {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.sarkari-job-link-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 9px;
+  padding: 9px 18px !important;
+  text-decoration: none !important;
+  color: #000dff !important;
+  background: transparent !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: color 0.15s ease;
+}
+
+.sarkari-job-link-item:hover {
+  background-color: transparent !important;
+  color: #dc2626 !important;
+  text-decoration: underline !important;
+}
+
+.sarkari-job-link-item .link-bullet {
+  color: #000000 !important;
+  font-size: 19px !important;
+  line-height: 1.15 !important;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.sarkari-job-link-item .link-title-text {
+  color: inherit;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .sarkari-jobs-header {
+    padding: 10px 14px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .sarkari-jobs-header h2 {
+    font-size: 16px !important;
+    text-align: center !important;
+  }
+  .sarkari-job-link-item {
+    font-size: 13.5px !important;
+    padding: 8px 14px !important;
+    gap: 7px !important;
+    line-height: 1.4 !important;
+  }
+  .sarkari-job-link-item .link-bullet {
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+  }
+}
+
 
