@@ -169,3 +169,33 @@ function handleContactForm(e) {
     submitBtn.textContent = "Send Inquiry";
   }, 700);
 }
+
+// Mobile Portal Box Switcher (Instant Tab View on Mobile)
+function switchPortalTab(target, buttonElement) {
+  const btns = document.querySelectorAll(".portal-tab-btn");
+  btns.forEach(btn => btn.classList.remove("active"));
+  if (buttonElement) {
+    buttonElement.classList.add("active");
+  }
+
+  const boxes = document.querySelectorAll(".portal-box");
+  boxes.forEach(box => {
+    if (target === "all") {
+      box.style.display = "";
+    } else {
+      if (box.dataset.tab === target || box.id === "box-" + target) {
+        box.style.display = "";
+      } else {
+        box.style.display = "none";
+      }
+    }
+  });
+
+  const tabsBar = document.getElementById("portalTabsBar");
+  if (tabsBar && window.innerWidth <= 768) {
+    const yOffset = -70;
+    const y = tabsBar.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}
+
