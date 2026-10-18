@@ -24,39 +24,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- STYLESHEET -->
-  <link rel="preload" href="style.css?v=3.1" as="style">
-  <link rel="stylesheet" href="style.css?v=3.1">
+  <link rel="preload" href="style.css?v=3.2" as="style">
+  <link rel="stylesheet" href="style.css?v=3.2">
 
   <!-- CRITICAL INLINE HERO BRAND STYLES (Immediate zero-cache render) -->
   <style>
     .hero-header-section {
       text-align: center;
-      padding: 20px 16px 14px;
+      padding: 24px 20px 18px;
       max-width: 980px;
-      margin: 12px auto 14px;
+      margin: 14px auto 16px;
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border: 1.5px solid #e2e8f0;
       border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
     }
     .hero-badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
       color: #1e40af;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
-      padding: 4px 14px;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      padding: 5px 16px;
       border-radius: 999px;
       margin-bottom: 12px;
       box-shadow: 0 1px 3px rgba(37, 99, 235, 0.08);
       letter-spacing: 0.2px;
     }
     .hero-badge-pill .pulse-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       background: #16a34a;
       border-radius: 50%;
       display: inline-block;
@@ -69,16 +70,16 @@
       100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
     }
     .hero-main-title {
-      margin: 0 auto 12px;
-      line-height: 1.25;
+      margin: 0 auto 14px;
+      line-height: 1.2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     }
     .hero-brand-name {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 900;
       letter-spacing: -0.8px;
       display: inline-flex;
@@ -95,47 +96,64 @@
     }
     .hero-brand-name .brand-dot-in {
       color: #2563eb;
-      font-size: 1.9rem;
+      font-size: 2.1rem;
       font-weight: 800;
+      letter-spacing: -0.4px;
     }
     .hero-tagline-text {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 700;
-      color: #475569;
-      letter-spacing: 0.1px;
+      color: #334155;
+      letter-spacing: 0.2px;
       max-width: 820px;
       line-height: 1.5;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .hero-tagline-text .tagline-chip {
+      display: inline-block;
+      color: #1e293b;
     }
     .hero-tagline-text .tag-sep {
-      color: #cbd5e1;
-      margin: 0 4px;
+      color: #dc2626;
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .hero-tagline-text .highlight-accent {
+      color: #2563eb;
+      font-weight: 800;
     }
     @media (max-width: 768px) {
       .hero-header-section {
-        padding: 14px 10px 10px !important;
+        padding: 14px 10px 12px !important;
         margin: 8px 10px 12px !important;
         border-radius: 12px !important;
       }
       .hero-badge-pill {
-        font-size: 10px !important;
-        padding: 3px 10px !important;
+        font-size: 10.5px !important;
+        padding: 4px 12px !important;
         margin-bottom: 8px !important;
       }
       .hero-brand-name {
-        font-size: 1.85rem !important;
-        letter-spacing: -0.5px !important;
+        font-size: 2rem !important;
+        letter-spacing: -0.6px !important;
       }
       .hero-brand-name .brand-dot-in {
-        font-size: 1.45rem !important;
+        font-size: 1.55rem !important;
       }
       .hero-tagline-text {
         font-size: 11.5px !important;
-        line-height: 1.4 !important;
+        line-height: 1.45 !important;
+        gap: 3px !important;
         padding: 0 4px !important;
       }
       .hero-tagline-text .tag-sep {
-        margin: 0 2px !important;
+        font-size: 11px !important;
+        margin: 0 1px !important;
       }
     }
   </style>
@@ -305,7 +323,7 @@
   <section class="hero-header-section">
     <div class="hero-badge-pill">
       <span class="pulse-dot"></span>
-      <span>🇮🇳 India's Fast &amp; Authentic Employment Alert Portal</span>
+      <span class="badge-text">🇮🇳 India's Fast &amp; Authentic Employment Alert Portal</span>
     </div>
 
     <h1 class="hero-main-title">
@@ -313,7 +331,13 @@
         <span class="brand-aapka">Aapka</span><span class="brand-result">Result</span><span class="brand-dot-in">.in</span>
       </span>
       <span class="hero-tagline-text">
-        Sarkari Result <span class="tag-sep">&bull;</span> Latest Govt Jobs <span class="tag-sep">&bull;</span> Admit Card <span class="tag-sep">&bull;</span> Answer Key 2026
+        <span class="tagline-chip">Sarkari Result</span>
+        <span class="tag-sep">&bull;</span>
+        <span class="tagline-chip">Latest Govt Jobs</span>
+        <span class="tag-sep">&bull;</span>
+        <span class="tagline-chip">Admit Card</span>
+        <span class="tag-sep">&bull;</span>
+        <span class="tagline-chip highlight-accent">Answer Key 2026</span>
       </span>
     </h1>
     <div class="hero-mock-cta-wrap">
