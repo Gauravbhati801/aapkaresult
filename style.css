@@ -2278,6 +2278,17 @@ img, svg {
   .responsive-table-wrap:has(tr > th:nth-child(6)) {
     zoom: 0.36 !important;
   }
+  .sarkari-table-wrapper .responsive-table-wrap,
+  .sarkari-table-wrapper .responsive-table-wrap:has(tr > th:nth-child(6)),
+  .sarkari-table-wrapper .sarkari-inner-table-wrap,
+  .sarkari-vacancy-cell .responsive-table-wrap,
+  .sarkari-vacancy-cell .responsive-table-wrap:has(tr > th:nth-child(6)),
+  .sarkari-vacancy-cell .sarkari-inner-table-wrap {
+    zoom: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
 
   /* Table Cells & Headers General Styling */
   .styled-table th,
@@ -3725,6 +3736,112 @@ img, svg {
   margin-bottom: 4px;
 }
 
+/* Specific Category-Wise Distribution Table Styles */
+.category-dist-table,
+.unit-dist-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+}
+.category-dist-table .cat-trade-name {
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+  font-size: 15px;
+}
+.category-dist-table .cat-sub-text {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+.category-dist-table .cat-val {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.category-dist-table .cat-total {
+  font-size: 16px;
+  font-weight: 900;
+  color: #1e3a8a;
+  background: #eff6ff;
+}
+.category-dist-table .cat-grand-row td {
+  background: #f1f5f9;
+  border-top: 2px solid #cbd5e1;
+  border-bottom: 2px solid #1e3a8a;
+}
+.category-dist-table .cat-grand-val {
+  font-size: 16px;
+  font-weight: 900;
+  color: #0f172a;
+}
+.cat-grand-total,
+.unit-grand-total {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  padding: 6px 2px !important;
+  line-height: 1.15 !important;
+}
+.cat-grand-total .gt-num,
+.unit-grand-total .gt-num {
+  font-size: 16px;
+  font-weight: 900;
+  display: block;
+  color: #b91c1c;
+}
+.cat-grand-total .gt-lbl,
+.unit-grand-total .gt-lbl {
+  font-size: 11px;
+  font-weight: 800;
+  display: block;
+  color: #991b1b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Specific Unit-Wise Location Distribution Table Styles */
+
+.unit-dist-table .unit-title {
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+  font-size: 14px;
+}
+.unit-dist-table .unit-loc-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+.unit-dist-table .unit-val {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.unit-dist-table .unit-total {
+  font-size: 15.5px;
+  font-weight: 900;
+  color: #1e3a8a;
+  background: #eff6ff;
+}
+.unit-dist-table .unit-dash {
+  color: #94a3b8;
+  font-weight: 600;
+}
+.unit-dist-table .unit-grand-row td {
+  background: #f1f5f9;
+  border-top: 2px solid #cbd5e1;
+  border-bottom: 2px solid #1e3a8a;
+}
+.unit-dist-table .unit-grand-val {
+  font-size: 15.5px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
 /* Notice & Disclaimer Band */
 .sarkari-disclaimer-band {
   background: #fef2f2;
@@ -4002,15 +4119,16 @@ img, svg {
   }
 
   .sarkari-box-title {
-    font-size: 14.5px !important;
+    font-size: 23px !important;
     font-weight: 800 !important;
-    padding: 8px 12px !important;
+    padding: 10px 14px !important;
     text-align: center !important;
-    margin: -10px -14px 10px -14px !important;
+    margin: -10px -14px 12px -14px !important;
+    letter-spacing: 0.2px !important;
   }
   .sarkari-bullet-list,
   .sarkari-bullet-list-inline {
-    font-size: 13.5px !important;
+    font-size: 18px !important;
     line-height: 1.7 !important;
     margin-left: 20px !important;
   }
@@ -4019,7 +4137,7 @@ img, svg {
     margin-bottom: 6px !important;
   }
   .fee-pay-mode {
-    font-size: 13px !important;
+    font-size: 17px !important;
     margin-left: -12px !important;
     margin-top: 8px !important;
     line-height: 1.5 !important;
@@ -4029,7 +4147,7 @@ img, svg {
     padding: 10px 14px !important;
   }
 
-  /* Inner Tables */
+  /* Inner Tables inside sarkari-table-wrapper (compensated for zoom: ~0.49) */
   .sarkari-vacancy-cell {
     padding: 10px 14px !important;
   }
@@ -4043,7 +4161,7 @@ img, svg {
     width: 100% !important;
     min-width: 100% !important;
     border-collapse: collapse !important;
-    font-size: 13.5px !important;
+    font-size: 20px !important;
     background: #ffffff !important;
   }
   .sarkari-inner-table tr {
@@ -4054,17 +4172,19 @@ img, svg {
   .sarkari-inner-table td {
     display: table-cell !important;
     border: 1px solid #cbd5e1 !important;
-    padding: 8px 12px !important;
-    font-size: 13px !important;
+    padding: 10px 6px !important;
+    font-size: 20px !important;
     vertical-align: middle !important;
     word-break: normal !important;
     white-space: normal !important;
+    line-height: 1.35 !important;
   }
   .inner-head th {
     background: #f1f5f9 !important;
     color: #0f172a !important;
-    font-weight: 700 !important;
-    font-size: 13px !important;
+    font-weight: 800 !important;
+    font-size: 20px !important;
+    padding: 12px 6px !important;
   }
   .sarkari-inner-table.text-center th,
   .sarkari-inner-table.text-center td {
@@ -4072,6 +4192,124 @@ img, svg {
   }
   .sarkari-total-row td {
     background: #fef2f2 !important;
+    font-weight: 800 !important;
+    font-size: 22px !important;
+  }
+  .sarkari-elig-list {
+    font-size: 19px !important;
+    line-height: 1.55 !important;
+  }
+  .sarkari-elig-list li {
+    margin-bottom: 6px !important;
+  }
+
+  /* Specific Category-Wise & Unit-Wise Distribution Table Mobile Scaled Rules (zoom: ~0.49) */
+  .sarkari-table-wrapper .sarkari-vacancy-cell {
+    padding: 10px 6px !important;
+    box-sizing: border-box !important;
+  }
+  .sarkari-inner-table-wrap,
+  .sarkari-table-wrapper .sarkari-inner-table-wrap,
+  .sarkari-table-wrapper .responsive-table-wrap,
+  .sarkari-vacancy-cell .responsive-table-wrap {
+    zoom: 1 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    box-sizing: border-box !important;
+  }
+  .sarkari-table-wrapper .category-dist-table,
+  .sarkari-table-wrapper .unit-dist-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+  .sarkari-table-wrapper .category-dist-table th,
+  .sarkari-table-wrapper .unit-dist-table th {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    padding: 10px 3px !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .sarkari-table-wrapper .category-dist-table td,
+  .sarkari-table-wrapper .unit-dist-table td {
+    font-size: 21px !important;
+    padding: 10px 3px !important;
+    line-height: 1.25 !important;
+    box-sizing: border-box !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-trade-name,
+  .sarkari-table-wrapper .unit-dist-table .unit-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-sub-text,
+  .sarkari-table-wrapper .unit-dist-table .unit-loc-sub {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    margin-top: 2px !important;
+    display: block !important;
+    line-height: 1.2 !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-val,
+  .sarkari-table-wrapper .unit-dist-table .unit-val {
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-total,
+  .sarkari-table-wrapper .unit-dist-table .unit-total {
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    color: #1e3a8a !important;
+    background: #eff6ff !important;
+    padding: 10px 2px !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-grand-row td,
+  .sarkari-table-wrapper .unit-dist-table .unit-grand-row td {
+    background: #f1f5f9 !important;
+    border-top: 2px solid #94a3b8 !important;
+    border-bottom: 3px solid #1e3a8a !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-grand-val,
+  .sarkari-table-wrapper .unit-dist-table .unit-grand-val {
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+  }
+  .sarkari-table-wrapper .category-dist-table .cat-grand-total,
+  .sarkari-table-wrapper .unit-dist-table .unit-grand-total {
+    padding: 6px 2px !important;
+    background: #fee2e2 !important;
+  }
+  .sarkari-table-wrapper .cat-grand-total .gt-num,
+  .sarkari-table-wrapper .unit-grand-total .gt-num {
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    display: block !important;
+    color: #b91c1c !important;
+    line-height: 1.1 !important;
+  }
+  .sarkari-table-wrapper .cat-grand-total .gt-lbl,
+  .sarkari-table-wrapper .unit-grand-total .gt-lbl {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    display: block !important;
+    color: #991b1b !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin-top: 1px !important;
+  }
+  .sarkari-table-wrapper .unit-dist-table .unit-dash {
+    font-size: 22px !important;
+    color: #94a3b8 !important;
     font-weight: 700 !important;
   }
 

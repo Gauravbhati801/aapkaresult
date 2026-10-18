@@ -30,8 +30,243 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <link rel="preload" href="style.css?v=3.4" as="style">
-  <link rel="stylesheet" href="style.css?v=3.4">
+  <link rel="preload" href="style.css?v=3.6" as="style">
+  <link rel="stylesheet" href="style.css?v=3.6">
+  <style>
+    /* Direct Mobile & Desktop Styling for Category-Wise & Unit-Wise Distribution */
+    .sarkari-inner-table-wrap,
+    .sarkari-table-wrapper .sarkari-inner-table-wrap,
+    .sarkari-table-wrapper .responsive-table-wrap,
+    .sarkari-vacancy-cell .responsive-table-wrap {
+      zoom: 1 !important;
+      transform: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      border: none !important;
+      overflow-x: auto !important;
+    }
+
+    .category-dist-table,
+    .unit-dist-table {
+      width: 100% !important;
+      max-width: 100% !important;
+      table-layout: fixed !important;
+    }
+    .category-dist-table .cat-trade-name {
+      font-weight: 800;
+      color: #0f172a;
+      display: block;
+      font-size: 15px;
+    }
+    .category-dist-table .cat-sub-text {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+      display: block;
+      margin-top: 2px;
+    }
+    .category-dist-table .cat-val {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .category-dist-table .cat-total {
+      font-size: 16px;
+      font-weight: 900;
+      color: #1e3a8a;
+      background: #eff6ff;
+    }
+    .category-dist-table .cat-grand-row td {
+      background: #f1f5f9;
+      border-top: 2px solid #cbd5e1;
+      border-bottom: 2px solid #1e3a8a;
+    }
+    .category-dist-table .cat-grand-val {
+      font-size: 16px;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .cat-grand-total,
+    .unit-grand-total {
+      background: #fee2e2 !important;
+      color: #b91c1c !important;
+      padding: 6px 2px !important;
+      line-height: 1.15 !important;
+    }
+    .cat-grand-total .gt-num,
+    .unit-grand-total .gt-num {
+      font-size: 16px;
+      font-weight: 900;
+      display: block;
+      color: #b91c1c;
+    }
+    .cat-grand-total .gt-lbl,
+    .unit-grand-total .gt-lbl {
+      font-size: 11px;
+      font-weight: 800;
+      display: block;
+      color: #991b1b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Specific Unit-Wise Location Distribution Table Styles */
+    .unit-dist-table .unit-title {
+      font-weight: 800;
+      color: #0f172a;
+      display: block;
+      font-size: 15px;
+    }
+    .unit-dist-table .unit-loc-sub {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+      display: block;
+      margin-top: 2px;
+    }
+    .unit-dist-table .unit-val {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .unit-dist-table .unit-total {
+      font-size: 16px;
+      font-weight: 900;
+      color: #1e3a8a;
+      background: #eff6ff;
+    }
+    .unit-dist-table .unit-dash {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .unit-dist-table .unit-grand-row td {
+      background: #f1f5f9;
+      border-top: 2px solid #cbd5e1;
+      border-bottom: 2px solid #1e3a8a;
+    }
+    .unit-dist-table .unit-grand-val {
+      font-size: 16px;
+      font-weight: 900;
+      color: #0f172a;
+    }
+
+    @media (max-width: 768px) {
+      .sarkari-table-wrapper .sarkari-box-title {
+        font-size: 23px !important;
+        padding: 10px 14px !important;
+        margin: -10px -14px 12px -14px !important;
+      }
+      .sarkari-table-wrapper .sarkari-vacancy-cell {
+        padding: 10px 6px !important;
+        box-sizing: border-box !important;
+      }
+      .sarkari-inner-table-wrap,
+      .sarkari-table-wrapper .sarkari-inner-table-wrap,
+      .sarkari-table-wrapper .responsive-table-wrap,
+      .sarkari-vacancy-cell .responsive-table-wrap {
+        zoom: 1 !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        box-sizing: border-box !important;
+      }
+      .sarkari-table-wrapper .category-dist-table,
+      .sarkari-table-wrapper .unit-dist-table {
+        width: 100% !important;
+        max-width: 100% !important;
+        table-layout: fixed !important;
+      }
+      .sarkari-table-wrapper .category-dist-table th,
+      .sarkari-table-wrapper .unit-dist-table th {
+        font-size: 21px !important;
+        font-weight: 800 !important;
+        padding: 10px 3px !important;
+        line-height: 1.2 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      .sarkari-table-wrapper .category-dist-table td,
+      .sarkari-table-wrapper .unit-dist-table td {
+        font-size: 21px !important;
+        padding: 10px 3px !important;
+        line-height: 1.25 !important;
+        box-sizing: border-box !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-trade-name,
+      .sarkari-table-wrapper .unit-dist-table .unit-title {
+        font-size: 22px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        line-height: 1.2 !important;
+        word-break: break-word !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-sub-text,
+      .sarkari-table-wrapper .unit-dist-table .unit-loc-sub {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+        margin-top: 2px !important;
+        display: block !important;
+        line-height: 1.2 !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-val,
+      .sarkari-table-wrapper .unit-dist-table .unit-val {
+        font-size: 26px !important;
+        font-weight: 900 !important;
+        color: #0f172a !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-total,
+      .sarkari-table-wrapper .unit-dist-table .unit-total {
+        font-size: 26px !important;
+        font-weight: 900 !important;
+        color: #1e3a8a !important;
+        background: #eff6ff !important;
+        padding: 10px 2px !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-grand-row td,
+      .sarkari-table-wrapper .unit-dist-table .unit-grand-row td {
+        background: #f1f5f9 !important;
+        border-top: 2px solid #94a3b8 !important;
+        border-bottom: 3px solid #1e3a8a !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-grand-val,
+      .sarkari-table-wrapper .unit-dist-table .unit-grand-val {
+        font-size: 26px !important;
+        font-weight: 900 !important;
+        color: #0f172a !important;
+      }
+      .sarkari-table-wrapper .category-dist-table .cat-grand-total,
+      .sarkari-table-wrapper .unit-dist-table .unit-grand-total {
+        padding: 6px 2px !important;
+        background: #fee2e2 !important;
+      }
+      .sarkari-table-wrapper .cat-grand-total .gt-num,
+      .sarkari-table-wrapper .unit-grand-total .gt-num {
+        font-size: 26px !important;
+        font-weight: 900 !important;
+        display: block !important;
+        color: #b91c1c !important;
+        line-height: 1.1 !important;
+      }
+      .sarkari-table-wrapper .cat-grand-total .gt-lbl,
+      .sarkari-table-wrapper .unit-grand-total .gt-lbl {
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        display: block !important;
+        color: #991b1b !important;
+        text-transform: uppercase !important;
+        line-height: 1.1 !important;
+        margin-top: 1px !important;
+      }
+      .sarkari-table-wrapper .unit-dist-table .unit-dash {
+        font-size: 22px !important;
+        color: #94a3b8 !important;
+        font-weight: 700 !important;
+      }
+    }
+  </style>
 
   <!-- Structured Data: JobPosting -->
   <script type="application/ld+json">
@@ -368,7 +603,7 @@
             <tr>
               <td colspan="2" class="sarkari-vacancy-cell">
                 <div class="sarkari-box-title green">IREL Tradesman Trainee 2026 : Vacancy Details Total : 131 Posts</div>
-                <div class="responsive-table-wrap" style="margin: 0; border: none;">
+                <div class="sarkari-inner-table-wrap" style="margin: 0; border: none; width: 100%; overflow-x: auto; zoom: 1 !important;">
                   <table class="sarkari-inner-table">
                     <thead>
                       <tr class="inner-head">
@@ -436,64 +671,81 @@
             <tr>
               <td colspan="2" class="sarkari-vacancy-cell">
                 <div class="sarkari-box-title maroon">Category-Wise Vacancy Distribution (Advt.No.CO/HRM/36/2026)</div>
-                <div class="responsive-table-wrap" style="margin: 0; border: none;">
-                  <table class="sarkari-inner-table text-center">
+                <div class="sarkari-inner-table-wrap" style="margin: 0; border: none; width: 100%; overflow-x: auto; zoom: 1 !important;">
+                  <table class="sarkari-inner-table text-center category-dist-table">
                     <thead>
                       <tr class="inner-head">
-                        <th style="text-align: left;">Discipline / Trade</th>
-                        <th>UR</th>
-                        <th>EWS</th>
-                        <th>OBC (NCL)</th>
-                        <th>SC</th>
-                        <th>ST</th>
-                        <th>Total</th>
+                        <th style="text-align: left; width: 30%;">Discipline / Trade</th>
+                        <th style="width: 10%;">UR</th>
+                        <th style="width: 10%;">EWS</th>
+                        <th style="width: 13%;">OBC<br><small style="font-size: 14px; font-weight: 700;">(NCL)</small></th>
+                        <th style="width: 10%;">SC</th>
+                        <th style="width: 10%;">ST</th>
+                        <th style="width: 17%;">Total</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Tradesman Trainee (Fitter)</td>
-                        <td>49</td>
-                        <td>8</td>
-                        <td>21</td>
-                        <td>9</td>
-                        <td>6</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">93</td>
+                        <td style="text-align: left;">
+                          <span class="cat-trade-name">Fitter</span>
+                          <span class="cat-sub-text">Tradesman Trainee</span>
+                        </td>
+                        <td class="cat-val">49</td>
+                        <td class="cat-val">8</td>
+                        <td class="cat-val">21</td>
+                        <td class="cat-val">9</td>
+                        <td class="cat-val">6</td>
+                        <td class="cat-total">93</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Tradesman Trainee (Electrician)</td>
-                        <td>11</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">12</td>
+                        <td style="text-align: left;">
+                          <span class="cat-trade-name">Electrician</span>
+                          <span class="cat-sub-text">Tradesman Trainee</span>
+                        </td>
+                        <td class="cat-val">11</td>
+                        <td class="cat-val">1</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-total">12</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Tradesman Trainee (Instrumentation)</td>
-                        <td>6</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">06</td>
+                        <td style="text-align: left;">
+                          <span class="cat-trade-name">Instrumentation</span>
+                          <span class="cat-sub-text">Tradesman Trainee</span>
+                        </td>
+                        <td class="cat-val">6</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-total">06</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Tradesman Trainee (AOCP)</td>
-                        <td>15</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">20</td>
+                        <td style="text-align: left;">
+                          <span class="cat-trade-name">AOCP (Chem Plant)</span>
+                          <span class="cat-sub-text">Tradesman Trainee</span>
+                        </td>
+                        <td class="cat-val">15</td>
+                        <td class="cat-val">1</td>
+                        <td class="cat-val">3</td>
+                        <td class="cat-val">1</td>
+                        <td class="cat-val">0</td>
+                        <td class="cat-total">20</td>
                       </tr>
-                      <tr style="background: #f8fafc; font-weight: 800;">
-                        <td style="text-align: left; color: #1e3a8a;">Total Vacancies</td>
-                        <td style="color: #1e3a8a;">81</td>
-                        <td>10</td>
-                        <td>24</td>
-                        <td>10</td>
-                        <td>6</td>
-                        <td style="color: #b91c1c; font-size: 16px;">131 Posts</td>
+                      <tr class="cat-grand-row" style="background: #f1f5f9;">
+                        <td style="text-align: left; color: #1e3a8a;">
+                          <span class="cat-trade-name" style="color: #1e3a8a;">Total Vacancies</span>
+                        </td>
+                        <td class="cat-grand-val" style="color: #1e3a8a;">81</td>
+                        <td class="cat-grand-val">10</td>
+                        <td class="cat-grand-val">24</td>
+                        <td class="cat-grand-val">10</td>
+                        <td class="cat-grand-val">6</td>
+                        <td class="cat-grand-total">
+                          <span class="gt-num">131</span>
+                          <span class="gt-lbl">Posts</span>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -505,74 +757,97 @@
             <tr>
               <td colspan="2" class="sarkari-vacancy-cell">
                 <div class="sarkari-box-title green">Unit-Wise &amp; Location-Wise Vacancy Distribution</div>
-                <div class="responsive-table-wrap" style="margin: 0; border: none;">
-                  <table class="sarkari-inner-table text-center">
+                <div class="sarkari-inner-table-wrap" style="margin: 0; border: none; width: 100%; overflow-x: auto; zoom: 1 !important;">
+                  <table class="sarkari-inner-table text-center unit-dist-table">
                     <thead>
                       <tr class="inner-head">
-                        <th style="text-align: left; width: 40%;">IREL Unit / Operational Plant Location</th>
-                        <th>Fitter</th>
-                        <th>Electrician</th>
-                        <th>Instrumentation</th>
-                        <th>AOCP</th>
-                        <th>Total Posts</th>
+                        <th style="text-align: left; width: 35%;">IREL Unit / Operational Plant</th>
+                        <th style="width: 12%;">Fitter</th>
+                        <th style="width: 14%;">Electri-<br>cian</th>
+                        <th style="width: 16%;">Instru-<br>mentation</th>
+                        <th style="width: 10%;">AOCP</th>
+                        <th style="width: 13%;">Total</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">OSCOM Unit (Matikhalo, Ganjam, Odisha)</td>
-                        <td>32</td>
-                        <td>04</td>
-                        <td>04</td>
-                        <td>--</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">40</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">OSCOM Unit</span>
+                          <span class="unit-loc-sub">Matikhalo, Ganjam, Odisha</span>
+                        </td>
+                        <td class="unit-val">32</td>
+                        <td class="unit-val">04</td>
+                        <td class="unit-val">04</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-total">40</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Chavara Unit (Kollam, Kerala)</td>
-                        <td>26</td>
-                        <td>03</td>
-                        <td>--</td>
-                        <td>04</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">33</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">Chavara Unit</span>
+                          <span class="unit-loc-sub">Kollam, Kerala</span>
+                        </td>
+                        <td class="unit-val">26</td>
+                        <td class="unit-val">03</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-val">04</td>
+                        <td class="unit-total">33</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Manavalakurichi (MK Unit, Kanyakumari, Tamil Nadu)</td>
-                        <td>20</td>
-                        <td>04</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">24</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">MK Unit (Manavalakurichi)</span>
+                          <span class="unit-loc-sub">Kanyakumari, Tamil Nadu</span>
+                        </td>
+                        <td class="unit-val">20</td>
+                        <td class="unit-val">04</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-total">24</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">Rare Earths Division (RED, Aluva, Ernakulam, Kerala)</td>
-                        <td>13</td>
-                        <td>01</td>
-                        <td>--</td>
-                        <td>11</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">25</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">Rare Earths Division (RED)</span>
+                          <span class="unit-loc-sub">Aluva, Ernakulam, Kerala</span>
+                        </td>
+                        <td class="unit-val">13</td>
+                        <td class="unit-val">01</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-val">11</td>
+                        <td class="unit-total">25</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">REPM Unit (Visakhapatnam, Andhra Pradesh)</td>
-                        <td>01</td>
-                        <td>--</td>
-                        <td>01</td>
-                        <td>03</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">05</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">REPM Unit</span>
+                          <span class="unit-loc-sub">Visakhapatnam, Andhra Pradesh</span>
+                        </td>
+                        <td class="unit-val">01</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-val">01</td>
+                        <td class="unit-val">03</td>
+                        <td class="unit-total">05</td>
                       </tr>
                       <tr>
-                        <td style="text-align: left; font-weight: 600;">RETTP Unit (Bhopal, Madhya Pradesh)</td>
-                        <td>01</td>
-                        <td>--</td>
-                        <td>01</td>
-                        <td>02</td>
-                        <td style="font-weight: 800; color: #1e3a8a;">04</td>
+                        <td style="text-align: left;">
+                          <span class="unit-title">RETTP Unit</span>
+                          <span class="unit-loc-sub">Bhopal, Madhya Pradesh</span>
+                        </td>
+                        <td class="unit-val">01</td>
+                        <td class="unit-dash">--</td>
+                        <td class="unit-val">01</td>
+                        <td class="unit-val">02</td>
+                        <td class="unit-total">04</td>
                       </tr>
-                      <tr style="background: #f1f5f9; font-weight: 800;">
-                        <td style="text-align: left; color: #1e3a8a;">All Units Grand Total</td>
-                        <td style="color: #1e3a8a;">93</td>
-                        <td style="color: #1e3a8a;">12</td>
-                        <td style="color: #1e3a8a;">06</td>
-                        <td style="color: #1e3a8a;">20</td>
-                        <td style="color: #b91c1c; font-size: 16px;">131 Posts</td>
+                      <tr class="unit-grand-row" style="background: #f1f5f9;">
+                        <td style="text-align: left; color: #1e3a8a;">
+                          <span class="unit-title" style="color: #1e3a8a;">All Units Grand Total</span>
+                        </td>
+                        <td class="unit-grand-val" style="color: #1e3a8a;">93</td>
+                        <td class="unit-grand-val" style="color: #1e3a8a;">12</td>
+                        <td class="unit-grand-val" style="color: #1e3a8a;">06</td>
+                        <td class="unit-grand-val" style="color: #1e3a8a;">20</td>
+                        <td class="unit-grand-total">
+                          <span class="gt-num">131</span>
+                          <span class="gt-lbl">Posts</span>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
