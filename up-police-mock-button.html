@@ -13,64 +13,85 @@
   <link rel="stylesheet" href="style.css?v=3.3">
   <style>
     .pattern-hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #ffffff;
-      border-radius: 12px;
-      padding: 22px 20px;
+      background: transparent;
+      color: #0f172a;
+      border-radius: 0;
+      padding: 6px 0 20px 0;
       margin-bottom: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      box-shadow: none;
+      border: none;
     }
     .pattern-hero-badge {
-      display: inline-block;
-      background: rgba(34, 197, 94, 0.2);
-      color: #4ade80;
-      border: 1px solid rgba(74, 222, 128, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      border: 1.5px solid #bfdbfe;
       font-size: 11.5px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
     }
     .pattern-hero h1 {
-      font-size: 1.55rem;
-      color: #ffffff;
-      margin: 0 0 8px 0;
-      line-height: 1.3;
-      font-weight: 800;
+      font-size: 2.15rem;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      line-height: 1.25;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+    .pattern-title-gradient {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
     }
     .pattern-hero p {
-      color: #cbd5e1;
-      font-size: 13.5px;
-      line-height: 1.55;
-      margin: 0 0 14px 0;
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0 0 20px 0;
+      max-width: 880px;
+      font-weight: 500;
     }
     .pattern-stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 8px;
+      gap: 10px;
       margin-top: 14px;
     }
     .pattern-stat-box {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 9px 10px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 10px;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+    .pattern-stat-box:hover {
+      transform: translateY(-2px);
+      border-color: #93c5fd;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
     }
     .pattern-stat-label {
-      font-size: 10.5px;
-      color: #94a3b8;
+      font-size: 11px;
+      color: #64748b;
       display: block;
-      margin-bottom: 2px;
-      font-weight: 600;
+      margin-bottom: 4px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
     .pattern-stat-val {
-      font-size: 15px;
-      font-weight: 800;
-      color: #38bdf8;
+      font-size: 16px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.2px;
     }
     .section-card {
       background: #ffffff;
@@ -311,40 +332,46 @@
         padding: 0 !important;
       }
       .pattern-hero {
-        padding: 14px 12px !important;
-        border-radius: 9px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 4px 0 12px 0 !important;
+        border-radius: 0 !important;
         margin-bottom: 12px !important;
       }
       .pattern-hero-badge {
-        font-size: 9.5px !important;
-        padding: 2px 7px !important;
-        margin-bottom: 6px !important;
+        font-size: 10px !important;
+        padding: 3px 10px !important;
+        margin-bottom: 8px !important;
       }
       .pattern-hero h1 {
-        font-size: 1.15rem !important;
+        font-size: 1.35rem !important;
         line-height: 1.3 !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 8px !important;
       }
       .pattern-hero p {
-        font-size: 11.5px !important;
-        line-height: 1.45 !important;
-        margin-bottom: 10px !important;
+        font-size: 12.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 12px !important;
       }
       .pattern-stats-grid {
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 4px !important;
-        margin-top: 8px !important;
+        gap: 6px !important;
+        margin-top: 10px !important;
       }
       .pattern-stat-box {
-        padding: 5px 3px !important;
-        border-radius: 5px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+        padding: 8px 4px !important;
+        border-radius: 8px !important;
       }
       .pattern-stat-label {
-        font-size: 8px !important;
-        margin-bottom: 1px !important;
+        font-size: 8.5px !important;
+        margin-bottom: 2px !important;
       }
       .pattern-stat-val {
-        font-size: 11px !important;
+        font-size: 12px !important;
       }
       .section-card {
         padding: 12px 10px !important;
@@ -538,33 +565,33 @@
       <!-- HERO BANNER -->
       <div class="pattern-hero">
         <span class="pattern-hero-badge">📋 OFFICIAL VIEW PATTERN 2026</span>
-        <h1>UP Police Constable Exam Pattern, Marking Scheme &amp; Selection Criteria</h1>
+        <h1>UP Police Constable <span class="pattern-title-gradient">Exam Pattern, Marking Scheme &amp; Selection Criteria</span></h1>
         <p>उत्तर प्रदेश पुलिस भर्ती एवं प्रोन्नति बोर्ड (UPPRPB) आरक्षी नागरिक पुलिस परीक्षा का नवीनतम परीक्षा पैटर्न, विषयवार अंक विभाजन, नेगेटिव मार्किंग और शारीरिक दक्षता परीक्षा (PET/PST) की सम्पूर्ण जानकारी।</p>
         
         <div class="pattern-stats-grid">
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Exam Mode</span>
-            <span class="pattern-stat-val">OMR Offline</span>
+            <span class="pattern-stat-val" style="color: #0f172a;">OMR Offline</span>
           </div>
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Total Questions</span>
-            <span class="pattern-stat-val">150 Questions</span>
+            <span class="pattern-stat-val" style="color: #1e3a8a;">150 Questions</span>
           </div>
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Total Marks</span>
-            <span class="pattern-stat-val">300 Marks</span>
+            <span class="pattern-stat-val" style="color: #2563eb;">300 Marks</span>
           </div>
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Time Duration</span>
-            <span class="pattern-stat-val">120 Minutes</span>
+            <span class="pattern-stat-val" style="color: #0284c7;">120 Minutes</span>
           </div>
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Negative Marking</span>
-            <span class="pattern-stat-val" style="color: #f87171;">-0.50 Mark</span>
+            <span class="pattern-stat-val" style="color: #dc2626;">-0.50 Mark</span>
           </div>
           <div class="pattern-stat-box">
             <span class="pattern-stat-label">Language</span>
-            <span class="pattern-stat-val" style="color: #4ade80;">Hindi &amp; Eng</span>
+            <span class="pattern-stat-val" style="color: #16a34a;">Hindi &amp; Eng</span>
           </div>
         </div>
       </div>
