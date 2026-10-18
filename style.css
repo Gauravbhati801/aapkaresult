@@ -3452,6 +3452,89 @@ img, svg {
 }
 
 /* ==========================================================================
+   USEFUL IMPORTANT LINKS TABLE (Reference Style: 2-Column Clean Table)
+   ========================================================================== */
+.sarkari-links-cell {
+  padding: 0 !important;
+}
+
+.useful-links-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  margin: 0 !important;
+}
+
+.useful-links-table th,
+.useful-links-table td {
+  border: 1px solid #e5e7eb !important;
+  padding: 14px 16px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+/* Header: Bold, Large, Pure White Background, Solid Black Text */
+.useful-links-table thead th {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px;
+}
+
+.useful-links-table thead th:first-child {
+  width: 58% !important;
+}
+
+.useful-links-table thead th:last-child {
+  width: 42% !important;
+}
+
+/* Body Rows: Center aligned, White Background, Light Grey Border */
+.useful-links-table tbody tr {
+  background-color: #ffffff !important;
+  transition: background-color 0.15s ease;
+}
+
+.useful-links-table tbody tr:hover {
+  background-color: #f9fafb !important;
+}
+
+/* Column 1: Facility / Service Name */
+.useful-links-table tbody td:first-child {
+  width: 58% !important;
+  color: #111827 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Column 2: Clickable Link / Domain */
+.useful-links-table tbody td:last-child {
+  width: 42% !important;
+}
+
+.useful-links-table .useful-link {
+  color: #2563eb !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
+  word-break: break-word !important;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.useful-links-table .useful-link:hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
    MOBILE ZERO-SWIPE SARKARI RESULT ENGINE (100% ALL-IN-ONE SCREEN VIEW)
    ========================================================================== */
 @media (max-width: 768px) {
@@ -3675,11 +3758,47 @@ img, svg {
     padding: 10px 14px !important;
   }
   .sarkari-links-cell {
-    padding: 10px 14px !important;
+    padding: 0 !important;
   }
   .sarkari-click-btn {
     font-size: 13px !important;
     padding: 5px 14px !important;
+  }
+
+  /* Standalone useful-links-table on mobile */
+  .useful-links-table th {
+    font-size: 17px !important;
+    padding: 12px 10px !important;
+  }
+  .useful-links-table td {
+    padding: 12px 10px !important;
+  }
+  .useful-links-table tbody td:first-child {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+  .useful-links-table .useful-link {
+    font-size: 15px !important;
+  }
+
+  /* Scaled desktop view inside sarkari-table-wrapper (zoom: ~0.49 on mobile) */
+  .sarkari-table-wrapper .useful-links-table {
+    width: 100% !important;
+    display: table !important;
+  }
+  .sarkari-table-wrapper .useful-links-table th {
+    font-size: 26px !important;
+    padding: 16px 14px !important;
+  }
+  .sarkari-table-wrapper .useful-links-table td {
+    padding: 16px 14px !important;
+  }
+  .sarkari-table-wrapper .useful-links-table tbody td:first-child {
+    font-size: 22px !important;
+    line-height: 1.45 !important;
+  }
+  .sarkari-table-wrapper .useful-links-table .useful-link {
+    font-size: 22px !important;
   }
 }
 
