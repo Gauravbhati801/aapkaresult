@@ -2,82 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admissions &amp; Scholarships 2026 - Central &amp; State Entrance Exams</title>
-  <meta name="description" content="AapkaResult.in Admissions: Check online application forms for CUET UG/PG, UP Scholarship 2025-26, NEET UG, JEE Main, UP Polytechnic JEECUP, and Navodaya entrance tests.">
-  <meta name="keywords" content="AapkaResult.in, Admission 2026, UP Scholarship Online Form, CUET UG 2026, JEE Main Registration, NEET UG, JEECUP Diploma">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>College Admissions, Entrance Exams & Scholarships 2026 | AapkaResult.in</title>
+  <meta name="description" content="Access verified information on university admissions, entrance tests (CUET, NEET, JEE, JEECUP), and state scholarship portals 2026. Direct links to UP Scholarship, university counseling, and school lateral admission forms.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://aapkaresult.in/admission.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="favicon.png" type="image/png">
-  <link rel="preload" href="style.css?v=3.4" as="style">
-  <link rel="stylesheet" href="style.css?v=3.4">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta name="theme-color" content="#1e3a8a">
 
-  <!-- CRITICAL INLINE STYLES FOR SARKARI RESULT DIRECTORY TABLE -->
+  <!-- Google Fonts: Inter & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=3.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does the UP Scholarship portal display 'Aadhaar NPCI Mapping Pending'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This status indicates that your bank account is not officially mapped with the National Payments Corporation of India (NPCI) for Direct Benefit Transfer (DBT). To resolve this, visit your home branch and submit an Aadhaar Seeding / DBT Mandate form."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is CUET UG and which universities accept its scorecard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CUET UG (Common University Entrance Test) is conducted by the National Testing Agency (NTA) for admission into undergraduate programs across all 45+ Central Universities (including DU, BHU, JNU, Jamia) and dozens of participating State, Deemed, and Private universities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the validity period of an Income Certificate for scholarship applications?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Uttar Pradesh and most other states, an official Tehsildar-issued Income Certificate remains valid for exactly 3 years from its date of issuance. Ensure the certificate is active and reflects your family's annual income below the designated ceiling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a student apply for two different scholarships in the same academic year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under government audit rules, a student cannot receive financial maintenance stipends from more than one government-funded scholarship scheme simultaneously. You may apply for private merit scholarships alongside state fee reimbursement if permitted by state regulations."
+      }
+    }
+  ]
+}
+</script>
+
   <style>
+    /* DIRECT SARKARI RESULT LINKS TABLE - IDENTICAL TO RESULTS.HTML */
     .sarkari-jobs-box {
-      background: #ffffff;
-      border: 1.5px solid #d1d5db;
+      border: 1.5px solid #cbd5e1;
       border-radius: 8px;
       overflow: hidden;
-      margin: 20px 0 25px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      margin: 20px 0 35px 0;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
     }
     .sarkari-jobs-header {
-      background: linear-gradient(135deg, #ab183d 0%, #880e28 100%);
+      background: #1e3a8a;
       color: #ffffff;
       padding: 12px 18px;
       display: flex;
       align-items: center;
-      justify-content: center !important;
-      text-align: center !important;
+      justify-content: space-between;
     }
     .sarkari-jobs-header h2 {
-      font-size: 18px;
-      font-weight: 800;
       color: #ffffff !important;
+      font-size: 18px !important;
+      font-weight: 700;
       margin: 0 !important;
-      text-align: center !important;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
     .sarkari-links-only-table {
-      width: 100% !important;
-      border-collapse: collapse !important;
-      background: #ffffff !important;
-      margin: 0 !important;
-      border: none !important;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
     }
     .sarkari-links-only-table tr {
-      border: none !important;
+      border-bottom: 1px solid #e2e8f0;
+      transition: background 0.15s ease;
+    }
+    .sarkari-links-only-table tr:last-child {
+      border-bottom: none;
+    }
+    .sarkari-links-only-table tr:hover {
+      background: #f8fafc;
     }
     .sarkari-links-only-table td {
-      padding: 0 !important;
-      border: none !important;
-      background: transparent !important;
+      padding: 0;
     }
     .sarkari-job-link-item {
-      display: flex !important;
-      align-items: flex-start !important;
-      gap: 9px;
-      padding: 9px 18px !important;
-      text-decoration: none !important;
-      color: #000dff !important;
-      background: transparent !important;
-      font-size: 14.5px !important;
-      font-weight: 700 !important;
-      line-height: 1.45 !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
-      transition: color 0.15s ease;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 18px;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.45;
     }
     .sarkari-job-link-item:hover {
-      background-color: transparent !important;
-      color: #dc2626 !important;
-      text-decoration: underline !important;
+      color: #b91c1c;
+      text-decoration: underline;
     }
     .sarkari-job-link-item .link-bullet {
-      color: #000000 !important;
-      font-size: 19px !important;
+      color: #b91c1c;
+      font-size: 18px;
       line-height: 1.15 !important;
       flex-shrink: 0;
       user-select: none;
@@ -165,13 +207,13 @@
         <li><a href="/">Home</a></li>
         <li><a href="latest-jobs.html">Latest Jobs</a></li>
         <li><a href="results.html">Results</a></li>
-                <li><a href="free-test-weekly.html">Mock Test</a></li>
+        <li><a href="free-test-weekly.html">Mock Test</a></li>
         <li><a href="sarkari-tools.html">Tools 2026</a></li>
         <li><a href="short-notes-hub.html">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
         <li><a href="syllabus.html">Syllabus</a></li>
-        <li><a href="admission.html" class="active">Admissions</a></li>
+        <li><a href="admission.html">Admissions</a></li>
         <li><a href="career-guide.html">Career Guides</a></li>
       </ul>
     </div>
@@ -181,7 +223,7 @@
   <div class="breadcrumb-bar">
     <ul class="breadcrumbs">
       <li><a href="/">Home</a></li>
-      <li>Admissions &amp; Scholarships</li>
+      <li>Admissions &amp; Scholarships 2026</li>
     </ul>
   </div>
 
@@ -189,23 +231,21 @@
   <main class="job-page-container">
     <article class="job-article">
       <h1 class="job-main-title">College Admissions, Entrance Exams &amp; Scholarships 2026</h1>
-      
+
       <div class="article-meta">
-        <span><b>Portal:</b> AapkaResult.in Education Desk</span>
-        <span><b>Coverage:</b> Central Universities, Medical, Engineering, Scholarships</span>
-        <span><b>Updated:</b> 2026 Academic Session</span>
+        <span><b>Portal:</b> AapkaResult.in Admissions Desk</span>
+        <span><b>Coverage:</b> Central Universities, Technical Boards &amp; State Schemes</span>
+        <span><b>Status:</b> Live Counseling &amp; Forms</span>
       </div>
 
       <div class="job-summary-lead">
-        Find verified notification updates, online registration links, eligibility guidelines, and counseling schedules for top entrance examinations (CUET, JEE, NEET), state polytechnic admissions (JEECUP), and government scholarship schemes in India.
+        Find authentic updates on national entrance examinations, centralized undergraduate admissions, state technical education diploma forms, and state government fee reimbursement schemes across India.
       </div>
 
-      <!-- Google AdSense Unit (Insert code here after AdSense approval) -->
-
-      <!-- DATA TABLE (SARKARI RESULT DIRECTORY: DIRECT ADMISSION & SCHOLARSHIP LINKS) -->
+      <!-- DATA TABLE (SARKARI RESULT DIRECTORY: DIRECT ADMISSIONS LINKS) -->
       <div class="sarkari-jobs-box">
         <div class="sarkari-jobs-header">
-          <h2>Admission</h2>
+          <h2>Admission &amp; Schemes</h2>
         </div>
 
         <table class="sarkari-links-only-table">
@@ -214,71 +254,63 @@
               <td>
                 <a href="up-scholarship-2026.html" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">UP Scholarship 2026-27 Online Form (Pre &amp; Post-Matric) Registration Ongoing</span>
+                  <span class="link-title-text">UP Scholarship 2026-27 Online Form (Pre & Post-Matric) Registration Ongoing</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://cuet.nta.nic.in/" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://cuet.nta.nic.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">NTA CUET UG Central Universities Undergraduate Admission Online Form 2026</span>
+                  <span class="link-title-text">NTA CUET UG 2026 Central Universities Common Entrance Examination Portal</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://jeecup.admissions.nic.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">UP Polytechnic JEECUP Diploma Entrance Examination Online Form 2026</span>
+                  <span class="link-title-text">UP Polytechnic JEECUP 2026 State Diploma Entrance Registration</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://neet.nta.nic.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://neet.nta.nic.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">NTA NEET UG National Eligibility cum Entrance Test Medical Admission 2026</span>
+                  <span class="link-title-text">NTA NEET UG 2026 Medical Entrance Registration & Information Bulletin</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://jeemain.nta.nic.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://aktu.ac.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">NTA JEE Main Engineering Entrance Exam Session-1 &amp; Session-2 Online Form</span>
+                  <span class="link-title-text">AKTU / BTEUP Uttar Pradesh Odd/Even Semester Examination Form & Scrutiny</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://navodaya.gov.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://navodaya.gov.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">Navodaya Vidyalaya NVS Class 6th &amp; 9th Admission Selection Test Form 2026</span>
+                  <span class="link-title-text">NVS Navodaya Vidyalaya Class 6 & Class 9 Lateral Entry Selection Test (JNVST)</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://scholarship.up.gov.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://bhuonline.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">UP Dashmottar Scholarship (Post-Matric Other Than Inter) Renewal &amp; Fresh Form</span>
+                  <span class="link-title-text">Banaras Hindu University (BHU) Undergraduate & Postgraduate Admissions</span>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a href="https://ctet.nic.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
+                <a href="https://admission.uod.ac.in/" class="sarkari-job-link-item">
                   <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">Central Teacher Eligibility Test (CTET) 2026 National Level Online Application</span>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="https://aktu.ac.in" target="_blank" rel="noopener noreferrer" class="sarkari-job-link-item">
-                  <span class="link-bullet">&#8226;</span>
-                  <span class="link-title-text">AKTU / BTEUP Uttar Pradesh Technical Courses Admission &amp; Counseling Form 2026</span>
+                  <span class="link-title-text">University of Delhi (DU) CSAS Undergraduate Admission Counseling Portal</span>
                 </a>
               </td>
             </tr>
@@ -286,37 +318,39 @@
         </table>
       </div>
 
-      
-      <!-- 250+ WORD EDITORIAL STUDENT GUIDE -->
+      <!-- 200+ WORD STEP-BY-STEP INSTRUCTIONAL GUIDE -->
       <h2 class="sub-heading">Candidate Roadmap: College Admissions &amp; Government Scholarship Portals</h2>
-      <p style="font-size: 14.5px; line-height: 1.7; color: #334155; margin-bottom: 14px;">
-        Higher education admissions and state scholarship processes in India have transitioned into centralized, Aadhaar-linked digital ecosystems. Whether applying for nationwide entrance tests (CUET UG/PG, JEE Main, NEET UG) or state welfare schemes (such as the Uttar Pradesh Dashmottar Scholarship), candidate verification is governed by real-time automated databases. A single mismatch between your Class 10 records and Aadhaar demographic data can result in admission cancellation or delayed scholarship disbursements.
-      </p>
-      <p style="font-size: 14.5px; line-height: 1.7; color: #334155; margin-bottom: 14px;">
-        <strong>Aadhaar NPCI Bank Seeding Mandate:</strong> The Government of India transfers scholarship stipends strictly through Direct Benefit Transfer (DBT). Having a regular bank account is not sufficient; your bank account must be actively mapped with your Aadhaar number on the National Payments Corporation of India (NPCI) server. Visit your bank branch to complete NPCI Aadhaar seeding at the time of form submission.
-      </p>
-      <p style="font-size: 14.5px; line-height: 1.7; color: #334155; margin-bottom: 14px;">
-        <strong>Counseling Choice Filling Strategy:</strong> During centralized admission counseling (such as CSAS for Delhi University, JoSAA for Engineering, or JEECUP for Polytechnics), always sequence your college and course preferences in descending order of actual preference rather than perceived cutoff difficulty. The automated counseling algorithm evaluates your choices sequentially from top to bottom.
-      </p>
+      <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 22px; margin: 20px 0; color: #334155; line-height: 1.7; font-size: 14.5px;">
+        <p style="margin-top: 0;">
+          Navigating higher education admissions and securing government fee reimbursement requires systematic documentation. Follow these steps:
+        </p>
+        <ol class="styled-ordered-list" style="margin-bottom: 0;">
+          <li><strong>Entrance Examination Registration &amp; Information Bulletin:</strong> Review the official Information Bulletin for required domain subjects (e.g., CUET UG subject mapping or NEET eligibility criteria). Register early to secure your preferred examination city.</li>
+          <li><strong>Counseling Registration &amp; Choice Locking:</strong> Following score declaration, register on the centralized counseling portal (such as DU CSAS, UP JEECUP, or AKTU). Fill and lock your course and college preferences carefully before the published deadline.</li>
+          <li><strong>Physical Document Verification &amp; Seat Acceptance:</strong> When allocated a seat, pay the seat acceptance fee and report to the designated nodal center with original educational certificates, transfer certificates (TC), migration certificates, and reservation credentials.</li>
+          <li><strong>Direct Benefit Transfer (DBT) Bank Seeding:</strong> To claim government fee reimbursement and maintenance stipends (such as UP Scholarship), your bank account must be Aadhaar-seeded with active NPCI mapping. Standard savings accounts without DBT seeding will fail to receive scholarship funds.</li>
+          <li><strong>Institutional Verification &amp; Attendance Tracking:</strong> Submit your online scholarship application copy along with fee receipts to your college scholarship committee. Ensure your academic biometric attendance remains above the mandatory 75% threshold throughout the session.</li>
+        </ol>
+      </div>
 
-      <!-- FREQUENTLY ASKED QUESTIONS -->
+      <!-- FAQS -->
       <h2 class="sub-heading">Frequently Asked Questions (Admissions &amp; Scholarships)</h2>
       <div class="faq-wrap">
         <div class="faq-card">
-          <h4>Q1. Why does the UP Scholarship portal display "Aadhaar NPCI Mapping Pending"?</h4>
-          <p>This status indicates that your bank account is not actively seeded on the central NPCI Direct Benefit Transfer (DBT) mapper. You must submit an Aadhaar seeding mandate form at your home bank branch to enable electronic fund transfer.</p>
+          <h4>Q1. Why does the UP Scholarship portal display 'Aadhaar NPCI Mapping Pending'?</h4>
+          <p>This status indicates that your bank account is not officially mapped with the National Payments Corporation of India (NPCI) for Direct Benefit Transfer (DBT). To resolve this, visit your home branch and submit an Aadhaar Seeding / DBT Mandate form.</p>
         </div>
         <div class="faq-card">
           <h4>Q2. What is CUET UG and which universities accept its scorecard?</h4>
-          <p>The Common University Entrance Test (CUET UG) is a national CBT examination conducted by NTA for admission to undergraduate courses across all Central Universities (e.g. DU, BHU, JNU), state universities, and participating private institutions.</p>
+          <p>CUET UG (Common University Entrance Test) is conducted by the National Testing Agency (NTA) for admission into undergraduate programs across all 45+ Central Universities (including DU, BHU, JNU, Jamia) and dozens of participating State, Deemed, and Private universities.</p>
         </div>
         <div class="faq-card">
           <h4>Q3. What is the validity period of an Income Certificate for scholarship applications?</h4>
-          <p>In most states, including Uttar Pradesh, an Income Certificate issued by an authorized revenue authority (Tehsildar) remains valid for three financial years from its date of issuance. Always ensure the certificate is valid on the application closing date.</p>
+          <p>In Uttar Pradesh and most other states, an official Tehsildar-issued Income Certificate remains valid for exactly 3 years from its date of issuance. Ensure the certificate is active and reflects your family's annual income below the designated ceiling.</p>
         </div>
         <div class="faq-card">
           <h4>Q4. Can a student apply for two different scholarships in the same academic year?</h4>
-          <p>Under government norms, a student can receive only one government maintenance scholarship or fee reimbursement from central or state authorities for a single course in an academic session.</p>
+          <p>Under government audit rules, a student cannot receive financial maintenance stipends from more than one government-funded scholarship scheme simultaneously. You may apply for private merit scholarships alongside state fee reimbursement if permitted by state regulations.</p>
         </div>
       </div>
 
@@ -376,15 +410,14 @@
       </div>
     </div>
 
-        <div class="footer-bottom">
+    <div class="footer-bottom">
       <p class="footer-copy">Copyright &copy; 2025 &ndash; 2026 AapkaResult.in &bull; All Rights Reserved.</p>
       <p class="footer-disclaimer-text">
-        <strong>Disclaimer:</strong> AapkaResult.in is an independent educational news portal and is not affiliated with any government organization. All exam updates are for reference; candidates must verify details from official department websites.
+        <strong>Disclaimer:</strong> AapkaResult.in is purely an informational resource and is not affiliated with the Union Public Service Commission, Staff Selection Commission, Railway Recruitment Boards, UPPRPB, or any State/Central Government ministry. All trademarks and official logos belong to their respective authorities. Users must verify details with original gazette notifications.
       </p>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=3.3"></script>
 </body>
 </html>
-
