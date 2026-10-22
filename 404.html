@@ -11,6 +11,17 @@
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="preload" href="style.css?v=3.3" as="style">
   <link rel="stylesheet" href="style.css?v=3.3">
+  <script>
+    // GitHub Pages Clean URL Resolver: Redirect clean URL to .html if applicable
+    (function() {
+      var path = window.location.pathname.replace(/^\/|\/$/g, '');
+      if (path === 'index' || path === 'index.html') {
+        window.location.replace('/');
+      } else if (path && !path.includes('.')) {
+        window.location.replace('/' + path + '.html' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
 </head>
 <body>
 
