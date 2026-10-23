@@ -19,45 +19,52 @@
 
   <!-- Structured Data: JobPosting -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "[JOB_TITLE_HERE]",
-    "description": "[JOB_DESCRIPTION_HERE]",
-    "datePosted": "2026-01-01",
-    "validThrough": "2026-12-31",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "[RECRUITMENT_BOARD_NAME]",
-      "sameAs": "https://aapkaresult.in"
-    },
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      }
-    },
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": "INR",
-      "value": {
-        "@type": "QuantitativeValue",
-        "unitText": "MONTH",
-        "value": "25000"
-      }
-    },
-    "educationRequirements": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "High School"
-    },
-    "experienceRequirements": {
-      "@type": "OccupationalExperienceRequirements",
-      "monthsOfExperience": 0
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "[JOB_TITLE_HERE]",
+  "description": "[JOB_DESCRIPTION_HERE]",
+  "datePosted": "2026-01-01T00:00:00+05:30",
+  "validThrough": "2026-12-31T23:59:59+05:30",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "[RECRUITMENT_BOARD_NAME]",
+    "sameAs": "https://aapkaresult.in",
+    "logo": "https://aapkaresult.in/favicon.svg"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Block No. 12, CGO Complex, Lodhi Road",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110003",
+      "addressCountry": "IN"
     }
-  }
-  </script>
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "INR",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 21700,
+      "maxValue": 69100,
+      "unitText": "MONTH"
+    }
+  },
+  "educationRequirements": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "High School"
+  },
+  "experienceRequirements": {
+    "@type": "OccupationalExperienceRequirements",
+    "monthsOfExperience": 0
+  },
+  "directApply": true
+}
+</script>
 </head>
 <body>
 
