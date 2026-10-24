@@ -1,51 +1,131 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSC &amp; Railway Typing Test Online (10 Minutes): Hindi &amp; English Speed Test - AapkaResult.in</title>
-  <meta name="description" content="Attempt 10-Minute Free Online Typing Speed Test for SSC CHSL LDC/DEO, Railway RRB NTPC Junior Clerk, UP Police Computer Operator &amp; High Court. Instant Net WPM, Accuracy, Keystrokes &amp; Download Scorecard.">
-  <meta name="keywords" content="SSC Typing Test Online, Railway Typing Test 10 Minutes, Hindi Typing Test Mangal Font, English Typing Speed Test, WPM Typing Test, SSC CHSL Typing Practice, AapkaResult Typing Test">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://aapkaresult.in/typing-test.html">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="favicon.png" type="image/png">
-    <!-- Google Fonts: Inter & Noto Sans Devanagari -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3.3">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Online Typing Speed Test 2026: Check 60-Second WPM & Accuracy - AapkaResult.in</title>
+  <meta name="description" content="Check your typing speed in 60 seconds with live WPM, CPM, and accuracy analysis. Specially designed for SSC CGL, CHSL, Railway NTPC, Allahabad High Court, and Police recruitment exams." />
+  <meta name="keywords" content="Typing Speed Test 2026, Free Online Typing Test, SSC Typing Test, WPM Calculator, Railway Typing Test, 60s Typing Test, AapkaResult Typing Test" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://aapkaresult.in/typing-test.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="favicon.png" type="image/png" />
+  <!-- Google Fonts: Inter & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3.3" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "SSC & Railway 10-Minute Typing Test Tool",
+    "name": "Sarkari Typing Speed Test 2026",
     "url": "https://aapkaresult.in/typing-test.html",
-    "description": "Interactive online typing test engine with real-time Net WPM, Gross WPM, Accuracy and exam qualification scorecard for SSC and Railway aspirants.",
+    "description": "Free 60-second typing speed test for SSC, Railway, Court, and Police recruitment exams.",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "All"
   }
   </script>
+
   <style>
-    html, body {
-      overflow-x: hidden !important;
-      width: 100% !important;
-      max-width: 100vw !important;
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f6f6f7;
+      color: #1b1b20;
+      overflow-x: hidden;
     }
-    .job-page-container {
-      width: 100% !important;
-      max-width: 1100px !important;
-      box-sizing: border-box !important;
-      padding: 0 12px !important;
-      margin: 16px auto 35px auto !important;
-      overflow-x: hidden !important;
+
+    /* LiveChat signature yellow & orange accents */
+    .lc-yellow-bg {
+      background-color: #ffd000;
+    }
+    .lc-orange-btn {
+      background-color: #ff5100;
+      transition: all 0.2s ease;
+    }
+    .lc-orange-btn:hover {
+      background-color: #e04500;
+      transform: translateY(-1px);
+    }
+
+    /* Countdown Ring */
+    .timer-ring-circle {
+      transition: stroke-dashoffset 0.35s ease;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    /* Typing Box Single-Line Conveyor Belt */
+    .typing-bar {
+      box-shadow: 0 12px 34px -6px rgba(27, 27, 32, 0.08), 0 2px 6px -1px rgba(27, 27, 32, 0.04);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .typing-bar.focused {
+      box-shadow: 0 16px 42px -6px rgba(27, 27, 32, 0.13), 0 0 0 2px #ffd000;
+    }
+
+    /* Bounce tooltip */
+    @keyframes floatBounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    .start-tooltip {
+      animation: floatBounce 1.8s ease-in-out infinite;
+    }
+
+    /* Blinking cursor */
+    @keyframes blinkCaret {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .caret-bar {
+      display: inline-block;
+      width: 2.5px;
+      height: 1.55em;
+      background-color: #1b1b20;
+      vertical-align: middle;
+      animation: blinkCaret 1s step-end infinite;
+      border-radius: 2px;
+    }
+
+    /* Word styles in conveyor */
+    .word-typed-correct {
+      color: #9ca3af;
+    }
+    .word-typed-wrong {
+      color: #ef4444;
+      text-decoration: line-through;
+    }
+    .char-correct {
+      color: #9ca3af;
+    }
+    .char-wrong {
+      color: #ef4444;
+      background-color: #fee2e2;
+      border-radius: 2px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
     }
   </style>
 </head>
-<body>
-
-  <!-- SITE HEADER -->
+<body style="background-color: #f8fafc; margin: 0; padding: 0;">
+<!-- SITE HEADER -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand">
@@ -129,161 +209,469 @@
     </div>
   </div>
 
-  <main class="job-page-container">
+  
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-bar">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="sarkari-tools.html">Sarkari Tools 2026</a></li>
+      <li>SSC / Railway Typing Speed Test</li>
+    </ul>
+  </div>
+<!-- Main Hero / Typing Speed Test Section (Pure Body Without Header or Footer) -->
+  <main id="typing-hero" class="flex-grow">
+    <section class="relative pt-6 pb-16 sm:pt-10 sm:pb-20 px-4 overflow-hidden">
+      <!-- Subtle decorative background circles matching LiveChat aesthetic -->
+      <div class="pointer-events-none select-none absolute -top-24 -left-24 w-80 h-80 rounded-full bg-[#ffd000]/15 blur-2xl"></div>
+      <div class="pointer-events-none select-none absolute top-40 -right-24 w-80 h-80 rounded-full bg-[#ff5100]/10 blur-2xl"></div>
 
-    <!-- PAGE HERO -->
-    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #ffffff; padding: 28px 20px; border-radius: 14px; text-align: center; margin-bottom: 22px;">
-      <span style="background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase;">
-        ⌨️ Real Exam Simulation (TCS iON Pattern)
-      </span>
-      <h1 style="font-size: 1.85rem; margin: 10px 0 8px 0; font-weight: 800; line-height: 1.3;">
-        SSC, Railway &amp; Police 10-Minute Typing Test Online
-      </h1>
-      <p style="font-size: 0.95rem; color: #cbd5e1; margin: 0 auto; max-width: 680px; line-height: 1.5;">
-        सरकारी लिपिक, आशुलिपिक व कंप्यूटर ऑपरेटर पदों के लिए 10-मिनट का लाइव टाइपिंग टेस्ट। रियल टाइम Net WPM, त्रुटि गणना और स्कोरकार्ड तुरंत प्राप्त करें।
-      </p>
-    </div>
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <!-- Small uppercase tag -->
+        <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">
+          TYPING SPEED TEST
+        </p>
 
-    <!-- TYPING TEST ENGINE CONTAINER -->
-    <div class="tool-card-box" id="typingTestContainer">
-      <!-- Controls Bar -->
-      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; background:#f8fafc; padding:12px 16px; border-radius:10px; border:1px solid #e2e8f0; margin-bottom:16px;">
-        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-          <div>
-            <label for="typingLanguage" style="font-size:13px; font-weight:700; color:#334155; margin-right:6px;">भाषा (Language):</label>
-            <select id="typingLanguage" style="padding:6px 12px; border-radius:6px; border:1.5px solid #cbd5e1; font-weight:700;">
-              <option value="en">English (QWERTY)</option>
-              <option value="hi">हिंदी (Mangal / Remington)</option>
-            </select>
+        <!-- Main Heading -->
+        <h1 class="text-3xl sm:text-5xl md:text-[54px] font-extrabold text-[#1b1b20] tracking-tight leading-tight mb-6">
+          Test your typing skills
+        </h1>
+
+        <!-- Word Pool & Sound Selector Pill Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-8">
+          <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-white/90 border border-gray-200/80 rounded-full px-3 py-1.5 shadow-sm">
+            <span class="text-xs font-semibold text-gray-500 px-2">Word List:</span>
+            <button type="button" data-mode="common" class="mode-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#ffd000] text-[#1b1b20] transition-colors">
+              1,000 Common Words
+            </button>
+            <button type="button" data-mode="support" class="mode-btn px-3 py-1 rounded-full text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors">
+              Customer Support Phrases
+            </button>
+            <button type="button" data-mode="tech" class="mode-btn px-3 py-1 rounded-full text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors">
+              Business &amp; Tech
+            </button>
           </div>
-          <div>
-            <label for="typingDuration" style="font-size:13px; font-weight:700; color:#334155; margin-right:6px;">समय सीमा (Time):</label>
-            <select id="typingDuration" style="padding:6px 12px; border-radius:6px; border:1.5px solid #cbd5e1; font-weight:700;">
-              <option value="600" selected>10 मिनट (Official Exam Standard)</option>
-              <option value="300">5 मिनट (Mid Practice)</option>
-              <option value="120">2 मिनट (Quick Speed)</option>
-              <option value="60">1 मिनट (Sprint Warmup)</option>
-            </select>
+
+          <!-- Mechanical Sound Toggle -->
+          <button id="sound-toggle-btn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200/80 bg-white/90 hover:bg-gray-50 text-xs font-semibold text-gray-700 transition-colors shadow-sm" title="Toggle mechanical keyboard sound effects">
+            <svg id="sound-on-icon" class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            </svg>
+            <svg id="sound-off-icon" class="w-4 h-4 text-gray-400 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+            </svg>
+            <span id="sound-label">Sound: ON</span>
+          </button>
+        </div>
+
+        <!-- 4 LiveChat Metric Circles / Counters -->
+        <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-10 mb-10">
+          <!-- 60 Seconds Circular Timer -->
+          <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center bg-white rounded-full shadow-md">
+            <svg class="w-full h-full" viewBox="0 0 112 112">
+              <circle cx="56" cy="56" r="50" stroke="#f3f4f6" stroke-width="6" fill="transparent"></circle>
+              <circle id="timer-progress-circle" class="timer-ring-circle" cx="56" cy="56" r="50" stroke="#ffd000" stroke-width="6" stroke-linecap="round" fill="transparent" stroke-dasharray="314.16" stroke-dashoffset="0"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span id="stat-seconds" class="text-3xl sm:text-4xl font-extrabold text-[#1b1b20] leading-none">60</span>
+              <span class="text-[11px] font-medium text-gray-500 mt-1">seconds</span>
+            </div>
+          </div>
+
+          <!-- Metric Divider -->
+          <div class="hidden sm:block h-12 w-px bg-gray-200"></div>
+
+          <!-- words/min -->
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-1.5">
+              <span id="stat-wpm" class="text-3xl sm:text-4xl font-extrabold text-[#1b1b20]">0</span>
+            </div>
+            <span class="text-xs font-medium text-gray-500">words/min</span>
+          </div>
+
+          <!-- chars/min -->
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-1.5">
+              <span id="stat-cpm" class="text-3xl sm:text-4xl font-extrabold text-[#1b1b20]">0</span>
+            </div>
+            <span class="text-xs font-medium text-gray-500">chars/min</span>
+          </div>
+
+          <!-- % accuracy -->
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-1.5">
+              <span id="stat-accuracy" class="text-3xl sm:text-4xl font-extrabold text-[#1b1b20]">0</span>
+            </div>
+            <span class="text-xs font-medium text-gray-500">% accuracy</span>
           </div>
         </div>
-        <div style="display:flex; gap:8px;">
-          <button id="startTypingBtn" class="tool-btn-primary" style="padding:8px 18px; font-size:14px;">
-            🚀 टाइपिंग शुरू करें
-          </button>
-          <button id="resetTypingBtn" class="tool-btn-secondary" style="padding:8px 14px; font-size:14px;">
-            🔄 रीसेट
-          </button>
+
+        <!-- Single-Line Conveyor Belt Typing Container (Authentic LiveChat Style) -->
+        <div class="relative max-w-3xl mx-auto mt-6">
+          <!-- Floating "Start typing" Tooltip Badge -->
+          <div id="start-typing-badge" class="start-tooltip absolute -top-11 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-200">
+            <div class="bg-[#ffd000] text-[#1b1b20] font-bold text-xs sm:text-sm px-4 py-1.5 rounded-md shadow-md relative whitespace-nowrap">
+              Start typing
+              <div class="w-3 h-3 bg-[#ffd000] rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
+            </div>
+          </div>
+
+          <!-- Hidden Input to Capture Mobile & Desktop Keystrokes Reliably -->
+          <input
+            id="hidden-typing-input"
+            type="text"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-label="Type the words shown here"
+            class="sr-only"
+          />
+
+          <!-- Conveyor Box -->
+          <div
+            id="typing-conveyor-box"
+            tabindex="0"
+            role="textbox"
+            aria-label="Typing test area. Click and start typing."
+            class="typing-bar focused relative bg-white rounded-xl h-20 sm:h-24 border border-gray-200 overflow-hidden cursor-text select-none flex items-center"
+          >
+            <!-- Left Fade Gradient -->
+            <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+            <!-- Right Fade Gradient -->
+            <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+
+            <!-- Left HALF: Completed Words + Currently Typed Prefix (Right-Aligned to Center Caret) -->
+            <div class="w-[42%] sm:w-[45%] h-full flex items-center justify-end overflow-hidden pr-0.5">
+              <div id="conveyor-left" class="whitespace-nowrap text-xl sm:text-2xl md:text-[28px] font-normal tracking-wide flex items-center justify-end">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Center Caret -->
+            <div class="flex items-center justify-center z-20">
+              <span class="caret-bar"></span>
+            </div>
+
+            <!-- Right HALF: Remaining Characters of Current Word + Upcoming Words (Left-Aligned from Center Caret) -->
+            <div class="w-[58%] sm:w-[55%] h-full flex items-center justify-start overflow-hidden pl-0.5">
+              <div id="conveyor-right" class="whitespace-nowrap text-xl sm:text-2xl md:text-[28px] font-normal tracking-wide text-[#1b1b20] flex items-center justify-start">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Restart Quick Button inside right corner -->
+            <button
+              id="quick-restart-btn"
+              type="button"
+              title="Restart test (Tab or Esc)"
+              class="absolute right-3 z-20 p-2 rounded-lg bg-gray-100 hover:bg-[#ffd000] text-gray-600 hover:text-[#1b1b20] transition-colors shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Helper Bar Underneath Typing Box -->
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-500 px-1">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-200/80 text-gray-700 font-semibold">Space</span>
+              <span>or</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-200/80 text-gray-700 font-semibold">Enter</span>
+              <span>to submit each word</span>
+            </div>
+            <button id="toggle-scores-drawer-btn" type="button" class="inline-flex items-center gap-1 font-semibold text-[#1b1b20] hover:text-[#ff5100] transition-colors">
+              <span>Show global &amp; my scores</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Inline Result Card (Hidden until 60s finishes) -->
+        <div id="result-card-container" class="hidden max-w-2xl mx-auto mt-10">
+          <div class="bg-white rounded-2xl shadow-xl border-2 border-[#ffd000] p-6 sm:p-8 text-left relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-[#ffd000]/20 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-6 relative z-10">
+              <!-- Animal Illustration Avatar -->
+              <div id="result-animal-badge" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-[#fff9db] border border-[#ffd000] flex flex-col items-center justify-center shrink-0 shadow-inner p-3">
+                <!-- Dynamic SVG Animal inserted here -->
+              </div>
+
+              <!-- Score Summary Text -->
+              <div class="flex-1 text-center sm:text-left">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#ffd000] text-[#1b1b20] mb-2">
+                  Test Complete!
+                </span>
+                <h2 id="result-headline" class="text-2xl sm:text-3xl font-extrabold text-[#1b1b20] mb-2">
+                  You're a T-REX. Nice!
+                </h2>
+                <p id="result-description" class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                  You type with the speed of <strong class="text-[#1b1b20]">42 WPM</strong> (<strong class="text-[#1b1b20]">210 CPM</strong>). Your accuracy was <strong class="text-[#1b1b20]">96%</strong>. Keep practicing!
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                  <button id="try-again-btn" type="button" class="lc-orange-btn text-white font-bold text-sm px-6 py-2.5 rounded-lg shadow-sm inline-flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span>Try again</span>
+                  </button>
+
+                  <button id="share-result-btn" type="button" class="bg-[#1b1b20] hover:bg-gray-800 text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#ffd000]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                    </svg>
+                    <span id="share-btn-text">Copy Score Link</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Global Scores & Personal Scores Section -->
+    <section id="scores-section" class="py-6 sm:py-8 px-4 bg-white border-y border-gray-200">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+          <div>
+            <h2 class="text-2xl font-extrabold text-[#1b1b20]">Global Distribution &amp; Your Scores</h2>
+            <p class="text-sm text-gray-500">Compare your typing speed with typists worldwide and track your personal improvement.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="clear-history-btn" type="button" class="text-xs font-semibold text-gray-500 hover:text-red-600 px-3 py-1.5 rounded-lg border border-gray-200 hover:border-red-200 transition-colors">
+              Reset My History
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Global Bell Curve Distribution Bar Chart -->
+          <div class="lg:col-span-7 bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/80">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm font-bold text-[#1b1b20]">Global WPM Distribution</span>
+              <span class="text-xs font-medium text-gray-500">Average: 38–40 WPM</span>
+            </div>
+
+            <!-- Custom Interactive Bar Distribution -->
+            <div id="global-chart-bars" class="h-44 flex items-end gap-1.5 sm:gap-2 pt-6 pb-2 px-1 border-b border-gray-300">
+              <!-- Populated by JS -->
+            </div>
+            <div class="flex justify-between text-[10px] sm:text-xs font-semibold text-gray-400 mt-2 px-1">
+              <span>10 WPM</span>
+              <span>30 WPM</span>
+              <span>40 (Avg)</span>
+              <span>60 WPM</span>
+              <span>80 WPM</span>
+              <span>100+ WPM</span>
+            </div>
+
+            <!-- Animal Ranks Legend -->
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+              <div class="bg-white p-2.5 rounded-xl border border-gray-200/80">
+                <div class="text-lg">🐢</div>
+                <div class="text-xs font-bold text-[#1b1b20]">Sloth / Turtle</div>
+                <div class="text-[10px] text-gray-500">&lt; 30 WPM</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-gray-200/80">
+                <div class="text-lg">🦖</div>
+                <div class="text-xs font-bold text-[#1b1b20]">T-Rex</div>
+                <div class="text-[10px] text-gray-500">30–49 WPM</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-gray-200/80">
+                <div class="text-lg">🦒</div>
+                <div class="text-xs font-bold text-[#1b1b20]">Giraffe</div>
+                <div class="text-[10px] text-gray-500">50–64 WPM</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-gray-200/80">
+                <div class="text-lg">🐆</div>
+                <div class="text-xs font-bold text-[#1b1b20]">Cheetah</div>
+                <div class="text-[10px] text-gray-500">65–79 WPM</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-gray-200/80 col-span-2 sm:col-span-1">
+                <div class="text-lg">🐙</div>
+                <div class="text-xs font-bold text-[#1b1b20]">Octopus</div>
+                <div class="text-[10px] text-gray-500">80+ WPM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal Score History Table -->
+          <div class="lg:col-span-5 bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm font-bold text-[#1b1b20]">My Recent Scores</span>
+                <span id="best-wpm-pill" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#ffd000] text-[#1b1b20]">Best: 0 WPM</span>
+              </div>
+
+              <div id="my-scores-list" class="space-y-2.5 max-h-60 overflow-y-auto pr-1">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+              <span>Scores are saved automatically in your browser.</span>
+              <a href="#typing-hero" class="font-bold text-[#ff5100] hover:underline">Take test &uarr;</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Live Scoreboard Ribbon -->
-      <div class="typing-stats-ribbon">
-        <div class="stat-box">
-          <strong id="typingTimerVal" style="color: #ea580c;">10:00</strong>
-          <span>शेष समय (Timer)</span>
+    <!-- Speed Benchmarks Section -->
+    <section id="benchmarks-section" class="py-5 sm:py-7 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-[#1b1b20] text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+          <div class="pointer-events-none absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#ffd000]/15 blur-xl"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
+            <div class="md:col-span-7">
+              <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#ffd000] mb-2">
+                Typing Speed Benchmarks
+              </span>
+              <h2 class="text-xl sm:text-2xl font-extrabold mb-2 leading-snug">
+                Typing skills? Check. Measure and boost your speed.
+              </h2>
+              <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                The average person types between <strong class="text-white">38 and 40 WPM</strong> (190–200 CPM). Professional data entry operators average <strong class="text-[#ffd000]">65 to 75 WPM</strong>, while advanced speed typists exceed <strong class="text-[#ffd000]">80–95 WPM</strong>.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <a href="#typing-hero" class="lc-orange-btn text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg inline-flex items-center gap-1.5">
+                  <span>Practice 60s Test Now</span>
+                  <span>&rarr;</span>
+                </a>
+                <button id="practice-support-words-btn" type="button" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg transition-colors">
+                  Try Support Phrases
+                </button>
+              </div>
+            </div>
+
+            <!-- 3 Benchmark Mini Cards -->
+            <div class="md:col-span-5 grid grid-cols-1 gap-2.5">
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-3.5 border border-white/10 flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-gray-300 font-medium">Everyday Average</div>
+                  <div class="text-base sm:text-lg font-extrabold text-white">38 – 40 WPM</div>
+                </div>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-white/10 text-gray-200">190–200 CPM</span>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-3.5 border border-[#ffd000]/40 flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-[#ffd000] font-semibold">Fast / Professional</div>
+                  <div class="text-base sm:text-lg font-extrabold text-white">65 – 75 WPM</div>
+                </div>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-[#ffd000] text-[#1b1b20]">325–375 CPM</span>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-3.5 border border-white/10 flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-gray-300 font-medium">Top 1% Speed Typists</div>
+                  <div class="text-base sm:text-lg font-extrabold text-white">95 – 120+ WPM</div>
+                </div>
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">475+ CPM</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stat-box">
-          <strong id="typingNetWpm">0</strong>
-          <span>Net WPM (सटीक गति)</span>
+      </div>
+    </section>
+
+    <!-- Typing Speed Test Specific FAQs Section -->
+    <section id="faq-section" class="py-10 px-4 bg-white border-t border-gray-200">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <p class="text-xs font-bold uppercase tracking-widest text-[#ff5100] mb-1.5">Frequently Asked Questions</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1b1b20]">Typing Test FAQs &amp; Speed Guidelines</h2>
         </div>
-        <div class="stat-box">
-          <strong id="typingGrossWpm">0</strong>
-          <span>Gross WPM</span>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+          <!-- FAQ 1 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q1.</span>
+              <span>What is WPM and CPM, and how are they calculated?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong>WPM</strong> stands for <em>Words Per Minute</em>, and <strong>CPM</strong> stands for <em>Characters Per Minute</em>. In standard typing metrics, 1 word is counted as 5 keystrokes (including letters, symbols, and spaces). Your <strong>Net WPM</strong> is computed by taking your total correct characters typed in 60 seconds and dividing by 5.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q2.</span>
+              <span>What typing speed is required for SSC, Railway &amp; Police exams?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              For <strong>SSC CHSL / CGL (LDC, DEO, Tax Assistant)</strong>: 35 WPM in English or 30 WPM in Hindi (with 93–95% accuracy). For <strong>Railway RRB NTPC</strong>: 30 WPM in English or 25 WPM in Hindi. For <strong>High Court &amp; Secretariat clerical posts</strong>: 35 to 45+ WPM is required.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q3.</span>
+              <span>What is the difference between Gross Speed and Net Speed?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong>Gross Speed</strong> is the raw count of all words typed per minute, including mistakes. <strong>Net Speed</strong> is your actual speed after deducting penalties for errors. Examination boards like SSC and RRB qualify candidates solely based on <strong>Net WPM</strong>.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q4.</span>
+              <span>How can I increase my typing speed and finger muscle memory?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Master the standard 10-finger touch typing method starting from the <strong>Home Row</strong> (<code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs text-gray-800">ASDF</code> for left hand, <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs text-gray-800">JKL;</code> for right hand). Use the tactile ridges on the <strong>F</strong> and <strong>J</strong> keys to align your index fingers without looking down. Focus on 95%+ accuracy first; speed naturally follows.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q5.</span>
+              <span>Is Backspace allowed during government typing speed tests?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              In most government examinations (such as SSC, Railway, and High Court tests), the Backspace key is allowed within the currently typed word. However, frequent backspacing drastically slows your Net WPM. Practice steady rhythm with minimal corrections to achieve top scores.
+            </p>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="bg-[#f6f6f7] rounded-2xl p-6 border border-gray-200/60">
+            <h3 class="text-base sm:text-lg font-bold text-[#1b1b20] mb-2 flex items-start gap-2">
+              <span class="text-[#ff5100] font-extrabold">Q6.</span>
+              <span>What is considered a good typing speed for candidates?</span>
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              An everyday user types between <strong>38–40 WPM</strong>. For competitive recruitment examinations, a speed of <strong>40–50 WPM with 95%+ accuracy</strong> is considered a safe qualifying score. Professional typists, stenographers, and data operators comfortably type <strong>65 to 80+ WPM</strong>.
+            </p>
+          </div>
         </div>
-        <div class="stat-box">
-          <strong id="typingAccuracy" style="color: #16a34a;">100%</strong>
-          <span>शुद्धता (Accuracy)</span>
-        </div>
-        <div class="stat-box">
-          <strong id="typingErrors" style="color: #dc2626;">0</strong>
-          <span>त्रुटियां (Errors)</span>
-        </div>
       </div>
-
-      <!-- Target Passage Display Box -->
-      <div class="typing-passage-box" id="typingPassageBox" aria-label="Typing text passage">
-        <!-- Populated by JS -->
-      </div>
-
-      <!-- User Typing Input Area -->
-      <div>
-        <textarea id="typingInput" class="typing-input-area" placeholder="यहाँ टाइप करना शुरू करें... स्पेस दबाते ही शब्द जाँचा जाएगा!" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
-      </div>
-
-      <!-- Exam Criteria Benchmarks Footer -->
-      <div style="margin-top:14px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:12px 14px; font-size:13px; color:#1e40af; line-height:1.6;">
-        📌 <strong>परीक्षा मानदंड एवं न्यूनतम स्पीड (Exam Typing Benchmarks):</strong>
-        <ul style="margin: 6px 0 0 16px; padding: 0;">
-          <li><strong>SSC CHSL (LDC/JSA):</strong> English 35 WPM / Hindi 30 WPM (न्यूनतम 95% शुद्धता)</li>
-          <li><strong>Railway RRB NTPC:</strong> English 30 WPM / Hindi 25 WPM (5% तक गलतियां माफ)</li>
-          <li><strong>UP Police Computer Operator / Clerk:</strong> Hindi 25 WPM (Inscript / Kruti Dev) &amp; English 30 WPM</li>
-          <li><strong>High Court RO / ARO / Clerk:</strong> English 30-35 WPM / Hindi 25-30 WPM</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- TYPING PREPARATION TIPS -->
-    <div class="tool-card-box">
-      <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 12px 0;">
-        💡 सरकारी टाइपिंग परीक्षा में सफलता के 5 गोल्डन नियम (Typing Tips)
-      </h2>
-      <div style="font-size: 14px; color: #475569; line-height: 1.7;">
-        <ol style="padding-left: 20px; margin: 10px 0;">
-          <li><strong>कीबोर्ड की जगह स्क्रीन पर देखें:</strong> उंगलियों को होम रो (ASDF - JKL;) पर रखें और स्क्रीन पर देखकर टाइप करने की आदत डालें।</li>
-          <li><strong>स्पीड से पहले एक्यूरेसी (Accuracy First):</strong> सरकारी परीक्षाओं में गलतियों पर भारी पेनल्टी होती है। 35 WPM की गति 98% शुद्धता के साथ, 45 WPM (85% शुद्धता) से कहीं बेहतर मानी जाती है।</li>
-          <li><strong>10-मिनट का पूरा स्टैमिना बनाएं:</strong> अधिकतर छात्र पहले 3 मिनट में थक जाते हैं। प्रतिदिन कम से कम तीन बार 10-10 मिनट के पूरे टेस्ट दें।</li>
-          <li><strong>बैकस्पेस का संयमित उपयोग:</strong> सामान्य सरकारी परीक्षाओं में बैकस्पेस की अनुमति होती है, लेकिन बार-बार बैकस्पेस दबाने से आपकी नेट स्पीड 5 से 8 WPM तक गिर जाती है।</li>
-        </ol>
-      </div>
-    </div>
-
-    <!-- OTHER TOOLS LINKS -->
-    <div style="margin-top: 24px;">
-      <h3 style="color: #1e3a8a; font-size: 1.15rem; margin-bottom: 12px;">🛠️ अन्य उपयोगी सरकारी टूल्स:</h3>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="age-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px;">🎂 Sarkari Age &amp; Eligibility Calculator &rarr;</a>
-        <a href="physical-standards-checker.html" class="tool-btn-secondary" style="font-size: 13.5px;">📏 Physical Standards (Height/Chest) Checker &rarr;</a>
-        <a href="cgpa-percentage-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px;">📊 Percentage to CGPA Calculator &rarr;</a>
-      </div>
-    </div>
+    </section>
 
   </main>
-
-  <!-- MODAL: TYPING SCORECARD -->
-  <div id="typingScoreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; padding:16px; box-sizing:border-box;">
-    <div style="background:#ffffff; border-radius:14px; max-width:480px; width:100%; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.25); text-align:center;">
-      <h3 style="color:#1e3a8a; margin:0 0 6px 0; font-size:1.45rem;">🏆 टाइपिंग टेस्ट स्कोरकार्ड</h3>
-      <p style="color:#64748b; font-size:13px; margin:0 0 16px 0;">AapkaResult.in Official Speed Assessment</p>
-      
-      <div id="modalVerdict" style="margin-bottom:16px;"></div>
-
-      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-bottom:18px; text-align:left; font-size:13.5px;">
-        <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #e2e8f0;">
-          <strong>Net Speed:</strong> <span id="modalNetWpm" style="color:#2563eb; font-weight:800; font-size:1.15rem;"></span> WPM
-        </div>
-        <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #e2e8f0;">
-          <strong>Gross Speed:</strong> <span id="modalGrossWpm"></span> WPM
-        </div>
-        <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #e2e8f0;">
-          <strong>शुद्धता (Accuracy):</strong> <span id="modalAccuracy" style="color:#16a34a; font-weight:800;"></span>
-        </div>
-        <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #e2e8f0;">
-          <strong>गलतियां (Errors):</strong> <span id="modalMistakes" style="color:#dc2626; font-weight:800;"></span>
-        </div>
-        <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
-          <strong>कुल कीस्ट्रोक्स (Keystrokes):</strong> <span id="modalKeystrokes"></span>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:10px; justify-content:center;">
-        <button onclick="window.print()" class="tool-btn-secondary" style="font-size:13.5px;">🖨️ स्कोरकार्ड प्रिंट करें</button>
-        <button onclick="closeTypingModal()" class="tool-btn-primary" style="font-size:13.5px;">बंद करें (Close)</button>
+    <!-- OTHER TOOLS LINKS -->
+    <div style="margin: 40px auto 20px auto; max-width: 960px; padding: 24px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+      <h3 style="color: #1e3a8a; font-size: 1.15rem; font-weight: 700; margin-bottom: 14px;">🛠️ अन्य उपयोगी सरकारी टूल्स (Other Sarkari Tools):</h3>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="sarkari-tools.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">⚡ सभी टूल्स हब (All Tools Hub) &rarr;</a>
+        <a href="age-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">🎂 आयु सीमा कैलकुलेटर (Age Calculator) &rarr;</a>
+        <a href="physical-standards-checker.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">📏 फिजिकल चेस्ट &amp; हाइट चेकर &rarr;</a>
+        <a href="cgpa-percentage-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">📊 CGPA to Percentage Calculator &rarr;</a>
       </div>
     </div>
-  </div>
-
-    <!-- SITE FOOTER -->
-  <!-- FOOTER -->
+<!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-col">
@@ -344,7 +732,673 @@
     </div>
   </footer>
 
+  
   <script src="script.js"></script>
-  <script src="tools.js"></script>
+<script>
+    // --- WORD LISTS (1,000 Common Words + Support & Business) ---
+    const WORD_POOLS = {
+      common: [
+        "the", "be", "to", "of", "and", "a", "in", "that", "have", "it",
+        "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
+        "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
+        "an", "will", "my", "one", "all", "would", "there", "their", "what", "so",
+        "up", "out", "if", "about", "who", "get", "which", "go", "me", "when",
+        "make", "can", "like", "time", "no", "just", "him", "know", "take", "people",
+        "into", "year", "your", "good", "some", "could", "them", "see", "other", "than",
+        "then", "now", "look", "only", "come", "its", "over", "think", "also", "back",
+        "after", "use", "two", "how", "our", "work", "first", "well", "way", "even",
+        "new", "want", "because", "any", "these", "give", "day", "most", "us", "late",
+        "between", "certain", "map", "hat", "has", "letter", "live", "before", "next", "warm",
+        "care", "plain", "blue", "state", "never", "become", "high", "really", "something", "most",
+        "another", "much", "family", "own", "leave", "put", "old", "while", "mean", "keep",
+        "student", "why", "let", "great", "same", "big", "group", "begin", "seem", "country",
+        "help", "talk", "where", "turn", "problem", "every", "start", "hand", "might", "show",
+        "part", "against", "place", "such", "again", "few", "case", "week", "company", "system",
+        "each", "right", "program", "hear", "question", "during", "play", "government", "run", "small",
+        "number", "off", "always", "move", "night", "point", "today", "bring", "happen", "without",
+        "before", "large", "million", "must", "home", "under", "water", "room", "write", "mother",
+        "area", "national", "money", "story", "young", "fact", "month", "different", "lot", "study",
+        "book", "eye", "job", "word", "though", "business", "issue", "side", "kind", "four",
+        "head", "far", "black", "long", "both", "little", "house", "yes", "since", "provide",
+        "service", "around", "friend", "important", "father", "sit", "away", "until", "power", "hour",
+        "game", "often", "yet", "line", "end", "among", "ever", "stand", "bad", "lose",
+        "however", "member", "pay", "law", "meet", "car", "city", "almost", "include", "continue",
+        "set", "later", "community", "much", "name", "five", "once", "white", "least", "learn",
+        "real", "change", "team", "minute", "best", "several", "idea", "kid", "body", "information",
+        "nothing", "ago", "lead", "social", "understand", "whether", "watch", "together", "follow", "parent",
+        "stop", "face", "anything", "create", "public", "already", "speak", "others", "read", "level",
+        "allow", "add", "office", "spend", "door", "health", "person", "art", "sure", "war",
+        "history", "party", "within", "grow", "result", "open", "change", "morning", "walk", "reason",
+        "low", "win", "research", "girl", "guy", "early", "food", "moment", "himself", "air",
+        "teacher", "force", "offer", "enough", "education", "across", "although", "remember", "foot", "second",
+        "boy", "maybe", "toward", "able", "age", "policy", "everything", "love", "process", "music",
+        "including", "consider", "appear", "actually", "buy", "probably", "human", "wait", "serve", "market",
+        "send", "expect", "sense", "build", "stay", "fall", "oh", "nation", "plan", "cut"
+      ],
+      support: [
+        "welcome", "chat", "support", "customer", "ticket", "resolve", "account", "upgrade", "billing", "refund",
+        "solution", "message", "agent", "glad", "assist", "today", "question", "order", "shipping", "status",
+        "delivery", "package", "tracking", "number", "verify", "email", "address", "password", "reset", "login",
+        "feature", "feedback", "satisfaction", "experience", "helpful", "moment", "check", "details", "confirm", "update",
+        "subscription", "invoice", "payment", "method", "active", "trial", "cancel", "renew", "discount", "coupon",
+        "connect", "specialist", "team", "priority", "response", "quick", "thank", "patience", "understand", "apologize",
+        "issue", "fixed", "working", "browser", "refresh", "screen", "settings", "profile", "security", "privacy",
+        "guide", "article", "center", "contact", "phone", "available", "hours", "online", "offline", "queue"
+      ],
+      tech: [
+        "software", "platform", "website", "traffic", "conversion", "analytics", "dashboard", "widget", "integration", "api",
+        "webhook", "database", "server", "cloud", "latency", "performance", "security", "encryption", "protocol", "network",
+        "frontend", "backend", "deploy", "release", "version", "feature", "bugfix", "sprint", "roadmap", "product",
+        "growth", "revenue", "funnel", "retention", "churn", "onboarding", "automation", "workflow", "chatbot", "prompt",
+        "visitors", "campaign", "landing", "page", "optimize", "speed", "mobile", "desktop", "responsive", "design"
+      ]
+    };
+
+    // Global WPM Distribution buckets for chart
+    const GLOBAL_DISTRIBUTION = [
+      { bucket: "10", pct: 12, min: 0, max: 19 },
+      { bucket: "20", pct: 35, min: 20, max: 29 },
+      { bucket: "30", pct: 78, min: 30, max: 37 },
+      { bucket: "40", pct: 100, min: 38, max: 45 },
+      { bucket: "50", pct: 82, min: 46, max: 55 },
+      { bucket: "60", pct: 58, min: 56, max: 65 },
+      { bucket: "70", pct: 38, min: 66, max: 75 },
+      { bucket: "80", pct: 22, min: 76, max: 85 },
+      { bucket: "90", pct: 11, min: 86, max: 99 },
+      { bucket: "100+", pct: 5, min: 100, max: 999 }
+    ];
+
+    // Animal personas matching playful post-test badges
+    function getAnimalPersona(wpm) {
+      if (wpm < 30) {
+        return {
+          title: "You're a Turtle. Keep going!",
+          animal: "Turtle",
+          emoji: "🐢",
+          bg: "#ecfdf5",
+          border: "#6ee7b7",
+          note: "Relax your fingers, focus on accuracy first, and your speed will climb naturally!"
+        };
+      } else if (wpm < 50) {
+        return {
+          title: "You're a T-REX. Nice!",
+          animal: "T-Rex",
+          emoji: "🦖",
+          bg: "#fff9db",
+          border: "#ffd000",
+          note: "You're right around the global average! A few minutes of daily practice will push you past 55 WPM."
+        };
+      } else if (wpm < 65) {
+        return {
+          title: "You're a Giraffe. Impressive!",
+          animal: "Giraffe",
+          emoji: "🦒",
+          bg: "#fef3c7",
+          border: "#fbbf24",
+          note: "Above average typing speed! You stand tall above most everyday keyboard users."
+        };
+      } else if (wpm < 80) {
+        return {
+          title: "You're a Cheetah. Fast!",
+          animal: "Cheetah",
+          emoji: "🐆",
+          bg: "#ffedd5",
+          border: "#fb923c",
+          note: "Professional typing speed! You can handle rapid correspondence effortlessly."
+        };
+      } else {
+        return {
+          title: "You're an Octopus. Unstoppable!",
+          animal: "Octopus",
+          emoji: "🐙",
+          bg: "#fae8ff",
+          border: "#c084fc",
+          note: "B-b-but you're an Octopus! It's like having eight hands on the keyboard—top tier!"
+        };
+      }
+    }
+
+    // --- SOUND SYNTHESIZER (Web Audio API Mechanical Key Clicks) ---
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    function playKeySound(isError = false, isSpace = false) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) audioCtx = new AudioContextClass();
+        }
+        if (!audioCtx) return;
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        if (isError) {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(170, now);
+          osc.frequency.exponentialRampToValueAtTime(110, now + 0.06);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.06);
+        } else {
+          osc.type = 'triangle';
+          const baseFreq = isSpace ? 260 : 420 + Math.random() * 80;
+          osc.frequency.setValueAtTime(baseFreq, now);
+          osc.frequency.exponentialRampToValueAtTime(95, now + 0.032);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.032);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.032);
+        }
+      } catch (e) {
+        // Ignore audio errors on restricted devices
+      }
+    }
+
+    // --- STATE ---
+    let currentMode = 'common';
+    let wordQueue = [];
+    let completedWords = [];
+    let currentWordIndex = 0;
+    let currentTyped = '';
+
+    let timeLeft = 60;
+    let timerInterval = null;
+    let testStatus = 'idle';
+
+    let totalWordsAttempted = 0;
+    let correctWordsCount = 0;
+    let correctCharsCount = 0;
+    let totalTypedChars = 0;
+
+    // DOM Elements
+    const statSecondsEl = document.getElementById('stat-seconds');
+    const statWpmEl = document.getElementById('stat-wpm');
+    const statCpmEl = document.getElementById('stat-cpm');
+    const statAccuracyEl = document.getElementById('stat-accuracy');
+    const timerCircleEl = document.getElementById('timer-progress-circle');
+
+    const startBadgeEl = document.getElementById('start-typing-badge');
+    const conveyorBoxEl = document.getElementById('typing-conveyor-box');
+    const conveyorLeftEl = document.getElementById('conveyor-left');
+    const conveyorRightEl = document.getElementById('conveyor-right');
+    const hiddenInputEl = document.getElementById('hidden-typing-input');
+
+    const resultCardContainerEl = document.getElementById('result-card-container');
+    const resultAnimalBadgeEl = document.getElementById('result-animal-badge');
+    const resultHeadlineEl = document.getElementById('result-headline');
+    const resultDescriptionEl = document.getElementById('result-description');
+
+    const CIRCUMFERENCE = 2 * Math.PI * 50;
+
+    // --- STORAGE HELPERS ---
+    function loadSavedScores() {
+      try {
+        const raw = localStorage.getItem('lc_typing_scores_v1');
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveScoreToStorage(scoreObj) {
+      try {
+        const existing = loadSavedScores();
+        existing.unshift(scoreObj);
+        const trimmed = existing.slice(0, 20);
+        localStorage.setItem('lc_typing_scores_v1', JSON.stringify(trimmed));
+      } catch (e) {
+        // Fallback
+      }
+    }
+
+    // --- WORD GENERATION ---
+    function generateWords(count = 160) {
+      const pool = WORD_POOLS[currentMode] || WORD_POOLS.common;
+      const arr = [];
+      let prev = '';
+      for (let i = 0; i < count; i++) {
+        let pick = pool[Math.floor(Math.random() * pool.length)];
+        if (pick === prev) {
+          pick = pool[(Math.floor(Math.random() * pool.length) + 1) % pool.length];
+        }
+        arr.push(pick);
+        prev = pick;
+      }
+      return arr;
+    }
+
+    // --- RENDER CONVEYOR BELT ---
+    function renderConveyor() {
+      const recentCompleted = completedWords.slice(-8);
+      let leftHtml = '';
+
+      for (const item of recentCompleted) {
+        const cls = item.correct ? 'word-typed-correct' : 'word-typed-wrong';
+        leftHtml += `<span class="${cls} mr-4">${escapeHtml(item.typed)}</span>`;
+      }
+
+      const targetWord = wordQueue[currentWordIndex] || '';
+
+      let currentPrefixHtml = '';
+      for (let i = 0; i < currentTyped.length; i++) {
+        const typedChar = currentTyped[i];
+        const expectedChar = targetWord[i];
+        if (typedChar === expectedChar) {
+          currentPrefixHtml += `<span class="char-correct">${escapeHtml(typedChar)}</span>`;
+        } else {
+          currentPrefixHtml += `<span class="char-wrong">${escapeHtml(typedChar)}</span>`;
+        }
+      }
+
+      leftHtml += `<span class="inline-flex items-center">${currentPrefixHtml}</span>`;
+      conveyorLeftEl.innerHTML = leftHtml;
+
+      let rightHtml = '';
+      const remainingSuffix = targetWord.slice(currentTyped.length);
+      const hasCurrentMismatch = currentTyped.length > 0 && !targetWord.startsWith(currentTyped);
+
+      if (remainingSuffix.length > 0) {
+        const suffixClass = hasCurrentMismatch ? 'text-red-500 underline decoration-red-400' : 'text-[#1b1b20] font-medium';
+        rightHtml += `<span class="${suffixClass} mr-4">${escapeHtml(remainingSuffix)}</span>`;
+      } else {
+        rightHtml += `<span class="mr-4"></span>`;
+      }
+
+      const upcomingWords = wordQueue.slice(currentWordIndex + 1, currentWordIndex + 14);
+      for (const w of upcomingWords) {
+        rightHtml += `<span class="text-[#1b1b20] mr-4">${escapeHtml(w)}</span>`;
+      }
+
+      conveyorRightEl.innerHTML = rightHtml;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // --- UPDATE LIVE METRICS ---
+    function updateMetricsDisplay() {
+      statSecondsEl.textContent = timeLeft;
+
+      const elapsedRatio = (60 - timeLeft) / 60;
+      const offset = CIRCUMFERENCE * elapsedRatio;
+      timerCircleEl.style.strokeDashoffset = offset.toFixed(2);
+
+      let wpm = correctWordsCount;
+      let cpm = correctCharsCount;
+
+      const targetWord = wordQueue[currentWordIndex] || '';
+      let activeCorrectChars = 0;
+      if (currentTyped.length > 0 && targetWord.startsWith(currentTyped)) {
+        activeCorrectChars = currentTyped.length;
+      }
+
+      const displayCpm = cpm + activeCorrectChars;
+      const displayWpm = Math.max(wpm, Math.round(displayCpm / 5));
+
+      let accuracy = 0;
+      if (totalWordsAttempted > 0) {
+        accuracy = Math.round((correctWordsCount / totalWordsAttempted) * 100);
+      } else if (currentTyped.length > 0) {
+        let matchCount = 0;
+        for (let i = 0; i < currentTyped.length; i++) {
+          if (currentTyped[i] === targetWord[i]) matchCount++;
+        }
+        accuracy = Math.round((matchCount / currentTyped.length) * 100);
+      }
+
+      statWpmEl.textContent = displayWpm;
+      statCpmEl.textContent = displayCpm;
+      statAccuracyEl.textContent = accuracy;
+    }
+
+    // --- START / TIMER / FINISH ---
+    function startTimerIfNeeded() {
+      if (testStatus !== 'idle') return;
+      testStatus = 'running';
+      startBadgeEl.classList.add('opacity-0');
+
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft <= 0) {
+          timeLeft = 0;
+          finishTest();
+        }
+        updateMetricsDisplay();
+      }, 1000);
+    }
+
+    function finishTest() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      testStatus = 'finished';
+
+      const finalCpm = correctCharsCount;
+      const finalWpm = Math.max(correctWordsCount, Math.round(finalCpm / 5));
+      const finalAccuracy = totalWordsAttempted > 0
+        ? Math.round((correctWordsCount / totalWordsAttempted) * 100)
+        : 0;
+
+      statSecondsEl.textContent = '0';
+      statWpmEl.textContent = finalWpm;
+      statCpmEl.textContent = finalCpm;
+      statAccuracyEl.textContent = finalAccuracy;
+
+      const persona = getAnimalPersona(finalWpm);
+      resultAnimalBadgeEl.style.backgroundColor = persona.bg;
+      resultAnimalBadgeEl.style.borderColor = persona.border;
+      resultAnimalBadgeEl.innerHTML = `
+        <div class="text-5xl mb-1">${persona.emoji}</div>
+        <span class="text-xs font-extrabold uppercase tracking-wider text-[#1b1b20]">${persona.animal}</span>
+      `;
+
+      resultHeadlineEl.textContent = persona.title;
+      resultDescriptionEl.innerHTML = `
+        You type with the speed of <strong class="text-[#1b1b20]">${finalWpm} WPM</strong> (<strong class="text-[#1b1b20]">${finalCpm} CPM</strong>). Your accuracy was <strong class="text-[#1b1b20]">${finalAccuracy}%</strong>. ${persona.note}
+      `;
+
+      resultCardContainerEl.classList.remove('hidden');
+
+      const entry = {
+        wpm: finalWpm,
+        cpm: finalCpm,
+        accuracy: finalAccuracy,
+        animal: persona.animal,
+        emoji: persona.emoji,
+        date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      saveScoreToStorage(entry);
+      renderScoresAndDistribution(finalWpm);
+      notifyHeightChange();
+    }
+
+    function resetTest(shouldFocus = false) {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      testStatus = 'idle';
+      timeLeft = 60;
+      wordQueue = generateWords(180);
+      completedWords = [];
+      currentWordIndex = 0;
+      currentTyped = '';
+
+      totalWordsAttempted = 0;
+      correctWordsCount = 0;
+      correctCharsCount = 0;
+      totalTypedChars = 0;
+
+      startBadgeEl.classList.remove('opacity-0');
+      resultCardContainerEl.classList.add('hidden');
+      hiddenInputEl.value = '';
+
+      updateMetricsDisplay();
+      renderConveyor();
+      if (shouldFocus) {
+        hiddenInputEl.focus({ preventScroll: true });
+      }
+      notifyHeightChange();
+    }
+
+    // --- SUBMIT CURRENT WORD ---
+    function submitCurrentWord() {
+      if (testStatus === 'finished') return;
+      const trimmed = currentTyped.trim();
+      if (trimmed.length === 0) return;
+
+      const targetWord = wordQueue[currentWordIndex];
+      const isCorrect = trimmed === targetWord;
+
+      completedWords.push({
+        word: targetWord,
+        typed: trimmed,
+        correct: isCorrect
+      });
+
+      totalWordsAttempted++;
+      if (isCorrect) {
+        correctWordsCount++;
+        correctCharsCount += targetWord.length + 1;
+      }
+
+      currentWordIndex++;
+      currentTyped = '';
+      hiddenInputEl.value = '';
+
+      if (wordQueue.length - currentWordIndex < 40) {
+        wordQueue.push(...generateWords(100));
+      }
+
+      playKeySound(!isCorrect, true);
+      updateMetricsDisplay();
+      renderConveyor();
+    }
+
+    // --- INPUT & KEYBOARD HANDLERS ---
+    conveyorBoxEl.addEventListener('click', () => {
+      hiddenInputEl.focus({ preventScroll: true });
+      conveyorBoxEl.classList.add('focused');
+    });
+
+    hiddenInputEl.addEventListener('focus', () => {
+      conveyorBoxEl.classList.add('focused');
+    });
+
+    hiddenInputEl.addEventListener('blur', () => {
+      conveyorBoxEl.classList.remove('focused');
+    });
+
+    hiddenInputEl.addEventListener('input', (e) => {
+      if (testStatus === 'finished') {
+        hiddenInputEl.value = '';
+        return;
+      }
+
+      const val = hiddenInputEl.value;
+      if (val.length > 0 && testStatus === 'idle') {
+        startTimerIfNeeded();
+      }
+
+      if (val.endsWith(' ')) {
+        currentTyped = val.slice(0, -1);
+        submitCurrentWord();
+        return;
+      }
+
+      const targetWord = wordQueue[currentWordIndex] || '';
+      const addedChar = val.length > currentTyped.length;
+      currentTyped = val;
+
+      if (addedChar) {
+        const idx = currentTyped.length - 1;
+        const isMismatch = currentTyped[idx] !== targetWord[idx];
+        playKeySound(isMismatch, false);
+      }
+
+      updateMetricsDisplay();
+      renderConveyor();
+    });
+
+    hiddenInputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.key === 'Tab') {
+        e.preventDefault();
+        resetTest(true);
+        return;
+      }
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (testStatus === 'finished') {
+          resetTest(true);
+        } else if (currentTyped.trim().length > 0) {
+          submitCurrentWord();
+        }
+      }
+    });
+
+    // --- GLOBAL DISTRIBUTION & MY SCORES RENDERER ---
+    function renderScoresAndDistribution(highlightWpm = null) {
+      const scores = loadSavedScores();
+      const latestWpm = highlightWpm !== null ? highlightWpm : (scores[0] ? scores[0].wpm : null);
+
+      const chartContainer = document.getElementById('global-chart-bars');
+      let barsHtml = '';
+      for (const item of GLOBAL_DISTRIBUTION) {
+        const isUserBucket = latestWpm !== null && latestWpm >= item.min && latestWpm <= item.max;
+        const barColor = isUserBucket ? 'bg-[#ff5100]' : 'bg-[#ffd000] hover:bg-[#ffba00]';
+        const badgeHtml = isUserBucket
+          ? `<span class="-top-6 text-[10px] font-extrabold bg-[#1b1b20] text-white px-1.5 py-0.5 rounded shadow whitespace-nowrap">You (${latestWpm})</span>`
+          : `<span class="text-[10px] font-semibold text-gray-500 mb-1">${item.pct}%</span>`;
+
+        barsHtml += `
+          <div class="flex-1 flex flex-col items-center justify-end h-full relative">
+            ${badgeHtml}
+            <div class="w-full rounded-t-md transition-all duration-300 ${barColor}" style="height: ${Math.max(item.pct, 8)}%"></div>
+          </div>
+        `;
+      }
+      chartContainer.innerHTML = barsHtml;
+
+      const listEl = document.getElementById('my-scores-list');
+      const bestPillEl = document.getElementById('best-wpm-pill');
+
+      if (scores.length === 0) {
+        bestPillEl.textContent = 'Best: 0 WPM';
+        listEl.innerHTML = `
+          <div class="bg-white rounded-xl p-6 text-center border border-dashed border-gray-300">
+            <div class="text-2xl mb-1">⌨️</div>
+            <p class="text-xs font-semibold text-gray-600">No scores recorded yet.</p>
+            <p class="text-[11px] text-gray-400 mt-0.5">Complete a 60-second typing test above to see your history!</p>
+          </div>
+        `;
+        return;
+      }
+
+      const bestWpm = Math.max(...scores.map(s => s.wpm));
+      bestPillEl.textContent = `Best: ${bestWpm} WPM`;
+
+      listEl.innerHTML = scores.map((s, idx) => `
+        <div class="bg-white rounded-xl p-3 border border-gray-200/80 flex items-center justify-between shadow-sm">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">${s.emoji || '🦖'}</span>
+            <div>
+              <div class="text-sm font-extrabold text-[#1b1b20]">${s.wpm} WPM <span class="text-xs font-medium text-gray-400">(${s.cpm} CPM)</span></div>
+              <div class="text-[11px] text-gray-500">${s.animal || 'Typist'} &bull; ${s.date || 'Just now'}</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block text-xs font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+              ${s.accuracy}% acc
+            </span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // --- UI CONTROLS & LISTENERS ---
+    document.getElementById('quick-restart-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetTest(true);
+    });
+
+    document.getElementById('try-again-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      resetTest(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('share-result-btn').addEventListener('click', () => {
+      const wpm = statWpmEl.textContent;
+      const cpm = statCpmEl.textContent;
+      const acc = statAccuracyEl.textContent;
+      const shareText = `I just scored ${wpm} WPM (${cpm} CPM) with ${acc}% accuracy on the 60-Second Typing Speed Test! Can you beat my score?`;
+      copyTextFallback(shareText);
+      const btnText = document.getElementById('share-btn-text');
+      btnText.textContent = 'Copied to Clipboard!';
+      setTimeout(() => {
+        btnText.textContent = 'Copy Score Link';
+      }, 2200);
+    });
+
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentMode = btn.getAttribute('data-mode');
+        document.querySelectorAll('.mode-btn').forEach(b => {
+          b.className = 'mode-btn px-3 py-1 rounded-full text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors';
+        });
+        btn.className = 'mode-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#ffd000] text-[#1b1b20] transition-colors';
+        resetTest(false);
+      });
+    });
+
+    document.getElementById('practice-support-words-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const supportBtn = document.querySelector('.mode-btn[data-mode="support"]');
+      if (supportBtn) supportBtn.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('toggle-scores-drawer-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const sc = document.getElementById('scores-section');
+      if (sc) sc.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('clear-history-btn').addEventListener('click', () => {
+      try {
+        localStorage.removeItem('lc_typing_scores_v1');
+      } catch (e) {}
+      renderScoresAndDistribution(null);
+    });
+
+    document.getElementById('sound-toggle-btn').addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      document.getElementById('sound-on-icon').classList.toggle('hidden', !soundEnabled);
+      document.getElementById('sound-off-icon').classList.toggle('hidden', soundEnabled);
+      document.getElementById('sound-label').textContent = soundEnabled ? 'Sound: ON' : 'Sound: OFF';
+    });
+
+    function copyTextFallback(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => fallbackExecCopy(text));
+      } else {
+        fallbackExecCopy(text);
+      }
+    }
+
+    function fallbackExecCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      resetTest(false);
+      renderScoresAndDistribution(null);
+    });
+  </script>
 </body>
 </html>

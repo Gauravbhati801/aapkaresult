@@ -4002,84 +4002,400 @@ img, svg {
 }
 
 
-/* Typing Test Engine Styles */
-.typing-passage-box {
-  background: #f8fafc;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 16px;
-  font-size: 17px;
-  line-height: 1.8;
-  height: 160px;
-  overflow-y: auto;
-  font-family: 'Consolas', 'Courier New', monospace;
-  user-select: none;
-  margin-bottom: 14px;
-}
-
-.typing-word {
-  padding: 1px 3px;
-  border-radius: 3px;
-  margin: 0 1px;
-}
-
-.typing-word.active-word {
-  background: #dbeafe;
-  color: #1e40af;
-  border-bottom: 2px solid #2563eb;
-  font-weight: 700;
-}
-
-.typing-word.correct {
-  color: #16a34a;
-}
-
-.typing-word.error {
-  color: #dc2626;
-  text-decoration: underline wavy #dc2626;
-  background: #fee2e2;
-}
-
-.typing-input-area {
-  width: 100%;
-  font-size: 18px;
-  font-family: 'Consolas', 'Courier New', monospace;
-  padding: 14px;
-  border: 2px solid #2563eb;
-  border-radius: 8px;
+/* ========================================================
+   OFFICIAL LIVECHAT.COM TYPING TEST ENGINE THEME
+   ======================================================== */
+.lc-hero-section {
+  background: #1B1B20;
+  color: #ffffff;
+  padding: 38px 20px 48px;
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  position: relative;
   box-sizing: border-box;
-  resize: none;
-  height: 80px;
-  outline: none;
 }
 
+.lc-hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.lc-hero-section h2 {
+  font-size: 1.1rem;
+  color: #A1A1AA;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+/* Controls Pill Bar */
+.lc-controls-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.lc-segmented {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px;
+  border-radius: 999px;
+  gap: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lc-segment-btn {
+  background: transparent;
+  border: none;
+  color: #D4D4D8;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lc-segment-btn:hover {
+  color: #ffffff;
+}
+
+.lc-segment-btn.active {
+  background: #ffffff;
+  color: #1B1B20;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.lc-restart-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lc-restart-btn:hover {
+  background: #FFD000;
+  color: #1B1B20;
+  border-color: #FFD000;
+}
+
+/* Metrics & Circular Timer Row */
+.lc-metrics-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* LiveChat Circular Timer with SVG Ring */
+.tst-timer {
+  width: 6.875rem;
+  height: 6.875rem;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.lc-timer-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lc-timer-val {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #1B1B20;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  z-index: 2;
+}
+
+.lc-timer-lbl {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #71717A;
+  text-transform: uppercase;
+  margin-top: 2px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* Metric Boxes */
+.tst-metric {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.lc-metric-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1B1B20;
+  line-height: 1.1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.lc-metric-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717A;
+  margin-top: 4px;
+}
+
+/* Main Stream Container */
+.lc-card-container {
+  background: #f6f6f7;
+  padding: 38px 20px 40px;
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.lc-stream-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  position: relative;
+  cursor: text;
+}
+
+/* Yellow Pulse Indicator */
+.lc-indicator {
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  transform: translateX(-50%);
+  background: #FFD000;
+  color: #1B1B20;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  z-index: 10;
+  animation: lcPulse 1.4s infinite ease-out;
+  user-select: none;
+  pointer-events: none;
+}
+
+.lc-indicator::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 7px 5px 0 5px;
+  border-color: #FFD000 transparent transparent transparent;
+}
+
+@keyframes lcPulse {
+  0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 208, 0, 0.7); }
+  70% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 0 8px rgba(255, 208, 0, 0); }
+  100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 208, 0, 0); }
+}
+
+/* Stream Conveyor Input */
+.tst-input {
+  font-family: 'Merriweather', Georgia, 'Noto Sans Devanagari', serif;
+  font-size: 2.15rem;
+  font-weight: 300;
+  position: relative;
+  line-height: 2.5;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.tst-input-wrapper {
+  width: 50%;
+  overflow: clip;
+  box-sizing: border-box;
+}
+
+.lc-stream-left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.lc-typed-words {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #71717A;
+}
+
+.lc-typed-word.wrong, .wrong {
+  text-decoration: line-through !important;
+  color: #dc2626 !important;
+}
+
+.lc-current-input {
+  color: #0066FF;
+  display: inline-block;
+  outline: none;
+  caret-color: #1B1B20;
+  min-width: 2px;
+  padding-left: 8px;
+  font-weight: 400;
+}
+
+.lc-current-input.wrong {
+  color: #dc2626 !important;
+  text-decoration: line-through !important;
+}
+
+.lc-stream-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 12px;
+  color: #1B1B20;
+}
+
+.lc-prompter-word {
+  margin: 0 7px;
+  transition: opacity 0.15s ease;
+}
+
+.lc-prompter-word.target {
+  font-weight: 400;
+  color: #1B1B20;
+}
+
+/* Benchmarks footer badge */
+.lc-benchmarks-badge {
+  max-width: 960px;
+  margin: 20px auto 0;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 13.5px;
+  color: #3F3F46;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Qualification badge */
+.typing-exam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.typing-exam-badge.passed {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+/* Fallback ribbon & stat boxes for embedded tools / sarkari-tools.html */
 .typing-stats-ribbon {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
   margin-bottom: 16px;
 }
 
 .stat-box {
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 10px 8px;
+  border-radius: 10px;
+  padding: 12px 10px;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
 .stat-box strong {
   display: block;
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   color: #1e3a8a;
   line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
 }
 
 .stat-box span {
-  font-size: 11px;
+  font-size: 11.5px;
   color: #64748b;
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+.typing-passage-box {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-size: 18px;
+  line-height: 2.0;
+  height: 120px;
+  overflow: hidden;
+  font-family: 'Merriweather', 'Noto Sans Devanagari', serif;
+}
+
+.typing-input-area {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+  border-color: #86efac;
+  color: #15803d;
 }
 
 
@@ -4260,36 +4576,51 @@ img, svg {
 
 
   /* Typing Test on Mobile */
-  .typing-stats-ribbon {
+  .typing-pro-wrapper {
+    padding: 16px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .typing-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .typing-toolbar-left {
+    justify-content: center !important;
+  }
+
+  .typing-stats-hud {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 6px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  .stat-box {
-    padding: 6px 4px !important;
+  .hud-card {
+    padding: 8px 4px !important;
   }
 
-  .stat-box strong {
-    font-size: 1.15rem !important;
+  .hud-card strong {
+    font-size: 1.25rem !important;
   }
 
-  .stat-box span {
-    font-size: 9px !important;
+  .hud-card span {
+    font-size: 9.5px !important;
   }
 
   .typing-passage-box {
-    font-size: 14.5px !important;
-    line-height: 1.6 !important;
-    height: 120px !important;
-    padding: 10px !important;
+    font-size: 17px !important;
+    line-height: 2.1 !important;
+    height: 110px !important;
+    padding: 12px 14px !important;
   }
 
   .typing-input-area {
-    font-size: 15px !important;
-    height: 65px !important;
-    padding: 10px !important;
+    font-size: 17px !important;
+    height: 48px !important;
+    padding: 10px 14px !important;
   }
 
 

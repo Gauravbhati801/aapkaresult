@@ -19,6 +19,17 @@ function switchToolTab(tabId) {
   document.querySelectorAll('.tool-panel').forEach(panel => {
     panel.classList.toggle('active', panel.id === tabId);
   });
+  // If typing tab selected, ensure iframe height is synced smoothly
+  if (tabId === 'tab-typing') {
+    const ifr = document.getElementById('typingTestIframe');
+    if (ifr && ifr.contentWindow) {
+      try {
+        const mainEl = ifr.contentWindow.document.getElementById('typing-hero');
+        const h = mainEl ? mainEl.offsetHeight : ifr.contentWindow.document.body.offsetHeight;
+        if (h > 200) ifr.style.height = h + 'px';
+      } catch (e) {}
+    }
+  }
   // Update URL hash without jumping
   if (history.replaceState) {
     history.replaceState(null, null, '#' + tabId);
@@ -212,103 +223,267 @@ function calculateAgeAction() {
 }
 
 // -------------------------------------------------------------
-// 2. SSC & RAILWAY 10-MIN TYPING SPEED TEST ENGINE
+// -------------------------------------------------------------
+// 2. SSC & RAILWAY 10-MIN TYPING SPEED TEST ENGINE (LIVECHAT.COM EXACT EDITION)
 // -------------------------------------------------------------
 const TYPING_PASSAGES = {
   en: [
-    `The digital revolution has transformed public administration in India, providing seamless services to citizens across the country. Government schemes and welfare initiatives are now tracked in real time through advanced databases and direct benefit transfers. Efficient documentation and fast data entry skills are essential for ministerial staff working in central secretariats, postal offices, and railway divisions. Aspirants preparing for clerical examinations like SSC CHSL and Railway NTPC must practice daily to build finger muscle memory, maintain continuous concentration, and achieve high keyboard accuracy. Precision is always more valuable than mere raw speed in competitive computer tests.`,
-    `Indian Railways represents the lifeline of national transportation, connecting remote villages to bustling metropolises. Modern computer networks manage ticketing systems, freight logistics, passenger reservations, and train scheduling across dozens of operating zones. Junior accounts assistants and senior clerks must maintain precise typing speeds of thirty words per minute with minimum ninety-five percent accuracy. Maintaining proper sitting posture, resting wrists comfortably, and looking steadily at the computer screen rather than looking down at keys prevents physical fatigue during rigorous government examination sessions.`,
-    `Fundamental rights guaranteed under the Indian Constitution protect individual liberties and promote social justice. Article fourteen ensures equality before the law, while Article twenty-one guarantees the protection of life and personal liberty. Effective civil governance relies upon accurate clerical records, official gazette notifications, and judicial proceedings. Candidates appearing for High Court stenographer and clerk recruitment tests must possess flawless typing ability in both English and Hindi. Regular practice on varied standard passages guarantees confidence on final examination day.`
+    `The digital revolution has transformed public administration in India providing seamless services to citizens across the country Government schemes and welfare initiatives are now tracked in real time through advanced databases and direct benefit transfers Efficient documentation and fast data entry skills are essential for ministerial staff working in central secretariats postal offices and railway divisions Aspirants preparing for clerical examinations like SSC CHSL and Railway NTPC must practice daily to build finger muscle memory maintain continuous concentration and achieve high keyboard accuracy Precision is always more valuable than mere raw speed in competitive computer tests Modern e-governance infrastructure requires competent personnel who can draft official memoranda process electronic dispatches and maintain database integrity with speed and diligence Systematic keyboard training with correct hand placement reduces fatigue and enhances long term productivity across all government offices`,
+    `Indian Railways represents the lifeline of national transportation connecting remote villages to bustling metropolises Modern computer networks manage ticketing systems freight logistics passenger reservations and train scheduling across dozens of operating zones Junior accounts assistants and senior clerks must maintain precise typing speeds of thirty words per minute with minimum ninety five percent accuracy Maintaining proper sitting posture resting wrists comfortably and looking steadily at the computer screen rather than looking down at keys prevents physical fatigue during rigorous government examination sessions The continuous modernization of railway infrastructure demands swift adaptation to automated office tools electronic file processing systems and prompt public communication channels Daily persistent practice on diverse technical and administrative paragraphs is the single most reliable path to securing high qualifying scores`,
+    `Fundamental rights guaranteed under the Indian Constitution protect individual liberties and promote social justice Article fourteen ensures equality before the law while Article twenty one guarantees the protection of life and personal liberty Effective civil governance relies upon accurate clerical records official gazette notifications and judicial proceedings Candidates appearing for High Court stenographer and clerk recruitment tests must possess flawless typing ability in both English and Hindi Regular practice on varied standard passages guarantees confidence on final examination day In judicial establishments proceedings must be transcribed with verbatim precision where even a slight typographical error could alter legal interpretation Thus developing an eye for meticulous proofreading alongside brisk keyboard agility remains the primary benchmark for court administrative staff across the nation`
   ],
   hi: [
-    `भारतीय प्रशासनिक सेवा और विभिन्न सरकारी विभागों में कंप्यूटर आधारित कार्यप्रणाली का विस्तार बहुत तीव्र गति से हो रहा है। आज लगभग सभी फाइलों, पत्राचार और जनहित योजनाओं का प्रबंधन डिजिटल माध्यम से किया जाता है। कर्मचारी चयन आयोग (SSC) और उत्तर प्रदेश पुलिस कंप्यूटर ऑपरेटर जैसी महत्वपूर्ण परीक्षाओं में हिंदी टाइपिंग परीक्षा अनिवार्य होती है। अभ्यर्थियों को मंगल फॉन्ट और रेमिंगटन गेल अथवा इनस्क्रिप्ट कीबोर्ड लेआउट पर नियमित अभ्यास करना चाहिए ताकि वे निर्धारित समय सीमा में न्यूनतम त्रुटियों के साथ परीक्षा उत्तीर्ण कर सकें।`,
-    `रेलवे भर्ती बोर्ड द्वारा आयोजित एनटीपीसी परीक्षा में कनिष्ठ लिपिक और वरिष्ठ लेखा सहायकों के लिए टाइपिंग दक्षता अनिवार्य है। हिंदी माध्यम में पच्चीस शब्द प्रति मिनट तथा अंग्रेजी में तीस शब्द प्रति मिनट की गति अपेक्षित होती है। अभ्यर्थियों को अभ्यास करते समय केवल गति बढ़ाने पर ध्यान केंद्रित करने के बजाय शुद्धता बनाए रखने पर अधिक जोर देना चाहिए। परीक्षा हॉल में शांत मन और नियमित श्वास नियंत्रण से अनावश्यक त्रुटियों से बचा जा सकता है और आत्मविश्वास में वृद्धि होती है।`
+    `भारतीय प्रशासनिक सेवा और विभिन्न सरकारी विभागों में कंप्यूटर आधारित कार्यप्रणाली का विस्तार बहुत तीव्र गति से हो रहा है आज लगभग सभी फाइलों पत्राचार और जनहित योजनाओं का प्रबंधन डिजिटल माध्यम से किया जाता है कर्मचारी चयन आयोग और उत्तर प्रदेश पुलिस कंप्यूटर ऑपरेटर जैसी महत्वपूर्ण परीक्षाओं में हिंदी टाइपिंग परीक्षा अनिवार्य होती है अभ्यर्थियों को मंगल फॉन्ट और रेमिंगटन गेल अथवा इनस्क्रिप्ट कीबोर्ड लेआउट पर नियमित अभ्यास करना चाहिए ताकि वे निर्धारित समय सीमा में न्यूनतम त्रुटियों के साथ परीक्षा उत्तीर्ण कर सकें सरकारी कार्यालयों में राजभाषा हिंदी का प्रभावी प्रयोग सुनिश्चित करने के लिए कुशल कंप्यूटर सहायकों की अत्यधिक मांग है सही शारीरिक मुद्रा एकाग्र चित्त और नियमित अभ्यास से कोई भी अभ्यर्थी निर्धारित तीस शब्द प्रति मिनट की गति सरलता से प्राप्त कर सकता है`,
+    `रेलवे भर्ती बोर्ड द्वारा आयोजित एनटीपीसी परीक्षा में कनिष्ठ लिपिक और वरिष्ठ लेखा सहायकों के लिए टाइपिंग दक्षता अनिवार्य है हिंदी माध्यम में पच्चीस शब्द प्रति मिनट तथा अंग्रेजी में तीस शब्द प्रति मिनट की गति अपेक्षित होती है अभ्यर्थियों को अभ्यास करते समय केवल गति बढ़ाने पर ध्यान केंद्रित करने के बजाय शुद्धता बनाए रखने पर अधिक जोर देना चाहिए परीक्षा हॉल में शांत मन और नियमित श्वास नियंत्रण से अनावश्यक त्रुटियों से बचा जा सकता है और आत्मविश्वास में वृद्धि होती है दैनिक जीवन में कंप्यूटर का सही उपयोग और कीबोर्ड शॉर्टकट की जानकारी कार्य कुशलता को दोगुना कर देती है लगातार अभ्यास करने से उंगलियों की मांसपेशीय स्मृति मजबूत होती है और बिना कीबोर्ड देखे स्क्रीन पर टाइप करने की क्षमता विकसित होती है`
   ]
 };
 
 let typingTimer = null;
-let typingTimeLeft = 600; // default 10 min
-let typingDuration = 600;
+let typingTimeLeft = 60;
+let typingDuration = 60;
 let typingIsRunning = false;
-let typingWordsArray = [];
-let typingCurrentWordIndex = 0;
-let typingCharIndex = 0;
+let typingPrompter = [];
+let typingTypedWords = [];
 let typingMistakes = 0;
 let typingKeystrokes = 0;
 let typingCorrectWords = 0;
+let typingSoundEnabled = true;
+let typingAudioCtx = null;
+
+function playKeyClickSound() {
+  if (!typingSoundEnabled) return;
+  try {
+    if (!typingAudioCtx) {
+      typingAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (typingAudioCtx.state === 'suspended') {
+      typingAudioCtx.resume();
+    }
+    const osc = typingAudioCtx.createOscillator();
+    const gain = typingAudioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(170 + Math.random() * 40, typingAudioCtx.currentTime);
+    gain.gain.setValueAtTime(0.04, typingAudioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, typingAudioCtx.currentTime + 0.035);
+    osc.connect(gain);
+    gain.connect(typingAudioCtx.destination);
+    osc.start();
+    osc.stop(typingAudioCtx.currentTime + 0.035);
+  } catch (e) {
+    // Audio context not allowed or supported
+  }
+}
+
+function focusTestInput() {
+  const el = document.getElementById('test-input');
+  if (el) {
+    el.focus();
+  }
+}
 
 function initTypingTest() {
   const langSelect = document.getElementById('typingLanguage');
   const durSelect = document.getElementById('typingDuration');
-  const startBtn = document.getElementById('startTypingBtn');
   const resetBtn = document.getElementById('resetTypingBtn');
-  const inputArea = document.getElementById('typingInput');
+  const testInput = document.getElementById('test-input');
+  const oldInput = document.getElementById('typingInput');
 
-  if (langSelect) langSelect.addEventListener('change', loadTypingPassage);
+  // Segmented Language Buttons (LiveChat style)
+  document.querySelectorAll('#langSegmentGroup .lc-segment-btn, #langSegmentGroup .typing-segment-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#langSegmentGroup .lc-segment-btn, #langSegmentGroup .typing-segment-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const lang = btn.getAttribute('data-lang');
+      if (langSelect) langSelect.value = lang;
+      resetTypingSession();
+    });
+  });
+
+  // Segmented Duration Buttons (LiveChat style)
+  document.querySelectorAll('#durSegmentGroup .lc-segment-btn, #durSegmentGroup .typing-segment-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#durSegmentGroup .lc-segment-btn, #durSegmentGroup .typing-segment-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const dur = parseInt(btn.getAttribute('data-dur'), 10);
+      if (durSelect) durSelect.value = dur;
+      typingDuration = dur;
+      typingTimeLeft = dur;
+      const tVal = document.getElementById('typingTimerVal');
+      if (tVal) tVal.textContent = dur;
+      resetTypingSession();
+    });
+  });
+
+  if (langSelect) langSelect.addEventListener('change', resetTypingSession);
   if (durSelect) {
     durSelect.addEventListener('change', () => {
       typingDuration = parseInt(durSelect.value, 10);
       typingTimeLeft = typingDuration;
-      document.getElementById('typingTimerVal').textContent = formatTypingTime(typingTimeLeft);
+      const tVal = document.getElementById('typingTimerVal');
+      if (tVal) tVal.textContent = typingDuration;
+      resetTypingSession();
     });
   }
 
-  if (startBtn) startBtn.addEventListener('click', startTypingSession);
   if (resetBtn) resetBtn.addEventListener('click', resetTypingSession);
-  if (inputArea) inputArea.addEventListener('input', handleTypingInput);
 
-  loadTypingPassage();
+  // LiveChat stream conveyor input listeners
+  if (testInput) {
+    testInput.addEventListener('input', handleLiveChatInput);
+    testInput.addEventListener('keydown', handleLiveChatKeyDown);
+  }
+
+  // Fallback listener for old textarea if present on sarkari-tools.html
+  if (oldInput) {
+    oldInput.addEventListener('input', handleOldTypingInput);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && (document.getElementById('test-input') || document.getElementById('typingInput'))) {
+      resetTypingSession();
+    }
+  });
+
+  loadLiveChatWords();
+  focusTestInput();
 }
 
-function loadTypingPassage() {
+function loadLiveChatWords() {
   const lang = document.getElementById('typingLanguage')?.value || 'en';
   const list = TYPING_PASSAGES[lang] || TYPING_PASSAGES['en'];
   const text = list[Math.floor(Math.random() * list.length)];
-  const displayBox = document.getElementById('typingPassageBox');
-
-  if (!displayBox) return;
-
-  typingWordsArray = text.trim().split(/\s+/);
-  displayBox.innerHTML = '';
-  typingWordsArray.forEach((word, index) => {
-    const span = document.createElement('span');
-    span.className = 'typing-word' + (index === 0 ? ' active-word' : '');
-    span.id = `tw-${index}`;
-    span.textContent = word + ' ';
-    displayBox.appendChild(span);
-  });
-
-  typingCurrentWordIndex = 0;
+  
+  // Clean split into words
+  const words = text.trim().split(/\s+/);
+  typingPrompter = [...words, ...words]; // duplicate for continuous stream
+  typingTypedWords = [];
   typingMistakes = 0;
   typingKeystrokes = 0;
   typingCorrectWords = 0;
+
+  renderLiveChatStream();
+}
+
+function renderLiveChatStream() {
+  const typedContainer = document.getElementById('lcTypedWords');
+  const prompterContainer = document.getElementById('lcPrompterWords');
+
+  if (typedContainer) {
+    // Show last 6 typed words rolling off to the left
+    typedContainer.innerHTML = typingTypedWords.slice(-6).map(w => 
+      `<span class="lc-typed-word ${w.isWrong ? 'wrong' : ''}">${w.word}</span>`
+    ).join(' ');
+  }
+
+  if (prompterContainer) {
+    // Show upcoming 12 words streaming in
+    prompterContainer.innerHTML = typingPrompter.slice(0, 12).map((w, i) => 
+      `<span class="lc-prompter-word ${i === 0 ? 'target' : ''}">${w}</span>`
+    ).join(' ');
+  }
+}
+
+function handleLiveChatInput(e) {
+  if (!typingIsRunning) {
+    startTypingSession();
+  }
+
+  const testInput = document.getElementById('test-input');
+  if (!testInput) return;
+
+  const currentTyped = testInput.textContent.replace(/\s/g, '');
+  const targetWord = typingPrompter[0] || '';
+
+  // Visual error indicator while typing the word
+  if (targetWord && !targetWord.startsWith(currentTyped)) {
+    testInput.classList.add('wrong');
+  } else {
+    testInput.classList.remove('wrong');
+  }
+
+  typingKeystrokes++;
+  playKeyClickSound();
+  updateTypingStats();
+}
+
+function handleLiveChatKeyDown(e) {
+  if (e.key === 'Escape') {
+    resetTypingSession();
+    return;
+  }
+
+  const testInput = document.getElementById('test-input');
+  if (!testInput) return;
+
+  // Spacebar or Enter advances to next word
+  if (e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault();
+    const currentTyped = testInput.textContent.replace(/\s/g, '');
+    const targetWord = typingPrompter[0] || '';
+
+    if (currentTyped.length > 0) {
+      const isMatch = (currentTyped === targetWord);
+
+      if (isMatch) {
+        typingTypedWords.push({ word: currentTyped, isWrong: false });
+        typingCorrectWords++;
+      } else {
+        typingTypedWords.push({ word: currentTyped, isWrong: true });
+        typingMistakes++;
+      }
+
+      // Shift prompter word
+      typingPrompter.shift();
+
+      // If prompter is running low, append more words
+      if (typingPrompter.length < 15) {
+        const lang = document.getElementById('typingLanguage')?.value || 'en';
+        const list = TYPING_PASSAGES[lang] || TYPING_PASSAGES['en'];
+        const text = list[Math.floor(Math.random() * list.length)];
+        typingPrompter.push(...text.trim().split(/\s+/));
+      }
+
+      testInput.textContent = '';
+      testInput.classList.remove('wrong');
+      renderLiveChatStream();
+      updateTypingStats();
+    }
+  }
 }
 
 function startTypingSession() {
-  const input = document.getElementById('typingInput');
-  const startBtn = document.getElementById('startTypingBtn');
-  const durSelect = document.getElementById('typingDuration');
-
   if (typingIsRunning) return;
 
-  typingDuration = parseInt(durSelect.value, 10);
+  const durSelect = document.getElementById('typingDuration');
+  typingDuration = parseInt(durSelect?.value || '60', 10);
   typingTimeLeft = typingDuration;
   typingIsRunning = true;
   typingMistakes = 0;
   typingKeystrokes = 0;
   typingCorrectWords = 0;
-  typingCurrentWordIndex = 0;
 
-  input.disabled = false;
-  input.value = '';
-  input.focus();
-  startBtn.textContent = '⏱️ टेस्ट जारी है...';
-  startBtn.disabled = true;
+  // Hide the yellow pulsing "Start typing" indicator
+  const indicator = document.getElementById('tst-indicator');
+  if (indicator) indicator.style.display = 'none';
 
   clearInterval(typingTimer);
   typingTimer = setInterval(() => {
     typingTimeLeft--;
-    document.getElementById('typingTimerVal').textContent = formatTypingTime(typingTimeLeft);
+
+    // Update timer text
+    const tVal = document.getElementById('typingTimerVal');
+    if (tVal) tVal.textContent = typingTimeLeft;
+
+    // Update LiveChat circular SVG progress ring
+    const circle = document.getElementById('lcTimerCircle');
+    const dot = document.getElementById('lcTimerDot');
+    if (circle && dot) {
+      const pct = Math.max(0, typingTimeLeft / typingDuration);
+      const offset = 332 - 332 * pct;
+      circle.style.strokeDashoffset = offset + 'px';
+      dot.style.transform = `rotate(${360 * pct + 90}deg)`;
+    }
+
     updateTypingStats();
 
     if (typingTimeLeft <= 0) {
@@ -317,106 +492,68 @@ function startTypingSession() {
   }, 1000);
 }
 
-function handleTypingInput(e) {
-  if (!typingIsRunning) {
-    startTypingSession();
-  }
-
-  const input = e.target;
-  const val = input.value;
-  typingKeystrokes++;
-
-  // Check if user pressed space (word complete)
-  if (val.endsWith(' ')) {
-    const typedWord = val.trim();
-    const targetWord = typingWordsArray[typingCurrentWordIndex];
-    const currentSpan = document.getElementById(`tw-${typingCurrentWordIndex}`);
-
-    if (currentSpan) {
-      if (typedWord === targetWord) {
-        currentSpan.className = 'typing-word correct';
-        typingCorrectWords++;
-      } else {
-        currentSpan.className = 'typing-word error';
-        typingMistakes++;
-      }
-    }
-
-    typingCurrentWordIndex++;
-    input.value = '';
-
-    // Highlight next word
-    if (typingCurrentWordIndex < typingWordsArray.length) {
-      const nextSpan = document.getElementById(`tw-${typingCurrentWordIndex}`);
-      if (nextSpan) {
-        nextSpan.className = 'typing-word active-word';
-        // Auto scroll passage box
-        const box = document.getElementById('typingPassageBox');
-        if (nextSpan.offsetTop > box.scrollTop + 100) {
-          box.scrollTop = nextSpan.offsetTop - 50;
-        }
-      }
-    } else {
-      endTypingSession();
-    }
-  } else {
-    // Character-level live check on active word
-    const currentSpan = document.getElementById(`tw-${typingCurrentWordIndex}`);
-    const targetWord = typingWordsArray[typingCurrentWordIndex];
-    if (currentSpan && targetWord) {
-      if (!targetWord.startsWith(val)) {
-        currentSpan.classList.add('error');
-      } else {
-        currentSpan.classList.remove('error');
-      }
-    }
-  }
-
-  updateTypingStats();
-}
-
 function updateTypingStats() {
   const timeElapsedSec = Math.max(1, typingDuration - typingTimeLeft);
   const timeElapsedMin = timeElapsedSec / 60;
 
-  // Standard typing measurement: 5 strokes = 1 word
+  // LiveChat standard calculation: 5 keystrokes = 1 word
   const grossWords = typingKeystrokes / 5;
   const grossWpm = Math.round(grossWords / timeElapsedMin);
   const netWpm = Math.max(0, Math.round((grossWords - typingMistakes) / timeElapsedMin));
-  const accuracy = typingKeystrokes > 0 
-    ? Math.max(0, Math.round(((typingKeystrokes - (typingMistakes * 5)) / typingKeystrokes) * 100))
+  const totalTyped = typingCorrectWords + typingMistakes;
+  const accuracy = totalTyped > 0 
+    ? Math.max(0, Math.round((typingCorrectWords / totalTyped) * 100))
     : 100;
 
-  document.getElementById('typingGrossWpm').textContent = grossWpm || 0;
-  document.getElementById('typingNetWpm').textContent = netWpm || 0;
-  document.getElementById('typingAccuracy').textContent = accuracy + '%';
-  document.getElementById('typingErrors').textContent = typingMistakes;
+  const netEl = document.getElementById('typingNetWpm');
+  const accEl = document.getElementById('typingAccuracy');
+  const grossEl = document.getElementById('typingGrossWpm');
+  const errEl = document.getElementById('typingErrors');
+
+  if (netEl) netEl.textContent = netWpm;
+  if (accEl) accEl.textContent = accuracy + '%';
+  if (grossEl) grossEl.textContent = grossWpm; // CPM / Gross
+  if (errEl) errEl.textContent = typingMistakes;
+
+  const examBadge = document.getElementById('examLiveVerdict');
+  if (examBadge) {
+    const lang = document.getElementById('typingLanguage')?.value || 'en';
+    const targetReq = lang === 'en' ? 35 : 30;
+    if (netWpm >= targetReq && accuracy >= 95) {
+      examBadge.className = 'typing-exam-badge passed';
+      examBadge.textContent = `✅ Target Achieved: ${netWpm} WPM @ ${accuracy}% (Qualified)`;
+    } else {
+      examBadge.className = 'typing-exam-badge';
+      examBadge.textContent = `🎯 Target: ${targetReq} WPM @ 95% (Current: ${netWpm} WPM)`;
+    }
+  }
 }
 
 function endTypingSession() {
   clearInterval(typingTimer);
   typingIsRunning = false;
 
-  const input = document.getElementById('typingInput');
-  const startBtn = document.getElementById('startTypingBtn');
-  input.disabled = true;
-  startBtn.textContent = '🚀 दोबारा टेस्ट शुरू करें';
-  startBtn.disabled = false;
+  const testInput = document.getElementById('test-input');
+  if (testInput) {
+    testInput.setAttribute('contenteditable', 'false');
+    testInput.blur();
+  }
 
-  const timeElapsedSec = typingDuration - typingTimeLeft || 1;
+  const timeElapsedSec = Math.max(1, typingDuration - typingTimeLeft);
   const timeElapsedMin = timeElapsedSec / 60;
   const grossWords = typingKeystrokes / 5;
   const grossWpm = Math.round(grossWords / timeElapsedMin);
   const netWpm = Math.max(0, Math.round((grossWords - typingMistakes) / timeElapsedMin));
-  const accuracy = typingKeystrokes > 0 
-    ? Math.max(0, Math.round(((typingKeystrokes - (typingMistakes * 5)) / typingKeystrokes) * 100))
+  const totalTyped = typingCorrectWords + typingMistakes;
+  const accuracy = totalTyped > 0 
+    ? Math.max(0, Math.round((typingCorrectWords / totalTyped) * 100))
     : 100;
 
   const lang = document.getElementById('typingLanguage')?.value || 'en';
   const targetReq = lang === 'en' ? 35 : 30;
   const qualified = netWpm >= targetReq && accuracy >= 95;
 
-  // Show Modal Scorecard
+  // Show Modal Scorecard (LiveChat Styled)
   const modal = document.getElementById('typingScoreModal');
   if (modal) {
     document.getElementById('modalNetWpm').textContent = netWpm;
@@ -426,10 +563,12 @@ function endTypingSession() {
     document.getElementById('modalKeystrokes').textContent = typingKeystrokes;
     
     const verdict = document.getElementById('modalVerdict');
-    if (qualified) {
-      verdict.innerHTML = `<span style="color:#16a34a; font-weight:800; font-size:1.15rem;">🎉 बधाई हो! आप SSC CHSL / Railway NTPC टाइपिंग मानदंड (Benchmark: ${targetReq} WPM @ 95%) के अनुसार योग्य (QUALIFIED) हैं!</span>`;
-    } else {
-      verdict.innerHTML = `<span style="color:#dc2626; font-weight:700;">⚠️ और अभ्यास की आवश्यकता है! सरकारी परीक्षाओं के लिए न्यूनतम ${targetReq} Net WPM और 95% शुद्धता अनिवार्य है।</span>`;
+    if (verdict) {
+      if (qualified) {
+        verdict.innerHTML = `<div style="background:#dcfce7; border:2px solid #22c55e; border-radius:12px; padding:14px; margin-bottom:14px;"><span style="color:#15803d; font-weight:800; font-size:1.15rem;">🎉 बधाई हो! आप SSC CHSL / Railway NTPC टाइपिंग मानदंड (${targetReq} WPM @ 95% Accuracy) के अनुसार QUALIFIED हैं!</span></div>`;
+      } else {
+        verdict.innerHTML = `<div style="background:#fef2f2; border:2px solid #ef4444; border-radius:12px; padding:14px; margin-bottom:14px;"><span style="color:#b91c1c; font-weight:700;">⚠️ और अभ्यास की आवश्यकता है! सरकारी परीक्षाओं के लिए न्यूनतम ${targetReq} Net WPM और 95% शुद्धता अनिवार्य है।</span></div>`;
+      }
     }
     modal.style.display = 'flex';
   }
@@ -438,30 +577,56 @@ function endTypingSession() {
 function resetTypingSession() {
   clearInterval(typingTimer);
   typingIsRunning = false;
+
   const durSelect = document.getElementById('typingDuration');
-  typingDuration = parseInt(durSelect?.value || '600', 10);
+  typingDuration = parseInt(durSelect?.value || '60', 10);
   typingTimeLeft = typingDuration;
 
-  document.getElementById('typingTimerVal').textContent = formatTypingTime(typingTimeLeft);
-  document.getElementById('typingGrossWpm').textContent = '0';
-  document.getElementById('typingNetWpm').textContent = '0';
-  document.getElementById('typingAccuracy').textContent = '100%';
-  document.getElementById('typingErrors').textContent = '0';
+  const tVal = document.getElementById('typingTimerVal');
+  if (tVal) tVal.textContent = typingDuration;
 
-  const input = document.getElementById('typingInput');
-  const startBtn = document.getElementById('startTypingBtn');
-  input.disabled = false;
-  input.value = '';
-  startBtn.textContent = '🚀 टाइपिंग टेस्ट शुरू करें';
-  startBtn.disabled = false;
+  // Reset Circular SVG Timer
+  const circle = document.getElementById('lcTimerCircle');
+  const dot = document.getElementById('lcTimerDot');
+  if (circle) circle.style.strokeDashoffset = '0px';
+  if (dot) dot.style.transform = 'rotate(90deg)';
 
-  loadTypingPassage();
+  const netEl = document.getElementById('typingNetWpm');
+  const accEl = document.getElementById('typingAccuracy');
+  const grossEl = document.getElementById('typingGrossWpm');
+  const errEl = document.getElementById('typingErrors');
+  if (netEl) netEl.textContent = '0';
+  if (accEl) accEl.textContent = '100%';
+  if (grossEl) grossEl.textContent = '0';
+  if (errEl) errEl.textContent = '0';
+
+  const indicator = document.getElementById('tst-indicator');
+  if (indicator) indicator.style.display = 'block';
+
+  const examBadge = document.getElementById('examLiveVerdict');
+  if (examBadge) {
+    const lang = document.getElementById('typingLanguage')?.value || 'en';
+    const targetReq = lang === 'en' ? 35 : 30;
+    examBadge.className = 'typing-exam-badge';
+    examBadge.textContent = `🎯 Target: ${targetReq} WPM @ 95% (Ready)`;
+  }
+
+  const testInput = document.getElementById('test-input');
+  if (testInput) {
+    testInput.setAttribute('contenteditable', 'true');
+    testInput.textContent = '';
+    testInput.classList.remove('wrong');
+    setTimeout(() => testInput.focus(), 50);
+  }
+
+  loadLiveChatWords();
 }
 
-function formatTypingTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+// Fallback input handler for old textarea if opened in sarkari-tools.html tab 2
+function handleOldTypingInput(e) {
+  if (!typingIsRunning) startTypingSession();
+  typingKeystrokes++;
+  updateTypingStats();
 }
 
 function closeTypingModal() {
