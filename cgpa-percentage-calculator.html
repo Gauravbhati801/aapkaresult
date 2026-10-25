@@ -123,244 +123,404 @@
   <main class="job-page-container">
 
     <!-- PAGE HERO -->
-    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #15803d 100%); color: #ffffff; padding: 28px 20px; border-radius: 14px; text-align: center; margin-bottom: 22px;">
-      <span style="background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase;">
-        📊 4-in-1 Academic &amp; Form Fill Calculator
+    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #15803d 100%); color: #ffffff; padding: 32px 22px; border-radius: 16px; text-align: center; margin-bottom: 24px; box-shadow: 0 6px 20px rgba(21,128,61,0.15);">
+      <span style="background: rgba(255,255,255,0.18); padding: 5px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 12px;">
+        📊 5-in-1 Academic &amp; Form Fill Calculator &bull; CBSE &bull; UP Board &bull; AICTE
       </span>
-      <h1 style="font-size: 1.85rem; margin: 10px 0 8px 0; font-weight: 800; line-height: 1.3;">
+      <h1 style="font-size: 2rem; margin: 0 0 10px 0; font-weight: 800; line-height: 1.3;">
         Percentage to CGPA &amp; Academic Marks Calculator 2026
       </h1>
-      <p style="font-size: 0.95rem; color: #dcfce7; margin: 0 auto; max-width: 720px; line-height: 1.5;">
-        सरकारी नौकरी, यूपी स्कॉलरशिप और डाक विभाग GDS भर्ती फॉर्म भरते समय 10वीं/12वीं और डिग्री के अंकों का प्रतिशत (Percentage) या CGPA आसानी से निकालें।
+      <p style="font-size: 1.02rem; color: #dcfce7; font-weight: 600; margin: 0 0 10px 0;">
+        प्रतिशत से सीजीपीए व यूपी बोर्ड / सीबीएसई प्राप्तांक कनवर्टर 2026
+      </p>
+      <p style="font-size: 0.94rem; color: #f0fdf4; margin: 0 auto; max-width: 760px; line-height: 1.6;">
+        Convert CGPA to Percentage using official CBSE 9.5 formula, AICTE university multiplier, or calculate exact UP Board 10th (High School / 600) and 12th (Intermediate / 500) aggregate percentage, divisions, and scholarship eligibility in 1-click.
       </p>
     </div>
 
     <!-- MAIN CONVERTER CONTAINER -->
-    <div class="tool-card-box" id="cgpaConverterContainer">
-      <!-- Mode Selection Buttons -->
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
-        <button type="button" class="cgpa-mode-btn tool-tab-btn active" data-target="panel-cgpa-to-pct">
-          1. CGPA से Percentage
+    <div class="tool-card-box" id="cgpaConverterContainer" style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 26px;">
+      
+      <!-- MODE TABS -->
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; justify-content: center;">
+        <button type="button" class="cgpa-mode-btn active" data-target="panelCgpaToPercent" style="padding: 9px 16px; font-size: 13.5px; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+          🎯 CGPA से प्रतिशत (%)
         </button>
-        <button type="button" class="cgpa-mode-btn tool-tab-btn" data-target="panel-pct-to-cgpa">
-          2. Percentage से CGPA
+        <button type="button" class="cgpa-mode-btn" data-target="panelUpBoard" style="padding: 9px 16px; font-size: 13.5px; font-weight: 700; border-radius: 10px; border: 1px solid #16a34a; background: #f0fdf4; color: #166534; cursor: pointer;">
+          🎓 UP Board (10th/12th)
         </button>
-        <button type="button" class="cgpa-mode-btn tool-tab-btn" data-target="panel-marks-to-pct">
-          3. अंक से प्रतिशत (Marks to %)
+        <button type="button" class="cgpa-mode-btn" data-target="panelPercentToCgpa" style="padding: 9px 16px; font-size: 13.5px; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+          🔄 प्रतिशत (%) से CGPA
         </button>
-        <button type="button" class="cgpa-mode-btn tool-tab-btn" data-target="panel-best5">
-          4. बेस्ट 5 विषय योग (Best 5 Marks)
+        <button type="button" class="cgpa-mode-btn" data-target="panelMarksToPercent" style="padding: 9px 16px; font-size: 13.5px; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+          📝 प्राप्तांक से प्रतिशत
+        </button>
+        <button type="button" class="cgpa-mode-btn" data-target="panelBest5" style="padding: 9px 16px; font-size: 13.5px; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+          ⭐ Best 5 Aggregate
         </button>
       </div>
 
-      <!-- Mode 1: CGPA to % -->
-      <div id="panel-cgpa-to-pct" class="cgpa-panel active">
-        <div class="tool-card-header">
-          <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 6px 0;">
-            1. CGPA को Percentage (%) में बदलें
-          </h2>
-          <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
-            बोर्ड या यूनिवर्सिटी के आधिकारिक फॉर्मूले के आधार पर अपना सटीक प्रतिशत ज्ञात करें।
-          </p>
-        </div>
-
+      <!-- PANEL 1: CGPA TO PERCENT -->
+      <div class="cgpa-panel active" id="panelCgpaToPercent">
         <form id="formCgpaToPercent">
-          <div class="tool-form-grid">
-            <div class="tool-field">
-              <label for="inputCgpaVal">अपना CGPA दर्ज करें (0 - 10) *</label>
-              <input type="number" id="inputCgpaVal" placeholder="जैसे: 8.4 या 9.2" min="0" max="10" step="0.01" required>
-              <span class="help-text">मार्कशीट पर दिया गया ग्रेड पॉइंट</span>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 18px;">
+            <div>
+              <label for="inputCgpaVal" style="display: block; font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">
+                अपना CGPA दर्ज करें (Enter CGPA: 0 to 10):
+              </label>
+              <input type="number" id="inputCgpaVal" step="0.01" min="0" max="10" placeholder="उदा. 8.4" required style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-weight: 600;">
             </div>
-            <div class="tool-field">
-              <label for="selectUnivFormula">बोर्ड / यूनिवर्सिटी फॉर्मूला *</label>
-              <select id="selectUnivFormula" required>
-                <option value="cbse">CBSE 10th / 12th (CGPA × 9.5)</option>
-                <option value="aktu">AKTU / UPTU लखनऊ (CGPA × 10)</option>
-                <option value="aicte">AICTE / UGC Standard ((CGPA - 0.75) × 10)</option>
+
+            <div>
+              <label for="selectUnivFormula" style="display: block; font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">
+                बोर्ड / यूनिवर्सिटी फॉर्मूला चुनें (Conversion Formula):
+              </label>
+              <select id="selectUnivFormula" style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; font-weight: 600; background: #ffffff;">
+                <option value="cbse">CBSE 10th / 12th Official (CGPA × 9.5)</option>
+                <option value="aicte">AICTE Engineering Scale ((CGPA - 0.75) × 10)</option>
+                <option value="aktu">AKTU Lucknow / UPTU Scale (CGPA × 10)</option>
                 <option value="mumbai">Mumbai University (7.1 × CGPA + 11)</option>
-                <option value="gtu">GTU Gujarat ((CGPA - 0.5) × 10)</option>
+                <option value="gtu">Gujarat Tech Univ - GTU ((CGPA - 0.5) × 10)</option>
               </select>
-              <span class="help-text">संस्थान के अनुसार आधिकारिक फॉर्मूला</span>
             </div>
           </div>
-          <div style="text-align: center; margin-top: 10px;">
-            <button type="submit" class="tool-btn-primary">
-              प्रतिशत निकालें (Calculate Percentage)
+
+          <div style="text-align: center;">
+            <button type="submit" class="tool-btn-primary" style="background: #15803d; padding: 12px 32px; font-size: 15px; font-weight: 700; border-radius: 10px; color: #ffffff; border: none; cursor: pointer;">
+              ⚡ प्रतिशत निकालें (Calculate Percentage)
             </button>
           </div>
         </form>
 
-        <div id="boxCgpaToPercent" class="tool-result-box" style="display: none; text-align: center;">
-          <span style="font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase;">कुल प्रतिशत (Percentage)</span>
-          <div style="font-size: 2.2rem; font-weight: 800; color: #16a34a; margin: 6px 0;" id="resCgpaPercent">0.00%</div>
-          <div id="resCgpaFormula" style="font-size: 14px; color: #1e3a8a; font-weight: 600; margin-bottom: 6px;"></div>
-          <div id="resCgpaDivision" style="font-size: 13.5px; color: #475569;"></div>
+        <div id="boxCgpaToPercent" style="display: none; margin-top: 22px; padding: 18px; background: #f0fdf4; border-radius: 12px; border: 1px solid #bbf7d0; text-align: center;">
+          <span style="font-size: 13px; color: #166534; font-weight: 600;">आपका समतुल्य प्रतिशत (Equivalent Percentage):</span>
+          <div id="resCgpaPercent" style="font-size: 2.2rem; font-weight: 800; color: #15803d; margin: 6px 0;">--</div>
+          <div id="resCgpaFormula" style="font-size: 13.5px; color: #166534; margin-bottom: 8px;">--</div>
+          <div id="resCgpaDivision" style="display: inline-block; background: #dcfce7; color: #14532d; font-weight: 700; padding: 4px 14px; border-radius: 999px; font-size: 13px;">--</div>
         </div>
       </div>
 
-      <!-- Mode 2: % to CGPA -->
-      <div id="panel-pct-to-cgpa" class="cgpa-panel" style="display: none;">
-        <div class="tool-card-header">
-          <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 6px 0;">
-            2. Percentage (%) से CGPA निकालें
-          </h2>
-          <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
-            विदेश में अध्ययन या विशिष्ट नौकरी आवेदनों के लिए प्रतिशत को 10-प्वाइंट CGPA में बदलें।
-          </p>
-        </div>
+      <!-- PANEL 2: UP BOARD (10TH & 12TH) -->
+      <div class="cgpa-panel" id="panelUpBoard">
+        <form id="formUpBoard">
+          <div style="background: #f8fafc; border-radius: 12px; padding: 16px; border: 1px solid #e2e8f0; margin-bottom: 18px;">
+            <label style="display: block; font-size: 13.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 10px;">
+              कक्षा का चयन करें (Select UP Board Class):
+            </label>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="preset-pill-btn active upboard-class-btn" data-class="10">
+                🏫 10वीं हाई स्कूल (पूर्णांक: 600 अंक)
+              </button>
+              <button type="button" class="preset-pill-btn upboard-class-btn" data-class="12">
+                🎓 12वीं इंटरमीडिएट (पूर्णांक: 500 अंक)
+              </button>
+            </div>
+            <div style="display: none;">
+              <input type="radio" name="upBoardClass" value="10" checked>
+              <input type="radio" name="upBoardClass" value="12">
+            </div>
+          </div>
 
+          <div style="max-width: 440px; margin: 0 auto 18px auto;">
+            <label for="inputUpBoardMarks" id="upBoardMaxLabel" style="display: block; font-size: 13.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; text-align: left;">
+              पूर्णांक: 600 अंक (10वीं हाई स्कूल - 6 विषय):
+            </label>
+            <input type="number" id="inputUpBoardMarks" step="1" min="0" max="600" placeholder="उदा. 485 (600 में से)" required style="width: 100%; box-sizing: border-box; padding: 11px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; font-weight: 700;">
+          </div>
+
+          <div style="text-align: center;">
+            <button type="submit" class="tool-btn-primary" style="background: #16a34a; padding: 12px 34px; font-size: 15px; font-weight: 700; border-radius: 10px; color: #ffffff; border: none; cursor: pointer;">
+              ⚡ यूपी बोर्ड प्रतिशत निकालें (Calculate Result)
+            </button>
+          </div>
+        </form>
+
+        <div id="boxUpBoardResult" style="display: none; margin-top: 22px; padding: 20px; background: #f0fdf4; border-radius: 14px; border: 1px solid #86efac; text-align: center;">
+          <span style="font-size: 13px; color: #166534; font-weight: 700; text-transform: uppercase;">उत्तर प्रदेश माध्यमिक शिक्षा परिषद (UPMSP) परिणाम:</span>
+          <div id="resUpBoardPercent" style="font-size: 2.3rem; font-weight: 800; color: #15803d; margin: 6px 0;">--</div>
+          <div id="resUpBoardMarksSummary" style="font-size: 14px; color: #1e293b; font-weight: 700; margin-bottom: 6px;">--</div>
+          <div id="resUpBoardDivision" style="font-size: 14.5px; font-weight: 800; color: #047857; margin-bottom: 6px;">--</div>
+          <div id="resUpBoardLost" style="font-size: 12.5px; color: #64748b; margin-bottom: 10px;">--</div>
+          <div id="resUpBoardAdvice" style="display: inline-block; background: #dcfce7; color: #14532d; font-weight: 700; padding: 6px 16px; border-radius: 999px; font-size: 12.5px;">--</div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: PERCENT TO CGPA -->
+      <div class="cgpa-panel" id="panelPercentToCgpa">
         <form id="formPercentToCgpa">
-          <div class="tool-form-grid">
-            <div class="tool-field">
-              <label for="inputPercentVal">प्रतिशत दर्ज करें (Percentage %) *</label>
-              <input type="number" id="inputPercentVal" placeholder="जैसे: 79.80" min="0" max="100" step="0.01" required>
-            </div>
+          <div style="max-width: 440px; margin: 0 auto 18px auto;">
+            <label for="inputPercentVal" style="display: block; font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; text-align: left;">
+              अपना प्रतिशत दर्ज करें (Enter Percentage: 0 to 100):
+            </label>
+            <input type="number" id="inputPercentVal" step="0.01" min="0" max="100" placeholder="उदा. 79.80" required style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-weight: 600;">
           </div>
-          <div style="text-align: center; margin-top: 10px;">
-            <button type="submit" class="tool-btn-primary">
-              CGPA निकालें (Calculate CGPA)
+
+          <div style="text-align: center;">
+            <button type="submit" class="tool-btn-primary" style="background: #2563eb; padding: 12px 32px; font-size: 15px; font-weight: 700; border-radius: 10px; color: #ffffff; border: none; cursor: pointer;">
+              🔄 CGPA निकालें (Calculate CGPA)
             </button>
           </div>
         </form>
 
-        <div id="boxPercentToCgpa" class="tool-result-box" style="display: none; text-align: center;">
-          <span style="font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase;">प्राप्त CGPA</span>
-          <div style="font-size: 2.2rem; font-weight: 800; color: #2563eb; margin: 6px 0;" id="resPercentCgpa">0.00</div>
-          <div id="resPercentFormula" style="font-size: 14px; color: #334155;"></div>
+        <div id="boxPercentToCgpa" style="display: none; margin-top: 22px; padding: 18px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe; text-align: center;">
+          <span style="font-size: 13px; color: #1e40af; font-weight: 600;">समतुल्य CGPA (Equivalent CGPA):</span>
+          <div id="resPercentCgpa" style="font-size: 2.2rem; font-weight: 800; color: #2563eb; margin: 6px 0;">--</div>
+          <div id="resPercentFormula" style="font-size: 13.5px; color: #1e40af;">--</div>
         </div>
       </div>
 
-      <!-- Mode 3: Marks to % -->
-      <div id="panel-marks-to-pct" class="cgpa-panel" style="display: none;">
-        <div class="tool-card-header">
-          <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 6px 0;">
-            3. कुल अंकों से प्रतिशत निकालें (Marks to Percentage)
-          </h2>
-          <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
-            प्राप्तांक और कुल पूर्णांक दर्ज करके तुरंत प्रतिशत व श्रेणी ज्ञात करें।
-          </p>
-        </div>
-
+      <!-- PANEL 4: MARKS TO PERCENT -->
+      <div class="cgpa-panel" id="panelMarksToPercent">
         <form id="formMarksToPercent">
-          <div class="tool-form-grid">
-            <div class="tool-field">
-              <label for="inputMarksObtained">प्राप्तांक (Marks Obtained) *</label>
-              <input type="number" id="inputMarksObtained" placeholder="जैसे: 425" min="0" step="0.5" required>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 18px;">
+            <div>
+              <label for="inputMarksObtained" style="display: block; font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">
+                प्राप्तांक (Marks Obtained):
+              </label>
+              <input type="number" id="inputMarksObtained" step="0.1" min="0" placeholder="उदा. 435" required style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-weight: 600;">
             </div>
-            <div class="tool-field">
-              <label for="inputMarksMax">पूर्णांक (Maximum / Total Marks) *</label>
-              <input type="number" id="inputMarksMax" placeholder="जैसे: 500 या 600" min="1" step="1" required>
+            <div>
+              <label for="inputMarksMax" style="display: block; font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">
+                पूर्णांक (Maximum / Total Marks):
+              </label>
+              <input type="number" id="inputMarksMax" step="1" min="1" placeholder="उदा. 500 या 600" required style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-weight: 600;">
             </div>
           </div>
-          <div style="text-align: center; margin-top: 10px;">
-            <button type="submit" class="tool-btn-primary">
-              प्रतिशत निकालें (Calculate %)
+
+          <div style="text-align: center;">
+            <button type="submit" class="tool-btn-primary" style="background: #1e3a8a; padding: 12px 32px; font-size: 15px; font-weight: 700; border-radius: 10px; color: #ffffff; border: none; cursor: pointer;">
+              📝 प्रतिशत व श्रेणी निकालें (Calculate)
             </button>
           </div>
         </form>
 
-        <div id="boxMarksToPercent" class="tool-result-box" style="display: none; text-align: center;">
-          <span style="font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase;">कुल प्रतिशत (Percentage)</span>
-          <div style="font-size: 2.2rem; font-weight: 800; color: #16a34a; margin: 6px 0;" id="resMarksPercent">0.00%</div>
-          <div style="font-size: 14px; color: #334155; margin-top: 4px;">
-            <span id="resMarksDiv" style="font-weight:700;"></span> &bull; <span id="resMarksLost" style="color:#dc2626;"></span>
-          </div>
+        <div id="boxMarksToPercent" style="display: none; margin-top: 22px; padding: 18px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
+          <span style="font-size: 13px; color: #475569; font-weight: 600;">कुल प्रतिशत (Total Percentage):</span>
+          <div id="resMarksPercent" style="font-size: 2.2rem; font-weight: 800; color: #1e3a8a; margin: 6px 0;">--</div>
+          <div id="resMarksLost" style="font-size: 13px; color: #dc2626; margin-bottom: 6px;">--</div>
+          <div id="resMarksDiv" style="display: inline-block; background: #e0e7ff; color: #3730a3; font-weight: 700; padding: 4px 14px; border-radius: 999px; font-size: 13px;">--</div>
         </div>
       </div>
 
-      <!-- Mode 4: Best 5 Subject Aggregate -->
-      <div id="panel-best5" class="cgpa-panel" style="display: none;">
-        <div class="tool-card-header">
-          <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 6px 0;">
-            4. बेस्ट 5 विषय योग व प्रतिशत (Best 5 Aggregate)
-          </h2>
-          <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
-            डाक विभाग ग्रामीण डाक सेवक (GDS) व UP Scholarship फॉर्म में अतिरिक्त विषय छोड़कर टॉप 5 विषयों का प्रतिशत मांगा जाता है।
-          </p>
+      <!-- PANEL 5: BEST 5 AGGREGATE -->
+      <div class="cgpa-panel" id="panelBest5">
+        <p style="font-size: 13px; color: #64748b; margin-top: 0; text-align: center;">
+          अपने 6 विषयों के प्राप्तांक दर्ज करें (टूल अपने आप टॉप 5 विषयों का योग निकालकर 500 में से प्रतिशत गणना करेगा):
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 18px;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 1 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 2 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 3 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 4 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 5 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
+          <input type="number" class="sub-mark-input" placeholder="Sub 6 (100)" min="0" max="100" style="padding: 9px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; text-align: center;">
         </div>
 
-        <p style="font-size: 13.5px; color: #64748b; margin-bottom: 12px;">
-          प्रत्येक विषय के प्राप्तांक दर्ज करें (सिस्टम स्वतः सबसे अधिक अंकों वाले 5 विषयों को चुनेगा):
-        </p>
-        <div class="tool-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
-          <div class="tool-field"><label>विषय 1 (उदा. हिंदी)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-          <div class="tool-field"><label>विषय 2 (उदा. अंग्रेजी)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-          <div class="tool-field"><label>विषय 3 (उदा. गणित)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-          <div class="tool-field"><label>विषय 4 (उदा. विज्ञान)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-          <div class="tool-field"><label>विषय 5 (उदा. सामाजिक)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-          <div class="tool-field"><label>विषय 6 (ऐच्छिक)</label><input type="number" class="sub-mark-input" placeholder="अंक" max="100" min="0"></div>
-        </div>
-        <div style="text-align: center; margin-top: 14px;">
-          <button type="button" id="calcBest5Btn" class="tool-btn-primary">
-            बेस्ट 5 प्रतिशत निकालें (Calculate Best 5)
+        <div style="text-align: center;">
+          <button type="button" id="calcBest5Btn" class="tool-btn-primary" style="background: #9333ea; padding: 12px 32px; font-size: 15px; font-weight: 700; border-radius: 10px; color: #ffffff; border: none; cursor: pointer;">
+            ⭐ Best 5 प्रतिशत निकालें
           </button>
         </div>
 
-        <div id="boxBest5Result" class="tool-result-box" style="display: none; text-align: center;">
-          <span style="font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase;">बेस्ट 5 का प्रतिशत (Best 5 Aggregate)</span>
-          <div style="font-size: 2.2rem; font-weight: 800; color: #2563eb; margin: 6px 0;" id="resBest5Percent">0.00%</div>
-          <div id="resBest5Sum" style="font-size: 14px; color: #1e3a8a; font-weight: 600;"></div>
-          <div id="resOverallPercent" style="font-size: 13px; color: #64748b; margin-top: 4px;"></div>
+        <div id="boxBest5Result" style="display: none; margin-top: 22px; padding: 18px; background: #faf5ff; border-radius: 12px; border: 1px solid #e9d5ff; text-align: center;">
+          <span style="font-size: 13px; color: #7e22ce; font-weight: 600;">Best 5 विषयों का प्रतिशत (Top 5 Percentage):</span>
+          <div id="resBest5Percent" style="font-size: 2.2rem; font-weight: 800; color: #9333ea; margin: 6px 0;">--</div>
+          <div id="resBest5Sum" style="font-size: 13.5px; color: #7e22ce; margin-bottom: 6px;">--</div>
+          <div id="resOverallPercent" style="font-size: 12.5px; color: #64748b;">--</div>
         </div>
       </div>
+
     </div>
 
-    <!-- REFERENCE FORMULA TABLE -->
-    <div class="tool-card-box">
-      <h2 style="font-size: 1.25rem; color: #1e3a8a; margin: 0 0 12px 0;">
-        📚 भारत के प्रमुख बोर्डों व विश्वविद्यालयों के CGPA फॉर्मूले
+    <!-- IN-DEPTH EXPLANATORY SECTION: HOW THE TOOL WORKS -->
+    <section class="tool-card-box" style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+      <h2 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px 0;">
+        How the CGPA &amp; Academic Percentage Calculator Works
       </h2>
-      <div class="eligibility-table-wrap">
-        <table class="eligibility-table">
+      <p style="font-size: 0.95rem; line-height: 1.7; color: #334155; margin-bottom: 16px;">
+        When applying for competitive examinations (such as <strong>India Post GDS</strong>, <strong>UP Police Constable</strong>, <strong>Railway RRB</strong>, and <strong>UP State Scholarships</strong>), entering your academic credentials accurately is mandatory. Educational boards and universities across India use different scoring systems:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: #f8fafc; border-left: 4px solid #16a34a; padding: 14px 16px; border-radius: 8px;">
+          <h4 style="margin: 0 0 6px 0; color: #166534; font-size: 1rem;">1. CBSE 10th &amp; 12th Official Multiplier (9.5)</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.6;">
+            The Central Board of Secondary Education (CBSE) does not assign raw percentage marks on grade sheets. Instead, it awards a 10-point Cumulative Grade Point Average (CGPA). By multiplying your CGPA by <strong>9.5</strong>, you arrive at the board-certified aggregate percentage.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-left: 4px solid #2563eb; padding: 14px 16px; border-radius: 8px;">
+          <h4 style="margin: 0 0 6px 0; color: #1e40af; font-size: 1rem;">2. UP Board (UPMSP) 10th &amp; 12th Marking System</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.6;">
+            The Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP) evaluates High School (Class 10) across 6 subjects for a <strong>total maximum of 600 marks</strong>. Intermediate (Class 12) is evaluated across 5 subjects for a <strong>total maximum of 500 marks</strong>. Passing mark is 33% in each subject.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-left: 4px solid #9333ea; padding: 14px 16px; border-radius: 8px;">
+          <h4 style="margin: 0 0 6px 0; color: #6b21a8; font-size: 1rem;">3. AICTE Engineering &amp; Technical Degree Formula</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.6;">
+            For B.Tech, B.E., and Polytechnic diploma candidates studying in AICTE-approved institutions, the standard conversion formula prescribed in the official gazette is: <code>Percentage = (CGPA &minus; 0.75) &times; 10</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CBSE CGPA TO PERCENTAGE CONVERSION TABLE -->
+    <section class="tool-card-box" style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+      <h2 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0 0 10px 0;">
+        CBSE CGPA to Percentage Conversion Table (Grade Equivalent Chart)
+      </h2>
+      <p style="font-size: 0.92rem; color: #64748b; margin-bottom: 16px;">
+        Quick reference chart showing CGPA points on the 10-point scale, official percentage calculated with &times;9.5 multiplier, and the corresponding performance band:
+      </p>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
           <thead>
-            <tr>
-              <th>विश्वविद्यालय / बोर्ड</th>
-              <th>रूपांतरण फॉर्मूला (Conversion Formula)</th>
-              <th>उदाहरण (CGPA = 8.0)</th>
+            <tr style="background: #f1f5f9; color: #1e293b; text-align: left;">
+              <th style="padding: 10px 14px; border-bottom: 2px solid #cbd5e1;">CGPA Score</th>
+              <th style="padding: 10px 14px; border-bottom: 2px solid #cbd5e1;">Equivalent Percentage (×9.5)</th>
+              <th style="padding: 10px 14px; border-bottom: 2px solid #cbd5e1;">Grade Letter</th>
+              <th style="padding: 10px 14px; border-bottom: 2px solid #cbd5e1;">Division Classification</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><strong>CBSE Board (Class 10th/12th)</strong></td>
-              <td>प्रतिशत = CGPA × 9.5</td>
-              <td>8.0 × 9.5 = 76.00%</td>
-            </tr>
-            <tr>
-              <td><strong>AKTU / UPTU लखनऊ</strong></td>
-              <td>प्रतिशत = CGPA × 10</td>
-              <td>8.0 × 10 = 80.00%</td>
-            </tr>
-            <tr>
-              <td><strong>AICTE / UGC मानक</strong></td>
-              <td>प्रतिशत = (CGPA - 0.75) × 10</td>
-              <td>(8.0 - 0.75) × 10 = 72.50%</td>
-            </tr>
-            <tr>
-              <td><strong>Gujarat Tech University (GTU)</strong></td>
-              <td>प्रतिशत = (CGPA - 0.5) × 10</td>
-              <td>(8.0 - 0.5) × 10 = 75.00%</td>
-            </tr>
-            <tr>
-              <td><strong>Mumbai University</strong></td>
-              <td>प्रतिशत = 7.1 × CGPA + 11</td>
-              <td>7.1 × 8.0 + 11 = 67.80%</td>
-            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">10.0</td><td style="padding: 10px 14px; color: #15803d; font-weight: 700;">95.00%</td><td style="padding: 10px 14px;">A1</td><td style="padding: 10px 14px;">Distinction / Outstanding</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">9.8</td><td style="padding: 10px 14px; color: #15803d; font-weight: 700;">93.10%</td><td style="padding: 10px 14px;">A1</td><td style="padding: 10px 14px;">First Division with Distinction</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">9.4</td><td style="padding: 10px 14px; color: #15803d; font-weight: 700;">89.30%</td><td style="padding: 10px 14px;">A2</td><td style="padding: 10px 14px;">First Division with Distinction</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">9.0</td><td style="padding: 10px 14px; color: #15803d; font-weight: 700;">85.50%</td><td style="padding: 10px 14px;">A2</td><td style="padding: 10px 14px;">First Division with Distinction</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">8.6</td><td style="padding: 10px 14px; color: #2563eb; font-weight: 700;">81.70%</td><td style="padding: 10px 14px;">B1</td><td style="padding: 10px 14px;">First Division (प्रथम श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">8.0</td><td style="padding: 10px 14px; color: #2563eb; font-weight: 700;">76.00%</td><td style="padding: 10px 14px;">B1</td><td style="padding: 10px 14px;">First Division (प्रथम श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">7.4</td><td style="padding: 10px 14px; color: #2563eb; font-weight: 700;">70.30%</td><td style="padding: 10px 14px;">B2</td><td style="padding: 10px 14px;">First Division (प्रथम श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">6.8</td><td style="padding: 10px 14px; color: #2563eb; font-weight: 700;">64.60%</td><td style="padding: 10px 14px;">B2</td><td style="padding: 10px 14px;">First Division (प्रथम श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">6.2</td><td style="padding: 10px 14px; color: #d97706; font-weight: 700;">58.90%</td><td style="padding: 10px 14px;">C1</td><td style="padding: 10px 14px;">Second Division (द्वितीय श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">5.6</td><td style="padding: 10px 14px; color: #d97706; font-weight: 700;">53.20%</td><td style="padding: 10px 14px;">C1</td><td style="padding: 10px 14px;">Second Division (द्वितीय श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;"><td style="padding: 10px 14px; font-weight: 700;">5.0</td><td style="padding: 10px 14px; color: #d97706; font-weight: 700;">47.50%</td><td style="padding: 10px 14px;">C2</td><td style="padding: 10px 14px;">Second Division (द्वितीय श्रेणी)</td></tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;"><td style="padding: 10px 14px; font-weight: 700;">4.0</td><td style="padding: 10px 14px; color: #475569; font-weight: 700;">38.00%</td><td style="padding: 10px 14px;">D</td><td style="padding: 10px 14px;">Third Division / Pass (तृतीय श्रेणी)</td></tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
+
+    <!-- UP BOARD SPECIFIC GUIDELINES -->
+    <section class="tool-card-box" style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+      <h2 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px 0;">
+        UP Board (UPMSP) 10वीं व 12वीं रिजल्ट, प्रतिशत व डिवीज़न के नियम
+      </h2>
+      <div style="font-size: 0.94rem; line-height: 1.7; color: #334155;">
+        <p style="margin-top: 0;">
+          उत्तर प्रदेश माध्यमिक शिक्षा परिषद (UPMSP प्रयागराज) भारत का सबसे बड़ा परीक्षा बोर्ड है। यूपी बोर्ड में उत्तीर्ण होने और सरकारी फॉर्म भरने के मुख्य नियम निम्न हैं:
+        </p>
+        <ul style="padding-left: 20px; margin-bottom: 16px;">
+          <li><strong>10वीं हाई स्कूल पूर्णांक (Maximum Marks):</strong> कुल 6 विषय होते हैं (प्रत्येक 100 अंक = 70 थ्योरी + 30 प्रोजेक्ट/प्रैक्टिकल)। <strong>कुल पूर्णांक = 600 अंक</strong>।</li>
+          <li><strong>12वीं इंटरमीडिएट पूर्णांक:</strong> कुल 5 मुख्य विषय होते हैं (प्रत्येक 100 अंक)। <strong>कुल पूर्णांक = 500 अंक</strong>।</li>
+          <li><strong>न्यूनतम उत्तीर्णांक (Passing Marks):</strong> प्रत्येक विषय में कम से कम 33% अंक पाना अनिवार्य है।</li>
+          <li><strong>प्रथम श्रेणी (First Division):</strong> 60% या उससे अधिक अंक (10वीं में 360+ अंक, 12वीं में 300+ अंक)।</li>
+          <li><strong>द्वितीय श्रेणी (Second Division):</strong> 45% से 59.9% के बीच अंक।</li>
+          <li><strong>तृतीय श्रेणी (Third Division):</strong> 33% से 44.9% के बीच अंक।</li>
+        </ul>
+        <div style="background: #eff6ff; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #2563eb; font-size: 0.9rem; color: #1e40af;">
+          <strong>💡 डाक विभाग GDS मेरिट और UP Scholarship के लिए महत्व:</strong><br>
+          India Post GDS भर्ती में चयन केवल 10वीं के प्रतिशत की मेरिट से होता है। सामान्यतः 88% से 98% वाले अभ्यर्थियों का चयन होता है। वहीं UP Scholarship के लिए 12वीं और स्नातक में न्यूनतम 60% (प्रथम श्रेणी) होना वरियता प्रदान करता है।
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQS SECTION (8 DETAILED BILINGUAL FAQS) -->
+    <section class="tool-card-box" style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 26px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+      <h2 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0 0 16px 0;">
+        ❓ Frequently Asked Questions (अक्सर पूछे जाने वाले सवाल)
+      </h2>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q1. Why does CBSE multiply CGPA by 9.5 instead of 10?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            CBSE analyzed historical board examination scores and determined that the average score of candidates scoring between 91 and 100 marks is approx. 95%. Dividing 95 by the maximum grade point 10 yields 9.5. Hence, 9.5 was standardized as the official conversion multiplier.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q2. UP Board 10वीं में 600 में से कितने नंबर लाने पर फर्स्ट डिवीज़न बनती है?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            UP Board हाई स्कूल (10th) में 600 में से 360 या उससे अधिक अंक प्राप्त करने पर छात्र को प्रथम श्रेणी (First Division - 60%+) प्राप्त होती है।
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q3. How is engineering percentage calculated from CGPA under AICTE guidelines?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            Under All India Council for Technical Education (AICTE) regulations, technical university degree marks are calculated as: <code>Percentage = (CGPA &minus; 0.75) &times; 10</code>. For example, a CGPA of 8.0 equals (8.0 &minus; 0.75) &times; 10 = 72.50%.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q4. What is the Best 5 Rule in Class 10th and does it apply to Govt forms?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            In boards offering 6 subjects, CBSE calculates the primary aggregate percentage using the top 5 performing subjects (including at least one language). However, certain state police and armed forces require the total aggregate of all 6 subjects. Check the specific recruitment advertisement.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q5. Can I enter rounded-off percentage in SSC or UPSC online application forms?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            No. Recruitment portals strictly forbid rounding off (e.g. entering 60.00% if your actual score is 59.98%). Always enter your percentage up to two decimal places (e.g. 59.98%) as calculated by our tool to avoid cancellation at scrutiny.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q6. UP Board 12वीं में 500 में से 400 नंबर आने पर कितना प्रतिशत बनेगा?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            यदि आपके 12वीं में 500 में से 400 अंक हैं, तो आपका प्रतिशत <strong>80.00% (First Division with Distinction)</strong> होगा (सूत्र: 400 &divide; 500 &times; 100 = 80%).
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q7. Is this CGPA and percentage converter completely free to use?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            Yes, this 5-in-1 calculator is 100% free with unlimited conversions for students, teachers, and cyber cafe operators across India.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: 10px; padding: 14px 18px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 1.02rem; font-weight: 700; color: #1e3a8a; margin: 0 0 6px 0;">
+            Q8. How does the percentage to CGPA conversion work?
+          </h3>
+          <p style="font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6;">
+            The inverse conversion divides your aggregate percentage by 9.5 (<code>CGPA = Percentage &divide; 9.5</code>). For example, 76.00% &divide; 9.5 = 8.0 CGPA.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- OTHER TOOLS LINKS -->
-    <div style="margin-top: 24px;">
-      <h3 style="color: #1e3a8a; font-size: 1.15rem; margin-bottom: 12px;">🛠️ अन्य उपयोगी सरकारी टूल्स:</h3>
+    <div style="margin-top: 24px; padding: 22px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+      <h3 style="color: #1e3a8a; font-size: 1.15rem; font-weight: 700; margin-bottom: 12px;">🛠️ अन्य उपयोगी सरकारी टूल्स (Other Sarkari Tools):</h3>
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="age-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px;">🎂 Sarkari Age &amp; Eligibility Calculator &rarr;</a>
-        <a href="typing-test.html" class="tool-btn-secondary" style="font-size: 13.5px;">⌨️ SSC / Railway Typing Speed Test &rarr;</a>
-        <a href="physical-standards-checker.html" class="tool-btn-secondary" style="font-size: 13.5px;">📏 Physical Standards (Height/Chest) Checker &rarr;</a>
+        <a href="sarkari-tools.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">⚡ सभी टूल्स हब (All Tools Hub) &rarr;</a>
+        <a href="sarkari-photo-resizer.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">📸 फोटो &amp; साइन रिसाइजर (20KB - 50KB) &rarr;</a>
+        <a href="age-calculator.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">🎂 आयु सीमा कैलकुलेटर (Age Calculator) &rarr;</a>
+        <a href="typing-test.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">⌨️ SSC / Railway Typing Speed Test &rarr;</a>
+        <a href="physical-standards-checker.html" class="tool-btn-secondary" style="font-size: 13.5px; padding: 10px 18px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; display: inline-block;">📏 फिजिकल चेस्ट &amp; हाइट चेकर &rarr;</a>
       </div>
     </div>
 
-  </main>
+  </main></main>
 
     <!-- SITE FOOTER -->
   <!-- FOOTER -->

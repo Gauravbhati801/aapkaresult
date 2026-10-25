@@ -981,4 +981,50 @@ function initCgpaCalculator() {
       document.getElementById('boxBest5Result').style.display = 'block';
     });
   }
+
+  // Mode 5: UP Board 10th & 12th Marks Calculator (UPMSP)
+  const formUpBoard = document.getElementById('formUpBoard');
+  if (formUpBoard) {
+    formUpBoard.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const examClass = document.querySelector('input[name="upBoardClass"]:checked')?.value || '10';
+      const maxMarks = examClass === '10' ? 600 : 500;
+      const obtained = parseFloat(document.getElementById('inputUpBoardMarks').value);
+
+      if (isNaN(obtained) || obtained < 0 || obtained > maxMarks) {
+        alert(`कृपया 0 से ${maxMarks} के बीच वैध प्राप्तांक दर्ज करें।`);
+        return;
+      }
+
+      const pct = (obtained / maxMarks) * 100;
+      const missed = maxMarks - obtained;
+      let div = pct >= 60 ? 'प्रथम श्रेणी (First Division) 🥇' : (pct >= 45 ? 'द्वितीय श्रेणी (Second Division) 🥈' : (pct >= 33 ? 'तृतीय श्रेणी (Third Division) 🥉' : 'अनुत्तीर्ण (Failed) ❌'));
+      let statusColor = pct >= 60 ? '#15803d' : (pct >= 45 ? '#2563eb' : (pct >= 33 ? '#d97706' : '#dc2626'));
+
+      document.getElementById('resUpBoardPercent').textContent = pct.toFixed(2) + '%';
+      document.getElementById('resUpBoardPercent').style.color = statusColor;
+      document.getElementById('resUpBoardMarksSummary').textContent = `${obtained} / ${maxMarks} (पूर्णांक)`;
+      document.getElementById('resUpBoardDivision').textContent = div;
+      document.getElementById('resUpBoardLost').textContent = `${missed} अंक कटे (${(100 - pct).toFixed(2)}%)`;
+      
+      const gdsStatus = pct >= 90 ? '✅ India Post GDS में चयन की अत्यधिक संभावना (90%+ मेरिट)' : (pct >= 75 ? '⚡ GDS व राज्य स्तरीय मेरिट के लिए अच्छा स्कोर' : 'ℹ️ सामान्य सरकारी फॉर्म पात्रता पूर्ण');
+      document.getElementById('resUpBoardAdvice').textContent = gdsStatus;
+      document.getElementById('boxUpBoardResult').style.display = 'block';
+    });
+
+    // Preset buttons for UP Board class switcher
+    document.querySelectorAll('.upboard-class-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.upboard-class-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cls = btn.dataset.class;
+        const radio = document.querySelector(`input[name="upBoardClass"][value="${cls}"]`);
+        if (radio) radio.checked = true;
+        const label = document.getElementById('upBoardMaxLabel');
+        if (label) label.textContent = cls === '10' ? 'पूर्णांक: 600 अंक (10वीं हाई स्कूल - 6 विषय)' : 'पूर्णांक: 500 अंक (12वीं इंटरमीडिएट - 5 विषय)';
+        const input = document.getElementById('inputUpBoardMarks');
+        if (input) input.placeholder = cls === '10' ? 'उदा. 485 (600 में से)' : 'उदा. 415 (500 में से)';
+      });
+    });
+  }
 }
