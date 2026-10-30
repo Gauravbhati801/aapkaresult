@@ -425,9 +425,9 @@
     .preview-content {
       background: #ffffff;
       border-radius: 16px;
-      max-width: 500px;
+      max-width: 680px;
       width: 100%;
-      max-height: 85vh;
+      max-height: 88vh;
       overflow-y: auto;
       padding: 24px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
@@ -682,92 +682,59 @@
           </div>
 
           <!-- Summary Snippet -->
+          <!-- Summary Snippet -->
           <div class="form-group">
-            <label class="form-label">Short Summary <small>(2-3 Lines for Google Discover, WhatsApp &amp; News Card)</small></label>
-            <textarea id="newsSummary" class="form-textarea" placeholder="Enter concise summary explaining what notice was released, who is eligible, and key dates..." required></textarea>
+            <label class="form-label">Short Summary <small>(Optional / ऐच्छिक: Google Discover व कार्ड के लिए 2-3 लाइन)</small></label>
+            <textarea id="newsSummary" class="form-textarea" placeholder="ऐच्छिक: खबर का संक्षिप्त विवरण लिखें (न लिखना हो तो खाली छोड़ दें)..."></textarea>
           </div>
 
           <!-- Key Highlights Builder -->
           <div class="form-group">
-            <label class="form-label">Key Highlights / Bullet Points <small>(At least 3 points)</small></label>
+            <label class="form-label">Key Highlights / Bullet Points <small>(Optional / ऐच्छिक: मुख्य बिंदु जोड़ें या हटा दें)</small></label>
             <div class="bullets-container" id="bulletsContainer">
               <div class="bullet-row">
-                <input type="text" class="bullet-input" placeholder="Point 1: e.g. Total Vacancies: 1,265 Posts" required>
-              </div>
-              <div class="bullet-row">
-                <input type="text" class="bullet-input" placeholder="Point 2: e.g. Pay Scale: Level-6 ₹35,400" required>
-              </div>
-              <div class="bullet-row">
-                <input type="text" class="bullet-input" placeholder="Point 3: e.g. Apply Online Dates: 27 Oct to 25 Nov 2026">
+                <input type="text" class="bullet-input" placeholder="Point: e.g. Total Vacancies: 1,265 Posts (ऐच्छिक)">
+                <button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>
               </div>
             </div>
-            <button type="button" class="btn-add-bullet" onclick="addBulletRow()">+ Add Another Highlight Point</button>
+            <button type="button" class="btn-add-bullet" onclick="addBulletRow()">+ Add Highlight Point</button>
           </div>
 
           <!-- DETAILED SECTIONS BUILDER (हेडिंग और पैराग्राफ्स) -->
           <div class="form-group" style="background: #ffffff; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px;">
-            <label class="form-label" style="color: #0f172a; font-size: 14.5px;">
-              📑 खबर का मुख्य विवरण (Headings &amp; Short Summary Sections)
-              <small style="display: block; color: #64748b; font-weight: 500; margin-top: 2px;">
-                बीच-बीच में हेडिंग डालकर अलग-अलग विवरण लिखें ताकि छात्र आसानी से पूरी खबर पढ़ सकें
-              </small>
-            </label>
-
-            <div id="sectionsContainer" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-              <!-- Section 1 -->
-              <div class="content-section-card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px;">
-                <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग 1 (Main Subheading)</div>
-                <input type="text" class="form-input sec-heading-input" value="📅 भर्ती का शेड्यूल व महत्वपूर्ण तारीखें" placeholder="Heading (e.g. 📅 भर्ती का शेड्यूल)" style="margin-bottom: 8px; font-weight: 700;" required>
-                <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
-                <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग के अंतर्गत जानकारी लिखें (जैसे तारीखें, आवेदन शुरू, अंतिम तिथि आदि)..." required>ऑनलाइन आवेदन की प्रक्रिया आधिकारिक पोर्टल पर शुरू हो चुकी है। सभी पात्र एवं इच्छुक अभ्यर्थी निर्धारित अंतिम तिथि से पूर्व अपना फॉर्म भर सकते हैं।</textarea>
-              </div>
-
-              <!-- Section 2 -->
-              <div class="content-section-card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative;">
-                <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
-                <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग 2 (Main Subheading)</div>
-                <input type="text" class="form-input sec-heading-input" value="🎓 आवश्यक शैक्षणिक योग्यता व आयु सीमा" placeholder="Heading (e.g. 🎓 शैक्षणिक योग्यता)" style="margin-bottom: 8px; font-weight: 700;" required>
-                <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
-                <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग के अंतर्गत योग्यता और आयु सीमा का विवरण लिखें..." required>अभ्यर्थियों के पास मान्यता प्राप्त बोर्ड या विश्वविद्यालय से संबंधित योग्यता होनी चाहिए। आयु सीमा की गणना आधिकारिक नोटिफिकेशन के नियमों के अनुसार की जाएगी।</textarea>
-              </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="color: #0f172a; font-size: 14.5px; margin-bottom: 0;">
+                📑 खबर का मुख्य विवरण (Optional Headings &amp; Paragraphs)
+              </label>
+              <span style="font-size: 11.5px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600;">ऐच्छिक / आपकी मर्ज़ी</span>
             </div>
+            <small style="display: block; color: #64748b; font-weight: 500; margin-bottom: 10px;">
+              अगर आप बीच-बीच में हेडिंग डालकर विवरण लिखना चाहते हैं तो नीचे '+ हेडिंग जोड़ें' पर क्लिक करें। न लिखना हो तो खाली छोड़ें।
+            </small>
 
-            <button type="button" class="btn-add-bullet" style="background: #eff6ff; margin-top: 10px; width: 100%;" onclick="addContentSection()">
-              + एक और हेडिंग और विवरण जोड़ें (+ Add Heading &amp; Summary Section)
+            <div id="sectionsContainer" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;"></div>
+
+            <button type="button" class="btn-add-bullet" style="background: #eff6ff; margin-top: 10px; width: 100%; font-weight: 700; color: #1e3a8a;" onclick="addContentSection()">
+              + हेडिंग और विवरण जोड़ें (+ Add Heading &amp; Paragraph Section)
             </button>
           </div>
 
-          <!-- IMPORTANT ACTION LINKS (कम से कम 2 लिंक्स) -->
+          <!-- IMPORTANT ACTION LINKS -->
           <div class="form-group" style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px;">
-            <label class="form-label" style="color: #0f172a; font-size: 14.5px;">
-              🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Job Application &amp; Notice Links)
-              <small style="display: block; color: #64748b; font-weight: 500; margin-top: 2px;">
-                छात्र पूरी खबर पढ़ने के बाद इन लिंक्स से फॉर्म भरेंगे (कम से कम 2 लिंक्स अनिवार्य)
-              </small>
-            </label>
-
-            <div id="linksContainer" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-              <!-- Link 1 (Apply Online) -->
-              <div class="link-item-row" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px;">
-                <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">लिंक 1: ऑनलाइन आवेदन (Apply Online)</div>
-                <div class="form-row" style="margin-bottom: 0;">
-                  <input type="text" class="form-input link-label-input" value="ऑनलाइन आवेदन करें (Apply Online)" placeholder="Link Label (e.g. ऑनलाइन आवेदन करें)" required>
-                  <input type="url" class="form-input link-url-input" placeholder="https://... (फॉर्म भरने का डायरेक्ट लिंक)" required>
-                </div>
-              </div>
-
-              <!-- Link 2 (Official Notice / Website) -->
-              <div class="link-item-row" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px;">
-                <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">लिंक 2: आधिकारिक नोटिफिकेशन / वेबसाइट (Official Website)</div>
-                <div class="form-row" style="margin-bottom: 0;">
-                  <input type="text" class="form-input link-label-input" value="आधिकारिक नोटिफिकेशन / वेबसाइट (Official Website)" placeholder="Link Label (e.g. आधिकारिक नोटिफिकेशन)" required>
-                  <input type="url" class="form-input link-url-input" placeholder="https://... (नोटिफिकेशन पीडीएफ या वेबसाइट लिंक)" required>
-                </div>
-              </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="color: #0f172a; font-size: 14.5px; margin-bottom: 0;">
+                🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Optional Action Links)
+              </label>
+              <span style="font-size: 11.5px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600;">ऐच्छिक / आपकी मर्ज़ी</span>
             </div>
+            <small style="display: block; color: #64748b; font-weight: 500; margin-bottom: 10px;">
+              अगर अप्लाई लिंक या वेबसाइट लिंक डालना चाहें तो नीचे '+ लिंक जोड़ें' पर क्लिक करें। लिंक न हो तो खाली छोड़ दें।
+            </small>
 
-            <button type="button" class="btn-add-bullet" style="background: #ffffff; margin-top: 10px;" onclick="addLinkRow()">
-              + एक और लिंक जोड़ें (Add Another Link)
+            <div id="linksContainer" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;"></div>
+
+            <button type="button" class="btn-add-bullet" style="background: #ffffff; margin-top: 10px; font-weight: 700; color: #0f172a;" onclick="addLinkRow()">
+              + लिंक जोड़ें (+ Add Direct Link)
             </button>
           </div>
 
@@ -813,7 +780,7 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">विभाग / आयोग का नाम (Department / Board)</label>
-              <input type="text" id="vacDept" class="form-input" placeholder="e.g. Railway Recruitment Boards (RRB) / UPPRPB" required>
+              <input type="text" id="vacDept" class="form-input" placeholder="e.g. Railway Recruitment Boards (RRB) / UPPRPB">
             </div>
             <div class="form-group">
               <label class="form-label">कैटेगरी (Website Category)</label>
@@ -831,11 +798,11 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">पद का नाम (Post Names)</label>
-              <input type="text" id="vacPostName" class="form-input" placeholder="e.g. Station Master, Goods Train Manager, Constable" required>
+              <input type="text" id="vacPostName" class="form-input" placeholder="e.g. Station Master, Goods Train Manager, Constable">
             </div>
             <div class="form-group">
               <label class="form-label">कुल पदों की संख्या (Total Vacancies)</label>
-              <input type="text" id="vacTotalPosts" class="form-input" placeholder="e.g. 3,548 Posts / 32,679 Posts" required>
+              <input type="text" id="vacTotalPosts" class="form-input" placeholder="e.g. 3,548 Posts / 32,679 Posts">
             </div>
           </div>
 
@@ -852,20 +819,20 @@
 
           <div class="form-group">
             <label class="form-label">संक्षिप्त विवरण (Short Summary / Lead)</label>
-            <textarea id="vacSummary" class="form-textarea" style="min-height: 80px;" placeholder="भर्ती के बारे में 2-3 लाइन का संक्षिप्त विवरण लिखें..." required></textarea>
+            <textarea id="vacSummary" class="form-textarea" style="min-height: 80px;" placeholder="भर्ती के बारे में संक्षिप्त विवरण लिखें (ऐच्छिक)..."></textarea>
           </div>
 
           <!-- 2. Important Dates Box -->
           <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
-            <div style="font-size: 15px; font-weight: 800; color: #1e3a8a; margin-bottom: 12px;">📅 महत्वपूर्ण तिथियां (Important Dates)</div>
+            <div style="font-size: 15px; font-weight: 800; color: #1e3a8a; margin-bottom: 12px;">📅 महत्वपूर्ण तिथियां (Important Dates) <small style="font-size: 11px; font-weight: 600; color: #64748b;">(ऐच्छिक)</small></div>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">आवेदन शुरू (Application Start Date)</label>
-                <input type="text" id="vacDateStart" class="form-input" placeholder="e.g. 30 October 2026" required>
+                <input type="text" id="vacDateStart" class="form-input" placeholder="e.g. 30 October 2026">
               </div>
               <div class="form-group">
                 <label class="form-label">अंतिम तिथि (Last Date to Apply Online)</label>
-                <input type="text" id="vacDateLast" class="form-input" placeholder="e.g. 30 November 2026" required>
+                <input type="text" id="vacDateLast" class="form-input" placeholder="e.g. 30 November 2026">
               </div>
             </div>
             <div class="form-row" style="margin-bottom: 0;">
@@ -882,15 +849,15 @@
 
           <!-- 3. Application Fee Box -->
           <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
-            <div style="font-size: 15px; font-weight: 800; color: #166534; margin-bottom: 12px;">💰 आवेदन शुल्क (Application Fee)</div>
+            <div style="font-size: 15px; font-weight: 800; color: #166534; margin-bottom: 12px;">💰 आवेदन शुल्क (Application Fee) <small style="font-size: 11px; font-weight: 600; color: #64748b;">(ऐच्छिक)</small></div>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">General / OBC / EWS फीस</label>
-                <input type="text" id="vacFeeGen" class="form-input" placeholder="e.g. ₹500/- or ₹100/-" required>
+                <input type="text" id="vacFeeGen" class="form-input" placeholder="e.g. ₹500/- or ₹100/-">
               </div>
               <div class="form-group">
                 <label class="form-label">SC / ST / दिव्यांग (PH) फीस</label>
-                <input type="text" id="vacFeeReserved" class="form-input" placeholder="e.g. ₹0/- or ₹250/-" required>
+                <input type="text" id="vacFeeReserved" class="form-input" placeholder="e.g. ₹0/- or ₹250/-">
               </div>
             </div>
             <div class="form-group" style="margin-bottom: 0;">
@@ -901,15 +868,15 @@
 
           <!-- 4. Age Limit Box -->
           <div style="background: #fffbeb; border: 1.5px solid #fde68a; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
-            <div style="font-size: 15px; font-weight: 800; color: #b45309; margin-bottom: 12px;">🎂 आयु सीमा विवरण (Age Limit Details)</div>
+            <div style="font-size: 15px; font-weight: 800; color: #b45309; margin-bottom: 12px;">🎂 आयु सीमा विवरण (Age Limit Details) <small style="font-size: 11px; font-weight: 600; color: #64748b;">(ऐच्छिक)</small></div>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">न्यूनतम आयु (Minimum Age)</label>
-                <input type="text" id="vacAgeMin" class="form-input" placeholder="e.g. 18 Years" required>
+                <input type="text" id="vacAgeMin" class="form-input" placeholder="e.g. 18 Years">
               </div>
               <div class="form-group">
                 <label class="form-label">अधिकतम आयु (Maximum Age)</label>
-                <input type="text" id="vacAgeMax" class="form-input" placeholder="e.g. 25 Years / 33 Years" required>
+                <input type="text" id="vacAgeMax" class="form-input" placeholder="e.g. 25 Years / 33 Years">
               </div>
             </div>
             <div class="form-row" style="margin-bottom: 0;">
@@ -926,24 +893,24 @@
 
           <!-- 5. Educational Qualification -->
           <div class="form-group">
-            <label class="form-label">🎓 शैक्षणिक योग्यता (Educational Qualification)</label>
-            <textarea id="vacQualification" class="form-textarea" placeholder="e.g. 10th Pass / 12th Intermediate / Graduation in Any Stream from Recognized University in India." required></textarea>
+            <label class="form-label">🎓 शैक्षणिक योग्यता (Educational Qualification) <small style="font-size: 11px; font-weight: 600; color: #64748b;">(ऐच्छिक)</small></label>
+            <textarea id="vacQualification" class="form-textarea" placeholder="e.g. 10th Pass / 12th Intermediate / Graduation in Any Stream from Recognized University in India."></textarea>
           </div>
 
           <!-- 6. Direct Action Links -->
           <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px; margin-bottom: 22px;">
-            <div style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 12px;">🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Official Direct Links)</div>
+            <div style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 12px;">🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Official Direct Links) <small style="font-size: 11px; font-weight: 600; color: #64748b;">(ऐच्छिक)</small></div>
             <div class="form-group">
               <label class="form-label">1. ऑनलाइन आवेदन लिंक (Apply Online URL)</label>
-              <input type="url" id="vacLinkApply" class="form-input" placeholder="https://... (ऑफिशियल अप्लाई पोर्टल का डायरेक्ट लिंक)" required>
+              <input type="url" id="vacLinkApply" class="form-input" placeholder="https://... (ऑफिशियल अप्लाई पोर्टल का डायरेक्ट लिंक)">
             </div>
             <div class="form-group">
               <label class="form-label">2. नोटिफिकेशन डाउनलोड लिंक (Official Notification PDF URL)</label>
-              <input type="url" id="vacLinkNotice" class="form-input" placeholder="https://... (नोटिफिकेशन पीडीएफ लिंक)" required>
+              <input type="url" id="vacLinkNotice" class="form-input" placeholder="https://... (नोटिफिकेशन पीडीएफ लिंक)">
             </div>
             <div class="form-group" style="margin-bottom: 0;">
               <label class="form-label">3. आधिकारिक वेबसाइट लिंक (Official Department Website URL)</label>
-              <input type="url" id="vacLinkOfficial" class="form-input" placeholder="https://... (बोर्ड की मुख्य वेबसाइट का लिंक)" required>
+              <input type="url" id="vacLinkOfficial" class="form-input" placeholder="https://... (बोर्ड की मुख्य वेबसाइट का लिंक)">
             </div>
           </div>
 
@@ -1059,19 +1026,82 @@
 
   </div>
 
-  <!-- PREVIEW MODAL -->
-  <div class="preview-modal" id="previewModal">
+  <!-- PREVIEW MODAL (FULL ARTICLE & CARD LIVE PREVIEW) -->
+  <div class="preview-modal" id="previewModal" onclick="if(event.target===this) closePreviewModal()">
     <div class="preview-content">
-      <button class="btn-close-modal" onclick="closePreviewModal()">&times;</button>
-      <span style="font-size: 12px; font-weight: 800; color: #b91c1c; background: #fee2e2; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;" id="prevCategory">Sarkari Bharti</span>
-      <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 12px 0 8px;" id="prevTitle">Headline Preview</h3>
-      <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;" id="prevDate">Date Preview</p>
-      <img id="prevImg" src="railway-station-master-recruitment-2026.jpg" alt="Preview Image" style="width: 100%; border-radius: 8px; margin-bottom: 12px; max-height: 220px; object-fit: cover;">
-      <p style="font-size: 13.5px; color: #334155; line-height: 1.55; margin-bottom: 14px;" id="prevSummary">Summary Preview</p>
-      <ul id="prevBullets" style="font-size: 13px; color: #1e3a8a; padding-left: 20px; line-height: 1.5; margin-bottom: 16px;"></ul>
-      <div style="background: #eff6ff; padding: 10px; border-radius: 6px; font-size: 12.5px; color: #1e3a8a;">
-        Target Link: <strong id="prevUrl">url</strong>
+      
+      <!-- Top Bar with Close Button -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 18px;">👁️</span>
+          <strong style="font-size: 16px; color: #0f172a;">Live News Article Preview (जैसा यूज़र को दिखेगा)</strong>
+        </div>
+        <button class="btn-close-modal" onclick="closePreviewModal()" style="position: static; font-size: 20px; line-height: 1; border: none; background: #fee2e2; color: #dc2626; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;">&times;</button>
       </div>
+
+      <!-- Article Header & Category & Badges -->
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px;">
+        <span style="font-size: 12px; font-weight: 800; color: #b91c1c; background: #fee2e2; padding: 3px 10px; border-radius: 4px; text-transform: uppercase;" id="prevCategory">Sarkari Bharti</span>
+        <span id="prevBadgeTrending" style="display: none; font-size: 11px; font-weight: 800; color: #ea580c; background: #ffedd5; padding: 3px 8px; border-radius: 4px;">🔥 Top Trending</span>
+        <span id="prevBadgeReadMore" style="display: none; font-size: 11px; font-weight: 800; color: #1e3a8a; background: #eff6ff; padding: 3px 8px; border-radius: 4px;">📰 In Read More Stories</span>
+        <span id="prevBadgePinned" style="display: none; font-size: 11px; font-weight: 800; color: #b45309; background: #fef3c7; padding: 3px 8px; border-radius: 4px;">⭐ Pinned Top</span>
+      </div>
+
+      <!-- Headline Title -->
+      <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; margin: 0 0 10px; line-height: 1.4;" id="prevTitle">Headline Preview</h2>
+
+      <!-- Meta Info -->
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 12.5px; color: #64748b; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #f1f5f9;">
+        <span>✍️ AapkaResult News Desk</span>
+        <span>•</span>
+        <span id="prevDate">Today • Just Now</span>
+      </div>
+
+      <!-- Featured Image -->
+      <div id="prevImgContainer" style="margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #000;">
+        <img id="prevImg" src="railway-station-master-recruitment-2026.jpg" alt="Preview Image" style="width: 100%; max-height: 320px; object-fit: cover; display: block;">
+      </div>
+
+      <!-- Short Summary / Lead Paragraph -->
+      <div id="prevSummaryBox" style="background: #f8fafc; border-left: 4px solid #dc2626; padding: 12px 14px; margin-bottom: 16px; font-size: 14.5px; color: #1e293b; line-height: 1.7; font-weight: 500;">
+        <span style="font-weight: 800; color: #b91c1c;">AapkaResult ब्यूरो:</span> <span id="prevSummaryText"></span>
+      </div>
+
+      <!-- Highlights / Key Bullet Points (Dainik Jagran Style) -->
+      <div id="prevBulletsBox" style="background: #fff; border: 2px solid #dc2626; border-radius: 10px; padding: 14px 18px; margin-bottom: 18px;">
+        <div style="font-size: 14px; font-weight: 800; color: #b91c1c; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+          <span>📌</span> <span>इस खबर की मुख्य बातें (Key Highlights)</span>
+        </div>
+        <ul id="prevBulletsList" style="margin: 0; padding-left: 20px; font-size: 13.5px; color: #1e293b; line-height: 1.7;"></ul>
+      </div>
+
+      <!-- Dynamic Detailed Sections (हेडिंग और पैराग्राफ्स) -->
+      <div id="prevSectionsBox" style="margin-bottom: 18px;"></div>
+
+      <!-- Dynamic Important Links Table -->
+      <div id="prevLinksBox" style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px; margin-bottom: 18px;">
+        <div style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 10px;">
+          🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Direct Action Links)
+        </div>
+        <table style="width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; font-size: 13.5px; border: 1px solid #e2e8f0;">
+          <thead>
+            <tr style="background: #1e3a8a; color: #fff;">
+              <th style="padding: 9px 12px; text-align: left; font-size: 13px;">विवरण (Description)</th>
+              <th style="padding: 9px 12px; text-align: left; font-size: 13px;">डायरेक्ट लिंक</th>
+            </tr>
+          </thead>
+          <tbody id="prevLinksTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Footer URL info & Action Button -->
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 10px 14px; border-radius: 8px; font-size: 12.5px; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div>Target Page: <strong id="prevUrl">news-detail.html?id=...</strong></div>
+        <button type="button" onclick="closePreviewModal()" style="background: #1e3a8a; color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer;">
+          ✓ Close Preview
+        </button>
+      </div>
+
     </div>
   </div>
 
@@ -1237,10 +1267,10 @@
       row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
       row.innerHTML = `
         <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
-        <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">अतिरिक्त लिंक (Extra Link)</div>
+        <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
         <div class="form-row" style="margin-bottom: 0;">
-          <input type="text" class="form-input link-label-input" placeholder="Link Label (e.g. एडमिट कार्ड डाउनलोड करें)" required>
-          <input type="url" class="form-input link-url-input" placeholder="https://... (वेबसाइट का लिंक)" required>
+          <input type="text" class="form-input link-label-input" placeholder="Link Label (e.g. ऑनलाइन आवेदन करें / ऑफिशियल नोटिफिकेशन)">
+          <input type="url" class="form-input link-url-input" placeholder="https://... (वेबसाइट का लिंक)">
         </div>
       `;
       container.appendChild(row);
@@ -1254,10 +1284,10 @@
       card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
       card.innerHTML = `
         <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
-        <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${count} (Main Subheading)</div>
-        <input type="text" class="form-input sec-heading-input" placeholder="Heading (e.g. 💰 सैलरी व चयन प्रक्रिया)" style="margin-bottom: 8px; font-weight: 700;" required>
-        <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
-        <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग का विवरण लिखें..." required></textarea>
+        <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${count} (Subheading)</div>
+        <input type="text" class="form-input sec-heading-input" placeholder="Heading (e.g. महत्वपूर्ण तिथियां / पात्रता)" style="margin-bottom: 8px; font-weight: 700;">
+        <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+        <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग के अंतर्गत जानकारी लिखें..."></textarea>
       `;
       container.appendChild(card);
     }
@@ -1646,24 +1676,117 @@
     }
 
     function openPreviewModal() {
-      document.getElementById('prevTitle').textContent = document.getElementById('newsTitle').value || "Headline Preview";
+      // 1. Title & Category
+      const title = document.getElementById('newsTitle').value.trim();
+      document.getElementById('prevTitle').textContent = title || "Headline Preview";
       document.getElementById('prevCategory').textContent = document.getElementById('newsCategory').value;
       document.getElementById('prevDate').textContent = new Date().toLocaleDateString('en-GB') + " • Just Now";
-      document.getElementById('prevSummary').textContent = document.getElementById('newsSummary').value || "Summary goes here...";
-      document.getElementById('prevImg').src = document.getElementById('newsImage').value || "up-rojgar-mela-jewar-2026.jpg";
-      document.getElementById('prevUrl').textContent = document.getElementById('newsUrl').value || "news-detail.html?id=news-preview";
 
-      const bullets = document.querySelectorAll('.bullet-input');
-      const bList = document.getElementById('prevBullets');
+      // 2. Badges (Trending, Read More, Pinned)
+      const isTrending = document.getElementById('newsTrending').checked;
+      const isReadMore = document.getElementById('newsShowInRelated') ? document.getElementById('newsShowInRelated').checked : false;
+      const isPinned = document.getElementById('newsPinRelated') ? document.getElementById('newsPinRelated').checked : false;
+      document.getElementById('prevBadgeTrending').style.display = isTrending ? 'inline-block' : 'none';
+      document.getElementById('prevBadgeReadMore').style.display = isReadMore ? 'inline-block' : 'none';
+      document.getElementById('prevBadgePinned').style.display = isPinned ? 'inline-block' : 'none';
+
+      // 3. Featured Image (Use gallery preview if selected, otherwise preset/input image)
+      const prevImg = document.getElementById('prevImg');
+      if (selectedImageBase64) {
+        prevImg.src = selectedImageBase64;
+      } else {
+        const imgVal = document.getElementById('newsImage').value.trim();
+        prevImg.src = imgVal || "up-rojgar-mela-jewar-2026.jpg";
+      }
+
+      // 4. Short Summary
+      const summary = document.getElementById('newsSummary').value.trim();
+      const summaryBox = document.getElementById('prevSummaryBox');
+      if (summary) {
+        document.getElementById('prevSummaryText').textContent = summary;
+        summaryBox.style.display = 'block';
+      } else {
+        summaryBox.style.display = 'none';
+      }
+
+      // 5. Highlights / Bullet Points
+      const bullets = [];
+      document.querySelectorAll('.bullet-input').forEach(b => {
+        if (b.value.trim()) bullets.push(b.value.trim());
+      });
+      const bulletsBox = document.getElementById('prevBulletsBox');
+      const bList = document.getElementById('prevBulletsList');
       bList.innerHTML = '';
-      bullets.forEach(b => {
-        if (b.value.trim()) {
+      if (bullets.length > 0) {
+        bullets.forEach(txt => {
           const li = document.createElement('li');
-          li.textContent = b.value.trim();
+          li.style.marginBottom = '6px';
+          li.innerHTML = `<strong>📌</strong> ${txt}`;
           bList.appendChild(li);
+        });
+        bulletsBox.style.display = 'block';
+      } else {
+        bulletsBox.style.display = 'none';
+      }
+
+      // 6. Detailed Headings & Paragraph Sections
+      const sectionsBox = document.getElementById('prevSectionsBox');
+      sectionsBox.innerHTML = '';
+      const sectionCards = document.querySelectorAll('.content-section-card');
+      let hasSections = false;
+      sectionCards.forEach(card => {
+        const hInput = card.querySelector('.sec-heading-input');
+        const cInput = card.querySelector('.sec-content-input');
+        const hVal = hInput ? hInput.value.trim() : '';
+        const cVal = cInput ? cInput.value.trim() : '';
+        if (hVal || cVal) {
+          hasSections = true;
+          const secDiv = document.createElement('div');
+          secDiv.style.marginBottom = '16px';
+          secDiv.innerHTML = `
+            <h3 style="font-size: 16.5px; font-weight: 800; color: #0f172a; margin: 0 0 6px;">${hVal || 'मुख्य विवरण'}</h3>
+            ${cVal ? `<p style="font-size: 14px; color: #334155; line-height: 1.75; margin: 0; white-space: pre-line;">${cVal}</p>` : ''}
+          `;
+          sectionsBox.appendChild(secDiv);
         }
       });
+      sectionsBox.style.display = hasSections ? 'block' : 'none';
 
+      // 7. Important Direct Action Links
+      const linksBox = document.getElementById('prevLinksBox');
+      const linksTableBody = document.getElementById('prevLinksTableBody');
+      linksTableBody.innerHTML = '';
+      const linkRows = document.querySelectorAll('.link-item-row');
+      let hasLinks = false;
+      linkRows.forEach(row => {
+        const labelInput = row.querySelector('.link-label-input');
+        const urlInput = row.querySelector('.link-url-input');
+        const lVal = labelInput ? labelInput.value.trim() : '';
+        const uVal = urlInput ? urlInput.value.trim() : '';
+        if (uVal || lVal) {
+          hasLinks = true;
+          const isApply = (lVal.toLowerCase().includes('apply') || lVal.includes('आवेदन'));
+          const btnLabel = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
+          const tr = document.createElement('tr');
+          tr.style.borderBottom = '1px solid #e2e8f0';
+          tr.innerHTML = `
+            <td style="padding: 10px 12px; font-weight: 700; color: #0f172a;">${lVal || 'ऑफिशियल डायरेक्ट लिंक'}</td>
+            <td style="padding: 10px 12px;">
+              <a href="${uVal || '#'}" target="_blank" style="display: inline-block; background: #2563eb; color: #fff; padding: 5px 12px; border-radius: 5px; font-size: 12.5px; font-weight: 700; text-decoration: none;">
+                ${btnLabel} &rarr;
+              </a>
+            </td>
+          `;
+          linksTableBody.appendChild(tr);
+        }
+      });
+      linksBox.style.display = hasLinks ? 'block' : 'none';
+
+      // 8. Target URL
+      const customUrl = document.getElementById('newsUrl').value.trim();
+      document.getElementById('prevUrl').textContent = customUrl || "news-detail.html?id=news-" + Date.now();
+
+      // Open Modal
       document.getElementById('previewModal').style.display = 'flex';
     }
 

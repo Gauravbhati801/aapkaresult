@@ -925,44 +925,46 @@
           <li><strong>हेल्पलाइन :</strong> ऑनलाइन फॉर्म भरने में किसी भी प्रकार की असुविधा होने पर विभाग के टोल-फ्री हेल्पलाइन नंबर <code>155330</code> पर संपर्क किया जा सकता है।</li>
         </ol>
 
-        <!-- H2: IMPORTANT LINKS -->
-        <h2 class="article-h2">🔗 महत्वपूर्ण लिंक्स (Job Seekers Direct Links)</h2>
+        <!-- H2: IMPORTANT LINKS WRAPPER -->
+        <div id="articleLinksWrapper">
+          <h2 class="article-h2">🔗 महत्वपूर्ण लिंक्स (Job Seekers Direct Links)</h2>
 
-        <div class="article-table-wrap">
-          <table class="article-data-table article-links-table">
-            <thead>
-              <tr>
-                <th style="width: 45%;">विवरण (Description)</th>
-                <th>डायरेक्ट लिंक (Direct Link)</th>
-              </tr>
-            </thead>
-            <tbody id="articleLinksBody">
-              <tr>
-                <td><strong>रोजगार मेला ऑनलाइन रजिस्ट्रेशन</strong></td>
-                <td>
-                  <a href="https://rojgaarsangam.up.gov.in/RojgaarMela" target="_blank" rel="noopener noreferrer">यहाँ क्लिक करें (Apply Online) &rarr;</a>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>उत्तर प्रदेश रोजगार संगम पोर्टल</strong></td>
-                <td>
-                  <a href="https://rojgaarsangam.up.gov.in/" target="_blank" rel="noopener noreferrer">rojgaarsangam.up.gov.in &rarr;</a>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>विभागीय टोल-फ्री हेल्पलाइन</strong></td>
-                <td>
-                  <a href="tel:155330">कॉल करें: 155330 (निःशुल्क) &rarr;</a>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>लेटेस्ट सरकारी व प्राइवेट नौकरी अपडेट</strong></td>
-                <td>
-                  <a href="https://aapkaresult.in/">AapkaResult.in &rarr;</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="article-table-wrap">
+            <table class="article-data-table article-links-table">
+              <thead>
+                <tr>
+                  <th style="width: 45%;">विवरण (Description)</th>
+                  <th>डायरेक्ट लिंक (Direct Link)</th>
+                </tr>
+              </thead>
+              <tbody id="articleLinksBody">
+                <tr>
+                  <td><strong>रोजगार मेला ऑनलाइन रजिस्ट्रेशन</strong></td>
+                  <td>
+                    <a href="https://rojgaarsangam.up.gov.in/RojgaarMela" target="_blank" rel="noopener noreferrer">यहाँ क्लिक करें (Apply Online) &rarr;</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>उत्तर प्रदेश रोजगार संगम पोर्टल</strong></td>
+                  <td>
+                    <a href="https://rojgaarsangam.up.gov.in/" target="_blank" rel="noopener noreferrer">rojgaarsangam.up.gov.in &rarr;</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>विभागीय टोल-फ्री हेल्पलाइन</strong></td>
+                  <td>
+                    <a href="tel:155330">कॉल करें: 155330 (निःशुल्क) &rarr;</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>लेटेस्ट सरकारी व प्राइवेट नौकरी अपडेट</strong></td>
+                  <td>
+                    <a href="https://aapkaresult.in/">AapkaResult.in &rarr;</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- DISCLAIMER -->
@@ -1226,14 +1228,29 @@
           }
 
           const lead = document.getElementById('articleLead');
-          if (lead && item.leadSummary) {
-            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.leadSummary;
+          if (lead) {
+            if (item.leadSummary) {
+              lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.leadSummary;
+              lead.style.display = 'block';
+            } else if (item.summary) {
+              lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.summary;
+              lead.style.display = 'block';
+            } else {
+              lead.style.display = 'none';
+            }
           }
 
-          if (item.highlights && item.highlights.length) {
-            const hlBox = document.querySelector('.article-jagran-highlights ul');
-            if (hlBox) {
-              hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
+          // Highlights Box (Hide if empty)
+          const hlSection = document.querySelector('.article-jagran-highlights');
+          if (hlSection) {
+            if (item.highlights && item.highlights.length) {
+              const hlBox = hlSection.querySelector('ul');
+              if (hlBox) {
+                hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
+              }
+              hlSection.style.display = 'block';
+            } else {
+              hlSection.style.display = 'none';
             }
           }
 
@@ -1247,26 +1264,34 @@
               `).join('');
             } else if (item.summary) {
               bodyEl.innerHTML = `<p style="font-size: 15.5px; line-height: 1.8; color: #334155; white-space: pre-line;">${item.summary}</p>`;
+            } else {
+              bodyEl.innerHTML = '';
             }
           }
 
-          // Dynamically populate important action links at the bottom
-          if (item.links && item.links.length) {
-            const linksBody = document.getElementById('articleLinksBody');
-            if (linksBody) {
-              linksBody.innerHTML = item.links.map(lnk => {
-                const label = lnk.label || "महत्वपूर्ण लिंक";
-                const isApply = label.toLowerCase().includes('apply') || label.includes('आवेदन');
-                const btnText = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
-                return `
-                  <tr>
-                    <td><strong>${label}</strong></td>
-                    <td>
-                      <a href="${lnk.url}" target="_blank" rel="noopener noreferrer">${btnText} &rarr;</a>
-                    </td>
-                  </tr>
-                `;
-              }).join('');
+          // Dynamically populate important action links at the bottom (Hide if empty)
+          const linksWrapper = document.getElementById('articleLinksWrapper');
+          if (linksWrapper) {
+            if (item.links && item.links.length) {
+              const linksBody = document.getElementById('articleLinksBody');
+              if (linksBody) {
+                linksBody.innerHTML = item.links.map(lnk => {
+                  const label = lnk.label || "महत्वपूर्ण लिंक";
+                  const isApply = label.toLowerCase().includes('apply') || label.includes('आवेदन');
+                  const btnText = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
+                  return `
+                    <tr>
+                      <td><strong>${label}</strong></td>
+                      <td>
+                        <a href="${lnk.url}" target="_blank" rel="noopener noreferrer">${btnText} &rarr;</a>
+                      </td>
+                    </tr>
+                  `;
+                }).join('');
+              }
+              linksWrapper.style.display = 'block';
+            } else {
+              linksWrapper.style.display = 'none';
             }
           }
         })
