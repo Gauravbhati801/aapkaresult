@@ -33,7 +33,44 @@ function getLocalIp() {
 }
 
 const server = http.createServer((req, res) => {
+  // CORS Headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
   let cleanUrl = req.url.split('?')[0];
+
+  // API: Save News directly to data/news.json on disk
+  if (req.method === 'POST' && cleanUrl === '/api/save-news') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const parsed = JSON.parse(body);
+        const dataDir = path.join(ROOT_DIR, 'data');
+        if (!fs.existsSync(dataDir)) {
+          fs.mkdirSync(dataDir, { recursive: true });
+        }
+        const dataPath = path.join(dataDir, 'news.json');
+        fs.writeFileSync(dataPath, JSON.stringify(parsed, null, 2), 'utf8');
+        console.log(`[API] Saved ${parsed.length} news items to data/news.json`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, count: parsed.length }));
+      } catch (err) {
+        console.error('[API Error]', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
   if (cleanUrl === '/') cleanUrl = '/index.html';
 
   let filePath = path.join(ROOT_DIR, decodeURIComponent(cleanUrl));

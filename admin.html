@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AapkaResult News Desk - Admin Dashboard</title>
+  <!-- STRICT ADSENSE PROTECTION: NOINDEX NOFOLLOW SO GOOGLE NEVER CRAWLS ADMIN -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #ea580c;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Auth Screen */
+    .auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .auth-card {
+      background: #ffffff;
+      padding: 32px 28px;
+      border-radius: 16px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .auth-logo {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 16px;
+    }
+    .auth-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .auth-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .auth-input-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .auth-pin-input {
+      width: 100%;
+      padding: 12px 45px 12px 16px;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+      border: 2px solid #cbd5e1;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .auth-pin-input:focus {
+      border-color: var(--primary);
+    }
+    .auth-eye-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #64748b;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-auth-submit {
+      width: 100%;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-auth-submit:hover {
+      background: #1d4ed8;
+    }
+
+    /* Top App Bar */
+    .admin-navbar {
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 17px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .admin-brand img {
+      width: 32px;
+      height: 32px;
+    }
+    .admin-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge-status-online {
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid #22c55e;
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .dot-live {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+    .btn-logout {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Main App Layout */
+    .admin-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 20px auto 40px;
+      padding: 0 16px;
+      flex-grow: 1;
+    }
+
+    /* Tabs Navigation */
+    .tab-bar {
+      display: flex;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      gap: 4px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 14px;
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #64748b;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    /* Form Card */
+    .form-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-bottom: 25px;
+    }
+    .form-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .form-label small {
+      font-weight: 500;
+      color: #64748b;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.55;
+    }
+
+    /* Bullet Points Builder */
+    .bullets-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .bullet-row {
+      display: flex;
+      gap: 8px;
+    }
+    .bullet-input {
+      flex-grow: 1;
+      padding: 8px 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13.5px;
+      outline: none;
+    }
+    .btn-remove-bullet {
+      background: #fee2e2;
+      color: var(--danger);
+      border: none;
+      padding: 0 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .btn-add-bullet {
+      background: #eff6ff;
+      color: var(--primary);
+      border: 1.5px dashed #93c5fd;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+      text-align: center;
+    }
+    .btn-add-bullet:hover {
+      background: #dbeafe;
+    }
+
+    /* Action Buttons Row */
+    .form-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+    .btn-primary {
+      flex: 2;
+      min-width: 200px;
+      background: #16a34a;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover {
+      background: #15803d;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      flex: 1;
+      min-width: 140px;
+      background: #f1f5f9;
+      color: #334155;
+      border: 1.5px solid #cbd5e1;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* Modal Preview */
+    .preview-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .preview-content {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .btn-close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 9999;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* News List Table */
+    .news-table-wrap {
+      overflow-x: auto;
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .admin-table th {
+      background: #f8fafc;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 2px solid var(--border);
+    }
+    .admin-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .admin-table tr:hover {
+      background: #f8fafc;
+    }
+    .btn-action-del {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-toggle-badge {
+      border: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-toggle-badge.active {
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .btn-toggle-badge.active:hover {
+      background: #bbf7d0;
+    }
+    .btn-toggle-badge.inactive {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+    .btn-toggle-badge.inactive:hover {
+      background: #e2e8f0;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .form-actions-row {
+        flex-direction: column;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTH / PIN SCREEN -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-card">
+      <img src="favicon.svg" alt="AapkaResult Logo" class="auth-logo">
+      <h2 class="auth-title">AapkaResult News Desk</h2>
+      <p class="auth-desc">Enter your Security PIN / Password to access the news publishing dashboard.</p>
+      <div class="auth-input-wrap">
+        <input type="password" id="pinInput" class="auth-pin-input" maxlength="50" placeholder="Enter PIN / Password" autofocus onkeydown="if(event.key==='Enter') verifyPin()">
+        <button type="button" class="auth-eye-btn" onclick="togglePinVisibility()" title="Show/Hide Password" aria-label="Toggle Password Visibility">👁️</button>
+      </div>
+      <button type="button" class="btn-auth-submit" onclick="verifyPin()">Unlock Dashboard &rarr;</button>
+      <div id="authError" style="color: var(--danger); font-size: 12.5px; font-weight: 700; margin-top: 12px; display: none;">
+        Incorrect PIN / Password. Please try again.
+      </div>
+    </div>
+  </div>
+
+  <!-- APP NAVBAR -->
+  <header class="admin-navbar">
+    <a href="admin.html" class="admin-brand">
+      <img src="favicon.svg" alt="Logo">
+      <span>AapkaResult <span style="color: #fb923c;">News Desk</span></span>
+    </a>
+    <div class="admin-actions">
+      <div class="badge-status-online">
+        <span class="dot-live"></span>
+        <span>Online</span>
+      </div>
+      <a href="news.html" target="_blank" style="color: #cbd5e1; font-size: 13px; text-decoration: none; font-weight: 600; padding: 4px 8px; border-radius: 6px; background: rgba(255,255,255,0.1);">View News Hub &UpperRightArrow;</a>
+      <button class="btn-logout" onclick="logout()">Lock</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <div class="admin-container">
+
+    <!-- TABS -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('createTab', this)">✍️ Write News</button>
+      <button class="tab-btn" onclick="switchTab('manageTab', this)">📂 Manage News (<span id="totalNewsCount">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('settingsTab', this)">⚙️ Settings</button>
+    </div>
+
+    <!-- TAB 1: CREATE NEWS FORM -->
+    <div id="createTab" class="tab-content">
+      <div class="form-card">
+        <div class="form-title">
+          <span>📰 Publish Daily Sarkari News</span>
+          <span style="font-size: 12px; font-weight: 600; color: #16a34a; background: #dcfce7; padding: 2px 8px; border-radius: 4px; margin-left: auto;">Google Discover Ready</span>
+        </div>
+
+        <form id="newsForm" onsubmit="event.preventDefault(); publishNews();">
+          <!-- Title -->
+          <div class="form-group">
+            <label class="form-label">News Headline / Title <small>(Aakarshak &amp; Clear)</small></label>
+            <input type="text" id="newsTitle" class="form-input" placeholder="e.g. Railway RRB Station Master Recruitment 2026: 1,265 Posts Notification Out" required>
+          </div>
+
+          <div class="form-row">
+            <!-- Category -->
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select id="newsCategory" class="form-select">
+                <option value="Sarkari Bharti">Sarkari Bharti (Latest Jobs)</option>
+                <option value="Result Update">Result Update (Sarkari Result)</option>
+                <option value="Admit Card">Admit Card Release</option>
+                <option value="Answer Key">Answer Key Update</option>
+                <option value="Scholarship Update">Scholarship &amp; Education</option>
+                <option value="Breaking News">Breaking News</option>
+              </select>
+            </div>
+
+            <!-- Target Link / URL -->
+            <div class="form-group">
+              <label class="form-label">Target Page Link <small>(Optional: Auto sets to news-detail.html?id=...)</small></label>
+              <input type="text" id="newsUrl" class="form-input" placeholder="Auto dynamic link (leave blank) or custom link">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- Image URL -->
+            <div class="form-group">
+              <label class="form-label">Featured Image <small>(1280x720 Discover HD)</small></label>
+              <select id="presetImage" class="form-select" onchange="document.getElementById('newsImage').value = this.value">
+                <option value="railway-station-master-recruitment-2026.jpg">Railway Station Master (1280x720 HD)</option>
+                <option value="irel-tradesman-trainee-recruitment-2026.jpg">IREL Tradesman Trainee (1024x576)</option>
+                <option value="favicon-original.png">AapkaResult Standard Logo</option>
+              </select>
+              <input type="text" id="newsImage" class="form-input" style="margin-top: 6px;" value="railway-station-master-recruitment-2026.jpg" placeholder="Image file or URL">
+            </div>
+
+            <!-- Display & Read More Controls -->
+            <div class="form-group">
+              <label class="form-label">Display &amp; Read More Controls</label>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <label style="font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" id="newsTrending" checked style="width: 17px; height: 17px;">
+                  <span>🔥 Set as Top Story / Trending (टॉप प्रिफरेंस)</span>
+                </label>
+                <label style="font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" id="newsShowInRelated" checked style="width: 17px; height: 17px;">
+                  <span>📰 Show in 'Read More' (बाकी आर्टिकल्स के नीचे 'और पढ़ें' में दिखाएं)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Snippet -->
+          <div class="form-group">
+            <label class="form-label">Short Summary <small>(2-3 Lines for Google Discover, WhatsApp &amp; News Card)</small></label>
+            <textarea id="newsSummary" class="form-textarea" placeholder="Enter concise summary explaining what notice was released, who is eligible, and key dates..." required></textarea>
+          </div>
+
+          <!-- Key Highlights Builder -->
+          <div class="form-group">
+            <label class="form-label">Key Highlights / Bullet Points <small>(At least 3 points)</small></label>
+            <div class="bullets-container" id="bulletsContainer">
+              <div class="bullet-row">
+                <input type="text" class="bullet-input" placeholder="Point 1: e.g. Total Vacancies: 1,265 Posts" required>
+              </div>
+              <div class="bullet-row">
+                <input type="text" class="bullet-input" placeholder="Point 2: e.g. Pay Scale: Level-6 ₹35,400" required>
+              </div>
+              <div class="bullet-row">
+                <input type="text" class="bullet-input" placeholder="Point 3: e.g. Apply Online Dates: 27 Oct to 25 Nov 2026">
+              </div>
+            </div>
+            <button type="button" class="btn-add-bullet" onclick="addBulletRow()">+ Add Another Highlight Point</button>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions-row">
+            <button type="submit" class="btn-primary" id="btnPublish">
+              <span>🚀</span>
+              <span id="btnPublishText">Publish News to Website</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="openPreviewModal()">
+              <span>👁️</span>
+              <span>Preview Card</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="copyJsonData()">
+              <span>📋</span>
+              <span>Copy JSON</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB 2: MANAGE NEWS -->
+    <div id="manageTab" class="tab-content" style="display: none;">
+      <div class="form-card">
+        <div class="form-title">
+          <span>📂 Published News Articles</span>
+          <button class="btn-secondary" style="margin-left: auto; padding: 6px 12px; font-size: 13px;" onclick="loadNewsFromLocal()">🔄 Refresh</button>
+        </div>
+        <div class="news-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Read More Feed</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="newsTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SETTINGS -->
+    <div id="settingsTab" class="tab-content" style="display: none;">
+      <div class="form-card">
+        <div class="form-title">⚙️ News Desk Configuration</div>
+        <div class="form-group">
+          <label class="form-label">Security PIN / Password <small>(For Dashboard login)</small></label>
+          <input type="text" id="settingPin" class="form-input" style="max-width: 320px;" placeholder="Enter any PIN or password" value="2026">
+        </div>
+        <div class="form-group">
+          <label class="form-label">GitHub Personal Access Token (PAT) <small>(Enables direct 1-click live publish from mobile)</small></label>
+          <input type="password" id="settingPat" class="form-input" placeholder="ghp_...">
+          <small style="color: #64748b; display: block; margin-top: 4px;">Saved securely inside your phone browser's localStorage only.</small>
+        </div>
+        <button type="button" class="btn-primary" style="max-width: 220px;" onclick="saveSettings()">Save Configuration</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PREVIEW MODAL -->
+  <div class="preview-modal" id="previewModal">
+    <div class="preview-content">
+      <button class="btn-close-modal" onclick="closePreviewModal()">&times;</button>
+      <span style="font-size: 12px; font-weight: 800; color: #b91c1c; background: #fee2e2; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;" id="prevCategory">Sarkari Bharti</span>
+      <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 12px 0 8px;" id="prevTitle">Headline Preview</h3>
+      <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;" id="prevDate">Date Preview</p>
+      <img id="prevImg" src="railway-station-master-recruitment-2026.jpg" alt="Preview Image" style="width: 100%; border-radius: 8px; margin-bottom: 12px; max-height: 220px; object-fit: cover;">
+      <p style="font-size: 13.5px; color: #334155; line-height: 1.55; margin-bottom: 14px;" id="prevSummary">Summary Preview</p>
+      <ul id="prevBullets" style="font-size: 13px; color: #1e3a8a; padding-left: 20px; line-height: 1.5; margin-bottom: 16px;"></ul>
+      <div style="background: #eff6ff; padding: 10px; border-radius: 6px; font-size: 12.5px; color: #1e3a8a;">
+        Target Link: <strong id="prevUrl">url</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">Notice message here</div>
+
+  <script>
+    // Configuration & State
+    const DEFAULT_PIN = "2026";
+    const GITHUB_REPO_OWNER = "Gauravbhati801";
+    const GITHUB_REPO_NAME = "aapkaresult";
+    const GITHUB_BRANCH = "main";
+    let newsArticles = [];
+
+    // Check Auth on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      const isAuth = sessionStorage.getItem('news_admin_auth');
+      if (isAuth === 'true') {
+        document.getElementById('authOverlay').style.display = 'none';
+      }
+      
+      // Load stored PAT
+      const savedPat = localStorage.getItem('news_github_pat') || "";
+      document.getElementById('settingPat').value = savedPat;
+      const savedPin = localStorage.getItem('news_admin_pin') || DEFAULT_PIN;
+      document.getElementById('settingPin').value = savedPin;
+
+      loadNewsFromLocal();
+    });
+
+    function verifyPin() {
+      const entered = document.getElementById('pinInput').value.trim();
+      const currentPin = localStorage.getItem('news_admin_pin') || DEFAULT_PIN;
+      if (entered === currentPin) {
+        sessionStorage.setItem('news_admin_auth', 'true');
+        document.getElementById('authOverlay').style.display = 'none';
+        showToast("Welcome to AapkaResult News Desk!");
+      } else {
+        document.getElementById('authError').style.display = 'block';
+      }
+    }
+
+    function togglePinVisibility() {
+      const pin = document.getElementById('pinInput');
+      const btn = document.querySelector('.auth-eye-btn');
+      if (pin.type === 'password') {
+        pin.type = 'text';
+        if (btn) btn.textContent = '🔒';
+      } else {
+        pin.type = 'password';
+        if (btn) btn.textContent = '👁️';
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('news_admin_auth');
+      location.reload();
+    }
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).style.display = 'block';
+      btn.classList.add('active');
+      if (tabId === 'manageTab') {
+        renderManageTable();
+      }
+    }
+
+    function addBulletRow() {
+      const container = document.getElementById('bulletsContainer');
+      const row = document.createElement('div');
+      row.className = 'bullet-row';
+      row.innerHTML = `
+        <input type="text" class="bullet-input" placeholder="Highlight point...">
+        <button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>
+      `;
+      container.appendChild(row);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 3500);
+    }
+
+    // Load News from data/news.json
+    async function loadNewsFromLocal() {
+      try {
+        const res = await fetch('data/news.json?t=' + Date.now());
+        if (res.ok) {
+          newsArticles = await res.json();
+          document.getElementById('totalNewsCount').textContent = newsArticles.length;
+          renderManageTable();
+        }
+      } catch (e) {
+        console.log('Error fetching local news:', e);
+      }
+    }
+
+    function renderManageTable() {
+      const tbody = document.getElementById('newsTableBody');
+      tbody.innerHTML = '';
+      if (!newsArticles || newsArticles.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: #64748b; padding: 20px;">No news articles found.</td></tr>';
+        return;
+      }
+      newsArticles.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        const targetUrl = item.url || ('news-detail.html?id=' + (item.id || ''));
+        const isRelatedActive = item.showInRelated !== false;
+        tr.innerHTML = `
+          <td><strong>${item.date || 'N/A'}</strong></td>
+          <td><span style="background: #eff6ff; color: #1e3a8a; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11.5px;">${item.category || 'News'}</span></td>
+          <td><a href="${targetUrl}" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">${item.title}</a></td>
+          <td>${item.trending ? '🔥 Top' : 'Standard'}</td>
+          <td>
+            <button type="button" class="btn-toggle-badge ${isRelatedActive ? 'active' : 'inactive'}" onclick="toggleReadMore(${index})" title="Click to toggle Read More feed">
+              ${isRelatedActive ? '✅ Active' : '🚫 Hidden'}
+            </button>
+          </td>
+          <td>
+            <button class="btn-action-del" onclick="deleteNews(${index})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function toggleReadMore(index) {
+      if (!newsArticles[index]) return;
+      newsArticles[index].showInRelated = newsArticles[index].showInRelated === false ? true : false;
+      renderManageTable();
+      try {
+        await saveNewsData(newsArticles, "Toggle Read More feed for " + newsArticles[index].title);
+      } catch (err) {
+        alert("Notice: " + err.message);
+      }
+    }
+
+    async function deleteNews(index) {
+      if (confirm("Are you sure you want to delete this news article?")) {
+        newsArticles.splice(index, 1);
+        renderManageTable();
+        document.getElementById('totalNewsCount').textContent = newsArticles.length;
+        try {
+          await saveNewsData(newsArticles, "Delete news article from news desk");
+        } catch (err) {
+          alert("Notice: " + err.message);
+        }
+      }
+    }
+
+    function openPreviewModal() {
+      document.getElementById('prevTitle').textContent = document.getElementById('newsTitle').value || "Headline Preview";
+      document.getElementById('prevCategory').textContent = document.getElementById('newsCategory').value;
+      document.getElementById('prevDate').textContent = new Date().toLocaleDateString('en-GB') + " • Just Now";
+      document.getElementById('prevSummary').textContent = document.getElementById('newsSummary').value || "Summary goes here...";
+      document.getElementById('prevImg').src = document.getElementById('newsImage').value || "up-rojgar-mela-jewar-2026.jpg";
+      document.getElementById('prevUrl').textContent = document.getElementById('newsUrl').value || "news-detail.html?id=news-preview";
+
+      const bullets = document.querySelectorAll('.bullet-input');
+      const bList = document.getElementById('prevBullets');
+      bList.innerHTML = '';
+      bullets.forEach(b => {
+        if (b.value.trim()) {
+          const li = document.createElement('li');
+          li.textContent = b.value.trim();
+          bList.appendChild(li);
+        }
+      });
+
+      document.getElementById('previewModal').style.display = 'flex';
+    }
+
+    function closePreviewModal() {
+      document.getElementById('previewModal').style.display = 'none';
+    }
+
+    // Unified Save Function: Local Server Disk + GitHub Sync
+    async function saveNewsData(jsonArray, commitMessage) {
+      let savedLocally = false;
+      let savedGitHub = false;
+
+      // 1. Try local server API first
+      try {
+        const localRes = await fetch('/api/save-news', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(jsonArray)
+        });
+        if (localRes.ok) {
+          savedLocally = true;
+        }
+      } catch (e) {
+        console.warn("Local server save skipped (not running or static):", e);
+      }
+
+      // 2. Try GitHub sync if PAT exists
+      try {
+        await pushJsonToGitHub(jsonArray, commitMessage);
+        savedGitHub = true;
+      } catch (e) {
+        console.warn("GitHub sync skipped or failed:", e);
+      }
+
+      if (savedLocally || savedGitHub) {
+        let msg = "🎉 News saved successfully!";
+        if (savedLocally && savedGitHub) msg = "🎉 News saved to local website & synced to GitHub!";
+        else if (savedLocally) msg = "🎉 News saved to website locally!";
+        else if (savedGitHub) msg = "🎉 News pushed to GitHub repository!";
+        showToast(msg);
+        return true;
+      } else {
+        throw new Error("Could not save to local server or GitHub. Use Copy JSON to copy your news data.");
+      }
+    }
+
+    // Publish News Handler
+    async function publishNews() {
+      const title = document.getElementById('newsTitle').value.trim();
+      const category = document.getElementById('newsCategory').value;
+      const url = document.getElementById('newsUrl').value.trim();
+      const image = document.getElementById('newsImage').value.trim() || "up-rojgar-mela-jewar-2026.jpg";
+      const summary = document.getElementById('newsSummary').value.trim();
+      const trending = document.getElementById('newsTrending').checked;
+      const showInRelated = document.getElementById('newsShowInRelated') ? document.getElementById('newsShowInRelated').checked : true;
+
+      const bullets = [];
+      document.querySelectorAll('.bullet-input').forEach(b => {
+        if (b.value.trim()) bullets.push(b.value.trim());
+      });
+
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const dateStr = `${yyyy}-${mm}-${dd}`;
+      const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+      const generatedId = "news-" + Date.now();
+      const targetUrl = url || `news-detail.html?id=${generatedId}`;
+
+      const newArticle = {
+        id: generatedId,
+        title: title,
+        url: targetUrl,
+        category: category,
+        date: dateStr,
+        time: timeStr,
+        author: "AapkaResult News Desk",
+        image: image,
+        leadSummary: summary,
+        summary: summary,
+        highlights: bullets,
+        views: 100,
+        trending: trending,
+        showInRelated: showInRelated
+      };
+
+      // Add to front of list
+      newsArticles.unshift(newArticle);
+
+      const btn = document.getElementById('btnPublish');
+      const btnText = document.getElementById('btnPublishText');
+      btn.disabled = true;
+      btnText.textContent = "Publishing to Website...";
+
+      try {
+        await saveNewsData(newsArticles, `Add news: ${title}`);
+        document.getElementById('newsForm').reset();
+        document.getElementById('totalNewsCount').textContent = newsArticles.length;
+        renderManageTable();
+      } catch (err) {
+        alert("Publishing note: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = "Publish News to Website";
+      }
+    }
+
+    // Direct GitHub REST API Commit from Mobile Browser
+    async function pushJsonToGitHub(jsonArray, commitMessage) {
+      const pat = localStorage.getItem('news_github_pat') || document.getElementById('settingPat').value.trim();
+      if (!pat) {
+        throw new Error("GitHub Token not found in Settings!");
+      }
+
+      const filePath = "data/news.json";
+      const apiGetUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+
+      // 1. Get current file SHA
+      let currentSha = null;
+      try {
+        const getRes = await fetch(apiGetUrl, {
+          headers: {
+            'Authorization': `Bearer ${pat}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        if (getRes.ok) {
+          const data = await getRes.json();
+          currentSha = data.sha;
+        }
+      } catch (e) {
+        console.warn("Could not get file SHA, creating new...", e);
+      }
+
+      // 2. Put updated content
+      const contentJson = JSON.stringify(jsonArray, null, 2);
+      // UTF-8 to Base64
+      const contentBase64 = btoa(unescape(encodeURIComponent(contentJson)));
+
+      const putBody = {
+        message: commitMessage,
+        content: contentBase64,
+        branch: GITHUB_BRANCH
+      };
+      if (currentSha) {
+        putBody.sha = currentSha;
+      }
+
+      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${filePath}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putBody)
+      });
+
+      if (!putRes.ok) {
+        const errJson = await putRes.json();
+        throw new Error(errJson.message || "Failed to commit to GitHub");
+      }
+    }
+
+    function copyJsonData() {
+      const jsonStr = JSON.stringify(newsArticles, null, 2);
+      navigator.clipboard.writeText(jsonStr).then(() => {
+        showToast("JSON copied to clipboard!");
+      });
+    }
+
+    function saveSettings() {
+      const pin = document.getElementById('settingPin').value.trim() || DEFAULT_PIN;
+      const pat = document.getElementById('settingPat').value.trim();
+      localStorage.setItem('news_admin_pin', pin);
+      if (pat) localStorage.setItem('news_github_pat', pat);
+      showToast("Settings saved successfully!");
+    }
+  </script>
+</body>
+</html>
