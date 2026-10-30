@@ -130,53 +130,61 @@
       width: 100%;
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
-      border: 2px solid #ea580c;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
       display: block;
     }
     .article-lead-para {
       font-size: 16.5px;
       line-height: 1.85;
       color: #1e293b;
-      background: #fff5f5;
-      border-left: 4px solid #dc2626;
-      padding: 18px 20px;
-      border-radius: 6px;
-      margin-bottom: 24px;
+      font-weight: 400;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0 0 20px 0;
       box-sizing: border-box;
     }
     .article-lead-dateline {
       font-weight: 800;
-      color: #b91c1c;
-      text-transform: uppercase;
+      color: #0f172a;
+      margin-right: 4px;
     }
     .article-jagran-highlights {
-      background: #ffffff;
-      border: 2px solid #dc2626;
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin: 24px 0;
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.06);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0 24px;
       box-sizing: border-box;
     }
     .article-jagran-highlights-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
-      color: #b91c1c;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: #0f172a;
+      padding: 0 0 10px 0;
+      margin: 0 0 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      display: block;
     }
     .article-jagran-highlights ul {
+      list-style: disc;
       margin: 0 0 0 20px;
-      font-size: 15px;
+      padding: 0;
+      font-size: 15.5px;
       line-height: 1.8;
-      color: #1e293b;
+      color: #334155;
     }
     .article-jagran-highlights li {
-      margin-bottom: 8px;
+      margin: 0 0 8px 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .article-jagran-highlights li:last-child {
+      margin-bottom: 0;
     }
     .article-body-text p {
       font-size: 15.5px;
@@ -282,15 +290,15 @@
       margin-bottom: 10px;
     }
     .article-disclaimer-box {
-      background: #fee2e2;
-      border: 1.5px solid #fca5a5;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
-      padding: 14px 18px;
-      margin: 26px 0;
-      font-size: 14px;
-      font-weight: 700;
-      color: #991b1b;
-      line-height: 1.6;
+      padding: 12px 16px;
+      margin: 24px 0;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #475569;
+      line-height: 1.65;
       box-sizing: border-box;
     }
     .related-stories-box {
@@ -467,33 +475,34 @@
         border-radius: 6px !important;
       }
       .article-lead-para {
-        font-size: 14px !important;
-        line-height: 1.68 !important;
-        padding: 12px 12px !important;
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+        padding: 0 !important;
         margin-bottom: 16px !important;
-        border-left-width: 3.5px !important;
       }
       .article-jagran-highlights {
-        padding: 12px !important;
-        margin: 16px 0 !important;
+        padding: 14px 16px !important;
+        margin: 16px 0 20px !important;
         border-radius: 8px !important;
       }
       .article-jagran-highlights-title {
         font-size: 15px !important;
-        margin-bottom: 8px !important;
+        padding: 0 0 8px 0 !important;
+        margin-bottom: 10px !important;
       }
       .article-jagran-highlights ul,
       .article-highlight-box ul,
       .article-bullet-list {
-        margin: 0 0 0 16px !important;
-        font-size: 13.5px !important;
-        line-height: 1.65 !important;
-        padding-left: 0 !important;
+        margin: 0 0 0 18px !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.7 !important;
       }
       .article-jagran-highlights li,
       .article-highlight-box li,
       .article-bullet-list li {
-        margin-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        padding: 0 !important;
       }
       .article-body-text p {
         font-size: 14px !important;
@@ -783,22 +792,20 @@
              style="width: 100%; height: 100%; object-fit: cover;">
       </div>
 
-      <!-- LEAD PARAGRAPH (DAINIK JAGRAN STYLE DATELINE) -->
-      <div class="article-lead-para" id="articleLead">
-        <span class="article-lead-dateline">दनकौर (ग्रेटर नोएडा), AapkaResult ब्यूरो:</span> 
+      <!-- LEAD PARAGRAPH (SIMPLE ARTICLE STYLE) -->
+      <p class="article-lead-para" id="articleLead">
+        <span class="article-lead-dateline">AapkaResult ब्यूरो:</span>
         उत्तर प्रदेश के बेरोजगार युवाओं के लिए योगी सरकार की ओर से निजी क्षेत्र में नौकरी पाने का एक और बड़ा और सुनहरा अवसर सामने आया है। जिला सेवायोजन कार्यालय, गौतम बुद्ध नगर की ओर से जेवर विधानसभा क्षेत्र के ऐतिहासिक कस्बे दनकौर में आगामी <strong>02 नवंबर 2026</strong> को एक विशाल विधान सभा स्तरीय रोजगार मेले (Mega Job Fair) का आयोजन किया जा रहा है। इस मेले में देश-विदेश की 20 से अधिक नामी बहुराष्ट्रीय (MNC) और प्रतिष्ठित औद्योगिक कंपनियां हिस्सा ले रही हैं, जो युवाओं का सीधे इंटरव्यू लेकर ऑन-द-स्पॉट ऑफर लेटर प्रदान करेंगी।
-      </div>
+      </p>
 
-      <!-- DAINIK JAGRAN STYLE: 'एक नज़र में मुख्य बिंदु' (HIGHLIGHTS BOX) -->
+      <!-- SIMPLE ARTICLE KEY HIGHLIGHTS -->
       <div class="article-jagran-highlights">
-        <div class="article-jagran-highlights-title">
-          <span>📌</span> <span>एक नज़र में मेले की बड़ी बातें (Key Highlights)</span>
-        </div>
+        <div class="article-jagran-highlights-title">मुख्य बिंदु (Key Highlights)</div>
         <ul>
           <li><strong>तारीख व समय:</strong> 2 नवंबर 2026 (सोमवार) को सुबह 10:00 बजे से शाम 4:00 बजे तक।</li>
           <li><strong>सटीक आयोजन स्थल:</strong> श्री द्रोणाचार्य पीजी कॉलेज परिसर, दनकौर, जेवर विधानसभा, ग्रेटर नोएडा।</li>
           <li><strong>कुल अवसर:</strong> 2,000 से अधिक रिक्तियों पर सीधे वॉक-इन इंटरव्यू से चयन।</li>
-          <li><strong>शैक्षणिक योग्यता:</strong> 8वीं, 10वीं, 12वीं पास से लेकर ITI, डिप्लोमा, ग्रेजुएट्स (BA/BSc/BCom/BBA/BCA) व पोस्ट ग्रेजुएट्स।</li>
+          <li><strong>शैक्षणिक योग्यता:</strong> 8वीं, 10वीं, 12वीं पास से लेकर ITI, डिप्लोमा, ग्रेजुएट्स व पोस्ट ग्रेजुएट्स।</li>
           <li><strong>सैलरी पैकेज:</strong> योग्यता अनुसार ₹12,000 से लेकर ₹25,000 प्रति माह + ईएसआई (ESI) एवं पीएफ (PF)।</li>
           <li><strong>पंजीकरण शुल्क:</strong> उत्तर प्रदेश सरकार के पोर्टल पर 100% निःशुल्क (₹0/- Free Entry)।</li>
         </ul>
@@ -969,9 +976,9 @@
         </div>
       </div>
 
-      <!-- DISCLAIMER -->
-      <div class="article-disclaimer-box">
-        ⚠️ <strong>सावधानी नोट:</strong> रोज़गार मेले में शामिल होने अथवा इंटरव्यू देने के लिए किसी भी व्यक्ति, बिचौलिए या संस्था को कोई शुल्क न दें। उत्तर प्रदेश सरकार की यह भर्ती प्रक्रिया पूरी तरह पारदर्शी और 100% निःशुल्क है।
+      <!-- DISCLAIMER / EDITORIAL NOTE (Dynamic per article) -->
+      <div class="article-disclaimer-box" id="articleDisclaimerBox">
+        ℹ️ <strong>आधिकारिक सूचना:</strong> अभ्यर्थियों को सलाह दी जाती है कि किसी भी भर्ती, परीक्षा या आवेदन प्रक्रिया से पहले संबंधित विभाग की आधिकारिक वेबसाइट एवं नोटिफिकेशन से विवरण अवश्य सत्यापित कर लें।
       </div>
 
       <!-- RELATED STORIES (IN-ARTICLE READ MORE) -->
@@ -1197,11 +1204,9 @@
 
         const lead = document.getElementById('articleLead');
         if (lead) {
-          if (item.leadSummary) {
-            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.leadSummary;
-            lead.style.display = 'block';
-          } else if (item.summary) {
-            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.summary;
+          const summaryText = item.leadSummary || item.summary || '';
+          if (summaryText) {
+            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + summaryText;
             lead.style.display = 'block';
           } else {
             lead.style.display = 'none';
@@ -1213,7 +1218,14 @@
           if (item.highlights && item.highlights.length) {
             const hlBox = hlSection.querySelector('ul');
             if (hlBox) {
-              hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
+              hlBox.innerHTML = item.highlights.map(h => {
+                const colonIdx = h.indexOf(':');
+                let formatted = h;
+                if (colonIdx > 0 && colonIdx < 38 && !h.includes('<strong')) {
+                  formatted = `<strong style="color: #0f172a;">${h.slice(0, colonIdx + 1)}</strong>${h.slice(colonIdx + 1)}`;
+                }
+                return `<li>${formatted}</li>`;
+              }).join('');
             }
             hlSection.style.display = 'block';
           } else {
@@ -1257,6 +1269,20 @@
             linksWrapper.style.display = 'block';
           } else {
             linksWrapper.style.display = 'none';
+          }
+        }
+
+        const disclaimerEl = document.getElementById('articleDisclaimerBox');
+        if (disclaimerEl) {
+          if (item.disclaimer) {
+            disclaimerEl.innerHTML = `ℹ️ <strong>नोट:</strong> ${item.disclaimer}`;
+            disclaimerEl.style.display = 'block';
+          } else if (item.id === 'up-rojgar-mela-jewar-2026' || (item.title && item.title.includes('Rojgar Mela'))) {
+            disclaimerEl.innerHTML = `ℹ️ <strong>अभ्यर्थियों के लिए सूचना:</strong> रोज़गार मेले में शामिल होने अथवा इंटरव्यू देने के लिए किसी भी व्यक्ति या संस्था को कोई शुल्क न दें। सेवायोजन पोर्टल पर पंजीकरण पूरी तरह निःशुल्क है।`;
+            disclaimerEl.style.display = 'block';
+          } else {
+            disclaimerEl.innerHTML = `ℹ️ <strong>आधिकारिक सूचना:</strong> अभ्यर्थियों को सलाह दी जाती है कि किसी भी आवेदन, परिणाम या आधिकारिक प्रक्रिया से पहले संबंधित विभाग की आधिकारिक वेबसाइट से विवरण अवश्य सत्यापित कर लें।`;
+            disclaimerEl.style.display = 'block';
           }
         }
       }
