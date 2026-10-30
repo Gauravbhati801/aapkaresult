@@ -598,13 +598,49 @@
         <span class="dot-live"></span>
         <span>Online</span>
       </div>
-      <a href="news.html" target="_blank" style="color: #cbd5e1; font-size: 13px; text-decoration: none; font-weight: 600; padding: 4px 8px; border-radius: 6px; background: rgba(255,255,255,0.1);">View News Hub &UpperRightArrow;</a>
+      <button type="button" onclick="syncAllToGitHub()" style="background: #2563eb; color: #ffffff; border: 1px solid #60a5fa; font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+        <span>☁️</span> <span>Sync Live</span>
+      </button>
+      <a href="index.html" target="_blank" style="color: #cbd5e1; font-size: 12.5px; text-decoration: none; font-weight: 600; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,0.1);">🏠 Home &UpperRightArrow;</a>
+      <a href="news.html" target="_blank" style="color: #cbd5e1; font-size: 12.5px; text-decoration: none; font-weight: 600; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,0.1);">📰 News Hub &UpperRightArrow;</a>
       <button class="btn-logout" onclick="logout()">Lock</button>
     </div>
   </header>
 
   <!-- MAIN CONTAINER -->
   <div class="admin-container">
+
+    <!-- QUICK STATS DASHBOARD BAR -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 18px;">
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+        <div>
+          <div style="font-size: 11.5px; font-weight: 700; color: #64748b; text-transform: uppercase;">कुल प्रकाशित खबरें</div>
+          <div id="statTotalNews" style="font-size: 22px; font-weight: 800; color: #0f172a; margin-top: 2px;">0</div>
+        </div>
+        <span style="font-size: 24px; background: #eff6ff; padding: 8px; border-radius: 8px;">📰</span>
+      </div>
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-left: 4px solid #ea580c; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+        <div>
+          <div style="font-size: 11.5px; font-weight: 700; color: #64748b; text-transform: uppercase;">टॉप / ट्रेंडिंग (Top)</div>
+          <div id="statTrendingNews" style="font-size: 22px; font-weight: 800; color: #ea580c; margin-top: 2px;">0</div>
+        </div>
+        <span style="font-size: 24px; background: #fff7ed; padding: 8px; border-radius: 8px;">🔥</span>
+      </div>
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-left: 4px solid #16a34a; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+        <div>
+          <div style="font-size: 11.5px; font-weight: 700; color: #64748b; text-transform: uppercase;">'और पढ़ें' में सक्रिय</div>
+          <div id="statReadMoreNews" style="font-size: 22px; font-weight: 800; color: #16a34a; margin-top: 2px;">0</div>
+        </div>
+        <span style="font-size: 24px; background: #f0fdf4; padding: 8px; border-radius: 8px;">📌</span>
+      </div>
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-left: 4px solid #7c3aed; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+        <div>
+          <div style="font-size: 11.5px; font-weight: 700; color: #64748b; text-transform: uppercase;">कुल सरकारी भर्तियां</div>
+          <div id="statTotalVacancies" style="font-size: 22px; font-weight: 800; color: #7c3aed; margin-top: 2px;">0</div>
+        </div>
+        <span style="font-size: 24px; background: #f5f3ff; padding: 8px; border-radius: 8px;">💼</span>
+      </div>
+    </div>
 
     <!-- TABS -->
     <div class="tab-bar">
@@ -696,9 +732,9 @@
             <!-- Target Link / URL -->
             <div class="form-group">
               <label class="form-label">Target Page Link <small>(Auto sets to news-detail.html?id=...)</small></label>
-              <input type="text" id="newsUrl" class="form-input" placeholder="Auto dynamic link (leave blank) or custom link">
+              <input type="text" id="newsUrl" class="form-input" placeholder="e.g. news-detail.html?id=up-rojgar-mela-jewar-2026">
               <button type="button" onclick="generateSlugFromTitle()" style="background: #eff6ff; color: #1e3a8a; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 10px; font-size: 11.5px; font-weight: 700; cursor: pointer; margin-top: 5px;">
-                ⚡ टाइटल से SEO लिंक बनाएं (.html)
+                ⚡ टाइटल से SEO लिंक बनाएं (news-detail.html?id=...)
               </button>
             </div>
           </div>
@@ -716,18 +752,19 @@
                 </button>
               </div>
 
-              <!-- Image Live Preview Box -->
-              <div id="imagePreviewBox" style="display: none; position: relative; margin-bottom: 8px; border-radius: 8px; overflow: hidden; border: 1.5px solid #22c55e;">
-                <img id="imagePreviewEl" src="" alt="Selected Preview" style="width: 100%; height: 160px; object-fit: cover; display: block;">
-                <div style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.8); color: #ffffff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">
-                  ✓ फोन गैलरी से फोटो चुनी गई (1280px HD Ready)
+              <!-- Image Live Preview Box (Always visible so user sees active banner) -->
+              <div id="imagePreviewBox" style="display: block; position: relative; margin-bottom: 8px; border-radius: 8px; overflow: hidden; border: 1.5px solid #cbd5e1; background: #f1f5f9;">
+                <img id="imagePreviewEl" src="news-banner-1793344224659.jpg" alt="Selected Preview" style="width: 100%; height: 155px; object-fit: cover; display: block;" onerror="this.src='favicon-original.png'">
+                <div id="imagePreviewLabel" style="position: absolute; bottom: 6px; left: 6px; background: rgba(15,23,42,0.82); color: #ffffff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">
+                  🖼️ सक्रिय बैनर प्रीव्यू (Live Banner Preview)
                 </div>
-                <button type="button" onclick="clearSelectedImage()" style="position: absolute; top: 6px; right: 6px; background: #dc2626; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 11.5px; font-weight: 700;">हटाएं &times;</button>
+                <button type="button" id="btnClearGalleryImg" onclick="clearSelectedImage()" style="display: none; position: absolute; top: 6px; right: 6px; background: #dc2626; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 11.5px; font-weight: 700;">हटाएं &times;</button>
               </div>
 
               <div style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">या पहले से मौजूद फोटो में से चुनें:</div>
-              <select id="presetImage" class="form-select" onchange="document.getElementById('newsImage').value = this.value">
-                <option value="up-rojgar-mela-jewar-2026.jpg">UP Rojgar Mela (1280x720)</option>
+              <select id="presetImage" class="form-select" onchange="document.getElementById('newsImage').value = this.value; updateBannerPreviewFromInput(this.value);">
+                <option value="news-banner-1793344224659.jpg">UP Rojgar Mela Latest Banner (1280x720)</option>
+                <option value="up-rojgar-mela-jewar-2026.jpg">UP Rojgar Mela Classic (1280x720)</option>
                 <option value="railway-station-master-recruitment-2026.jpg">Railway Station Master (1280x720 HD)</option>
                 <option value="news-up-homeguard-2026.jpg">UP Police / Homeguard (1280x720)</option>
                 <option value="news-ctet-exam-2026.jpg">CTET / Teaching Exam (1280x720)</option>
@@ -736,7 +773,7 @@
                 <option value="irel-tradesman-trainee-recruitment-2026.jpg">IREL Tradesman Trainee (1024x576)</option>
                 <option value="favicon-original.png">AapkaResult Standard Logo</option>
               </select>
-              <input type="text" id="newsImage" class="form-input" style="margin-top: 6px;" value="up-rojgar-mela-jewar-2026.jpg" placeholder="Image file or URL">
+              <input type="text" id="newsImage" class="form-input" style="margin-top: 6px;" value="news-banner-1793344224659.jpg" placeholder="Image file or URL" oninput="updateBannerPreviewFromInput(this.value)">
             </div>
 
             <!-- Display & Read More Controls -->
@@ -1010,18 +1047,22 @@
     </div>
     <div id="manageTab" class="tab-content" style="display: none;">
       <div class="form-card">
-        <div class="form-title">
+        <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
           <span>📂 Published News Articles</span>
-          <button class="btn-secondary" style="margin-left: auto; padding: 6px 12px; font-size: 13px;" onclick="loadNewsFromLocal()">🔄 Refresh</button>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto;">
+            <input type="search" id="adminNewsSearch" class="form-input" placeholder="🔍 खबर या लिंक खोजें..." oninput="renderManageTable()" style="width: 220px; padding: 6px 12px; font-size: 13px;">
+            <button class="btn-secondary" style="padding: 6px 12px; font-size: 13px;" onclick="loadNewsFromLocal()">🔄 Refresh</button>
+          </div>
         </div>
         <div class="news-table-wrap">
           <table class="admin-table">
             <thead>
               <tr>
+                <th>Banner</th>
                 <th>Date</th>
                 <th>Category</th>
-                <th>Title</th>
-                <th>Status</th>
+                <th>Headline &amp; Direct Link</th>
+                <th>Priority</th>
                 <th>Read More Feed</th>
                 <th>Action</th>
               </tr>
@@ -1364,6 +1405,11 @@
 
           document.getElementById('imagePreviewEl').src = compressedDataUrl;
           document.getElementById('imagePreviewBox').style.display = 'block';
+          document.getElementById('imagePreviewBox').style.borderColor = '#22c55e';
+          const lbl = document.getElementById('imagePreviewLabel');
+          if (lbl) lbl.textContent = '✓ फोन गैलरी से फोटो चुनी गई (1280px HD Ready)';
+          const clearBtn = document.getElementById('btnClearGalleryImg');
+          if (clearBtn) clearBtn.style.display = 'block';
           document.getElementById('newsImage').value = selectedImageFilename;
           showToast("✅ फोटो चुनी गई (1280px Web Ready)");
         };
@@ -1372,13 +1418,31 @@
       reader.readAsDataURL(file);
     }
 
+    function updateBannerPreviewFromInput(val) {
+      if (selectedImageBase64) return;
+      const previewEl = document.getElementById('imagePreviewEl');
+      const box = document.getElementById('imagePreviewBox');
+      const lbl = document.getElementById('imagePreviewLabel');
+      const clearBtn = document.getElementById('btnClearGalleryImg');
+      if (previewEl && val) {
+        previewEl.src = val.trim();
+        if (box) {
+          box.style.display = 'block';
+          box.style.borderColor = '#cbd5e1';
+        }
+        if (lbl) lbl.textContent = '🖼️ सक्रिय बैनर: ' + val.trim();
+        if (clearBtn) clearBtn.style.display = 'none';
+      }
+    }
+
     function clearSelectedImage() {
       selectedImageBase64 = null;
       selectedImageFilename = null;
       const fileInput = document.getElementById('newsImageFile');
       if (fileInput) fileInput.value = '';
-      document.getElementById('imagePreviewBox').style.display = 'none';
-      document.getElementById('newsImage').value = 'up-rojgar-mela-jewar-2026.jpg';
+      const defaultImg = 'news-banner-1793344224659.jpg';
+      document.getElementById('newsImage').value = defaultImg;
+      updateBannerPreviewFromInput(defaultImg);
     }
 
     function addLinkRow() {
@@ -1420,6 +1484,22 @@
       setTimeout(() => { t.style.display = 'none'; }, 3500);
     }
 
+    function updateAdminStats() {
+      const totalNews = Array.isArray(newsArticles) ? newsArticles.length : 0;
+      const trendingCount = Array.isArray(newsArticles) ? newsArticles.filter(a => !!a.trending).length : 0;
+      const activeReadMore = Array.isArray(newsArticles) ? newsArticles.filter(a => a.showInRelated !== false).length : 0;
+      const totalVac = Array.isArray(vacanciesList) ? vacanciesList.length : 0;
+
+      const elTotal = document.getElementById('statTotalNews');
+      if (elTotal) elTotal.textContent = totalNews;
+      const elTrend = document.getElementById('statTrendingNews');
+      if (elTrend) elTrend.textContent = trendingCount;
+      const elRm = document.getElementById('statReadMoreNews');
+      if (elRm) elRm.textContent = activeReadMore;
+      const elVac = document.getElementById('statTotalVacancies');
+      if (elVac) elVac.textContent = totalVac;
+    }
+
     // Load News from data/news.json
     async function loadNewsFromLocal() {
       try {
@@ -1430,6 +1510,7 @@
           const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
           const rmBadge = document.getElementById('readMoreCount');
           if (rmBadge) rmBadge.textContent = activeReadMore;
+          updateAdminStats();
           renderManageTable();
           renderReadMoreTab();
         }
@@ -1448,6 +1529,7 @@
           if (countBadge) countBadge.textContent = vacanciesList.length;
           const listCount = document.getElementById('vacanciesListCount');
           if (listCount) listCount.textContent = vacanciesList.length;
+          updateAdminStats();
           renderVacanciesTable();
         }
       } catch (e) {
@@ -1731,18 +1813,21 @@
     function generateSlugFromTitle() {
       const title = document.getElementById('newsTitle').value.trim();
       if (!title) {
-        alert("कृपया पहले खबर का शीर्षक (Title) लिखें!");
+        showToast("⚠️ कृपया पहले खबर का शीर्षक (Title) लिखें!");
         return;
       }
       const slug = title
         .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
+        .replace(/[^a-z0-9\s-]/g, '')
         .trim()
         .replace(/\s+/g, '-')
-        .substring(0, 50);
-      const finalSlug = (slug || 'sarkari-news') + '.html';
-      document.getElementById('newsUrl').value = finalSlug;
-      showToast("⚡ SEO URL तैयार: " + finalSlug);
+        .replace(/-+/g, '-')
+        .substring(0, 55)
+        .replace(/^-|-$/g, '');
+      const cleanId = slug || ('sarkari-news-' + Date.now());
+      const finalUrl = 'news-detail.html?id=' + cleanId;
+      document.getElementById('newsUrl').value = finalUrl;
+      showToast("⚡ SEO लिंक तैयार: " + finalUrl);
     }
 
     function applyNewsTemplate(type) {
@@ -1998,8 +2083,12 @@
       document.getElementById('newsTitle').value = item.title || '';
       updateHeadlineMeter();
       document.getElementById('newsCategory').value = item.category || 'Sarkari Bharti';
-      document.getElementById('newsUrl').value = item.url || '';
-      document.getElementById('newsImage').value = item.image || 'up-rojgar-mela-jewar-2026.jpg';
+      document.getElementById('newsUrl').value = item.url || ('news-detail.html?id=' + (item.id || ''));
+      const activeImg = item.image || 'news-banner-1793344224659.jpg';
+      document.getElementById('newsImage').value = activeImg;
+      selectedImageBase64 = null;
+      selectedImageFilename = null;
+      updateBannerPreviewFromInput(activeImg);
       document.getElementById('newsSummary').value = item.leadSummary || item.summary || '';
       document.getElementById('newsTrending').checked = !!item.trending;
       if (document.getElementById('newsShowInRelated')) {
@@ -2095,23 +2184,81 @@
       if (btnIcon) btnIcon.textContent = "🚀";
     }
 
-    // MANAGE NEWS TABLE WITH EDIT & DELETE
+    function copyArticleLink(relativeUrl) {
+      const fullUrl = 'https://aapkaresult.in/' + relativeUrl.replace(/^\//, '');
+      navigator.clipboard.writeText(fullUrl).then(() => {
+        showToast("🔗 लिंक कॉपी हो गया: " + fullUrl);
+      }).catch(() => {
+        showToast("🔗 " + fullUrl);
+      });
+    }
+
+    async function toggleTrending(index) {
+      if (!newsArticles[index]) return;
+      newsArticles[index].trending = !newsArticles[index].trending;
+      updateAdminStats();
+      renderManageTable();
+      try {
+        await saveNewsData(newsArticles, "Toggle Trending status for " + newsArticles[index].title);
+      } catch (err) {
+        showToast("Notice: " + err.message);
+      }
+    }
+
+    async function syncAllToGitHub() {
+      try {
+        showToast("☁️ Syncing news & vacancies...");
+        await saveNewsData(newsArticles, "Admin manual sync news.json");
+      } catch (err) {
+        showToast("⚠️ " + err.message);
+      }
+    }
+
+    // MANAGE NEWS TABLE WITH THUMBNAIL, SEARCH, COPY LINK, EDIT & DELETE
     function renderManageTable() {
       const tbody = document.getElementById('newsTableBody');
+      if (!tbody) return;
       tbody.innerHTML = '';
+      const searchInput = document.getElementById('adminNewsSearch');
+      const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+
       if (!newsArticles || newsArticles.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: #64748b; padding: 20px;">No news articles found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #64748b; padding: 20px;">No news articles found.</td></tr>';
         return;
       }
+
+      let matchCount = 0;
       newsArticles.forEach((item, index) => {
-        const tr = document.createElement('tr');
         const targetUrl = item.url || ('news-detail.html?id=' + (item.id || ''));
+        if (query) {
+          const hay = `${item.title || ''} ${item.category || ''} ${targetUrl} ${item.date || ''}`.toLowerCase();
+          if (!hay.includes(query)) return;
+        }
+        matchCount++;
+        const tr = document.createElement('tr');
         const isRelatedActive = item.showInRelated !== false;
+        const thumbSrc = item.image || 'favicon-original.png';
         tr.innerHTML = `
-          <td><strong>${item.date || 'N/A'}</strong></td>
-          <td><span style="background: #eff6ff; color: #1e3a8a; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 11.5px;">${item.category || 'News'}</span></td>
-          <td><a href="${targetUrl}" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">${item.title}</a></td>
-          <td>${item.trending ? '🔥 Top' : 'Standard'}</td>
+          <td style="width: 82px;">
+            <img src="${escapeHtml(thumbSrc)}" alt="Thumb" style="width: 72px; height: 42px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: block; background: #f1f5f9;" onerror="this.src='favicon-original.png'">
+          </td>
+          <td style="white-space: nowrap;">
+            <strong style="display: block; color: #0f172a;">${escapeHtml(item.date || 'N/A')}</strong>
+            <span style="font-size: 11px; color: #64748b;">${escapeHtml(item.time || '')}</span>
+          </td>
+          <td><span style="background: #eff6ff; color: #1e3a8a; padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 11.5px; white-space: nowrap;">${escapeHtml(item.category || 'News')}</span></td>
+          <td>
+            <a href="${escapeHtml(targetUrl)}" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 700; display: block; margin-bottom: 4px; line-height: 1.35;">${escapeHtml(item.title)}</a>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <code style="font-size: 11px; color: #2563eb; background: #f8fafc; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">${escapeHtml(targetUrl)}</code>
+              <button type="button" onclick="copyArticleLink('${escapeHtml(targetUrl)}')" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 700; cursor: pointer;">📋 Copy Link</button>
+            </div>
+          </td>
+          <td>
+            <button type="button" class="btn-toggle-badge ${item.trending ? 'active' : 'inactive'}" onclick="toggleTrending(${index})" title="Click to toggle Top / Trending">
+              ${item.trending ? '🔥 Top' : 'Standard'}
+            </button>
+          </td>
           <td>
             <button type="button" class="btn-toggle-badge ${isRelatedActive ? 'active' : 'inactive'}" onclick="toggleReadMore(${index})" title="Click to toggle Read More feed">
               ${isRelatedActive ? '✅ Active' : '🚫 Hidden'}
@@ -2130,6 +2277,10 @@
         `;
         tbody.appendChild(tr);
       });
+
+      if (matchCount === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #64748b; padding: 20px;">कोई मिलती-जुलती खबर नहीं मिली।</td></tr>';
+      }
     }
 
     async function toggleReadMore(index) {
@@ -2138,6 +2289,7 @@
       const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
       const rmBadge = document.getElementById('readMoreCount');
       if (rmBadge) rmBadge.textContent = activeReadMore;
+      updateAdminStats();
       renderManageTable();
       renderReadMoreTab();
       try {
@@ -2565,6 +2717,8 @@
       }
 
       if (savedLocally || savedGitHub) {
+        try { sessionStorage.removeItem('aapkaresult_news_cache'); } catch (e) {}
+        updateAdminStats();
         let msg = "🎉 News saved successfully!";
         if (savedLocally && savedGitHub) msg = "🎉 News saved to local website & synced to GitHub!";
         else if (savedLocally) msg = "🎉 News saved to website locally!";
@@ -2581,7 +2735,7 @@
       const title = document.getElementById('newsTitle').value.trim();
       const category = document.getElementById('newsCategory').value;
       const url = document.getElementById('newsUrl').value.trim();
-      const image = document.getElementById('newsImage').value.trim() || "up-rojgar-mela-jewar-2026.jpg";
+      const image = document.getElementById('newsImage').value.trim() || "news-banner-1793344224659.jpg";
       const summary = document.getElementById('newsSummary').value.trim();
       const trending = document.getElementById('newsTrending').checked;
       const showInRelated = document.getElementById('newsShowInRelated') ? document.getElementById('newsShowInRelated').checked : true;
@@ -2627,8 +2781,21 @@
       const dateStr = `${yyyy}-${mm}-${dd}`;
       const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-      const generatedId = "news-" + Date.now();
-      const targetUrl = url || `news-detail.html?id=${generatedId}`;
+      // Smart SEO slug ID extraction so URL and ID always match
+      const autoSlug = title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .substring(0, 55)
+        .replace(/^-|-$/g, '');
+      let generatedId = autoSlug || ("news-" + Date.now());
+      let targetUrl = url || `news-detail.html?id=${generatedId}`;
+      if (targetUrl.includes('news-detail.html?id=')) {
+        const extracted = targetUrl.split('news-detail.html?id=')[1].split('&')[0].trim();
+        if (extracted) generatedId = extracted;
+      }
 
       const btn = document.getElementById('btnPublish');
       const btnText = document.getElementById('btnPublishText');
@@ -2669,7 +2836,13 @@
         const existing = newsArticles[editingNewsIndex];
         existing.title = title;
         existing.category = category;
-        if (url) existing.url = url;
+        if (url) {
+          existing.url = url;
+          if (url.includes('news-detail.html?id=')) {
+            const extractedId = url.split('news-detail.html?id=')[1].split('&')[0].trim();
+            if (extractedId) existing.id = extractedId;
+          }
+        }
         existing.image = finalImageName;
         existing.leadSummary = summary;
         existing.summary = summary;

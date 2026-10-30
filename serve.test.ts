@@ -29,9 +29,14 @@ test('resolveFilePath maps root / and extensionless routes to .html files', () =
   assert.ok(fs.existsSync(extensionlessJobs));
 });
 
-test('data JSON files are valid JSON arrays', () => {
+test('data JSON files are valid JSON arrays and UP Rojgar Mela uses canonical URL slug', () => {
   const newsData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'news.json'), 'utf8'));
   const vacanciesData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'vacancies.json'), 'utf8'));
   assert.ok(Array.isArray(newsData));
   assert.ok(Array.isArray(vacanciesData));
+
+  const rojgarMela = newsData.find((item: { id: string }) => item.id === 'up-rojgar-mela-jewar-2026');
+  assert.ok(rojgarMela, 'UP Rojgar Mela entry should have id up-rojgar-mela-jewar-2026');
+  assert.equal(rojgarMela.url, 'news-detail.html?id=up-rojgar-mela-jewar-2026');
 });
+

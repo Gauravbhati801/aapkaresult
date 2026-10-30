@@ -395,30 +395,22 @@
 
     <!-- NEWS FEED GRID (IMAGE + TITLE FORMAT) -->
     <div class="news-feed-grid" id="newsFeedGrid">
-      
-      <!-- DEFAULT PRE-RENDERED CARD (UP ROJGAR MELA 2026) -->
-      <a href="news-detail.html?id=up-rojgar-mela-jewar-2026" class="news-simple-card">
-        <div class="news-card-media">
-          <img src="up-rojgar-mela-jewar-2026.jpg" 
-               alt="UP Rojgar Mela 2026 Jewar Dankaur 2000 Posts" 
-               width="1280" 
-               height="720" 
-               loading="eager" 
-               fetchpriority="high">
-        </div>
+      <div class="news-simple-card" aria-hidden="true" style="pointer-events: none;">
+        <div class="news-card-media" style="background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);"></div>
         <div class="news-card-info">
-          <span class="news-card-badge">रोजगार मेला</span>
-          <h2 class="news-card-title">
-            UP Rojgar Mela 2026: जेवर (दनकौर) में लगेगा विशाल रोजगार मेला, 2000 से अधिक पदों पर होगी सीधी भर्ती, ऐसे करें ऑनलाइन रजिस्ट्रेशन
-          </h2>
-          <div class="news-card-date">
-            <span>📅 30 अक्टूबर 2026</span>
-            <span>&bull;</span>
-            <span style="color: #1e3a8a; font-weight: 700;">पूरी जानकारी पढ़ें &rarr;</span>
-          </div>
+          <div style="width: 90px; height: 18px; background: #e2e8f0; border-radius: 4px; margin-bottom: 10px;"></div>
+          <div style="width: 100%; height: 20px; background: #e2e8f0; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="width: 75%; height: 20px; background: #e2e8f0; border-radius: 4px;"></div>
         </div>
-      </a>
-
+      </div>
+      <div class="news-simple-card" aria-hidden="true" style="pointer-events: none;">
+        <div class="news-card-media" style="background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);"></div>
+        <div class="news-card-info">
+          <div style="width: 90px; height: 18px; background: #e2e8f0; border-radius: 4px; margin-bottom: 10px;"></div>
+          <div style="width: 100%; height: 20px; background: #e2e8f0; border-radius: 4px; margin-bottom: 8px;"></div>
+          <div style="width: 75%; height: 20px; background: #e2e8f0; border-radius: 4px;"></div>
+        </div>
+      </div>
     </div>
 
     <!-- LOAD MORE CONTAINER -->
@@ -570,20 +562,37 @@
       }
     }
 
+    function applyArticlesToFeed(articles) {
+      if (!articles || !articles.length) return;
+      allNewsArticles = articles;
+      const grid = document.getElementById('newsFeedGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      displayedCount = 0;
+      loadNextBatch();
+    }
+
     (function initNewsFeed() {
+      let cachedJsonStr = null;
+      try {
+        cachedJsonStr = sessionStorage.getItem('aapkaresult_news_cache');
+        if (cachedJsonStr) {
+          const cachedArticles = JSON.parse(cachedJsonStr);
+          applyArticlesToFeed(cachedArticles);
+        }
+      } catch (e) {}
+
       fetch('data/news.json?t=' + Date.now())
         .then(res => res.json())
         .then(articles => {
           if (!articles || !articles.length) return;
-
-          allNewsArticles = articles;
-          const grid = document.getElementById('newsFeedGrid');
-          if (!grid) return;
-
-          // Clear default placeholder and load first batch
-          grid.innerHTML = '';
-          displayedCount = 0;
-          loadNextBatch();
+          const freshStr = JSON.stringify(articles);
+          try {
+            sessionStorage.setItem('aapkaresult_news_cache', freshStr);
+          } catch (e) {}
+          if (freshStr !== cachedJsonStr) {
+            applyArticlesToFeed(articles);
+          }
         })
         .catch(err => console.log('News sync note:', err));
     })();

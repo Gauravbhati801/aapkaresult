@@ -772,14 +772,15 @@
       </div>
 
       <!-- Google Discover Hero Image (1280x720 HD) -->
-      <div class="article-hero-img-wrap">
-        <img id="articleBanner" src="up-rojgar-mela-jewar-2026.jpg" 
-             alt="UP Rojgar Mela 2026 Jewar Dankaur Gautam Buddh Nagar" 
+      <div class="article-hero-img-wrap" style="aspect-ratio: 16 / 9; background: #f1f5f9; border-radius: 8px; overflow: hidden;">
+        <img id="articleBanner" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+             alt="AapkaResult News Banner" 
              width="1280" 
              height="720" 
              loading="eager" 
              fetchpriority="high"
-             class="article-hero-img">
+             class="article-hero-img"
+             style="width: 100%; height: 100%; object-fit: cover;">
       </div>
 
       <!-- LEAD PARAGRAPH (DAINIK JAGRAN STYLE DATELINE) -->
@@ -982,37 +983,7 @@
           <a href="news.html" class="related-view-all-link">सभी खबरें देखें &rarr;</a>
         </div>
         
-        <div class="related-stories-grid" id="relatedStoriesGrid">
-          <!-- Fallback top recruitment news cards -->
-          <a href="railway-station-master-recruitment.html" class="related-news-card">
-            <div class="related-card-media">
-              <img src="railway-station-master-recruitment-2026.jpg" alt="Railway RRB Station Master Recruitment 2026" loading="lazy">
-              <span class="related-card-badge">सरकारी नौकरी</span>
-            </div>
-            <div class="related-card-info">
-              <h4 class="related-card-title">Railway RRB Station Master Bharti 2026: 1,265 पदों पर सीधी भर्ती, योग्यता व सिलेबस जारी</h4>
-              <div class="related-card-footer">
-                <span>📅 27 अक्टूबर 2026</span>
-                <span>&bull;</span>
-                <span style="color: #1e3a8a; font-weight: 700;">पूरी खबर पढ़ें &rarr;</span>
-              </div>
-            </div>
-          </a>
-          <a href="up-police-constable.html" class="related-news-card">
-            <div class="related-card-media">
-              <img src="news-up-homeguard-2026.jpg" alt="UP Police Constable Final Result" loading="lazy">
-              <span class="related-card-badge">रिजल्ट अपडेट</span>
-            </div>
-            <div class="related-card-info">
-              <h4 class="related-card-title">UP Police Constable 60,244 Post Final Result & Cut Off Marks 2026 जारी</h4>
-              <div class="related-card-footer">
-                <span>📅 20 अक्टूबर 2026</span>
-                <span>&bull;</span>
-                <span style="color: #1e3a8a; font-weight: 700;">पूरी खबर पढ़ें &rarr;</span>
-              </div>
-            </div>
-          </a>
-        </div>
+        <div class="related-stories-grid" id="relatedStoriesGrid"></div>
 
         <div class="article-load-more-wrap" id="articleLoadMoreWrap" style="display: none;">
           <button type="button" class="btn-article-load-more" id="btnArticleLoadMore" onclick="loadNextRelatedBatch()">
@@ -1105,7 +1076,7 @@
 
     function renderRelatedCard(item) {
       const itemLink = item.url || `news-detail.html?id=${encodeURIComponent(item.id)}`;
-      const imageSrc = item.image || 'up-rojgar-mela-jewar-2026.jpg';
+      const imageSrc = item.image || 'news-banner-1793344224659.jpg';
       const categoryBadge = item.category ? `<span class="related-card-badge">${item.category}</span>` : '';
       const dateStr = item.date ? `<span>📅 ${item.date}</span><span>&bull;</span>` : '';
 
@@ -1180,118 +1151,136 @@
       }
     }
 
-    // Universal dynamic loader for other articles in data/news.json
+    // Universal dynamic loader for articles in data/news.json
     (function initDynamicArticle() {
       const urlParams = new URLSearchParams(window.location.search);
-      const articleId = urlParams.get('id') || 'up-rojgar-mela-jewar-2026';
+      let articleId = urlParams.get('id') || 'up-rojgar-mela-jewar-2026';
+
+      // Normalize legacy timestamp ID back to clean slug URL
+      if (articleId === 'news-1793344919795') {
+        articleId = 'up-rojgar-mela-jewar-2026';
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', 'news-detail.html?id=up-rojgar-mela-jewar-2026');
+        }
+      }
+
+      function hydrateArticle(articles) {
+        if (!articles || !articles.length) return;
+        initRelatedStories(articles, articleId);
+        const item = articles.find(a => a.id === articleId);
+        if (!item) return;
+
+        document.title = item.title + " - AapkaResult.in";
+        const descMeta = document.querySelector('meta[name="description"]');
+        if (descMeta) descMeta.content = item.leadSummary || item.title;
+        
+        const headline = document.getElementById('articleHeadline');
+        if (headline) headline.textContent = item.title;
+        
+        const breadcrumb = document.getElementById('breadcrumbActiveTitle');
+        if (breadcrumb) breadcrumb.textContent = item.title;
+
+        const category = document.getElementById('articleCategory');
+        if (category) category.textContent = item.category || 'Latest News';
+
+        const author = document.getElementById('articleAuthor');
+        if (author) author.textContent = item.author || 'AapkaResult News Desk';
+
+        const dateEl = document.getElementById('articleDate');
+        if (dateEl) dateEl.textContent = (item.date || '') + (item.time ? ' | ' + item.time : '');
+
+        const banner = document.getElementById('articleBanner');
+        if (banner && item.image) {
+          banner.src = item.image;
+          banner.alt = item.title;
+        }
+
+        const lead = document.getElementById('articleLead');
+        if (lead) {
+          if (item.leadSummary) {
+            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.leadSummary;
+            lead.style.display = 'block';
+          } else if (item.summary) {
+            lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.summary;
+            lead.style.display = 'block';
+          } else {
+            lead.style.display = 'none';
+          }
+        }
+
+        const hlSection = document.querySelector('.article-jagran-highlights');
+        if (hlSection) {
+          if (item.highlights && item.highlights.length) {
+            const hlBox = hlSection.querySelector('ul');
+            if (hlBox) {
+              hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
+            }
+            hlSection.style.display = 'block';
+          } else {
+            hlSection.style.display = 'none';
+          }
+        }
+
+        const bodyEl = document.getElementById('articleBody');
+        if (bodyEl) {
+          if (item.sections && item.sections.length) {
+            bodyEl.innerHTML = item.sections.map(sec => `
+              <h2 class="article-h2">${sec.heading || 'मुख्य विवरण'}</h2>
+              <p style="font-size: 15.5px; line-height: 1.8; color: #334155; margin-bottom: 20px; white-space: pre-line;">${sec.content}</p>
+            `).join('');
+          } else if (item.summary) {
+            bodyEl.innerHTML = `<p style="font-size: 15.5px; line-height: 1.8; color: #334155; white-space: pre-line;">${item.summary}</p>`;
+          } else {
+            bodyEl.innerHTML = '';
+          }
+        }
+
+        const linksWrapper = document.getElementById('articleLinksWrapper');
+        if (linksWrapper) {
+          if (item.links && item.links.length) {
+            const linksBody = document.getElementById('articleLinksBody');
+            if (linksBody) {
+              linksBody.innerHTML = item.links.map(lnk => {
+                const label = lnk.label || "महत्वपूर्ण लिंक";
+                const isApply = label.toLowerCase().includes('apply') || label.includes('आवेदन');
+                const btnText = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
+                return `
+                  <tr>
+                    <td><strong>${label}</strong></td>
+                    <td>
+                      <a href="${lnk.url}" target="_blank" rel="noopener noreferrer">${btnText} &rarr;</a>
+                    </td>
+                  </tr>
+                `;
+              }).join('');
+            }
+            linksWrapper.style.display = 'block';
+          } else {
+            linksWrapper.style.display = 'none';
+          }
+        }
+      }
+
+      // 1. Instant 0ms render from sessionStorage cache if user came from news.html
+      let cachedStr = null;
+      try {
+        cachedStr = sessionStorage.getItem('aapkaresult_news_cache');
+        if (cachedStr) {
+          hydrateArticle(JSON.parse(cachedStr));
+        }
+      } catch (e) {}
       
+      // 2. Fetch fresh data/news.json
       fetch('data/news.json?t=' + Date.now())
         .then(res => res.json())
         .then(articles => {
           if (!articles || !articles.length) return;
-          
-          // Populate the in-article related stories feed
-          initRelatedStories(articles, articleId);
-
-          // If this is the default pre-rendered article, content is already hydrated
-          if (articleId === 'up-rojgar-mela-jewar-2026') {
-            return;
-          }
-
-          const item = articles.find(a => a.id === articleId);
-          if (!item) return;
-          
-          document.title = item.title + " - AapkaResult.in";
-          const descMeta = document.querySelector('meta[name="description"]');
-          if (descMeta) descMeta.content = item.leadSummary || item.title;
-          
-          const headline = document.getElementById('articleHeadline');
-          if (headline) headline.textContent = item.title;
-          
-          const breadcrumb = document.getElementById('breadcrumbActiveTitle');
-          if (breadcrumb) breadcrumb.textContent = item.title;
-
-          const category = document.getElementById('articleCategory');
-          if (category) category.textContent = item.category || 'Latest News';
-
-          const author = document.getElementById('articleAuthor');
-          if (author) author.textContent = item.author || 'AapkaResult News Desk';
-
-          const dateEl = document.getElementById('articleDate');
-          if (dateEl) dateEl.textContent = (item.date || '') + (item.time ? ' | ' + item.time : '');
-
-          const banner = document.getElementById('articleBanner');
-          if (banner && item.image) {
-            banner.src = item.image;
-            banner.alt = item.title;
-          }
-
-          const lead = document.getElementById('articleLead');
-          if (lead) {
-            if (item.leadSummary) {
-              lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.leadSummary;
-              lead.style.display = 'block';
-            } else if (item.summary) {
-              lead.innerHTML = '<span class="article-lead-dateline">AapkaResult ब्यूरो:</span> ' + item.summary;
-              lead.style.display = 'block';
-            } else {
-              lead.style.display = 'none';
-            }
-          }
-
-          // Highlights Box (Hide if empty)
-          const hlSection = document.querySelector('.article-jagran-highlights');
-          if (hlSection) {
-            if (item.highlights && item.highlights.length) {
-              const hlBox = hlSection.querySelector('ul');
-              if (hlBox) {
-                hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
-              }
-              hlSection.style.display = 'block';
-            } else {
-              hlSection.style.display = 'none';
-            }
-          }
-
-          // Dynamically populate body sections with headings & paragraphs
-          const bodyEl = document.getElementById('articleBody');
-          if (bodyEl) {
-            if (item.sections && item.sections.length) {
-              bodyEl.innerHTML = item.sections.map(sec => `
-                <h2 class="article-h2">${sec.heading || 'मुख्य विवरण'}</h2>
-                <p style="font-size: 15.5px; line-height: 1.8; color: #334155; margin-bottom: 20px; white-space: pre-line;">${sec.content}</p>
-              `).join('');
-            } else if (item.summary) {
-              bodyEl.innerHTML = `<p style="font-size: 15.5px; line-height: 1.8; color: #334155; white-space: pre-line;">${item.summary}</p>`;
-            } else {
-              bodyEl.innerHTML = '';
-            }
-          }
-
-          // Dynamically populate important action links at the bottom (Hide if empty)
-          const linksWrapper = document.getElementById('articleLinksWrapper');
-          if (linksWrapper) {
-            if (item.links && item.links.length) {
-              const linksBody = document.getElementById('articleLinksBody');
-              if (linksBody) {
-                linksBody.innerHTML = item.links.map(lnk => {
-                  const label = lnk.label || "महत्वपूर्ण लिंक";
-                  const isApply = label.toLowerCase().includes('apply') || label.includes('आवेदन');
-                  const btnText = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
-                  return `
-                    <tr>
-                      <td><strong>${label}</strong></td>
-                      <td>
-                        <a href="${lnk.url}" target="_blank" rel="noopener noreferrer">${btnText} &rarr;</a>
-                      </td>
-                    </tr>
-                  `;
-                }).join('');
-              }
-              linksWrapper.style.display = 'block';
-            } else {
-              linksWrapper.style.display = 'none';
-            }
+          const freshStr = JSON.stringify(articles);
+          try {
+            sessionStorage.setItem('aapkaresult_news_cache', freshStr);
+          } catch (e) {}
+          if (freshStr !== cachedStr) {
+            hydrateArticle(articles);
           }
         })
         .catch(err => console.error("Error loading article:", err));
