@@ -1,6 +1,16 @@
-﻿User-agent: *
+User-agent: Mediapartners-Google
 Allow: /
+Disallow: /admin.html
+Disallow: /templete.html
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /templete.html
+Disallow: /external_links_audit.json
+Disallow: /recruitment_audit_details.json
+Disallow: /all_canonicals.txt
+Disallow: /Preview_Website.bat
 
 # Sitemap
 Sitemap: https://aapkaresult.in/sitemap.xml
-

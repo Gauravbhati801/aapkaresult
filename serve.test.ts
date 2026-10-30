@@ -40,3 +40,10 @@ test('data JSON files are valid JSON arrays and UP Rojgar Mela uses canonical UR
   assert.equal(rojgarMela.url, 'news-detail.html?id=up-rojgar-mela-jewar-2026');
 });
 
+test('robots.txt allows Mediapartners-Google and disallows internal/admin files', () => {
+  const robotsTxt = fs.readFileSync(path.join(process.cwd(), 'robots.txt'), 'utf8');
+  assert.ok(robotsTxt.includes('User-agent: Mediapartners-Google'));
+  assert.ok(robotsTxt.includes('Disallow: /admin.html'));
+  assert.ok(robotsTxt.includes('Disallow: /templete.html'));
+});
+
