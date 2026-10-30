@@ -409,6 +409,35 @@
     .btn-secondary:hover {
       background: #e2e8f0;
     }
+    .btn-template {
+      background: #ffffff;
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-template:hover {
+      background: #1e3a8a;
+      color: #ffffff;
+      border-color: #1e3a8a;
+    }
+    .emoji-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .emoji-btn:hover {
+      transform: scale(1.18);
+      border-color: #3b82f6;
+    }
 
     /* Modal Preview */
     .preview-modal {
@@ -587,19 +616,67 @@
       <button class="tab-btn" onclick="switchTab('settingsTab', this)">⚙️ Settings</button>
     </div>
 
-    <!-- TAB 1: CREATE NEWS FORM -->
+    <!-- TAB 1: CREATE / EDIT NEWS FORM -->
     <div id="createTab" class="tab-content">
       <div class="form-card">
-        <div class="form-title">
+        
+        <!-- EDIT MODE BANNER -->
+        <div id="editModeBanner" style="display: none; background: #fef3c7; border: 1.5px solid #f59e0b; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">✏️</span>
+            <div>
+              <strong style="color: #92400e; font-size: 14px;">खबर एडिट मोड (Editing Article):</strong>
+              <span id="editArticleTitle" style="color: #78350f; font-weight: 700; font-size: 13.5px; margin-left: 6px;"></span>
+            </div>
+          </div>
+          <button type="button" onclick="cancelEditMode()" style="background: #dc2626; color: #fff; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer;">
+            एडिट रद्द करें (Cancel Edit) &times;
+          </button>
+        </div>
+
+        <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
           <span>📰 Publish Daily Sarkari News</span>
-          <span style="font-size: 12px; font-weight: 600; color: #16a34a; background: #dcfce7; padding: 2px 8px; border-radius: 4px; margin-left: auto;">Google Discover Ready</span>
+          <span style="font-size: 12px; font-weight: 600; color: #16a34a; background: #dcfce7; padding: 2px 8px; border-radius: 4px;">Google Discover Ready</span>
+        </div>
+
+        <!-- QUICK TEMPLATES PRESETS BAR -->
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <strong style="font-size: 13px; color: #1e3a8a; display: flex; align-items: center; gap: 4px;">
+            <span>⚡</span> 1-क्लिक टेम्प्लेट्स:
+          </strong>
+          <button type="button" class="btn-template" onclick="applyNewsTemplate('bharti')">💼 नई सरकारी भर्ती</button>
+          <button type="button" class="btn-template" onclick="applyNewsTemplate('admitcard')">📢 एडमिट कार्ड जारी</button>
+          <button type="button" class="btn-template" onclick="applyNewsTemplate('result')">🏆 रिजल्ट घोषित</button>
+          <button type="button" class="btn-template" onclick="applyNewsTemplate('answerkey')">🔑 आंसर की जारी</button>
+          <button type="button" class="btn-template" onclick="cancelEditMode()" style="margin-left: auto; background: #fee2e2; color: #b91c1c; border-color: #fca5a5;">
+            🔄 खाली फॉर्म (Reset)
+          </button>
         </div>
 
         <form id="newsForm" onsubmit="event.preventDefault(); publishNews();">
           <!-- Title -->
           <div class="form-group">
             <label class="form-label">News Headline / Title <small>(Aakarshak &amp; Clear)</small></label>
-            <input type="text" id="newsTitle" class="form-input" placeholder="e.g. Railway RRB Station Master Recruitment 2026: 1,265 Posts Notification Out" required>
+            <input type="text" id="newsTitle" class="form-input" placeholder="e.g. Railway RRB Station Master Recruitment 2026: 1,265 Posts Notification Out" oninput="updateHeadlineMeter()" required>
+            
+            <!-- Headline SEO Meter & Emojis Toolbar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; flex-wrap: wrap; gap: 8px;">
+              <div id="headlineSeoMeter" style="font-size: 12px; color: #64748b; font-weight: 600;">
+                अक्षर: <span id="titleCharCount" style="font-weight: 700; color: #0f172a;">0</span>/90 Chars • <span id="titleSeoBadge" style="color: #64748b;">(अनुशंसित: 50-85 अक्षर)</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+                <span style="font-size: 11px; font-weight: 700; color: #475569; margin-right: 2px;">⚡ क्विक इमोजी:</span>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('📢')" title="लाउडस्पीकर">📢</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('🚨')" title="अलर्ट">🚨</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('📅')" title="कैलेंडर">📅</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('🎓')" title="शिक्षा">🎓</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('💰')" title="वेतन/फीस">💰</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('🔗')" title="लिंक">🔗</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('📌')" title="पिन">📌</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('✅')" title="सत्यापित">✅</button>
+                <button type="button" class="emoji-btn" onclick="insertEmoji('🏆')" title="रिजल्ट">🏆</button>
+              </div>
+            </div>
           </div>
 
           <div class="form-row">
@@ -618,8 +695,11 @@
 
             <!-- Target Link / URL -->
             <div class="form-group">
-              <label class="form-label">Target Page Link <small>(Optional: Auto sets to news-detail.html?id=...)</small></label>
+              <label class="form-label">Target Page Link <small>(Auto sets to news-detail.html?id=...)</small></label>
               <input type="text" id="newsUrl" class="form-input" placeholder="Auto dynamic link (leave blank) or custom link">
+              <button type="button" onclick="generateSlugFromTitle()" style="background: #eff6ff; color: #1e3a8a; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 10px; font-size: 11.5px; font-weight: 700; cursor: pointer; margin-top: 5px;">
+                ⚡ टाइटल से SEO लिंक बनाएं (.html)
+              </button>
             </div>
           </div>
 
@@ -993,12 +1073,29 @@
         <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 20px;">🔥</span>
-            <span>'Read More Stories' (संबंधित खबरें) मैनेजर</span>
+            <span>'Read More Stories' (आज की अन्य बड़ी खबरें) मैनेजर</span>
           </div>
           <button class="btn-secondary" style="padding: 6px 12px; font-size: 13px;" onclick="loadNewsFromLocal()">🔄 Refresh</button>
         </div>
+
+        <!-- ADD STORY TO READ MORE TOOLBAR -->
+        <div style="background: #fff7ed; border: 1.5px solid #fdba74; border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 280px; flex-wrap: wrap;">
+            <label style="font-size: 13px; font-weight: 800; color: #c2410c; white-space: nowrap;">➕ 'और पढ़ें' में नई खबर जोड़ें:</label>
+            <select id="selectAddReadMore" class="form-select" style="flex: 1; min-width: 200px; padding: 7px 10px; font-size: 13px; border-color: #fdba74;">
+              <!-- Populated dynamically -->
+            </select>
+            <button type="button" onclick="addSelectedToReadMore()" style="background: #ea580c; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap;">
+              + जोड़ें
+            </button>
+          </div>
+          <button type="button" onclick="switchTab('createTab', document.querySelector('.tab-btn'))" style="background: #1e3a8a; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap;">
+            ✍️ नई खबर लिखकर जोड़ें
+          </button>
+        </div>
+
         <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 14px; margin-bottom: 20px; font-size: 13.5px; color: #1e3a8a; line-height: 1.55;">
-          💡 <strong>यह क्या काम करता है?</strong> जब छात्र किसी खबर (जैसे UP रोजगार मेला) को पूरा पढ़ लेता है, तो नीचे <strong>"आज की अन्य बड़ी खबरें (Read More Stories)"</strong> का बॉक्स आता है। यहाँ से आप किसी भी खबर को 1-क्लिक में चालू/बंद (ON/OFF) कर सकते हैं या <strong>⭐ Pin to Top</strong> करके सबसे ऊपर ला सकते हैं।
+          💡 <strong>कंट्रोल गाइड:</strong> यहाँ से आप 'और पढ़ें' में चल रही किसी भी खबर को <strong>🔄 Replace (बदलें)</strong> कर सकते हैं, <strong>❌ Remove (हटाएं)</strong> कर सकते हैं, या <strong>⭐ Pin to Top</strong> करके सबसे ऊपर ला सकते हैं।
         </div>
 
         <div id="readMoreCardsList" style="display: flex; flex-direction: column; gap: 12px;">
@@ -1102,6 +1199,30 @@
         </button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- REPLACE STORY MODAL -->
+  <div class="preview-modal" id="replaceStoryModal" onclick="if(event.target===this) closeReplaceModal()">
+    <div class="preview-content" style="max-width: 520px; padding: 22px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 14px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">🔄</span>
+          <strong style="font-size: 16px; color: #0f172a;">Replace Story (खबर बदलें)</strong>
+        </div>
+        <button onclick="closeReplaceModal()" style="border: none; background: #fee2e2; color: #dc2626; border-radius: 50%; width: 28px; height: 28px; font-size: 18px; cursor: pointer; font-weight: 700;">&times;</button>
+      </div>
+      
+      <div style="font-size: 12.5px; color: #64748b; margin-bottom: 6px;">वर्तमान में लगी खबर (Current Story):</div>
+      <div id="replaceCurrentTitle" style="font-size: 14px; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 10px 12px; border-radius: 8px; margin-bottom: 16px;"></div>
+
+      <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">इसकी जगह कौन सी खबर लगाना चाहते हैं? (Select Replacement):</div>
+      <select id="selectReplacementStory" class="form-select" style="margin-bottom: 20px; font-size: 13.5px; padding: 9px 12px;"></select>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
+        <button type="button" onclick="closeReplaceModal()" class="btn-secondary" style="padding: 9px 18px; max-width: 120px;">रद्द करें</button>
+        <button type="button" onclick="confirmReplaceStory()" class="btn-primary" style="padding: 9px 20px; max-width: 220px; background: #ea580c;">🔄 खबर बदलें (Replace)</button>
+      </div>
     </div>
   </div>
 
@@ -1555,6 +1676,426 @@
       }
     }
 
+    // Advanced Helpers: Escape, Emojis, SEO Meter & Templates
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function insertEmoji(char) {
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+        const start = activeEl.selectionStart || 0;
+        const end = activeEl.selectionEnd || 0;
+        const val = activeEl.value;
+        activeEl.value = val.substring(0, start) + char + val.substring(end);
+        activeEl.selectionStart = activeEl.selectionEnd = start + char.length;
+        activeEl.focus();
+        if (activeEl.id === 'newsTitle') updateHeadlineMeter();
+      } else {
+        const title = document.getElementById('newsTitle');
+        title.value = (title.value ? title.value + ' ' : '') + char;
+        updateHeadlineMeter();
+        title.focus();
+      }
+    }
+
+    function updateHeadlineMeter() {
+      const val = document.getElementById('newsTitle').value;
+      const count = val.length;
+      const charEl = document.getElementById('titleCharCount');
+      const badgeEl = document.getElementById('titleSeoBadge');
+      if (charEl) charEl.textContent = count;
+      if (badgeEl) {
+        if (count === 0) {
+          badgeEl.textContent = "(अनुशंसित: 50-85 अक्षर)";
+          badgeEl.style.color = "#64748b";
+        } else if (count < 40) {
+          badgeEl.textContent = "⚠️ थोड़ा छोटा है (Click-Through Rate बढ़ाने के लिए 50+ अक्षर लिखें)";
+          badgeEl.style.color = "#d97706";
+        } else if (count <= 90) {
+          badgeEl.textContent = "⭐ परफेक्ट लंबाई! (Google Discover & WhatsApp शेयर के लिए बेस्ट)";
+          badgeEl.style.color = "#16a34a";
+        } else {
+          badgeEl.textContent = "⚠️ थोड़ा लंबा है (Google Discover में आगे का हिस्सा कट सकता है)";
+          badgeEl.style.color = "#dc2626";
+        }
+      }
+    }
+
+    function generateSlugFromTitle() {
+      const title = document.getElementById('newsTitle').value.trim();
+      if (!title) {
+        alert("कृपया पहले खबर का शीर्षक (Title) लिखें!");
+        return;
+      }
+      const slug = title
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .substring(0, 50);
+      const finalSlug = (slug || 'sarkari-news') + '.html';
+      document.getElementById('newsUrl').value = finalSlug;
+      showToast("⚡ SEO URL तैयार: " + finalSlug);
+    }
+
+    function applyNewsTemplate(type) {
+      if (type === 'bharti') {
+        document.getElementById('newsCategory').value = 'Sarkari Bharti';
+        if (!document.getElementById('newsTitle').value) {
+          document.getElementById('newsTitle').value = 'Railway RRB / State Police New Recruitment 2026: Online Form Live Now';
+          updateHeadlineMeter();
+        }
+        document.getElementById('newsSummary').value = 'विभाग द्वारा नई बंपर भर्ती का आधिकारिक विज्ञापन जारी कर दिया गया है। इच्छुक एवं योग्य महिला व पुरुष अभ्यर्थी ऑनलाइन माध्यम से आवेदन कर सकते हैं।';
+        
+        const bContainer = document.getElementById('bulletsContainer');
+        bContainer.innerHTML = '';
+        ['कुल पद: बंपर पदों पर भर्ती प्रक्रिया प्रारंभ', 'शैक्षणिक योग्यता: 10वीं / 12वीं / स्नातक पास अभ्यर्थी पात्र', 'आयु सीमा: 18 वर्ष से 30 वर्ष (आरक्षित वर्गों को नियमानुसार छूट)'].forEach(t => {
+          const row = document.createElement('div');
+          row.className = 'bullet-row';
+          row.innerHTML = `<input type="text" class="bullet-input" value="${t}"><button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>`;
+          bContainer.appendChild(row);
+        });
+
+        const sContainer = document.getElementById('sectionsContainer');
+        sContainer.innerHTML = '';
+        [
+          { h: '📅 भर्ती का पूरा शेड्यूल व महत्वपूर्ण तारीखें', c: 'ऑनलाइन आवेदन की प्रक्रिया आधिकारिक पोर्टल पर शुरू हो चुकी है। अभ्यर्थी निर्धारित अंतिम तिथि से पहले अपना आवेदन फॉर्म व परीक्षा शुल्क जमा करा दें।' },
+          { h: '🎓 आवश्यक शैक्षणिक योग्यता व आयु सीमा', c: 'मान्यता प्राप्त बोर्ड या विश्वविद्यालय से उत्तीर्ण अभ्यर्थी इस भर्ती के लिए योग्य हैं। आयु की गणना आधिकारिक नोटिफिकेशन के नियमों के अनुसार होगी।' },
+          { h: '💰 आवेदन शुल्क व चयन प्रक्रिया', c: 'सामान्य व ओबीसी वर्ग के लिए निर्धारित शुल्क नेट बैंकिंग, यूपीआई या डेबिट कार्ड से देय है। चयन लिखित परीक्षा व मेरिट के आधार पर होगा।' }
+        ].forEach((sec, idx) => {
+          const card = document.createElement('div');
+          card.className = 'content-section-card';
+          card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+          card.innerHTML = `
+            <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${idx + 1} (Subheading)</div>
+            <input type="text" class="form-input sec-heading-input" value="${sec.h}" style="margin-bottom: 8px; font-weight: 700;">
+            <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+            <textarea class="form-textarea sec-content-input" style="min-height: 80px;">${sec.c}</textarea>
+          `;
+          sContainer.appendChild(card);
+        });
+
+        const lContainer = document.getElementById('linksContainer');
+        lContainer.innerHTML = '';
+        [
+          { l: 'ऑनलाइन आवेदन करें (Apply Online)', u: 'https://' },
+          { l: 'आधिकारिक नोटिफिकेशन पीडीएफ (Download Notification)', u: 'https://' },
+          { l: 'आधिकारिक विभागीय वेबसाइट (Official Website)', u: 'https://' }
+        ].forEach(lnk => {
+          const row = document.createElement('div');
+          row.className = 'link-item-row';
+          row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+          row.innerHTML = `
+            <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <input type="text" class="form-input link-label-input" value="${lnk.l}">
+              <input type="url" class="form-input link-url-input" value="${lnk.u}">
+            </div>
+          `;
+          lContainer.appendChild(row);
+        });
+        showToast("💼 'सरकारी भर्ती' टेम्प्लेट लोड हो गया!");
+      } else if (type === 'admitcard') {
+        document.getElementById('newsCategory').value = 'Admit Card';
+        if (!document.getElementById('newsTitle').value) {
+          document.getElementById('newsTitle').value = 'Admit Card 2026 Released: Direct Hall Ticket Download Link Active';
+          updateHeadlineMeter();
+        }
+        document.getElementById('newsSummary').value = 'परीक्षा के लिए आधिकारिक एडमिट कार्ड व हॉल टिकट जारी कर दिए गए हैं। अभ्यर्थी अपने लॉगिन क्रेडेंशियल का उपयोग कर प्रवेश पत्र डाउनलोड कर सकते हैं।';
+        
+        const bContainer = document.getElementById('bulletsContainer');
+        bContainer.innerHTML = '';
+        ['एडमिट कार्ड डाउनलोड लिंक आधिकारिक वेबसाइट पर लाइव', 'परीक्षा केंद्र पर मूल पहचान पत्र (Aadhaar / Voter ID) ले जाना अनिवार्य है'].forEach(t => {
+          const row = document.createElement('div');
+          row.className = 'bullet-row';
+          row.innerHTML = `<input type="text" class="bullet-input" value="${t}"><button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>`;
+          bContainer.appendChild(row);
+        });
+
+        const sContainer = document.getElementById('sectionsContainer');
+        sContainer.innerHTML = '';
+        [
+          { h: '📢 परीक्षा तिथि, शिफ्ट व एग्जाम सेंटर विवरण', c: 'परीक्षा निर्धारित तारीखों पर दो पालियों में आयोजित की जाएगी। अभ्यर्थी अपने एडमिट कार्ड में दिए गए रिपोर्टिंग टाइम का कड़ाई से पालन करें।' },
+          { h: '📥 एडमिट कार्ड कैसे डाउनलोड करें?', c: 'अभ्यर्थी नीचे दिए गए डायरेक्ट लिंक पर क्लिक करके अपना रजिस्ट्रेशन नंबर व जन्मतिथि दर्ज करें और हॉल टिकट का प्रिंट आउट निकाल लें।' }
+        ].forEach((sec, idx) => {
+          const card = document.createElement('div');
+          card.className = 'content-section-card';
+          card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+          card.innerHTML = `
+            <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${idx + 1} (Subheading)</div>
+            <input type="text" class="form-input sec-heading-input" value="${sec.h}" style="margin-bottom: 8px; font-weight: 700;">
+            <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+            <textarea class="form-textarea sec-content-input" style="min-height: 80px;">${sec.c}</textarea>
+          `;
+          sContainer.appendChild(card);
+        });
+
+        const lContainer = document.getElementById('linksContainer');
+        lContainer.innerHTML = '';
+        [
+          { l: 'एडमिट कार्ड डाउनलोड करें (Download Admit Card)', u: 'https://' },
+          { l: 'एग्जाम सेंटर व निर्देश नोटिस', u: 'https://' },
+          { l: 'आधिकारिक वेबसाइट (Official Website)', u: 'https://' }
+        ].forEach(lnk => {
+          const row = document.createElement('div');
+          row.className = 'link-item-row';
+          row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+          row.innerHTML = `
+            <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <input type="text" class="form-input link-label-input" value="${lnk.l}">
+              <input type="url" class="form-input link-url-input" value="${lnk.u}">
+            </div>
+          `;
+          lContainer.appendChild(row);
+        });
+        showToast("📢 'एडमिट कार्ड' टेम्प्लेट लोड हो गया!");
+      } else if (type === 'result') {
+        document.getElementById('newsCategory').value = 'Result Update';
+        if (!document.getElementById('newsTitle').value) {
+          document.getElementById('newsTitle').value = 'Recruitment Exam Result & Scorecard 2026 Declared: Check Merit List';
+          updateHeadlineMeter();
+        }
+        document.getElementById('newsSummary').value = 'लिखित परीक्षा का परिणाम और कट-ऑफ अंक आधिकारिक पोर्टल पर घोषित कर दिए गए हैं। सफल अभ्यर्थी अगले चरण के लिए योग्य हैं।';
+
+        const bContainer = document.getElementById('bulletsContainer');
+        bContainer.innerHTML = '';
+        ['परीक्षा परिणाम और कट-ऑफ मार्क्स घोषित', 'चयनित अभ्यर्थियों की मेरिट लिस्ट पीडीएफ उपलब्ध'].forEach(t => {
+          const row = document.createElement('div');
+          row.className = 'bullet-row';
+          row.innerHTML = `<input type="text" class="bullet-input" value="${t}"><button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>`;
+          bContainer.appendChild(row);
+        });
+
+        const sContainer = document.getElementById('sectionsContainer');
+        sContainer.innerHTML = '';
+        [
+          { h: '📊 रिजल्ट व कट-ऑफ मार्क्स विवरण', c: 'बोर्ड द्वारा सामान्य, ओबीसी, ईडब्ल्यूएस, एससी व एसटी वर्ग के लिए अलग-अलग कट-ऑफ सूची प्रकाशित की गई है।' },
+          { h: '📥 रिजल्ट और स्कोरकार्ड कैसे चेक करें?', c: 'नीचे दिए गए डायरेक्ट रिजल्ट लिंक पर क्लिक करें और अपना रोल नंबर व जन्मतिथि दर्ज करके परिणाम देखें।' }
+        ].forEach((sec, idx) => {
+          const card = document.createElement('div');
+          card.className = 'content-section-card';
+          card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+          card.innerHTML = `
+            <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${idx + 1} (Subheading)</div>
+            <input type="text" class="form-input sec-heading-input" value="${sec.h}" style="margin-bottom: 8px; font-weight: 700;">
+            <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+            <textarea class="form-textarea sec-content-input" style="min-height: 80px;">${sec.c}</textarea>
+          `;
+          sContainer.appendChild(card);
+        });
+
+        const lContainer = document.getElementById('linksContainer');
+        lContainer.innerHTML = '';
+        [
+          { l: 'रिजल्ट चेक करें (Check Result Online)', u: 'https://' },
+          { l: 'कट-ऑफ मार्क्स व मेरिट लिस्ट पीडीएफ', u: 'https://' },
+          { l: 'आधिकारिक वेबसाइट (Official Website)', u: 'https://' }
+        ].forEach(lnk => {
+          const row = document.createElement('div');
+          row.className = 'link-item-row';
+          row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+          row.innerHTML = `
+            <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <input type="text" class="form-input link-label-input" value="${lnk.l}">
+              <input type="url" class="form-input link-url-input" value="${lnk.u}">
+            </div>
+          `;
+          lContainer.appendChild(row);
+        });
+        showToast("🏆 'रिजल्ट' टेम्प्लेट लोड हो गया!");
+      } else if (type === 'answerkey') {
+        document.getElementById('newsCategory').value = 'Answer Key';
+        if (!document.getElementById('newsTitle').value) {
+          document.getElementById('newsTitle').value = 'Official Answer Key & Response Sheet 2026 Released: Raise Objections';
+          updateHeadlineMeter();
+        }
+        document.getElementById('newsSummary').value = 'परीक्षा की आधिकारिक आंसर की और क्वेश्चन पेपर रिस्पॉन्स शीट जारी कर दी गई है। किसी प्रश्न पर संदेह होने पर ऑनलाइन आपत्ति दर्ज की जा सकती है।';
+
+        const bContainer = document.getElementById('bulletsContainer');
+        bContainer.innerHTML = '';
+        ['प्रोविजनल आंसर की और क्वेश्चन पेपर उपलब्ध', 'आपत्ति दर्ज कराने की अंतिम तिथि निर्धारित'].forEach(t => {
+          const row = document.createElement('div');
+          row.className = 'bullet-row';
+          row.innerHTML = `<input type="text" class="bullet-input" value="${t}"><button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>`;
+          bContainer.appendChild(row);
+        });
+
+        const sContainer = document.getElementById('sectionsContainer');
+        sContainer.innerHTML = '';
+        [
+          { h: '🔑 आंसर की व ऑनलाइन आपत्ति दर्ज करने की प्रक्रिया', c: 'अभ्यर्थी अपने लॉगिन पोर्टल पर जाकर संबंधित प्रश्न पर साक्ष्य (Proof) के साथ निर्धारित प्रति प्रश्न शुल्क जमा कर आपत्ति दर्ज करा सकते हैं।' }
+        ].forEach((sec, idx) => {
+          const card = document.createElement('div');
+          card.className = 'content-section-card';
+          card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+          card.innerHTML = `
+            <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${idx + 1} (Subheading)</div>
+            <input type="text" class="form-input sec-heading-input" value="${sec.h}" style="margin-bottom: 8px; font-weight: 700;">
+            <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+            <textarea class="form-textarea sec-content-input" style="min-height: 80px;">${sec.c}</textarea>
+          `;
+          sContainer.appendChild(card);
+        });
+
+        const lContainer = document.getElementById('linksContainer');
+        lContainer.innerHTML = '';
+        [
+          { l: 'आंसर की डाउनलोड करें (Download Answer Key)', u: 'https://' },
+          { l: 'ऑनलाइन आपत्ति दर्ज करें (Submit Objection)', u: 'https://' },
+          { l: 'आधिकारिक वेबसाइट (Official Website)', u: 'https://' }
+        ].forEach(lnk => {
+          const row = document.createElement('div');
+          row.className = 'link-item-row';
+          row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+          row.innerHTML = `
+            <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <input type="text" class="form-input link-label-input" value="${lnk.l}">
+              <input type="url" class="form-input link-url-input" value="${lnk.u}">
+            </div>
+          `;
+          lContainer.appendChild(row);
+        });
+        showToast("🔑 'आंसर की' टेम्प्लेट लोड हो गया!");
+      }
+    }
+
+    // EDIT NEWS FEATURE
+    let editingNewsIndex = -1;
+
+    function editNews(index) {
+      const item = newsArticles[index];
+      if (!item) return;
+
+      editingNewsIndex = index;
+
+      // Switch to write news tab
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      if (tabBtns && tabBtns[0]) {
+        switchTab('createTab', tabBtns[0]);
+      } else {
+        switchTab('createTab');
+      }
+
+      // Populate basic info
+      document.getElementById('newsTitle').value = item.title || '';
+      updateHeadlineMeter();
+      document.getElementById('newsCategory').value = item.category || 'Sarkari Bharti';
+      document.getElementById('newsUrl').value = item.url || '';
+      document.getElementById('newsImage').value = item.image || 'up-rojgar-mela-jewar-2026.jpg';
+      document.getElementById('newsSummary').value = item.leadSummary || item.summary || '';
+      document.getElementById('newsTrending').checked = !!item.trending;
+      if (document.getElementById('newsShowInRelated')) {
+        document.getElementById('newsShowInRelated').checked = item.showInRelated !== false;
+      }
+      if (document.getElementById('newsPinRelated')) {
+        document.getElementById('newsPinRelated').checked = !!item.pinnedInRelated;
+      }
+
+      // Populate Bullets
+      const bContainer = document.getElementById('bulletsContainer');
+      bContainer.innerHTML = '';
+      if (item.highlights && item.highlights.length > 0) {
+        item.highlights.forEach(h => {
+          const row = document.createElement('div');
+          row.className = 'bullet-row';
+          row.innerHTML = `
+            <input type="text" class="bullet-input" value="${escapeHtml(h)}">
+            <button type="button" class="btn-remove-bullet" onclick="this.parentElement.remove()">&times;</button>
+          `;
+          bContainer.appendChild(row);
+        });
+      } else {
+        addBulletRow();
+      }
+
+      // Populate Sections
+      const sContainer = document.getElementById('sectionsContainer');
+      sContainer.innerHTML = '';
+      if (item.sections && item.sections.length > 0) {
+        item.sections.forEach((sec, sIdx) => {
+          const card = document.createElement('div');
+          card.className = 'content-section-card';
+          card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+          card.innerHTML = `
+            <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${sIdx + 1} (Subheading)</div>
+            <input type="text" class="form-input sec-heading-input" value="${escapeHtml(sec.heading || '')}" style="margin-bottom: 8px; font-weight: 700;">
+            <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Paragraph):</div>
+            <textarea class="form-textarea sec-content-input" style="min-height: 80px;">${escapeHtml(sec.content || '')}</textarea>
+          `;
+          sContainer.appendChild(card);
+        });
+      }
+
+      // Populate Links
+      const lContainer = document.getElementById('linksContainer');
+      lContainer.innerHTML = '';
+      if (item.links && item.links.length > 0) {
+        item.links.forEach(lnk => {
+          const row = document.createElement('div');
+          row.className = 'link-item-row';
+          row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+          row.innerHTML = `
+            <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+            <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">डायरेक्ट लिंक (Direct Link)</div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <input type="text" class="form-input link-label-input" value="${escapeHtml(lnk.label || '')}">
+              <input type="url" class="form-input link-url-input" value="${escapeHtml(lnk.url || '')}">
+            </div>
+          `;
+          lContainer.appendChild(row);
+        });
+      }
+
+      // Edit Mode Banner
+      const editBanner = document.getElementById('editModeBanner');
+      if (editBanner) {
+        document.getElementById('editArticleTitle').textContent = item.title;
+        editBanner.style.display = 'flex';
+      }
+      document.getElementById('btnPublishText').textContent = "💾 Update News Article";
+      const btnIcon = document.getElementById('btnPublish').querySelector('span:first-child');
+      if (btnIcon) btnIcon.textContent = "💾";
+
+      window.scrollTo({ top: 100, behavior: 'smooth' });
+      showToast("✏️ Edit Mode: " + item.title);
+    }
+
+    function cancelEditMode() {
+      editingNewsIndex = -1;
+      const editBanner = document.getElementById('editModeBanner');
+      if (editBanner) editBanner.style.display = 'none';
+      document.getElementById('newsForm').reset();
+      clearSelectedImage();
+      document.getElementById('sectionsContainer').innerHTML = '';
+      document.getElementById('linksContainer').innerHTML = '';
+      document.getElementById('bulletsContainer').innerHTML = '';
+      addBulletRow();
+      updateHeadlineMeter();
+      document.getElementById('btnPublishText').textContent = "Publish News to Website";
+      const btnIcon = document.getElementById('btnPublish').querySelector('span:first-child');
+      if (btnIcon) btnIcon.textContent = "🚀";
+    }
+
+    // MANAGE NEWS TABLE WITH EDIT & DELETE
     function renderManageTable() {
       const tbody = document.getElementById('newsTableBody');
       tbody.innerHTML = '';
@@ -1577,7 +2118,14 @@
             </button>
           </td>
           <td>
-            <button class="btn-action-del" onclick="deleteNews(${index})">Delete</button>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <button type="button" onclick="editNews(${index})" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                ✏️ Edit
+              </button>
+              <button type="button" class="btn-action-del" onclick="deleteNews(${index})" style="padding: 6px 10px; font-size: 12px; border-radius: 6px;">
+                🗑️ Delete
+              </button>
+            </div>
           </td>
         `;
         tbody.appendChild(tr);
@@ -1610,56 +2158,251 @@
       }
     }
 
+    // READ MORE STORIES ADVANCED MANAGER (ADD, DELETE, REPLACE & REORDER)
+    let replaceTargetIndex = -1;
+
     function renderReadMoreTab() {
       const container = document.getElementById('readMoreCardsList');
       if (!container) return;
       container.innerHTML = '';
 
-      const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
+      const activeList = newsArticles.filter(a => a.showInRelated !== false);
       const rmBadge = document.getElementById('readMoreCount');
-      if (rmBadge) rmBadge.textContent = activeReadMore;
+      if (rmBadge) rmBadge.textContent = activeList.length;
+
+      // Populate dropdown with available stories not currently in Read More
+      const selectAdd = document.getElementById('selectAddReadMore');
+      if (selectAdd) {
+        selectAdd.innerHTML = '<option value="">-- उपलब्ध खबर चुनें --</option>';
+        newsArticles.forEach((item, idx) => {
+          if (item.showInRelated === false) {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.textContent = `${item.title.substring(0, 60)}... (${item.date || 'N/A'})`;
+            selectAdd.appendChild(opt);
+          }
+        });
+        if (selectAdd.children.length === 1) {
+          selectAdd.innerHTML = '<option value="">-- सभी खबरें पहले से सक्रिय हैं --</option>';
+        }
+      }
 
       if (!newsArticles || newsArticles.length === 0) {
         container.innerHTML = '<div style="text-align: center; color: #64748b; padding: 25px;">कोई खबर नहीं मिली।</div>';
         return;
       }
 
+      // 1. Active Read More Section
+      const activeHeader = document.createElement('div');
+      activeHeader.style = "font-size: 14.5px; font-weight: 800; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;";
+      activeHeader.innerHTML = `<span>🟢 'और पढ़ें' में सक्रिय खबरें (${activeList.length})</span> <span style="font-size: 12px; color: #64748b; font-weight: 500;">(वेबसाइट पर नीचे दिखने वाली खबरें)</span>`;
+      container.appendChild(activeHeader);
+
+      if (activeList.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.style = "background: #f8fafc; border: 1.5px dashed #cbd5e1; border-radius: 8px; padding: 20px; text-align: center; color: #64748b; margin-bottom: 16px;";
+        emptyDiv.innerHTML = "वर्तमान में कोई खबर सक्रिय नहीं है। ऊपर दिए गए ड्रॉपडाउन से खबर जोड़ें।";
+        container.appendChild(emptyDiv);
+      }
+
+      let activeCounter = 0;
       newsArticles.forEach((item, index) => {
         const isShow = item.showInRelated !== false;
+        if (!isShow) return;
+
+        activeCounter++;
         const isPinned = item.pinnedInRelated === true;
         const card = document.createElement('div');
         card.style = `
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 12px;
           padding: 12px 14px;
           border-radius: 10px;
-          background: ${isShow ? '#ffffff' : '#f8fafc'};
-          border: 1.5px solid ${isPinned ? '#ea580c' : (isShow ? '#cbd5e1' : '#e2e8f0')};
+          background: #ffffff;
+          border: 1.5px solid ${isPinned ? '#ea580c' : '#cbd5e1'};
           box-shadow: ${isPinned ? '0 2px 8px rgba(234, 88, 12, 0.15)' : 'none'};
           flex-wrap: wrap;
         `;
 
         card.innerHTML = `
-          <img src="${item.image || 'up-rojgar-mela-jewar-2026.jpg'}" alt="Thumb" style="width: 72px; height: 48px; object-fit: cover; border-radius: 6px; flex-shrink: 0;">
+          <div style="font-size: 13px; font-weight: 800; color: ${isPinned ? '#c2410c' : '#64748b'}; background: ${isPinned ? '#ffedd5' : '#f1f5f9'}; padding: 4px 8px; border-radius: 6px; flex-shrink: 0;">
+            #${activeCounter}
+          </div>
+          <img src="${item.image || 'up-rojgar-mela-jewar-2026.jpg'}" alt="Thumb" style="width: 64px; height: 44px; object-fit: cover; border-radius: 6px; flex-shrink: 0;">
           <div style="flex: 1; min-width: 200px;">
             <div style="font-size: 11px; font-weight: 800; color: #ea580c; text-transform: uppercase;">
               ${item.category || 'News'} ${isPinned ? '<span style="background: #ffedd5; color: #c2410c; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">⭐ TOP PINNED</span>' : ''}
             </div>
-            <div style="font-size: 14px; font-weight: 700; color: #0f172a; margin-top: 2px; line-height: 1.35;">${item.title}</div>
+            <div style="font-size: 13.5px; font-weight: 700; color: #0f172a; margin-top: 2px; line-height: 1.35;">${item.title}</div>
             <div style="font-size: 11.5px; color: #64748b; margin-top: 2px;">📅 ${item.date || 'N/A'}</div>
           </div>
-          <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
-            <button type="button" class="btn-toggle-badge ${isPinned ? 'active' : 'inactive'}" onclick="togglePinRelated(${index})" style="padding: 7px 12px; font-size: 12px; border-radius: 6px;">
-              ${isPinned ? '⭐ Unpin' : '⭐ Pin to Top'}
+          
+          <!-- Actions: Pin, Replace, Move, Remove -->
+          <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-left: auto;">
+            <button type="button" onclick="moveReadMoreStory(${index}, -1)" title="ऊपर लाएं" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; font-size: 12px; cursor: pointer;">⬆️</button>
+            <button type="button" onclick="moveReadMoreStory(${index}, 1)" title="नीचे लाएं" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; font-size: 12px; cursor: pointer;">⬇️</button>
+            
+            <button type="button" class="btn-toggle-badge ${isPinned ? 'active' : 'inactive'}" onclick="togglePinRelated(${index})" style="padding: 6px 10px; font-size: 11.5px; border-radius: 6px;">
+              ${isPinned ? '⭐ Unpin' : '⭐ Pin'}
             </button>
-            <button type="button" class="btn-toggle-badge ${isShow ? 'active' : 'inactive'}" onclick="toggleReadMore(${index})" style="padding: 7px 14px; font-size: 12.5px; border-radius: 6px;">
-              ${isShow ? '✅ Read More: ON' : '🚫 Read More: OFF'}
+
+            <button type="button" onclick="openReplaceModal(${index})" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              🔄 बदलें (Replace)
+            </button>
+
+            <button type="button" onclick="removeFromReadMore(${index})" style="background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer;">
+              ❌ हटाएं
             </button>
           </div>
         `;
         container.appendChild(card);
       });
+
+      // 2. Inactive Stories Section
+      const inactiveList = newsArticles.filter(a => a.showInRelated === false);
+      if (inactiveList.length > 0) {
+        const inactHeader = document.createElement('div');
+        inactHeader.style = "font-size: 14px; font-weight: 800; color: #64748b; margin-top: 24px; margin-bottom: 8px; border-top: 1.5px solid #e2e8f0; padding-top: 16px;";
+        inactHeader.innerHTML = `<span>⚪ अन्य उपलब्ध खबरें जो 'और पढ़ें' में नहीं हैं (${inactiveList.length})</span>`;
+        container.appendChild(inactHeader);
+
+        newsArticles.forEach((item, index) => {
+          if (item.showInRelated !== false) return;
+          const card = document.createElement('div');
+          card.style = `
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            flex-wrap: wrap;
+          `;
+          card.innerHTML = `
+            <img src="${item.image || 'up-rojgar-mela-jewar-2026.jpg'}" alt="Thumb" style="width: 52px; height: 36px; object-fit: cover; border-radius: 4px; flex-shrink: 0; opacity: 0.8;">
+            <div style="flex: 1; min-width: 200px;">
+              <div style="font-size: 13px; font-weight: 600; color: #475569;">${item.title}</div>
+              <div style="font-size: 11px; color: #94a3b8;">📅 ${item.date || 'N/A'} • ${item.category || 'News'}</div>
+            </div>
+            <button type="button" onclick="addToReadMore(${index})" style="background: #16a34a; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; margin-left: auto;">
+              + 'और पढ़ें' में जोड़ें
+            </button>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    async function addToReadMore(index) {
+      if (!newsArticles[index]) return;
+      newsArticles[index].showInRelated = true;
+      renderManageTable();
+      renderReadMoreTab();
+      try {
+        await saveNewsData(newsArticles, "Add to Read More: " + newsArticles[index].title);
+        showToast("✅ खबर 'और पढ़ें' में जोड़ दी गई!");
+      } catch (err) {
+        alert("Notice: " + err.message);
+      }
+    }
+
+    async function addSelectedToReadMore() {
+      const sel = document.getElementById('selectAddReadMore');
+      if (!sel || !sel.value) {
+        alert("कृपया ड्रॉपडाउन में से एक खबर चुनें!");
+        return;
+      }
+      const idx = parseInt(sel.value, 10);
+      if (!isNaN(idx) && newsArticles[idx]) {
+        await addToReadMore(idx);
+      }
+    }
+
+    async function removeFromReadMore(index) {
+      if (!newsArticles[index]) return;
+      newsArticles[index].showInRelated = false;
+      renderManageTable();
+      renderReadMoreTab();
+      try {
+        await saveNewsData(newsArticles, "Remove from Read More: " + newsArticles[index].title);
+        showToast("❌ खबर 'और पढ़ें' से हटा दी गई!");
+      } catch (err) {
+        alert("Notice: " + err.message);
+      }
+    }
+
+    function openReplaceModal(index) {
+      if (!newsArticles[index]) return;
+      replaceTargetIndex = index;
+      document.getElementById('replaceCurrentTitle').textContent = newsArticles[index].title;
+
+      const sel = document.getElementById('selectReplacementStory');
+      sel.innerHTML = '';
+      newsArticles.forEach((item, idx) => {
+        if (idx !== index) {
+          const opt = document.createElement('option');
+          opt.value = idx;
+          const status = item.showInRelated !== false ? '• (अभी सक्रिय है)' : '';
+          opt.textContent = `${item.title.substring(0, 55)}... ${status}`;
+          sel.appendChild(opt);
+        }
+      });
+
+      document.getElementById('replaceStoryModal').style.display = 'flex';
+    }
+
+    function closeReplaceModal() {
+      replaceTargetIndex = -1;
+      document.getElementById('replaceStoryModal').style.display = 'none';
+    }
+
+    async function confirmReplaceStory() {
+      const sel = document.getElementById('selectReplacementStory');
+      if (!sel || !sel.value) return;
+      const newIdx = parseInt(sel.value, 10);
+      if (isNaN(newIdx) || !newsArticles[newIdx] || replaceTargetIndex < 0) return;
+
+      const oldTitle = newsArticles[replaceTargetIndex].title;
+      const newTitle = newsArticles[newIdx].title;
+
+      newsArticles[replaceTargetIndex].showInRelated = false;
+      newsArticles[newIdx].showInRelated = true;
+
+      const temp = newsArticles[replaceTargetIndex];
+      newsArticles[replaceTargetIndex] = newsArticles[newIdx];
+      newsArticles[newIdx] = temp;
+
+      closeReplaceModal();
+      renderManageTable();
+      renderReadMoreTab();
+
+      try {
+        await saveNewsData(newsArticles, `Replace Read More story: ${oldTitle} with ${newTitle}`);
+        showToast("🔄 खबर सफलतापूर्वक बदल दी गई!");
+      } catch (err) {
+        alert("Replace note: " + err.message);
+      }
+    }
+
+    async function moveReadMoreStory(index, delta) {
+      const targetIdx = index + delta;
+      if (targetIdx < 0 || targetIdx >= newsArticles.length) return;
+      
+      const temp = newsArticles[index];
+      newsArticles[index] = newsArticles[targetIdx];
+      newsArticles[targetIdx] = temp;
+
+      renderManageTable();
+      renderReadMoreTab();
+
+      try {
+        await saveNewsData(newsArticles, "Reorder Read More stories");
+        showToast("↕️ क्रम (Order) अपडेट हो गया!");
+      } catch (err) {
+        alert("Reorder note: " + err.message);
+      }
     }
 
     async function deleteNews(index) {
@@ -1921,6 +2664,39 @@
         }
       }
 
+      // Check if updating an existing article in edit mode
+      if (editingNewsIndex >= 0 && newsArticles[editingNewsIndex]) {
+        const existing = newsArticles[editingNewsIndex];
+        existing.title = title;
+        existing.category = category;
+        if (url) existing.url = url;
+        existing.image = finalImageName;
+        existing.leadSummary = summary;
+        existing.summary = summary;
+        existing.highlights = bullets;
+        existing.sections = newsSections;
+        existing.links = newsLinks;
+        existing.trending = trending;
+        existing.showInRelated = showInRelated;
+        existing.pinnedInRelated = pinRelated;
+        existing.lastUpdated = `${dateStr} ${timeStr}`;
+
+        try {
+          await saveNewsData(newsArticles, `Update news: ${title}`);
+          cancelEditMode();
+          document.getElementById('totalNewsCount').textContent = newsArticles.length;
+          renderManageTable();
+          renderReadMoreTab();
+          showToast("🎉 खबर सफलतापूर्वक अपडेट (Update) हो गई!");
+        } catch (err) {
+          alert("Update note: " + err.message);
+        } finally {
+          btn.disabled = false;
+          btnText.textContent = "Publish News to Website";
+        }
+        return;
+      }
+
       const newArticle = {
         id: generatedId,
         title: title,
@@ -1948,8 +2724,14 @@
         await saveNewsData(newsArticles, `Add news: ${title}`);
         document.getElementById('newsForm').reset();
         clearSelectedImage();
+        document.getElementById('sectionsContainer').innerHTML = '';
+        document.getElementById('linksContainer').innerHTML = '';
+        document.getElementById('bulletsContainer').innerHTML = '';
+        addBulletRow();
+        updateHeadlineMeter();
         document.getElementById('totalNewsCount').textContent = newsArticles.length;
         renderManageTable();
+        renderReadMoreTab();
       } catch (err) {
         alert("Publishing note: " + err.message);
       } finally {
