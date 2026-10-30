@@ -71,6 +71,31 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // API: Save Vacancies directly to data/vacancies.json on disk
+  if (req.method === 'POST' && cleanUrl === '/api/save-vacancies') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const parsed = JSON.parse(body);
+        const dataDir = path.join(ROOT_DIR, 'data');
+        if (!fs.existsSync(dataDir)) {
+          fs.mkdirSync(dataDir, { recursive: true });
+        }
+        const dataPath = path.join(dataDir, 'vacancies.json');
+        fs.writeFileSync(dataPath, JSON.stringify(parsed, null, 2), 'utf8');
+        console.log(`[API] Saved ${parsed.length} vacancies to data/vacancies.json`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, count: parsed.length }));
+      } catch (err) {
+        console.error('[API Vacancies Error]', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
   // API: Upload Image directly to disk
   if (req.method === 'POST' && cleanUrl === '/api/upload-image') {
     let body = '';

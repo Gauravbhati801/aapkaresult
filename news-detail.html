@@ -1160,7 +1160,14 @@
     function initRelatedStories(articles, currentId) {
       if (!articles || !articles.length) return;
       // Filter out current active article and any article marked as hidden from Read More
-      const others = articles.filter(a => a.id !== currentId && a.showInRelated !== false);
+      let others = articles.filter(a => a.id !== currentId && a.showInRelated !== false);
+
+      // Sort: pinned articles first
+      others.sort((a, b) => {
+        if (a.pinnedInRelated && !b.pinnedInRelated) return -1;
+        if (!a.pinnedInRelated && b.pinnedInRelated) return 1;
+        return 0;
+      });
       if (others.length > 0) {
         allRelatedArticles = others;
         const grid = document.getElementById('relatedStoriesGrid');

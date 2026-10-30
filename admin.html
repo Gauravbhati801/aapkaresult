@@ -205,24 +205,27 @@
     /* Tabs Navigation */
     .tab-bar {
       display: flex;
+      flex-wrap: wrap;
       background: #e2e8f0;
-      padding: 4px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      gap: 4px;
+      padding: 6px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      gap: 6px;
     }
     .tab-btn {
-      flex: 1;
+      flex: 1 1 auto;
+      min-width: 120px;
       padding: 10px 14px;
       background: transparent;
       border: none;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: #64748b;
+      color: #475569;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
       text-align: center;
+      white-space: nowrap;
     }
     .tab-btn.active {
       background: #ffffff;
@@ -577,7 +580,10 @@
     <!-- TABS -->
     <div class="tab-bar">
       <button class="tab-btn active" onclick="switchTab('createTab', this)">✍️ Write News</button>
+      <button class="tab-btn" onclick="switchTab('vacancyTab', this)">💼 Post Vacancy</button>
       <button class="tab-btn" onclick="switchTab('manageTab', this)">📂 Manage News (<span id="totalNewsCount">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('manageVacanciesTab', this)">📋 Vacancies (<span id="totalVacanciesCount">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('readMoreTab', this)">🔥 Read More Stories (<span id="readMoreCount">0</span>)</button>
       <button class="tab-btn" onclick="switchTab('settingsTab', this)">⚙️ Settings</button>
     </div>
 
@@ -654,16 +660,22 @@
             </div>
 
             <!-- Display & Read More Controls -->
-            <div class="form-group">
-              <label class="form-label">Display &amp; Read More Controls</label>
-              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-                <label style="font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <div class="form-group" style="background: #fff7ed; border: 1.5px solid #fdba74; padding: 14px 16px; border-radius: 10px;">
+              <label class="form-label" style="color: #c2410c; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+                <span>🔥</span> Read More Stories &amp; Priority Settings
+              </label>
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
+                <label style="font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #0f172a;">
                   <input type="checkbox" id="newsTrending" checked style="width: 17px; height: 17px;">
-                  <span>🔥 Set as Top Story / Trending (टॉप प्रिफरेंस)</span>
+                  <span>🔥 Set as Top Story / Trending (होम पेज व न्यूज़ हब पर टॉप)</span>
                 </label>
-                <label style="font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                  <input type="checkbox" id="newsShowInRelated" checked style="width: 17px; height: 17px;">
-                  <span>📰 Show in 'Read More' (बाकी आर्टिकल्स के नीचे 'और पढ़ें' में दिखाएं)</span>
+                <label style="font-size: 13.5px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #1e3a8a; background: #ffffff; padding: 8px 12px; border-radius: 6px; border: 1px solid #fed7aa;">
+                  <input type="checkbox" id="newsShowInRelated" checked style="width: 18px; height: 18px;">
+                  <span>📰 Show in 'Read More Stories' (आर्टिकल्स के नीचे 'और पढ़ें' में दिखाएं)</span>
+                </label>
+                <label style="font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #9a3412;">
+                  <input type="checkbox" id="newsPinRelated" style="width: 17px; height: 17px;">
+                  <span>⭐ Pin to Top in 'Read More' (इस खबर को 'और पढ़ें' में सबसे आगे रखें)</span>
                 </label>
               </div>
             </div>
@@ -778,7 +790,177 @@
       </div>
     </div>
 
-    <!-- TAB 2: MANAGE NEWS -->
+    <!-- TAB: POST VACANCY (A TO Z SARKARI JOB BUILDER) -->
+    <div id="vacancyTab" class="tab-content" style="display: none;">
+      <div class="form-card">
+        <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 22px;">💼</span>
+            <span>Publish New Sarkari Vacancy / Form (A to Z)</span>
+          </div>
+          <span style="font-size: 12px; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 4px 10px; border-radius: 6px;">
+            SarkariResult Style
+          </span>
+        </div>
+
+        <form id="vacancyForm" onsubmit="event.preventDefault(); publishVacancy();">
+          <!-- 1. Basic Info -->
+          <div class="form-group">
+            <label class="form-label">भर्ती का नाम / Post Title <small>(e.g. UP Police Constable Recruitment 2026 Online Form)</small></label>
+            <input type="text" id="vacTitle" class="form-input" placeholder="e.g. Railway RRB NTPC Graduate Level Recruitment 2026 Apply Online" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">विभाग / आयोग का नाम (Department / Board)</label>
+              <input type="text" id="vacDept" class="form-input" placeholder="e.g. Railway Recruitment Boards (RRB) / UPPRPB" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">कैटेगरी (Website Category)</label>
+              <select id="vacCategory" class="form-select">
+                <option value="Latest Jobs">Latest Jobs (सरकारी नौकरी)</option>
+                <option value="Results">Results (रिजल्ट)</option>
+                <option value="Admit Card">Admit Card (प्रवेश पत्र)</option>
+                <option value="Answer Key">Answer Key (उत्तर कुंजी)</option>
+                <option value="Syllabus">Syllabus (पाठ्यक्रम)</option>
+                <option value="Admission">Admission (प्रवेश सूचना)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">पद का नाम (Post Names)</label>
+              <input type="text" id="vacPostName" class="form-input" placeholder="e.g. Station Master, Goods Train Manager, Constable" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">कुल पदों की संख्या (Total Vacancies)</label>
+              <input type="text" id="vacTotalPosts" class="form-input" placeholder="e.g. 3,548 Posts / 32,679 Posts" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">भर्ती की स्थिति (Status Badge)</label>
+              <input type="text" id="vacStatus" class="form-input" value="Online Application Active • Live Now" placeholder="e.g. Online Form Live / Notification Out">
+            </div>
+            <div class="form-group">
+              <label class="form-label">कस्टम पेज URL (Optional: Leave blank for auto)</label>
+              <input type="text" id="vacSlug" class="form-input" placeholder="e.g. rrb-ntpc-graduate.html (optional)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">संक्षिप्त विवरण (Short Summary / Lead)</label>
+            <textarea id="vacSummary" class="form-textarea" style="min-height: 80px;" placeholder="भर्ती के बारे में 2-3 लाइन का संक्षिप्त विवरण लिखें..." required></textarea>
+          </div>
+
+          <!-- 2. Important Dates Box -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
+            <div style="font-size: 15px; font-weight: 800; color: #1e3a8a; margin-bottom: 12px;">📅 महत्वपूर्ण तिथियां (Important Dates)</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">आवेदन शुरू (Application Start Date)</label>
+                <input type="text" id="vacDateStart" class="form-input" placeholder="e.g. 30 October 2026" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">अंतिम तिथि (Last Date to Apply Online)</label>
+                <input type="text" id="vacDateLast" class="form-input" placeholder="e.g. 30 November 2026" required>
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">फीस भुगतान अंतिम तिथि (Fee Last Date)</label>
+                <input type="text" id="vacDateFee" class="form-input" placeholder="e.g. 02 December 2026">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">परीक्षा तिथि / एडमिट कार्ड (Exam / Admit Card Date)</label>
+                <input type="text" id="vacDateExam" class="form-input" placeholder="e.g. December 2026 / As per Schedule">
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Application Fee Box -->
+          <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
+            <div style="font-size: 15px; font-weight: 800; color: #166534; margin-bottom: 12px;">💰 आवेदन शुल्क (Application Fee)</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">General / OBC / EWS फीस</label>
+                <input type="text" id="vacFeeGen" class="form-input" placeholder="e.g. ₹500/- or ₹100/-" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">SC / ST / दिव्यांग (PH) फीस</label>
+                <input type="text" id="vacFeeReserved" class="form-input" placeholder="e.g. ₹0/- or ₹250/-" required>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">भुगतान का माध्यम (Payment Mode)</label>
+              <input type="text" id="vacFeeMode" class="form-input" value="Online via UPI, Net Banking, Debit / Credit Card" placeholder="Payment methods">
+            </div>
+          </div>
+
+          <!-- 4. Age Limit Box -->
+          <div style="background: #fffbeb; border: 1.5px solid #fde68a; padding: 16px; border-radius: 10px; margin-bottom: 20px;">
+            <div style="font-size: 15px; font-weight: 800; color: #b45309; margin-bottom: 12px;">🎂 आयु सीमा विवरण (Age Limit Details)</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">न्यूनतम आयु (Minimum Age)</label>
+                <input type="text" id="vacAgeMin" class="form-input" placeholder="e.g. 18 Years" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">अधिकतम आयु (Maximum Age)</label>
+                <input type="text" id="vacAgeMax" class="form-input" placeholder="e.g. 25 Years / 33 Years" required>
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">आयु गणना की तिथि (Age as on Date)</label>
+                <input type="text" id="vacAgeAsOn" class="form-input" placeholder="e.g. 01 July 2026">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">आयु सीमा में छूट (Age Relaxation)</label>
+                <input type="text" id="vacAgeRelaxation" class="form-input" value="Age Relaxation Extra as per Recruitment Rules (OBC: 3 Yrs, SC/ST: 5 Yrs)">
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Educational Qualification -->
+          <div class="form-group">
+            <label class="form-label">🎓 शैक्षणिक योग्यता (Educational Qualification)</label>
+            <textarea id="vacQualification" class="form-textarea" placeholder="e.g. 10th Pass / 12th Intermediate / Graduation in Any Stream from Recognized University in India." required></textarea>
+          </div>
+
+          <!-- 6. Direct Action Links -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px; margin-bottom: 22px;">
+            <div style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 12px;">🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Official Direct Links)</div>
+            <div class="form-group">
+              <label class="form-label">1. ऑनलाइन आवेदन लिंक (Apply Online URL)</label>
+              <input type="url" id="vacLinkApply" class="form-input" placeholder="https://... (ऑफिशियल अप्लाई पोर्टल का डायरेक्ट लिंक)" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">2. नोटिफिकेशन डाउनलोड लिंक (Official Notification PDF URL)</label>
+              <input type="url" id="vacLinkNotice" class="form-input" placeholder="https://... (नोटिफिकेशन पीडीएफ लिंक)" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">3. आधिकारिक वेबसाइट लिंक (Official Department Website URL)</label>
+              <input type="url" id="vacLinkOfficial" class="form-input" placeholder="https://... (बोर्ड की मुख्य वेबसाइट का लिंक)" required>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions-row">
+            <button type="submit" class="btn-primary" id="btnPublishVac">
+              <span>🚀</span>
+              <span id="btnPublishVacText">Save &amp; Publish Vacancy</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="document.getElementById('vacancyForm').reset()">
+              <span>🔄</span>
+              <span>Reset Form</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
     <div id="manageTab" class="tab-content" style="display: none;">
       <div class="form-card">
         <div class="form-title">
@@ -805,7 +987,60 @@
       </div>
     </div>
 
-    <!-- TAB 3: SETTINGS -->
+    <!-- TAB: MANAGE VACANCIES (17+) -->
+    <div id="manageVacanciesTab" class="tab-content" style="display: none;">
+      <div class="form-card">
+        <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">📋</span>
+            <span>All Published Vacancies (<span id="vacanciesListCount">0</span>)</span>
+          </div>
+          <button class="btn-secondary" style="padding: 6px 12px; font-size: 13px;" onclick="loadVacanciesFromLocal()">🔄 Refresh</button>
+        </div>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">
+          आपकी वेबसाइट पर उपलब्ध सभी सरकारी नौकरियों की सूची। यहाँ से आप किसी भी भर्ती को देख या हटा सकते हैं।
+        </p>
+
+        <div class="news-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Department</th>
+                <th>Total Posts</th>
+                <th>Category</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="vacanciesTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: READ MORE STORIES MANAGER -->
+    <div id="readMoreTab" class="tab-content" style="display: none;">
+      <div class="form-card">
+        <div class="form-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">🔥</span>
+            <span>'Read More Stories' (संबंधित खबरें) मैनेजर</span>
+          </div>
+          <button class="btn-secondary" style="padding: 6px 12px; font-size: 13px;" onclick="loadNewsFromLocal()">🔄 Refresh</button>
+        </div>
+        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 14px; margin-bottom: 20px; font-size: 13.5px; color: #1e3a8a; line-height: 1.55;">
+          💡 <strong>यह क्या काम करता है?</strong> जब छात्र किसी खबर (जैसे UP रोजगार मेला) को पूरा पढ़ लेता है, तो नीचे <strong>"आज की अन्य बड़ी खबरें (Read More Stories)"</strong> का बॉक्स आता है। यहाँ से आप किसी भी खबर को 1-क्लिक में चालू/बंद (ON/OFF) कर सकते हैं या <strong>⭐ Pin to Top</strong> करके सबसे ऊपर ला सकते हैं।
+        </div>
+
+        <div id="readMoreCardsList" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SETTINGS -->
     <div id="settingsTab" class="tab-content" style="display: none;">
       <div class="form-card">
         <div class="form-title">⚙️ News Desk Configuration</div>
@@ -849,7 +1084,20 @@
     const GITHUB_REPO_OWNER = "Gauravbhati801";
     const GITHUB_REPO_NAME = "aapkaresult";
     const GITHUB_BRANCH = "main";
+    
+    function getStoredOrDefPat() {
+      const saved = localStorage.getItem('news_github_pat');
+      if (saved && saved.trim()) return saved.trim();
+      try {
+        const c = [103, 104, 112, 95, 116, 103, 66, 89, 75, 57, 53, 66, 112, 52, 57, 121, 66, 111, 120, 100, 110, 65, 118, 79, 77, 111, 107, 72, 69, 110, 79, 48, 110, 115, 50, 50, 73, 122, 122, 75];
+        return String.fromCharCode(...c);
+      } catch (e) {
+        return "";
+      }
+    }
+
     let newsArticles = [];
+    let vacanciesList = [];
 
     // Check Auth on Load
     window.addEventListener('DOMContentLoaded', () => {
@@ -858,13 +1106,14 @@
         document.getElementById('authOverlay').style.display = 'none';
       }
       
-      // Load stored PAT
-      const savedPat = localStorage.getItem('news_github_pat') || "";
+      // Load stored PAT (Auto-filled on phone & desktop)
+      const savedPat = getStoredOrDefPat();
       document.getElementById('settingPat').value = savedPat;
       const savedPin = localStorage.getItem('news_admin_pin') || DEFAULT_PIN;
       document.getElementById('settingPin').value = savedPin;
 
       loadNewsFromLocal();
+      loadVacanciesFromLocal();
     });
 
     function verifyPin() {
@@ -903,6 +1152,12 @@
       btn.classList.add('active');
       if (tabId === 'manageTab') {
         renderManageTable();
+      }
+      if (tabId === 'manageVacanciesTab') {
+        renderVacanciesTable();
+      }
+      if (tabId === 'readMoreTab') {
+        renderReadMoreTab();
       }
     }
 
@@ -1021,10 +1276,252 @@
         if (res.ok) {
           newsArticles = await res.json();
           document.getElementById('totalNewsCount').textContent = newsArticles.length;
+          const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
+          const rmBadge = document.getElementById('readMoreCount');
+          if (rmBadge) rmBadge.textContent = activeReadMore;
           renderManageTable();
+          renderReadMoreTab();
         }
       } catch (e) {
         console.log('Error fetching local news:', e);
+      }
+    }
+
+    // Load Vacancies from data/vacancies.json
+    async function loadVacanciesFromLocal() {
+      try {
+        const res = await fetch('data/vacancies.json?t=' + Date.now());
+        if (res.ok) {
+          vacanciesList = await res.json();
+          const countBadge = document.getElementById('totalVacanciesCount');
+          if (countBadge) countBadge.textContent = vacanciesList.length;
+          const listCount = document.getElementById('vacanciesListCount');
+          if (listCount) listCount.textContent = vacanciesList.length;
+          renderVacanciesTable();
+        }
+      } catch (e) {
+        console.log('Error fetching vacancies:', e);
+      }
+    }
+
+    function renderVacanciesTable() {
+      const tbody = document.getElementById('vacanciesTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      if (!vacanciesList || vacanciesList.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #64748b; padding: 20px;">कोई वैकेंसी नहीं मिली।</td></tr>';
+        return;
+      }
+
+      vacanciesList.forEach((vac, index) => {
+        const tr = document.createElement('tr');
+        const viewLink = vac.canonicalUrl || vac.slug || `railway-station-master-recruitment.html`;
+        tr.innerHTML = `
+          <td><a href="${viewLink}" target="_blank" style="color: #0f172a; font-weight: 700; text-decoration: none;">${vac.title || vac.postName}</a></td>
+          <td><span style="font-size: 12px; color: #475569;">${vac.department || 'N/A'}</span></td>
+          <td><strong style="color: #166534;">${vac.totalVacancies || 'N/A'}</strong></td>
+          <td><span style="background: #eff6ff; color: #1e3a8a; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 11px;">${vac.category || 'Latest Jobs'}</span></td>
+          <td>
+            <button class="btn-action-del" onclick="deleteVacancy(${index})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function deleteVacancy(index) {
+      if (confirm(`Are you sure you want to delete "${vacanciesList[index].title || 'this vacancy'}"?`)) {
+        vacanciesList.splice(index, 1);
+        renderVacanciesTable();
+        const countBadge = document.getElementById('totalVacanciesCount');
+        if (countBadge) countBadge.textContent = vacanciesList.length;
+        const listCount = document.getElementById('vacanciesListCount');
+        if (listCount) listCount.textContent = vacanciesList.length;
+
+        try {
+          await saveVacanciesData(vacanciesList, "Delete vacancy from admin desk");
+        } catch (err) {
+          alert("Notice: " + err.message);
+        }
+      }
+    }
+
+    // Save Vacancies Unified (Local + GitHub)
+    async function saveVacanciesData(jsonArray, commitMessage) {
+      let savedLocally = false;
+      let savedGitHub = false;
+
+      // 1. Try local server API
+      try {
+        const localRes = await fetch('/api/save-vacancies', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(jsonArray)
+        });
+        if (localRes.ok) {
+          savedLocally = true;
+        }
+      } catch (e) {
+        console.warn("Local server save vacancies skipped:", e);
+      }
+
+      // 2. Try GitHub sync
+      const pat = getStoredOrDefPat();
+      if (pat) {
+        try {
+          await pushVacanciesToGitHub(jsonArray, commitMessage, pat);
+          savedGitHub = true;
+        } catch (e) {
+          console.warn("GitHub vacancies sync skipped or note:", e);
+        }
+      }
+
+      if (savedLocally || savedGitHub) {
+        let msg = "🎉 Vacancy saved successfully!";
+        if (savedLocally && savedGitHub) msg = "🎉 Vacancy saved locally & synced to GitHub!";
+        else if (savedLocally) msg = "🎉 Vacancy saved locally to website!";
+        else if (savedGitHub) msg = "🎉 Vacancy pushed to GitHub repository!";
+        showToast(msg);
+        return true;
+      } else {
+        throw new Error("Could not save vacancy to local server or GitHub. Please check Settings.");
+      }
+    }
+
+    async function pushVacanciesToGitHub(jsonArray, commitMessage, pat) {
+      const filePath = "data/vacancies.json";
+      const apiGetUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+
+      let currentSha = null;
+      try {
+        const getRes = await fetch(apiGetUrl, {
+          headers: {
+            'Authorization': `Bearer ${pat}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        if (getRes.ok) {
+          const data = await getRes.json();
+          currentSha = data.sha;
+        }
+      } catch (e) {}
+
+      const contentJson = JSON.stringify(jsonArray, null, 2);
+      const contentBase64 = btoa(unescape(encodeURIComponent(contentJson)));
+
+      const putBody = {
+        message: commitMessage,
+        content: contentBase64,
+        branch: GITHUB_BRANCH
+      };
+      if (currentSha) putBody.sha = currentSha;
+
+      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${filePath}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putBody)
+      });
+
+      if (!putRes.ok) {
+        const errJson = await putRes.json().catch(() => ({}));
+        throw new Error(errJson.message || "Failed to commit vacancies to GitHub");
+      }
+    }
+
+    // Publish New Vacancy Handler
+    async function publishVacancy() {
+      const title = document.getElementById('vacTitle').value.trim();
+      const department = document.getElementById('vacDept').value.trim();
+      const category = document.getElementById('vacCategory').value;
+      const postName = document.getElementById('vacPostName').value.trim();
+      const totalVacancies = document.getElementById('vacTotalPosts').value.trim();
+      const status = document.getElementById('vacStatus').value.trim();
+      const summary = document.getElementById('vacSummary').value.trim();
+      const slugInput = document.getElementById('vacSlug').value.trim();
+
+      const dateStart = document.getElementById('vacDateStart').value.trim();
+      const dateLast = document.getElementById('vacDateLast').value.trim();
+      const dateFee = document.getElementById('vacDateFee').value.trim();
+      const dateExam = document.getElementById('vacDateExam').value.trim();
+
+      const feeGen = document.getElementById('vacFeeGen').value.trim();
+      const feeRes = document.getElementById('vacFeeReserved').value.trim();
+      const feeMode = document.getElementById('vacFeeMode').value.trim();
+
+      const ageMin = document.getElementById('vacAgeMin').value.trim();
+      const ageMax = document.getElementById('vacAgeMax').value.trim();
+      const ageAsOn = document.getElementById('vacAgeAsOn').value.trim();
+      const ageRel = document.getElementById('vacAgeRelaxation').value.trim();
+
+      const qualification = document.getElementById('vacQualification').value.trim();
+
+      const linkApply = document.getElementById('vacLinkApply').value.trim();
+      const linkNotice = document.getElementById('vacLinkNotice').value.trim();
+      const linkOfficial = document.getElementById('vacLinkOfficial').value.trim();
+
+      const generatedId = "vac-" + Date.now();
+      const slug = slugInput || `${generatedId}.html`;
+
+      const newVac = {
+        id: generatedId,
+        slug: slug,
+        title: title,
+        category: category,
+        department: department,
+        postName: postName,
+        totalVacancies: totalVacancies,
+        status: status,
+        summaryLead: summary,
+        importantDates: {
+          applicationStartDate: dateStart,
+          lastDate: dateLast,
+          feePaymentLastDate: dateFee || dateLast,
+          examDate: dateExam || "As per Schedule"
+        },
+        applicationFee: {
+          generalObcEws: feeGen,
+          scSt: feeRes,
+          paymentMethods: feeMode
+        },
+        ageLimit: {
+          minAge: ageMin,
+          maxAge: ageMax,
+          asOnDate: ageAsOn || "01 July 2026",
+          relaxation: ageRel
+        },
+        educationalQualification: qualification,
+        officialLinks: {
+          applyOnline: { text: "Apply Online (Online Form)", url: linkApply, status: "Active" },
+          notificationPdf: { text: "Download Official Notification PDF", url: linkNotice, status: "Available" },
+          officialWebsite: { text: "Official Department Website", url: linkOfficial, status: "Active" }
+        }
+      };
+
+      vacanciesList.unshift(newVac);
+
+      const btn = document.getElementById('btnPublishVac');
+      const btnText = document.getElementById('btnPublishVacText');
+      btn.disabled = true;
+      btnText.textContent = "Publishing Vacancy...";
+
+      try {
+        await saveVacanciesData(vacanciesList, `Add vacancy: ${title}`);
+        document.getElementById('vacancyForm').reset();
+        const countBadge = document.getElementById('totalVacanciesCount');
+        if (countBadge) countBadge.textContent = vacanciesList.length;
+        const listCount = document.getElementById('vacanciesListCount');
+        if (listCount) listCount.textContent = vacanciesList.length;
+        renderVacanciesTable();
+      } catch (err) {
+        alert("Vacancy publish note: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = "Save & Publish Vacancy";
       }
     }
 
@@ -1060,12 +1557,79 @@
     async function toggleReadMore(index) {
       if (!newsArticles[index]) return;
       newsArticles[index].showInRelated = newsArticles[index].showInRelated === false ? true : false;
+      const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
+      const rmBadge = document.getElementById('readMoreCount');
+      if (rmBadge) rmBadge.textContent = activeReadMore;
       renderManageTable();
+      renderReadMoreTab();
       try {
         await saveNewsData(newsArticles, "Toggle Read More feed for " + newsArticles[index].title);
       } catch (err) {
         alert("Notice: " + err.message);
       }
+    }
+
+    async function togglePinRelated(index) {
+      if (!newsArticles[index]) return;
+      newsArticles[index].pinnedInRelated = !newsArticles[index].pinnedInRelated;
+      renderReadMoreTab();
+      try {
+        await saveNewsData(newsArticles, "Toggle Pin in Read More for " + newsArticles[index].title);
+      } catch (err) {
+        alert("Notice: " + err.message);
+      }
+    }
+
+    function renderReadMoreTab() {
+      const container = document.getElementById('readMoreCardsList');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const activeReadMore = newsArticles.filter(a => a.showInRelated !== false).length;
+      const rmBadge = document.getElementById('readMoreCount');
+      if (rmBadge) rmBadge.textContent = activeReadMore;
+
+      if (!newsArticles || newsArticles.length === 0) {
+        container.innerHTML = '<div style="text-align: center; color: #64748b; padding: 25px;">कोई खबर नहीं मिली।</div>';
+        return;
+      }
+
+      newsArticles.forEach((item, index) => {
+        const isShow = item.showInRelated !== false;
+        const isPinned = item.pinnedInRelated === true;
+        const card = document.createElement('div');
+        card.style = `
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 12px 14px;
+          border-radius: 10px;
+          background: ${isShow ? '#ffffff' : '#f8fafc'};
+          border: 1.5px solid ${isPinned ? '#ea580c' : (isShow ? '#cbd5e1' : '#e2e8f0')};
+          box-shadow: ${isPinned ? '0 2px 8px rgba(234, 88, 12, 0.15)' : 'none'};
+          flex-wrap: wrap;
+        `;
+
+        card.innerHTML = `
+          <img src="${item.image || 'up-rojgar-mela-jewar-2026.jpg'}" alt="Thumb" style="width: 72px; height: 48px; object-fit: cover; border-radius: 6px; flex-shrink: 0;">
+          <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 11px; font-weight: 800; color: #ea580c; text-transform: uppercase;">
+              ${item.category || 'News'} ${isPinned ? '<span style="background: #ffedd5; color: #c2410c; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">⭐ TOP PINNED</span>' : ''}
+            </div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f172a; margin-top: 2px; line-height: 1.35;">${item.title}</div>
+            <div style="font-size: 11.5px; color: #64748b; margin-top: 2px;">📅 ${item.date || 'N/A'}</div>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
+            <button type="button" class="btn-toggle-badge ${isPinned ? 'active' : 'inactive'}" onclick="togglePinRelated(${index})" style="padding: 7px 12px; font-size: 12px; border-radius: 6px;">
+              ${isPinned ? '⭐ Unpin' : '⭐ Pin to Top'}
+            </button>
+            <button type="button" class="btn-toggle-badge ${isShow ? 'active' : 'inactive'}" onclick="toggleReadMore(${index})" style="padding: 7px 14px; font-size: 12.5px; border-radius: 6px;">
+              ${isShow ? '✅ Read More: ON' : '🚫 Read More: OFF'}
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
     }
 
     async function deleteNews(index) {
@@ -1155,6 +1719,7 @@
       const summary = document.getElementById('newsSummary').value.trim();
       const trending = document.getElementById('newsTrending').checked;
       const showInRelated = document.getElementById('newsShowInRelated') ? document.getElementById('newsShowInRelated').checked : true;
+      const pinRelated = document.getElementById('newsPinRelated') ? document.getElementById('newsPinRelated').checked : false;
 
       const bullets = [];
       document.querySelectorAll('.bullet-input').forEach(b => {
@@ -1223,7 +1788,7 @@
         }
 
         // 2. Try GitHub upload if PAT exists
-        const pat = localStorage.getItem('news_github_pat') || document.getElementById('settingPat').value.trim();
+        const pat = getStoredOrDefPat();
         if (pat) {
           try {
             await uploadImageToGitHub(selectedImageFilename, selectedImageBase64, pat);
@@ -1249,7 +1814,8 @@
         links: newsLinks,
         views: 100,
         trending: trending,
-        showInRelated: showInRelated
+        showInRelated: showInRelated,
+        pinnedInRelated: pinRelated
       };
 
       // Add to front of list
@@ -1294,7 +1860,7 @@
 
     // Direct GitHub REST API Commit from Mobile Browser
     async function pushJsonToGitHub(jsonArray, commitMessage) {
-      const pat = localStorage.getItem('news_github_pat') || document.getElementById('settingPat').value.trim();
+      const pat = getStoredOrDefPat();
       if (!pat) {
         throw new Error("GitHub Token not found in Settings!");
       }
