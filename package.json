@@ -1,0 +1,11 @@
+{
+  "name": "aapkaresult-portal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node serve.js",
+    "build": "echo 'Static site ready'",
+    "lint": "node --check serve.js && node --check script.js && node --check main.js && node --check tools.js",
+    "start": "node serve.js"
+  }
+}

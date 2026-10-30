@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function liveSearch(searchTerm) {
   const query = (searchTerm || "").toLowerCase().trim();
   const searchableElements = document.querySelectorAll(
-    ".portal-box ul li, .trend-card, .styled-table tbody tr, .guide-card"
+    ".portal-box ul li, .trend-card, .styled-table tbody tr, .guide-card, .news-simple-card, .related-news-card"
   );
 
   searchableElements.forEach(item => {
