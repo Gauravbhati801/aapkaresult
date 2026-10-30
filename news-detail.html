@@ -936,7 +936,7 @@
                 <th>डायरेक्ट लिंक (Direct Link)</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="articleLinksBody">
               <tr>
                 <td><strong>रोजगार मेला ऑनलाइन रजिस्ट्रेशन</strong></td>
                 <td>
@@ -1227,6 +1227,39 @@
             const hlBox = document.querySelector('.article-jagran-highlights ul');
             if (hlBox) {
               hlBox.innerHTML = item.highlights.map(h => `<li><strong>📌</strong> ${h}</li>`).join('');
+            }
+          }
+
+          // Dynamically populate body sections with headings & paragraphs
+          const bodyEl = document.getElementById('articleBody');
+          if (bodyEl) {
+            if (item.sections && item.sections.length) {
+              bodyEl.innerHTML = item.sections.map(sec => `
+                <h2 class="article-h2">${sec.heading || 'मुख्य विवरण'}</h2>
+                <p style="font-size: 15.5px; line-height: 1.8; color: #334155; margin-bottom: 20px; white-space: pre-line;">${sec.content}</p>
+              `).join('');
+            } else if (item.summary) {
+              bodyEl.innerHTML = `<p style="font-size: 15.5px; line-height: 1.8; color: #334155; white-space: pre-line;">${item.summary}</p>`;
+            }
+          }
+
+          // Dynamically populate important action links at the bottom
+          if (item.links && item.links.length) {
+            const linksBody = document.getElementById('articleLinksBody');
+            if (linksBody) {
+              linksBody.innerHTML = item.links.map(lnk => {
+                const label = lnk.label || "महत्वपूर्ण लिंक";
+                const isApply = label.toLowerCase().includes('apply') || label.includes('आवेदन');
+                const btnText = isApply ? 'यहाँ आवेदन करें (Apply Online)' : 'यहाँ क्लिक करें (Click Here)';
+                return `
+                  <tr>
+                    <td><strong>${label}</strong></td>
+                    <td>
+                      <a href="${lnk.url}" target="_blank" rel="noopener noreferrer">${btnText} &rarr;</a>
+                    </td>
+                  </tr>
+                `;
+              }).join('');
             }
           }
         })

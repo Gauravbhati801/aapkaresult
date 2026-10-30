@@ -334,6 +334,27 @@
     .btn-add-bullet:hover {
       background: #dbeafe;
     }
+    .btn-gallery-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #eff6ff;
+      color: #1e3a8a;
+      border: 1.5px dashed #3b82f6;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-gallery-upload:hover {
+      background: #dbeafe;
+      border-color: #1d4ed8;
+    }
 
     /* Action Buttons Row */
     .form-actions-row {
@@ -597,15 +618,39 @@
           </div>
 
           <div class="form-row">
-            <!-- Image URL -->
+            <!-- Image URL & Gallery Upload -->
             <div class="form-group">
               <label class="form-label">Featured Image <small>(1280x720 Discover HD)</small></label>
+              
+              <!-- Gallery Upload Button -->
+              <div style="margin-bottom: 8px;">
+                <input type="file" id="newsImageFile" accept="image/*" style="display: none;" onchange="handleImageFileSelect(event)">
+                <button type="button" class="btn-gallery-upload" onclick="document.getElementById('newsImageFile').click()">
+                  <span>📷 फोन गैलरी से फोटो अपलोड करें (Choose from Gallery)</span>
+                </button>
+              </div>
+
+              <!-- Image Live Preview Box -->
+              <div id="imagePreviewBox" style="display: none; position: relative; margin-bottom: 8px; border-radius: 8px; overflow: hidden; border: 1.5px solid #22c55e;">
+                <img id="imagePreviewEl" src="" alt="Selected Preview" style="width: 100%; height: 160px; object-fit: cover; display: block;">
+                <div style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.8); color: #ffffff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700;">
+                  ✓ फोन गैलरी से फोटो चुनी गई (1280px HD Ready)
+                </div>
+                <button type="button" onclick="clearSelectedImage()" style="position: absolute; top: 6px; right: 6px; background: #dc2626; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 11.5px; font-weight: 700;">हटाएं &times;</button>
+              </div>
+
+              <div style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">या पहले से मौजूद फोटो में से चुनें:</div>
               <select id="presetImage" class="form-select" onchange="document.getElementById('newsImage').value = this.value">
+                <option value="up-rojgar-mela-jewar-2026.jpg">UP Rojgar Mela (1280x720)</option>
                 <option value="railway-station-master-recruitment-2026.jpg">Railway Station Master (1280x720 HD)</option>
+                <option value="news-up-homeguard-2026.jpg">UP Police / Homeguard (1280x720)</option>
+                <option value="news-ctet-exam-2026.jpg">CTET / Teaching Exam (1280x720)</option>
+                <option value="news-ssc-cgl-update-2026.jpg">SSC CGL Notice (1280x720)</option>
+                <option value="news-upsssc-pet-2026.jpg">UPSSSC PET Notice (1280x720)</option>
                 <option value="irel-tradesman-trainee-recruitment-2026.jpg">IREL Tradesman Trainee (1024x576)</option>
                 <option value="favicon-original.png">AapkaResult Standard Logo</option>
               </select>
-              <input type="text" id="newsImage" class="form-input" style="margin-top: 6px;" value="railway-station-master-recruitment-2026.jpg" placeholder="Image file or URL">
+              <input type="text" id="newsImage" class="form-input" style="margin-top: 6px;" value="up-rojgar-mela-jewar-2026.jpg" placeholder="Image file or URL">
             </div>
 
             <!-- Display & Read More Controls -->
@@ -645,6 +690,73 @@
               </div>
             </div>
             <button type="button" class="btn-add-bullet" onclick="addBulletRow()">+ Add Another Highlight Point</button>
+          </div>
+
+          <!-- DETAILED SECTIONS BUILDER (हेडिंग और पैराग्राफ्स) -->
+          <div class="form-group" style="background: #ffffff; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px;">
+            <label class="form-label" style="color: #0f172a; font-size: 14.5px;">
+              📑 खबर का मुख्य विवरण (Headings &amp; Short Summary Sections)
+              <small style="display: block; color: #64748b; font-weight: 500; margin-top: 2px;">
+                बीच-बीच में हेडिंग डालकर अलग-अलग विवरण लिखें ताकि छात्र आसानी से पूरी खबर पढ़ सकें
+              </small>
+            </label>
+
+            <div id="sectionsContainer" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+              <!-- Section 1 -->
+              <div class="content-section-card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px;">
+                <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग 1 (Main Subheading)</div>
+                <input type="text" class="form-input sec-heading-input" value="📅 भर्ती का शेड्यूल व महत्वपूर्ण तारीखें" placeholder="Heading (e.g. 📅 भर्ती का शेड्यूल)" style="margin-bottom: 8px; font-weight: 700;" required>
+                <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
+                <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग के अंतर्गत जानकारी लिखें (जैसे तारीखें, आवेदन शुरू, अंतिम तिथि आदि)..." required>ऑनलाइन आवेदन की प्रक्रिया आधिकारिक पोर्टल पर शुरू हो चुकी है। सभी पात्र एवं इच्छुक अभ्यर्थी निर्धारित अंतिम तिथि से पूर्व अपना फॉर्म भर सकते हैं।</textarea>
+              </div>
+
+              <!-- Section 2 -->
+              <div class="content-section-card" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative;">
+                <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+                <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग 2 (Main Subheading)</div>
+                <input type="text" class="form-input sec-heading-input" value="🎓 आवश्यक शैक्षणिक योग्यता व आयु सीमा" placeholder="Heading (e.g. 🎓 शैक्षणिक योग्यता)" style="margin-bottom: 8px; font-weight: 700;" required>
+                <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
+                <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग के अंतर्गत योग्यता और आयु सीमा का विवरण लिखें..." required>अभ्यर्थियों के पास मान्यता प्राप्त बोर्ड या विश्वविद्यालय से संबंधित योग्यता होनी चाहिए। आयु सीमा की गणना आधिकारिक नोटिफिकेशन के नियमों के अनुसार की जाएगी।</textarea>
+              </div>
+            </div>
+
+            <button type="button" class="btn-add-bullet" style="background: #eff6ff; margin-top: 10px; width: 100%;" onclick="addContentSection()">
+              + एक और हेडिंग और विवरण जोड़ें (+ Add Heading &amp; Summary Section)
+            </button>
+          </div>
+
+          <!-- IMPORTANT ACTION LINKS (कम से कम 2 लिंक्स) -->
+          <div class="form-group" style="background: #f8fafc; border: 1.5px solid #cbd5e1; padding: 16px; border-radius: 10px;">
+            <label class="form-label" style="color: #0f172a; font-size: 14.5px;">
+              🔗 महत्वपूर्ण डायरेक्ट लिंक्स (Job Application &amp; Notice Links)
+              <small style="display: block; color: #64748b; font-weight: 500; margin-top: 2px;">
+                छात्र पूरी खबर पढ़ने के बाद इन लिंक्स से फॉर्म भरेंगे (कम से कम 2 लिंक्स अनिवार्य)
+              </small>
+            </label>
+
+            <div id="linksContainer" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <!-- Link 1 (Apply Online) -->
+              <div class="link-item-row" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px;">
+                <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">लिंक 1: ऑनलाइन आवेदन (Apply Online)</div>
+                <div class="form-row" style="margin-bottom: 0;">
+                  <input type="text" class="form-input link-label-input" value="ऑनलाइन आवेदन करें (Apply Online)" placeholder="Link Label (e.g. ऑनलाइन आवेदन करें)" required>
+                  <input type="url" class="form-input link-url-input" placeholder="https://... (फॉर्म भरने का डायरेक्ट लिंक)" required>
+                </div>
+              </div>
+
+              <!-- Link 2 (Official Notice / Website) -->
+              <div class="link-item-row" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px;">
+                <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">लिंक 2: आधिकारिक नोटिफिकेशन / वेबसाइट (Official Website)</div>
+                <div class="form-row" style="margin-bottom: 0;">
+                  <input type="text" class="form-input link-label-input" value="आधिकारिक नोटिफिकेशन / वेबसाइट (Official Website)" placeholder="Link Label (e.g. आधिकारिक नोटिफिकेशन)" required>
+                  <input type="url" class="form-input link-url-input" placeholder="https://... (नोटिफिकेशन पीडीएफ या वेबसाइट लिंक)" required>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-add-bullet" style="background: #ffffff; margin-top: 10px;" onclick="addLinkRow()">
+              + एक और लिंक जोड़ें (Add Another Link)
+            </button>
           </div>
 
           <!-- Actions -->
@@ -805,6 +917,96 @@
       container.appendChild(row);
     }
 
+    // Image Gallery Selection & Automatic HD Canvas Compression
+    let selectedImageBase64 = null;
+    let selectedImageFilename = null;
+
+    function handleImageFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        alert("कृपया केवल फोटो (Image file) चुनें!");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          const maxW = 1280;
+
+          if (width > maxW) {
+            height = Math.round((height * maxW) / width);
+            width = maxW;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // 82% quality JPEG
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+          selectedImageBase64 = compressedDataUrl;
+
+          const timestamp = Date.now();
+          selectedImageFilename = `news-banner-${timestamp}.jpg`;
+
+          document.getElementById('imagePreviewEl').src = compressedDataUrl;
+          document.getElementById('imagePreviewBox').style.display = 'block';
+          document.getElementById('newsImage').value = selectedImageFilename;
+          showToast("✅ फोटो चुनी गई (1280px Web Ready)");
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearSelectedImage() {
+      selectedImageBase64 = null;
+      selectedImageFilename = null;
+      const fileInput = document.getElementById('newsImageFile');
+      if (fileInput) fileInput.value = '';
+      document.getElementById('imagePreviewBox').style.display = 'none';
+      document.getElementById('newsImage').value = 'up-rojgar-mela-jewar-2026.jpg';
+    }
+
+    function addLinkRow() {
+      const container = document.getElementById('linksContainer');
+      const row = document.createElement('div');
+      row.className = 'link-item-row';
+      row.style = 'background: #ffffff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 8px; position: relative; margin-top: 8px;';
+      row.innerHTML = `
+        <button type="button" onclick="this.closest('.link-item-row').remove()" style="position: absolute; right: 8px; top: 8px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 6px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+        <div style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">अतिरिक्त लिंक (Extra Link)</div>
+        <div class="form-row" style="margin-bottom: 0;">
+          <input type="text" class="form-input link-label-input" placeholder="Link Label (e.g. एडमिट कार्ड डाउनलोड करें)" required>
+          <input type="url" class="form-input link-url-input" placeholder="https://... (वेबसाइट का लिंक)" required>
+        </div>
+      `;
+      container.appendChild(row);
+    }
+
+    function addContentSection() {
+      const container = document.getElementById('sectionsContainer');
+      const count = container.querySelectorAll('.content-section-card').length + 1;
+      const card = document.createElement('div');
+      card.className = 'content-section-card';
+      card.style = 'background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; position: relative; margin-top: 8px;';
+      card.innerHTML = `
+        <button type="button" onclick="this.closest('.content-section-card').remove()" style="position: absolute; right: 10px; top: 10px; background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-weight: 700;">हटाएं &times;</button>
+        <div style="font-size: 12.5px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px;">हेडिंग ${count} (Main Subheading)</div>
+        <input type="text" class="form-input sec-heading-input" placeholder="Heading (e.g. 💰 सैलरी व चयन प्रक्रिया)" style="margin-bottom: 8px; font-weight: 700;" required>
+        <div style="font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px;">इस हेडिंग का विवरण (Summary / Paragraph):</div>
+        <textarea class="form-textarea sec-content-input" style="min-height: 80px;" placeholder="इस हेडिंग का विवरण लिखें..." required></textarea>
+      `;
+      container.appendChild(card);
+    }
+
     function showToast(msg) {
       const t = document.getElementById('toast');
       t.textContent = msg;
@@ -959,6 +1161,34 @@
         if (b.value.trim()) bullets.push(b.value.trim());
       });
 
+      // Collect Sections with Headings & Content
+      const sectionCards = document.querySelectorAll('.content-section-card');
+      const newsSections = [];
+      sectionCards.forEach(card => {
+        const headingInput = card.querySelector('.sec-heading-input');
+        const contentInput = card.querySelector('.sec-content-input');
+        if (headingInput && contentInput && contentInput.value.trim()) {
+          newsSections.push({
+            heading: headingInput.value.trim() || "मुख्य विवरण",
+            content: contentInput.value.trim()
+          });
+        }
+      });
+
+      // Collect links (minimum 2)
+      const linkRows = document.querySelectorAll('.link-item-row');
+      const newsLinks = [];
+      linkRows.forEach(row => {
+        const labelInput = row.querySelector('.link-label-input');
+        const urlInput = row.querySelector('.link-url-input');
+        if (labelInput && urlInput && urlInput.value.trim()) {
+          newsLinks.push({
+            label: labelInput.value.trim() || "ऑनलाइन आवेदन करें",
+            url: urlInput.value.trim()
+          });
+        }
+      });
+
       const now = new Date();
       const yyyy = now.getFullYear();
       const mm = String(now.getMonth() + 1).padStart(2, '0');
@@ -969,6 +1199,40 @@
       const generatedId = "news-" + Date.now();
       const targetUrl = url || `news-detail.html?id=${generatedId}`;
 
+      const btn = document.getElementById('btnPublish');
+      const btnText = document.getElementById('btnPublishText');
+      btn.disabled = true;
+      btnText.textContent = "Publishing to Website...";
+
+      // Handle image from phone gallery
+      let finalImageName = image;
+      if (selectedImageBase64 && selectedImageFilename) {
+        finalImageName = selectedImageFilename;
+        // 1. Try local server upload
+        try {
+          await fetch('/api/upload-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              filename: selectedImageFilename,
+              base64Data: selectedImageBase64
+            })
+          });
+        } catch (e) {
+          console.warn("Local image upload skipped:", e);
+        }
+
+        // 2. Try GitHub upload if PAT exists
+        const pat = localStorage.getItem('news_github_pat') || document.getElementById('settingPat').value.trim();
+        if (pat) {
+          try {
+            await uploadImageToGitHub(selectedImageFilename, selectedImageBase64, pat);
+          } catch (e) {
+            console.warn("GitHub image upload note:", e);
+          }
+        }
+      }
+
       const newArticle = {
         id: generatedId,
         title: title,
@@ -977,10 +1241,12 @@
         date: dateStr,
         time: timeStr,
         author: "AapkaResult News Desk",
-        image: image,
+        image: finalImageName,
         leadSummary: summary,
         summary: summary,
         highlights: bullets,
+        sections: newsSections,
+        links: newsLinks,
         views: 100,
         trending: trending,
         showInRelated: showInRelated
@@ -989,14 +1255,10 @@
       // Add to front of list
       newsArticles.unshift(newArticle);
 
-      const btn = document.getElementById('btnPublish');
-      const btnText = document.getElementById('btnPublishText');
-      btn.disabled = true;
-      btnText.textContent = "Publishing to Website...";
-
       try {
         await saveNewsData(newsArticles, `Add news: ${title}`);
         document.getElementById('newsForm').reset();
+        clearSelectedImage();
         document.getElementById('totalNewsCount').textContent = newsArticles.length;
         renderManageTable();
       } catch (err) {
@@ -1004,6 +1266,29 @@
       } finally {
         btn.disabled = false;
         btnText.textContent = "Publish News to Website";
+      }
+    }
+
+    async function uploadImageToGitHub(filename, base64DataUrl, pat) {
+      const pureBase64 = base64DataUrl.replace(/^data:image\/\w+;base64,/, '');
+      const putBody = {
+        message: "Upload news image " + filename,
+        content: pureBase64,
+        branch: GITHUB_BRANCH
+      };
+
+      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/${filename}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putBody)
+      });
+      if (!putRes.ok) {
+        const errJson = await putRes.json().catch(() => ({}));
+        console.warn("GitHub image upload note:", errJson);
       }
     }
 

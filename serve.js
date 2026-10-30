@@ -71,6 +71,31 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // API: Upload Image directly to disk
+  if (req.method === 'POST' && cleanUrl === '/api/upload-image') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const parsed = JSON.parse(body);
+        const { filename, base64Data } = parsed;
+        const cleanName = path.basename(filename).replace(/[^a-zA-Z0-9._-]/g, '');
+        const targetPath = path.join(ROOT_DIR, cleanName);
+        const pureBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '');
+        const buffer = Buffer.from(pureBase64, 'base64');
+        fs.writeFileSync(targetPath, buffer);
+        console.log(`[API] Saved uploaded image to ${cleanName} (${buffer.length} bytes)`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, filename: cleanName }));
+      } catch (err) {
+        console.error('[API Image Upload Error]', err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
   if (cleanUrl === '/') cleanUrl = '/index.html';
 
   let filePath = path.join(ROOT_DIR, decodeURIComponent(cleanUrl));
