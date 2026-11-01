@@ -1,5 +1,83 @@
 [
   {
+    "id": "binance-6-3-billion-cyber-heist-2026",
+    "title": "Crypto History Ka Sabse Bada Cyber Attack: Binance Se $6.3 Billion Chori, FBI Ne Kaha – Peeche Hai North Korea Ka Hath!",
+    "url": "news-detail.html?id=binance-6-3-billion-cyber-heist-2026",
+    "category": "Crypto & Finance",
+    "date": "2026-11-01",
+    "time": "09:20 AM",
+    "author": "AapkaResult Crypto Desk",
+    "image": "news-binance-6-3-billion-hack.jpg",
+    "leadSummary": "Global cryptocurrency market me ek aisa tufan aaya hai jisne poore financial world ko hilakar rakh diya hai. Duniya ke sabse bade crypto exchange Binance par ab tak ka sabse bada aur sabse ghatiya cyber attack hua hai. Hackers ne Binance ke internet-connected 'hot wallets' me sendh laga kar mahaz 20 minutes ke andar $6.3 Billion USD (lagbhag ₹53,000 Crore) ke crypto assets uda liye hain. Yeh chori insani itihaas ki sabse badi bank dacaiti ghoshit ki ja chuki hai. Is mega heist ki wajah se Bitcoin, Ethereum aur BNB coins me bhari crash dekhne ko mila hai.",
+    "summary": "Global cryptocurrency market me ek aisa tufan aaya hai jisne poore financial world ko hilakar rakh diya hai. Duniya ke sabse bade crypto exchange Binance par ab tak ka sabse bada aur sabse ghatiya cyber attack hua hai. Hackers ne Binance ke internet-connected 'hot wallets' me sendh laga kar mahaz 20 minutes ke andar $6.3 Billion USD (lagbhag ₹53,000 Crore) ke crypto assets uda liye hain. Yeh chori insani itihaas ki sabse badi bank dacaiti ghoshit ki ja chuki hai. Is mega heist ki wajah se Bitcoin, Ethereum aur BNB coins me bhari crash dekhne ko mila hai.",
+    "highlights": [
+      "Duniya ke sabse bade crypto exchange Binance se 20 minutes me $6.3 Billion (₹53,000 Crore) crypto assets chori.",
+      "US FBI ka bada khulasa: Is mega cyber attack ke peeche North Korea ke elite unit 'TraderTraitor' (Lazarus Group) ka haath.",
+      "Binance CEO Richard Teng ka aashwasan: Users ko 0% financial loss, 90% funds replenish ho chuke hain, withdrawals aaj se shuru honge."
+    ],
+    "sections": [
+      {
+        "heading": "Sirf 20 Minutes Me Khali Hue Wallets: Kaise Hua Yeh Attack?",
+        "content": "Blockchain intelligence agency TRM Labs aur security analysts ke mutabik, yeh attack technical mastery aur lightning-fast speed ka ek khatarnak namuna tha. Hackers ne poore system ko chakma dene ke liye alag-alag phases me kaam kiya:\n\n• Staging aur Testing: Attackers ne chori se kuch ghante pehle Tornado Cash ke zariye funds stage kiye aur do dummy wallets par is malicious code ka live test kiya. Jab test safal raha, toh unhone ise Binance ke main hot wallet par install kar diya.\n• Advanced Protocol Ka Use: Binance ke Co-CEO Richard Teng ne khulasa kiya ki yeh koi aam phishing attack nahi tha. Hackers ne Ethereum network ke ek behad complex multi-signature protocol (EIP-7702) ka fayda uthaya aur bina permission ke transactions batch submit kar diye.\n• Multi-Chain Loot: Hackers ne ek sath 10 alag-alag blockchains se assets drain kiye. Sabse bada jhatka Ethereum network ko laga jahan se $3.8 Billion saaf kiye gaye. Iske alawa 18,270 Bitcoin ($1.5 Billion), Tron ($628 Million), XRP ($296 Million) aur Solana ($96 Million) bhi chura liye gaye."
+      },
+      {
+        "heading": "FBI Ka Bada Khulasa: North Korea Ke 'TraderTraitor' Ka Haath!",
+        "content": "America ki sabse badi investigation agency FBI (Federal Bureau of Investigation) ne officially ek public statement jaari karte hue is hack ka poora zimma North Korea par dala hai.\n\nFBI ke mutabik, is attack ke peeche North Korea ka state-sponsored elite cyber-warfare unit 'TraderTraitor' (jo ki Lazarus Group ka hissa hai) shamil hai. North Korea in churai hui cryptocurrencies ko launder karke apne illegal nuclear aur missile projects ko fund karta hai."
+      },
+      {
+        "heading": "Kya Binance Ke Users Ka Paisa Doob Gaya? CEO Ka Bada Bayan",
+        "content": "Mazaal hai ki itne bade attack ke baad bhi Binance ne pure hosh sambhale rakhe hain. Jaise hi hack ka pata chala, Binance ne turant sabhi withdrawal services ko temporary pause kar diya aur stablecoin issuers (Tether aur Circle) ke sath milkar lagbhag $3 Billion ko on-chain freeze karwa diya.\n\nBinance ne apne users ko 100% security ka bharosa dete hue kaha hai:\n1. Users Ko Zero Financial Loss: Binance poore $6.3 Billion ke nuksan ka bojh khud uthayega. Kisi bhi user ka ek bhi rupya nahi doobega.\n2. 90% Funds Replenished: Binance ne ab tak 90% stolen assets ko market aur OTC desks ke zariye re-buy karke backup complete kar liya hai. Top 10 tokens (BTC, ETH, USDT, BNB, SOL, USDC, XRP) ab 100% fully backed hain.\n3. Treasury Aur SAFU Ka Istemal: Is recovery ke liye Binance ne apne $1 Billion ke SAFU (Secure Asset Fund for Users), Futures Insurance Fund aur apni corporate treasury ke paiso ka istemal kiya hai.\n4. Withdrawals Reopening Today: Binance ne naya Proof-of-Reserves snapshot live kar diya hai aur confirmation di hai ki security checks pure hote hi aaj (Sunday) withdrawals fir se shuru ho jayenge."
+      },
+      {
+        "heading": "Crypto Market Me Machi Bhari Kharid-Bech (Crash Report)",
+        "content": "Is aitihasik dacaiti ki khabar failte hi pure crypto market me dar ka mahaul ban gaya aur panic selling shuru ho gayi:\n\n• Bitcoin (BTC): Lagbhag 5% girkar 6-week ke nichle star par aa gaya.\n• Ethereum (ETH): Isme 6% tak ki tezi se girawat darj ki gayi.\n• Binance Coin (BNB): Apne exchange par attack hone ke karan sabse zyada 10% tak crash ho gaya.\n\nTech experts ab yeh chinta jata rahe hain ki aane wale samay me agar AI (Artificial Intelligence) ka istemal advanced hacking me hone laga, toh bade se bade secure systems aur cryptography protocols bhi khatre me pad sakte hain."
+      }
+    ],
+    "links": [],
+    "disclaimer": "Tech & Crypto Desk, AapkaResult: Duniya bhar ki crypto, financial market aur web security se judi taaza aur satik khabron ke liye jude rahein AapkaResult.in ke saath.",
+    "views": 2600,
+    "trending": true,
+    "showInRelated": true,
+    "pinnedInRelated": true
+  },
+  {
+    "id": "gemini-4-carbon-php-security-flaw",
+    "title": "Tech World Me Hahakar: Google ne Launch Kiya Gemini 4 Carbon, Wahi AI ne Khoji PHP Me Sabse Badi Khami!",
+    "url": "news-detail.html?id=gemini-4-carbon-php-security-flaw",
+    "category": "Tech & AI",
+    "date": "2026-11-01",
+    "time": "09:05 AM",
+    "author": "AapkaResult Tech Desk",
+    "image": "news-gemini-4-carbon-php-flaw.jpg",
+    "leadSummary": "Artificial Intelligence (AI) aur web development ki duniya se aaj do aisi choukani wali khabrein samne aayi hain jinhone poore internet sector ko hila kar rakh diya hai. Ek taraf jahan Google ne coding aur cybersecurity ko naye mukam par le jaane ke liye apna flagship model Gemini 4 Carbon launch kiya hai, wahi doosri taraf AI ne internet ki sabse purani aur mazboot deewar yaani PHP script me ek aisi khami dhoond nikali hai jisne sabhi developers ki neend uda di hai.",
+    "summary": "Artificial Intelligence (AI) aur web development ki duniya se aaj do aisi choukani wali khabrein samne aayi hain jinhone poore internet sector ko hila kar rakh diya hai. Ek taraf jahan Google ne coding aur cybersecurity ko naye mukam par le jaane ke liye apna flagship model Gemini 4 Carbon launch kiya hai, wahi doosri taraf AI ne internet ki sabse purani aur mazboot deewar yaani PHP script me ek aisi khami dhoond nikali hai jisne sabhi developers ki neend uda di hai.",
+    "highlights": [
+      "Google ne roll out kiya Gemini 4 Carbon: Complex code debugging aur advanced cyber defense ke liye specialized model.",
+      "AI ne independently dhoond nikali PHP core me critical shell flaw, duniya ki 70% websites par security threat.",
+      "Cybersecurity agencies ka alert: Developers aur website owners ko servers aur firewall turant update karne ki salaah."
+    ],
+    "sections": [
+      {
+        "heading": "1. Google Gemini 4 Carbon: Coding aur Cybersecurity ka Naya Baap!",
+        "content": "Google ne officially apne AI ecosystem ka sabse advance aur specialized model Gemini 4 Carbon roll out kar diya hai. Yeh aam chat assistants ki tarah sirf text likhne ya normal sawal-jawab ke liye nahi bana hai. Google ne isko khas taur par heavy programming aur security protocols ke liye design kiya hai.\n\nGemini 4 Carbon Ki Khas Baatein:\n• Complex Code Debugging: Yeh model kuch hi seconds me hazaron lines ka complex code analyze karke errors ko theek kar sakta hai.\n• Advanced Cyber Defense: Isko software me maujood loopholes aur malware attacks ko rokne ke liye tune kiya gaya hai.\n• Developers Ka Time Saver: Jo bugs dhoondne me developers ko ghanto lagte the, Gemini 4 Carbon use palak jhapakte hi hal kar deta hai.\n\nTech experts ka manna hai ki yeh naya model aane wale samay me web development aur app architecture ka poora tarika badal dega."
+      },
+      {
+        "heading": "2. AI Ka Sabse Bada Attack? PHP Me Khoji Critical Security Khami!",
+        "content": "Dooosri khabar thodi chintajanak hai lekin behad hairan karne wali hai. AI models ne independently (bina kisi insani madad ke) kaam karte hue PHP ke core infrastructure me ek critical shell flaw (vulnerability) dhoond nikali hai.\n\nYeh Khabar Itni Badi Kyun Hai?\n1. 70% Internet Par Khatra: Duniya ki lagbhag 70% se zyada websites (jisme WordPress aur bade servers shamil hain) PHP par hi run karti hain.\n2. Automated Weaponization: Security researchers ne alert kiya hai ki agar AI models itni aasani se purane aur legacy codes me kamiyan dhoond sakte hain, toh aane wale samay me automated bad AI bots iska fayda uthakar kisi bhi website ko aasani se hack kar sakte hain.\n3. Cyber Security Alert: Is khami ke samne aane ke baad poore web development sector me afra-tafri ka mahaul hai."
+      },
+      {
+        "heading": "Developers Aur Website Owners Ke Liye Kya Hai Alert?",
+        "content": "In dono khabron ke baad ab cybersecurity agencies ne sabhi developers aur website administrators ko alert par rakh diya hai. Jahan ek taraf Gemini 4 Carbon ka use karke coding ko advance banaya ja sakta hai, wahi doosri taraf apni websites ko secure rakhne ke liye PHP servers aur firewall ko turant update karna behad zaroori ho gaya hai.\n\nAgar aap bhi ek web developer hain ya koi website chalate hain, toh aane wale dino me security patches par nazar banaye rakhein!"
+      }
+    ],
+    "links": [],
+    "disclaimer": "Tech Desk, AapkaResult: AI aur Web Development se judi har badi news sabse pehle paane ke liye jude rahein AapkaResult.in ke saath.",
+    "views": 1850,
+    "trending": true,
+    "showInRelated": true,
+    "pinnedInRelated": true
+  },
+  {
     "id": "ind-nez-4-match-2026",
     "title": "NZ vs IND: न्यूजीलैंड ने भारत को 87 रन से रौंदा, ग्लेन फिलिप्स का तूफानी शतक",
     "url": "news-detail.html?id=ind-nez-4-match-2026",
