@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function liveSearch(searchTerm) {
   const query = (searchTerm || "").toLowerCase().trim();
   const searchableElements = document.querySelectorAll(
-    ".portal-box ul li, .trend-card, .styled-table tbody tr, .guide-card, .news-simple-card, .related-news-card"
+    ".portal-box ul li, .trend-card, .styled-table tbody tr, .guide-card"
   );
 
   searchableElements.forEach(item => {
@@ -198,4 +198,52 @@ function switchPortalTab(target, buttonElement) {
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 }
+
+// Native Web Share API with 1-Click Clipboard Fallback & Visual Feedback
+function sharePageNative(btnElement) {
+  const title = document.title || 'AapkaResult.in';
+  const url = window.location.href;
+  
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: title + ' - Check full details on AapkaResult.in',
+      url: url
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') {
+        copyToClipboardFallback(btnElement, url);
+      }
+    });
+  } else {
+    copyToClipboardFallback(btnElement, url);
+  }
+}
+
+function copyToClipboardFallback(btnElement, text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showShareFeedback(btnElement);
+    }).catch(function() {
+      promptCopyFallback(text);
+    });
+  } else {
+    promptCopyFallback(text);
+  }
+}
+
+function showShareFeedback(btnElement) {
+  if (!btnElement) return;
+  const originalHtml = btnElement.innerHTML;
+  btnElement.innerHTML = '<span style="color:#22c55e;font-weight:700;">✓ Copied!</span>';
+  btnElement.style.pointerEvents = 'none';
+  setTimeout(function() {
+    btnElement.innerHTML = originalHtml;
+    btnElement.style.pointerEvents = '';
+  }, 2200);
+}
+
+function promptCopyFallback(text) {
+  window.prompt("Copy link to share:", text);
+}
+
 

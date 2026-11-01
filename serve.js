@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const PORT = 3000;
+const PORT = 5500;
 const ROOT_DIR = __dirname;
 
 const MIME_TYPES = {
@@ -17,9 +17,7 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.webp': 'image/webp',
-  '.pdf': 'application/pdf',
-  '.txt': 'text/plain; charset=utf-8',
-  '.xml': 'application/xml; charset=utf-8'
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 function getLocalIp() {
@@ -32,19 +30,6 @@ function getLocalIp() {
     }
   }
   return 'localhost';
-}
-
-function resolveFilePath(urlStr, rootDir = ROOT_DIR) {
-  let cleanUrl = (urlStr || '/').split('?')[0];
-  if (cleanUrl === '/') cleanUrl = '/index.html';
-
-  let filePath = path.join(rootDir, decodeURIComponent(cleanUrl));
-
-  // If path has no extension and file.html exists, serve that
-  if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
-    filePath += '.html';
-  }
-  return filePath;
 }
 
 const server = http.createServer((req, res) => {
@@ -136,7 +121,14 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let filePath = resolveFilePath(req.url, ROOT_DIR);
+  if (cleanUrl === '/') cleanUrl = '/index.html';
+
+  let filePath = path.join(ROOT_DIR, decodeURIComponent(cleanUrl));
+
+  // If path has no extension and file.html exists, serve that
+  if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath += '.html';
+  }
 
   // Security check: ensure path is inside ROOT_DIR
   if (!filePath.startsWith(ROOT_DIR)) {
@@ -165,23 +157,18 @@ const server = http.createServer((req, res) => {
   });
 });
 
-if (require.main === module) {
-  server.listen(PORT, '0.0.0.0', () => {
-    const localIp = getLocalIp();
-    console.log('========================================================');
-    console.log('       AAPKA RESULT - LOCAL PREVIEW SERVER RUNNING       ');
-    console.log('========================================================');
-    console.log(`\n1. Computer Browser:`);
-    console.log(`   http://localhost:${PORT}`);
-    console.log(`\n2. Mobile Phone (Same Wi-Fi):`);
-    console.log(`   http://${localIp}:${PORT}`);
-    console.log(`\nDirect Links:`);
-    console.log(`   http://localhost:${PORT}/ssc-cgl.html`);
-    console.log(`   http://localhost:${PORT}/up-police-constable.html`);
-    console.log(`   http://localhost:${PORT}/latest-jobs.html`);
-    console.log('\n(Press Ctrl + C in this terminal to stop the server)\n');
-  });
-}
-
-module.exports = { server, MIME_TYPES, resolveFilePath, PORT };
-
+server.listen(PORT, '0.0.0.0', () => {
+  const localIp = getLocalIp();
+  console.log('========================================================');
+  console.log('       AAPKA RESULT - LOCAL PREVIEW SERVER RUNNING       ');
+  console.log('========================================================');
+  console.log(`\n1. Computer Browser:`);
+  console.log(`   http://localhost:${PORT}`);
+  console.log(`\n2. Mobile Phone (Same Wi-Fi):`);
+  console.log(`   http://${localIp}:${PORT}`);
+  console.log(`\nDirect Links:`);
+  console.log(`   http://localhost:${PORT}/ssc-cgl.html`);
+  console.log(`   http://localhost:${PORT}/up-police-constable.html`);
+  console.log(`   http://localhost:${PORT}/latest-jobs.html`);
+  console.log('\n(Press Ctrl + C in this terminal to stop the server)\n');
+});

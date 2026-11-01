@@ -252,32 +252,11 @@ img, svg {
 }
 
 
-/* Header Social / Telegram Community button */
+/* Header Actions */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-
-.btn-telegram {
-  background: #0077b5; /* WCAG AA 4.88:1 contrast with white */
-  color: #ffffff !important;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 2px 6px rgba(0, 119, 181, 0.4);
-  transition: all 0.2s ease;
-}
-
-
-.btn-telegram:hover {
-  background: #006fa6;
-  transform: translateY(-1px);
 }
 
 
@@ -1224,7 +1203,14 @@ img, svg {
 
 .share-btn.whatsapp { background: #25d366; }
 
-.share-btn.telegram { background: #0077b5; }
+.share-btn.native-share { 
+  background: #0f172a; 
+  border: 1px solid #334155;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.share-btn.native-share:hover { background: #1e293b; }
 
 .share-btn:hover { opacity: 0.9; }
 
@@ -2219,10 +2205,6 @@ img, svg {
     gap: 0 !important;
   }
 
-
-  .btn-telegram {
-    display: none !important; /* Hidden on mobile header to preserve low height */
-  }
 
 
   /* Modern Sleek Mobile Menu Button (Hamburger to '✕' Morphing) */

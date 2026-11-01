@@ -157,23 +157,23 @@
       transform: scale(1.04);
     }
     .news-card-badge {
-      display: inline-block;
-      align-self: flex-start;
-      background: #fee2e2;
-      color: #dc2626;
-      border: 1px solid #fecaca;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(220, 38, 38, 0.92);
+      color: #ffffff;
       font-size: 11px;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      margin-bottom: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
 
     /* Title Info Box (Clean & Focused) */
     .news-card-info {
-      padding: 14px 16px 18px;
+      padding: 16px 16px 18px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -325,12 +325,6 @@
       </div>
 
       <div class="header-actions">
-        <a href="https://t.me/aapkaresultofficial" target="_blank" rel="noopener noreferrer" class="btn-telegram">
-          <svg class="telegram-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-          </svg>
-          <span>Join Telegram</span>
-        </a>
         <button type="button" class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -350,7 +344,7 @@
         <li><a href="results.html">Results</a></li>
         <li><a href="free-test-weekly.html">Mock Test</a></li>
         <li><a href="sarkari-tools.html">Tools 2026</a></li>
-        <li><a href="news.html" class="active">Daily News</a></li>
+        <li><a href="news.html" class="active" style="color: #ea580c; font-weight: 700;">Daily News</a></li>
         <li><a href="short-notes-hub.html">Short Notes</a></li>
         <li><a href="admit-cards.html">Admit Card</a></li>
         <li><a href="answer-key.html">Answer Key</a></li>
@@ -395,22 +389,30 @@
 
     <!-- NEWS FEED GRID (IMAGE + TITLE FORMAT) -->
     <div class="news-feed-grid" id="newsFeedGrid">
-      <div class="news-simple-card" aria-hidden="true" style="pointer-events: none;">
-        <div class="news-card-media" style="background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);"></div>
-        <div class="news-card-info">
-          <div style="width: 90px; height: 18px; background: #e2e8f0; border-radius: 4px; margin-bottom: 10px;"></div>
-          <div style="width: 100%; height: 20px; background: #e2e8f0; border-radius: 4px; margin-bottom: 8px;"></div>
-          <div style="width: 75%; height: 20px; background: #e2e8f0; border-radius: 4px;"></div>
+      
+      <!-- DEFAULT PRE-RENDERED CARD (UP ROJGAR MELA 2026) -->
+      <a href="news-detail.html?id=up-rojgar-mela-jewar-2026" class="news-simple-card">
+        <div class="news-card-media">
+          <img src="up-rojgar-mela-jewar-2026.jpg" 
+               alt="UP Rojgar Mela 2026 Jewar Dankaur 2000 Posts" 
+               width="1280" 
+               height="720" 
+               loading="eager" 
+               fetchpriority="high">
+          <span class="news-card-badge">रोजगार मेला</span>
         </div>
-      </div>
-      <div class="news-simple-card" aria-hidden="true" style="pointer-events: none;">
-        <div class="news-card-media" style="background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);"></div>
         <div class="news-card-info">
-          <div style="width: 90px; height: 18px; background: #e2e8f0; border-radius: 4px; margin-bottom: 10px;"></div>
-          <div style="width: 100%; height: 20px; background: #e2e8f0; border-radius: 4px; margin-bottom: 8px;"></div>
-          <div style="width: 75%; height: 20px; background: #e2e8f0; border-radius: 4px;"></div>
+          <h2 class="news-card-title">
+            UP Rojgar Mela 2026: जेवर (दनकौर) में लगेगा विशाल रोजगार मेला, 2000 से अधिक पदों पर होगी सीधी भर्ती, ऐसे करें ऑनलाइन रजिस्ट्रेशन
+          </h2>
+          <div class="news-card-date">
+            <span>📅 30 अक्टूबर 2026</span>
+            <span>&bull;</span>
+            <span style="color: #1e3a8a; font-weight: 700;">पूरी जानकारी पढ़ें &rarr;</span>
+          </div>
         </div>
-      </div>
+      </a>
+
     </div>
 
     <!-- LOAD MORE CONTAINER -->
@@ -512,9 +514,9 @@
         <a href="${itemLink}" class="news-simple-card">
           <div class="news-card-media">
             <img src="${imageSrc}" alt="${item.title}" loading="lazy">
+            ${categoryBadge}
           </div>
           <div class="news-card-info">
-            ${categoryBadge}
             <h2 class="news-card-title">${item.title}</h2>
             <div class="news-card-date">
               ${dateStr}
@@ -562,37 +564,20 @@
       }
     }
 
-    function applyArticlesToFeed(articles) {
-      if (!articles || !articles.length) return;
-      allNewsArticles = articles;
-      const grid = document.getElementById('newsFeedGrid');
-      if (!grid) return;
-      grid.innerHTML = '';
-      displayedCount = 0;
-      loadNextBatch();
-    }
-
     (function initNewsFeed() {
-      let cachedJsonStr = null;
-      try {
-        cachedJsonStr = sessionStorage.getItem('aapkaresult_news_cache');
-        if (cachedJsonStr) {
-          const cachedArticles = JSON.parse(cachedJsonStr);
-          applyArticlesToFeed(cachedArticles);
-        }
-      } catch (e) {}
-
       fetch('data/news.json?t=' + Date.now())
         .then(res => res.json())
         .then(articles => {
           if (!articles || !articles.length) return;
-          const freshStr = JSON.stringify(articles);
-          try {
-            sessionStorage.setItem('aapkaresult_news_cache', freshStr);
-          } catch (e) {}
-          if (freshStr !== cachedJsonStr) {
-            applyArticlesToFeed(articles);
-          }
+
+          allNewsArticles = articles;
+          const grid = document.getElementById('newsFeedGrid');
+          if (!grid) return;
+
+          // Clear default placeholder and load first batch
+          grid.innerHTML = '';
+          displayedCount = 0;
+          loadNextBatch();
         })
         .catch(err => console.log('News sync note:', err));
     })();
