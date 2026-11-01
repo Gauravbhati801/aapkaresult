@@ -1170,6 +1170,54 @@
         document.title = item.title + " - AapkaResult.in";
         const descMeta = document.querySelector('meta[name="description"]');
         if (descMeta) descMeta.content = item.leadSummary || item.title;
+
+        // Dynamic Canonical & OpenGraph for Google Search & Discover
+        const canon = document.getElementById('canonicalLink');
+        if (canon) canon.href = 'https://aapkaresult.in/news-detail.html?id=' + encodeURIComponent(item.id);
+
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.content = item.title;
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.content = item.leadSummary || item.title;
+        const ogImg = document.querySelector('meta[property="og:image"]');
+        if (ogImg && item.image) ogImg.content = 'https://aapkaresult.in/' + item.image;
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.content = 'https://aapkaresult.in/news-detail.html?id=' + encodeURIComponent(item.id);
+
+        // Update JSON-LD NewsArticle Structured Data for Google
+        const schemaEl = document.getElementById('newsSchema');
+        if (schemaEl) {
+          try {
+            const schemaData = {
+              "@context": "https://schema.org",
+              "@type": "NewsArticle",
+              "headline": item.title,
+              "description": item.leadSummary || item.summary || item.title,
+              "image": item.image ? ["https://aapkaresult.in/" + item.image] : ["https://aapkaresult.in/favicon.png"],
+              "datePublished": (item.date || "2026-11-01") + "T09:00:00+05:30",
+              "dateModified": (item.date || "2026-11-01") + "T09:30:00+05:30",
+              "author": {
+                "@type": "Organization",
+                "name": item.author || "AapkaResult News Desk",
+                "url": "https://aapkaresult.in/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "AapkaResult.in",
+                "url": "https://aapkaresult.in/",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://aapkaresult.in/favicon.png"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://aapkaresult.in/news-detail.html?id=" + encodeURIComponent(item.id)
+              }
+            };
+            schemaEl.textContent = JSON.stringify(schemaData, null, 2);
+          } catch(e) {}
+        }
         
         const headline = document.getElementById('articleHeadline');
         if (headline) headline.textContent = item.title;
