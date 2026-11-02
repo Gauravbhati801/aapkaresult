@@ -271,31 +271,49 @@
       </div>
 
       <!-- CUSTOM DIMENSIONS & FILE SIZE SETTINGS (Collapsible) -->
-      <div style="margin-top: 18px; padding: 14px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+      <div id="customSizeSettingsContainer" style="margin-top: 18px; padding: 14px; background: #f8fafc; border-radius: 12px; border: 1.5px solid #cbd5e1; transition: all 0.2s ease;">
         <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleAdvancedSettings()">
-          <span style="font-size: 13.5px; font-weight: 700; color: #1e3a8a;">
-            ⚙️ साइज और पिक्सल सेटिंग्स (Pixel Width &times; Height &amp; Target KB)
+          <span style="font-size: 13.5px; font-weight: 800; color: #1e3a8a;">
+            ⚙️ कस्टम साइज और पिक्सल सेटिंग्स (Custom Size: Width &times; Height &amp; Exact Target KB)
           </span>
           <span id="advToggleIcon" style="font-size: 12px; color: #64748b;">▼ दिखाएं / छिपाएं</span>
         </div>
 
-        <div id="advancedSettingsBody" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 12px;">
+        <div id="advancedSettingsBody" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; margin-top: 12px;">
           <div>
-            <label for="targetWidth" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Width (चौड़ाई px):</label>
-            <input type="number" id="targetWidth" value="200" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px;" oninput="triggerProcessIfReady()">
+            <label for="dimensionUnitSelect" style="display: block; font-size: 12px; color: #475569; font-weight: 700; margin-bottom: 4px;">Unit (इकाई):</label>
+            <select id="dimensionUnitSelect" onchange="handleUnitChange(this.value)" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700; background: #ffffff;">
+              <option value="px">Pixels (px)</option>
+              <option value="cm">Centimeter (cm)</option>
+              <option value="mm">Millimeter (mm)</option>
+            </select>
           </div>
           <div>
-            <label for="targetHeight" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Height (ऊंचाई px):</label>
-            <input type="number" id="targetHeight" value="230" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px;" oninput="triggerProcessIfReady()">
+            <label for="targetWidth" id="targetWidthLabel" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Width (चौड़ाई px):</label>
+            <input type="number" id="targetWidth" value="200" step="any" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700;" oninput="onCustomPhotoInputChanged()">
+          </div>
+          <div>
+            <label for="targetHeight" id="targetHeightLabel" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Height (ऊंचाई px):</label>
+            <input type="number" id="targetHeight" value="230" step="any" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700;" oninput="onCustomPhotoInputChanged()">
           </div>
           <div>
             <label for="targetMinKB" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Min KB (न्यूनतम):</label>
-            <input type="number" id="targetMinKB" value="20" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px;" oninput="triggerProcessIfReady()">
+            <input type="number" id="targetMinKB" value="20" min="2" max="2000" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700;" oninput="onCustomPhotoInputChanged()">
           </div>
           <div>
             <label for="targetMaxKB" style="display: block; font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 4px;">Max KB (अधिकतम):</label>
-            <input type="number" id="targetMaxKB" value="50" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px;" oninput="triggerProcessIfReady()">
+            <input type="number" id="targetMaxKB" value="50" min="5" max="2000" style="width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700;" oninput="onCustomPhotoInputChanged()">
           </div>
+        </div>
+
+        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #cbd5e1; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+          <span style="font-size: 12px; font-weight: 700; color: #1e3a8a; margin-right: 4px;">⚡ कस्टम KB चुनें (Quick Custom KB):</span>
+          <button type="button" onclick="setQuickPhotoCustomKb(10, 20)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">10–20 KB</button>
+          <button type="button" onclick="setQuickPhotoCustomKb(15, 30)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">15–30 KB</button>
+          <button type="button" onclick="setQuickPhotoCustomKb(20, 50)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">20–50 KB</button>
+          <button type="button" onclick="setQuickPhotoCustomKb(30, 70)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">30–70 KB</button>
+          <button type="button" onclick="setQuickPhotoCustomKb(50, 100)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">50–100 KB</button>
+          <button type="button" onclick="setQuickPhotoCustomKb(100, 200)" style="background: #ffffff; border: 1px solid #93c5fd; color: #1d4ed8; border-radius: 6px; padding: 3px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer;">100–200 KB</button>
         </div>
       </div>
 
@@ -712,9 +730,69 @@
         document.getElementById('targetHeight').value = isSign ? 60 : 250;
         document.getElementById('targetMinKB').value = isSign ? 4 : 10;
         document.getElementById('targetMaxKB').value = isSign ? 30 : 200;
+      } else if (preset === 'custom') {
+        const body = document.getElementById('advancedSettingsBody');
+        const box = document.getElementById('customSizeSettingsContainer');
+        if (body) body.style.display = 'grid';
+        if (box) {
+          box.style.borderColor = '#2563eb';
+          box.style.background = '#eff6ff';
+        }
+        const maxInput = document.getElementById('targetMaxKB');
+        if (maxInput) {
+          maxInput.focus();
+          maxInput.select();
+        }
+      }
+
+      if (preset !== 'custom') {
+        const unitSel = document.getElementById('dimensionUnitSelect');
+        if (unitSel) unitSel.value = 'px';
+        const box = document.getElementById('customSizeSettingsContainer');
+        if (box) {
+          box.style.borderColor = '#cbd5e1';
+          box.style.background = '#f8fafc';
+        }
       }
 
       triggerProcessIfReady();
+    }
+
+    function onCustomPhotoInputChanged() {
+      currentPreset = 'custom';
+      const btns = document.querySelectorAll('#presetGroup .preset-pill-btn');
+      btns.forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes('custom')));
+      triggerProcessIfReady();
+    }
+
+    function setQuickPhotoCustomKb(minKb, maxKb) {
+      document.getElementById('targetMinKB').value = minKb;
+      document.getElementById('targetMaxKB').value = maxKb;
+      onCustomPhotoInputChanged();
+    }
+
+    function handleUnitChange(unit) {
+      const wLabel = document.getElementById('targetWidthLabel');
+      const hLabel = document.getElementById('targetHeightLabel');
+      const wInput = document.getElementById('targetWidth');
+      const hInput = document.getElementById('targetHeight');
+      if (unit === 'cm') {
+        wLabel.textContent = 'Width (चौड़ाई cm):';
+        hLabel.textContent = 'Height (ऊंचाई cm):';
+        wInput.value = 3.5;
+        hInput.value = 4.5;
+      } else if (unit === 'mm') {
+        wLabel.textContent = 'Width (चौड़ाई mm):';
+        hLabel.textContent = 'Height (ऊंचाई mm):';
+        wInput.value = 35;
+        hInput.value = 45;
+      } else {
+        wLabel.textContent = 'Width (चौड़ाई px):';
+        hLabel.textContent = 'Height (ऊंचाई px):';
+        wInput.value = 200;
+        hInput.value = 230;
+      }
+      onCustomPhotoInputChanged();
     }
 
     function handleFileSelect(e) {
@@ -762,8 +840,13 @@
         return;
       }
 
-      const targetW = parseInt(document.getElementById('targetWidth').value) || 200;
-      const targetH = parseInt(document.getElementById('targetHeight').value) || 230;
+      const rawW = parseFloat(document.getElementById('targetWidth').value) || 200;
+      const rawH = parseFloat(document.getElementById('targetHeight').value) || 230;
+      const unitEl = document.getElementById('dimensionUnitSelect');
+      const unit = unitEl ? unitEl.value : 'px';
+      const factor = unit === 'cm' ? 57.14 : (unit === 'mm' ? 5.714 : 1);
+      const targetW = Math.max(40, Math.round(rawW * factor));
+      const targetH = Math.max(30, Math.round(rawH * factor));
       const minKB = parseFloat(document.getElementById('targetMinKB').value) || 20;
       const maxKB = parseFloat(document.getElementById('targetMaxKB').value) || 50;
 

@@ -872,6 +872,10 @@
     });
 
     function renderScorecard() {
+      const titleEl = document.getElementById('resTestTitle');
+      if (titleEl) {
+        titleEl.innerText = `UP Police Constable Full Mock Test #0${testId} (2026)`;
+      }
       document.getElementById('resScore').innerText = resData.score;
       document.getElementById('resAccuracy').innerText = resData.accuracy + "%";
       document.getElementById('resCorrect').innerText = resData.correct;
