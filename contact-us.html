@@ -17,6 +17,193 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=3.3">
 
+  <style>
+    /* 🌟 CLEAN, MINIMALIST, NEUTRAL STYLING (NO BLUE BORDERS) */
+    .legal-container {
+      max-width: 960px;
+      margin: 25px auto 45px;
+      padding: 0 16px;
+    }
+    .legal-card {
+      background: #f8fafc !important; /* Soft soothing pearl-slate, no harsh white glare */
+      border: 1px solid #e2e8f0 !important; /* Subtle neutral gray border */
+      border-radius: 12px !important;
+      padding: 36px 32px !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+    }
+    .legal-card h1 {
+      font-size: 28px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      margin: 0 0 6px 0 !important;
+    }
+    .legal-updated {
+      color: #64748b !important;
+      font-size: 14.5px !important;
+      font-weight: 600 !important;
+      margin-bottom: 22px !important;
+      padding-bottom: 14px !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+    }
+    .legal-card h2 {
+      font-size: 20px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      margin: 32px 0 16px 0 !important;
+      padding-bottom: 8px !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+    }
+    .legal-card p {
+      font-size: 15.5px !important;
+      line-height: 1.8 !important;
+      color: #334155 !important;
+      margin-bottom: 18px !important;
+    }
+    .contact-split {
+      display: grid !important;
+      grid-template-columns: 1.2fr 0.8fr !important;
+      gap: 24px !important;
+      margin: 24px 0 !important;
+    }
+    .contact-box {
+      background: #f1f5f9 !important; /* Soft slate secondary card */
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 26px 24px !important;
+    }
+    .contact-box h2 {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      margin: 0 0 16px 0 !important;
+      padding-bottom: 0 !important;
+      border-bottom: none !important;
+    }
+    .form-field {
+      margin-bottom: 16px !important;
+    }
+    .form-field label {
+      display: block !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      margin-bottom: 6px !important;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100% !important;
+      padding: 11px 14px !important;
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 8px !important;
+      font-family: inherit !important;
+      font-size: 14.5px !important;
+      color: #0f172a !important;
+      background: #ffffff !important;
+      box-sizing: border-box !important;
+      transition: border-color 0.2s, box-shadow 0.2s !important;
+      outline: none !important;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: #0f172a !important;
+      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1) !important;
+    }
+    .btn-submit {
+      background: #0f172a !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 12px 24px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      border-radius: 8px !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      transition: background 0.2s ease !important;
+    }
+    .btn-submit:hover {
+      background: #334155 !important;
+    }
+    .contact-item-title {
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      font-size: 14.5px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-bottom: 4px !important;
+    }
+    .contact-item-value {
+      font-size: 14.5px !important;
+      color: #334155 !important;
+      margin: 0 !important;
+    }
+    .contact-item-value a {
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      text-decoration: underline !important;
+    }
+    .notice-box.danger {
+      background: #fef2f2 !important;
+      border: 1px solid #fecaca !important;
+      border-left: 4px solid #dc2626 !important;
+      border-radius: 8px !important;
+      padding: 14px 18px !important;
+      color: #991b1b !important;
+      font-size: 14px !important;
+      line-height: 1.65 !important;
+    }
+    .notice-box.danger strong {
+      color: #7f1d1d !important;
+    }
+    .faq-wrap {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      margin-top: 16px !important;
+    }
+    .faq-card {
+      background: #f1f5f9 !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
+    }
+    .faq-card h4 {
+      font-size: 15.5px !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      margin: 0 0 6px 0 !important;
+    }
+    .faq-card p {
+      font-size: 14.5px !important;
+      color: #475569 !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .legal-card {
+        padding: 22px 18px !important;
+      }
+      .legal-card h1 {
+        font-size: 23px !important;
+      }
+      .legal-card h2 {
+        font-size: 17.5px !important;
+      }
+      .legal-card p {
+        font-size: 14.5px !important;
+      }
+      .contact-split {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+      .contact-box {
+        padding: 20px 16px !important;
+      }
+    }
+  </style>
+
   <!-- OpenGraph Metadata -->
   <meta property="og:site_name" content="AapkaResult.in">
   <meta property="og:title" content="Contact Us - AapkaResult.in">
@@ -130,7 +317,7 @@
       <div class="contact-split">
         <!-- FORM -->
         <div class="contact-box">
-          <h2 style="font-size: 18px; margin-top: 0; margin-bottom: 14px; border: none;">Send an Inquiry</h2>
+          <h2>Send an Inquiry</h2>
           <form id="contactForm" onsubmit="handleContactForm(event)">
             <div class="form-field">
               <label for="cName">Your Full Name *</label>
@@ -166,26 +353,26 @@
 
         <!-- DETAILS -->
         <div class="contact-box">
-          <h2 style="font-size: 18px; margin-top: 0; margin-bottom: 14px; border: none;">Direct Contact Details</h2>
+          <h2>Direct Contact Details</h2>
 
-          <div style="margin-bottom: 16px;">
-            <strong style="color: var(--primary-navy); display: block; font-size: 14px;">&#128231; Official Email</strong>
-            <p style="margin: 2px 0;"><a href="mailto:gauravbhati@aapkaresult.in">gauravbhati@aapkaresult.in</a></p>
+          <div style="margin-bottom: 18px;">
+            <div class="contact-item-title">&#128231; Official Email</div>
+            <p class="contact-item-value"><a href="mailto:gauravbhati@aapkaresult.in">gauravbhati@aapkaresult.in</a></p>
           </div>
 
-          <div style="margin-bottom: 16px;">
-            <strong style="color: var(--primary-navy); display: block; font-size: 14px;">&#128339; Support Hours</strong>
-            <p style="margin: 2px 0; color: var(--text-muted); font-size: 13.5px;">Monday &ndash; Saturday (10:00 AM &ndash; 6:00 PM IST)<br><small>Closed on Sundays and National Holidays</small></p>
+          <div style="margin-bottom: 18px;">
+            <div class="contact-item-title">&#128339; Support Hours</div>
+            <p class="contact-item-value">Monday &ndash; Saturday (10:00 AM &ndash; 6:00 PM IST)<br><small style="color: #64748b;">Closed on Sundays and National Holidays</small></p>
           </div>
 
-          <div style="margin-bottom: 16px;">
-            <strong style="color: var(--primary-navy); display: block; font-size: 14px;">&#127760; Official Website</strong>
-            <p style="margin: 2px 0;"><a href="/">https://aapkaresult.in</a></p>
+          <div style="margin-bottom: 18px;">
+            <div class="contact-item-title">&#127760; Official Website</div>
+            <p class="contact-item-value"><a href="/">https://aapkaresult.in</a></p>
           </div>
 
-          <div style="margin-bottom: 16px;">
-            <strong style="color: var(--primary-navy); display: block; font-size: 14px;">&#128205; Research Location</strong>
-            <p style="margin: 2px 0; color: var(--text-muted); font-size: 13.5px;">Delhi NCR &amp; Uttar Pradesh, India</p>
+          <div style="margin-bottom: 18px;">
+            <div class="contact-item-title">&#128205; Research Location</div>
+            <p class="contact-item-value">Delhi NCR &amp; Uttar Pradesh, India</p>
           </div>
 
           <div class="notice-box danger" style="margin-top: 20px;">

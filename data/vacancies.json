@@ -1,5 +1,82 @@
 [
   {
+    "id": "isro-sdsc-shar-apprentice",
+    "slug": "isro-sdsc-shar-apprentice.html",
+    "aliasSlugs": [],
+    "title": "ISRO SDSC SHAR Apprentice Recruitment 2026 – Apply Online for 400 Posts",
+    "seoTitle": "ISRO SDSC SHAR Apprentice Recruitment 2026: Apply Online, Form, Eligibility, Dates, Stipend",
+    "metaDescription": "ISRO SDSC SHAR Apprentice Recruitment 2026 Notification for 400 Posts. Check online application dates, ITI/Diploma/Degree qualification, stipend ₹12,300/month, merit selection & direct official links.",
+    "canonicalUrl": "https://aapkaresult.in/isro-sdsc-shar-apprentice.html",
+    "department": "Satish Dhawan Space Centre SHAR (SDSC SHAR), ISRO Sriharikota",
+    "postName": "Trade, Technician Diploma, Graduate & Vocational Apprentice",
+    "totalVacancies": "400 Posts",
+    "status": "Online Application Active • Live Now (06 Nov to 26 Nov 2026)",
+    "summaryLead": "Satish Dhawan Space Centre SHAR (SDSC SHAR), Sriharikota, Indian Space Research Organisation (ISRO) has announced direct recruitment for 400 Apprentice positions across Trade (ITI), Technician (Diploma), Graduate (Engineering & Non-Engineering), and Vocational cadres. Eligible candidates can apply online through the official SDSC SHAR portal.",
+    "importantDates": {
+      "notificationDate": "06 November 2026 (Advt SDSC SHAR/RMT/02/2026)",
+      "applicationStartDate": "06 November 2026",
+      "lastDate": "26 November 2026 (05:00 PM)",
+      "feePaymentLastDate": "Exempted (₹0/-)",
+      "correctionLastDate": "As per ISRO Portal",
+      "examDate": "Direct Merit Selection (No Written Exam)",
+      "admitCardDate": "Not Applicable",
+      "resultDate": "December 2026"
+    },
+    "applicationFee": {
+      "generalObcEws": "₹0/- (Exempted)",
+      "scSt": "₹0/- (Exempted)",
+      "female": "₹0/- (Exempted)",
+      "other": "₹0/- for all categories",
+      "paymentMethods": "No Application Fee (100% Free Application)"
+    },
+    "ageLimit": {
+      "asOnDate": "26 November 2026",
+      "minAge": "18 Years",
+      "maxAge": "As per Apprenticeship Rules",
+      "details": "Candidates must be at least 18 years of age. Degree/Diploma candidates must have passed qualifying exams in 2022 or thereafter.",
+      "relaxation": "Upper age relaxation of 3 years for OBC, 5 years for SC/ST, and 10 years for PwBD applicable as per Govt of India rules."
+    },
+    "educationalQualification": "10th + ITI in relevant trade, Diploma in Engineering / DCCP, or B.E./B.Tech/B.Sc/B.Com/B.A. with minimum 60% marks.",
+    "postWiseQualification": [
+      {
+        "postName": "Trade Apprentice (ITI)",
+        "vacancies": "180 Posts",
+        "qualification": "10th (SSLC) + ITI/NTC in relevant trade (Fitter, Electrician, Electronic Mechanic, Machinist, Welder, Turner, COPA) from NCVT."
+      },
+      {
+        "postName": "Non-Engineering Graduate Apprentice",
+        "vacancies": "60 Posts",
+        "qualification": "First Class Bachelor's Degree in Science (B.Sc), Commerce (B.Com), or Arts (B.A.) with minimum 60% marks."
+      },
+      {
+        "postName": "Diploma in Commercial and Computer Practice (DCCP)",
+        "vacancies": "60 Posts",
+        "qualification": "First Class Diploma in Commercial and Computer Practice (DCCP) with minimum 60% marks."
+      },
+      {
+        "postName": "Engineering Graduate Apprentice",
+        "vacancies": "50 Posts",
+        "qualification": "First Class B.E. / B.Tech in Mechanical, ECE, EEE, Civil, CSE/IT, Chemical with minimum 60% marks or 6.32 CGPA."
+      },
+      {
+        "postName": "Technician Apprentice (Diploma)",
+        "vacancies": "35 Posts",
+        "qualification": "First Class 3-Year Diploma in Engineering in relevant branch with minimum 60% marks."
+      },
+      {
+        "postName": "Vocational Apprentice",
+        "vacancies": "15 Posts",
+        "qualification": "2-Year Vocational Course Certificate after Secondary Stage in relevant trade."
+      }
+    ],
+    "selectionProcess": [
+      "Stage 1: Direct Merit Shortlisting based on marks percentage in qualifying Degree/Diploma/ITI",
+      "Stage 2: Document Verification (DV) at SDSC SHAR, Sriharikota",
+      "Stage 3: Medical Fitness Verification",
+      "Stage 4: Aadhaar-Linked Bank Account (DBT) Onboarding"
+    ]
+  },
+  {
     "id": "rrb-ntpc-graduate",
     "slug": "rrb-ntpc-graduate.html",
     "aliasSlugs": [],
