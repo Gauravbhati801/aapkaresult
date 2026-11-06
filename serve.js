@@ -44,7 +44,7 @@ function getLocalIp() {
   return 'localhost';
 }
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   // CORS Headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -160,7 +160,9 @@ const server = http.createServer((req, res) => {
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
   });
-});
+};
+
+const server = http.createServer(requestHandler);
 
 if (require.main === module) {
   server.listen(PORT, '0.0.0.0', () => {
@@ -170,6 +172,7 @@ if (require.main === module) {
     console.log('========================================================');
     console.log(`\n1. Computer Browser:`);
     console.log(`   http://localhost:${PORT}`);
+    console.log(`   http://localhost:5500 (Alternative / Live Server)`);
     console.log(`\n2. Mobile Phone (Same Wi-Fi):`);
     console.log(`   http://${localIp}:${PORT}`);
     console.log(`\nDirect Links:`);
@@ -177,6 +180,15 @@ if (require.main === module) {
     console.log(`   http://localhost:${PORT}/up-police-constable.html`);
     console.log(`   http://localhost:${PORT}/latest-jobs.html`);
     console.log('\n(Press Ctrl + C in this terminal to stop the server)\n');
+  });
+
+  // Also support port 5500 simultaneously (Live Server standard)
+  const altServer = http.createServer(requestHandler);
+  altServer.on('error', (err) => {
+    console.log('[Notice] Port 5500 fallback not available:', err.message);
+  });
+  altServer.listen(5500, '0.0.0.0', () => {
+    console.log(`[OK] Also active on: http://localhost:5500`);
   });
 }
 

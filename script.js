@@ -247,3 +247,72 @@ function promptCopyFallback(text) {
 }
 
 
+
+
+/* ==========================================================================
+   GOOGLE ADSENSE & GDPR COOKIE CONSENT CONTROLLER
+   ========================================================================== */
+function initCookieConsent() {
+  try {
+    if (localStorage.getItem('aapkaresult_cookie_consent')) return;
+  } catch (e) {
+    return;
+  }
+
+  if (document.getElementById('arCookieConsent')) return;
+
+  const banner = document.createElement('div');
+  banner.id = 'arCookieConsent';
+  banner.className = 'ar-cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-live', 'polite');
+  banner.setAttribute('aria-label', 'कुकी सहमति (Cookie Consent)');
+  banner.innerHTML = `
+    <div class="ar-cookie-inner">
+      <div class="ar-cookie-text">
+        <span class="ar-cookie-icon">🍪</span>
+        <span>
+          <strong>कुकी और विज्ञापन प्राथमिकताएं (Cookie Notice):</strong> AapkaResult.in वेबसाइट प्रदर्शन, ट्रैफ़िक विश्लेषण और Google AdSense द्वारा पर्सनलाइज़्ड विज्ञापन दिखाने के लिए कुकीज़ का उपयोग करता है। अधिक विवरण हेतु हमारी <a href="privacy-policy.html">Privacy Policy</a> देखें।
+        </span>
+      </div>
+      <div class="ar-cookie-actions">
+        <button type="button" class="ar-cookie-btn ar-cookie-accept" onclick="acceptAllCookies()">स्वीकार करें (Accept)</button>
+        <button type="button" class="ar-cookie-btn ar-cookie-necessary" onclick="acceptNecessaryCookies()">केवल आवश्यक (Essential)</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+}
+
+function acceptAllCookies() {
+  try {
+    localStorage.setItem('aapkaresult_cookie_consent', 'all');
+  } catch (e) {}
+  removeCookieBanner();
+}
+
+function acceptNecessaryCookies() {
+  try {
+    localStorage.setItem('aapkaresult_cookie_consent', 'necessary');
+  } catch (e) {}
+  removeCookieBanner();
+}
+
+function removeCookieBanner() {
+  const el = document.getElementById('arCookieConsent');
+  if (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(100%)';
+    el.style.transition = 'all 0.3s ease';
+    setTimeout(function() {
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    }, 300);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCookieConsent);
+} else {
+  initCookieConsent();
+}
