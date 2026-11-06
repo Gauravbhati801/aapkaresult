@@ -29,11 +29,21 @@ test('resolveFilePath maps root / and extensionless routes to .html files', () =
   assert.ok(fs.existsSync(extensionlessJobs));
 });
 
-test('data JSON files are valid JSON arrays and UP Rojgar Mela uses canonical URL slug', () => {
+test('data JSON files are valid JSON arrays and all news articles have valid URLs, summaries, images, and sitemap entries', () => {
   const newsData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'news.json'), 'utf8'));
   const vacanciesData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'vacancies.json'), 'utf8'));
+  const sitemapXml = fs.readFileSync(path.join(process.cwd(), 'sitemap.xml'), 'utf8');
   assert.ok(Array.isArray(newsData));
   assert.ok(Array.isArray(vacanciesData));
+
+  for (const item of newsData) {
+    assert.ok(!item.id.includes(' '), `News id "${item.id}" must not contain spaces`);
+    assert.ok(!item.url.includes(' '), `News url "${item.url}" must not contain spaces`);
+    assert.ok(item.summary && item.summary.trim().length > 10, `News "${item.id}" must have a summary`);
+    assert.ok(item.leadSummary && item.leadSummary.trim().length > 10, `News "${item.id}" must have a leadSummary`);
+    assert.ok(fs.existsSync(path.join(process.cwd(), item.image)), `Image "${item.image}" for "${item.id}" must exist`);
+    assert.ok(sitemapXml.includes(`news-detail.html?id=${item.id}`), `News "${item.id}" must be in sitemap.xml`);
+  }
 
   const rojgarMela = newsData.find((item: { id: string }) => item.id === 'up-rojgar-mela-jewar-2026');
   assert.ok(rojgarMela, 'UP Rojgar Mela entry should have id up-rojgar-mela-jewar-2026');
