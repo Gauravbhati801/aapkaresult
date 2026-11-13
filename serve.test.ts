@@ -142,6 +142,71 @@ test('Sarkari Tools hub links Negative Marking Calculator and PDF Compressor and
   assert.ok(photoHtml.includes('setQuickPhotoCustomKb'));
 });
 
+test('All indexable HTML pages have unique titles/descriptions, valid sitemap entries, and required AdSense policy pages', () => {
+  const requiredPolicies = [
+    'about-us.html', 'contact-us.html', 'privacy-policy.html',
+    'disclaimer.html', 'terms-and-conditions.html',
+    'editorial-policy.html', 'fact-verification-policy.html', 'content-ownership-policy.html'
+  ];
+  for (const policy of requiredPolicies) {
+    assert.ok(fs.existsSync(path.join(process.cwd(), policy)), `Policy page ${policy} must exist`);
+  }
 
+  const sitemapXml = fs.readFileSync(path.join(process.cwd(), 'sitemap.xml'), 'utf8');
+  const sitemapUrls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
+  for (const u of sitemapUrls) {
+    const rel = u.replace('https://aapkaresult.in/', '').split('?')[0];
+    if (rel) {
+      assert.ok(fs.existsSync(path.join(process.cwd(), rel)), `Sitemap target ${rel} must exist`);
+    }
+  }
 
+  const htmlFiles = fs.readdirSync(process.cwd()).filter(
+    f => f.endsWith('.html') && f !== 'admin.html' && f !== 'templete.html' && !f.startsWith('google')
+  );
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
 
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(path.join(process.cwd(), file), 'utf8');
+    const isNoindex = /name="robots"[^>]*noindex/i.test(html);
+    const expectedUrl = file === 'index.html' ? 'https://aapkaresult.in/' : `https://aapkaresult.in/${file}`;
+
+    if (isNoindex) {
+      assert.ok(!sitemapUrls.includes(expectedUrl), `Noindex page ${file} should not be in sitemap.xml`);
+      continue;
+    }
+    if (file === '404.html' || file === 'news-detail.html') continue;
+
+    assert.ok(sitemapUrls.includes(expectedUrl), `Indexable page ${file} must be in sitemap.xml`);
+    assert.ok(/<h1[\s>]/i.test(html), `${file} must have an <h1> heading`);
+    assert.ok(html.includes('privacy-policy.html'), `${file} footer must link to privacy-policy.html`);
+    assert.ok(/property=["']og:title["']/i.test(html), `${file} must have og:title`);
+    assert.ok(/property=["']og:description["']/i.test(html), `${file} must have og:description`);
+    assert.ok(html.includes(`href="${expectedUrl}"`), `${file} must have matching canonical URL ${expectedUrl}`);
+    assert.ok(!html.includes('${1}'), `${file} must not contain stray replacement tokens`);
+    assert.ok(html.includes('sizes="384x384"'), `${file} must declare sizes="384x384" for favicon.png`);
+    assert.ok(!/href=["']http:\/\//i.test(html), `${file} must not contain insecure http:// links`);
+    assert.ok(!/href=["']#["']/i.test(html), `${file} must not contain empty href="#" links`);
+
+    const visibleText = html
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<!--[\s\S]*?-->/g, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const wordCount = visibleText.split(' ').filter(Boolean).length;
+    assert.ok(wordCount >= 350, `Indexable page ${file} must have >= 350 words (found ${wordCount})`);
+
+    const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    assert.ok(titleMatch && titleMatch[1].trim().length > 5, `${file} must have a valid <title>`);
+    assert.ok(!titles.has(titleMatch[1].trim()), `Duplicate <title> found in ${file}`);
+    titles.add(titleMatch[1].trim());
+
+    const descMatch = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
+    assert.ok(descMatch && descMatch[1].trim().length > 20, `${file} must have a meta description`);
+    assert.ok(!descriptions.has(descMatch[1].trim()), `Duplicate meta description found in ${file}`);
+    descriptions.add(descMatch[1].trim());
+  }
+});
