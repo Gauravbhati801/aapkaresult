@@ -210,3 +210,13 @@ test('All indexable HTML pages have unique titles/descriptions, valid sitemap en
     descriptions.add(descMatch[1].trim());
   }
 });
+
+test('admin.html does not expose hardcoded GitHub tokens and remains noindex', () => {
+  const adminHtml = fs.readFileSync(path.join(process.cwd(), 'admin.html'), 'utf8');
+  assert.ok(/name="robots"[^>]*noindex/i.test(adminHtml), 'admin.html must have noindex meta tag');
+  assert.ok(!adminHtml.includes('ghp_'), 'admin.html must not contain hardcoded ghp_ tokens');
+  assert.ok(!adminHtml.includes('github_pat_'), 'admin.html must not contain hardcoded github_pat_ tokens');
+  assert.ok(!adminHtml.includes('[103, 104, 112'), 'admin.html must not contain obfuscated token arrays');
+  assert.ok(adminHtml.includes('function clearPatSetting()'), 'admin.html should provide clearPatSetting');
+});
+

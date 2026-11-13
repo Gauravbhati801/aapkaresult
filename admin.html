@@ -1158,9 +1158,12 @@
           <input type="text" id="settingPin" class="form-input" style="max-width: 320px;" placeholder="Enter any PIN or password" value="2026">
         </div>
         <div class="form-group">
-          <label class="form-label">GitHub Personal Access Token (PAT) <small>(Enables direct 1-click live publish from mobile)</small></label>
-          <input type="password" id="settingPat" class="form-input" placeholder="ghp_...">
-          <small style="color: #64748b; display: block; margin-top: 4px;">Saved securely inside your phone browser's localStorage only.</small>
+          <label class="form-label">GitHub Personal Access Token (PAT) <small>(Enables direct 1-click live publish from your browser)</small></label>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+            <input type="password" id="settingPat" class="form-input" style="flex: 1; min-width: 240px;" placeholder="Paste your GitHub PAT (stored only in this browser)">
+            <button type="button" class="btn-secondary" style="flex: 0 0 auto; min-width: auto; padding: 10px 14px;" onclick="clearPatSetting()">Clear Token</button>
+          </div>
+          <small style="color: #64748b; display: block; margin-top: 6px;">Security Note: Saved only in this browser's localStorage (never stored in website source code).</small>
         </div>
         <button type="button" class="btn-primary" style="max-width: 220px;" onclick="saveSettings()">Save Configuration</button>
       </div>
@@ -1285,11 +1288,9 @@
     const GITHUB_BRANCH = "main";
     
     function getStoredOrDefPat() {
-      const saved = localStorage.getItem('news_github_pat');
-      if (saved && saved.trim()) return saved.trim();
       try {
-        const c = [103, 104, 112, 95, 116, 103, 66, 89, 75, 57, 53, 66, 112, 52, 57, 121, 66, 111, 120, 100, 110, 65, 118, 79, 77, 111, 107, 72, 69, 110, 79, 48, 110, 115, 50, 50, 73, 122, 122, 75];
-        return String.fromCharCode(...c);
+        const saved = localStorage.getItem('news_github_pat');
+        return saved && saved.trim() ? saved.trim() : "";
       } catch (e) {
         return "";
       }
@@ -3034,11 +3035,22 @@
       });
     }
 
+    function clearPatSetting() {
+      localStorage.removeItem('news_github_pat');
+      const patInput = document.getElementById('settingPat');
+      if (patInput) patInput.value = '';
+      showToast("Saved GitHub token cleared from this browser.");
+    }
+
     function saveSettings() {
       const pin = document.getElementById('settingPin').value.trim() || DEFAULT_PIN;
       const pat = document.getElementById('settingPat').value.trim();
       localStorage.setItem('news_admin_pin', pin);
-      if (pat) localStorage.setItem('news_github_pat', pat);
+      if (pat) {
+        localStorage.setItem('news_github_pat', pat);
+      } else {
+        localStorage.removeItem('news_github_pat');
+      }
       showToast("Settings saved successfully!");
     }
   </script>
