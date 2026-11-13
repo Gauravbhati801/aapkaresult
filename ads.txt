@@ -1,4 +1,3 @@
 # Google AdSense Authorized Digital Sellers (ads.txt)
 # Official domain: https://aapkaresult.in
-# Note: Once you receive your ca-pub ID from Google AdSense, uncomment the line below and replace pub-0000000000000000 with your real Publisher ID:
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-8748745076492284, DIRECT, f08c47fec0942fa0
