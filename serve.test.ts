@@ -218,5 +218,10 @@ test('admin.html does not expose hardcoded GitHub tokens and remains noindex', (
   assert.ok(!adminHtml.includes('github_pat_'), 'admin.html must not contain hardcoded github_pat_ tokens');
   assert.ok(!adminHtml.includes('[103, 104, 112'), 'admin.html must not contain obfuscated token arrays');
   assert.ok(adminHtml.includes('function clearPatSetting()'), 'admin.html should provide clearPatSetting');
+  assert.ok(adminHtml.includes('mobile-bottom-nav'), 'admin.html should provide mobile bottom navigation');
+  assert.ok(adminHtml.includes('function saveNewsDraft()'), 'admin.html should support auto-draft saving');
+  assert.ok(adminHtml.includes('function editVacancy('), 'admin.html should support editing vacancies');
+  assert.ok(adminHtml.includes('function copySharePost('), 'admin.html should support WhatsApp/Telegram share text copy');
+  assert.ok(adminHtml.includes('function downloadJsonBackup('), 'admin.html should support JSON backup download');
 });
 
