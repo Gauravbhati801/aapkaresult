@@ -25,7 +25,14 @@ const MIME_TYPES = {
 function resolveFilePath(urlStr) {
   let cleanUrl = (urlStr || '/').split('?')[0];
   if (cleanUrl === '/') cleanUrl = '/index.html';
+  if (cleanUrl.endsWith('/') && cleanUrl.length > 1) {
+    cleanUrl = cleanUrl.slice(0, -1);
+  }
   let filePath = path.join(ROOT_DIR, decodeURIComponent(cleanUrl));
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    const indexPath = path.join(filePath, 'index.html');
+    if (fs.existsSync(indexPath)) return indexPath;
+  }
   if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
     filePath += '.html';
   }
