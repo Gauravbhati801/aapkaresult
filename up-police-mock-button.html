@@ -132,6 +132,112 @@
       border: 1px solid #e2e8f0;
       line-height: 1.4;
     }
+
+    /* Ruled Notebook Page Design for Syllabus Breakdown */
+    .notebook-sheet {
+      background-color: #fffdf8;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        #e2e8f0 31px,
+        #e2e8f0 32px
+      );
+      background-position: 0 56px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05), 3px 3px 0 #f8fafc, 5px 5px 0 #cbd5e1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .notebook-sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 42px;
+      width: 3px;
+      border-left: 1.5px solid rgba(220, 38, 38, 0.45);
+      border-right: 1px solid rgba(220, 38, 38, 0.3);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .notebook-top-header {
+      padding: 16px 22px 12px 58px;
+      border-bottom: 2px solid rgba(220, 38, 38, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fffdf8;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-top-header h2 {
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .notebook-page-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 700;
+      background: #ffffff;
+    }
+    .notebook-body {
+      padding: 12px 22px 20px 58px;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-subject {
+      margin-bottom: 18px;
+    }
+    .notebook-subject:last-child {
+      margin-bottom: 0;
+    }
+    .notebook-subject-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 32px;
+      margin: 0 0 4px 0;
+      display: inline-block;
+      background: linear-gradient(transparent 62%, rgba(253, 224, 71, 0.5) 62%);
+      padding: 0 4px;
+    }
+    .notebook-topics-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      column-gap: 24px;
+    }
+    .notebook-topics-list li {
+      font-size: 13.5px;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 32px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nb-check {
+      color: #dc2626;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
     .tip-box {
       background: #f0fdf4;
       border-left: 3.5px solid #16a34a;
@@ -406,6 +512,29 @@
         padding: 2px 5px !important;
         margin: 1.5px !important;
         border-radius: 3px !important;
+      }
+      .notebook-sheet::before {
+        left: 26px !important;
+      }
+      .notebook-top-header {
+        padding: 12px 12px 10px 38px !important;
+      }
+      .notebook-top-header h2 {
+        font-size: 1.02rem !important;
+      }
+      .notebook-body {
+        padding: 8px 12px 14px 38px !important;
+      }
+      .notebook-subject-title {
+        font-size: 13px !important;
+        line-height: 32px !important;
+      }
+      .notebook-topics-list {
+        grid-template-columns: 1fr !important;
+      }
+      .notebook-topics-list li {
+        font-size: 12px !important;
+        line-height: 32px !important;
       }
       .tip-box, .warning-box {
         padding: 8px 10px !important;
@@ -708,62 +837,76 @@
         </div>
       </div>
 
-      <!-- IN-DEPTH SYLLABUS TOPICS -->
-      <div class="section-card">
-        <h2>📘 Subject-Wise Detailed Topic Breakdown</h2>
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">1. सामान्य ज्ञान (General Knowledge - 38 Qs / 76 Marks):</h4>
-          <span class="topic-pill">उत्तर प्रदेश विशेष (UP Special GK)</span>
-          <span class="topic-pill">भारत का इतिहास व राष्ट्रीय आंदोलन</span>
-          <span class="topic-pill">भारतीय संविधान एवं राजव्यवस्था</span>
-          <span class="topic-pill">भारतीय अर्थव्यवस्था एवं कृषि</span>
-          <span class="topic-pill">पर्यावरण एवं भूगोल (नदियां व पर्वत)</span>
-          <span class="topic-pill">सामान्य विज्ञान (भौतिक, रसायन, जीव)</span>
-          <span class="topic-pill">राष्ट्रीय व अंतरराष्ट्रीय समसामयिकी (Current Affairs)</span>
-          <span class="topic-pill">पुलिस व सामान्य प्रशासनिक व्यवस्था</span>
-          <span class="topic-pill">विमुद्रीकरण एवं उसका प्रभाव, GST</span>
-          <span class="topic-pill">पुरस्कार और सम्मान, महत्वपूर्ण दिवस</span>
+      <!-- IN-DEPTH SYLLABUS TOPICS (RULED NOTEBOOK SHEET) -->
+      <div class="notebook-sheet">
+        <div class="notebook-top-header">
+          <h2>📘 Subject-Wise Detailed Topic Breakdown</h2>
+          <span class="notebook-page-box">Page No: 01 | Syllabus Notes</span>
         </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">2. सामान्य हिन्दी (General Hindi - 37 Qs / 74 Marks):</h4>
-          <span class="topic-pill">हिन्दी वर्णमाला एवं वर्तनी</span>
-          <span class="topic-pill">तद्भव-तत्सम शब्द</span>
-          <span class="topic-pill">पर्यायवाची व विलोम शब्द</span>
-          <span class="topic-pill">वाक्यांशों के स्थान पर एक शब्द</span>
-          <span class="topic-pill">अनेकार्थक व समरूपी भिन्नार्थक शब्द</span>
-          <span class="topic-pill">संधि, समास, उपसर्ग, प्रत्यय</span>
-          <span class="topic-pill">लिंग, वचन, कारक, काल, वाच्य</span>
-          <span class="topic-pill">रस, छंद, अलंकार</span>
-          <span class="topic-pill">प्रसिद्ध कवि, लेखक एवं उनकी रचनाएं</span>
-          <span class="topic-pill">अपठित गद्यांश (Comprehension)</span>
-        </div>
+        <div class="notebook-body">
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">1. सामान्य ज्ञान (General Knowledge - 38 Qs / 76 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> उत्तर प्रदेश विशेष (UP Special GK)</li>
+              <li><span class="nb-check">✓</span> भारत का इतिहास व राष्ट्रीय आंदोलन</li>
+              <li><span class="nb-check">✓</span> भारतीय संविधान एवं राजव्यवस्था</li>
+              <li><span class="nb-check">✓</span> भारतीय अर्थव्यवस्था एवं कृषि</li>
+              <li><span class="nb-check">✓</span> पर्यावरण एवं भूगोल (नदियां व पर्वत)</li>
+              <li><span class="nb-check">✓</span> सामान्य विज्ञान (भौतिक, रसायन, जीव)</li>
+              <li><span class="nb-check">✓</span> राष्ट्रीय व अंतरराष्ट्रीय समसामयिकी (Current Affairs)</li>
+              <li><span class="nb-check">✓</span> पुलिस व सामान्य प्रशासनिक व्यवस्था</li>
+              <li><span class="nb-check">✓</span> विमुद्रीकरण एवं उसका प्रभाव, GST</li>
+              <li><span class="nb-check">✓</span> पुरस्कार और सम्मान, महत्वपूर्ण दिवस</li>
+            </ul>
+          </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">3. संख्यात्मक एवं मानसिक योग्यता (Maths - 38 Qs / 76 Marks):</h4>
-          <span class="topic-pill">संख्या पद्धति (Number System)</span>
-          <span class="topic-pill">सरलीकरण (Simplification)</span>
-          <span class="topic-pill">दशमलव और भिन्न (Decimals &amp; Fractions)</span>
-          <span class="topic-pill">म.स. और ल.स. (HCF &amp; LCM)</span>
-          <span class="topic-pill">अनुपात और समानुपात (Ratio &amp; Proportion)</span>
-          <span class="topic-pill">प्रतिशतता (Percentage)</span>
-          <span class="topic-pill">लाभ और हानि, छूट (Profit, Loss, Discount)</span>
-          <span class="topic-pill">साधारण व चक्रवृद्धि ब्याज (SI &amp; CI)</span>
-          <span class="topic-pill">समय और कार्य, दूरी और चाल</span>
-          <span class="topic-pill">क्षेत्रमिति (Mensuration 2D/3D)</span>
-        </div>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">2. सामान्य हिन्दी (General Hindi - 37 Qs / 74 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> हिन्दी वर्णमाला एवं वर्तनी</li>
+              <li><span class="nb-check">✓</span> तद्भव-तत्सम शब्द</li>
+              <li><span class="nb-check">✓</span> पर्यायवाची व विलोम शब्द</li>
+              <li><span class="nb-check">✓</span> वाक्यांशों के स्थान पर एक शब्द</li>
+              <li><span class="nb-check">✓</span> अनेकार्थक व समरूपी भिन्नार्थक शब्द</li>
+              <li><span class="nb-check">✓</span> संधि, समास, उपसर्ग, प्रत्यय</li>
+              <li><span class="nb-check">✓</span> लिंग, वचन, कारक, काल, वाच्य</li>
+              <li><span class="nb-check">✓</span> रस, छंद, अलंकार</li>
+              <li><span class="nb-check">✓</span> प्रसिद्ध कवि, लेखक एवं उनकी रचनाएं</li>
+              <li><span class="nb-check">✓</span> अपठित गद्यांश (Comprehension)</li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">4. मानसिक अभिरुचि व रीजनिंग (Mental Aptitude &amp; Reasoning - 37 Qs / 74 Marks):</h4>
-          <span class="topic-pill">समरूपता व समानता (Analogy)</span>
-          <span class="topic-pill">कोडिंग-डिकोडिंग (Coding-Decoding)</span>
-          <span class="topic-pill">रक्त संबंध (Blood Relations)</span>
-          <span class="topic-pill">दिशा ज्ञान परीक्षण (Direction Sense)</span>
-          <span class="topic-pill">वर्णमाला व संख्या श्रृंखला (Series)</span>
-          <span class="topic-pill">वेन आरेख एवं न्याय निगमन (Syllogism)</span>
-          <span class="topic-pill">कानून और शांति व्यवस्था (Law &amp; Order)</span>
-          <span class="topic-pill">सांप्रदायिक सौहार्द, अपराध नियंत्रण</span>
-          <span class="topic-pill">कथन-तर्क एवं निर्णय क्षमता (Decision Making)</span>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">3. संख्यात्मक एवं मानसिक योग्यता (Maths - 38 Qs / 76 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> संख्या पद्धति (Number System)</li>
+              <li><span class="nb-check">✓</span> सरलीकरण (Simplification)</li>
+              <li><span class="nb-check">✓</span> दशमलव और भिन्न (Decimals &amp; Fractions)</li>
+              <li><span class="nb-check">✓</span> म.स. और ल.स. (HCF &amp; LCM)</li>
+              <li><span class="nb-check">✓</span> अनुपात और समानुपात (Ratio &amp; Proportion)</li>
+              <li><span class="nb-check">✓</span> प्रतिशतता (Percentage)</li>
+              <li><span class="nb-check">✓</span> लाभ और हानि, छूट (Profit, Loss, Discount)</li>
+              <li><span class="nb-check">✓</span> साधारण व चक्रवृद्धि ब्याज (SI &amp; CI)</li>
+              <li><span class="nb-check">✓</span> समय और कार्य, दूरी और चाल</li>
+              <li><span class="nb-check">✓</span> क्षेत्रमिति (Mensuration 2D/3D)</li>
+            </ul>
+          </div>
+
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">4. मानसिक अभिरुचि व रीजनिंग (Mental Aptitude &amp; Reasoning - 37 Qs / 74 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> समरूपता व समानता (Analogy)</li>
+              <li><span class="nb-check">✓</span> कोडिंग-डिकोडिंग (Coding-Decoding)</li>
+              <li><span class="nb-check">✓</span> रक्त संबंध (Blood Relations)</li>
+              <li><span class="nb-check">✓</span> दिशा ज्ञान परीक्षण (Direction Sense)</li>
+              <li><span class="nb-check">✓</span> वर्णमाला व संख्या श्रृंखला (Series)</li>
+              <li><span class="nb-check">✓</span> वेन आरेख एवं न्याय निगमन (Syllogism)</li>
+              <li><span class="nb-check">✓</span> कानून और शांति व्यवस्था (Law &amp; Order)</li>
+              <li><span class="nb-check">✓</span> सांप्रदायिक सौहार्द, अपराध नियंत्रण</li>
+              <li><span class="nb-check">✓</span> कथन-तर्क एवं निर्णय क्षमता (Decision Making)</li>
+            </ul>
+          </div>
         </div>
       </div>
 

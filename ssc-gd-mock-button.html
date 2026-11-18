@@ -132,6 +132,112 @@
       border: 1px solid #e2e8f0;
       line-height: 1.4;
     }
+
+    /* Ruled Notebook Page Design for Syllabus Breakdown */
+    .notebook-sheet {
+      background-color: #fffdf8;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        #e2e8f0 31px,
+        #e2e8f0 32px
+      );
+      background-position: 0 56px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05), 3px 3px 0 #f8fafc, 5px 5px 0 #cbd5e1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .notebook-sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 42px;
+      width: 3px;
+      border-left: 1.5px solid rgba(220, 38, 38, 0.45);
+      border-right: 1px solid rgba(220, 38, 38, 0.3);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .notebook-top-header {
+      padding: 16px 22px 12px 58px;
+      border-bottom: 2px solid rgba(220, 38, 38, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fffdf8;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-top-header h2 {
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .notebook-page-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 700;
+      background: #ffffff;
+    }
+    .notebook-body {
+      padding: 12px 22px 20px 58px;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-subject {
+      margin-bottom: 18px;
+    }
+    .notebook-subject:last-child {
+      margin-bottom: 0;
+    }
+    .notebook-subject-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 32px;
+      margin: 0 0 4px 0;
+      display: inline-block;
+      background: linear-gradient(transparent 62%, rgba(253, 224, 71, 0.5) 62%);
+      padding: 0 4px;
+    }
+    .notebook-topics-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      column-gap: 24px;
+    }
+    .notebook-topics-list li {
+      font-size: 13.5px;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 32px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nb-check {
+      color: #dc2626;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
     .tip-box {
       background: #f0fdf4;
       border-left: 3.5px solid #16a34a;
@@ -406,6 +512,29 @@
         padding: 2px 5px !important;
         margin: 1.5px !important;
         border-radius: 3px !important;
+      }
+      .notebook-sheet::before {
+        left: 26px !important;
+      }
+      .notebook-top-header {
+        padding: 12px 12px 10px 38px !important;
+      }
+      .notebook-top-header h2 {
+        font-size: 1.02rem !important;
+      }
+      .notebook-body {
+        padding: 8px 12px 14px 38px !important;
+      }
+      .notebook-subject-title {
+        font-size: 13px !important;
+        line-height: 32px !important;
+      }
+      .notebook-topics-list {
+        grid-template-columns: 1fr !important;
+      }
+      .notebook-topics-list li {
+        font-size: 12px !important;
+        line-height: 32px !important;
       }
       .tip-box, .warning-box {
         padding: 8px 10px !important;
@@ -708,55 +837,69 @@
         </div>
       </div>
 
-      <!-- IN-DEPTH SYLLABUS TOPICS -->
-      <div class="section-card">
-        <h2>📘 Component-Wise Detailed Topics</h2>
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">1. General Intelligence &amp; Reasoning (20 Qs / 40 Marks):</h4>
-          <span class="topic-pill">Analogies (सादृश्यता)</span>
-          <span class="topic-pill">Similarities &amp; Differences (समानताएं एवं भिन्नताएं)</span>
-          <span class="topic-pill">Spatial Visualization (स्थानिक दृश्यता)</span>
-          <span class="topic-pill">Coding &amp; Decoding</span>
-          <span class="topic-pill">Blood Relations (रक्त संबंध)</span>
-          <span class="topic-pill">Number &amp; Alphabet Series</span>
-          <span class="topic-pill">Non-Verbal Series (चित्रात्मक श्रृंखला)</span>
-          <span class="topic-pill">Visual Memory &amp; Discrimination</span>
+      <!-- IN-DEPTH SYLLABUS TOPICS (RULED NOTEBOOK SHEET) -->
+      <div class="notebook-sheet">
+        <div class="notebook-top-header">
+          <h2>📘 Component-Wise Detailed Topics</h2>
+          <span class="notebook-page-box">Page No: 01 | Syllabus Notes</span>
         </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">2. General Knowledge &amp; General Awareness (20 Qs / 40 Marks):</h4>
-          <span class="topic-pill">भारत और उसके पड़ोसी देश</span>
-          <span class="topic-pill">इतिहास व भारतीय राष्ट्रीय आंदोलन</span>
-          <span class="topic-pill">संस्कृति, प्रमुख नृत्य एवं त्योहार</span>
-          <span class="topic-pill">भूगोल, नदियां, पर्वत व राष्ट्रीय उद्यान</span>
-          <span class="topic-pill">आर्थिक परिदृश्य व पंचवर्षीय योजनाएं</span>
-          <span class="topic-pill">सामान्य राजव्यवस्था एवं भारतीय संविधान</span>
-          <span class="topic-pill">वैज्ञानिक अनुसंधान एवं प्रमुख खोजें</span>
-          <span class="topic-pill">खेलकूद (Sports) एवं करंट अफेयर्स</span>
-        </div>
+        <div class="notebook-body">
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">1. General Intelligence &amp; Reasoning (20 Qs / 40 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> Analogies (सादृश्यता)</li>
+              <li><span class="nb-check">✓</span> Similarities &amp; Differences (समानताएं एवं भिन्नताएं)</li>
+              <li><span class="nb-check">✓</span> Spatial Visualization (स्थानिक दृश्यता)</li>
+              <li><span class="nb-check">✓</span> Coding &amp; Decoding</li>
+              <li><span class="nb-check">✓</span> Blood Relations (रक्त संबंध)</li>
+              <li><span class="nb-check">✓</span> Number &amp; Alphabet Series</li>
+              <li><span class="nb-check">✓</span> Non-Verbal Series (चित्रात्मक श्रृंखला)</li>
+              <li><span class="nb-check">✓</span> Visual Memory &amp; Discrimination</li>
+            </ul>
+          </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">3. Elementary Mathematics (20 Qs / 40 Marks):</h4>
-          <span class="topic-pill">Number Systems (संख्या पद्धति)</span>
-          <span class="topic-pill">Decimals and Fractions</span>
-          <span class="topic-pill">Percentages (प्रतिशतता)</span>
-          <span class="topic-pill">Ratio and Proportion (अनुपात)</span>
-          <span class="topic-pill">Averages (औसत)</span>
-          <span class="topic-pill">Interest (Simple &amp; Compound)</span>
-          <span class="topic-pill">Profit and Loss, Discount</span>
-          <span class="topic-pill">Mensuration 2D &amp; 3D</span>
-          <span class="topic-pill">Time and Distance (समय और दूरी)</span>
-          <span class="topic-pill">Time and Work (समय और कार्य)</span>
-        </div>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">2. General Knowledge &amp; General Awareness (20 Qs / 40 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> भारत और उसके पड़ोसी देश</li>
+              <li><span class="nb-check">✓</span> इतिहास व भारतीय राष्ट्रीय आंदोलन</li>
+              <li><span class="nb-check">✓</span> संस्कृति, प्रमुख नृत्य एवं त्योहार</li>
+              <li><span class="nb-check">✓</span> भूगोल, नदियां, पर्वत व राष्ट्रीय उद्यान</li>
+              <li><span class="nb-check">✓</span> आर्थिक परिदृश्य व पंचवर्षीय योजनाएं</li>
+              <li><span class="nb-check">✓</span> सामान्य राजव्यवस्था एवं भारतीय संविधान</li>
+              <li><span class="nb-check">✓</span> वैज्ञानिक अनुसंधान एवं प्रमुख खोजें</li>
+              <li><span class="nb-check">✓</span> खेलकूद (Sports) एवं करंट अफेयर्स</li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">4. Hindi / English Language (20 Qs / 40 Marks):</h4>
-          <span class="topic-pill">वर्तनी की सामान्य अशुद्धियां</span>
-          <span class="topic-pill">पर्यायवाची एवं विलोम शब्द</span>
-          <span class="topic-pill">मुहावरे और लोकोक्तियाँ</span>
-          <span class="topic-pill">वाक्यांश के लिए एक शब्द</span>
-          <span class="topic-pill">रिक्त स्थानों की पूर्ति</span>
-          <span class="topic-pill">अपठित गद्यांश आधारित प्रश्न</span>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">3. Elementary Mathematics (20 Qs / 40 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> Number Systems (संख्या पद्धति)</li>
+              <li><span class="nb-check">✓</span> Decimals and Fractions</li>
+              <li><span class="nb-check">✓</span> Percentages (प्रतिशतता)</li>
+              <li><span class="nb-check">✓</span> Ratio and Proportion (अनुपात)</li>
+              <li><span class="nb-check">✓</span> Averages (औसत)</li>
+              <li><span class="nb-check">✓</span> Interest (Simple &amp; Compound)</li>
+              <li><span class="nb-check">✓</span> Profit and Loss, Discount</li>
+              <li><span class="nb-check">✓</span> Mensuration 2D &amp; 3D</li>
+              <li><span class="nb-check">✓</span> Time and Distance (समय और दूरी)</li>
+              <li><span class="nb-check">✓</span> Time and Work (समय और कार्य)</li>
+            </ul>
+          </div>
+
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">4. Hindi / English Language (20 Qs / 40 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> वर्तनी की सामान्य अशुद्धियां</li>
+              <li><span class="nb-check">✓</span> पर्यायवाची एवं विलोम शब्द</li>
+              <li><span class="nb-check">✓</span> मुहावरे और लोकोक्तियाँ</li>
+              <li><span class="nb-check">✓</span> वाक्यांश के लिए एक शब्द</li>
+              <li><span class="nb-check">✓</span> रिक्त स्थानों की पूर्ति</li>
+              <li><span class="nb-check">✓</span> अपठित गद्यांश आधारित प्रश्न</li>
+            </ul>
+          </div>
         </div>
       </div>
 

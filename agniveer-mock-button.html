@@ -132,6 +132,112 @@
       border: 1px solid #e2e8f0;
       line-height: 1.4;
     }
+
+    /* Ruled Notebook Page Design for Syllabus Breakdown */
+    .notebook-sheet {
+      background-color: #fffdf8;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        #e2e8f0 31px,
+        #e2e8f0 32px
+      );
+      background-position: 0 56px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05), 3px 3px 0 #f8fafc, 5px 5px 0 #cbd5e1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .notebook-sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 42px;
+      width: 3px;
+      border-left: 1.5px solid rgba(220, 38, 38, 0.45);
+      border-right: 1px solid rgba(220, 38, 38, 0.3);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .notebook-top-header {
+      padding: 16px 22px 12px 58px;
+      border-bottom: 2px solid rgba(220, 38, 38, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fffdf8;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-top-header h2 {
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .notebook-page-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 700;
+      background: #ffffff;
+    }
+    .notebook-body {
+      padding: 12px 22px 20px 58px;
+      position: relative;
+      z-index: 2;
+    }
+    .notebook-subject {
+      margin-bottom: 18px;
+    }
+    .notebook-subject:last-child {
+      margin-bottom: 0;
+    }
+    .notebook-subject-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 32px;
+      margin: 0 0 4px 0;
+      display: inline-block;
+      background: linear-gradient(transparent 62%, rgba(253, 224, 71, 0.5) 62%);
+      padding: 0 4px;
+    }
+    .notebook-topics-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      column-gap: 24px;
+    }
+    .notebook-topics-list li {
+      font-size: 13.5px;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 32px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nb-check {
+      color: #dc2626;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
     .tip-box {
       background: #f0fdf4;
       border-left: 3.5px solid #16a34a;
@@ -406,6 +512,29 @@
         padding: 2px 5px !important;
         margin: 1.5px !important;
         border-radius: 3px !important;
+      }
+      .notebook-sheet::before {
+        left: 26px !important;
+      }
+      .notebook-top-header {
+        padding: 12px 12px 10px 38px !important;
+      }
+      .notebook-top-header h2 {
+        font-size: 1.02rem !important;
+      }
+      .notebook-body {
+        padding: 8px 12px 14px 38px !important;
+      }
+      .notebook-subject-title {
+        font-size: 13px !important;
+        line-height: 32px !important;
+      }
+      .notebook-topics-list {
+        grid-template-columns: 1fr !important;
+      }
+      .notebook-topics-list li {
+        font-size: 12px !important;
+        line-height: 32px !important;
       }
       .tip-box, .warning-box {
         padding: 8px 10px !important;
@@ -708,52 +837,66 @@
         </div>
       </div>
 
-      <!-- IN-DEPTH TOPICS -->
-      <div class="section-card">
-        <h2>📘 Detailed Army Agniveer GD Syllabus Topics</h2>
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">1. सामान्य ज्ञान (General Knowledge - 15 Qs / 30 Marks):</h4>
-          <span class="topic-pill">भारतीय सेना, नौसेना व वायुसेना की संरचना</span>
-          <span class="topic-pill">भारत के प्रमुख युद्ध एवं संधियां</span>
-          <span class="topic-pill">राष्ट्रीय प्रतीक, राष्ट्रीय उद्यान व अभयारण्य</span>
-          <span class="topic-pill">भारत एवं विश्व के देश, राजधानियां व मुद्राएं</span>
-          <span class="topic-pill">प्रमुख पुस्तकें और उनके लेखक</span>
-          <span class="topic-pill">प्रसिद्ध व्यक्तित्व एवं महापुरुष</span>
-          <span class="topic-pill">सौरमंडल एवं भारत की प्रमुख नदियां</span>
-          <span class="topic-pill">वर्तमान घटनाएं एवं खेलकूद (Sports)</span>
+      <!-- IN-DEPTH TOPICS (RULED NOTEBOOK SHEET) -->
+      <div class="notebook-sheet">
+        <div class="notebook-top-header">
+          <h2>📘 Detailed Army Agniveer GD Syllabus Topics</h2>
+          <span class="notebook-page-box">Page No: 01 | Syllabus Notes</span>
         </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">2. सामान्य विज्ञान (General Science - 15 Qs / 30 Marks):</h4>
-          <span class="topic-pill">मानव शरीर, पाचन व रक्त परिसंचरण</span>
-          <span class="topic-pill">विटामिन, पोषक तत्व एवं प्रमुख रोग</span>
-          <span class="topic-pill">दैनिक जीवन में भौतिक विज्ञान के नियम</span>
-          <span class="topic-pill">कार्य, ऊर्जा, शक्ति व गुरुत्वाकर्षण</span>
-          <span class="topic-pill">ध्वनि, प्रकाश एवं तरंगें</span>
-          <span class="topic-pill">अम्ल, क्षार एवं लवण (Acids, Bases, Salts)</span>
-          <span class="topic-pill">धातुएं व अधातुएं (Metals &amp; Non-metals)</span>
-          <span class="topic-pill">प्रमुख भौतिक राशियां एवं उनके मात्रक (SI Units)</span>
-        </div>
+        <div class="notebook-body">
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">1. सामान्य ज्ञान (General Knowledge - 15 Qs / 30 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> भारतीय सेना, नौसेना व वायुसेना की संरचना</li>
+              <li><span class="nb-check">✓</span> भारत के प्रमुख युद्ध एवं संधियां</li>
+              <li><span class="nb-check">✓</span> राष्ट्रीय प्रतीक, राष्ट्रीय उद्यान व अभयारण्य</li>
+              <li><span class="nb-check">✓</span> भारत एवं विश्व के देश, राजधानियां व मुद्राएं</li>
+              <li><span class="nb-check">✓</span> प्रमुख पुस्तकें और उनके लेखक</li>
+              <li><span class="nb-check">✓</span> प्रसिद्ध व्यक्तित्व एवं महापुरुष</li>
+              <li><span class="nb-check">✓</span> सौरमंडल एवं भारत की प्रमुख नदियां</li>
+              <li><span class="nb-check">✓</span> वर्तमान घटनाएं एवं खेलकूद (Sports)</li>
+            </ul>
+          </div>
 
-        <div style="margin-bottom: 18px;">
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">3. गणित (Mathematics - 15 Qs / 30 Marks):</h4>
-          <span class="topic-pill">संख्या पद्धति (Number System)</span>
-          <span class="topic-pill">ल.स. और म.स. (LCM &amp; HCF)</span>
-          <span class="topic-pill">वर्गमूल एवं घनमूल (Square &amp; Cube Roots)</span>
-          <span class="topic-pill">प्रतिशतता (Percentage) व लाभ-हानि</span>
-          <span class="topic-pill">साधारण ब्याज (Simple Interest)</span>
-          <span class="topic-pill">अनुपात और समानुपात (Ratio &amp; Proportion)</span>
-          <span class="topic-pill">समय, चाल और दूरी (Time, Speed &amp; Distance)</span>
-          <span class="topic-pill">क्षेत्रमिति (त्रिभुज, आयत, वृत्त का क्षेत्रफल)</span>
-        </div>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">2. सामान्य विज्ञान (General Science - 15 Qs / 30 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> मानव शरीर, पाचन व रक्त परिसंचरण</li>
+              <li><span class="nb-check">✓</span> विटामिन, पोषक तत्व एवं प्रमुख रोग</li>
+              <li><span class="nb-check">✓</span> दैनिक जीवन में भौतिक विज्ञान के नियम</li>
+              <li><span class="nb-check">✓</span> कार्य, ऊर्जा, शक्ति व गुरुत्वाकर्षण</li>
+              <li><span class="nb-check">✓</span> ध्वनि, प्रकाश एवं तरंगें</li>
+              <li><span class="nb-check">✓</span> अम्ल, क्षार एवं लवण (Acids, Bases, Salts)</li>
+              <li><span class="nb-check">✓</span> धातुएं व अधातुएं (Metals &amp; Non-metals)</li>
+              <li><span class="nb-check">✓</span> प्रमुख भौतिक राशियां एवं उनके मात्रक (SI Units)</li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 style="color: #1e3a8a; margin: 0 0 8px 0;">4. तार्किक क्षमता (Reasoning - 5 Qs / 10 Marks):</h4>
-          <span class="topic-pill">संख्या व अक्षर श्रृंखला (Series)</span>
-          <span class="topic-pill">कोडिंग-डिकोडिंग (Coding-Decoding)</span>
-          <span class="topic-pill">रक्त संबंध (Blood Relations)</span>
-          <span class="topic-pill">विषम चुनना (Odd One Out)</span>
-          <span class="topic-pill">दिशा ज्ञान (Direction Test)</span>
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">3. गणित (Mathematics - 15 Qs / 30 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> संख्या पद्धति (Number System)</li>
+              <li><span class="nb-check">✓</span> ल.स. और म.स. (LCM &amp; HCF)</li>
+              <li><span class="nb-check">✓</span> वर्गमूल एवं घनमूल (Square &amp; Cube Roots)</li>
+              <li><span class="nb-check">✓</span> प्रतिशतता (Percentage) व लाभ-हानि</li>
+              <li><span class="nb-check">✓</span> साधारण ब्याज (Simple Interest)</li>
+              <li><span class="nb-check">✓</span> अनुपात और समानुपात (Ratio &amp; Proportion)</li>
+              <li><span class="nb-check">✓</span> समय, चाल और दूरी (Time, Speed &amp; Distance)</li>
+              <li><span class="nb-check">✓</span> क्षेत्रमिति (त्रिभुज, आयत, वृत्त का क्षेत्रफल)</li>
+            </ul>
+          </div>
+
+          <div class="notebook-subject">
+            <h4 class="notebook-subject-title">4. तार्किक क्षमता (Reasoning - 5 Qs / 10 Marks):</h4>
+            <ul class="notebook-topics-list">
+              <li><span class="nb-check">✓</span> संख्या व अक्षर श्रृंखला (Series)</li>
+              <li><span class="nb-check">✓</span> कोडिंग-डिकोडिंग (Coding-Decoding)</li>
+              <li><span class="nb-check">✓</span> रक्त संबंध (Blood Relations)</li>
+              <li><span class="nb-check">✓</span> विषम चुनना (Odd One Out)</li>
+              <li><span class="nb-check">✓</span> दिशा ज्ञान (Direction Test)</li>
+            </ul>
+          </div>
         </div>
       </div>
 

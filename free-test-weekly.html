@@ -26,21 +26,22 @@
   <style>
     /* Free Test Weekly Premium Hub Styles */
     .test-hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      color: #ffffff;
-      padding: 38px 24px;
-      border-radius: 16px;
-      margin-bottom: 28px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+      background: transparent;
+      color: #0f172a;
+      padding: 18px 16px 8px;
+      border-radius: 0;
+      margin-bottom: 24px;
+      box-shadow: none;
+      border: none;
       text-align: center;
     }
     .test-hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #93c5fd;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
       padding: 5px 14px;
       border-radius: 999px;
       font-size: 13px;
@@ -50,14 +51,14 @@
       text-transform: uppercase;
     }
     .test-hero h1 {
-      color: #ffffff;
+      color: #0f172a;
       font-size: 2.1rem;
       font-weight: 800;
       margin: 0 0 12px 0;
       line-height: 1.25;
     }
     .test-hero p {
-      color: #cbd5e1;
+      color: #475569;
       font-size: 1.05rem;
       margin: 0 auto 20px auto;
       max-width: 700px;
@@ -71,21 +72,22 @@
       margin: 0 auto;
     }
     .stat-pill {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 10px;
       padding: 10px 12px;
       text-align: center;
     }
     .stat-pill strong {
       display: block;
-      color: #38bdf8;
-      font-size: 1.25rem;
+      color: #b91c1c;
+      font-size: 1.2rem;
       font-weight: 800;
     }
     .stat-pill span {
       font-size: 12px;
-      color: #e2e8f0;
+      color: #475569;
+      font-weight: 600;
     }
 
     /* Mock Cards Grid */
@@ -120,11 +122,11 @@
       min-width: 520px;
     }
     .mock-card {
-      background: #ffffff;
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -132,124 +134,133 @@
     }
     .mock-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
     }
-    .mock-card.police { border-top: 3.5px solid #2563eb; }
-    .mock-card.ssc { border-top: 3.5px solid #dc2626; }
-    .mock-card.army { border-top: 3.5px solid #16a34a; }
+    .mock-card.police,
+    .mock-card.ssc,
+    .mock-card.army {
+      border-top: 1px solid #e2e8f0;
+    }
 
     .mock-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
     .mock-exam-tag {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 4px;
+      padding: 3px 8px;
+      border-radius: 5px;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
-    .tag-police { background: #dbeafe; color: #1e40af; }
-    .tag-ssc { background: #fee2e2; color: #991b1b; }
-    .tag-army { background: #dcfce7; color: #166534; }
+    .tag-police,
+    .tag-ssc,
+    .tag-army {
+      background: #e2e8f0;
+      color: #334155;
+    }
 
     .mock-live-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
       font-size: 10.5px;
       font-weight: 700;
-      color: #16a34a;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      padding: 1.5px 6px;
+      color: #334155;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 2px 8px;
       border-radius: 999px;
     }
     .mock-live-dot {
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: #16a34a;
-      box-shadow: 0 0 5px rgba(22, 163, 74, 0.8);
       animation: pulseDot 1.8s infinite;
     }
     @keyframes pulseDot {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 0.45; transform: scale(0.85); }
     }
 
     .mock-title {
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 800;
       color: #0f172a;
-      margin: 0 0 4px 0;
-      line-height: 1.3;
+      margin: 0 0 6px 0;
+      line-height: 1.35;
     }
     .mock-desc {
-      font-size: 11.5px;
-      color: #64748b;
-      line-height: 1.45;
-      margin-bottom: 8px;
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0 0 12px 0;
     }
 
     /* Meta Specs Grid */
     .mock-specs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      background: #f8fafc;
-      border: 1px solid #f1f5f9;
-      border-radius: 6px;
-      padding: 5px 4px;
+      gap: 6px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 6px;
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     .spec-item span {
       display: block;
-      font-size: 8.5px;
+      font-size: 9px;
       color: #64748b;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
     .spec-item strong {
       display: block;
-      font-size: 12px;
+      font-size: 12.5px;
       color: #0f172a;
-      font-weight: 700;
-      margin-top: 1px;
+      font-weight: 800;
+      margin-top: 2px;
     }
 
     .section-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 10px;
+      gap: 5px;
+      margin-bottom: 14px;
     }
     .section-pill {
-      background: #f1f5f9;
+      background: #eef2f6;
+      border: 1px solid #e2e8f0;
       color: #334155;
-      font-size: 10px;
-      padding: 1.5px 6px;
-      border-radius: 3px;
+      font-size: 10.5px;
+      padding: 2.5px 7px;
+      border-radius: 4px;
       font-weight: 600;
     }
 
     .mock-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      gap: 8px;
       margin-top: auto;
     }
     .btn-mock-primary {
-      padding: 7px 10px;
-      border-radius: 6px;
+      padding: 9px 12px;
+      border-radius: 7px;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #ffffff;
+      background: #0f172a;
+      border: 1px solid #0f172a;
       text-align: center;
       display: inline-flex;
       align-items: center;
@@ -257,27 +268,32 @@
       gap: 4px;
       transition: all 0.15s;
     }
-    .btn-primary-police { background: #2563eb; }
-    .btn-primary-police:hover { background: #1d4ed8; }
-    .btn-primary-ssc { background: #dc2626; }
-    .btn-primary-ssc:hover { background: #b91c1c; }
-    .btn-primary-army { background: #16a34a; }
-    .btn-primary-army:hover { background: #15803d; }
+    .btn-primary-police,
+    .btn-primary-ssc,
+    .btn-primary-army {
+      background: #0f172a;
+    }
+    .btn-primary-police:hover,
+    .btn-primary-ssc:hover,
+    .btn-primary-army:hover {
+      background: #1e293b;
+      border-color: #1e293b;
+    }
 
     .btn-mock-details {
-      padding: 7px 10px;
-      border-radius: 6px;
+      padding: 9px 12px;
+      border-radius: 7px;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 600;
-      background: #f8fafc;
+      background: transparent;
       border: 1px solid #cbd5e1;
       color: #334155;
       text-align: center;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 3px;
+      gap: 4px;
       transition: all 0.15s;
     }
     .btn-mock-details:hover {
@@ -416,23 +432,25 @@
     }
 
     @media (max-width: 767px) {
-      .test-hero { padding: 18px 12px; border-radius: 12px; }
+      .test-hero { padding: 10px 8px 4px; border-radius: 0; margin-bottom: 16px; }
+      .test-hero-badge { font-size: 11px; padding: 4px 10px; }
       .test-hero h1 { font-size: 1.35rem; }
+      .test-hero p { font-size: 0.92rem; margin-bottom: 14px; }
       .test-stats-strip { grid-template-columns: repeat(2, 1fr); gap: 6px; }
       .stat-pill { padding: 6px 4px; }
       .stat-pill strong { font-size: 14px; }
       .stat-pill span { font-size: 9.5px; }
 
       /* Super Compact Mobile Cards */
-      .mock-cards-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+      .mock-cards-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 22px; }
       .mock-card {
-        padding: 10px 12px;
-        border-radius: 8px;
-        box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+        padding: 14px 14px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
       }
-      .mock-card.police { border-top-width: 3px; }
-      .mock-card.ssc { border-top-width: 3px; }
-      .mock-card.army { border-top-width: 3px; }
+      .mock-card.police,
+      .mock-card.ssc,
+      .mock-card.army { border-top-width: 1px; }
       .mock-card-header { margin-bottom: 4px; }
       .mock-exam-tag { font-size: 9.5px; padding: 1.5px 6px; border-radius: 3px; }
       .mock-live-badge { font-size: 9.5px; padding: 1px 5px; }
@@ -877,7 +895,7 @@
     </div>
 
     <!-- FEATURED MOCK TEST CARDS -->
-    <h2 class="sub-heading" style="margin-bottom: 18px; font-size: 1.35rem; color: #0f172a;">Live Practice Test Series (Attempt Online)</h2>
+    <h2 style="margin: 10px 0 18px 0; font-size: 1.35rem; font-weight: 800; color: #0f172a; border: none; padding: 0;">Live Practice Test Series (Attempt Online)</h2>
     <div class="mock-cards-grid">
       
       <!-- UP POLICE CONSTABLE CARD -->
