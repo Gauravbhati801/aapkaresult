@@ -634,7 +634,7 @@ img, svg {
 .portal-box {
   background: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
+  border: 1px solid #000000;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   display: flex;
@@ -2500,7 +2500,7 @@ img, svg {
     max-width: none !important;
     border-radius: 6px !important;
     overflow: hidden !important;
-    border: 1px solid #cbd5e1 !important;
+    border: 1px solid #000000 !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
     background: #ffffff !important;
   }
@@ -3478,7 +3478,7 @@ img, svg {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #000000;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
 }
